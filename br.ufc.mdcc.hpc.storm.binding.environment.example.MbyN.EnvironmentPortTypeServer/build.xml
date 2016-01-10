@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/heron/hpe/heron/cache" default="all" name="EnvironmentPortTypeServer">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="EnvironmentPortTypeServer-1.0.0.0">
+    <ifnot targetexists="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer/bin/1.0.0.0">
+      <mkdir dir="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer/EnvironmentPortTypeServer.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer/bin/1.0.0.0/BaseIMbyNServerPortTypeExample.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer/src/1.0.0.0/BaseIMbyNServerPortTypeExample.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultipleClient/bin/1.0.0.0/BaseIEnvironmentPortType.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer/EnvironmentPortTypeServer.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer/bin/1.0.0.0/IMbyNServerPortTypeExample.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer/src/1.0.0.0/IMbyNServerPortTypeExample.cs"/>
+      </sources>
+      <references>
+        <include name="/br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeServer/bin/1.0.0.0/BaseIMbyNServerPortTypeExample.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultipleClient/bin/1.0.0.0/IEnvironmentPortType.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="EnvironmentPortTypeServer-1.0.0.0" name="all"/>
+</project>

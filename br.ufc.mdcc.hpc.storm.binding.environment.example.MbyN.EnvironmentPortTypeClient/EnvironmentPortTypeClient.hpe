@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000fdb6a581c92e2bdb3a87b01f61bd27fe6d027105c91198a2a5ee6fff6307c1c656943959654cb0b494bef670f71a054857fa753c79c7e5662d389515bff9d655278797ee895eb442867d25defeb79828a5124c66509b1c70dd50892b5a808751ed5fc3ad109bc6e5225adff0e80ffb3351219ed08697c033d006738012d9b0c3" isAbstract="true" kind="Qualifier" name="EnvironmentPortTypeClient" packagePath="br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ef82e69ec40f2d9aa1d6a9458be5a7dffb10cd8cb40350d44f14787186aff7a3f56d75ec6cb3bf0a892780fd4782175b9c91febf010e77f624931c5998bb841ffa678f1b49237713c28cc8750112a7b5aba8d604ea35a87b452481db50e00f114c1ed87fea6e46d711bf949107afdd2888bf4b646cfcf799a26d12d88abca98a" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="110" y="164">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="true" uRef="environment_port_type">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IMbyNClientPortTypeExample" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient&#xA;{&#xA;&#x9;public interface BaseIMbyNClientPortTypeExample : BaseIEnvironmentPortTypeMultiplePartner, IQualifierKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIMbyNClientPortTypeExample.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient/bin/1.0.0.0/BaseIMbyNClientPortTypeExample.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/BaseIEnvironmentPortType.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;using System.ServiceModel;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient&#xA;{&#xA;&#x9;[ServiceContract]&#xA;&#x9;public interface IMbyNClientPortTypeExample : BaseIMbyNClientPortTypeExample, IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;&#x9;[OperationContract]&#xA;&#x9;&#x9;void some_method_1(int arg1,                &#x9; &#x9;&#x9;  // ALL GATHER&#xA;&#x9;&#x9;                 int arg2,                &#x9;&#x9; &#x9;&#x9;  // ALL REDUCE&#xA;&#x9;&#x9;                 int arg3,                &#x9;&#x9;  &#x9;&#x9;  // ALL SCAN&#xA;&#x9;&#x9;                 IScatter&lt;int> arg4,      &#x9;&#x9;  // ALL TO ALL&#xA;&#x9;&#x9;                 IScatter&lt;int> arg5,      &#x9;&#x9;  // REDUCE_SCATTER&#xA;&#x9;&#x9;                 IScatter&lt;int> arg6);    &#x9;&#x9;  // SCAN_SCATTER&#xA;&#xA;&#x9;&#x9;[OperationContract]&#xA;&#x9;&#x9;IGather&lt;int> some_method_2(int arg1,                // ALL GATHER&#xA;&#x9;&#x9;&#x9;&#x9;                 int arg2,                &#x9;&#x9;  // ALL REDUCE&#xA;&#x9;&#x9;&#x9;&#x9;                 int arg3,                &#x9;&#x9;  // ALL SCAN&#xA;&#x9;&#x9;&#x9;&#x9;                 IScatter&lt;int> arg4,      // ALL TO ALL&#xA;&#x9;&#x9;&#x9;&#x9;                 IScatter&lt;int> arg5,      // REDUCE_SCATTER&#xA;&#x9;&#x9;&#x9;&#x9;                 IScatter&lt;int> arg6);     // SCAN_SCATTER&#xA;&#xA;&#x9;&#x9;[OperationContract]&#xA;&#x9;&#x9;IReduce&lt;int> some_method_3(int arg1,                // ALL GATHER&#xA;&#x9;&#x9;                         int arg2,                &#x9;&#x9;  // ALL REDUCE&#xA;&#x9;&#x9;                         int arg3,                &#x9;&#x9;  // ALL SCAN&#xA;&#x9;&#x9;                         IScatter&lt;int> arg4,      // ALL TO ALL&#xA;&#x9;&#x9;                         IScatter&lt;int> arg5,      // REDUCE_SCATTER&#xA;&#x9;&#x9;                         IScatter&lt;int> arg6);     // SCAN_SCATTER&#xA;&#xA;&#x9;&#x9;[OperationContract]&#xA;&#x9;&#x9;IScan&lt;int> some_method_4(int arg1,                  // ALL GATHER&#xA;&#x9;&#x9;                         int arg2,                &#x9;&#x9;  // ALL REDUCE&#xA;&#x9;&#x9;                         int arg3,                        // ALL SCAN&#xA;&#x9;&#x9;                         IScatter&lt;int> arg4,      // ALL TO ALL&#xA;&#x9;&#x9;                         IScatter&lt;int> arg5,      // REDUCE_SCATTER&#xA;&#x9;&#x9;                         IScatter&lt;int> arg6);     // SCAN_SCATTER&#xA;&#xA;&#x9;&#x9;[OperationContract]&#xA;&#x9;&#x9;IGather&lt;int> some_method_5(int arg1,                // ALL GATHER&#xA;&#x9;&#x9;                           int arg2,                      // ALL REDUCE&#xA;&#x9;&#x9;                           int arg3,                      // ALL SCAN&#xA;&#x9;&#x9;                           IScatter&lt;int> arg4,    // ALL TO ALL&#xA;&#x9;&#x9;                           IScatter&lt;int> arg5,    // REDUCE_SCATTER&#xA;&#x9;&#x9;                           IScatter&lt;int> arg6);   // SCAN_SCATTER&#xA;&#xA;&#x9;&#x9;[OperationContract]&#xA;&#x9;&#x9;IReduce&lt;int> some_method_6(int arg1,                // ALL GATHER&#xA;&#x9;&#x9;                           int arg2,                      // ALL REDUCE&#xA;&#x9;&#x9;                           int arg3,                      // ALL SCAN&#xA;&#x9;&#x9;                           IScatter&lt;int> arg4,    // ALL TO ALL&#xA;&#x9;&#x9;                           IScatter&lt;int> arg5,    // REDUCE_SCATTER&#xA;&#x9;&#x9;                           IScatter&lt;int> arg6);   // SCAN_SCATTER&#xA;&#xA;&#x9;&#x9;[OperationContract]&#xA;&#x9;&#x9;IScan&lt;int> some_method_7(int arg1,                  // ALL GATHER&#xA;&#x9;&#x9;                         int arg2,                        // ALL REDUCE&#xA;&#x9;&#x9;                         int arg3,                        // ALL SCAN&#xA;&#x9;&#x9;                         IScatter&lt;int> arg4,      // ALL TO ALL&#xA;&#x9;&#x9;                         IScatter&lt;int> arg5,      // REDUCE_SCATTER&#xA;&#x9;&#x9;                         IScatter&lt;int> arg6);     // SCAN_SCATTER&#xA;&#x9;}&#xA;}" name="IMbyNClientPortTypeExample.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient/bin/1.0.0.0/IMbyNClientPortTypeExample.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.environment.example.MbyN.EnvironmentPortTypeClient/bin/1.0.0.0/BaseIMbyNClientPortTypeExample.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+          <externalDependency>System.ServiceModel</externalDependency>
+        </file>
+      </sources>
+      <visualDescription h="57" w="284" x="6" y="89">
+        <color b="144" g="238" r="144"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IMbyNClientPortTypeExample" multiple="true" private="false" replica="0" uRef="environment_port_type" visibleInterface="true">
+      <super cRef="base" uRef="environment_port_type"/>
+      <visualDescription h="57" w="202" x="16" y="351"/>
+    </unit>
+  </componentInfo>
+</component:component>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000093de7d81fbe520c4e138891e59725785116dfc7242ea76c084cef5a1a5087cdebe6af0274ca12880bd74caa4cdc2d15f64205c55bb4e1067e030277b5d7b305c4651e6eb70d67c0ea2a90c5c21648f33e23171f09c38a3cc502f9b9472d2e91aa0b06b616cf91e5a373098a68a581388a6defd2ae77ffa4c64cbff2413c513bf" isAbstract="true" kind="Qualifier" name="EnvironmentPortTypeSinglePartner" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a7f4455ed771d35b8c63aac38fe6cb44633078b88be6469674af51bf43b72d9072e92c5545b298d1aa4c0ce137ca4e5a9705f3b8df339ade181b3339f649aacde35c9007d58dc7695f20f3afe73d3d80a771011f119628af69a205ab0b9dfc35474820f4bfa19913fa2085c1d869a2303eca96af62c3371e545548417f24e783" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/EnvironmentPortType.hpe" name="EnvironmentPortType" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+        <visualDescription h="75" w="100" x="107" y="183">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="true" uRef="environment_port_type">
+          <visualDescription h="20" w="20" x="39" y="41"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IEnvironmentPortTypeSinglePartner" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner&#xA;{&#xA;&#x9;public interface BaseIEnvironmentPortTypeSinglePartner : BaseIEnvironmentPortType, IQualifierKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIEnvironmentPortTypeSinglePartner.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/BaseIEnvironmentPortTypeSinglePartner.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/BaseIEnvironmentPortType.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner&#xA;{&#xA;&#x9;public interface IEnvironmentPortTypeSinglePartner : BaseIEnvironmentPortTypeSinglePartner, IEnvironmentPortType&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IEnvironmentPortTypeSinglePartner.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/IEnvironmentPortTypeSinglePartner.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner/bin/1.0.0.0/BaseIEnvironmentPortTypeSinglePartner.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="57" w="308" x="44" y="86">
+        <color b="144" g="238" r="144"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IEnvironmentPortTypeSinglePartner" multiple="true" private="false" replica="0" uRef="environment_port_type" visibleInterface="true">
+      <super cRef="base" uRef="environment_port_type"/>
+      <visualDescription h="57" w="202" x="0" y="382"/>
+    </unit>
+  </componentInfo>
+</component:component>

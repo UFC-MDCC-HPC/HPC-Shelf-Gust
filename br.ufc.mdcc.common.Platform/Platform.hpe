@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000033b72626421204d15439ece79546e0af6b7e65d0b8f0c4ae31e16305243076e51c4991d737813a3345fdf9e60ea1a227608c962f0bb2d2b9a34006e695f64de43c2e7d447370d7249d7e81ba279a088ddf925404767a68e80de8cd7ad18502fb188fbcc6ac03b7f1004710b59af1bedd8830520aa694613435ebd407e00e3689" isAbstract="true" kind="Platform" name="Platform" packagePath="br.ufc.mdcc.common">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IPlatform" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.common.Platform { &#xA;&#xA;&#x9;public interface BaseIPlatform : IPlatformKind &#xA;{&#xA;&#xA;&#xA;&#xA;} // end main interface &#xA;&#xA;} // end namespace &#xA;" name="BaseIPlatform.cs" srcType="base" uri="br.ufc.mdcc.common.Platform/bin/1.0.0.0/BaseIPlatform.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.common.Platform { &#xA;&#xA;public interface IPlatform : BaseIPlatform&#xA;{&#xA;&#xA;&#xA;} // end main interface &#xA;&#xA;} // end namespace &#xA;" name="IPlatform.cs" srcType="user" uri="br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.common.Platform/bin/1.0.0.0/BaseIPlatform.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="248" y="124">
+        <color b="0" g="255" r="0"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IPlatform" multiple="true" private="false" replica="0" uRef="platform" visibleInterface="true">
+      <visualDescription h="40" w="80" x="160" y="216"/>
+    </unit>
+  </componentInfo>
+</component:component>

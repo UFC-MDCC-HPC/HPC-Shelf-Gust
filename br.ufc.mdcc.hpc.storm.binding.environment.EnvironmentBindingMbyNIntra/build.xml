@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/heron/hpe/heron/cache" default="all" name="EnvironmentBindingMbyNIntra">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="EnvironmentBindingMbyNIntra-1.0.0.0">
+    <ifnot targetexists="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0">
+      <mkdir dir="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/EnvironmentBindingMbyNIntra.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/BaseIClientMbyNIntra.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/src/1.0.0.0/BaseIClientMbyNIntra.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultipleServer/bin/1.0.0.0/IEnvironmentPortTypeMultipleServer.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/BaseIClientMbyN.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/EnvironmentBindingMbyNIntra.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/IClientMbyNIntra.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/src/1.0.0.0/IClientMbyNIntra.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultipleServer/bin/1.0.0.0/IEnvironmentPortTypeMultipleServer.dll"/>
+        <include name="/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/BaseIClientMbyNIntra.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/IClientMbyN.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/EnvironmentBindingMbyNIntra.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/BaseIServerMbyNIntra.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/src/1.0.0.0/BaseIServerMbyNIntra.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultipleClient/bin/1.0.0.0/IEnvironmentPortTypeMultipleClient.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/BaseIServerMbyN.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/EnvironmentBindingMbyNIntra.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/IServerMbyNIntra.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/src/1.0.0.0/IServerMbyNIntra.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultipleClient/bin/1.0.0.0/IEnvironmentPortTypeMultipleClient.dll"/>
+        <include name="/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/BaseIServerMbyNIntra.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/bin/1.0.0.0/IServerMbyN.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="EnvironmentBindingMbyNIntra-1.0.0.0" name="all"/>
+</project>

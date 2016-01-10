@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/heron/hpe/heron/cache" default="all" name="Binding">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="Binding-1.0.0.0">
+    <ifnot targetexists="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0">
+      <mkdir dir="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/BaseICommunicatorRoot.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.channel.Binding/src/1.0.0.0/BaseICommunicatorRoot.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.kind.Binding/bin/1.0.0.0/BaseIRoot.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/ICommunicatorRoot.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.channel.Binding/src/1.0.0.0/ICommunicatorRoot.cs"/>
+      </sources>
+      <references>
+        <include name="/br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/BaseICommunicatorRoot.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.kind.Binding/bin/1.0.0.0/IRoot.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/BaseICommunicator.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.channel.Binding/src/1.0.0.0/BaseICommunicator.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.kind.Binding/bin/1.0.0.0/BaseIPeer.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/ICommunicator.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.channel.Binding/src/1.0.0.0/ICommunicator.cs"/>
+      </sources>
+      <references>
+        <include name="/br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/BaseICommunicator.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.kind.Binding/bin/1.0.0.0/IPeer.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="Binding-1.0.0.0" name="all"/>
+</project>

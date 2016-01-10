@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a7f4455ed771d35b8c63aac38fe6cb44633078b88be6469674af51bf43b72d9072e92c5545b298d1aa4c0ce137ca4e5a9705f3b8df339ade181b3339f649aacde35c9007d58dc7695f20f3afe73d3d80a771011f119628af69a205ab0b9dfc35474820f4bfa19913fa2085c1d869a2303eca96af62c3371e545548417f24e783" isAbstract="true" kind="Qualifier" name="EnvironmentPortType" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IEnvironmentPortType" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType&#xA;{&#xA;&#x9;public interface BaseIEnvironmentPortType : IQualifierKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIEnvironmentPortType.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/BaseIEnvironmentPortType.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType&#xA;{&#xA;&#x9;public interface IEnvironmentPortType : BaseIEnvironmentPortType&#xA;&#x9;{&#xA;&#xA;&#x9;}&#xA;}" name="IEnvironmentPortType.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/BaseIEnvironmentPortType.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="57" w="202" x="148" y="106">
+        <color b="144" g="238" r="144"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IEnvironmentPortType" multiple="true" private="false" replica="0" uRef="environment_port_type" visibleInterface="true">
+      <visualDescription h="57" w="202" x="148" y="220"/>
+    </unit>
+  </componentInfo>
+</component:component>

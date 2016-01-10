@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/heron/hpe/heron/cache" default="all" name="EnvironmentBindingGathercastIntra">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="EnvironmentBindingGathercastIntra-1.0.0.0">
+    <ifnot targetexists="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/bin/1.0.0.0">
+      <mkdir dir="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/EnvironmentBindingGathercastIntra.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/bin/1.0.0.0/BaseIClientGathercastIntra.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/src/1.0.0.0/BaseIClientGathercastIntra.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercast/bin/1.0.0.0/BaseIClientGathercast.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/EnvironmentBindingGathercastIntra.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/bin/1.0.0.0/IClientGathercastIntra.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/src/1.0.0.0/IClientGathercastIntra.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll"/>
+        <include name="/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/bin/1.0.0.0/BaseIClientGathercastIntra.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercast/bin/1.0.0.0/IClientGathercast.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/EnvironmentBindingGathercastIntra.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/bin/1.0.0.0/BaseIServerGathercastIntra.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/src/1.0.0.0/BaseIServerGathercastIntra.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercast/bin/1.0.0.0/BaseIServerGathercast.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/EnvironmentBindingGathercastIntra.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/bin/1.0.0.0/IServerGathercastIntra.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Storm-Bindings/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/src/1.0.0.0/IServerGathercastIntra.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType/bin/1.0.0.0/IEnvironmentPortType.dll"/>
+        <include name="/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercastIntra/bin/1.0.0.0/BaseIServerGathercastIntra.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingGathercast/bin/1.0.0.0/IServerGathercast.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="EnvironmentBindingGathercastIntra-1.0.0.0" name="all"/>
+</project>

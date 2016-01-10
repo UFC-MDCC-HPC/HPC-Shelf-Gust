@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2C633D76-F5C2-4801-9564-BB4F68E020BE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNInter</RootNamespace>
+    <AssemblyName>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNInter</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\EnvironmentBindingMbyNInter.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="DGAC">
+      <HintPath>..\..\..\..\..\..\..\usr\lib\mono\DGAC\DGAC.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\src\1.0.0.0\BaseIClientMbyNInter.cs">
+      <Link>BaseIClientMbyNInter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\BaseIServerMbyNInter.cs">
+      <Link>BaseIServerMbyNInter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IClientMbyNInter.cs">
+      <Link>IClientMbyNInter.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IServerMbyNInter.cs">
+      <Link>IServerMbyNInter.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN.csproj">
+      <Project>{E3CA865E-AFBF-40C4-B7CE-0CEF37F4B21F}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase.csproj">
+      <Project>{226E5496-FDF2-4765-9C43-D2A2770EE760}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType.csproj">
+      <Project>{4BB52CBE-64B0-4E9C-812F-921ED3FB87AF}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.channel.Binding\br.ufc.mdcc.hpc.storm.binding.channel.Binding\br.ufc.mdcc.hpc.storm.binding.channel.Binding.csproj">
+      <Project>{40488558-F21F-4863-A466-15F96A6CD131}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.channel.Binding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner.csproj">
+      <Project>{B1988D74-54AE-4031-B185-E046226BC359}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
