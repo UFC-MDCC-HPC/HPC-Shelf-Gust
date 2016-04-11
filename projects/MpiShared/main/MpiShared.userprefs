@@ -1,6 +1,12 @@
 ﻿<Properties StartupItem="main/main.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../shared/shared/mpishared.c">
+    <Files>
+      <File FileName="../shared/shared/mpishared.c" Line="23" Column="1" />
+      <File FileName="../shared/shared/mpishared.h" Line="1" Column="1" />
+      <File FileName="main/Program.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

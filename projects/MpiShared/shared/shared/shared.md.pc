@@ -1,5 +1,5 @@
 Name: shared
 Description: 
 Version: 0.1
-Libs: -L"/home/cenez/workspace/gust/MpiShared/bin" -lshared
-Cflags: -I"/home/cenez/workspace/gust/MpiShared/shared/shared"
+Libs: -L"/home/cenez/workspace/gust/HPC-Shelf-Gust/projects/MpiShared/bin" -lshared
+Cflags: -I"/home/cenez/workspace/gust/HPC-Shelf-Gust/projects/MpiShared/shared/shared"

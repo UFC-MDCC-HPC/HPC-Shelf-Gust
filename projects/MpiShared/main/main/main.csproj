@@ -34,7 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="MPI">
-      <HintPath>..\..\..\..\..\..\..\usr\local\lib\MPI.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\usr\local\lib\MPI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
