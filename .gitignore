@@ -29,8 +29,8 @@ to_deploy.txt3
 .metadata
 
 # begin temp
-Teste.cs
-Program.cs
+#Teste.cs
+#Program.cs
 commit
 #end temp
 
