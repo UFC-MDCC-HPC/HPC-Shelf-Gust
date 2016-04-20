@@ -4,3 +4,6 @@
 [submodule "external/KaHIP"]
 	path = external/KaHIP
 	url = https://github.com/schulzchristian/KaHIP
+[submodule "external/HPC-Shelf-MapReduce"]
+	path = external/HPC-Shelf-MapReduce
+	url = https://github.com/UFC-MDCC-HPC/HPC-Shelf-MapReduce
