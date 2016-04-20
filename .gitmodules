@@ -1,0 +1,6 @@
+[submodule "external/parmetis"]
+	path = external/parmetis
+	url = https://github.com/scibuilder/parmetis
+[submodule "external/KaHIP"]
+	path = external/KaHIP
+	url = https://github.com/schulzchristian/KaHIP
