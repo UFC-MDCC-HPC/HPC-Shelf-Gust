@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="Gust/Gust.csproj">
+﻿<Properties StartupItem="Gust/Gust/Gust.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
