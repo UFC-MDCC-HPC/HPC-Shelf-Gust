@@ -27,6 +27,7 @@ local_files
 to_deploy.txt2
 to_deploy.txt3
 .metadata
+external
 
 # begin temp
 #Teste.cs
