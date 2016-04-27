@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000013c5d956e8ca7627c1fe8513efbb0bec405dff82347769461c6ae03bfa16c10e2d46b08e13add22a3b1c2fb521aa3167f6131ba6e14496e7958c784dd4b8d168fa8fb30602fe38ea801a0431f68c465cacba41bf2248242d7ab3062f69f7a6f3472bf7b8ea2fc28b9cf97410164ea497517d49779c2c5932dfaed53a4b479d80" isAbstract="true" kind="Model" name="Model" packagePath="br.ufc.mdcc.model">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000043ee977ee060bb0a2504f591ef96f1b8c2557290d09147711e0042de39c0406209a9ec84cd73a0eda1f9975d81c6287e2c0bb3dcfc4c2cbae59033937854cc752a963e0755b46c34b8361414248916b01a1d3462cded1132da9e96252474d6131006d43ccb58c47aad6e7371ecdcc11adf5822dcef3273c72ea8d128573846ab" isAbstract="true" kind="Computation" name="Model" packagePath="br.ufc.mdcc.model">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,18 +8,15 @@
   </header>
   <componentInfo>
     <interface iRef="IModel" nArgs="0">
-      <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.model.Model { &#xA;&#xA;public interface BaseIModel : IModelStructureKind &#xA;{&#xA;&#xA;&#xA;&#xA;} // end main interface &#xA;&#xA;} // end namespace &#xA;" name="BaseIModel.cs" srcType="base" uri="br.ufc.mdcc.model.Model/bin/1.0.0.0/BaseIModel.dll" versionId="1.0.0.0"/>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.model.Model { &#xA;&#xA;public interface IModel : BaseIModel&#xA;{&#xA;&#x9;&#x9;// void loadFrom (IModel o);&#xA;&#x9;&#x9;// IModel newInstance ();&#xA;&#x9;&#x9;// IModel clone();&#xA;&#xA;&#x9;&#x9;object Instance { get; set;}&#xA;&#x9;&#x9;object newInstance ();&#xA;&#xA;} // end main interface &#xA;&#xA;} // end namespace &#xA;" name="IModel.cs" srcType="user" uri="br.ufc.mdcc.model.Model/bin/1.0.0.0/IModel.dll" versionId="1.0.0.0">
-          <dependency>%WORKSPACE/br.ufc.mdcc.model.Model/bin/1.0.0.0/BaseIModel.dll</dependency>
-        </file>
-      </sources>
-      <visualDescription h="40" w="80" x="112" y="105">
-        <color b="0" g="255" r="255"/>
+      <visualDescription h="40" w="80" x="277" y="268">
+        <color b="230" g="216" r="173"/>
       </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
     </interface>
-    <unit facet="0" iRef="IModel" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
-      <visualDescription h="40" w="80" x="182" y="158"/>
+    <unit facet="0" iRef="IModel" multiple="true" private="false" replica="0" uRef="model" visibleInterface="true">
+      <visualDescription h="40" w="80" x="277" y="348"/>
     </unit>
   </componentInfo>
 </component:component>
