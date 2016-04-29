@@ -17,8 +17,8 @@ RemoteSystemsTempFiles
 *.mdb
 *.exe
 *.dll
-*.snk
-*.pub
+#*.snk
+#*.pub
 
 Debug
 bin
