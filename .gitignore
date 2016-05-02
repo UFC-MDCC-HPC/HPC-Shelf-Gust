@@ -26,7 +26,7 @@ obj
 local_files
 to_deploy.txt2
 to_deploy.txt3
-#.metadata
+.metadata
 external
 
 # begin temp
