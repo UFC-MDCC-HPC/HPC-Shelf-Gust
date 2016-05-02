@@ -39,7 +39,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="gust_function" location="br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/GustFunction.hpe" multiple="false" name="GustFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
+    <innerComponent localRef="gust_function" location="br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/GustFunction.hpe" multiple="false" name="GustFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="true">
       <visualDescription h="60" w="211" x="481" y="339">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -63,6 +63,10 @@
       <visualDescription h="40" w="119" x="270" y="211">
         <color b="191" g="191" r="191"/>
       </visualDescription>
+      <port name="gust_function">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="gust_function" sRef="gust_function"/>
+      </port>
       <action id="main">
         <protocol/>
       </action>
