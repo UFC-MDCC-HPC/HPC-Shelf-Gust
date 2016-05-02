@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000043ee977ee060bb0a2504f591ef96f1b8c2557290d09147711e0042de39c0406209a9ec84cd73a0eda1f9975d81c6287e2c0bb3dcfc4c2cbae59033937854cc752a963e0755b46c34b8361414248916b01a1d3462cded1132da9e96252474d6131006d43ccb58c47aad6e7371ecdcc11adf5822dcef3273c72ea8d128573846ab" isAbstract="true" kind="Computation" name="Elasticity" packagePath="br.ufc.mdcc.hpcshelf.gust.backend">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007178edf4271d179107d6a8e26d9eb34f28794b9b71ad319d2f69ce00504346641e90f246edab937db4de0543cccbb4bf33bf77eec7ab80cd9dc7d0d5483c216746f42ff74e8a61323bb88680e2eb0d9402a3473bf8a9db7129dcb5ddfaf1378f4058dcf23e98f72ed6f5cc452cb903447c209e68117339345489cac7f412ccb8" isAbstract="true" kind="Computation" name="Elasticity" packagePath="br.ufc.mdcc.hpcshelf.gust.backend">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,15 +8,15 @@
   </header>
   <componentInfo>
     <interface iRef="IElasticity" nArgs="0">
-      <visualDescription h="40" w="80" x="277" y="268">
-        <color b="230" g="216" r="173"/>
+      <visualDescription h="40" w="121" x="277" y="268">
+        <color b="255" g="0" r="0"/>
       </visualDescription>
       <action id="main">
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="IElasticity" multiple="true" private="false" replica="0" uRef="model" visibleInterface="true">
-      <visualDescription h="40" w="80" x="277" y="348"/>
+    <unit facet="0" iRef="IElasticity" multiple="false" private="false" replica="0" uRef="elasticity" visibleInterface="true">
+      <visualDescription h="40" w="121" x="277" y="348"/>
     </unit>
   </componentInfo>
 </component:component>

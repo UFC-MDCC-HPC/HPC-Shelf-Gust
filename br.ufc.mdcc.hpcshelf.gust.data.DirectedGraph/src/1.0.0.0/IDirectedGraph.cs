@@ -1,16 +1,18 @@
+using System;
+using System.Collections.Generic;
 using br.ufc.pargo.hpe.kinds;
+using br.ufc.mdcc.hpcshelf.gust.data.Graph;
 
-namespace br.ufc.mdcc.model.Model { 
-
-public interface IModel : BaseIModel
+namespace br.ufc.mdcc.hpcshelf.gust.data.DirectedGraph
 {
-		// void loadFrom (IModel o);
-		// IModel newInstance ();
-		// IModel clone();
+	public interface IDirectedGraph<V,E> : BaseIDirectedGraph<V,E>, IGraph<V,E>
+	{
+		int inDegreeOf(V vertex);
 
-		object Instance { get; set;}
-		object newInstance ();
+		HashSet<E> incomingEdgesOf(V vertex);
 
-} // end main interface 
+		int outDegreeOf(V vertex);
 
-} // end namespace 
+		HashSet<E> outgoingEdgesOf(V vertex);
+	}
+}

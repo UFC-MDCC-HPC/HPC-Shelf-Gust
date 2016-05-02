@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000043ee977ee060bb0a2504f591ef96f1b8c2557290d09147711e0042de39c0406209a9ec84cd73a0eda1f9975d81c6287e2c0bb3dcfc4c2cbae59033937854cc752a963e0755b46c34b8361414248916b01a1d3462cded1132da9e96252474d6131006d43ccb58c47aad6e7371ecdcc11adf5822dcef3273c72ea8d128573846ab" isAbstract="true" kind="Computation" name="PartitionFunction" packagePath="br.ufc.mdcc.hpcshelf.gust.computation">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000332f5fdf55a232c364664d323106a3305c6379dc3082bc87f15dd43db5edaa832d6171f1f4f5cd8e439da7e4351b80d8d07d3f77b6060e4ee1186d576c251d2d372a4b0dac57afa2ed035d07910263055ad8e9d420434eb876525bd42beb34f8d38bc5892d51d645b45369372c2ff9e828fa968d88a5c20a564a92cea16e4b86" isAbstract="true" kind="Computation" name="PartitionFunction" packagePath="br.ufc.mdcc.hpcshelf.gust.computation">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,15 +8,15 @@
   </header>
   <componentInfo>
     <interface iRef="IPartitionFunction" nArgs="0">
-      <visualDescription h="40" w="80" x="277" y="268">
-        <color b="230" g="216" r="173"/>
+      <visualDescription h="40" w="142" x="277" y="268">
+        <color b="191" g="191" r="191"/>
       </visualDescription>
       <action id="main">
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="IPartitionFunction" multiple="true" private="false" replica="0" uRef="model" visibleInterface="true">
-      <visualDescription h="40" w="80" x="277" y="348"/>
+    <unit facet="0" iRef="IPartitionFunction" multiple="false" private="false" replica="0" uRef="partitionfunction" visibleInterface="true">
+      <visualDescription h="40" w="142" x="277" y="348"/>
     </unit>
   </componentInfo>
 </component:component>

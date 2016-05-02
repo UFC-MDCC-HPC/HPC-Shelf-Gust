@@ -1,14 +1,11 @@
 /* AUTOMATICALLY GENERATE CODE */
 
 using br.ufc.pargo.hpe.kinds;
+using br.ufc.mdcc.hpcshelf.gust.data.Graph;
 
-namespace br.ufc.mdcc.model.Model { 
-
-public interface BaseIModel : IDataStructureKind 
+namespace br.ufc.mdcc.hpcshelf.gust.data.UndirectedGraph
 {
-
-
-
-} // end main interface 
-
-} // end namespace 
+	public interface BaseIUndirectedGraph<V,E> : BaseIGraph<V,E>, IDataStructureKind 
+	{
+	}
+}

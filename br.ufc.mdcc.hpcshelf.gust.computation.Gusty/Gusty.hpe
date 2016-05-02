@@ -1,22 +1,52 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000043ee977ee060bb0a2504f591ef96f1b8c2557290d09147711e0042de39c0406209a9ec84cd73a0eda1f9975d81c6287e2c0bb3dcfc4c2cbae59033937854cc752a963e0755b46c34b8361414248916b01a1d3462cded1132da9e96252474d6131006d43ccb58c47aad6e7371ecdcc11adf5822dcef3273c72ea8d128573846ab" isAbstract="true" kind="Computation" name="Gusty" packagePath="br.ufc.mdcc.hpcshelf.gust.computation">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007f874651922f8150fcab4e0bcc4875fcd40f0dcf383cab3dd8a21a17008f3d0cfacd8eea665262c4bc47146d2a41227e12f4204213a40c917a0a68a61ae19f305bf0dcedf1b755132572dd57a525b03cd02d460314a89f27dbf30faf5623fecf24fc57b3a8b0215bfc5cea8fdf5b776dac70792e880598f266541527930b35b2" isAbstract="true" kind="Computation" name="Gusty" packagePath="br.ufc.mdcc.hpcshelf.gust.computation">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
   <componentInfo>
+    <innerComponent localRef="algorithm" location="br.ufc.mdcc.hpcshelf.gust.computation.GustFront/GustFront.hpe" multiple="false" name="GustFront" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
+      <visualDescription h="60" w="100" x="404" y="422">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="gustfront">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="elasticity" location="br.ufc.mdcc.hpcshelf.gust.backend.Elasticity/Elasticity.hpe" multiple="false" name="Elasticity" package="br.ufc.mdcc.hpcshelf.gust.backend" exposed="false">
+      <visualDescription h="60" w="100" x="184" y="431">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="elasticity">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
     <interface iRef="IGusty" nArgs="0">
-      <visualDescription h="40" w="80" x="277" y="268">
-        <color b="230" g="216" r="173"/>
+      <slice isRef="algorithm">
+        <originRef cRef="algorithm" iRef="IGustFront"/>
+        <visualDescription h="10" w="10" x="62" y="21"/>
+      </slice>
+      <slice isRef="elasticity">
+        <originRef cRef="elasticity" iRef="IElasticity"/>
+        <visualDescription h="10" w="10" x="13" y="24"/>
+      </slice>
+      <visualDescription h="40" w="107" x="277" y="268">
+        <color b="191" g="191" r="191"/>
       </visualDescription>
       <action id="main">
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="IGusty" multiple="true" private="false" replica="0" uRef="model" visibleInterface="true">
-      <visualDescription h="40" w="80" x="277" y="348"/>
+    <unit facet="0" iRef="IGusty" multiple="true" private="false" replica="0" uRef="gusty" visibleInterface="true">
+      <slices cRef="algorithm" inner_replica="0" slice_replica="0" uRef="gustfront" sliceName="algorithm" transitive="false">
+        <visualDescription h="10" w="10" x="62" y="21"/>
+      </slices>
+      <slices cRef="elasticity" inner_replica="0" slice_replica="0" uRef="elasticity" sliceName="elasticity" transitive="false">
+        <visualDescription h="10" w="10" x="13" y="24"/>
+      </slices>
+      <visualDescription h="40" w="107" x="277" y="348"/>
     </unit>
   </componentInfo>
 </component:component>

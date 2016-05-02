@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000043ee977ee060bb0a2504f591ef96f1b8c2557290d09147711e0042de39c0406209a9ec84cd73a0eda1f9975d81c6287e2c0bb3dcfc4c2cbae59033937854cc752a963e0755b46c34b8361414248916b01a1d3462cded1132da9e96252474d6131006d43ccb58c47aad6e7371ecdcc11adf5822dcef3273c72ea8d128573846ab" isAbstract="true" kind="Computation" name="Colector" packagePath="br.ufc.mdcc.hpcshelf.gust.computation">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000037faa4fb7b815b099b52448bb4a026163e5fa7f61764ecf3575486a0235fccaf24c286cc4fd215a2dcce91d81c70a39546c37c14cc853af82dbeed02dcdb3854285e1b4c0de7fdaa591dd0e36b3339b8a3e869e49fce6e2ed373fd4caeb9c3d6a2467c120482dba6a5ad926f663b65d49b3ade07f261fda3158af4826d514b8a" isAbstract="true" kind="Computation" name="Colector" packagePath="br.ufc.mdcc.hpcshelf.gust.computation">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,15 +8,15 @@
   </header>
   <componentInfo>
     <interface iRef="IColector" nArgs="0">
-      <visualDescription h="40" w="80" x="277" y="268">
-        <color b="230" g="216" r="173"/>
+      <visualDescription h="40" w="130" x="277" y="268">
+        <color b="229" g="229" r="229"/>
       </visualDescription>
       <action id="main">
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="IColector" multiple="true" private="false" replica="0" uRef="model" visibleInterface="true">
-      <visualDescription h="40" w="80" x="277" y="348"/>
+    <unit facet="0" iRef="IColector" multiple="false" private="false" replica="0" uRef="colector" visibleInterface="true">
+      <visualDescription h="40" w="130" x="277" y="348"/>
     </unit>
   </componentInfo>
 </component:component>

@@ -1,16 +1,10 @@
 using br.ufc.pargo.hpe.kinds;
+using br.ufc.mdcc.hpcshelf.gust.data.Graph;
 
-namespace br.ufc.mdcc.model.Model { 
-
-public interface IModel : BaseIModel
+namespace br.ufc.mdcc.hpcshelf.gust.data.UndirectedGraph
 {
-		// void loadFrom (IModel o);
-		// IModel newInstance ();
-		// IModel clone();
-
-		object Instance { get; set;}
-		object newInstance ();
-
-} // end main interface 
-
-} // end namespace 
+	public interface IUndirectedGraph<V,E> : BaseIUndirectedGraph<V,E>, IGraph<V,E>
+	{
+		int degreeOf(V vertex);
+	}
+}

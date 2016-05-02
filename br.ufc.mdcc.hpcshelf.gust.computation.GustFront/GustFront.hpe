@@ -1,22 +1,77 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000043ee977ee060bb0a2504f591ef96f1b8c2557290d09147711e0042de39c0406209a9ec84cd73a0eda1f9975d81c6287e2c0bb3dcfc4c2cbae59033937854cc752a963e0755b46c34b8361414248916b01a1d3462cded1132da9e96252474d6131006d43ccb58c47aad6e7371ecdcc11adf5822dcef3273c72ea8d128573846ab" isAbstract="true" kind="Computation" name="GustFront" packagePath="br.ufc.mdcc.hpcshelf.gust.computation">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a74363a2bd3de6674188b90f93b92667ef589fe805ea947a897783ff98b3c1c2f20773ef16a3b780f90eac5a1b9d9bc67f26144a74f29981178e8d23d7f084a61370a7ce0e4b57f2a2467924a0abecbe83bf27e50df07ffe82515af1c0da2c86c2a8e26d6392054567050700ff0de31936191c42596df731165d1b685f705484" isAbstract="true" kind="Computation" name="GustFront" packagePath="br.ufc.mdcc.hpcshelf.gust.computation">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
   <componentInfo>
+    <innerComponent localRef="oik" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="291" y="535">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="oiv" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="484" y="526">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="ook" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="315" y="726">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="oov" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="509" y="732">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="gust_function" location="br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/GustFunction.hpe" multiple="false" name="GustFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
+      <visualDescription h="60" w="211" x="481" y="339">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="oik" varName="OIK"/>
+      <parameter formFieldId="oov" varName="OOV"/>
+      <parameter formFieldId="ook" varName="OOK"/>
+      <parameter formFieldId="oiv" varName="OIV"/>
+      <unitBounds parallel="false" uRef="gustfunction">
+        <visualDescription h="20" w="20" x="7" y="20"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="oik" direct="true" varName="OIK"/>
+    <supplyParameter cRef="oiv" direct="true" varName="OIV"/>
+    <supplyParameter cRef="ook" direct="true" varName="OOK"/>
+    <supplyParameter cRef="oov" direct="true" varName="OOV"/>
     <interface iRef="IGustFront" nArgs="0">
-      <visualDescription h="40" w="80" x="277" y="268">
-        <color b="230" g="216" r="173"/>
+      <slice isRef="gust_function">
+        <originRef cRef="gust_function" iRef="IGustFunction"/>
+        <visualDescription h="10" w="10" x="96" y="15"/>
+      </slice>
+      <visualDescription h="40" w="119" x="270" y="211">
+        <color b="191" g="191" r="191"/>
       </visualDescription>
       <action id="main">
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="IGustFront" multiple="true" private="false" replica="0" uRef="model" visibleInterface="true">
-      <visualDescription h="40" w="80" x="277" y="348"/>
+    <unit facet="0" iRef="IGustFront" multiple="false" private="false" replica="0" uRef="gustfront" visibleInterface="true">
+      <slices cRef="gust_function" inner_replica="0" slice_replica="0" uRef="gustfunction" sliceName="gust_function" transitive="false">
+        <visualDescription h="10" w="10" x="96" y="15"/>
+      </slices>
+      <visualDescription h="40" w="119" x="277" y="348"/>
     </unit>
   </componentInfo>
 </component:component>

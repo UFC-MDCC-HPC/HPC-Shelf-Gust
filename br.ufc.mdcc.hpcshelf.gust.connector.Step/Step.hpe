@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000043ee977ee060bb0a2504f591ef96f1b8c2557290d09147711e0042de39c0406209a9ec84cd73a0eda1f9975d81c6287e2c0bb3dcfc4c2cbae59033937854cc752a963e0755b46c34b8361414248916b01a1d3462cded1132da9e96252474d6131006d43ccb58c47aad6e7371ecdcc11adf5822dcef3273c72ea8d128573846ab" isAbstract="true" kind="Computation" name="Step" packagePath="br.ufc.mdcc.hpcshelf.gust.connector">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bb3c0fd42484ac784f7348b045272d86897e080b208ba9fd9660591781ee940f06f7a9024021baf4d2fa63962962594d289d901a063380ea0422c421479ea957b570ac4cdec7ca6e48a4037d3a32aff8638a21f560c9e3cc35a412800d12fa7a318448e2c9c66c02de0cbed679c6d23b64b36ae6fff59ad72a7ba3663d61139f" isAbstract="true" kind="Synchronizer" name="Step" packagePath="br.ufc.mdcc.hpcshelf.gust.connector">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,15 +8,15 @@
   </header>
   <componentInfo>
     <interface iRef="IStep" nArgs="0">
-      <visualDescription h="40" w="80" x="277" y="268">
-        <color b="230" g="216" r="173"/>
+      <visualDescription h="40" w="80" x="318" y="362">
+        <color b="0" g="255" r="255"/>
       </visualDescription>
       <action id="main">
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="IStep" multiple="true" private="false" replica="0" uRef="model" visibleInterface="true">
-      <visualDescription h="40" w="80" x="277" y="348"/>
+    <unit facet="0" iRef="IStep" multiple="true" private="false" replica="0" uRef="step" visibleInterface="true">
+      <visualDescription h="40" w="80" x="318" y="442"/>
     </unit>
   </componentInfo>
 </component:component>

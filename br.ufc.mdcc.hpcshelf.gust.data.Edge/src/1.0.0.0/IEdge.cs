@@ -1,16 +1,9 @@
 using br.ufc.pargo.hpe.kinds;
+using br.ufc.mdcc.common.Data;
 
-namespace br.ufc.mdcc.model.Model { 
-
-public interface IModel : BaseIModel
+namespace br.ufc.mdcc.hpcshelf.gust.data.Edge
 {
-		// void loadFrom (IModel o);
-		// IModel newInstance ();
-		// IModel clone();
-
-		object Instance { get; set;}
-		object newInstance ();
-
-} // end main interface 
-
-} // end namespace 
+	public interface IEdge : BaseIEdge, IData
+	{
+	}
+}
