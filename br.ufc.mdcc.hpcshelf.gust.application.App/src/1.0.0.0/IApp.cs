@@ -1,16 +1,8 @@
 using br.ufc.pargo.hpe.kinds;
 
-namespace br.ufc.mdcc.model.Model { 
-
-public interface IModel : BaseIModel
+namespace br.ufc.mdcc.hpcshelf.gust.application.App
 {
-		// void loadFrom (IModel o);
-		// IModel newInstance ();
-		// IModel clone();
-
-		object Instance { get; set;}
-		object newInstance ();
-
-} // end main interface 
-
-} // end namespace 
+	public interface IApp : BaseIApp
+	{
+	}
+}

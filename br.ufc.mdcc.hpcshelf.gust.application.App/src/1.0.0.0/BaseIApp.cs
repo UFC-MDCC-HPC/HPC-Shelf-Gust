@@ -2,13 +2,9 @@
 
 using br.ufc.pargo.hpe.kinds;
 
-namespace br.ufc.mdcc.model.Model { 
-
-public interface BaseIModel : IDataStructureKind 
+namespace br.ufc.mdcc.hpcshelf.gust.application.App
 {
-
-
-
-} // end main interface 
-
-} // end namespace 
+	public interface BaseIApp : IApplicationKind 
+	{
+	}
+}

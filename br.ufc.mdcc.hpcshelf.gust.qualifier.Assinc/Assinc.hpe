@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005f221b67f5d7c9bec591ff1987f61122e647b6d603f86ac52ff691a9304ae891a32f0c7dee1d9afeed487f0b55cc231dd7d027983654233cef32820a72ada9833c6c08bc5cd760d075577c905747972983433188764900d07e8b27911748bc2e4ed786c0f7ea8cbbb713fed5eb3474e065b43fe8eb7a93d0b4d5c2acb6fc7fc0" isAbstract="true" kind="Qualifier" name="Assinc" packagePath="br.ufc.mdcc.hpcshelf.gust.qualifier">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000085c65bd06f6e96548d92afebb42ea4e76ce1299844b48446d81182155b6f799e2aafbd73bd7e37e27e42df86e8aa3e9be1f3f35da2af359bc7b9cfd1dc86b7652fef307a36dec702af4092595436a42612476b3289aa1ea44134fff23f6885620def17cf0f327d73872c880d18f69fd7bcc17f2d696928b5bd61959c517ca1b4" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.qualifier.Execution/Execution.hpe" name="Execution" package="br.ufc.mdcc.hpcshelf.gust.qualifier" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="333" y="512">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="execution">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IAssinc" nArgs="0">
+      <visualDescription h="40" w="80" x="281" y="317">
+        <color b="203" g="192" r="255"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IAssinc" multiple="false" private="false" replica="0" uRef="execution" visibleInterface="true">
+      <super cRef="base" uRef="execution"/>
+      <visualDescription h="40" w="80" x="281" y="397"/>
+    </unit>
+  </componentInfo>
+</component:component>

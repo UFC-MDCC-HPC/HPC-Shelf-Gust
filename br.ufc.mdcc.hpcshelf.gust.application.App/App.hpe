@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000043ee977ee060bb0a2504f591ef96f1b8c2557290d09147711e0042de39c0406209a9ec84cd73a0eda1f9975d81c6287e2c0bb3dcfc4c2cbae59033937854cc752a963e0755b46c34b8361414248916b01a1d3462cded1132da9e96252474d6131006d43ccb58c47aad6e7371ecdcc11adf5822dcef3273c72ea8d128573846ab" isAbstract="true" kind="Computation" name="App" packagePath="br.ufc.mdcc.hpcshelf.gust.application">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c1855428564b16f149d7cef31379d7d97cbd03440dae629dccdfb2d1bc0211377a8343b40e38a6b6141cc47b6a93dc206957b4b923488817fea693dd321e2103a5602ccd1394f74b2a7a0815b26d308240c74fea732da63463df45f4885f4a3304665a202c569960de7db57ca5af7b77233c0e588ea7d2d0aa43958e1e957391" isAbstract="true" kind="Application" name="App" packagePath="br.ufc.mdcc.hpcshelf.gust.application">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -8,15 +8,21 @@
   </header>
   <componentInfo>
     <interface iRef="IApp" nArgs="0">
-      <visualDescription h="40" w="80" x="277" y="268">
-        <color b="230" g="216" r="173"/>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.application.App&#xA;{&#xA;&#x9;public interface BaseIApp : IApplicationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIApp.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.application.App/bin/1.0.0.0/BaseIApp.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.application.App&#xA;{&#xA;&#x9;public interface IApp : BaseIApp&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IApp.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.application.App/bin/1.0.0.0/IApp.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.application.App/bin/1.0.0.0/BaseIApp.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="258" y="372">
+        <color b="0" g="165" r="255"/>
       </visualDescription>
       <action id="main">
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="IApp" multiple="true" private="false" replica="0" uRef="model" visibleInterface="true">
-      <visualDescription h="40" w="80" x="277" y="348"/>
+    <unit facet="0" iRef="IApp" multiple="true" private="false" replica="0" uRef="app" visibleInterface="true">
+      <visualDescription h="40" w="80" x="258" y="452"/>
     </unit>
   </componentInfo>
 </component:component>

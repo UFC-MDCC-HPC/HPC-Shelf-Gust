@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000755e73a0fe151bf40be264ed3a078312764b49da29fc76287ce731b6da21e1d5e32392c9550b19858034f42fb6ca18a06bd7b01bc6a408a0f4596cf94073b847d628d2e8ed485b8bc5d1a501b1e7a4bd0cf50bd5bba07b8c9ea22029067371be474dcce5e11cf7b077534e230b2dc46cf7f5a8c515fec996d7a5c0a6ef7babaa" isAbstract="true" kind="Qualifier" name="Comunication" packagePath="br.ufc.mdcc.hpcshelf.gust.qualifier">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IComunication" nArgs="0">
+      <visualDescription h="40" w="149" x="284" y="437">
+        <color b="0" g="165" r="255"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IComunication" multiple="false" private="false" replica="0" uRef="comunication" visibleInterface="true">
+      <visualDescription h="40" w="149" x="284" y="517"/>
+    </unit>
+  </componentInfo>
+</component:component>

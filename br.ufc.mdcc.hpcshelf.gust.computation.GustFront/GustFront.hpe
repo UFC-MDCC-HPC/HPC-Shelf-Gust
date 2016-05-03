@@ -7,6 +7,9 @@
     </visualAttributes>
   </header>
   <componentInfo>
+    <parameter componentRef="platform" formFieldId="platform" order="0" variance="contravariant" varName="P"/>
+    <parameter componentRef="comunication" formFieldId="comunication" order="0" variance="contravariant" varName="C"/>
+    <parameter componentRef="execution" formFieldId="execution" order="1" variance="contravariant" varName="E"/>
     <innerComponent localRef="oik" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="291" y="535">
         <color b="255" g="255" r="255"/>
@@ -39,7 +42,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="gust_function" location="br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/GustFunction.hpe" multiple="false" name="GustFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="true">
+    <innerComponent localRef="gust_function" location="br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/GustFunction.hpe" multiple="false" name="GustFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
       <visualDescription h="60" w="211" x="481" y="339">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -51,29 +54,73 @@
         <visualDescription h="20" w="20" x="7" y="20"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="platform" location="br.ufc.mdcc.common.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.common" parameter_id="platform" exposed="false">
+      <visualDescription h="60" w="100" x="329" y="503">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="platform">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="comunication" location="br.ufc.mdcc.hpcshelf.gust.qualifier.Comunication/Comunication.hpe" multiple="false" name="Comunication" package="br.ufc.mdcc.hpcshelf.gust.qualifier" parameter_id="comunication" exposed="false">
+      <visualDescription h="60" w="100" x="132" y="434">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="comunication">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="execution" location="br.ufc.mdcc.hpcshelf.gust.qualifier.Execution/Execution.hpe" multiple="false" name="Execution" package="br.ufc.mdcc.hpcshelf.gust.qualifier" parameter_id="execution" exposed="false">
+      <visualDescription h="60" w="100" x="480" y="470">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="execution">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="oik" direct="true" varName="OIK"/>
     <supplyParameter cRef="oiv" direct="true" varName="OIV"/>
     <supplyParameter cRef="ook" direct="true" varName="OOK"/>
     <supplyParameter cRef="oov" direct="true" varName="OOV"/>
-    <interface iRef="IGustFront" nArgs="0">
+    <interface iRef="IGustFront" nArgs="3">
       <slice isRef="gust_function">
         <originRef cRef="gust_function" iRef="IGustFunction"/>
         <visualDescription h="10" w="10" x="96" y="15"/>
       </slice>
+      <slice isRef="platform">
+        <originRef cRef="platform" iRef="IPlatform"/>
+        <visualDescription h="10" w="10" x="43" y="26"/>
+      </slice>
+      <slice isRef="comunication">
+        <originRef cRef="comunication" iRef="IComunication"/>
+        <visualDescription h="10" w="10" x="13" y="13"/>
+      </slice>
+      <slice isRef="execution">
+        <originRef cRef="execution" iRef="IExecution"/>
+        <visualDescription h="10" w="10" x="77" y="28"/>
+      </slice>
       <visualDescription h="40" w="119" x="270" y="211">
         <color b="191" g="191" r="191"/>
       </visualDescription>
-      <port name="gust_function">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="gust_function" sRef="gust_function"/>
-      </port>
+      <parameter iname="IPlatform" parid="platform" uname="platform" varid="P"/>
+      <parameter iname="IComunication" order="0" parid="comunication" uname="comunication" varid="C"/>
+      <parameter iname="IExecution" order="1" parid="execution" uname="execution" varid="E"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="IGustFront" multiple="false" private="false" replica="0" uRef="gustfront" visibleInterface="true">
+    <unit facet="0" iRef="IGustFront" multiple="true" private="false" replica="0" uRef="gustfront" visibleInterface="true">
       <slices cRef="gust_function" inner_replica="0" slice_replica="0" uRef="gustfunction" sliceName="gust_function" transitive="false">
         <visualDescription h="10" w="10" x="96" y="15"/>
+      </slices>
+      <slices cRef="platform" inner_replica="0" slice_replica="0" uRef="platform" sliceName="platform" transitive="false">
+        <visualDescription h="10" w="10" x="43" y="26"/>
+      </slices>
+      <slices cRef="comunication" inner_replica="0" slice_replica="0" uRef="comunication" sliceName="comunication" transitive="false">
+        <visualDescription h="10" w="10" x="13" y="13"/>
+      </slices>
+      <slices cRef="execution" inner_replica="0" slice_replica="0" uRef="execution" sliceName="execution" transitive="false">
+        <visualDescription h="10" w="10" x="77" y="28"/>
       </slices>
       <visualDescription h="40" w="119" x="277" y="348"/>
     </unit>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_OKLL8A4EEeayobrzxfgvXA" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_OKLzAA4EEeayobrzxfgvXA" bindingContexts="_OKO2ow4EEeayobrzxfgvXA">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;GustFront.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.computation.GustFront/GustFront.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.GustFront/GustFront.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;GustFunction.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/GustFunction.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/GustFunction.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Gusty.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.computation.Gusty/Gusty.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.Gusty/Gusty.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Platform.hpe&quot; tooltip=&quot;br.ufc.mdcc.common.Platform/Platform.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.common.Platform/Platform.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Join.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.connector.Join/Join.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.connector.Join/Join.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;DataSource.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.computation.DataSource/DataSource.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.DataSource/DataSource.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Colector.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.computation.Colector/Colector.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.Colector/Colector.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Elasticity.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.backend.Elasticity/Elasticity.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.backend.Elasticity/Elasticity.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;JoinFunction.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.computation.JoinFunction/JoinFunction.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.JoinFunction/JoinFunction.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.emonic.base.editors.CSharpEditor&quot; name=&quot;IIteratorImpl.cs&quot; tooltip=&quot;br.ufc.mdcc.common.impl.IteratorImpl/src/1.0.0.0/IIteratorImpl.cs&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.common.impl.IteratorImpl/src/1.0.0.0/IIteratorImpl.cs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.emonic.base.editors.CSharpEditor&quot; name=&quot;IGustFunction.cs&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/src/1.0.0.0/IGustFunction.cs&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/src/1.0.0.0/IGustFunction.cs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.emonic.base.editors.CSharpEditor&quot; name=&quot;IInteger.cs&quot; tooltip=&quot;br.ufc.mdcc.common.Integer/src/1.0.0.0/IInteger.cs&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.common.Integer/src/1.0.0.0/IInteger.cs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.emonic.base.editors.CSharpEditor&quot; name=&quot;IGustFront.cs&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.computation.GustFront/src/1.0.0.0/IGustFront.cs&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.GustFront/src/1.0.0.0/IGustFront.cs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.emonic.base.editors.CSharpEditor&quot; name=&quot;BaseIGustFunction.cs&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/src/1.0.0.0/BaseIGustFunction.cs&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/src/1.0.0.0/BaseIGustFunction.cs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Step.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.connector.Step/Step.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.connector.Step/Step.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Push.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.qualifier.Push/Push.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualifier.Push/Push.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Pull.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.qualifier.Pull/Pull.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualifier.Pull/Pull.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Comunication.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.qualifier.Comunication/Comunication.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualifier.Comunication/Comunication.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Sinc.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.qualifier.Sinc/Sinc.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualifier.Sinc/Sinc.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Assinc.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.qualifier.Assinc/Assinc.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualifier.Assinc/Assinc.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Execution.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.qualifier.Execution/Execution.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualifier.Execution/Execution.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Assinc.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.qualify.Assinc/Assinc.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualify.Assinc/Assinc.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;GustFunction.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/GustFunction.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/GustFunction.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Gusty.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.computation.Gusty/Gusty.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.Gusty/Gusty.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;GustFront.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.computation.GustFront/GustFront.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.GustFront/GustFront.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Data.hpe&quot; tooltip=&quot;br.ufc.mdcc.common.Data/Data.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.common.Data/Data.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.emonic.base.editors.CSharpEditor&quot; name=&quot;BaseIData.cs&quot; tooltip=&quot;br.ufc.mdcc.common.Data/src/1.0.0.0/BaseIData.cs&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.common.Data/src/1.0.0.0/BaseIData.cs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.emonic.base.editors.CSharpEditor&quot; name=&quot;IData.cs&quot; tooltip=&quot;br.ufc.mdcc.common.Data/src/1.0.0.0/IData.cs&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.common.Data/src/1.0.0.0/IData.cs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;AppImpl.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.application.impl.AppImpl/AppImpl.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.application.impl.AppImpl/AppImpl.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;App.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.application.App/App.hpe&quot;>&#xA;&lt;persistable path=&quot;/br.ufc.mdcc.hpcshelf.gust.application.App/App.hpe&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_OKLzAA4EEeayobrzxfgvXA" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_OKLzAQ4EEeayobrzxfgvXA" label="%trimmedwindow.label.eclipseSDK" x="290" y="136" width="1024" height="768">
@@ -148,8 +148,8 @@
           <children xsi:type="basic:PartSashContainer" xmi:id="_OKLzIA4EEeayobrzxfgvXA" selectedElement="_OKLzIQ4EEeayobrzxfgvXA" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_OKLzIQ4EEeayobrzxfgvXA" elementId="left" containerData="2672" selectedElement="_OKLzIg4EEeayobrzxfgvXA">
               <tags>newtablook</tags>
-              <tags>active</tags>
               <tags>noFocus</tags>
+              <tags>active</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_OKLzIg4EEeayobrzxfgvXA" elementId="hPE.HPEResourceNavigator" ref="_OKMa7Q4EEeayobrzxfgvXA"/>
             </children>
             <children xsi:type="basic:PartSashContainer" xmi:id="_OKLzIw4EEeayobrzxfgvXA" containerData="7328" selectedElement="_OKLzJA4EEeayobrzxfgvXA" horizontal="true">
@@ -272,7 +272,7 @@
       <toolbar xmi:id="_OKMa7A4EEeayobrzxfgvXA" elementId="org.guvnor.tools.views.ResourceHistoryView"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_OKMa7Q4EEeayobrzxfgvXA" elementId="hPE.HPEResourceNavigator" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Configuration Sessions" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" closeable="true">
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view LINK_NAVIGATOR_TO_EDITOR=&quot;0&quot; sorter=&quot;1&quot;>&#xA;&lt;filters>&#xA;&lt;filter element=&quot;*.class&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;filter element=&quot;RemoteSystemsConnections&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;filter element=&quot;RemoteSystemsTempFiles&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;filter element=&quot;.*&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;filter element=&quot;.project&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;filter element=&quot;XMLExtensionsProject&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;filter element=&quot;BuiltInMedsProject&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;/filters>&#xA;&lt;selection>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.impl.GustFunctionImpl&quot;/>&#xA;&lt;/selection>&#xA;&lt;/view>"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view LINK_NAVIGATOR_TO_EDITOR=&quot;0&quot; sorter=&quot;1&quot;>&#xA;&lt;filters>&#xA;&lt;filter element=&quot;*.class&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;filter element=&quot;RemoteSystemsConnections&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;filter element=&quot;RemoteSystemsTempFiles&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;filter element=&quot;.*&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;/filters>&#xA;&lt;expanded>&#xA;&lt;element path=&quot;/br.ufc.mdcc.common.Data&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.common.Data/src&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.common.Data/src/1.0.0.0&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.common.Platform&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.application.App&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.application.App/src&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.application.App/src/1.0.0.0&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.application.impl.AppImpl&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.application.impl.AppImpl/src&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.application.impl.AppImpl/src/1.0.0.0&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.GustFront&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.GustFunction&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.Gusty&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualifier.Assinc&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualifier.Comunication&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualifier.Execution&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualifier.Pull&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualifier.Push&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualifier.Sinc&quot;/>&#xA;&lt;/expanded>&#xA;&lt;selection>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualifier.Execution/Execution.hpe&quot;/>&#xA;&lt;/selection>&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:HPE Frontend</tags>
       <tags>active</tags>
@@ -312,16 +312,19 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OKMbDA4EEeayobrzxfgvXA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_IJ16ABCdEeabo49jImx7uA" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_OKUXWQ4EEeayobrzxfgvXA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_3NxTABFjEearPvzhwFeZHA" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_OKUXWQ4EEeayobrzxfgvXA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OKNBLA4EEeayobrzxfgvXA" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
         <children xsi:type="menu:ToolBarSeparator" xmi:id="_OKNBLQ4EEeayobrzxfgvXA" elementId="additions" toBeRendered="false"/>
       </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_64A-4BFdEea7zYJQQeYcRg" elementId="org.eclipse.search.searchActionSet">
+        <tags>Draggable</tags>
+      </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OKNBeA4EEeayobrzxfgvXA" elementId="org.eclipse.debug.ui.launchActionSet">
         <tags>Draggable</tags>
       </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_OKNBew4EEeayobrzxfgvXA" elementId="org.jboss.tools.jst.web.ui.server.actionSet">
+      <children xsi:type="menu:ToolBar" xmi:id="_OKNBew4EEeayobrzxfgvXA" elementId="org.jboss.tools.jst.web.ui.server.actionSet" visible="false">
         <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OKNBgw4EEeayobrzxfgvXA" elementId="group.nav" toBeRendered="false">
@@ -330,7 +333,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OKNBhQ4EEeayobrzxfgvXA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_IJ9OwBCdEeabo49jImx7uA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_OKUW7g4EEeayobrzxfgvXA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_3N5O0BFjEearPvzhwFeZHA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_OKUW7g4EEeayobrzxfgvXA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OKNBkw4EEeayobrzxfgvXA" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -404,41 +407,24 @@
     <bindings xmi:id="_OKNBxA4EEeayobrzxfgvXA" keySequence="SHIFT+DEL" command="_OKTvYg4EEeayobrzxfgvXA"/>
   </bindingTables>
   <bindingTables xmi:id="_OKNBxQ4EEeayobrzxfgvXA" elementId="org.eclipse.ui.contexts.window" bindingContext="_OKO2pA4EEeayobrzxfgvXA">
-    <bindings xmi:id="_OKNBxg4EEeayobrzxfgvXA" keySequence="CTRL+ARROW_DOWN" command="_OKUWJw4EEeayobrzxfgvXA">
-      <parameters xmi:id="_OKNBxw4EEeayobrzxfgvXA" elementId="org.eclipse.graphiti.ui.featureHint" name="org.eclipse.graphiti.ui.featureHint" value="movedown"/>
-    </bindings>
     <bindings xmi:id="_OKNByA4EEeayobrzxfgvXA" keySequence="CTRL+B" command="_OKTH-g4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNByQ4EEeayobrzxfgvXA" keySequence="ALT+ARROW_RIGHT" command="_OKTvfw4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNByg4EEeayobrzxfgvXA" keySequence="ALT+CTRL+SHIFT+ARROW_RIGHT" command="_OKUWPA4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNByw4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+ARROW_LEFT" command="_OKUWJw4EEeayobrzxfgvXA">
-      <parameters xmi:id="_OKNBzA4EEeayobrzxfgvXA" elementId="org.eclipse.graphiti.ui.featureHint" name="org.eclipse.graphiti.ui.featureHint" value="moveleft10"/>
-    </bindings>
-    <bindings xmi:id="_OKNBzQ4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+ARROW_UP" command="_OKUWJw4EEeayobrzxfgvXA">
-      <parameters xmi:id="_OKNBzg4EEeayobrzxfgvXA" elementId="org.eclipse.graphiti.ui.featureHint" name="org.eclipse.graphiti.ui.featureHint" value="moveup10"/>
-    </bindings>
     <bindings xmi:id="_OKNBzw4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+A" command="_OKUWqA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB0A4EEeayobrzxfgvXA" keySequence="ALT+CTRL+SHIFT+ARROW_UP" command="_OKUWVA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB0Q4EEeayobrzxfgvXA" keySequence="ALT+CTRL+SHIFT+A" command="_OKUWuw4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB0g4EEeayobrzxfgvXA" keySequence="ALT+ARROW_LEFT" command="_OKTIHg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB0w4EEeayobrzxfgvXA" keySequence="ALT+C" command="_OKTvQg4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNB1A4EEeayobrzxfgvXA" keySequence="CTRL+ARROW_UP" command="_OKUWJw4EEeayobrzxfgvXA">
-      <parameters xmi:id="_OKNB1Q4EEeayobrzxfgvXA" elementId="org.eclipse.graphiti.ui.featureHint" name="org.eclipse.graphiti.ui.featureHint" value="moveup"/>
-    </bindings>
     <bindings xmi:id="_OKNB1g4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+D E" command="_OKU9nA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB1w4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+D T" command="_OKShnw4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB2A4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+D A" command="_OKUXMw4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB2Q4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+D Q" command="_OKTv8Q4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB2g4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+D R" command="_OKTwEw4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNB2w4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+D L" command="_OKU9Xw4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB3A4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+D J" command="_OKUW4A4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB3Q4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+D O" command="_OKUV-A4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB3g4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+D P" command="_OKUXUQ4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB3w4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+D X" command="_OKTwAQ4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNB4A4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+D D" command="_OKTvvA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB4Q4EEeayobrzxfgvXA" keySequence="CTRL+#" command="_OKTIGQ4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNB4g4EEeayobrzxfgvXA" keySequence="CTRL+ARROW_LEFT" command="_OKUWJw4EEeayobrzxfgvXA">
-      <parameters xmi:id="_OKNB4w4EEeayobrzxfgvXA" elementId="org.eclipse.graphiti.ui.featureHint" name="org.eclipse.graphiti.ui.featureHint" value="moveleft"/>
-    </bindings>
     <bindings xmi:id="_OKNB5A4EEeayobrzxfgvXA" keySequence="CTRL+F" command="_OKTIRQ4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB5Q4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+E" command="_OKTIcg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB5g4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+F" command="_OKUXbw4EEeayobrzxfgvXA"/>
@@ -452,15 +438,6 @@
     <bindings xmi:id="_OKNB7g4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+G" command="_OKUWYg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB7w4EEeayobrzxfgvXA" keySequence="ALT+CTRL+G" command="_OKUWhg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB8A4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+H" command="_OKTvRA4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNB8Q4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+ARROW_RIGHT" command="_OKUWJw4EEeayobrzxfgvXA">
-      <parameters xmi:id="_OKNB8g4EEeayobrzxfgvXA" elementId="org.eclipse.graphiti.ui.featureHint" name="org.eclipse.graphiti.ui.featureHint" value="moveright10"/>
-    </bindings>
-    <bindings xmi:id="_OKNB8w4EEeayobrzxfgvXA" keySequence="CTRL+D" command="_OKUWJw4EEeayobrzxfgvXA">
-      <parameters xmi:id="_OKNB9A4EEeayobrzxfgvXA" elementId="org.eclipse.graphiti.ui.featureHint" name="org.eclipse.graphiti.ui.featureHint" value="duplicate"/>
-    </bindings>
-    <bindings xmi:id="_OKNB9Q4EEeayobrzxfgvXA" keySequence="CTRL+ARROW_RIGHT" command="_OKUWJw4EEeayobrzxfgvXA">
-      <parameters xmi:id="_OKNB9g4EEeayobrzxfgvXA" elementId="org.eclipse.graphiti.ui.featureHint" name="org.eclipse.graphiti.ui.featureHint" value="moveright"/>
-    </bindings>
     <bindings xmi:id="_OKNB9w4EEeayobrzxfgvXA" keySequence="CTRL+M" command="_OKUXEg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNB-A4EEeayobrzxfgvXA" keySequence="CTRL+F8" command="_OKTvBg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoMA4EEeayobrzxfgvXA" keySequence="CTRL+S" command="_OKTvtA4EEeayobrzxfgvXA"/>
@@ -481,9 +458,7 @@
     <bindings xmi:id="_OKNoPw4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+F12" command="_OKTHyw4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoQA4EEeayobrzxfgvXA" keySequence="ALT+CR" command="_OKUW_w4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoQQ4EEeayobrzxfgvXA" keySequence="CTRL+BREAK" command="_OKTILw4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNoQg4EEeayobrzxfgvXA" keySequence="ALT+CTRL+Z" command="_OKTvbw4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoQw4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+T" command="_OKTvYQ4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNoRA4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+M" command="_OKTILg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoRQ4EEeayobrzxfgvXA" keySequence="DEL" command="_OKTIWA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoRg4EEeayobrzxfgvXA" keySequence="CTRL+P" command="_OKUXWQ4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoRw4EEeayobrzxfgvXA" keySequence="ALT+X" command="_OKTwOg4EEeayobrzxfgvXA"/>
@@ -491,7 +466,6 @@
     <bindings xmi:id="_OKNoSQ4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+R" command="_OKU9tA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoSg4EEeayobrzxfgvXA" keySequence="CTRL+N" command="_OKU9ig4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoSw4EEeayobrzxfgvXA" keySequence="CTRL+W" command="_OKTwHA4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNoTA4EEeayobrzxfgvXA" keySequence="CTRL+R" command="_OKUWZQ4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoTQ4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+W" command="_OKTvYA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoTg4EEeayobrzxfgvXA" keySequence="ALT+CTRL+P" command="_OKTITg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoTw4EEeayobrzxfgvXA" keySequence="CTRL+." command="_OKU9bQ4EEeayobrzxfgvXA"/>
@@ -521,22 +495,17 @@
     <bindings xmi:id="_OKNoZg4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+L" command="_OKTvAA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoZw4EEeayobrzxfgvXA" keySequence="F11" command="_OKU9Pg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoaA4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+N" command="_OKUWCA4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNoaQ4EEeayobrzxfgvXA" keySequence="CTRL+L" command="_OKUWEA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoag4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+Z" command="_OKTwPQ4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoaw4EEeayobrzxfgvXA" keySequence="CTRL+-" command="_OKU9HA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNobA4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+M" command="_OKU9VA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNobQ4EEeayobrzxfgvXA" keySequence="CTRL+3" command="_OKTvDA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNobg4EEeayobrzxfgvXA" keySequence="CTRL+U" command="_OKTwBQ4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNobw4EEeayobrzxfgvXA" keySequence="CTRL+7" command="_OKUWVw4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNocA4EEeayobrzxfgvXA" keySequence="ALT+-" command="_OKUWBw4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNocQ4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+F6" command="_OKUWeQ4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNocg4EEeayobrzxfgvXA" keySequence="SHIFT+F2" command="_OKUWWg4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNocw4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+F10" command="_OKUWxA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNodA4EEeayobrzxfgvXA" keySequence="CTRL+F6" command="_OKTITw4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNodQ4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+U" command="_OKTIeA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNodg4EEeayobrzxfgvXA" keySequence="CTRL+6" command="_OKUWIQ4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNodw4EEeayobrzxfgvXA" keySequence="CTRL+6" command="_OKTvSw4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNoeA4EEeayobrzxfgvXA" keySequence="CTRL+4" command="_OKUXUg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNoeQ4EEeayobrzxfgvXA" keySequence="CTRL+_" command="_OKTvMg4EEeayobrzxfgvXA">
       <parameters xmi:id="_OKNoeg4EEeayobrzxfgvXA" elementId="Splitter.isHorizontal" name="Splitter.isHorizontal" value="true"/>
     </bindings>
@@ -545,9 +514,6 @@
     <bindings xmi:id="_OKNofQ4EEeayobrzxfgvXA" keySequence="SHIFT+DEL" command="_OKTvKw4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNofg4EEeayobrzxfgvXA" keySequence="ALT+CTRL+SHIFT+ARROW_DOWN" command="_OKU9kw4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNofw4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+B" command="_OKTIXw4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNogA4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+ARROW_DOWN" command="_OKUWJw4EEeayobrzxfgvXA">
-      <parameters xmi:id="_OKNogQ4EEeayobrzxfgvXA" elementId="org.eclipse.graphiti.ui.featureHint" name="org.eclipse.graphiti.ui.featureHint" value="movedown10"/>
-    </bindings>
     <bindings xmi:id="_OKNogg4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+C" command="_OKUXHg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNogw4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+Q O" command="_OKUWmQ4EEeayobrzxfgvXA">
       <parameters xmi:id="_OKNohA4EEeayobrzxfgvXA" elementId="org.eclipse.ui.views.showView.viewId" name="org.eclipse.ui.views.showView.viewId" value="org.eclipse.ui.views.ContentOutline"/>
@@ -575,16 +541,12 @@
     <bindings xmi:id="_OKNolA4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+Q C" command="_OKUWmQ4EEeayobrzxfgvXA">
       <parameters xmi:id="_OKNolQ4EEeayobrzxfgvXA" elementId="org.eclipse.ui.views.showView.viewId" name="org.eclipse.ui.views.showView.viewId" value="org.eclipse.ui.console.ConsoleView"/>
     </bindings>
-    <bindings xmi:id="_OKNolg4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+Y B" command="_OKTv4Q4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNolw4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+Q J" command="_OKUWmQ4EEeayobrzxfgvXA">
       <parameters xmi:id="_OKNomA4EEeayobrzxfgvXA" elementId="org.eclipse.ui.views.showView.viewId" name="org.eclipse.ui.views.showView.viewId" value="org.eclipse.jdt.ui.JavadocView"/>
     </bindings>
-    <bindings xmi:id="_OKNomQ4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+X L" command="_OKTvkQ4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNomg4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+Q X" command="_OKUWmQ4EEeayobrzxfgvXA">
       <parameters xmi:id="_OKNomw4EEeayobrzxfgvXA" elementId="org.eclipse.ui.views.showView.viewId" name="org.eclipse.ui.views.showView.viewId" value="org.eclipse.ui.views.ProblemView"/>
     </bindings>
-    <bindings xmi:id="_OKNonA4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+Y F" command="_OKTu_A4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKNonQ4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+Y G" command="_OKTIHQ4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKNong4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+Q L" command="_OKUWmQ4EEeayobrzxfgvXA">
       <parameters xmi:id="_OKNonw4EEeayobrzxfgvXA" elementId="org.eclipse.ui.views.showView.viewId" name="org.eclipse.ui.views.showView.viewId" value="org.eclipse.pde.runtime.LogView"/>
     </bindings>
@@ -736,8 +698,6 @@
     <bindings xmi:id="_OKOPYQ4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+A" command="_OKU9rg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOPYg4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+ARROW_UP" command="_OKUWsQ4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOPYw4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+F" command="_OKU9hA4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOPZA4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+G" command="_OKUV9A4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOPZQ4EEeayobrzxfgvXA" keySequence="CTRL+G" command="_OKTvUA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOPZg4EEeayobrzxfgvXA" keySequence="CTRL+O" command="_OKUWKg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOPZw4EEeayobrzxfgvXA" keySequence="F3" command="_OKUWFQ4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOPaA4EEeayobrzxfgvXA" keySequence="CTRL+I" command="_OKUXXA4EEeayobrzxfgvXA"/>
@@ -748,9 +708,7 @@
     <bindings xmi:id="_OKOPbQ4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+ARROW_DOWN" command="_OKTv-Q4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOPbg4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+ARROW_LEFT" command="_OKTIDA4EEeayobrzxfgvXA"/>
   </bindingTables>
-  <bindingTables xmi:id="_OKOPbw4EEeayobrzxfgvXA" elementId="org.eclipse.wst.css.core.csssource" bindingContext="_OKO2vQ4EEeayobrzxfgvXA">
-    <bindings xmi:id="_OKOPcA4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+C" command="_OKTvgA4EEeayobrzxfgvXA"/>
-  </bindingTables>
+  <bindingTables xmi:id="_OKOPbw4EEeayobrzxfgvXA" elementId="org.eclipse.wst.css.core.csssource" bindingContext="_OKO2vQ4EEeayobrzxfgvXA"/>
   <bindingTables xmi:id="_OKOPcQ4EEeayobrzxfgvXA" elementId="org.emonic.editors.csharpEditorScope" bindingContext="_OKO2xQ4EEeayobrzxfgvXA">
     <bindings xmi:id="_OKOPcg4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+C" command="_OKTIKQ4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOPcw4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+G" command="_OKUXDw4EEeayobrzxfgvXA"/>
@@ -812,17 +770,7 @@
     <bindings xmi:id="_OKOPpg4EEeayobrzxfgvXA" keySequence="ALT+ARROW_UP" command="_OKUWlA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOPpw4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+C" command="_OKTwMw4EEeayobrzxfgvXA"/>
   </bindingTables>
-  <bindingTables xmi:id="_OKOPqA4EEeayobrzxfgvXA" elementId="org.apache.directory.studio.ldapbrowser.contexts.dialog" bindingContext="_OKO24w4EEeayobrzxfgvXA">
-    <bindings xmi:id="_OKOPqQ4EEeayobrzxfgvXA" keySequence="CTRL+C" command="_OKU8_A4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOPqg4EEeayobrzxfgvXA" keySequence="CTRL+F" command="_OKTH_w4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOPqw4EEeayobrzxfgvXA" keySequence="CTRL+V" command="_OKTIMA4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOPrA4EEeayobrzxfgvXA" keySequence="F6" command="_OKUXFg4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOPrQ4EEeayobrzxfgvXA" keySequence="ALT+CR" command="_OKUV6w4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOPrg4EEeayobrzxfgvXA" keySequence="F7" command="_OKUXPA4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOPrw4EEeayobrzxfgvXA" keySequence="DEL" command="_OKTvfQ4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOPsA4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT++" command="_OKUV-g4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOPsQ4EEeayobrzxfgvXA" keySequence="CTRL++" command="_OKUXSA4EEeayobrzxfgvXA"/>
-  </bindingTables>
+  <bindingTables xmi:id="_OKOPqA4EEeayobrzxfgvXA" elementId="org.apache.directory.studio.ldapbrowser.contexts.dialog" bindingContext="_OKO24w4EEeayobrzxfgvXA"/>
   <bindingTables xmi:id="_OKOPsg4EEeayobrzxfgvXA" elementId="org.eclipse.egit.ui.RepositoriesView" bindingContext="_OKO24Q4EEeayobrzxfgvXA">
     <bindings xmi:id="_OKOPsw4EEeayobrzxfgvXA" keySequence="CTRL+C" command="_OKTvHg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOPtA4EEeayobrzxfgvXA" keySequence="CTRL+V" command="_OKUV-w4EEeayobrzxfgvXA"/>
@@ -891,26 +839,12 @@
     <bindings xmi:id="_OKOP6g4EEeayobrzxfgvXA" keySequence="CTRL+CR" command="_OKTIFg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOP6w4EEeayobrzxfgvXA" keySequence="ALT+CR" command="_OKUV4w4EEeayobrzxfgvXA"/>
   </bindingTables>
-  <bindingTables xmi:id="_OKOP7A4EEeayobrzxfgvXA" elementId="org.hibernate.eclipse.console.hql" bindingContext="_OKO2wg4EEeayobrzxfgvXA">
-    <bindings xmi:id="_OKOP7Q4EEeayobrzxfgvXA" keySequence="CTRL+CR" command="_OKU9rw4EEeayobrzxfgvXA"/>
-  </bindingTables>
-  <bindingTables xmi:id="_OKOP7g4EEeayobrzxfgvXA" elementId="org.eclipse.graphiti.ui.diagramEditor" bindingContext="_OKO24A4EEeayobrzxfgvXA">
-    <bindings xmi:id="_OKOP7w4EEeayobrzxfgvXA" keySequence="CTRL+O" command="_OKUW9Q4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOP8A4EEeayobrzxfgvXA" keySequence="CTRL+F5" command="_OKTH9A4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOP8Q4EEeayobrzxfgvXA" keySequence="SHIFT+DEL" command="_OKU9hg4EEeayobrzxfgvXA"/>
-  </bindingTables>
+  <bindingTables xmi:id="_OKOP7A4EEeayobrzxfgvXA" elementId="org.hibernate.eclipse.console.hql" bindingContext="_OKO2wg4EEeayobrzxfgvXA"/>
+  <bindingTables xmi:id="_OKOP7g4EEeayobrzxfgvXA" elementId="org.eclipse.graphiti.ui.diagramEditor" bindingContext="_OKO24A4EEeayobrzxfgvXA"/>
   <bindingTables xmi:id="_OKOP8g4EEeayobrzxfgvXA" elementId="org.eclipse.mylyn.wikitext.ui.editor.markupSourceContext" bindingContext="_OKO2yQ4EEeayobrzxfgvXA">
     <bindings xmi:id="_OKOP8w4EEeayobrzxfgvXA" keySequence="CTRL+O" command="_OKTH5g4EEeayobrzxfgvXA"/>
   </bindingTables>
-  <bindingTables xmi:id="_OKOP9A4EEeayobrzxfgvXA" elementId="org.apache.directory.studio.ldapbrowser.contexts.window" bindingContext="_OKO20Q4EEeayobrzxfgvXA">
-    <bindings xmi:id="_OKOP9Q4EEeayobrzxfgvXA" keySequence="F3" command="_OKUWNQ4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOP9g4EEeayobrzxfgvXA" keySequence="F4" command="_OKShkA4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOP9w4EEeayobrzxfgvXA" keySequence="F6" command="_OKUXFg4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOP-A4EEeayobrzxfgvXA" keySequence="F7" command="_OKUXPA4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOP-Q4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT++" command="_OKUV-g4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOP-g4EEeayobrzxfgvXA" keySequence="CTRL++" command="_OKUXSA4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOP-w4EEeayobrzxfgvXA" keySequence="F8" command="_OKTvVg4EEeayobrzxfgvXA"/>
-  </bindingTables>
+  <bindingTables xmi:id="_OKOP9A4EEeayobrzxfgvXA" elementId="org.apache.directory.studio.ldapbrowser.contexts.window" bindingContext="_OKO20Q4EEeayobrzxfgvXA"/>
   <bindingTables xmi:id="_OKOP_A4EEeayobrzxfgvXA" elementId="org.eclipse.jst.jsp.ui.structured.text.editor.jsp.scope" bindingContext="_OKO2uw4EEeayobrzxfgvXA">
     <bindings xmi:id="_OKOP_Q4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+V" command="_OKTv3g4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOP_g4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+R" command="_OKU9XA4EEeayobrzxfgvXA"/>
@@ -922,7 +856,6 @@
   <bindingTables xmi:id="_OKOQAg4EEeayobrzxfgvXA" elementId="org.eclipse.debug.ui.debugging" bindingContext="_OKO21g4EEeayobrzxfgvXA">
     <bindings xmi:id="_OKOQAw4EEeayobrzxfgvXA" keySequence="CTRL+F2" command="_OKUXIg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOQBA4EEeayobrzxfgvXA" keySequence="F6" command="_OKTvxQ4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOQBQ4EEeayobrzxfgvXA" keySequence="SHIFT+F6" command="_OKU9Wg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOQBg4EEeayobrzxfgvXA" keySequence="F7" command="_OKU9dA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOQBw4EEeayobrzxfgvXA" keySequence="CTRL+F5" command="_OKU9OA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOQCA4EEeayobrzxfgvXA" keySequence="CTRL+R" command="_OKUV9g4EEeayobrzxfgvXA"/>
@@ -933,12 +866,7 @@
   <bindingTables xmi:id="_OKOQDA4EEeayobrzxfgvXA" elementId="org.eclipse.mylyn.wikitext.tasks.ui.markupSourceContext" bindingContext="_OKO2yg4EEeayobrzxfgvXA">
     <bindings xmi:id="_OKOQDQ4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+O" command="_OKTH5g4EEeayobrzxfgvXA"/>
   </bindingTables>
-  <bindingTables xmi:id="_OKOQDg4EEeayobrzxfgvXA" elementId="org.jboss.tools.vpe.editorContext" bindingContext="_OKO2rQ4EEeayobrzxfgvXA">
-    <bindings xmi:id="_OKOQDw4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+TAB" command="_OKTHzQ4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOQEA4EEeayobrzxfgvXA" keySequence="SHIFT+F6" command="_OKUWmA4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOQEQ4EEeayobrzxfgvXA" keySequence="CTRL+R" command="_OKTHxA4EEeayobrzxfgvXA"/>
-    <bindings xmi:id="_OKOQEg4EEeayobrzxfgvXA" keySequence="ALT+SHIFT+F6" command="_OKTIeg4EEeayobrzxfgvXA"/>
-  </bindingTables>
+  <bindingTables xmi:id="_OKOQDg4EEeayobrzxfgvXA" elementId="org.jboss.tools.vpe.editorContext" bindingContext="_OKO2rQ4EEeayobrzxfgvXA"/>
   <bindingTables xmi:id="_OKOQEw4EEeayobrzxfgvXA" elementId="org.eclipse.jst.pagedesigner.editorContext" bindingContext="_OKO2ww4EEeayobrzxfgvXA">
     <bindings xmi:id="_OKOQFA4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+F9" command="_OKTvxA4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKOQFQ4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+F12" command="_OKU9eg4EEeayobrzxfgvXA"/>
@@ -947,15 +875,9 @@
     <bindings xmi:id="_OKO2UQ4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+F5" command="_OKUWvw4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKO2Ug4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+F10" command="_OKU9Zw4EEeayobrzxfgvXA"/>
   </bindingTables>
-  <bindingTables xmi:id="_OKO2Uw4EEeayobrzxfgvXA" elementId="org.jboss.tools.openshift.explorer.context.connection" bindingContext="_OKO23w4EEeayobrzxfgvXA">
-    <bindings xmi:id="_OKO2VA4EEeayobrzxfgvXA" keySequence="DEL" command="_OKTwBg4EEeayobrzxfgvXA"/>
-  </bindingTables>
-  <bindingTables xmi:id="_OKO2VQ4EEeayobrzxfgvXA" elementId="org.jboss.tools.openshift.explorer.context.domain" bindingContext="_OKO2zw4EEeayobrzxfgvXA">
-    <bindings xmi:id="_OKO2Vg4EEeayobrzxfgvXA" keySequence="DEL" command="_OKTIKA4EEeayobrzxfgvXA"/>
-  </bindingTables>
-  <bindingTables xmi:id="_OKO2Vw4EEeayobrzxfgvXA" elementId="org.jboss.tools.openshift.explorer.context.application" bindingContext="_OKO2pg4EEeayobrzxfgvXA">
-    <bindings xmi:id="_OKO2WA4EEeayobrzxfgvXA" keySequence="DEL" command="_OKTu1Q4EEeayobrzxfgvXA"/>
-  </bindingTables>
+  <bindingTables xmi:id="_OKO2Uw4EEeayobrzxfgvXA" elementId="org.jboss.tools.openshift.explorer.context.connection" bindingContext="_OKO23w4EEeayobrzxfgvXA"/>
+  <bindingTables xmi:id="_OKO2VQ4EEeayobrzxfgvXA" elementId="org.jboss.tools.openshift.explorer.context.domain" bindingContext="_OKO2zw4EEeayobrzxfgvXA"/>
+  <bindingTables xmi:id="_OKO2Vw4EEeayobrzxfgvXA" elementId="org.jboss.tools.openshift.explorer.context.application" bindingContext="_OKO2pg4EEeayobrzxfgvXA"/>
   <bindingTables xmi:id="_OKO2WQ4EEeayobrzxfgvXA" elementId="org.eclipse.jst.jsf.facesconfig.editorContext" bindingContext="_OKO2zA4EEeayobrzxfgvXA">
     <bindings xmi:id="_OKO2Wg4EEeayobrzxfgvXA" keySequence="CTRL+F5" command="_OKUWIg4EEeayobrzxfgvXA"/>
     <bindings xmi:id="_OKO2Ww4EEeayobrzxfgvXA" keySequence="CTRL+SHIFT+F5" command="_OKUWvw4EEeayobrzxfgvXA"/>
