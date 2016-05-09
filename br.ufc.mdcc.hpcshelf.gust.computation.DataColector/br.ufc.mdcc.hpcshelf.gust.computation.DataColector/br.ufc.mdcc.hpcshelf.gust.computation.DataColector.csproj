@@ -5,12 +5,12 @@
 <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 <ProductVersion>8.0.30703</ProductVersion>
 <SchemaVersion>2.0</SchemaVersion>
-<ProjectGuid>{18232b86-9b02-4a90-b247-3aaeae2c0602}</ProjectGuid>
+<ProjectGuid>{c78a67e3-34ec-4612-9e95-f3dd471cb941}</ProjectGuid>
 <OutputType>Library</OutputType>
-<RootNamespace>br.ufc.mdcc.hpcshelf.gust.computation.Colector</RootNamespace>
-<AssemblyName>br.ufc.mdcc.hpcshelf.gust.computation.Colector</AssemblyName>
+<RootNamespace>br.ufc.mdcc.hpcshelf.gust.computation.DataColector</RootNamespace>
+<AssemblyName>br.ufc.mdcc.hpcshelf.gust.computation.DataColector</AssemblyName>
 <SignAssembly>true</SignAssembly>
-<AssemblyOriginatorKeyFile>..\Colector.snk</AssemblyOriginatorKeyFile>
+<AssemblyOriginatorKeyFile>..\DataColector.snk</AssemblyOriginatorKeyFile>
 <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
 </PropertyGroup>
 <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -39,11 +39,11 @@
 </ItemGroup>
 <ItemGroup>
 <Compile Include="Properties\AssemblyInfo.cs" />
-<Compile Include="..\src\1.0.0.0\BaseIColector.cs">
-<Link>BaseIColector.cs</Link>
+<Compile Include="..\src\1.0.0.0\BaseIDataColector.cs">
+<Link>BaseIDataColector.cs</Link>
 </Compile>
-<Compile Include="..\src\1.0.0.0\IColector.cs">
-<Link>IColector.cs</Link>
+<Compile Include="..\src\1.0.0.0\IDataColector.cs">
+<Link>IDataColector.cs</Link>
 </Compile>
 </ItemGroup>
 <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

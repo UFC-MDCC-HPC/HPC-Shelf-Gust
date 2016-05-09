@@ -7,104 +7,16 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <parameter componentRef="algorithm" formFieldId="algorithm" order="0" variance="contravariant" varName="ALG"/>
-    <innerComponent localRef="algorithm" location="br.ufc.mdcc.hpcshelf.gust.computation.GustFront/GustFront.hpe" multiple="false" name="GustFront" package="br.ufc.mdcc.hpcshelf.gust.computation" parameter_id="algorithm" exposed="false">
-      <visualDescription h="60" w="100" x="404" y="422">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <port localRef="gust_function" location="br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/GustFunction.hpe" multiple="false" name="GustFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="true">
-        <visualDescription h="60" w="211" x="481" y="339">
-          <color b="255" g="255" r="255"/>
-        </visualDescription>
-        <parameter formFieldId="oik" varName="X###1633201384"/>
-        <parameter formFieldId="oov" varName="X###982292495"/>
-        <parameter formFieldId="ook" varName="X###562340676"/>
-        <parameter formFieldId="oiv" varName="X###279157832"/>
-        <unitBounds parallel="false" uRef="gustfunction">
-          <visualDescription h="20" w="20" x="7" y="20"/>
-        </unitBounds>
-      </port>
-      <unitBounds parallel="false" uRef="gustfront">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="elasticity" location="br.ufc.mdcc.hpcshelf.gust.backend.Elasticity/Elasticity.hpe" multiple="false" name="Elasticity" package="br.ufc.mdcc.hpcshelf.gust.backend" exposed="false">
-      <visualDescription h="60" w="100" x="184" y="431">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="false" uRef="elasticity">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <innerComponent localRef="C###1633201384" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="100" x="291" y="535">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="false" uRef="data">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <supplyParameter cRef="C###1633201384" varName="X###1633201384"/>
-    <innerComponent localRef="C###982292495" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="100" x="509" y="732">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="false" uRef="data">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <supplyParameter cRef="C###982292495" varName="X###982292495"/>
-    <innerComponent localRef="C###562340676" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="100" x="315" y="726">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="false" uRef="data">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <supplyParameter cRef="C###562340676" varName="X###562340676"/>
-    <innerComponent localRef="C###279157832" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="100" x="484" y="526">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="false" uRef="data">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <supplyParameter cRef="C###279157832" varName="X###279157832"/>
-    <interface iRef="IGusty" nArgs="1">
-      <slice isRef="algorithm">
-        <originRef cRef="algorithm" iRef="IGustFront"/>
-        <visualDescription h="10" w="10" x="62" y="21"/>
-      </slice>
-      <slice isRef="elasticity">
-        <originRef cRef="elasticity" iRef="IElasticity"/>
-        <visualDescription h="10" w="10" x="13" y="24"/>
-      </slice>
-      <visualDescription h="40" w="107" x="277" y="268">
+    <interface iRef="IGusty" nArgs="0">
+      <visualDescription h="40" w="163" x="249" y="330">
         <color b="191" g="191" r="191"/>
       </visualDescription>
-      <port name="gust_function">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="gust_function" sRef="algorithm"/>
-      </port>
-      <parameter iname="IGustFront" order="0" parid="algorithm" uname="gustfront" varid="ALG"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IGusty" multiple="true" private="false" replica="0" uRef="gusty" visibleInterface="true">
-      <slices cRef="gust_function" inner_replica="0" slice_replica="0" uRef="gustfunction" sliceName="gust_function" transitive="true">
-        <visualDescription h="10" w="10" x="96" y="15"/>
-      </slices>
-      <slices cRef="algorithm" inner_replica="0" slice_replica="0" uRef="gustfront" sliceName="algorithm" transitive="false">
-        <visualDescription h="10" w="10" x="62" y="21"/>
-        <port>gust_function</port>
-      </slices>
-      <slices cRef="elasticity" inner_replica="0" slice_replica="0" uRef="elasticity" sliceName="elasticity" transitive="false">
-        <visualDescription h="10" w="10" x="13" y="24"/>
-      </slices>
-      <visualDescription h="40" w="107" x="277" y="348"/>
+      <visualDescription h="40" w="163" x="249" y="410"/>
     </unit>
   </componentInfo>
 </component:component>

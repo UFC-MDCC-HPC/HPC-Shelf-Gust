@@ -5,12 +5,12 @@
 <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 <ProductVersion>8.0.30703</ProductVersion>
 <SchemaVersion>2.0</SchemaVersion>
-<ProjectGuid>{898ecb8c-963a-4af9-be25-bc92b12cf0cf}</ProjectGuid>
+<ProjectGuid>{42c6de8c-7eee-45e1-b661-d1e2161c621c}</ProjectGuid>
 <OutputType>Library</OutputType>
-<RootNamespace>br.ufc.mdcc.hpcshelf.gust.backend.Elasticity</RootNamespace>
-<AssemblyName>br.ufc.mdcc.hpcshelf.gust.backend.Elasticity</AssemblyName>
+<RootNamespace>br.ufc.mdcc.hpcshelf.gust.computation.InfoColector</RootNamespace>
+<AssemblyName>br.ufc.mdcc.hpcshelf.gust.computation.InfoColector</AssemblyName>
 <SignAssembly>true</SignAssembly>
-<AssemblyOriginatorKeyFile>..\Elasticity.snk</AssemblyOriginatorKeyFile>
+<AssemblyOriginatorKeyFile>..\InfoColector.snk</AssemblyOriginatorKeyFile>
 <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
 </PropertyGroup>
 <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -39,11 +39,11 @@
 </ItemGroup>
 <ItemGroup>
 <Compile Include="Properties\AssemblyInfo.cs" />
-<Compile Include="..\src\1.0.0.0\BaseIElasticity.cs">
-<Link>BaseIElasticity.cs</Link>
+<Compile Include="..\src\1.0.0.0\BaseIInfoColector.cs">
+<Link>BaseIInfoColector.cs</Link>
 </Compile>
-<Compile Include="..\src\1.0.0.0\IElasticity.cs">
-<Link>IElasticity.cs</Link>
+<Compile Include="..\src\1.0.0.0\IInfoColector.cs">
+<Link>IInfoColector.cs</Link>
 </Compile>
 </ItemGroup>
 <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
