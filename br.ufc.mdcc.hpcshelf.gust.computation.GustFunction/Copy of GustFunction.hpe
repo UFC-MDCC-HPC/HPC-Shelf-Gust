@@ -11,7 +11,7 @@
     <parameter componentRef="iv" formFieldId="iv" order="1" variance="contravariant" varName="IV"/>
     <parameter componentRef="ok" formFieldId="ok" order="2" variance="contravariant" varName="OK"/>
     <parameter componentRef="ov" formFieldId="ov" order="3" variance="contravariant" varName="OV"/>
-    <innerComponent localRef="ik" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="ik" exposed="true">
+    <innerComponent localRef="ik" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="ik" exposed="false">
       <visualDescription h="60" w="100" x="124" y="267">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -19,7 +19,7 @@
         <visualDescription h="20" w="20" x="72" y="15"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="iv" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="iv" exposed="true">
+    <innerComponent localRef="iv" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="iv" exposed="false">
       <visualDescription h="60" w="100" x="139" y="382">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -53,7 +53,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+    <innerComponent localRef="output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="61" w="128" x="308" y="398">
         <color b="203" g="192" r="255"/>
       </visualDescription>
@@ -79,18 +79,6 @@
       <visualDescription h="40" w="198" x="343" y="216">
         <color b="191" g="191" r="191"/>
       </visualDescription>
-      <port name="ik">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="ik" sRef="ik"/>
-      </port>
-      <port name="iv">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="iv" sRef="iv"/>
-      </port>
-      <port name="output">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output" sRef="output"/>
-      </port>
       <parameter iname="IData" order="0" parid="ik" uname="data" varid="IK"/>
       <parameter iname="IData" order="1" parid="iv" uname="data" varid="IV"/>
       <parameter iname="IData" order="2" parid="ok" uname="data" varid="OK"/>
@@ -100,11 +88,11 @@
       </action>
     </interface>
     <unit facet="0" iRef="IGustFunction" multiple="false" private="false" replica="0" uRef="gustfunction" visibleInterface="true">
-      
       <slices cRef="ik" inner_replica="0" slice_replica="0" uRef="data" sliceName="ik" transitive="false">
         <visualDescription h="10" w="10" x="5" y="2"/>
-      </slices><slices cRef="iv" inner_replica="0" slice_replica="0" uRef="data" sliceName="iv" transitive="false">
-        <visualDescription h="10" w="10" x="6" y="25" />
+      </slices>
+      <slices cRef="iv" inner_replica="0" slice_replica="0" uRef="data" sliceName="iv" transitive="false">
+        <visualDescription h="10" w="10" x="6" y="25"/>
       </slices>
       <slices cRef="output" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="output" transitive="false">
         <visualDescription h="10" w="10" x="89" y="29"/>
