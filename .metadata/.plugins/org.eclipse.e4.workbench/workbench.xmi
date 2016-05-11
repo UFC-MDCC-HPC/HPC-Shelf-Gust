@@ -147,12 +147,14 @@
           <tags>persp.newWizSC:org.fusesource.ide.branding.wizards.NewCamelTestWizard</tags>
           <tags>persp.newWizSC:org.fusesource.ide.camel.editor.wizards.NewMessageWizard</tags>
           <tags>persp.newWizSC:org.fusesource.ide.branding.wizards.FuseProjectWizard</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_uJeYjRW3EeaJLq-EOv62QQ" selectedElement="_uJeYkBW3EeaJLq-EOv62QQ" horizontal="true">
-            <children xsi:type="basic:PartStack" xmi:id="_uJeYjhW3EeaJLq-EOv62QQ" elementId="left" containerData="3383" selectedElement="_uJeYjxW3EeaJLq-EOv62QQ">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_uJeYjRW3EeaJLq-EOv62QQ" selectedElement="_uJeYjhW3EeaJLq-EOv62QQ" horizontal="true">
+            <children xsi:type="basic:PartStack" xmi:id="_uJeYjhW3EeaJLq-EOv62QQ" elementId="left" containerData="1469" selectedElement="_uJeYjxW3EeaJLq-EOv62QQ">
               <tags>newtablook</tags>
+              <tags>active</tags>
+              <tags>noFocus</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_uJeYjxW3EeaJLq-EOv62QQ" elementId="hPE.HPEResourceNavigator" ref="_uJgNthW3EeaJLq-EOv62QQ"/>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_uJeYkBW3EeaJLq-EOv62QQ" containerData="6617" selectedElement="_uJeYkRW3EeaJLq-EOv62QQ" horizontal="true">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_uJeYkBW3EeaJLq-EOv62QQ" containerData="8531" selectedElement="_uJeYkRW3EeaJLq-EOv62QQ" horizontal="true">
               <children xsi:type="basic:PartSashContainer" xmi:id="_uJeYkRW3EeaJLq-EOv62QQ" containerData="7500" selectedElement="_uJeYkhW3EeaJLq-EOv62QQ">
                 <children xsi:type="advanced:Placeholder" xmi:id="_uJeYkhW3EeaJLq-EOv62QQ" elementId="org.eclipse.ui.editorss" containerData="7000" ref="_uJfmzBW3EeaJLq-EOv62QQ"/>
                 <children xsi:type="basic:PartStack" xmi:id="_uJeYkxW3EeaJLq-EOv62QQ" elementId="bottom" toBeRendered="false" containerData="3000">
@@ -192,20 +194,10 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_uJfmzBW3EeaJLq-EOv62QQ" elementId="org.eclipse.ui.editorss" selectedElement="_uJfmzRW3EeaJLq-EOv62QQ">
-      <children xsi:type="basic:PartStack" xmi:id="_uJfmzRW3EeaJLq-EOv62QQ" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_JFJEwBZoEealOMQwXqLt-Q">
+      <children xsi:type="basic:PartStack" xmi:id="_uJfmzRW3EeaJLq-EOv62QQ" elementId="org.eclipse.e4.primaryDataStack">
         <tags>newtablook</tags>
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <tags>active</tags>
-        <tags>noFocus</tags>
-        <children xsi:type="basic:Part" xmi:id="_JFJEwBZoEealOMQwXqLt-Q" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Gusty.hpe" iconURI="platform:/plugin/HPE_FrontEnd/hash.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.HPEVersionEditor&quot; name=&quot;Gusty.hpe&quot; partName=&quot;Gusty.hpe&quot; title=&quot;Gusty.hpe&quot; tooltip=&quot;br.ufc.mdcc.hpcshelf.gust.computation.Gusty/Gusty.hpe&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.Gusty/Gusty.hpe&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.HPEVersionEditor</tags>
-          <tags>removeOnHide</tags>
-          <tags>active</tags>
-          <tags>activeOnClose</tags>
-        </children>
       </children>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_uJfm0BW3EeaJLq-EOv62QQ" elementId="org.eclipse.ui.navigator.ProjectExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources/icons/full/eview16/resource_persp.gif" closeable="true">
@@ -282,9 +274,11 @@
       <toolbar xmi:id="_uJgNtRW3EeaJLq-EOv62QQ" elementId="org.guvnor.tools.views.ResourceHistoryView"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_uJgNthW3EeaJLq-EOv62QQ" elementId="hPE.HPEResourceNavigator" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Configuration Sessions" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" closeable="true">
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view LINK_NAVIGATOR_TO_EDITOR=&quot;0&quot; sorter=&quot;1&quot;>&#xA;&lt;filters>&#xA;&lt;filter element=&quot;*.class&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;filter element=&quot;RemoteSystemsConnections&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;filter element=&quot;RemoteSystemsTempFiles&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;filter element=&quot;.*&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;/filters>&#xA;&lt;expanded>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.GustFunction&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.computation.Gusty&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualifier.Comunication&quot;/>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpcshelf.gust.qualifier.Execution&quot;/>&#xA;&lt;/expanded>&#xA;&lt;selection>&#xA;&lt;element path=&quot;/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe&quot;/>&#xA;&lt;/selection>&#xA;&lt;/view>"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view LINK_NAVIGATOR_TO_EDITOR=&quot;0&quot; sorter=&quot;1&quot;>&#xA;&lt;filters>&#xA;&lt;filter element=&quot;*.class&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;filter element=&quot;RemoteSystemsConnections&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;filter element=&quot;RemoteSystemsTempFiles&quot; isEnabled=&quot;true&quot;/>&#xA;&lt;filter element=&quot;.*&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;/filters>&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:HPE Frontend</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_uJgNtxW3EeaJLq-EOv62QQ" elementId="hPE.HPEResourceNavigator">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -324,7 +318,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_uJgN6xW3EeaJLq-EOv62QQ" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="__IgR8BZmEealOMQwXqLt-Q" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_uJp_ARW3EeaJLq-EOv62QQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_m7PtIBetEeaPSu1Wzam_HA" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_uJp_ARW3EeaJLq-EOv62QQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_uJg0yxW3EeaJLq-EOv62QQ" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -345,7 +339,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_uJg0_BW3EeaJLq-EOv62QQ" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="__Ij8UBZmEealOMQwXqLt-Q" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_uJpYCxW3EeaJLq-EOv62QQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_m7TXgBetEeaPSu1Wzam_HA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_uJpYCxW3EeaJLq-EOv62QQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_uJg1ChW3EeaJLq-EOv62QQ" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
