@@ -19,8 +19,8 @@
 	<section name="FileExtensionDialogSettings">
 		<item value="482" key="DIALOG_WIDTH"/>
 		<item value="339" key="DIALOG_Y_ORIGIN"/>
-		<item value="285" key="DIALOG_HEIGHT"/>
 		<item value="74" key="DIALOG_X_ORIGIN"/>
+		<item value="285" key="DIALOG_HEIGHT"/>
 		<item value="1|Ubuntu|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="ImportExportAction">
