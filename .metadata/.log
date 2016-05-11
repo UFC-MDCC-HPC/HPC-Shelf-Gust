@@ -11551,3 +11551,37 @@ java.io.FileNotFoundException: /hash.gif
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+!SESSION 2016-05-11 20:21:37.618 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.7.0_80
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /home/cenez/workspace/gust/HPC-Shelf-Gust -dev file:/home/cenez/workspace/java/.metadata/.plugins/org.eclipse.pde.core/HPC-Shelf-Gust/dev.properties -os linux -ws gtk -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.emf.ecore 2 0 2016-05-11 20:21:40.875
+!MESSAGE Both 'HPE_FrontEnd' and 'HPE_FrontEnd' register a package for 'http://www.example.org/HashComponent'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2016-05-11 20:21:40.876
+!MESSAGE Both 'HPE_FrontEnd' and 'hclc' register a package for 'http://www.example.org/HashComponent'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2016-05-11 20:21:40.888
+!MESSAGE Both 'HPE_FrontEnd' and 'HPE_FrontEnd' register an extension parser for 'component'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2016-05-11 20:21:40.889
+!MESSAGE Both 'HPE_FrontEnd' and 'hclc' register an extension parser for 'component'
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2016-05-11 20:21:48.671
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Service Temporarily Unavailable. ; version: 1.100.0.v20160217-0435
+!STACK 0
+org.apache.http.client.HttpResponseException: Service Temporarily Unavailable
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseHandler.handleResponse(HttpResponses.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:92)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:1)
+	at org.apache.http.client.fluent.Response.handleResponse(Response.java:90)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses.getContentWithProgress(HttpResponses.java:55)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:69)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Thread.java:745)

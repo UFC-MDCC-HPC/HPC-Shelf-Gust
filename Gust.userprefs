@@ -1,13 +1,6 @@
 ﻿<Properties StartupItem="Gust/Gust/Gust.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="external/HPC-Shelf-MapReduce/br.ufc.mdcc.common.Data/src/1.0.0.0/IData.cs">
-    <Files>
-      <File FileName="br.ufc.mdcc.hpcshelf.gust.application.App/src/1.0.0.0/IApp.cs" Line="1" Column="1" />
-      <File FileName="br.ufc.mdcc.hpcshelf.gust.application.impl.AppImpl/src/1.0.0.0/IAppImpl.cs" Line="13" Column="80" />
-      <File FileName="external/HPC-Shelf-MapReduce/br.ufc.mdcc.common.Data/src/1.0.0.0/IData.cs" Line="1" Column="1" />
-      <File FileName="external/HPC-Shelf-MapReduce/br.ufc.mdcc.common.Data/src/1.0.0.0/BaseIData.cs" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/MapReduce-for-HPE/MapReduce-for-HPE/Program.cs" line="24" column="16" />
