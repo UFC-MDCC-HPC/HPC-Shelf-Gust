@@ -7,20 +7,52 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent localRef="colector" location="br.ufc.mdcc.hpcshelf.gust.computation.Colector/Colector.hpe" multiple="false" name="Colector" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
-      <visualDescription h="60" w="100" x="350" y="524">
+    <parameter componentRef="platform" formFieldId="platform" order="0" variance="contravariant" varName="P"/>
+    <innerComponent localRef="platform" location="br.ufc.mdcc.common.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.common" parameter_id="platform" exposed="false">
+      <visualDescription h="60" w="100" x="331" y="498">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="colector">
+      <unitBounds parallel="true" uRef="platform">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="feed" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+      <visualDescription h="60" w="100" x="122" y="409">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="client_port_type" varName="C"/>
+      <parameter formFieldId="server_port_type" varName="S"/>
+      <unitBounds parallel="false" uRef="client">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+      <unitBounds parallel="false" uRef="server">
+        <visualDescription h="20" w="20" x="28" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="301" y="621">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="340" y="615">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
     <interface iRef="IDataSource" nArgs="0">
-      <slice isRef="colector">
-        <originRef cRef="colector" iRef="IColector"/>
-        <visualDescription h="10" w="10" x="9" y="23"/>
+      <slice isRef="feed">
+        <originRef cRef="feed" iRef="IServerBase"/>
+        <visualDescription h="10" w="10" x="7" y="23"/>
       </slice>
-      <visualDescription h="40" w="139" x="277" y="268">
+      <visualDescription h="40" w="139" x="242" y="243">
         <color b="144" g="238" r="144"/>
       </visualDescription>
       <action id="main">
@@ -28,10 +60,10 @@
       </action>
     </interface>
     <unit facet="0" iRef="IDataSource" multiple="false" private="false" replica="0" uRef="datasource" visibleInterface="true">
-      <slices cRef="colector" inner_replica="0" slice_replica="0" uRef="colector" sliceName="colector" transitive="false">
-        <visualDescription h="10" w="10" x="9" y="23"/>
+      <slices cRef="feed" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed" transitive="false">
+        <visualDescription h="10" w="10" x="7" y="23"/>
       </slices>
-      <visualDescription h="40" w="139" x="277" y="348"/>
+      <visualDescription h="40" w="139" x="242" y="323"/>
     </unit>
   </componentInfo>
 </component:component>

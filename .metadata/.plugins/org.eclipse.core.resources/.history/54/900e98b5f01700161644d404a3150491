@@ -2,9 +2,6 @@ using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpcshelf.gust.data.Edge;
 using br.ufc.mdcc.common.Data;
-using br.ufc.mdcc.hpcshelf.gust.data;
-using br.ufc.mdcc.hpcshelf.gust.data.EdgeFactory;
-using System.Collections.Generic;
 
 namespace br.ufc.mdcc.hpcshelf.gust.data.Graph
 {
@@ -14,7 +11,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.data.Graph
 	{
 		HashSet<E> getAllEdges(V sourceVertex, V targetVertex);
 		E getEdge(V sourceVertex, V targetVertex);
-		IEdgeFactory<V, E> getEdgeFactory();
+		EdgeFactory<V, E> getEdgeFactory();
 		E addEdge(V sourceVertex, V targetVertex);
 		bool addEdge(V sourceVertex, V targetVertex, E e);
 		bool addVertex(V v);
@@ -33,6 +30,5 @@ namespace br.ufc.mdcc.hpcshelf.gust.data.Graph
 		V getEdgeSource(E e);
 		V getEdgeTarget(E e);
 		double getEdgeWeight(E e);
-		HashSet<object> getBuffer(V v);//extends for Gust
 	}
 }

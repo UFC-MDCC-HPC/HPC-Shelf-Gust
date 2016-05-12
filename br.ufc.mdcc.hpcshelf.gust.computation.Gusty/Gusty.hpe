@@ -13,6 +13,7 @@
     <parameter componentRef="ov" formFieldId="ov" order="3" variance="contravariant" varName="OV"/>
     <parameter componentRef="sinc_assinc" formFieldId="sinc_assinc" order="3" variance="contravariant" varName="EXEC"/>
     <parameter componentRef="push_pull" formFieldId="push_pull" order="4" variance="contravariant" varName="COM"/>
+    <parameter componentRef="platform" formFieldId="platform" order="4" variance="contravariant" varName="P"/>
     <innerComponent localRef="gustfunction" location="br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/GustFunction.hpe" multiple="false" name="GustFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
       <visualDescription h="60" w="169" x="260" y="355">
         <color b="255" g="255" r="255"/>
@@ -41,7 +42,7 @@
         <visualDescription h="47" w="98" x="485" y="453">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###1811397964"/>
+        <parameter formFieldId="item_type" varName="X###268955689"/>
         <unitBounds parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="52" y="2"/>
         </unitBounds>
@@ -50,7 +51,7 @@
         <visualDescription h="60" w="100" x="542" y="368">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="edge" varName="X###1437401076"/>
+        <parameter formFieldId="edge" varName="X###2032671735"/>
         <parameter formFieldId="vertex" varName="IK"/>
         <unitBounds parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
@@ -150,9 +151,25 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="platform" location="br.ufc.mdcc.common.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.common" parameter_id="platform" exposed="false">
+      <visualDescription h="60" w="109" x="36" y="193">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="platform">
+        <visualDescription h="20" w="20" x="87" y="23"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="info_colector" location="br.ufc.mdcc.hpcshelf.gust.computation.InfoColector/InfoColector.hpe" multiple="false" name="InfoColector" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
+      <visualDescription h="60" w="163" x="50" y="372">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="info_colector">
+        <visualDescription h="20" w="20" x="128" y="18"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="c" direct="true" varName="C"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
-    <innerComponent localRef="C###1811397964" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+    <innerComponent localRef="C###268955689" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="60" w="100" x="643" y="455">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -162,8 +179,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1811397964" varName="X###1811397964"/>
-    <innerComponent localRef="C###1437401076" location="br.ufc.mdcc.hpcshelf.gust.data.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.data" exposed="false">
+    <supplyParameter cRef="C###268955689" varName="X###268955689"/>
+    <innerComponent localRef="C###2032671735" location="br.ufc.mdcc.hpcshelf.gust.data.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.data" exposed="false">
       <visualDescription h="60" w="100" x="711" y="400">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -171,8 +188,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1437401076" varName="X###1437401076"/>
-    <interface iRef="IGusty" nArgs="6">
+    <supplyParameter cRef="C###2032671735" varName="X###2032671735"/>
+    <interface iRef="IGusty" nArgs="7">
       <slice isRef="gustfunction">
         <originRef cRef="gustfunction" iRef="IGustFunction"/>
         <visualDescription h="10" w="10" x="24" y="26"/>
@@ -193,31 +210,40 @@
         <originRef cRef="feed" iRef="IServerBase"/>
         <visualDescription h="10" w="10" x="123" y="30"/>
       </slice>
+      <slice isRef="platform">
+        <originRef cRef="platform" iRef="IPlatform"/>
+        <visualDescription h="10" w="10" x="12" y="9"/>
+      </slice>
+      <slice isRef="info_colector">
+        <originRef cRef="info_colector" iRef="IInfoColector"/>
+        <visualDescription h="10" w="10" x="9" y="29"/>
+      </slice>
       <visualDescription h="40" w="163" x="186" y="157">
         <color b="191" g="191" r="191"/>
       </visualDescription>
-      <port name="graph">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="graph" sRef="gustfunction"/>
-      </port>
       <port name="ik">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="ik" sRef="gustfunction"/>
       </port>
-      <port name="iv">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="iv" sRef="gustfunction"/>
-      </port>
       <port name="output">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output" sRef="gustfunction"/>
+      </port>
+      <port name="graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="graph" sRef="gustfunction"/>
+      </port>
+      <port name="iv">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="iv" sRef="gustfunction"/>
       </port>
       <parameter iname="IData" order="0" parid="ik" uname="data" varid="IK"/>
       <parameter iname="IData" order="1" parid="iv" uname="data" varid="IV"/>
       <parameter iname="IData" order="2" parid="ok" uname="data" varid="OK"/>
       <parameter iname="IData" parid="ov" uname="data" varid="OV"/>
       <parameter iname="IExecution" order="3" parid="sinc_assinc" uname="execution" varid="EXEC"/>
-      <parameter iname="IComunication" order="4" parid="push_pull" uname="comunication" varid="COM"/>
+      <parameter iname="IComunication" parid="push_pull" uname="comunication" varid="COM"/>
+      <parameter iname="IPlatform" order="4" parid="platform" uname="platform" varid="P"/>
       <action id="main">
         <protocol/>
       </action>
@@ -253,6 +279,12 @@
       </slices>
       <slices cRef="feed" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed" transitive="false">
         <visualDescription h="10" w="10" x="123" y="30"/>
+      </slices>
+      <slices cRef="platform" inner_replica="0" slice_replica="0" uRef="platform" sliceName="platform" transitive="false">
+        <visualDescription h="10" w="10" x="12" y="9"/>
+      </slices>
+      <slices cRef="info_colector" inner_replica="0" slice_replica="0" uRef="info_colector" sliceName="info_colector" transitive="false">
+        <visualDescription h="10" w="10" x="9" y="29"/>
       </slices>
       <visualDescription h="40" w="163" x="186" y="237"/>
     </unit>
