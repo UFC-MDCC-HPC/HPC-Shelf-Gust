@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeDataColector</name>
+	<name>br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeGusty</name>
 	<comment></comment>
 	<projects>
 	</projects>

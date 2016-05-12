@@ -5,12 +5,12 @@
 <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 <ProductVersion>8.0.30703</ProductVersion>
 <SchemaVersion>2.0</SchemaVersion>
-<ProjectGuid>{ec16f582-5a6a-46ed-bcad-e64fb92f8495}</ProjectGuid>
+<ProjectGuid>{0c4e310f-a348-49c8-bb4f-ea5b3deb77a1}</ProjectGuid>
 <OutputType>Library</OutputType>
-<RootNamespace>br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingDataColector</RootNamespace>
-<AssemblyName>br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingDataColector</AssemblyName>
+<RootNamespace>br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeGusty</RootNamespace>
+<AssemblyName>br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeGusty</AssemblyName>
 <SignAssembly>true</SignAssembly>
-<AssemblyOriginatorKeyFile>..\TaskBindingDataColector.snk</AssemblyOriginatorKeyFile>
+<AssemblyOriginatorKeyFile>..\TaskPortTypeGusty.snk</AssemblyOriginatorKeyFile>
 <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
 </PropertyGroup>
 <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -39,11 +39,11 @@
 </ItemGroup>
 <ItemGroup>
 <Compile Include="Properties\AssemblyInfo.cs" />
-<Compile Include="..\src\1.0.0.0\BaseITaskBindingDataColector.cs">
-<Link>BaseITaskBindingDataColector.cs</Link>
+<Compile Include="..\src\1.0.0.0\BaseITaskPortTypeGusty.cs">
+<Link>BaseITaskPortTypeGusty.cs</Link>
 </Compile>
-<Compile Include="..\src\1.0.0.0\ITaskBindingDataColector.cs">
-<Link>ITaskBindingDataColector.cs</Link>
+<Compile Include="..\src\1.0.0.0\ITaskPortTypeGusty.cs">
+<Link>ITaskPortTypeGusty.cs</Link>
 </Compile>
 </ItemGroup>
 <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

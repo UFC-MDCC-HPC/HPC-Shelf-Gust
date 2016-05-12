@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e948ddccb0cedb9dd0b54c3507e69d3842d821e855dcf1fe847f6b63e82ca9b98c341743e19f0bd3e0e9078a32e700237d2649bea42f897b0b7e0234ec206a0ba4ce79301949b7d4acf4423bc56655048777bced90ba344e2379ad47ee11b24008ec0f95374c28976a76e5d968be7f46aad104c19f3339c2d553148d23a465c6" isAbstract="true" kind="Qualifier" name="TaskPortTypeDataColector" packagePath="br.ufc.mdcc.hpcshelf.gust.port.task">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000009689627109fc657de4787d7fb1bebef92b3634f9a72d9361a419a4b740f254ff530317573b54543a650c6421cbfae897d7a92db9528d4336f26627b0826762dc68897755833276a7a007c3531c002fe0b8a259296e89723ce8290c024aefdb1adb3cc4e8e46e5c88c45f9a8bac63806b82bf68fa0ad303b167d29f83c3579cc" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.task.TaskPortType/TaskPortType.hpe" name="TaskPortType" package="br.ufc.mdcc.hpc.storm.binding.task" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="210" y="480">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="true" uRef="task_port_type">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="ITaskPortTypeDataColector" nArgs="0">
+      <visualDescription h="40" w="283" x="75" y="282">
+        <color b="230" g="216" r="173"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="ITaskPortTypeDataColector" multiple="true" private="false" replica="0" uRef="task_port_type" visibleInterface="true">
+      <super cRef="base" uRef="task_port_type"/>
+      <visualDescription h="40" w="283" x="94" y="386"/>
+    </unit>
+  </componentInfo>
+</component:component>

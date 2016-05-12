@@ -42,7 +42,7 @@
         <visualDescription h="47" w="98" x="778" y="422">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###1212686281"/>
+        <parameter formFieldId="item_type" varName="X###120622946"/>
         <unitBounds parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="52" y="2"/>
         </unitBounds>
@@ -51,7 +51,7 @@
         <visualDescription h="60" w="100" x="767" y="352">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="edge" varName="X###1998514737"/>
+        <parameter formFieldId="edge" varName="X###85290654"/>
         <parameter formFieldId="vertex" varName="IK"/>
         <unitBounds parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
@@ -167,15 +167,15 @@
         <visualDescription h="20" w="20" x="128" y="18"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="task_gusty" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance/TaskBindingAdvance.hpe" multiple="false" name="TaskBindingAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.task" exposed="false">
-      <visualDescription h="60" w="194" x="240" y="378">
+    <innerComponent localRef="task_gusty" location="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingGusty/TaskBindingGusty.hpe" multiple="false" name="TaskBindingGusty" package="br.ufc.mdcc.hpcshelf.gust.binding.task" exposed="false">
+      <visualDescription h="60" w="177" x="261" y="417">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-        <visualDescription h="60" w="129" x="229" y="465">
+        <visualDescription h="60" w="167" x="71" y="482">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###245462032"/>
+        <parameter formFieldId="task_port_type" varName="X###1108429229"/>
         <unitBounds parallel="true" uRef="peer">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -186,7 +186,7 @@
     </innerComponent>
     <supplyParameter cRef="c" direct="true" varName="C"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
-    <innerComponent localRef="C###1212686281" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+    <innerComponent localRef="C###120622946" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="60" w="100" x="643" y="455">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -196,8 +196,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1212686281" varName="X###1212686281"/>
-    <innerComponent localRef="C###1998514737" location="br.ufc.mdcc.hpcshelf.gust.data.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.data" exposed="false">
+    <supplyParameter cRef="C###120622946" varName="X###120622946"/>
+    <innerComponent localRef="C###85290654" location="br.ufc.mdcc.hpcshelf.gust.data.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.data" exposed="false">
       <visualDescription h="60" w="100" x="711" y="400">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -205,16 +205,16 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1998514737" varName="X###1998514737"/>
-    <innerComponent localRef="C###245462032" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
-      <visualDescription h="60" w="142" x="217" y="525">
+    <supplyParameter cRef="C###85290654" varName="X###85290654"/>
+    <innerComponent localRef="C###1108429229" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeGusty/TaskPortTypeGusty.hpe" multiple="false" name="TaskPortTypeGusty" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
+      <visualDescription h="60" w="156" x="533" y="497">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="task_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###245462032" varName="X###245462032"/>
+    <supplyParameter cRef="C###1108429229" varName="X###1108429229"/>
     <interface iRef="IGusty" nArgs="7">
       <slice isRef="gustfunction">
         <originRef cRef="gustfunction" iRef="IGustFunction"/>
@@ -245,8 +245,8 @@
         <visualDescription h="10" w="10" x="9" y="29"/>
       </slice>
       <slice isRef="task_gusty">
-        <originRef cRef="task_gusty" iRef="ITaskBindingAdvance"/>
-        <visualDescription h="10" w="10" x="29" y="26"/>
+        <originRef cRef="task_gusty" iRef="ITaskBindingGusty"/>
+        <visualDescription h="10" w="10" x="35" y="26"/>
       </slice>
       <visualDescription h="40" w="163" x="186" y="157">
         <color b="191" g="191" r="191"/>
@@ -293,7 +293,7 @@
         <visualDescription h="10" w="10" x="5" y="2"/>
       </slices>
       <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_port" transitive="true">
-        <visualDescription h="10" w="10" x="81" y="19"/>
+        <visualDescription h="10" w="10" x="42" y="18"/>
       </slices>
       <slices cRef="output" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="output" transitive="true">
         <visualDescription h="10" w="10" x="89" y="29"/>
@@ -324,7 +324,7 @@
         <visualDescription h="10" w="10" x="9" y="29"/>
       </slices>
       <slices cRef="task_gusty" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_gusty" transitive="false">
-        <visualDescription h="10" w="10" x="29" y="26"/>
+        <visualDescription h="10" w="10" x="35" y="26"/>
         <port>task_port</port>
       </slices>
       <visualDescription h="40" w="163" x="186" y="237"/>
