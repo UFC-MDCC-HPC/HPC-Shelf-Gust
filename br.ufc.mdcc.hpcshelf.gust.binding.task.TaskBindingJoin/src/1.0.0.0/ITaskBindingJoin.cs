@@ -1,16 +1,15 @@
 using br.ufc.pargo.hpe.kinds;
 
-namespace br.ufc.mdcc.model.Model { 
-
-public interface IModel : BaseIModel
+namespace br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin
 {
-		// void loadFrom (IModel o);
-		// IModel newInstance ();
-		// IModel clone();
-
-		object Instance { get; set;}
-		object newInstance ();
-
-} // end main interface 
-
-} // end namespace 
+	public interface ITaskBindingJoin : BaseITaskBindingJoin
+	{
+	}
+	
+	public class ITaskPortJoin
+	{
+		public static object READ_SOURCE = new object();
+		public static object TERMINATE = new object();
+		public static object WRITE_SINK = new object();
+	}
+}

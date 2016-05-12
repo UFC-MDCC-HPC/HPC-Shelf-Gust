@@ -1,22 +1,53 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000043ee977ee060bb0a2504f591ef96f1b8c2557290d09147711e0042de39c0406209a9ec84cd73a0eda1f9975d81c6287e2c0bb3dcfc4c2cbae59033937854cc752a963e0755b46c34b8361414248916b01a1d3462cded1132da9e96252474d6131006d43ccb58c47aad6e7371ecdcc11adf5822dcef3273c72ea8d128573846ab" isAbstract="true" kind="Computation" name="TaskBindingJoin" packagePath="br.ufc.mdcc.hpcshelf.gust.binding.task">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f986a7e95e052bb96aa40f13f23a5160ef4c95bf946c0defed2769993fa155da0c730d8bd9a6199d83e71df209c7c27afc69c8b1fac29ea64d6afb4a67611945daf901f091dea6b94b4545bf3b7eddf450b31566e6f4414f826c4438e6ae1ef235794174e7f377e3e0e9f8c14b6ce99794f2b96848cd64fcdfd73199f67454aa" isAbstract="true" kind="Synchronizer" name="TaskBindingJoin" packagePath="br.ufc.mdcc.hpcshelf.gust.binding.task">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
   <componentInfo>
+    <innerComponent localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="false">
+      <visualDescription h="60" w="183" x="281" y="477">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="task_port_type" varName="T"/>
+      <unitBounds parallel="true" uRef="peer">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="task_port_type" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeJoin/TaskPortTypeJoin.hpe" multiple="false" name="TaskPortTypeJoin" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
+      <visualDescription h="60" w="151" x="615" y="480">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="task_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="task_port_type" direct="true" varName="T"/>
     <interface iRef="ITaskBindingJoin" nArgs="0">
-      <visualDescription h="40" w="80" x="277" y="268">
-        <color b="230" g="216" r="173"/>
+      <slice isRef="task_port">
+        <originRef cRef="task_port" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="79" y="24"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin&#xA;{&#xA;&#x9;public interface BaseITaskBindingJoin : ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseITaskBindingJoin.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin/bin/1.0.0.0/BaseITaskBindingJoin.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin&#xA;{&#xA;&#x9;public interface ITaskBindingJoin : BaseITaskBindingJoin&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITaskBindingJoin.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin/bin/1.0.0.0/ITaskBindingJoin.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin/bin/1.0.0.0/BaseITaskBindingJoin.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="303" x="222" y="282">
+        <color b="6" g="154" r="78"/>
       </visualDescription>
       <action id="main">
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="ITaskBindingJoin" multiple="true" private="false" replica="0" uRef="model" visibleInterface="true">
-      <visualDescription h="40" w="80" x="277" y="348"/>
+    <unit facet="0" iRef="ITaskBindingJoin" multiple="true" private="false" replica="0" uRef="peer" visibleInterface="true">
+      <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_port" transitive="false">
+        <visualDescription h="10" w="10" x="79" y="24"/>
+      </slices>
+      <visualDescription h="40" w="303" x="222" y="362"/>
     </unit>
   </componentInfo>
 </component:component>

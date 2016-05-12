@@ -1,0 +1,8 @@
+using br.ufc.pargo.hpe.kinds;
+
+namespace br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin
+{
+	public interface ITaskBindingJoin : BaseITaskBindingJoin
+	{
+	}
+}
