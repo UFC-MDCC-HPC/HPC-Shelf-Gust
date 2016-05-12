@@ -7,13 +7,14 @@
     </visualAttributes>
   </header>
   <componentInfo>
+    <parameter componentRef="gustfunction" formFieldId="gustfunction" order="4" variance="contravariant" varName="GF"/>
     <parameter componentRef="ik" formFieldId="ik" order="0" variance="contravariant" varName="IK"/>
     <parameter componentRef="iv" formFieldId="iv" order="1" variance="contravariant" varName="IV"/>
     <parameter componentRef="ok" formFieldId="ok" order="2" variance="contravariant" varName="OK"/>
     <parameter componentRef="ov" formFieldId="ov" order="3" variance="contravariant" varName="OV"/>
     <parameter componentRef="sinc_assinc" formFieldId="sinc_assinc" order="3" variance="contravariant" varName="EXEC"/>
     <parameter componentRef="push_pull" formFieldId="push_pull" order="4" variance="contravariant" varName="COM"/>
-    <innerComponent localRef="gustfunction" location="br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/GustFunction.hpe" multiple="false" name="GustFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
+    <innerComponent localRef="gustfunction" location="br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/GustFunction.hpe" multiple="false" name="GustFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" parameter_id="gustfunction" exposed="false">
       <visualDescription h="60" w="169" x="260" y="355">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -22,7 +23,7 @@
       <parameter formFieldId="ik" varName="IK"/>
       <parameter formFieldId="ok" varName="OK"/>
       <port localRef="ik" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="42" w="75" x="153" y="449">
+        <visualDescription h="42" w="75" x="192" y="453">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -30,7 +31,7 @@
         </unitBounds>
       </port>
       <port localRef="iv" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="33" w="81" x="314" y="479">
+        <visualDescription h="33" w="81" x="347" y="466">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -38,22 +39,12 @@
         </unitBounds>
       </port>
       <port localRef="output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="47" w="98" x="485" y="453">
+        <visualDescription h="47" w="98" x="472" y="451">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###1811397964"/>
+        <parameter formFieldId="item_type" varName="X###1581144544"/>
         <unitBounds parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="52" y="2"/>
-        </unitBounds>
-      </port>
-      <port localRef="graph" location="br.ufc.mdcc.hpcshelf.gust.data.Graph/Graph.hpe" multiple="false" name="Graph" package="br.ufc.mdcc.hpcshelf.gust.data" exposed="true">
-        <visualDescription h="60" w="100" x="542" y="368">
-          <color b="255" g="255" r="255"/>
-        </visualDescription>
-        <parameter formFieldId="edge" varName="X###1437401076"/>
-        <parameter formFieldId="vertex" varName="IK"/>
-        <unitBounds parallel="false" uRef="data">
-          <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
       <unitBounds parallel="false" uRef="gustfunction">
@@ -109,7 +100,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="feed" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="103" x="429" y="280">
+      <visualDescription h="60" w="103" x="399" y="283">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="client_port_type" varName="C"/>
@@ -122,7 +113,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="colect" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="137" x="28" y="292">
+      <visualDescription h="60" w="137" x="39" y="299">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="client_port_type" varName="C"/>
@@ -135,7 +126,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="c" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
-      <visualDescription h="60" w="100" x="187" y="661">
+      <visualDescription h="60" w="100" x="166" y="596">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="environment_port_type">
@@ -143,7 +134,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="s" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
-      <visualDescription h="60" w="100" x="481" y="649">
+      <visualDescription h="60" w="100" x="357" y="636">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="environment_port_type">
@@ -152,7 +143,7 @@
     </innerComponent>
     <supplyParameter cRef="c" direct="true" varName="C"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
-    <innerComponent localRef="C###1811397964" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+    <innerComponent localRef="C###1581144544" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="60" w="100" x="643" y="455">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -162,17 +153,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1811397964" varName="X###1811397964"/>
-    <innerComponent localRef="C###1437401076" location="br.ufc.mdcc.hpcshelf.gust.data.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.data" exposed="false">
-      <visualDescription h="60" w="100" x="711" y="400">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="false" uRef="data">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
-    <supplyParameter cRef="C###1437401076" varName="X###1437401076"/>
-    <interface iRef="IGusty" nArgs="6">
+    <supplyParameter cRef="C###1581144544" varName="X###1581144544"/>
+    <interface iRef="IGusty" nArgs="7">
       <slice isRef="gustfunction">
         <originRef cRef="gustfunction" iRef="IGustFunction"/>
         <visualDescription h="10" w="10" x="24" y="26"/>
@@ -196,22 +178,19 @@
       <visualDescription h="40" w="163" x="186" y="157">
         <color b="191" g="191" r="191"/>
       </visualDescription>
-      <port name="graph">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="graph" sRef="gustfunction"/>
-      </port>
       <port name="ik">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="ik" sRef="gustfunction"/>
-      </port>
-      <port name="iv">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="iv" sRef="gustfunction"/>
       </port>
       <port name="output">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output" sRef="gustfunction"/>
       </port>
+      <port name="iv">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="iv" sRef="gustfunction"/>
+      </port>
+      <parameter iname="IGustFunction" parid="gustfunction" uname="gustfunction" varid="GF"/>
       <parameter iname="IData" order="0" parid="ik" uname="data" varid="IK"/>
       <parameter iname="IData" order="1" parid="iv" uname="data" varid="IV"/>
       <parameter iname="IData" order="2" parid="ok" uname="data" varid="OK"/>
@@ -223,9 +202,6 @@
       </action>
     </interface>
     <unit facet="0" iRef="IGusty" multiple="true" private="false" replica="0" uRef="gusty" visibleInterface="true">
-      <slices cRef="graph" inner_replica="0" slice_replica="0" uRef="data" sliceName="graph" transitive="true">
-        <visualDescription h="10" w="10" x="163" y="20"/>
-      </slices>
       <slices cRef="iv" inner_replica="0" slice_replica="0" uRef="data" sliceName="iv" transitive="true">
         <visualDescription h="10" w="10" x="6" y="25"/>
       </slices>
@@ -237,7 +213,6 @@
       </slices>
       <slices cRef="gustfunction" inner_replica="0" slice_replica="0" uRef="gustfunction" sliceName="gustfunction" transitive="false">
         <visualDescription h="10" w="10" x="24" y="26"/>
-        <port>graph</port>
         <port>iv</port>
         <port>ik</port>
         <port>output</port>

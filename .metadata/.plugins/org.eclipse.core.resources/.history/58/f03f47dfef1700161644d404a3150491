@@ -11,7 +11,7 @@
     <parameter componentRef="iv" formFieldId="iv" order="1" variance="contravariant" varName="IV"/>
     <parameter componentRef="ok" formFieldId="ok" order="2" variance="contravariant" varName="OK"/>
     <parameter componentRef="ov" formFieldId="ov" order="3" variance="contravariant" varName="OV"/>
-    <innerComponent localRef="ik" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="ik" exposed="true">
+    <innerComponent localRef="ik" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="ik" exposed="false">
       <visualDescription h="60" w="100" x="124" y="267">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -19,7 +19,7 @@
         <visualDescription h="20" w="20" x="72" y="15"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="iv" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="iv" exposed="true">
+    <innerComponent localRef="iv" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="iv" exposed="false">
       <visualDescription h="60" w="100" x="139" y="382">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -53,7 +53,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+    <innerComponent localRef="output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="61" w="128" x="308" y="398">
         <color b="203" g="192" r="255"/>
       </visualDescription>
@@ -62,7 +62,7 @@
         <visualDescription h="20" w="20" x="52" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="graph" location="br.ufc.mdcc.hpcshelf.gust.data.Graph/Graph.hpe" multiple="false" name="Graph" package="br.ufc.mdcc.hpcshelf.gust.data" exposed="true">
+    <innerComponent localRef="graph" location="br.ufc.mdcc.hpcshelf.gust.data.Graph/Graph.hpe" multiple="false" name="Graph" package="br.ufc.mdcc.hpcshelf.gust.data" exposed="false">
       <visualDescription h="60" w="100" x="510" y="380">
         <color b="255" g="255" r="255"/>
       </visualDescription>
