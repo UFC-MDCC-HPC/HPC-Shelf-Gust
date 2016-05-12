@@ -11,3 +11,4 @@
 1463036175921	Delete resource 'br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance'
 1463036204245	Delete resource 'br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance'
 1463036232836	Delete resource 'br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.BindingDirectMxNIterator'
+1463036385443	Delete resource 'br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/Copy of GustFunction.hpe'
