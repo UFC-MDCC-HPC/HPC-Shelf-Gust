@@ -1,0 +1,24 @@
+using br.ufc.pargo.hpe.kinds;
+
+namespace br.ufc.mdcc.model.Model { 
+
+public interface IModel : BaseIModel
+{
+		// void loadFrom (IModel o);
+		// IModel newInstance ();
+		// IModel clone();
+
+		object Instance { get; set;}
+		object newInstance ();
+
+} // end main interface 
+
+	public class ITaskPortDataColector
+	{
+	   public static object READ_CHUNK = new object();
+	   public static object READ_CHUNK = new object();
+	   public static object PERFORM = new object();
+	   public static object CHUNK_READY = new object();
+	}
+
+} // end namespace 
