@@ -33,6 +33,10 @@ namespace br.ufc.mdcc.hpcshelf.gust.data.Graph
 		V getEdgeSource(E e);
 		V getEdgeTarget(E e);
 		double getEdgeWeight(E e);
-		HashSet<object> getBuffer(V v);//extends for Gust
+		//extends for Gust
+		HashSet<object> getBuffer(V v);
+		bool isActive(V v);
+		void setActive(V v);
+		void setInactive(V v);
 	}
 }

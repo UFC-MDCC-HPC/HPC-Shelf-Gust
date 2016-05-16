@@ -7,15 +7,47 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <interface iRef="IPartitionFunction" nArgs="0">
+    <parameter componentRef="input_key" formFieldId="input_key" order="0" variance="contravariant" varName="IK"/>
+    <innerComponent localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_key" exposed="true">
+      <visualDescription h="60" w="100" x="128" y="423">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="output_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="100" x="510" y="409">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="IPartitionFunction" nArgs="1">
+      <slice isRef="input_key">
+        <originRef cRef="input_key" iRef="IData"/>
+        <visualDescription h="10" w="10" x="3" y="27"/>
+      </slice>
+      <slice isRef="output_key">
+        <originRef cRef="output_key" iRef="IInteger"/>
+        <visualDescription h="10" w="10" x="127" y="27"/>
+      </slice>
       <visualDescription h="40" w="142" x="277" y="268">
         <color b="191" g="191" r="191"/>
       </visualDescription>
+      <parameter iname="IData" order="0" parid="input_key" uname="data" varid="IK"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IPartitionFunction" multiple="false" private="false" replica="0" uRef="partitionfunction" visibleInterface="true">
+      <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="false">
+        <visualDescription h="10" w="10" x="3" y="27"/>
+      </slices>
+      <slices cRef="output_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_key" transitive="false">
+        <visualDescription h="10" w="10" x="127" y="27"/>
+      </slices>
       <visualDescription h="40" w="142" x="277" y="348"/>
     </unit>
   </componentInfo>

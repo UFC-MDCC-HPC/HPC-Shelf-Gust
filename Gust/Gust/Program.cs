@@ -1,12 +1,16 @@
 using System;
 using System.IO;
-//using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace br.ufc.mdcc.gust {
 
 	public class Program{
+		public static bool b = false;
 		public static void Main (string[] args){
 			
+		}
+		public static void testa(object o){
+			Console.WriteLine (""+o.ToString());
 		}
 		public static string readInput (string file){
 			return System.IO.File.ReadAllText(file);

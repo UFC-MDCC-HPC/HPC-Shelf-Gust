@@ -15,7 +15,7 @@
     <parameter componentRef="push_pull" formFieldId="push_pull" order="4" variance="contravariant" varName="COM"/>
     <parameter componentRef="platform" formFieldId="platform" order="4" variance="contravariant" varName="P"/>
     <innerComponent localRef="gustfunction" location="br.ufc.mdcc.hpcshelf.gust.computation.GustFunction/GustFunction.hpe" multiple="false" name="GustFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
-      <visualDescription h="60" w="169" x="507" y="378">
+      <visualDescription h="60" w="169" x="368" y="354">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="ov" varName="OV"/>
@@ -23,38 +23,39 @@
       <parameter formFieldId="ik" varName="IK"/>
       <parameter formFieldId="ok" varName="OK"/>
       <port localRef="ik" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="42" w="75" x="606" y="267">
+        <visualDescription h="42" w="75" x="572" y="289">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="72" y="15"/>
         </unitBounds>
       </port>
-      <port localRef="iv" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="33" w="81" x="666" y="323">
-          <color b="255" g="255" r="255"/>
-        </visualDescription>
-        <unitBounds parallel="false" uRef="data">
-          <visualDescription h="20" w="20" x="68" y="17"/>
-        </unitBounds>
-      </port>
       <port localRef="output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="47" w="98" x="778" y="422">
+        <visualDescription h="47" w="98" x="340" y="431">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###120622946"/>
+        <parameter formFieldId="item_type" varName="X###186142524"/>
         <unitBounds parallel="false" uRef="iterator">
-          <visualDescription h="20" w="20" x="52" y="2"/>
+          <visualDescription h="20" w="20" x="10" y="19"/>
         </unitBounds>
       </port>
       <port localRef="graph" location="br.ufc.mdcc.hpcshelf.gust.data.Graph/Graph.hpe" multiple="false" name="Graph" package="br.ufc.mdcc.hpcshelf.gust.data" exposed="true">
-        <visualDescription h="60" w="100" x="767" y="352">
+        <visualDescription h="40" w="94" x="588" y="391">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="edge" varName="X###85290654"/>
+        <parameter formFieldId="edge" varName="X###1761210836"/>
         <parameter formFieldId="vertex" varName="IK"/>
         <unitBounds parallel="false" uRef="data">
-          <visualDescription h="20" w="20" x="5" y="2"/>
+          <visualDescription h="20" w="20" x="9" y="21"/>
+        </unitBounds>
+      </port>
+      <port localRef="buffer" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="42" w="124" x="585" y="337">
+          <color b="203" g="192" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="item_type" varName="IV"/>
+        <unitBounds parallel="false" uRef="iterator">
+          <visualDescription h="20" w="20" x="114" y="20"/>
         </unitBounds>
       </port>
       <unitBounds parallel="false" uRef="gustfunction">
@@ -94,36 +95,36 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="sinc_assinc" location="br.ufc.mdcc.hpcshelf.gust.qualifier.Execution/Execution.hpe" multiple="false" name="Execution" package="br.ufc.mdcc.hpcshelf.gust.qualifier" parameter_id="sinc_assinc" exposed="false">
-      <visualDescription h="60" w="138" x="380" y="182">
+      <visualDescription h="60" w="138" x="395" y="122">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="execution">
-        <visualDescription h="20" w="20" x="5" y="2"/>
+        <visualDescription h="20" w="20" x="2" y="22"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="push_pull" location="br.ufc.mdcc.hpcshelf.gust.qualifier.Comunication/Comunication.hpe" multiple="false" name="Comunication" package="br.ufc.mdcc.hpcshelf.gust.qualifier" parameter_id="push_pull" exposed="false">
-      <visualDescription h="60" w="165" x="582" y="191">
+      <visualDescription h="60" w="165" x="410" y="187">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="comunication">
-        <visualDescription h="20" w="20" x="5" y="2"/>
+        <visualDescription h="20" w="20" x="5" y="24"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="feed" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="103" x="429" y="280">
+      <visualDescription h="56" w="114" x="434" y="251">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="client_port_type" varName="C"/>
       <parameter formFieldId="server_port_type" varName="S"/>
       <unitBounds parallel="false" uRef="client">
-        <visualDescription h="20" w="20" x="81" y="19"/>
+        <visualDescription h="20" w="20" x="88" y="16"/>
       </unitBounds>
       <unitBounds parallel="false" uRef="server">
-        <visualDescription h="20" w="20" x="2" y="22"/>
+        <visualDescription h="20" w="20" x="6" y="18"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="colect" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="137" x="28" y="292">
+      <visualDescription h="60" w="137" x="18" y="212">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="client_port_type" varName="C"/>
@@ -152,7 +153,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="platform" location="br.ufc.mdcc.common.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.common" parameter_id="platform" exposed="false">
-      <visualDescription h="60" w="109" x="36" y="193">
+      <visualDescription h="60" w="109" x="33" y="137">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="platform">
@@ -160,7 +161,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="info_colector" location="br.ufc.mdcc.hpcshelf.gust.computation.InfoColector/InfoColector.hpe" multiple="false" name="InfoColector" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
-      <visualDescription h="60" w="163" x="50" y="372">
+      <visualDescription h="60" w="163" x="22" y="294">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="info_colector">
@@ -168,25 +169,25 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="task_gusty" location="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingGusty/TaskBindingGusty.hpe" multiple="false" name="TaskBindingGusty" package="br.ufc.mdcc.hpcshelf.gust.binding.task" exposed="false">
-      <visualDescription h="60" w="177" x="261" y="417">
+      <visualDescription h="60" w="177" x="152" y="348">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <port localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-        <visualDescription h="60" w="167" x="71" y="482">
+        <visualDescription h="31" w="115" x="9" y="363">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###1108429229"/>
+        <parameter formFieldId="task_port_type" varName="X###1903414051"/>
         <unitBounds parallel="true" uRef="peer">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
       <unitBounds parallel="true" uRef="peer">
-        <visualDescription h="20" w="20" x="5" y="2"/>
+        <visualDescription h="20" w="20" x="79" y="2"/>
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="c" direct="true" varName="C"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
-    <innerComponent localRef="C###120622946" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+    <innerComponent localRef="C###186142524" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="60" w="100" x="643" y="455">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -196,8 +197,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###120622946" varName="X###120622946"/>
-    <innerComponent localRef="C###85290654" location="br.ufc.mdcc.hpcshelf.gust.data.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.data" exposed="false">
+    <supplyParameter cRef="C###186142524" varName="X###186142524"/>
+    <innerComponent localRef="C###1761210836" location="br.ufc.mdcc.hpcshelf.gust.data.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.data" exposed="false">
       <visualDescription h="60" w="100" x="711" y="400">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -205,8 +206,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###85290654" varName="X###85290654"/>
-    <innerComponent localRef="C###1108429229" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeGusty/TaskPortTypeGusty.hpe" multiple="false" name="TaskPortTypeGusty" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
+    <supplyParameter cRef="C###1761210836" varName="X###1761210836"/>
+    <innerComponent localRef="C###1903414051" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeGusty/TaskPortTypeGusty.hpe" multiple="false" name="TaskPortTypeGusty" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="60" w="156" x="533" y="497">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -214,7 +215,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1108429229" varName="X###1108429229"/>
+    <supplyParameter cRef="C###1903414051" varName="X###1903414051"/>
     <interface iRef="IGusty" nArgs="7">
       <slice isRef="gustfunction">
         <originRef cRef="gustfunction" iRef="IGustFunction"/>
@@ -251,13 +252,13 @@
       <visualDescription h="40" w="163" x="186" y="157">
         <color b="191" g="191" r="191"/>
       </visualDescription>
-      <port name="iv">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="iv" sRef="gustfunction"/>
-      </port>
       <port name="graph">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="graph" sRef="gustfunction"/>
+      </port>
+      <port name="buffer">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="buffer" sRef="gustfunction"/>
       </port>
       <port name="ik">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -283,11 +284,11 @@
       </action>
     </interface>
     <unit facet="0" iRef="IGusty" multiple="true" private="false" replica="0" uRef="gusty" visibleInterface="true">
-      <slices cRef="graph" inner_replica="0" slice_replica="0" uRef="data" sliceName="graph" transitive="true">
-        <visualDescription h="10" w="10" x="163" y="20"/>
+      <slices cRef="buffer" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="buffer" transitive="true">
+        <visualDescription h="10" w="10" x="6" y="28"/>
       </slices>
-      <slices cRef="iv" inner_replica="0" slice_replica="0" uRef="data" sliceName="iv" transitive="true">
-        <visualDescription h="10" w="10" x="6" y="25"/>
+      <slices cRef="graph" inner_replica="0" slice_replica="0" uRef="data" sliceName="graph" transitive="true">
+        <visualDescription h="10" w="10" x="185" y="4"/>
       </slices>
       <slices cRef="ik" inner_replica="0" slice_replica="0" uRef="data" sliceName="ik" transitive="true">
         <visualDescription h="10" w="10" x="5" y="2"/>
@@ -296,12 +297,12 @@
         <visualDescription h="10" w="10" x="42" y="18"/>
       </slices>
       <slices cRef="output" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="output" transitive="true">
-        <visualDescription h="10" w="10" x="89" y="29"/>
+        <visualDescription h="10" w="10" x="184" y="26"/>
       </slices>
       <slices cRef="gustfunction" inner_replica="0" slice_replica="0" uRef="gustfunction" sliceName="gustfunction" transitive="false">
-        <visualDescription h="10" w="10" x="104" y="28"/>
+        <visualDescription h="10" w="10" x="133" y="34"/>
+        <port>buffer</port>
         <port>graph</port>
-        <port>iv</port>
         <port>ik</port>
         <port>output</port>
       </slices>
@@ -309,25 +310,25 @@
         <visualDescription h="10" w="10" x="144" y="9"/>
       </slices>
       <slices cRef="push_pull" inner_replica="0" slice_replica="0" uRef="comunication" sliceName="push_pull" transitive="false">
-        <visualDescription h="10" w="10" x="146" y="21"/>
+        <visualDescription h="10" w="10" x="145" y="22"/>
       </slices>
       <slices cRef="colect" inner_replica="0" slice_replica="0" uRef="client" sliceName="colect" transitive="false">
-        <visualDescription h="10" w="10" x="1" y="21"/>
+        <visualDescription h="10" w="10" x="4" y="22"/>
       </slices>
       <slices cRef="feed" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed" transitive="false">
-        <visualDescription h="10" w="10" x="129" y="24"/>
+        <visualDescription h="10" w="10" x="145" y="34"/>
       </slices>
       <slices cRef="platform" inner_replica="0" slice_replica="0" uRef="platform" sliceName="platform" transitive="false">
-        <visualDescription h="10" w="10" x="12" y="9"/>
+        <visualDescription h="10" w="10" x="5" y="10"/>
       </slices>
       <slices cRef="info_colector" inner_replica="0" slice_replica="0" uRef="info_colector" sliceName="info_colector" transitive="false">
-        <visualDescription h="10" w="10" x="9" y="29"/>
+        <visualDescription h="10" w="10" x="5" y="34"/>
       </slices>
       <slices cRef="task_gusty" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_gusty" transitive="false">
-        <visualDescription h="10" w="10" x="35" y="26"/>
+        <visualDescription h="10" w="10" x="45" y="34"/>
         <port>task_port</port>
       </slices>
-      <visualDescription h="40" w="163" x="186" y="237"/>
+      <visualDescription h="47" w="163" x="186" y="230"/>
     </unit>
   </componentInfo>
 </component:component>

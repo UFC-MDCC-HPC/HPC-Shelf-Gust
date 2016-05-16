@@ -7,7 +7,7 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="false">
+    <innerComponent localRef="task_port" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
       <visualDescription h="60" w="183" x="281" y="477">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -31,14 +31,18 @@
         <visualDescription h="10" w="10" x="79" y="24"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin&#xA;{&#xA;&#x9;public interface BaseITaskBindingJoin : ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseITaskBindingJoin.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin/bin/1.0.0.0/BaseITaskBindingJoin.dll" versionId="1.0.0.0"/>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin&#xA;{&#xA;&#x9;public interface ITaskBindingJoin : BaseITaskBindingJoin&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITaskBindingJoin.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin/bin/1.0.0.0/ITaskBindingJoin.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeJoin;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin&#xA;{&#xA;&#x9;public interface BaseITaskBindingJoin : ISynchronizerKind &#xA;&#x9;{&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPortTypeJoin> Task_port {get;}&#xA;&#x9;}&#xA;}" name="BaseITaskBindingJoin.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin/bin/1.0.0.0/BaseITaskBindingJoin.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin&#xA;{&#xA;&#x9;public interface ITaskBindingJoin : BaseITaskBindingJoin&#xA;&#x9;{&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;public class ITaskPortJoin&#xA;&#x9;{&#xA;&#x9;&#x9;public static object READ_SOURCE = new object();&#xA;&#x9;&#x9;public static object TERMINATE = new object();&#xA;&#x9;&#x9;public static object WRITE_SINK = new object();&#xA;&#x9;}&#xA;}" name="ITaskBindingJoin.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin/bin/1.0.0.0/ITaskBindingJoin.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingJoin/bin/1.0.0.0/BaseITaskBindingJoin.dll</dependency>
         </file>
       </sources>
       <visualDescription h="40" w="303" x="222" y="282">
         <color b="6" g="154" r="78"/>
       </visualDescription>
+      <port name="task_port">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_port" sRef="task_port"/>
+      </port>
       <action id="main">
         <protocol/>
       </action>

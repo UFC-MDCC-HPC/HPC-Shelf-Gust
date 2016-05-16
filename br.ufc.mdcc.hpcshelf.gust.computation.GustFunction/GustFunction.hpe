@@ -12,15 +12,15 @@
     <parameter componentRef="ok" formFieldId="ok" order="2" variance="contravariant" varName="OK"/>
     <parameter componentRef="ov" formFieldId="ov" order="3" variance="contravariant" varName="OV"/>
     <innerComponent localRef="ik" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="ik" exposed="true">
-      <visualDescription h="60" w="100" x="124" y="267">
+      <visualDescription h="60" w="100" x="83" y="188">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="72" y="15"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="iv" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="iv" exposed="true">
-      <visualDescription h="60" w="100" x="139" y="382">
+    <innerComponent localRef="iv" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="iv" exposed="false">
+      <visualDescription h="60" w="100" x="89" y="258">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
@@ -54,22 +54,22 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
-      <visualDescription h="61" w="128" x="308" y="398">
+      <visualDescription h="61" w="128" x="617" y="290">
         <color b="203" g="192" r="255"/>
       </visualDescription>
       <parameter formFieldId="item_type" varName="T"/>
       <unitBounds parallel="false" uRef="iterator">
-        <visualDescription h="20" w="20" x="52" y="2"/>
+        <visualDescription h="20" w="20" x="10" y="19"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="graph" location="br.ufc.mdcc.hpcshelf.gust.data.Graph/Graph.hpe" multiple="false" name="Graph" package="br.ufc.mdcc.hpcshelf.gust.data" exposed="true">
-      <visualDescription h="60" w="100" x="510" y="380">
+      <visualDescription h="60" w="121" x="614" y="203">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="edge" varName="E"/>
       <parameter formFieldId="vertex" varName="IK"/>
       <unitBounds parallel="false" uRef="data">
-        <visualDescription h="20" w="20" x="5" y="2"/>
+        <visualDescription h="20" w="20" x="9" y="21"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="edge" location="br.ufc.mdcc.hpcshelf.gust.data.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.data" exposed="false">
@@ -78,6 +78,15 @@
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="buffer" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="145" x="76" y="334">
+        <color b="203" g="192" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="item_type" varName="IV"/>
+      <unitBounds parallel="false" uRef="iterator">
+        <visualDescription h="20" w="20" x="114" y="20"/>
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="t" direct="true" varName="T"/>
@@ -90,6 +99,9 @@
       <slice isRef="iv">
         <originRef cRef="iv" iRef="IData"/>
         <visualDescription h="10" w="10" x="6" y="25"/>
+      </slice><slice isRef="buffer">
+        <originRef cRef="buffer" iRef="IIterator" />
+        <visualDescription h="10" w="10" x="1" y="25" />
       </slice>
       <slice isRef="output">
         <originRef cRef="output" iRef="IIterator"/>
@@ -99,6 +111,7 @@
         <originRef cRef="graph" iRef="IGraph"/>
         <visualDescription h="10" w="10" x="163" y="20"/>
       </slice>
+      
       <visualDescription h="40" w="198" x="343" y="216">
         <color b="191" g="191" r="191"/>
       </visualDescription>
@@ -113,16 +126,16 @@
     <unit facet="0" iRef="IGustFunction" multiple="false" private="false" replica="0" uRef="gustfunction" visibleInterface="true">
       <slices cRef="ik" inner_replica="0" slice_replica="0" uRef="data" sliceName="ik" transitive="false">
         <visualDescription h="10" w="10" x="5" y="2"/>
-      </slices>
-      <slices cRef="iv" inner_replica="0" slice_replica="0" uRef="data" sliceName="iv" transitive="false">
-        <visualDescription h="10" w="10" x="6" y="25"/>
+      </slices><slices cRef="buffer" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="buffer" transitive="false">
+        <visualDescription h="10" w="10" x="6" y="28" />
       </slices>
       <slices cRef="output" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="output" transitive="false">
-        <visualDescription h="10" w="10" x="89" y="29"/>
+        <visualDescription h="10" w="10" x="184" y="26"/>
+      </slices><slices cRef="graph" inner_replica="0" slice_replica="0" uRef="data" sliceName="graph" transitive="false">
+        <visualDescription h="10" w="10" x="185" y="4" />
       </slices>
-      <slices cRef="graph" inner_replica="0" slice_replica="0" uRef="data" sliceName="graph" transitive="false">
-        <visualDescription h="10" w="10" x="163" y="20"/>
-      </slices>
+      
+      
       <visualDescription h="40" w="198" x="343" y="296"/>
     </unit>
   </componentInfo>
