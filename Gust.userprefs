@@ -1,11 +1,6 @@
 ﻿<Properties StartupItem="Gust/Gust/Gust.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="br.ufc.mdcc.hpcshelf.gust.data.Graph/src/1.0.0.0/IGraph.cs">
-    <Files>
-      <File FileName="Gust/Gust/Program.cs" Line="17" Column="46" />
-      <File FileName="br.ufc.mdcc.hpcshelf.gust.data.Graph/src/1.0.0.0/IGraph.cs" Line="41" Column="3" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/MapReduce-for-HPE/MapReduce-for-HPE/Program.cs" line="24" column="16" />
