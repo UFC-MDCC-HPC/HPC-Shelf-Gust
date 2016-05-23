@@ -35,7 +35,7 @@
         <visualDescription h="20" w="20" x="134" y="26"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="split_channel" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="false">
+    <innerComponent localRef="join_channel" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="false">
       <visualDescription h="98" w="180" x="385" y="323">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -174,7 +174,7 @@
         <visualDescription h="35" w="113" x="839" y="338">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###905734387"/>
+        <parameter formFieldId="task_port_type" varName="X###1956711272"/>
         <unitBounds parallel="true" uRef="peer">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -275,7 +275,7 @@
     <supplyParameter cRef="okv" direct="true" varName="OKV"/>
     <supplyParameter cRef="values" direct="true" varName="VALUES"/>
     <supplyParameter cRef="ikv" direct="true" varName="IKV"/>
-    <innerComponent localRef="C###905734387" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeJoin/TaskPortTypeJoin.hpe" multiple="false" name="TaskPortTypeJoin" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
+    <innerComponent localRef="C###1956711272" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeJoin/TaskPortTypeJoin.hpe" multiple="false" name="TaskPortTypeJoin" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="60" w="151" x="615" y="480">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -283,10 +283,10 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###905734387" varName="X###905734387"/>
+    <supplyParameter cRef="C###1956711272" varName="X###1956711272"/>
     <interface iRef="IJoinSource" nArgs="2">
-      <slice isRef="split_channel">
-        <originRef cRef="split_channel" iRef="IChannel"/>
+      <slice isRef="join_channel">
+        <originRef cRef="join_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="112" y="23"/>
       </slice>
       <slice isRef="source">
@@ -327,8 +327,8 @@
       </action>
     </interface>
     <interface iRef="IJoinColect" nArgs="2">
-      <slice isRef="split_channel">
-        <originRef cRef="split_channel" iRef="IChannel"/>
+      <slice isRef="join_channel">
+        <originRef cRef="join_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="145" y="5"/>
       </slice>
       <slice isRef="colect">
@@ -354,13 +354,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_binding_join"/>
       </port>
-      <port name="input_key">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="chunk_partition"/>
-      </port>
       <port name="output_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_key" sRef="chunk_partition"/>
+      </port>
+      <port name="input_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="chunk_partition"/>
       </port>
       <parameter iname="IData" order="0" parid="key" uname="data" varid="JK"/>
       <parameter iname="IData" order="1" parid="value" uname="data" varid="JV"/>
@@ -369,8 +369,8 @@
       </action>
     </interface>
     <interface iRef="IJoinSink" nArgs="2">
-      <slice isRef="split_channel">
-        <originRef cRef="split_channel" iRef="IChannel"/>
+      <slice isRef="join_channel">
+        <originRef cRef="join_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="18" y="29"/>
       </slice>
       <slice isRef="sink">
@@ -403,8 +403,8 @@
       </action>
     </interface>
     <interface iRef="IJoinFeed" nArgs="2">
-      <slice isRef="split_channel">
-        <originRef cRef="split_channel" iRef="IChannel"/>
+      <slice isRef="join_channel">
+        <originRef cRef="join_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="3" y="4"/>
       </slice>
       <slice isRef="feed">
@@ -446,7 +446,7 @@
       <slices cRef="output_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_key" transitive="true">
         <visualDescription h="10" w="10" x="127" y="27"/>
       </slices>
-      <slices cRef="split_channel" inner_replica="0" slice_replica="0" uRef="peer" sliceName="split_channel" transitive="false">
+      <slices cRef="join_channel" inner_replica="0" slice_replica="0" uRef="peer" sliceName="join_channel" transitive="false">
         <visualDescription h="10" w="10" x="131" y="28"/>
       </slices>
       <slices cRef="source" inner_replica="0" slice_replica="0" uRef="client" sliceName="source" transitive="false">
@@ -476,7 +476,7 @@
       <slices cRef="output_key" inner_replica="1" slice_replica="0" uRef="data" sliceName="output_key" transitive="true">
         <visualDescription h="10" w="10" x="127" y="27"/>
       </slices>
-      <slices cRef="split_channel" inner_replica="0" slice_replica="2" uRef="peer" sliceName="split_channel" transitive="false">
+      <slices cRef="join_channel" inner_replica="0" slice_replica="2" uRef="peer" sliceName="join_channel" transitive="false">
         <visualDescription h="10" w="10" x="148" y="9"/>
       </slices>
       <slices cRef="colect" inner_replica="0" slice_replica="0" uRef="client" sliceName="colect" transitive="false">
@@ -500,7 +500,7 @@
       <slices cRef="task_port" inner_replica="2" slice_replica="0" uRef="peer" sliceName="task_port" transitive="true">
         <visualDescription h="10" w="10" x="79" y="24"/>
       </slices>
-      <slices cRef="split_channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="split_channel" transitive="false">
+      <slices cRef="join_channel" inner_replica="0" slice_replica="1" uRef="peer" sliceName="join_channel" transitive="false">
         <visualDescription h="10" w="10" x="4" y="28"/>
       </slices>
       <slices cRef="sink" inner_replica="0" slice_replica="0" uRef="client" sliceName="sink" transitive="false">
@@ -522,7 +522,7 @@
       <slices cRef="task_port" inner_replica="3" slice_replica="0" uRef="peer" sliceName="task_port" transitive="true">
         <visualDescription h="10" w="10" x="79" y="24"/>
       </slices>
-      <slices cRef="split_channel" inner_replica="0" slice_replica="3" uRef="peer" sliceName="split_channel" transitive="false">
+      <slices cRef="join_channel" inner_replica="0" slice_replica="3" uRef="peer" sliceName="join_channel" transitive="false">
         <visualDescription h="10" w="10" x="5" y="11"/>
       </slices>
       <slices cRef="feed" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed" transitive="false">
