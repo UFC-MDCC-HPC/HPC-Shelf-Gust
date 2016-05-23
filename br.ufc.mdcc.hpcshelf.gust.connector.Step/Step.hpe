@@ -31,7 +31,7 @@
         <visualDescription h="39" w="143" x="408" y="587">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###924737060"/>
+        <parameter formFieldId="task_port_type" varName="X###1715740305"/>
         <unitBounds parallel="true" uRef="peer">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -44,25 +44,25 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="gusty_input" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="181" x="786" y="496">
+      <visualDescription h="60" w="181" x="782" y="379">
         <color b="203" g="192" r="255"/>
       </visualDescription>
       <parameter formFieldId="item_type" varName="IKV"/>
       <unitBounds parallel="true" uRef="iterator">
-        <visualDescription h="20" w="20" x="75" y="2"/>
+        <visualDescription h="20" w="20" x="9" y="21"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="gusty_output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="167" x="40" y="504">
+      <visualDescription h="60" w="167" x="15" y="371">
         <color b="203" g="192" r="255"/>
       </visualDescription>
       <parameter formFieldId="item_type" varName="OKV"/>
       <unitBounds parallel="true" uRef="iterator">
-        <visualDescription h="20" w="20" x="65" y="2"/>
+        <visualDescription h="20" w="20" x="135" y="16"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="colect" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="118" x="39" y="429">
+      <visualDescription h="60" w="118" x="45" y="437">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="client_port_type" varName="C"/>
@@ -75,7 +75,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="feed" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
-      <visualDescription h="60" w="142" x="804" y="423">
+      <visualDescription h="60" w="142" x="796" y="447">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="client_port_type" varName="C"/>
@@ -148,12 +148,37 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="chunk_partition" location="br.ufc.mdcc.hpcshelf.gust.computation.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
+      <visualDescription h="53" w="155" x="27" y="505">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="input_key" varName="SK"/>
+      <port localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="44" w="96" x="202" y="498">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <port localRef="output_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="43" w="107" x="199" y="551">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <unitBounds parallel="false" uRef="partitionfunction">
+        <visualDescription h="20" w="20" x="127" y="19"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="c" direct="true" varName="C"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
     <supplyParameter cRef="okv" direct="true" varName="OKV"/>
     <supplyParameter cRef="values" direct="true" varName="VALUES"/>
     <supplyParameter cRef="ikv" direct="true" varName="IKV"/>
-    <innerComponent localRef="C###924737060" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeGusty/TaskPortTypeGusty.hpe" multiple="false" name="TaskPortTypeGusty" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
+    <innerComponent localRef="C###1715740305" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeGusty/TaskPortTypeGusty.hpe" multiple="false" name="TaskPortTypeGusty" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="60" w="156" x="533" y="497">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -161,7 +186,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###924737060" varName="X###924737060"/>
+    <supplyParameter cRef="C###1715740305" varName="X###1715740305"/>
     <interface iRef="IStepColect" nArgs="2">
       <slice isRef="step_channel">
         <originRef cRef="step_channel" iRef="IChannel"/>
@@ -179,12 +204,24 @@
         <originRef cRef="gusty_output" iRef="IIterator"/>
         <visualDescription h="10" w="10" x="1" y="28"/>
       </slice>
+      <slice isRef="chunk_partition">
+        <originRef cRef="chunk_partition" iRef="IPartitionFunction"/>
+        <visualDescription h="10" w="10" x="1" y="27"/>
+      </slice>
       <visualDescription h="40" w="168" x="198" y="363">
         <color b="182" g="189" r="186"/>
       </visualDescription>
       <port name="task_port">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_binding_step"/>
+      </port>
+      <port name="output_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="chunk_partition"/>
+      </port>
+      <port name="input_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="chunk_partition"/>
       </port>
       <parameter iname="IData" order="0" parid="key" uname="data" varid="SK"/>
       <parameter iname="IData" order="1" parid="value" uname="data" varid="SV"/>
@@ -223,8 +260,14 @@
       </action>
     </interface>
     <unit facet="0" iRef="IStepColect" multiple="true" private="false" replica="0" uRef="step_colect" visibleInterface="true">
+      <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
+        <visualDescription h="10" w="10" x="3" y="27"/>
+      </slices>
       <slices cRef="task_port" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_port" transitive="true">
         <visualDescription h="10" w="10" x="42" y="18"/>
+      </slices>
+      <slices cRef="output_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_key" transitive="true">
+        <visualDescription h="10" w="10" x="127" y="27"/>
       </slices>
       <slices cRef="step_channel" inner_replica="0" slice_replica="0" uRef="peer" sliceName="step_channel" transitive="false">
         <visualDescription h="10" w="10" x="150" y="8"/>
@@ -234,10 +277,15 @@
         <port>task_port</port>
       </slices>
       <slices cRef="colect" inner_replica="0" slice_replica="0" uRef="client" sliceName="colect" transitive="false">
-        <visualDescription h="10" w="10" x="2" y="8"/>
+        <visualDescription h="10" w="10" x="4" y="19"/>
       </slices>
       <slices cRef="gusty_output" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="gusty_output" transitive="false">
-        <visualDescription h="10" w="10" x="1" y="28"/>
+        <visualDescription h="10" w="10" x="4" y="8"/>
+      </slices>
+      <slices cRef="chunk_partition" inner_replica="0" slice_replica="0" uRef="partitionfunction" sliceName="chunk_partition" transitive="false">
+        <visualDescription h="10" w="10" x="4" y="29"/>
+        <port>input_key</port>
+        <port>output_key</port>
       </slices>
       <visualDescription h="40" w="168" x="198" y="443"/>
     </unit>
@@ -253,10 +301,10 @@
         <port>task_port</port>
       </slices>
       <slices cRef="feed" inner_replica="0" slice_replica="0" uRef="server" sliceName="feed" transitive="false">
-        <visualDescription h="10" w="10" x="148" y="7"/>
+        <visualDescription h="10" w="10" x="146" y="26"/>
       </slices>
       <slices cRef="gusty_input" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="gusty_input" transitive="false">
-        <visualDescription h="10" w="10" x="146" y="28"/>
+        <visualDescription h="10" w="10" x="146" y="11"/>
       </slices>
       <visualDescription h="40" w="165" x="599" y="440"/>
     </unit>
