@@ -7,10 +7,10 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{A39A832D-7193-4A5F-85F9-339A07B607C9}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>br.ufc.mdcc.hpcshelf.gust.qualifier.Comunication</RootNamespace>
-    <AssemblyName>br.ufc.mdcc.hpcshelf.gust.qualifier.Comunication</AssemblyName>
+    <RootNamespace>br.ufc.mdcc.hpcshelf.gust.qualifier.Communication</RootNamespace>
+    <AssemblyName>br.ufc.mdcc.hpcshelf.gust.qualifier.Communication</AssemblyName>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\Comunication.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\Communication.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -39,11 +39,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseIComunication.cs">
-      <Link>BaseIComunication.cs</Link>
+    <Compile Include="..\src\1.0.0.0\BaseICommunication.cs">
+      <Link>BaseICommunication.cs</Link>
     </Compile>
-    <Compile Include="..\src\1.0.0.0\IComunication.cs">
-      <Link>IComunication.cs</Link>
+    <Compile Include="..\src\1.0.0.0\ICommunication.cs">
+      <Link>ICommunication.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

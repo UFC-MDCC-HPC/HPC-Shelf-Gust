@@ -7,8 +7,9 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <parameter componentRef="key" formFieldId="key" order="0" variance="contravariant" varName="SK"/>
-    <parameter componentRef="value" formFieldId="value" order="1" variance="contravariant" varName="SV"/>
+    <parameter componentRef="step_key_type" formFieldId="step_key_type" order="0" variance="contravariant" varName="SK"/>
+    <parameter componentRef="step_value_type" formFieldId="step_value_type" order="1" variance="contravariant" varName="SV"/>
+    <parameter componentRef="excecution_type" formFieldId="excecution_type" order="2" variance="contravariant" varName="EX"/>
     <innerComponent localRef="step_channel" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="false">
       <visualDescription h="63" w="164" x="404" y="374">
         <color b="255" g="255" r="255"/>
@@ -31,7 +32,7 @@
         <visualDescription h="39" w="143" x="408" y="587">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###1715740305"/>
+        <parameter formFieldId="task_port_type" varName="X###1543597982"/>
         <unitBounds parallel="true" uRef="peer">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -123,16 +124,16 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="key" exposed="false">
-      <visualDescription h="60" w="100" x="521" y="212">
+    <innerComponent localRef="step_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="step_key_type" exposed="false">
+      <visualDescription h="60" w="152" x="256" y="205">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="value" exposed="false">
-      <visualDescription h="60" w="100" x="679" y="212">
+    <innerComponent localRef="step_value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="step_value_type" exposed="false">
+      <visualDescription h="60" w="138" x="433" y="203">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
@@ -149,12 +150,12 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="chunk_partition" location="br.ufc.mdcc.hpcshelf.gust.computation.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
-      <visualDescription h="53" w="155" x="27" y="505">
+      <visualDescription h="53" w="188" x="16" y="505">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="input_key" varName="SK"/>
       <port localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="44" w="96" x="202" y="498">
+        <visualDescription h="44" w="96" x="240" y="495">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -162,7 +163,7 @@
         </unitBounds>
       </port>
       <port localRef="output_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="43" w="107" x="199" y="551">
+        <visualDescription h="43" w="107" x="235" y="549">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -170,7 +171,15 @@
         </unitBounds>
       </port>
       <unitBounds parallel="false" uRef="partitionfunction">
-        <visualDescription h="20" w="20" x="127" y="19"/>
+        <visualDescription h="20" w="20" x="153" y="16"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="excecution_type" location="br.ufc.mdcc.hpcshelf.gust.qualifier.Execution/Execution.hpe" multiple="false" name="Execution" package="br.ufc.mdcc.hpcshelf.gust.qualifier" parameter_id="excecution_type" exposed="false">
+      <visualDescription h="60" w="144" x="90" y="202">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="execution">
+        <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="c" direct="true" varName="C"/>
@@ -178,7 +187,7 @@
     <supplyParameter cRef="okv" direct="true" varName="OKV"/>
     <supplyParameter cRef="values" direct="true" varName="VALUES"/>
     <supplyParameter cRef="ikv" direct="true" varName="IKV"/>
-    <innerComponent localRef="C###1715740305" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeGusty/TaskPortTypeGusty.hpe" multiple="false" name="TaskPortTypeGusty" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
+    <innerComponent localRef="C###1543597982" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeGusty/TaskPortTypeGusty.hpe" multiple="false" name="TaskPortTypeGusty" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="60" w="156" x="533" y="497">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -186,19 +195,19 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1715740305" varName="X###1715740305"/>
+    <supplyParameter cRef="C###1543597982" varName="X###1543597982"/>
     <interface iRef="IStepColect" nArgs="2">
       <slice isRef="step_channel">
         <originRef cRef="step_channel" iRef="IChannel"/>
-        <visualDescription h="10" w="10" x="150" y="8"/>
+        <visualDescription h="10" w="10" x="28" y="27"/>
       </slice>
       <slice isRef="task_binding_step">
         <originRef cRef="task_binding_step" iRef="ITaskBindingGusty"/>
-        <visualDescription h="10" w="10" x="150" y="29"/>
+        <visualDescription h="10" w="10" x="23" y="3"/>
       </slice>
       <slice isRef="colect">
         <originRef cRef="colect" iRef="IClientBase"/>
-        <visualDescription h="10" w="10" x="2" y="8"/>
+        <visualDescription h="10" w="10" x="15" y="27"/>
       </slice>
       <slice isRef="gusty_output">
         <originRef cRef="gusty_output" iRef="IIterator"/>
@@ -223,8 +232,8 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="chunk_partition"/>
       </port>
-      <parameter iname="IData" order="0" parid="key" uname="data" varid="SK"/>
-      <parameter iname="IData" order="1" parid="value" uname="data" varid="SV"/>
+      <parameter iname="IData" order="0" parid="step_key_type" uname="data" varid="SK"/>
+      <parameter iname="IData" order="1" parid="step_value_type" uname="data" varid="SV"/>
       <action id="main">
         <protocol/>
       </action>
@@ -232,11 +241,11 @@
     <interface iRef="IStepFeed" nArgs="2">
       <slice isRef="step_channel">
         <originRef cRef="step_channel" iRef="IChannel"/>
-        <visualDescription h="10" w="10" x="0" y="8"/>
+        <visualDescription h="10" w="10" x="3" y="21"/>
       </slice>
       <slice isRef="task_binding_step">
         <originRef cRef="task_binding_step" iRef="ITaskBindingGusty"/>
-        <visualDescription h="10" w="10" x="0" y="29"/>
+        <visualDescription h="10" w="10" x="34" y="0"/>
       </slice>
       <slice isRef="feed">
         <originRef cRef="feed" iRef="IServerBase"/>
@@ -253,8 +262,8 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_binding_step"/>
       </port>
-      <parameter iname="IData" order="0" parid="key" uname="data" varid="SK"/>
-      <parameter iname="IData" order="1" parid="value" uname="data" varid="SV"/>
+      <parameter iname="IData" order="0" parid="step_key_type" uname="data" varid="SK"/>
+      <parameter iname="IData" order="1" parid="step_value_type" uname="data" varid="SV"/>
       <action id="main">
         <protocol/>
       </action>

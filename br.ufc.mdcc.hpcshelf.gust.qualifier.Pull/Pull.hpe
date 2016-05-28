@@ -5,11 +5,11 @@
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000755e73a0fe151bf40be264ed3a078312764b49da29fc76287ce731b6da21e1d5e32392c9550b19858034f42fb6ca18a06bd7b01bc6a408a0f4596cf94073b847d628d2e8ed485b8bc5d1a501b1e7a4bd0cf50bd5bba07b8c9ea22029067371be474dcce5e11cf7b077534e230b2dc46cf7f5a8c515fec996d7a5c0a6ef7babaa" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.qualifier.Comunication/Comunication.hpe" name="Comunication" package="br.ufc.mdcc.hpcshelf.gust.qualifier" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000755e73a0fe151bf40be264ed3a078312764b49da29fc76287ce731b6da21e1d5e32392c9550b19858034f42fb6ca18a06bd7b01bc6a408a0f4596cf94073b847d628d2e8ed485b8bc5d1a501b1e7a4bd0cf50bd5bba07b8c9ea22029067371be474dcce5e11cf7b077534e230b2dc46cf7f5a8c515fec996d7a5c0a6ef7babaa" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.qualifier.Communication/Communication.hpe" name="Communication" package="br.ufc.mdcc.hpcshelf.gust.qualifier" version="1.0.0.0">
         <visualDescription h="60" w="100" x="322" y="613">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <unitBounds parallel="false" uRef="comunication">
+        <unitBounds parallel="false" uRef="communication">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -25,8 +25,8 @@
         <color b="0" g="165" r="255"/>
       </visualDescription>
     </interface>
-    <unit facet="0" iRef="IPull" multiple="false" private="false" replica="0" uRef="comunication" visibleInterface="true">
-      <super cRef="base" uRef="comunication"/>
+    <unit facet="0" iRef="IPull" multiple="false" private="false" replica="0" uRef="communication" visibleInterface="true">
+      <super cRef="base" uRef="communication"/>
       <visualDescription h="40" w="149" x="284" y="517"/>
     </unit>
   </componentInfo>
