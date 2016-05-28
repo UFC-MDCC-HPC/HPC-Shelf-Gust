@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009bc906dfd44d951abf3fc04116d411e47dfc3f2e37dbdccd27e8213713bea277297b0ca1e2a2b4a930291d8de7fff77c2dfd3abcab38223532e46eed826fdaeb17c613ef4deeec5041582136d4ec4be0c7843066483dc2e52125bd218edd09a5c844f3cdcec23a9c5bf09f4ec3e06a651ea59e179129d506462eceeed1c6f3c1" isAbstract="true" kind="Computation" name="GustFunction" packagePath="br.ufc.mdcc.hpcshelf.gust.computation">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <parameter componentRef="ik" formFieldId="input_key_type" order="0" variance="contravariant" varName="IGK"/>
+    <parameter componentRef="input_value_type" formFieldId="input_value_type" order="1" variance="contravariant" varName="IGV"/>
+    <parameter componentRef="output_key_type" formFieldId="output_key_type" order="2" variance="contravariant" varName="OGK"/>
+    <parameter componentRef="output_value_type" formFieldId="output_value_type" order="3" variance="contravariant" varName="OGV"/>
+    <innerComponent localRef="ik" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_key_type" exposed="false">
+      <visualDescription h="60" w="159" x="118" y="246">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="132" y="20"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="output_value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="output_value_type" exposed="false">
+      <visualDescription h="67" w="231" x="469" y="478">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="7" y="24"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="output_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="output_key_type" exposed="false">
+      <visualDescription h="60" w="248" x="464" y="413">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="input_value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_value_type" exposed="false">
+      <visualDescription h="60" w="208" x="84" y="191">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="t" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="100" x="584" y="486">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="OGV"/>
+      <parameter formFieldId="key_type" varName="OGK"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="61" w="128" x="606" y="310">
+        <color b="203" g="192" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="item_type" varName="T"/>
+      <unitBounds parallel="false" uRef="iterator">
+        <visualDescription h="20" w="20" x="10" y="19"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="graph" location="br.ufc.mdcc.hpcshelf.gust.data.Graph/Graph.hpe" multiple="false" name="Graph" package="br.ufc.mdcc.hpcshelf.gust.data" exposed="false">
+      <visualDescription h="60" w="121" x="589" y="227">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="edge" varName="E"/>
+      <parameter formFieldId="vertex" varName="IGK"/>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="9" y="21"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="edge" location="br.ufc.mdcc.hpcshelf.gust.data.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.data" exposed="false">
+      <visualDescription h="60" w="100" x="728" y="410">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="buffer" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="145" x="131" y="314">
+        <color b="203" g="192" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="item_type" varName="IGV"/>
+      <unitBounds parallel="false" uRef="iterator">
+        <visualDescription h="20" w="20" x="114" y="20"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="edge" direct="true" varName="E"/>
+    <supplyParameter cRef="t" direct="true" varName="T"/>
+    <interface iRef="IGustFunction" nArgs="4">
+      <slice isRef="graph">
+        <originRef cRef="graph" iRef="IGraph"/>
+        <visualDescription h="10" w="10" x="32" y="2"/>
+      </slice>
+      <slice isRef="ik">
+        <originRef cRef="ik" iRef="IData"/>
+        <visualDescription h="10" w="10" x="5" y="2"/>
+      </slice>
+      <slice isRef="buffer">
+        <originRef cRef="buffer" iRef="IIterator"/>
+        <visualDescription h="10" w="10" x="1" y="25"/>
+      </slice>
+      <slice isRef="output">
+        <originRef cRef="output" iRef="IIterator"/>
+        <visualDescription h="10" w="10" x="15" y="26"/>
+      </slice>
+      <visualDescription h="40" w="198" x="343" y="216">
+        <color b="191" g="191" r="191"/>
+      </visualDescription>
+      <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="IGK"/>
+      <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="IGV"/>
+      <parameter iname="IData" order="2" parid="output_key_type" uname="data" varid="OGK"/>
+      <parameter iname="IData" order="3" parid="output_value_type" uname="data" varid="OGV"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IGustFunction" multiple="false" private="false" replica="0" uRef="gustfunction" visibleInterface="true">
+      <slices cRef="buffer" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="buffer" transitive="false">
+        <visualDescription h="10" w="10" x="6" y="28"/>
+      </slices>
+      <slices cRef="graph" inner_replica="0" slice_replica="0" uRef="data" sliceName="graph" transitive="false">
+        <visualDescription h="10" w="10" x="185" y="4"/>
+      </slices>
+      <slices cRef="ik" inner_replica="0" slice_replica="0" uRef="data" sliceName="ik" transitive="false">
+        <visualDescription h="10" w="10" x="5" y="2"/>
+      </slices>
+      <slices cRef="output" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="output" transitive="false">
+        <visualDescription h="10" w="10" x="184" y="26"/>
+      </slices>
+      <visualDescription h="40" w="198" x="343" y="296"/>
+    </unit>
+  </componentInfo>
+</component:component>
