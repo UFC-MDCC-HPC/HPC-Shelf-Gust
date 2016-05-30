@@ -9,6 +9,7 @@
   <componentInfo>
     <parameter componentRef="step_key_type" formFieldId="step_key_type" order="0" variance="contravariant" varName="SK"/>
     <parameter componentRef="step_value_type" formFieldId="step_value_type" order="1" variance="contravariant" varName="SV"/>
+    <parameter componentRef="step_partition" formFieldId="step_partition_function" order="2" variance="contravariant" varName="SPF"/>
     <parameter componentRef="excecution_type" formFieldId="excecution_type" order="2" variance="contravariant" varName="EX"/>
     <innerComponent localRef="step_channel" location="br.ufc.mdcc.hpc.storm.binding.channel.Binding/Binding.hpe" multiple="false" name="Binding" package="br.ufc.mdcc.hpc.storm.binding.channel" exposed="false">
       <visualDescription h="63" w="164" x="404" y="374">
@@ -32,7 +33,7 @@
         <visualDescription h="39" w="143" x="408" y="587">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###1543597982"/>
+        <parameter formFieldId="task_port_type" varName="X###1914005132"/>
         <unitBounds parallel="true" uRef="peer">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -62,7 +63,7 @@
         <visualDescription h="20" w="20" x="135" y="16"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="colect" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+    <innerComponent localRef="collect" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
       <visualDescription h="60" w="118" x="45" y="437">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -149,7 +150,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="chunk_partition" location="br.ufc.mdcc.hpcshelf.gust.computation.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
+    <innerComponent localRef="step_partition" location="br.ufc.mdcc.hpcshelf.gust.computation.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" parameter_id="step_partition_function" exposed="false">
       <visualDescription h="53" w="188" x="16" y="505">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -187,7 +188,7 @@
     <supplyParameter cRef="okv" direct="true" varName="OKV"/>
     <supplyParameter cRef="values" direct="true" varName="VALUES"/>
     <supplyParameter cRef="ikv" direct="true" varName="IKV"/>
-    <innerComponent localRef="C###1543597982" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeGusty/TaskPortTypeGusty.hpe" multiple="false" name="TaskPortTypeGusty" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
+    <innerComponent localRef="C###1914005132" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeGusty/TaskPortTypeGusty.hpe" multiple="false" name="TaskPortTypeGusty" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="60" w="156" x="533" y="497">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -195,8 +196,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1543597982" varName="X###1543597982"/>
-    <interface iRef="IStepColect" nArgs="2">
+    <supplyParameter cRef="C###1914005132" varName="X###1914005132"/>
+    <interface iRef="IStepCollect" nArgs="3">
       <slice isRef="step_channel">
         <originRef cRef="step_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="28" y="27"/>
@@ -205,16 +206,16 @@
         <originRef cRef="task_binding_step" iRef="ITaskBindingGusty"/>
         <visualDescription h="10" w="10" x="23" y="3"/>
       </slice>
-      <slice isRef="colect">
-        <originRef cRef="colect" iRef="IClientBase"/>
+      <slice isRef="collect">
+        <originRef cRef="collect" iRef="IClientBase"/>
         <visualDescription h="10" w="10" x="15" y="27"/>
       </slice>
       <slice isRef="gusty_output">
         <originRef cRef="gusty_output" iRef="IIterator"/>
         <visualDescription h="10" w="10" x="1" y="28"/>
       </slice>
-      <slice isRef="chunk_partition">
-        <originRef cRef="chunk_partition" iRef="IPartitionFunction"/>
+      <slice isRef="step_partition">
+        <originRef cRef="step_partition" iRef="IPartitionFunction"/>
         <visualDescription h="10" w="10" x="1" y="27"/>
       </slice>
       <visualDescription h="40" w="168" x="198" y="363">
@@ -226,14 +227,15 @@
       </port>
       <port name="output_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_key" sRef="chunk_partition"/>
+        <slice pRef="output_key" sRef="step_partition"/>
       </port>
       <port name="input_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="chunk_partition"/>
+        <slice pRef="input_key" sRef="step_partition"/>
       </port>
       <parameter iname="IData" order="0" parid="step_key_type" uname="data" varid="SK"/>
       <parameter iname="IData" order="1" parid="step_value_type" uname="data" varid="SV"/>
+      <parameter iname="IPartitionFunction" order="2" parid="step_partition_function" uname="partitionfunction" varid="SPF"/>
       <action id="main">
         <protocol/>
       </action>
@@ -268,7 +270,7 @@
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="IStepColect" multiple="true" private="false" replica="0" uRef="step_colect" visibleInterface="true">
+    <unit facet="0" iRef="IStepCollect" multiple="true" private="false" replica="0" uRef="step_collect" visibleInterface="true">
       <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
         <visualDescription h="10" w="10" x="3" y="27"/>
       </slices>
@@ -285,13 +287,13 @@
         <visualDescription h="10" w="10" x="150" y="29"/>
         <port>task_port</port>
       </slices>
-      <slices cRef="colect" inner_replica="0" slice_replica="0" uRef="client" sliceName="colect" transitive="false">
+      <slices cRef="collect" inner_replica="0" slice_replica="0" uRef="client" sliceName="collect" transitive="false">
         <visualDescription h="10" w="10" x="4" y="19"/>
       </slices>
       <slices cRef="gusty_output" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="gusty_output" transitive="false">
         <visualDescription h="10" w="10" x="4" y="8"/>
       </slices>
-      <slices cRef="chunk_partition" inner_replica="0" slice_replica="0" uRef="partitionfunction" sliceName="chunk_partition" transitive="false">
+      <slices cRef="step_partition" inner_replica="0" slice_replica="0" uRef="partitionfunction" sliceName="step_partition" transitive="false">
         <visualDescription h="10" w="10" x="4" y="29"/>
         <port>input_key</port>
         <port>output_key</port>

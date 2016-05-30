@@ -7,16 +7,19 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <parameter componentRef="key" formFieldId="key" order="3" variance="contravariant" varName="JK"/>
-    <parameter componentRef="value" formFieldId="value" order="4" variance="contravariant" varName="JV"/>
-    <parameter componentRef="graph" formFieldId="graph" order="3" variance="contravariant" varName="IN"/>
+    <parameter componentRef="join_key_type" formFieldId="join_key_type" order="0" variance="contravariant" varName="JK"/>
+    <parameter componentRef="join_value_type" formFieldId="join_value_type" order="1" variance="contravariant" varName="JV"/>
+    <parameter componentRef="graph" formFieldId="graph" order="2" variance="contravariant" varName="IN"/>
+    <parameter componentRef="join_partition" formFieldId="join_partition_type" order="4" variance="contravariant" varName="JP"/>
+    <parameter componentRef="execution_type" formFieldId="execution_type" order="4" variance="contravariant" varName="EX"/>
+    <parameter componentRef="join_function" formFieldId="join_function_type" order="5" variance="contravariant" varName="JF"/>
     <innerComponent localRef="graph_partition" location="br.ufc.mdcc.hpcshelf.gust.computation.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
       <visualDescription h="69" w="156" x="61" y="283">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="input_key" varName="JK"/>
       <port localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="33" w="106" x="53" y="369">
+        <visualDescription h="33" w="106" x="7" y="367">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -24,7 +27,7 @@
         </unitBounds>
       </port>
       <port localRef="output_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="39" w="114" x="191" y="361">
+        <visualDescription h="39" w="114" x="124" y="370">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -94,7 +97,7 @@
         <visualDescription h="20" w="20" x="2" y="23"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="colect" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
+    <innerComponent localRef="collect" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="false">
       <visualDescription h="60" w="177" x="60" y="486">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -123,16 +126,16 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="key" exposed="false">
-      <visualDescription h="60" w="100" x="209" y="759">
+    <innerComponent localRef="join_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="join_key_type" exposed="false">
+      <visualDescription h="60" w="135" x="1019" y="507">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="value" exposed="false">
-      <visualDescription h="60" w="100" x="326" y="759">
+    <innerComponent localRef="join_value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="join_value_type" exposed="false">
+      <visualDescription h="60" w="160" x="1019" y="579">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
@@ -174,7 +177,7 @@
         <visualDescription h="35" w="113" x="839" y="338">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="task_port_type" varName="X###1956711272"/>
+        <parameter formFieldId="task_port_type" varName="X###1564166478"/>
         <unitBounds parallel="true" uRef="peer">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -212,7 +215,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="info_colector_result" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="info_collector_result" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="62" w="179" x="624" y="93">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -236,8 +239,8 @@
         <visualDescription h="20" w="20" x="5" y="22"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="chunk_partition" location="br.ufc.mdcc.hpcshelf.gust.computation.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
-      <visualDescription h="60" w="173" x="66" y="557">
+    <innerComponent localRef="join_partition" location="br.ufc.mdcc.hpcshelf.gust.computation.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" parameter_id="join_partition_type" exposed="false">
+      <visualDescription h="60" w="177" x="43" y="558">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="input_key" varName="JK"/>
@@ -258,7 +261,7 @@
         </unitBounds>
       </port>
       <unitBounds parallel="false" uRef="partitionfunction">
-        <visualDescription h="20" w="20" x="138" y="19"/>
+        <visualDescription h="20" w="20" x="147" y="22"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="values" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
@@ -270,12 +273,30 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="execution_type" location="br.ufc.mdcc.hpcshelf.gust.qualifier.Execution/Execution.hpe" multiple="false" name="Execution" package="br.ufc.mdcc.hpcshelf.gust.qualifier" parameter_id="execution_type" exposed="false">
+      <visualDescription h="60" w="155" x="508" y="647">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="execution">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="join_function" location="br.ufc.mdcc.hpcshelf.gust.computation.JoinFunction/JoinFunction.hpe" multiple="false" name="JoinFunction" package="br.ufc.mdcc.hpcshelf.gust.computation" parameter_id="join_function_type" exposed="false">
+      <visualDescription h="68" w="141" x="245" y="355">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="join_value_type" varName="JV"/>
+      <parameter formFieldId="join_key_type" varName="JK"/>
+      <unitBounds parallel="false" uRef="joinfunction">
+        <visualDescription h="20" w="20" x="48" y="42"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="c" direct="true" varName="C"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
     <supplyParameter cRef="okv" direct="true" varName="OKV"/>
     <supplyParameter cRef="values" direct="true" varName="VALUES"/>
     <supplyParameter cRef="ikv" direct="true" varName="IKV"/>
-    <innerComponent localRef="C###1956711272" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeJoin/TaskPortTypeJoin.hpe" multiple="false" name="TaskPortTypeJoin" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
+    <innerComponent localRef="C###1564166478" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeJoin/TaskPortTypeJoin.hpe" multiple="false" name="TaskPortTypeJoin" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="60" w="151" x="615" y="480">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -283,7 +304,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1956711272" varName="X###1956711272"/>
+    <supplyParameter cRef="C###1564166478" varName="X###1564166478"/>
     <interface iRef="IJoinSource" nArgs="2">
       <slice isRef="join_channel">
         <originRef cRef="join_channel" iRef="IChannel"/>
@@ -320,19 +341,19 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_binding_join"/>
       </port>
-      <parameter iname="IData" parid="key" uname="data" varid="JK"/>
-      <parameter iname="IData" order="0" parid="graph" uname="data" varid="IN"/>
+      <parameter iname="IData" order="0" parid="join_key_type" uname="data" varid="JK"/>
+      <parameter iname="IData" order="1" parid="graph" uname="data" varid="IN"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
-    <interface iRef="IJoinColect" nArgs="2">
+    <interface iRef="IJoinCollect" nArgs="4">
       <slice isRef="join_channel">
         <originRef cRef="join_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="145" y="5"/>
       </slice>
-      <slice isRef="colect">
-        <originRef cRef="colect" iRef="IClientBase"/>
+      <slice isRef="collect">
+        <originRef cRef="collect" iRef="IClientBase"/>
         <visualDescription h="10" w="10" x="28" y="30"/>
       </slice>
       <slice isRef="gusty_output">
@@ -341,11 +362,15 @@
       </slice>
       <slice isRef="task_binding_join">
         <originRef cRef="task_binding_join" iRef="ITaskBindingJoin"/>
-        <visualDescription h="10" w="10" x="150" y="18"/>
+        <visualDescription h="10" w="10" x="5" y="27"/>
       </slice>
-      <slice isRef="chunk_partition">
-        <originRef cRef="chunk_partition" iRef="IPartitionFunction"/>
+      <slice isRef="join_partition">
+        <originRef cRef="join_partition" iRef="IPartitionFunction"/>
         <visualDescription h="10" w="10" x="20" y="26"/>
+      </slice>
+      <slice isRef="join_function">
+        <originRef cRef="join_function" iRef="IJoinFunction"/>
+        <visualDescription h="10" w="10" x="15" y="7"/>
       </slice>
       <visualDescription h="40" w="166" x="257" y="536">
         <color b="182" g="189" r="186"/>
@@ -356,14 +381,16 @@
       </port>
       <port name="output_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_key" sRef="chunk_partition"/>
+        <slice pRef="output_key" sRef="join_partition"/>
       </port>
       <port name="input_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="chunk_partition"/>
+        <slice pRef="input_key" sRef="join_partition"/>
       </port>
-      <parameter iname="IData" order="0" parid="key" uname="data" varid="JK"/>
-      <parameter iname="IData" order="1" parid="value" uname="data" varid="JV"/>
+      <parameter iname="IData" order="0" parid="join_key_type" uname="data" varid="JK"/>
+      <parameter iname="IData" order="1" parid="join_value_type" uname="data" varid="JV"/>
+      <parameter iname="IPartitionFunction" order="2" parid="join_partition_type" uname="partitionfunction" varid="JP"/>
+      <parameter iname="IJoinFunction" order="3" parid="join_function_type" uname="joinfunction" varid="JF"/>
       <action id="main">
         <protocol/>
       </action>
@@ -381,8 +408,8 @@
         <originRef cRef="task_binding_join" iRef="ITaskBindingJoin"/>
         <visualDescription h="10" w="10" x="16" y="29"/>
       </slice>
-      <slice isRef="info_colector_result">
-        <originRef cRef="info_colector_result" iRef="IData"/>
+      <slice isRef="info_collector_result">
+        <originRef cRef="info_collector_result" iRef="IData"/>
         <visualDescription h="10" w="10" x="20" y="2"/>
       </slice>
       <slice isRef="sink_input">
@@ -396,8 +423,8 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_binding_join"/>
       </port>
-      <parameter iname="IData" order="0" parid="key" uname="data" varid="JK"/>
-      <parameter iname="IData" order="1" parid="value" uname="data" varid="JV"/>
+      <parameter iname="IData" order="0" parid="join_key_type" uname="data" varid="JK"/>
+      <parameter iname="IData" order="1" parid="join_value_type" uname="data" varid="JV"/>
       <action id="main">
         <protocol/>
       </action>
@@ -430,8 +457,8 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_port" sRef="task_binding_join"/>
       </port>
-      <parameter iname="IData" order="0" parid="key" uname="data" varid="JK"/>
-      <parameter iname="IData" order="1" parid="value" uname="data" varid="JV"/>
+      <parameter iname="IData" order="0" parid="join_key_type" uname="data" varid="JK"/>
+      <parameter iname="IData" order="1" parid="join_value_type" uname="data" varid="JV"/>
       <action id="main">
         <protocol/>
       </action>
@@ -466,7 +493,7 @@
       </slices>
       <visualDescription h="40" w="143" x="263" y="228"/>
     </unit>
-    <unit facet="0" iRef="IJoinColect" multiple="true" private="false" replica="0" uRef="join_colect" visibleInterface="true">
+    <unit facet="0" iRef="IJoinCollect" multiple="true" private="false" replica="0" uRef="join_collect" visibleInterface="true">
       <slices cRef="input_key" inner_replica="1" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
         <visualDescription h="10" w="10" x="3" y="27"/>
       </slices>
@@ -479,7 +506,7 @@
       <slices cRef="join_channel" inner_replica="0" slice_replica="2" uRef="peer" sliceName="join_channel" transitive="false">
         <visualDescription h="10" w="10" x="148" y="9"/>
       </slices>
-      <slices cRef="colect" inner_replica="0" slice_replica="0" uRef="client" sliceName="colect" transitive="false">
+      <slices cRef="collect" inner_replica="0" slice_replica="0" uRef="client" sliceName="collect" transitive="false">
         <visualDescription h="10" w="10" x="5" y="26"/>
       </slices>
       <slices cRef="gusty_output" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="gusty_output" transitive="false">
@@ -489,10 +516,13 @@
         <visualDescription h="10" w="10" x="147" y="21"/>
         <port>task_port</port>
       </slices>
-      <slices cRef="chunk_partition" inner_replica="0" slice_replica="0" uRef="partitionfunction" sliceName="chunk_partition" transitive="false">
+      <slices cRef="join_partition" inner_replica="0" slice_replica="0" uRef="partitionfunction" sliceName="join_partition" transitive="false">
         <visualDescription h="10" w="10" x="20" y="26"/>
         <port>input_key</port>
         <port>output_key</port>
+      </slices>
+      <slices cRef="join_function" inner_replica="0" slice_replica="0" uRef="joinfunction" sliceName="join_function" transitive="false">
+        <visualDescription h="10" w="10" x="15" y="7"/>
       </slices>
       <visualDescription h="40" w="166" x="255" y="456"/>
     </unit>
@@ -510,7 +540,7 @@
         <visualDescription h="10" w="10" x="19" y="28"/>
         <port>task_port</port>
       </slices>
-      <slices cRef="info_colector_result" inner_replica="0" slice_replica="0" uRef="data" sliceName="info_colector_result" transitive="false">
+      <slices cRef="info_collector_result" inner_replica="0" slice_replica="0" uRef="data" sliceName="info_collector_result" transitive="false">
         <visualDescription h="10" w="10" x="20" y="2"/>
       </slices>
       <slices cRef="sink_input" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="sink_input" transitive="false">

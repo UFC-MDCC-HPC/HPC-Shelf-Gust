@@ -7,15 +7,49 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <interface iRef="IJoinFunction" nArgs="0">
-      <visualDescription h="40" w="155" x="277" y="268">
-        <color b="191" g="191" r="191"/>
+    <parameter componentRef="join_key" formFieldId="join_key_type" order="0" variance="contravariant" varName="JK"/>
+    <parameter componentRef="join_value" formFieldId="join_value_type" order="1" variance="contravariant" varName="JV"/>
+    <innerComponent localRef="join_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="join_key_type" exposed="false">
+      <visualDescription h="60" w="188" x="111" y="454">
+        <color b="255" g="255" r="255"/>
       </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="join_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="join_value_type" exposed="false">
+      <visualDescription h="60" w="177" x="461" y="451">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="IJoinFunction" nArgs="2">
+      <slice isRef="join_key">
+        <originRef cRef="join_key" iRef="IData"/>
+        <visualDescription h="10" w="10" x="5" y="16"/>
+      </slice>
+      <slice isRef="join_value">
+        <originRef cRef="join_value" iRef="IData"/>
+        <visualDescription h="10" w="10" x="143" y="24"/>
+      </slice>
+      <visualDescription h="40" w="155" x="277" y="268">
+        <color b="207" g="159" r="114"/>
+      </visualDescription>
+      <parameter iname="IData" order="0" parid="join_key_type" uname="data" varid="JK"/>
+      <parameter iname="IData" order="1" parid="join_value_type" uname="data" varid="JV"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IJoinFunction" multiple="false" private="false" replica="0" uRef="joinfunction" visibleInterface="true">
+      <slices cRef="join_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="join_key" transitive="false">
+        <visualDescription h="10" w="10" x="5" y="16"/>
+      </slices>
+      <slices cRef="join_value" inner_replica="0" slice_replica="0" uRef="data" sliceName="join_value" transitive="false">
+        <visualDescription h="10" w="10" x="143" y="24"/>
+      </slices>
       <visualDescription h="40" w="155" x="277" y="348"/>
     </unit>
   </componentInfo>
