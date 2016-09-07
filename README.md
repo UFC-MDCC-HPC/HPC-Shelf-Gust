@@ -6,8 +6,8 @@ Instructions
 command line:
 ----
 
-* mkdir -p ~/workspace/gitsource
-* cd ~/workspace/gitsource
+* mkdir -p ~/workspace/gust
+* cd ~/workspace/gust
 * git clone --recursive https://github.com/UFC-MDCC-HPC/HPC-Shelf-Gust
-* cd ~/workspace/gitsource/HPC-Shelf-Gust
-* **sh config-components.sh**
+* cd ~/workspace/gust/HPC-Shelf-Gust
+* **./config-components.sh**

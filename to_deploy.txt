@@ -1,1 +1,0 @@
-/home/cenez/hpe/to_deploy.txt
