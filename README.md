@@ -10,4 +10,4 @@ command line:
 * cd ~/workspace/gust
 * git clone --recursive https://github.com/UFC-MDCC-HPC/HPC-Shelf-Gust
 * cd ~/workspace/gust/HPC-Shelf-Gust
-* **./config-components.sh**
+* **./configure**

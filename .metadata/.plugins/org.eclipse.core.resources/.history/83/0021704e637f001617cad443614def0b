@@ -1,0 +1,15 @@
+using br.ufc.pargo.hpe.kinds;
+using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
+using br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerAllocation;
+using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
+
+namespace br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph
+{
+	public interface IDirectedGraph<V, E, ALLOC> : BaseIDirectedGraph<V, E, ALLOC>, IGraph<V, E, ALLOC>
+		where V:IVertex
+		where E:IEdge<V>
+		where ALLOC:IContainerAllocation
+	{
+	}
+}

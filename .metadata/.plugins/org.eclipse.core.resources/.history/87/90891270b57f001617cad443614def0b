@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000616d0cbbb07ad8e5e179a13771d0f21e1b36323c39eb2145b2312b34b1ca7f8828ccd8121de67ee7fc2759cde4e61d4ffeea9e5b8c8b097463ec09c84c62e9d46e514629dc69f133c93b3d9aa3d391d6e7de3e0adff1e2ebabb8643181d6279666328607ac10b2c450f5efcc9443035e1973e94c1712289994f9b56beff6578f" isAbstract="true" kind="Computation" name="Graph" packagePath="br.ufc.mdcc.hpcshelf.gust.graph">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="container" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="189" x="549" y="363">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="edge_type" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="198" x="289" y="457">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="vertex_type" varName="V"/>
+      <unitBounds parallel="false" uRef="edge">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="vertex_type" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="145" x="83" y="412">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="vertex">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="IGraph" nArgs="0">
+      <visualDescription h="40" w="227" x="254" y="268">
+        <color b="207" g="159" r="114"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IGraph" multiple="false" private="false" replica="0" uRef="graph" visibleInterface="true">
+      <visualDescription h="40" w="227" x="254" y="348"/>
+    </unit>
+  </componentInfo>
+</component:component>

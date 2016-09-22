@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/cenez/hpe/cenez/cache" default="all" name="Float">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="Float-1.0.0.0">
+    <ifnot targetexists="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.common.Float/bin/1.0.0.0">
+      <mkdir dir="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.common.Float/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.common.Float/Float.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.common.Float/bin/1.0.0.0/BaseIFloat.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.common.Float/src/1.0.0.0/BaseIFloat.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.common.Float/Float.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.common.Float/bin/1.0.0.0/IFloat.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.common.Float/src/1.0.0.0/IFloat.cs"/>
+      </sources>
+      <references>
+        <include name="/br.ufc.mdcc.common.Float/bin/1.0.0.0/BaseIFloat.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="Float-1.0.0.0" name="all"/>
+</project>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000035a40b07fe09eb996ad9826b8d2f33cd619beb87a7f52f877c29c1fadc3de4b9f5a3c52550c4cc25385eefcdf0364b4da0e4ba15c5479178ad62bfe29cedbd1b0c65379a6d81f2bd8abbbfc1deb357ab4142b7680b4e1dd1bd8d29584e5f78e4f557387fe53c7d76ab5fdd849ba3f9d9add0a5b9f98da5e90e0bfa73fc120fbc" isAbstract="true" kind="Data" name="Container" packagePath="br.ufc.mdcc.hpcshelf.gust.graph.container">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002b679e8f63c6925bfcc928a7cc3013906b15c175a4e98fab23a035f735fa6c0ad73ed2eae507a31345dd1d315a36138fc3377a2b0953350e14b7cf31e6b06c33f4f4ee03b53200f4bfdbaab49b63edb35bda74c698665df952a90b9df4bdf2e6bc62129a9da0a4ba4ee78fb225d5b4353e96afd6e47927b6943bf6ace9cf0cb0" localRef="base" location="br.ufc.mdcc.common.Data/Data.hpe" name="Data" package="br.ufc.mdcc.common" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="356" y="542">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <parameter componentRef="vertex_type" formFieldId="vertex_type" order="0" variance="contravariant" varName="V"/>
+    <parameter componentRef="edge_type" formFieldId="edge_type" order="1" variance="contravariant" varName="E"/>
+    <innerComponent localRef="vertex_type" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="vertex_type" exposed="true">
+      <visualDescription h="60" w="164" x="109" y="563">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="vertex">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="edge_type" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="edge_type" exposed="true">
+      <visualDescription h="60" w="168" x="561" y="536">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="vertex_type" varName="V"/>
+      <unitBounds parallel="false" uRef="edge">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="IContainer" nArgs="2">
+      <slice isRef="vertex_type">
+        <originRef cRef="vertex_type" iRef="IVertex"/>
+        <visualDescription h="10" w="10" x="12" y="25"/>
+      </slice>
+      <slice isRef="edge_type">
+        <originRef cRef="edge_type" iRef="IEdge"/>
+        <visualDescription h="10" w="10" x="145" y="24"/>
+      </slice>
+      <visualDescription h="40" w="201" x="259" y="381">
+        <color b="168" g="127" r="173"/>
+      </visualDescription>
+      <port name="vertex_type">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="vertex_type" sRef="vertex_type"/>
+      </port>
+      <port name="edge_type">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="edge_type" sRef="edge_type"/>
+      </port>
+      <parameter iname="IVertex" order="0" parid="vertex_type" uname="vertex" varid="V"/>
+      <parameter iname="IEdge" order="1" parid="edge_type" uname="edge" varid="E"/>
+    </interface>
+    <unit facet="0" iRef="IContainer" multiple="false" private="false" replica="0" uRef="container" visibleInterface="true">
+      <super cRef="base" uRef="data"/>
+      <slices cRef="edge_type" inner_replica="0" slice_replica="0" uRef="edge" sliceName="edge_type" transitive="false">
+        <visualDescription h="10" w="10" x="145" y="24"/>
+      </slices>
+      <slices cRef="vertex_type" inner_replica="0" slice_replica="0" uRef="vertex" sliceName="vertex_type" transitive="false">
+        <visualDescription h="10" w="10" x="12" y="25"/>
+      </slices>
+      <visualDescription h="40" w="160" x="288" y="460"/>
+    </unit>
+  </componentInfo>
+</component:component>

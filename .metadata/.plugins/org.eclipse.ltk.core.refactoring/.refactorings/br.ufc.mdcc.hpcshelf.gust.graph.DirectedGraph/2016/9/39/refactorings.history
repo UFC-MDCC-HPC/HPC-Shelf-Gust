@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/DirectedGraph2.hpe&apos; to &apos;DirectedGraph.hpe&apos;" description="Rename resource &apos;DirectedGraph2.hpe&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="DirectedGraph2.hpe" name="DirectedGraph.hpe" stamp="1474349359125" updateReferences="true"/>
+</session>

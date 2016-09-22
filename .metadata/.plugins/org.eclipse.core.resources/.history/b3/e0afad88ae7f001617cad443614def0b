@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/cenez/hpe/cenez/cache" default="all" name="ContainerData">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="ContainerData-1.0.0.0">
+    <ifnot targetexists="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData/bin/1.0.0.0">
+      <mkdir dir="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData/ContainerData.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData/bin/1.0.0.0/BaseIContainerData.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData/src/1.0.0.0/BaseIContainerData.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerAllocation/bin/1.0.0.0/IContainerAllocation.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerType/bin/1.0.0.0/IContainerType.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData/ContainerData.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData/bin/1.0.0.0/IContainerData.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData/src/1.0.0.0/IContainerData.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerAllocation/bin/1.0.0.0/IContainerAllocation.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerType/bin/1.0.0.0/IContainerType.dll"/>
+        <include name="/br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData/bin/1.0.0.0/BaseIContainerData.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="ContainerData-1.0.0.0" name="all"/>
+</project>

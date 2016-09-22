@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000f34084da487c1c6931f9192c282dd63720d21c295915e203ba679e3c1f9083623437d45ea196dc196f38ed2c85b2c246c5797fe6d15acb382dd64409342c6a9b9b7ecde9b14361fbb071057e95cf183d13e75c954ddcbd406f10267ecea7bfca61a5bdbb85512e84307a5582e6622e9e401129677df6036805e6aeda2d1d7e99" isAbstract="false" kind="Data" name="DoubleImpl" packagePath="br.ufc.mdcc.common.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000512e1a81b2dccc5cdd582bbd4ef0bb9ffc2728f77d6b4d727504e26edb013feb55888e21a018e9d10b83af9fa70e751b04898ecf1bf882b6136b8c58d9e610c19d90a6550703d7cd63ea9481893eb3f79723aab1e79d774e036b014794011546175f593a86fe1965db51c9a8ea3c9b538b13dc0d51a52121c42f17afcc6be991" localRef="base" location="br.ufc.mdcc.common.Double/Double.hpe" name="Double" package="br.ufc.mdcc.common" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="315" y="350">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IDoubleImpl" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Double;&#xA;&#xA;namespace br.ufc.mdcc.common.impl.DoubleImpl { &#xA;&#xA;&#x9;public abstract class BaseIDoubleImpl: DataStructure, BaseIDouble&#xA;{&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;}&#xA;" fileType="library" name="BaseIDoubleImpl.cs" srcType="base" uri="br.ufc.mdcc.common.impl.DoubleImpl/bin/1.0.0.0/BaseIDoubleImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Double/bin/1.0.0.0/BaseIDouble.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Double;&#xA;using br.ufc.mdcc.common.Data;&#xA;using System.Collections.Generic;&#xA;&#xA;namespace br.ufc.mdcc.common.impl.DoubleImpl { &#xA;&#x9;public class IDoubleImpl : BaseIDoubleImpl, IDouble{&#xA;&#xA;&#x9;&#x9;public IDoubleImpl() { } &#xA;&#xA;&#x9;&#x9;override public void initialize(){&#xA;&#x9;&#x9;&#x9;newInstance(); &#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public IDoubleInstance newInstance (double d){&#xA;&#x9;&#x9;&#x9;IDoubleInstance instance = (IDoubleInstance)newInstance ();&#xA;&#x9;&#x9;&#x9;instance.Value = d;&#xA;&#x9;&#x9;&#x9;return instance;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public object newInstance (){&#xA;&#x9;&#x9;&#x9;this.instance = new IDoubleInstanceImpl ();&#xA;&#x9;&#x9;&#x9;return this.Instance;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IDoubleInstance instance;&#xA;&#x9;&#x9;public object Instance {&#xA;&#x9;&#x9;&#x9;get { return instance;&#x9;}&#xA;&#x9;&#x9;&#x9;set { this.instance = (IDoubleInstance) value; }&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#xA;&#x9;[Serializable]&#xA;&#x9;public class IDoubleInstanceImpl : IDoubleInstance{&#xA;&#x9;&#x9;#region IDoubleInstance implementation&#xA;&#x9;&#x9;private double val;&#xA;&#x9;&#x9;public double Value {&#xA;&#x9;&#x9;&#x9;get { return val; }&#xA;&#x9;&#x9;&#x9;set { this.val = value;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;public override int GetHashCode (){&#xA;&#x9;&#x9;&#x9;return Value.GetHashCode();&#x9;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override string ToString (){&#xA;&#x9;&#x9;&#x9;return Value.ToString();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public override bool Equals (object obj){&#xA;&#x9;&#x9;&#x9;if (obj is IDoubleInstanceImpl)&#xA;&#x9;&#x9;&#x9;&#x9;return Value==(((IDoubleInstanceImpl) obj).Value);&#xA;&#x9;&#x9;&#x9;else if (obj is double)&#xA;&#x9;&#x9;&#x9;&#x9;return Value==(double)obj;&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;return false;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;#endregion&#xA;&#xA;&#x9;&#x9;#region ICloneable implementation&#xA;&#xA;&#x9;&#x9;public object Clone ()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IDoubleInstance clone = new IDoubleInstanceImpl();&#xA;&#x9;&#x9;&#x9;clone.Value = this.Value;&#xA;&#x9;&#x9;&#x9;return clone;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;#endregion&#xA;&#x9;}&#xA;}&#xA;" fileType="library" name="IDoubleImpl.cs" srcType="user" uri="br.ufc.mdcc.common.impl.DoubleImpl/bin/1.0.0.0/IDoubleImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.common.impl.DoubleImpl/bin/1.0.0.0/BaseIDoubleImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Double/bin/1.0.0.0/IDouble.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="130" x="52" y="149">
+        <color b="255" g="128" r="0"/>
+      </visualDescription>
+    </interface>
+    <unit iRef="IDoubleImpl" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
+      <super cRef="base" uRef="data"/>
+      <visualDescription h="40" w="80" x="195" y="266"/>
+    </unit>
+  </componentInfo>
+</component:component>

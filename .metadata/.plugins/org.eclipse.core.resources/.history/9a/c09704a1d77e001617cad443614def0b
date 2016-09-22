@@ -1,0 +1,18 @@
+/* AUTOMATICALLY GENERATE CODE */
+
+using br.ufc.pargo.hpe.kinds;
+using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
+using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.container.AllocationType;
+
+namespace br.ufc.mdcc.hpcshelf.gust.graph.Graph
+{
+	public interface BaseIGraph<V, E, ALLOC> : IComputationKind 
+		where V:IVertex
+		where E:IEdge<V>
+		where ALLOC:IAllocationType
+	{
+		E EdgeFactory {get;}
+		V Vertex {get;}
+	}
+}

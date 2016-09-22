@@ -1,0 +1,12 @@
+using br.ufc.pargo.hpe.kinds;
+using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
+
+namespace br.ufc.mdcc.hpcshelf.gust.graph.Graph
+{
+	public interface IGraph<V, E> : BaseIGraph<V, E>
+		where V:IVertex
+		where E:IEdge<V>
+	{
+	}
+}

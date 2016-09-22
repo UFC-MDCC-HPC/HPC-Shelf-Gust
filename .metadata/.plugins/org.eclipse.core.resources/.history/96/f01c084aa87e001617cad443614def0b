@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000000f60d89dc91de268fb5458d850c8e75907b9d44119b6827e868f4756d7fbeff2a840e2558dd34ce28d22bd70305bc371458a403bfcc4d1111ed51e5c3ce0898eb522ca87da76eea40e76eeb2ddfac5285bdaaff6ae5f6590ffdb0df32a49cfb74fdfe3a6a2017dca6c5a22d8247266890e95108ecae7dfa501456248566be8b5" isAbstract="true" kind="Data" name="ContainerDigraph" packagePath="br.ufc.mdcc.hpcshelf.gust.graph.container">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="002400000480000094000000060200000024000052534131000400001100000035a40b07fe09eb996ad9826b8d2f33cd619beb87a7f52f877c29c1fadc3de4b9f5a3c52550c4cc25385eefcdf0364b4da0e4ba15c5479178ad62bfe29cedbd1b0c65379a6d81f2bd8abbbfc1deb357ab4142b7680b4e1dd1bd8d29584e5f78e4f557387fe53c7d76ab5fdd849ba3f9d9add0a5b9f98da5e90e0bfa73fc120fbc" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.graph.container.Container/Container.hpe" name="Container" package="br.ufc.mdcc.hpcshelf.gust.graph.container" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="380" y="553">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="edge_type" varName="E"/>
+        <parameter formFieldId="allocation_type" varName="ALLOC"/>
+        <parameter formFieldId="vertex_type" varName="V"/>
+        <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+          <visualDescription h="60" w="183" x="105" y="575">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="vertex_type" varName="V"/>
+          <unitBounds parallel="false" uRef="edge">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+          <visualDescription h="60" w="151" x="552" y="615">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <unitBounds parallel="false" uRef="vertex">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="false" uRef="container">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IContainerDigraph" nArgs="0">
+      <visualDescription h="40" w="239" x="291" y="344">
+        <color b="168" g="127" r="173"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IContainerDigraph" multiple="false" private="false" replica="0" uRef="container" visibleInterface="true">
+      <super cRef="base" uRef="container"/>
+      <visualDescription h="40" w="206" x="271" y="446"/>
+    </unit>
+  </componentInfo>
+</component:component>

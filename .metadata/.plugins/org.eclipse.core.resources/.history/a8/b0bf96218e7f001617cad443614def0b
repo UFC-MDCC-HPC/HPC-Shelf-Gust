@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000134db38395cc7e49d56c38ec2d05df48daa6c51dd097337965eac81ea3e9a7de1580816027739829f34aed2bf46eb7a5be2333f78dc0a8391779602acf7b27bef458a98b05798b463edb270f2a67f73e0d65170f6d37ab66d86d7c87502aac9a01ece706b560590cf5bb3d6757064eed435a4bb5dc28e59573465e762a9aff9b" isAbstract="true" kind="Computation" name="TesterContext" packagePath="br.ufc.mdcc.hpcshelf.gust.graph.app">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <parameter componentRef="vertex_type" formFieldId="vertex_type" order="0" variance="contravariant" varName="V"/>
+    <parameter componentRef="edge_type" formFieldId="edge_type" order="1" variance="contravariant" varName="E"/>
+    <innerComponent localRef="vertex_type" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="vertex_type" exposed="false">
+      <visualDescription h="60" w="292" x="159" y="369">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="vertex">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="edge_type" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="edge_type" exposed="false">
+      <visualDescription h="60" w="199" x="320" y="296">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="vertex_type" varName="V"/>
+      <unitBounds parallel="false" uRef="edge">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="ITesterContext" nArgs="3">
+      <slice isRef="graph">
+        <originRef cRef="graph" iRef="IGraph"/>
+        <visualDescription h="10" w="10" x="40" y="22"/>
+      </slice>
+      <visualDescription h="40" w="259" x="291" y="506">
+        <color b="128" g="128" r="128"/>
+      </visualDescription>
+      <port name="edgeFactory">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="edgeFactory" sRef="graph"/>
+      </port>
+      <port name="vertex">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="vertex" sRef="graph"/>
+      </port>
+      <port name="containerData">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="containerData" sRef="graph"/>
+      </port>
+      <parameter iname="IGraph" order="2" parid="graph" uname="graph" varid="G"/>
+      <parameter iname="IVertex" order="0" parid="vertex_type" uname="vertex" varid="V"/>
+      <parameter iname="IEdge" order="1" parid="edge_type" uname="edge" varid="E"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ITesterContext" multiple="false" private="false" replica="0" uRef="tester_context" visibleInterface="true">
+      <slices cRef="vertex" inner_replica="0" slice_replica="0" uRef="vertex" sliceName="vertex" transitive="true">
+        <visualDescription h="10" w="10" x="11" y="26"/>
+      </slices>
+      <slices cRef="edgeFactory" inner_replica="0" slice_replica="0" uRef="edge" sliceName="edgeFactory" transitive="true">
+        <visualDescription h="10" w="10" x="96" y="27"/>
+      </slices>
+      <slices cRef="containerData" inner_replica="0" slice_replica="0" uRef="data" sliceName="containerData" transitive="true">
+        <visualDescription h="10" w="10" x="209" y="18"/>
+      </slices>
+      <slices cRef="graph" inner_replica="0" slice_replica="0" uRef="graph" sliceName="graph" transitive="false">
+        <visualDescription h="10" w="10" x="40" y="22"/>
+        <port>vertex</port>
+        <port>edgeFactory</port>
+        <port>containerData</port>
+      </slices>
+      <visualDescription h="40" w="259" x="291" y="586"/>
+    </unit>
+  </componentInfo>
+</component:component>

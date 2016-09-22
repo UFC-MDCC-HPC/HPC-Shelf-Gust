@@ -1,0 +1,21 @@
+/* AUTOMATICALLY GENERATE CODE */
+
+using br.ufc.pargo.hpe.kinds;
+using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
+using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData;
+using br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerAllocation;
+using br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerTypeUndirected;
+using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
+
+namespace br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph
+{
+	public interface BaseIUndirectedGraph<V, E, ALLOC> : BaseIGraph<V, E, ALLOC>, IComputationKind 
+		where V:IVertex
+		where E:IEdge<V>
+		where ALLOC:IContainerAllocation
+	{
+		E EdgeFactory {get;}
+		IContainerData<E, ALLOC, IContainerTypeUndirected> Container {get;}
+	}
+}

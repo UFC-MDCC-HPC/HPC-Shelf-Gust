@@ -1,0 +1,27 @@
+﻿<Properties StartupItem="HPC-Shelf-Gust/HPC-Shelf-Gust.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl/src/1.0.0.0/TaskPort.cs">
+    <Files>
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl/src/1.0.0.0/ISplitterReadSourceImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl/src/1.0.0.0/ISplitterReduceCollectorImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl/src/1.0.0.0/ISplitterMapFeederImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl/src/1.0.0.0/ISplitterWriteSinkImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl/src/1.0.0.0/IMapperImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl/src/1.0.0.0/IShufflerMapCollectorImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl/src/1.0.0.0/IShufflerReduceFeederImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl/src/1.0.0.0/IReducerImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.example.cw.impl.TallierImpl/src/1.0.0.0/ITallierImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.DefaultTerminateFunctionImpl/src/1.0.0.0/IDefaultTerminateFunctionImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl/src/1.0.0.0/BaseISplitterReduceCollectorImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBindingWriteData/src/1.0.0.0/IWriteDataImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/src/1.0.0.0/IDataSinkImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl/src/1.0.0.0/BaseISplitterMapFeederImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpc.storm.binding.channel.impl.BindingImpl/src/1.0.0.0/IChannelRootImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpc.storm.binding.task.impl.TaskBindingBaseImpl/src/1.0.0.0/TaskPort.cs" Line="51" Column="88" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

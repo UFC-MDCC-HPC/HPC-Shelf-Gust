@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<PropertyGroup>
+<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+<ProductVersion>8.0.30703</ProductVersion>
+<SchemaVersion>2.0</SchemaVersion>
+<ProjectGuid>{476f03c1-df48-4da7-b4e4-1a187571f48d}</ProjectGuid>
+<OutputType>Library</OutputType>
+<RootNamespace>br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted</RootNamespace>
+<AssemblyName>br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted</AssemblyName>
+<SignAssembly>true</SignAssembly>
+<AssemblyOriginatorKeyFile>..\EdgeWeighted.snk</AssemblyOriginatorKeyFile>
+<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+</PropertyGroup>
+<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+<DebugSymbols>true</DebugSymbols>
+<DebugType>full</DebugType>
+<Optimize>false</Optimize>
+<OutputPath>..\..\bin</OutputPath>
+<DefineConstants>DEBUG;</DefineConstants>
+<ErrorReport>prompt</ErrorReport>
+<WarningLevel>4</WarningLevel>
+<ConsolePause>false</ConsolePause>
+</PropertyGroup>
+<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+<DebugType>full</DebugType>
+<Optimize>true</Optimize>
+<OutputPath>..\..\bin</OutputPath>
+<ErrorReport>prompt</ErrorReport>
+<WarningLevel>4</WarningLevel>
+<ConsolePause>false</ConsolePause>
+</PropertyGroup>
+<ItemGroup>
+<Reference Include="System" />
+<Reference Include="DGAC">
+<HintPath>..\..\..\..\..\..\usr\lib\mono\DGAC\DGAC.dll</HintPath>
+</Reference>
+</ItemGroup>
+<ItemGroup>
+<Compile Include="Properties\AssemblyInfo.cs" />
+<Compile Include="..\src\1.0.0.0\BaseIEdgeWeighted.cs">
+<Link>BaseIEdgeWeighted.cs</Link>
+</Compile>
+<Compile Include="..\src\1.0.0.0\IEdgeWeighted.cs">
+<Link>IEdgeWeighted.cs</Link>
+</Compile>
+</ItemGroup>
+<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
+
