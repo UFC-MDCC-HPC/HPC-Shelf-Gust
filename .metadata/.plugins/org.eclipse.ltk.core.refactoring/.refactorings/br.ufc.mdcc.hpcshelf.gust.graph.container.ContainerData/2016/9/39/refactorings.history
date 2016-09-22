@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData/ContainerData2.hpe&apos; to &apos;ContainerDataBase.hpe&apos;" description="Rename resource &apos;ContainerData2.hpe&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="ContainerData2.hpe" name="ContainerDataBase.hpe" stamp="1474441340104" updateReferences="true"/>
-</session>
