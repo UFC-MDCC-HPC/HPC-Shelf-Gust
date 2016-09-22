@@ -24,6 +24,7 @@ Debug
 bin
 obj
 local_files
+tools
 .metadata
 external
 
