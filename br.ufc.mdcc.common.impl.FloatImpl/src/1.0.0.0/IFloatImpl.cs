@@ -6,68 +6,83 @@ using br.ufc.mdcc.common.Float;
 using br.ufc.mdcc.common.Data;
 using System.Collections.Generic;
 
-namespace br.ufc.mdcc.common.impl.FloatImpl { 
-	public class IFloatImpl : BaseIFloatImpl, IFloat{
+namespace br.ufc.mdcc.common.impl.FloatImpl {
 
-		public IFloatImpl() { } 
+	public class IFloatImpl : BaseIFloatImpl, IFloat {
 
-		override public void after_initialize(){
-			newInstance(); 
+		public IFloatImpl () {
 		}
 
-		public IFloatInstance newInstance (float d){
+		override public void after_initialize () {
+			newInstance (); 
+		}
+
+
+		public IFloatInstance newInstance (float i) {
 			IFloatInstance instance = (IFloatInstance)newInstance ();
-			instance.Value = d;
+			instance.Value = i;
 			return instance;
 		}
 
-		public object newInstance (){
+		public object newInstance () {
 			this.instance = new IFloatInstanceImpl ();
 			return this.Instance;
 		}
 
 		private IFloatInstance instance;
+
 		public object Instance {
-			get { return instance;	}
-			set { this.instance = (IFloatInstance) value; }
+			get { return instance; }
+			set { this.instance = (IFloatInstance)value; }
 		}
 	}
 
 	[Serializable]
-	public class IFloatInstanceImpl : IFloatInstance{
+	public class IFloatInstanceImpl : IFloatInstance {
 		#region IFloatInstance implementation
+
 		private float val;
+
 		public float Value {
 			get { return val; }
-			set { this.val = value;	}
-		}
-		public override int GetHashCode (){
-			return Value.GetHashCode();	
+			set { this.val = value; }
 		}
 
-		public override string ToString (){
-			return Value.ToString();
+		public object ObjValue {
+			get { return val; }
+			set { this.val = (float)value; }
 		}
 
-		public override bool Equals (object obj){
+		public override int GetHashCode () {
+			return Value.GetHashCode ();	
+		}
+
+		public override string ToString () {
+			return Value.ToString ();
+		}
+
+		public override bool Equals (object obj) {
 			if (obj is IFloatInstanceImpl)
-				return Value==(((IFloatInstanceImpl) obj).Value);
+				return Value == (((IFloatInstanceImpl)obj).Value);
 			else if (obj is float)
-				return Value==(float)obj;
-			else
-				return false;
+					return Value == (float)obj;
+				else
+					return false;
 		}
+
 		#endregion
 
 		#region ICloneable implementation
 
-		public object Clone ()
-		{
-			IFloatInstance clone = new IFloatInstanceImpl();
+		public object Clone () {
+			IFloatInstance clone = new IFloatInstanceImpl ();
 			clone.Value = this.Value;
 			return clone;
 		}
 
 		#endregion
+
 	}
+
+
 }

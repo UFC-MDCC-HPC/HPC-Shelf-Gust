@@ -1,10 +1,6 @@
 ﻿<Properties StartupItem="HPC-Shelf-Gust/HPC-Shelf-Gust.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.common.impl.DoubleImpl/src/1.0.0.0/IDoubleImpl.cs">
-    <Files>
-      <File FileName="../br.ufc.mdcc.common.impl.DoubleImpl/src/1.0.0.0/IDoubleImpl.cs" Line="2" Column="14" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
