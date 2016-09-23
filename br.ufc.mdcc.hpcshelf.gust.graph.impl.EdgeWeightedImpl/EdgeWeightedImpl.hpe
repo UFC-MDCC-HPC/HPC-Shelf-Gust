@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000004922436fd0457fb1580f441eb9edeaebbd1ef37a0ad80d57a930e3e47fd701ebdb8dfda58382cd3c36080275702b0ffbc314a8786fa3b073657632948ee7256f4b98eac5fe232bc5670d1c5090859655a3c90c9219dadfbcc1360ae525cbd435e2e42c7d2bf37f845ae469d450e86999fd762515f4cefe118da66640e826e59f" isAbstract="false" kind="Data" name="EdgeWeightedImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.graph.impl">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo/>
+</component:component>

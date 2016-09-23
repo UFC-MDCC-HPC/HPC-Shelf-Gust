@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000008b4a385c51ab482c0d0127f7e6edb37aa5d684684fe1ed002bfee412b2e1590af8d46c8294eaf328db8a155285656169e63f95d6bed821a745af42997a8495a49bafac8c447d53b41a4a906c93364ff7aad5798555b8269499e7a17f031184e132592c7ccf908f6510614ee555dee15ac20df02576579a7d83be901adc378e87" isAbstract="false" kind="Computation" name="DirectedGraphVWeightedImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.graph.impl">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo/>
+</component:component>

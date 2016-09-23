@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d91a7ee581ea9bc077319a303412f94e05a774b2d7eb529bfc114280639722ef94e4e0daa89e9b466281af4c561de7bb7c5168f80e0d6e097b4f27a74100fc7701beb5d7f50aacdcc787498f43534a3d3efebec2f822069f0685744845f6ef984ac5c348efa7d33d4c6c831b91606d1fbdd3a4f3bc11acc47f842bf1dba28280" isAbstract="false" kind="Data" name="VertexBasicImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.graph.impl">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo/>
+</component:component>
