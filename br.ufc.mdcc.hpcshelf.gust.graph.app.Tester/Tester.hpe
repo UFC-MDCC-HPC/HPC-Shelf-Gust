@@ -117,6 +117,12 @@
         <originRef cRef="teste" iRef="ITesterContext"/>
         <visualDescription h="10" w="10" x="38" y="18"/>
       </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.app.Tester&#xA;{&#xA;&#x9;public interface BaseITester : IApplicationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseITester.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.app.Tester/bin/1.0.0.0/BaseITester.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.app.Tester&#xA;{&#xA;&#x9;public interface ITester : BaseITester&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITester.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.app.Tester/bin/1.0.0.0/ITester.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.app.Tester/bin/1.0.0.0/BaseITester.dll</dependency>
+        </file>
+      </sources>
       <visualDescription h="40" w="178" x="261" y="387">
         <color b="128" g="128" r="128"/>
       </visualDescription>
