@@ -33,8 +33,10 @@ external
 #Program.cs
 #end temp
 
+moving.sh
+unmoving.sh
 br.ufc.mdcc.hpcshelf.mapreduce*
 br.ufc.mdcc.hpcshelf.platform*
 br.ufc.mdcc.hpc.storm*
-
+mapreduce.*
 
