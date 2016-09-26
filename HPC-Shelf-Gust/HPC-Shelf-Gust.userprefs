@@ -1,6 +1,13 @@
 ﻿<Properties StartupItem="HPC-Shelf-Gust/HPC-Shelf-Gust.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl/src/1.0.0.0/IEdgeBasicImpl.cs">
+    <Files>
+      <File FileName="../br.ufc.mdcc.common.impl.KVPairImpl/src/1.0.0.0/IKVPairImpl.cs" Line="39" Column="3" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl/src/1.0.0.0/BaseIEdgeBasicImpl.cs" Line="41" Column="13" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl/src/1.0.0.0/IEdgeBasicImpl.cs" Line="34" Column="4" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.Vertex/src/1.0.0.0/IVertex.cs" Line="13" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

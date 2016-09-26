@@ -1,10 +1,42 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
   <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d91a7ee581ea9bc077319a303412f94e05a774b2d7eb529bfc114280639722ef94e4e0daa89e9b466281af4c561de7bb7c5168f80e0d6e097b4f27a74100fc7701beb5d7f50aacdcc787498f43534a3d3efebec2f822069f0685744845f6ef984ac5c348efa7d33d4c6c831b91606d1fbdd3a4f3bc11acc47f842bf1dba28280" isAbstract="false" kind="Data" name="VertexBasicImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.graph.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000008bccd467c0124a9014b008c68cb088b0ccc9d302571b40335534847053ab91d423d769350af3eed63d0c90cf6679bf0058502a8b8ac12b1cfefe3d30cb361392726b9847faa79f6ecee23206af44cc798a08e5ef86aad2cadee132c74771bcef152b22b4164747e92399bda4484f3ca3e02576bd6c39e996159ffdb6fddf74c3" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/VertexBasic.hpe" name="VertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="350" y="546">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
     </visualAttributes>
   </header>
-  <componentInfo/>
+  <componentInfo>
+    <interface iRef="IVertexBasicImpl" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl &#xA;{&#xA;&#x9;public abstract class BaseIVertexBasicImpl: DataStructure, BaseIVertex&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIVertexBasicImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl/bin/1.0.0.0/BaseIVertexBasicImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/BaseIVertex.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl&#xA;{&#xA;&#x9;public class IVertexBasicImpl : BaseIVertexBasicImpl, IVertex&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="IVertexBasicImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl/bin/1.0.0.0/IVertexBasicImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl/bin/1.0.0.0/BaseIVertexBasicImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertex.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="174" x="124" y="370">
+        <color b="207" g="159" r="114"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IVertexBasicImpl" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
+      <super cRef="base" uRef="data"/>
+      <visualDescription h="40" w="80" x="205" y="476"/>
+    </unit>
+  </componentInfo>
 </component:component>
