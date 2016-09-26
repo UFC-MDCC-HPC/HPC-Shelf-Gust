@@ -19,7 +19,7 @@
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+        <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/DEdge.hpe" multiple="false" name="DEdge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
           <visualDescription h="60" w="190" x="465" y="404">
             <color b="255" g="255" r="255"/>
           </visualDescription>
@@ -39,7 +39,7 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent localRef="edge_type" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+    <innerComponent localRef="edge_type" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/DEdge.hpe" multiple="false" name="DEdge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
       <visualDescription h="60" w="216" x="633" y="248">
         <color b="255" g="255" r="255"/>
       </visualDescription>

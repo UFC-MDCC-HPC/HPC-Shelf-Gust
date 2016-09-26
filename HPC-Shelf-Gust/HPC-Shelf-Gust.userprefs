@@ -1,22 +1,22 @@
 ﻿<Properties StartupItem="HPC-Shelf-Gust/HPC-Shelf-Gust.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.gust.graph.Edge/src/1.0.0.0/IEdge.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.gust.graph.DEdge/src/1.0.0.0/IDEdge.cs">
     <Files>
       <File FileName="../br.ufc.mdcc.common.Data/src/1.0.0.0/IData.cs" Line="1" Column="1" />
       <File FileName="../br.ufc.mdcc.common.Float/src/1.0.0.0/IFloat.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.common.impl.KVPairImpl/src/1.0.0.0/IKVPairImpl.cs" Line="87" Column="13" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl/src/1.0.0.0/BaseIEdgeBasicImpl.cs" Line="25" Column="2" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl/src/1.0.0.0/IEdgeBasicImpl.cs" Line="87" Column="112" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeWeightedImpl/src/1.0.0.0/IEdgeWeightedImpl.cs" Line="16" Column="45" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeWeightedImpl/src/1.0.0.0/BaseIEdgeWeightedImpl.cs" Line="22" Column="4" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.Edge/src/1.0.0.0/IEdge.cs" Line="13" Column="2" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/src/1.0.0.0/IEdgeBasic.cs" Line="13" Column="2" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/src/1.0.0.0/IEdgeWeighted.cs" Line="15" Column="2" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl/src/1.0.0.0/IVertexBasicImpl.cs" Line="14" Column="20" />
-      <File FileName="../br.ufc.mdcc.common.KVPair/src/1.0.0.0/IKVPair.cs" Line="24" Column="1" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.Edge/src/1.0.0.0/BaseIEdge.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/src/1.0.0.0/IVertexBasic.cs" Line="10" Column="2" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.Vertex/src/1.0.0.0/IVertex.cs" Line="14" Column="1" />
+      <File FileName="../br.ufc.mdcc.common.impl.KVPairImpl/src/1.0.0.0/IKVPairImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl/src/1.0.0.0/BaseIDEdgeBasicImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl/src/1.0.0.0/IDEdgeBasicImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl/src/1.0.0.0/IDEdgeWeightedImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl/src/1.0.0.0/BaseIDEdgeWeightedImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.DEdge/src/1.0.0.0/IDEdge.cs" Line="13" Column="2" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/src/1.0.0.0/IDEdgeBasic.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/src/1.0.0.0/IDEdgeWeighted.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl/src/1.0.0.0/IVertexBasicImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.common.KVPair/src/1.0.0.0/IKVPair.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.DEdge/src/1.0.0.0/BaseIDEdge.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/src/1.0.0.0/IVertexBasic.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.Vertex/src/1.0.0.0/IVertex.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

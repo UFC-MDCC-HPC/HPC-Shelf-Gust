@@ -19,7 +19,7 @@
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+        <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/DEdge.hpe" multiple="false" name="DEdge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
           <visualDescription h="60" w="190" x="394" y="626">
             <color b="255" g="255" r="255"/>
           </visualDescription>
@@ -49,7 +49,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="edge_type" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="edge_type" exposed="false">
+    <innerComponent localRef="edge_type" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/DEdge.hpe" multiple="false" name="DEdge" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="edge_type" exposed="false">
       <visualDescription h="60" w="137" x="474" y="278">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -60,14 +60,14 @@
     </innerComponent>
     <interface iRef="IDirectedContainerE" nArgs="2">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainerE&#xA;{&#xA;&#x9;public interface BaseIDirectedContainerE&lt;V, E> : BaseIDirectedContainer&lt;V, E>, IDataStructureKind &#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;&#x9;where E:IEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDirectedContainerE.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainerE/bin/1.0.0.0/BaseIDirectedContainerE.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainerE&#xA;{&#xA;&#x9;public interface BaseIDirectedContainerE&lt;V, E> : BaseIDirectedContainer&lt;V, E>, IDataStructureKind &#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;&#x9;where E:IDEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDirectedContainerE.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainerE/bin/1.0.0.0/BaseIDirectedContainerE.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainer/bin/1.0.0.0/BaseIDirectedContainer.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainerE&#xA;{&#xA;&#x9;public interface IDirectedContainerE&lt;V, E> : BaseIDirectedContainerE&lt;V, E>, IDirectedContainer&lt;V, E>&#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;&#x9;where E:IEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDirectedContainerE.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainerE/bin/1.0.0.0/IDirectedContainerE.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainerE&#xA;{&#xA;&#x9;public interface IDirectedContainerE&lt;V, E> : BaseIDirectedContainerE&lt;V, E>, IDirectedContainer&lt;V, E>&#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;&#x9;where E:IDEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDirectedContainerE.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainerE/bin/1.0.0.0/IDirectedContainerE.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainerE/bin/1.0.0.0/BaseIDirectedContainerE.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainer/bin/1.0.0.0/IDirectedContainer.dll</dependency>
         </file>
@@ -76,7 +76,7 @@
         <color b="52" g="226" r="138"/>
       </visualDescription>
       <parameter iname="IVertex" order="0" parid="vertex_type" uname="data" varid="V"/>
-      <parameter iname="IEdge" order="1" parid="edge_type" uname="data" varid="E"/>
+      <parameter iname="IDEdge" order="1" parid="edge_type" uname="data" varid="E"/>
     </interface>
     <unit facet="0" iRef="IDirectedContainerE" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
       <super cRef="base" uRef="data"/>

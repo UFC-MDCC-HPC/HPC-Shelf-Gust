@@ -14,7 +14,7 @@
       <references>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainer/bin/1.0.0.0/IDirectedContainer.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.Graph/bin/1.0.0.0/BaseIGraph.dll"/>
         <include/>
       </references>
@@ -26,7 +26,7 @@
       <references>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainer/bin/1.0.0.0/IDirectedContainer.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/bin/1.0.0.0/BaseIDirectedGraph.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.Graph/bin/1.0.0.0/IGraph.dll"/>
         <include/>

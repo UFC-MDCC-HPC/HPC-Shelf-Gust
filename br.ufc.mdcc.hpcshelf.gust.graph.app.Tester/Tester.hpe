@@ -23,7 +23,7 @@
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/EdgeBasic.hpe" multiple="false" name="EdgeBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/DEdgeBasic.hpe" multiple="false" name="DEdgeBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
         <visualDescription h="60" w="190" x="442" y="632">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -51,7 +51,7 @@
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/EdgeBasic.hpe" multiple="false" name="EdgeBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/DEdgeBasic.hpe" multiple="false" name="DEdgeBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
         <visualDescription h="60" w="190" x="442" y="632">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -78,7 +78,7 @@
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/EdgeBasic.hpe" multiple="false" name="EdgeBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/DEdgeBasic.hpe" multiple="false" name="DEdgeBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
         <visualDescription h="60" w="190" x="442" y="632">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -99,7 +99,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="e" location="br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/EdgeBasic.hpe" multiple="false" name="EdgeBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+    <innerComponent localRef="e" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/DEdgeBasic.hpe" multiple="false" name="DEdgeBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
       <visualDescription h="60" w="190" x="442" y="632">
         <color b="255" g="255" r="255"/>
       </visualDescription>

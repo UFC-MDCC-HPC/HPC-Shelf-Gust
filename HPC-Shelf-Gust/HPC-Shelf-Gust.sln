@@ -22,11 +22,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.g
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic", "..\br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic\br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic\br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic.csproj", "{DDD9658C-CDEA-4903-AEEC-5641EC96377E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.Edge", "..\br.ufc.mdcc.hpcshelf.gust.graph.Edge\br.ufc.mdcc.hpcshelf.gust.graph.Edge\br.ufc.mdcc.hpcshelf.gust.graph.Edge.csproj", "{CE5F1F57-695B-46ED-98C1-6F6737A76CB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.DEdge", "..\br.ufc.mdcc.hpcshelf.gust.graph.DEdge\br.ufc.mdcc.hpcshelf.gust.graph.DEdge\br.ufc.mdcc.hpcshelf.gust.graph.DEdge.csproj", "{CE5F1F57-695B-46ED-98C1-6F6737A76CB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic", "..\br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic\br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic\br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic.csproj", "{505F8DBD-BC4D-41C4-88AE-C58C962D6463}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic", "..\br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic\br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic\br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic.csproj", "{505F8DBD-BC4D-41C4-88AE-C58C962D6463}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted", "..\br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted\br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted\br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted.csproj", "{476F03C1-DF48-4DA7-B4E4-1A187571F48D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted", "..\br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted\br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted\br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted.csproj", "{476F03C1-DF48-4DA7-B4E4-1A187571F48D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData", "..\br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData\br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData\br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData.csproj", "{7B6A36EC-21B3-4C93-888C-01788A9423F8}"
 EndProject
@@ -54,9 +54,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.g
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl.csproj", "{0D0D4AFD-272C-4CA2-822B-E929E59B2435}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl.csproj", "{2464A266-46AE-4E46-90C2-7A116F632E25}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl.csproj", "{2464A266-46AE-4E46-90C2-7A116F632E25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeWeightedImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeWeightedImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeWeightedImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeWeightedImpl.csproj", "{8DFC8087-3862-4E4D-81FF-8BB70B5AF8D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl.csproj", "{8DFC8087-3862-4E4D-81FF-8BB70B5AF8D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
