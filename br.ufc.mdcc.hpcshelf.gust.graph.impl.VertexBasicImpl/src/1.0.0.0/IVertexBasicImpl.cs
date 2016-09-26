@@ -15,28 +15,31 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl {
 		}
 
 		public IVertexInstance newInstance (int i) {
-			IVertexInstance instance = (IVertexInstance)newInstance ();
+			IVertexBasicInstance instance = (IVertexBasicInstance)newInstance ();
 			instance.Id = i;
 			return instance;
 		}
 
 		public object newInstance () {
-			this.instance = new IVertexInstanceImpl ();
+			this.instance = new IVertexBasicInstanceImpl ();
 			return this.Instance;
 		}
 
-		private IVertexInstance instance;
+		private IVertexBasicInstance instance;
 
 		public object Instance {
 			get { return instance; }
-			set { this.instance = (IVertexInstance)value; }
+			set { this.instance = (IVertexBasicInstance)value; }
+		}
+		public IVertexInstance VInstance {
+			get { return instance; }
 		}
 	}
 
 	[Serializable]
-	public class IVertexInstanceImpl : IVertexInstance {
+	public class IVertexBasicInstanceImpl : IVertexBasicInstance {
 
-		#region IVertexInstance implementation
+		#region IVertexBasicInstance implementation
 		private int val;
 
 		public int Id {
@@ -58,8 +61,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl {
 		}
 
 		public override bool Equals (object obj) {
-			if (obj is IVertexInstanceImpl)
-				return Id == (((IVertexInstanceImpl)obj).Id);
+			if (obj is IVertexBasicInstanceImpl)
+				return Id == (((IVertexBasicInstanceImpl)obj).Id);
 			else if (obj is int)
 					return Id == (int)obj;
 				else
@@ -69,7 +72,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl {
 
 		#region ICloneable implementation
 		public object Clone () {
-			IVertexInstance clone = new IVertexInstanceImpl ();
+			IVertexBasicInstance clone = new IVertexBasicInstanceImpl ();
 			clone.Id = this.Id;
 			return clone;
 		}

@@ -3,98 +3,86 @@ using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.common.KVPair;
+using br.ufc.mdcc.common.Float;
 using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeWeightedImpl {
 	public class IEdgeWeightedImpl<V> : BaseIEdgeWeightedImpl<V>, IEdgeWeighted<V> where V:IVertex {
+		
 		public IEdgeWeightedImpl () { }
 
 		override public void after_initialize () {
 			newInstance (); 
 		}
 
-		public IEdgeInstance newInstance (int source, int target) {
-			IEdgeWeightedInstance instance = (IEdgeWeightedInstance)newInstance ();
-			IKVPairInstance<V,V> kv = (IKVPairInstance<V,V>) Vertices.newInstance ();
-			((IVertexInstance)kv.Key).Id = source;
-			((IVertexInstance)kv.Value).Id = source;
-			EWeightInstance.Value = 1.0f;
-			instance.Source = source;
-			instance.Target = target;
-			instance.Weight = EWeightInstance.Value;
+		public IEdgeWeightedInstance<V> newInstance (int source, int target, float weight) {
+			newInstance ();
+			instance.Source.Id = source;
+			instance.Target.Id = target;
+			instance.Weight.Value = weight;
 			return instance;
-		}
-
-		public IEdgeWeightedInstance newInstance (int source, int target, float weight) {
-			IEdgeWeightedInstance instance = (IEdgeWeightedInstance)newInstance ();
-			IKVPairInstance<V,V> kv = (IKVPairInstance<V,V>) Vertices.newInstance ();
-			((IVertexInstance)kv.Key).Id = source;
-			((IVertexInstance)kv.Value).Id = source;
-			EWeightInstance.Value = weight;
-			instance.Source = source;
-			instance.Target = target;
-			instance.Weight = EWeightInstance.Value;
-			return instance;
-		}
-
-		public void setEdge (int source, int target) {
-			ESourceInstance.Id = source;
-			ETargetInstance.Id = target;
-			instance.Source = source;
-			instance.Target = target;
 		}
 
 		public object newInstance () {
-			Vertices.newInstance ();
-			Weight.newInstance ();
-			this.instance = new IEdgeWeightedInstanceImpl ();
+			IKVPairInstance<V,V> kv = (IKVPairInstance<V,V>)Vertices.newInstance ();
+			IFloatInstance f = (IFloatInstance) Weight.newInstance (); 
+			this.instance = new IEdgeWeightedInstanceImpl<V> (((IVertexInstance)kv.Key), ((IVertexInstance)kv.Value), f);
 			return this.Instance;
 		}
 
-		private IEdgeWeightedInstance instance;
-
+		private IEdgeWeightedInstance<V> instance;
 		public object Instance {
 			get { return instance; }
-			set { this.instance = (IEdgeWeightedInstance)value; }
+			set { this.instance = (IEdgeWeightedInstance<V>)value; }
+		}
+
+		public IEdgeWeightedInstance<V> EInstance {
+			get { return instance; }
 		}
 	}
 
 	[Serializable]
-	public class IEdgeWeightedInstanceImpl : IEdgeWeightedInstance {
+	public class IEdgeWeightedInstanceImpl<V> : IEdgeWeightedInstance<V> where V: IVertex{
+
+		public IEdgeWeightedInstanceImpl(IVertexInstance s, IVertexInstance t, IFloatInstance w){
+			this.source = s;
+			this.target = t;
+			this.weight = w;
+		}
 
 		#region IEdgeWeightedInstance implementation
-		private int source;
-		private int target;
-		private float weight;
+		private IVertexInstance source;
+		private IVertexInstance target;
+		private IFloatInstance weight;
 
-		public int Source {
+		public IVertexInstance Source {
 			get { return source; }
 			set { this.source = value; }
 		}
 
-		public int Target {
+		public IVertexInstance Target {
 			get { return target; }
 			set { this.target = value; }
 		}
 
-		public float Weight {
+		public IFloatInstance Weight {
 			get { return weight; }
 			set { this.weight = value; }
 		}
 
 		public object ObjValue {
-			get { return new Tuple<int,int,float>(source,target,weight); }
+			get { return new Tuple<IVertexInstance,IVertexInstance,IFloatInstance>(source,target,weight); }
 			set { 
-				this.source = ((Tuple<int,int,float>)value).Item1;
-				this.target = ((Tuple<int,int,float>)value).Item2;
-				this.weight = ((Tuple<int,int,float>)value).Item3;
+				this.source = ((Tuple<IVertexInstance,IVertexInstance,IFloatInstance>)value).Item1;
+				this.target = ((Tuple<IVertexInstance,IVertexInstance,IFloatInstance>)value).Item2;
+				this.weight = ((Tuple<IVertexInstance,IVertexInstance,IFloatInstance>)value).Item3;
 			}
 		}
 		public override int GetHashCode () {
-			int a = this.source;
-			int b = this.target; 
+			int a = this.source.Id;
+			int b = this.target.Id;
 			var A = (ulong)(a >= 0 ? 2 * (long)a : -2 * (long)a - 1);
 			var B = (ulong)(b >= 0 ? 2 * (long)b : -2 * (long)b - 1);
 			var C = (long)((A >= B ? A * A + A + B : A + B * B) / 2);
@@ -102,13 +90,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeWeightedImpl {
 			return (int)R;
 		}
 		public override string ToString () {
-			return "" + source + ":"+ target + "|"+string.Format("{0:N1}",weight);
+			return "" + source.Id + ":" + target.Id + "|"+string.Format("{0:N1}",weight.Value);
 		}
-
 		public override bool Equals (object obj) {
-			if (typeof(IEdgeWeightedInstance).IsAssignableFrom (obj.GetType ())) {
-				IEdgeWeightedInstance o = (IEdgeWeightedInstance)obj;
-				if (o.Source.Equals(this.source) && o.Target.Equals(this.target) && o.Weight == this.Weight)
+			if (typeof(IEdgeWeightedInstance<V>).IsAssignableFrom (obj.GetType ())) {
+				IEdgeWeightedInstance<V> o = (IEdgeWeightedInstance<V>)obj;
+				if (o.Source.Id.Equals(this.source.Id) && o.Target.Id.Equals(this.target.Id) && o.Weight.Value == this.Weight.Value)
 					return true;
 			}
 			return false;
@@ -117,10 +104,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeWeightedImpl {
 
 		#region ICloneable implementation
 		public object Clone () {
-			IEdgeWeightedInstance clone = new IEdgeWeightedInstanceImpl ();
-			clone.Source = this.source;
-			clone.Target = this.target;
-			clone.Weight = this.weight;
+			IEdgeWeightedInstance<V> clone = new IEdgeWeightedInstanceImpl<V>((IVertexInstance)this.Source.Clone(), (IVertexInstance)this.Target.Clone(), (IFloatInstance)this.Weight.Clone());
 			return clone;
 		}
 		#endregion

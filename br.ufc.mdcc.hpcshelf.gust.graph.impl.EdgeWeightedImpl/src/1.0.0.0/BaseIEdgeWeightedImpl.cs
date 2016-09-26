@@ -22,33 +22,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeWeightedImpl {
 		}
 
 		private IFloat weight = null;
-
 		protected IFloat Weight {
 			get {
 				if (this.weight == null)
 					this.weight = (IFloat)Services.getPort ("weight");
 				return this.weight;
-			}
-		}
-		public IFloatInstance EWeightInstance {
-			get {
-				return (IFloatInstance)Weight.Instance;
-			}
-		}
-
-		protected IKVPairInstance<V,V> KVInstance {
-			get {
-				return (IKVPairInstance<V,V>)Vertices.Instance;
-			}
-		}
-		public IVertexInstance ESourceInstance {
-			get {
-				return (IVertexInstance)KVInstance.Key;
-			}
-		}
-		public IVertexInstance ETargetInstance {
-			get {
-				return (IVertexInstance)KVInstance.Value;
 			}
 		}
 	}

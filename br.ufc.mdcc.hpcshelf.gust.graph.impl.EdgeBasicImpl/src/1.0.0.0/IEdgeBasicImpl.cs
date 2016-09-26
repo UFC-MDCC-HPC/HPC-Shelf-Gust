@@ -16,85 +16,62 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl {
 			newInstance (); 
 		}
 
-		public IEdgeBasicInstance newInstance (int source, int target) {
-			IEdgeBasicInstance instance = (IEdgeBasicInstance)newInstance ();
-			IKVPairInstance<V,V> kv = (IKVPairInstance<V,V>) Vertices.newInstance ();
-			((IVertexInstance)kv.Key).Id = source;
-			((IVertexInstance)kv.Value).Id = source;
-			//instance.Source = source;
-			//instance.Target = target;
+		public IEdgeBasicInstance<V> newInstance (int source, int target) {
+			newInstance ();
+			instance.Source.Id = source;
+			instance.Target.Id = target;
 			return instance;
 		}
 
-		public void setEdge (int source, int target) {
-			//ESourceInstance.Id = source;
-			//ETargetInstance.Id = target;
-			//instance.Source = source;
-			//instance.Target = target;
-		}
-
 		public object newInstance () {
-			Vertices.newInstance ();
-			this.instance = new IEdgeBasicInstanceImpl ();
+			IKVPairInstance<V,V> kv = (IKVPairInstance<V,V>)Vertices.newInstance ();
+			this.instance = new IEdgeBasicInstanceImpl<V> (((IVertexInstance)kv.Key), ((IVertexInstance)kv.Value));
 			return this.Instance;
 		}
 
-		private IEdgeBasicInstance instance;
-
+		private IEdgeBasicInstance<V> instance;
 		public object Instance {
 			get { return instance; }
-			set { this.instance = (IEdgeBasicInstance)value; }
+			set { this.instance = (IEdgeBasicInstance<V>)value; }
 		}
 
-		public IEdgeBasicInstance EInstance {
+		public IEdgeBasicInstance<V> EInstance {
 			get { return instance; }
-		}
-		public int ESource {
-			get {
-				return ((IVertexInstance)KVInstance.Key).Id;
-			}
-			set { 
-				((IVertexInstance)KVInstance.Key).Id = value;
-			}
-		}
-		public int ETarget {
-			get {
-				return ((IVertexInstance)KVInstance.Value).Id;
-			}
-			set { 
-				((IVertexInstance)KVInstance.Value).Id = value;
-
-			}
 		}
 	}
 
 	[Serializable]
-	public class IEdgeBasicInstanceImpl : IEdgeBasicInstance {
+	public class IEdgeBasicInstanceImpl<V> : IEdgeBasicInstance<V> where V: IVertex{
+
+		public IEdgeBasicInstanceImpl(IVertexInstance s, IVertexInstance t){
+			this.source = s;
+			this.target = t;
+		}
 
 		#region IEdgeBasicInstance implementation
-		private int source;
-		private int target;
+		private IVertexInstance source;
+		private IVertexInstance target;
 
-		public int Source {
+		public IVertexInstance Source {
 			get { return source; }
 			set { this.source = value; }
 		}
 
-		public int Target {
+		public IVertexInstance Target {
 			get { return target; }
 			set { this.target = value; }
 		}
 
 		public object ObjValue {
-			get { return new Tuple<int,int>(source,target); }
+			get { return new Tuple<IVertexInstance,IVertexInstance>(source,target); }
 			set { 
-				this.source = ((Tuple<int,int>)value).Item1;
-				this.target = ((Tuple<int,int>)value).Item2;
+				this.source = ((Tuple<IVertexInstance,IVertexInstance>)value).Item1;
+				this.target = ((Tuple<IVertexInstance,IVertexInstance>)value).Item2;
 			}
 		}
 		public override int GetHashCode () {
-			int a = this.source;
-			int b = this.target; 
+			int a = this.source.Id;
+			int b = this.target.Id;
 			var A = (ulong)(a >= 0 ? 2 * (long)a : -2 * (long)a - 1);
 			var B = (ulong)(b >= 0 ? 2 * (long)b : -2 * (long)b - 1);
 			var C = (long)((A >= B ? A * A + A + B : A + B * B) / 2);
@@ -102,13 +79,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl {
 			return (int)R;
 		}
 		public override string ToString () {
-			return "" + source + ":" + target + "";
+			return "" + source.Id + ":" + target.Id + "";
 		}
-
 		public override bool Equals (object obj) {
-			if (typeof(IEdgeBasicInstance).IsAssignableFrom (obj.GetType ())) {
-				IEdgeBasicInstance o = (IEdgeBasicInstance)obj;
-				if (o.Source.Equals(this.source) && o.Target.Equals(this.target))// && o.Weight == this.Weight)
+			if (typeof(IEdgeBasicInstance<V>).IsAssignableFrom (obj.GetType ())) {
+				IEdgeBasicInstance<V> o = (IEdgeBasicInstance<V>)obj;
+				if (o.Source.Id.Equals(this.source.Id) && o.Target.Id.Equals(this.target.Id))// && o.Weight == this.Weight)
 					return true;
 			}
 			return false;
@@ -117,9 +93,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl {
 
 		#region ICloneable implementation
 		public object Clone () {
-			IEdgeBasicInstance clone = new IEdgeBasicInstanceImpl ();
-			clone.Source = this.source;
-			clone.Target = this.target;
+			IEdgeBasicInstance<V> clone = new IEdgeBasicInstanceImpl<V>((IVertexInstance)this.Source.Clone(), (IVertexInstance)this.Target.Clone());
 			return clone;
 		}
 		#endregion

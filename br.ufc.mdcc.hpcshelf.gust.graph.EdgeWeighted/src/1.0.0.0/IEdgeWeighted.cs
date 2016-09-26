@@ -6,16 +6,10 @@ using System;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted {
 	public interface IEdgeWeighted<V> : BaseIEdgeWeighted<V>, IEdge<V> where V:IVertex {
-//		IVertexInstance ESourceInstance { get; }
-//		IVertexInstance ETargetInstance { get; }
-
-		IEdgeWeightedInstance newInstance (int source, int target, float weight);
-//		void setEdge (int source, int target, float weight);
-		IFloatInstance EWeightInstance { get; }
+		IEdgeWeightedInstance<V> newInstance (int source, int target, float weight);
+		IEdgeWeightedInstance<V> EInstance { get; }
 	}
-	public interface IEdgeWeightedInstance : IEdgeInstance, ICloneable{
-		//int Source { get; }
-		//int Target { get; }
-		float Weight { get; }
+	public interface IEdgeWeightedInstance<V> : IEdgeInstance<V>, ICloneable where V:IVertex {
+		IFloatInstance Weight { get; set; }
 	}
 }
