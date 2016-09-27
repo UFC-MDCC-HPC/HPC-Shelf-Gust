@@ -15,7 +15,7 @@
       <parameter formFieldId="graph" varName="G"/>
       <parameter formFieldId="container" varName="CTN"/>
       <parameter formFieldId="vertex_type" varName="V"/>
-      <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/VertexBasic.hpe" multiple="false" name="VertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.hpe" multiple="false" name="DVertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
         <visualDescription h="60" w="149" x="123" y="641">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -43,7 +43,7 @@
       <parameter formFieldId="edge_type" varName="E"/>
       <parameter formFieldId="container" varName="CTN"/>
       <parameter formFieldId="vertex_type" varName="V"/>
-      <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/VertexBasic.hpe" multiple="false" name="VertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.hpe" multiple="false" name="DVertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
         <visualDescription h="60" w="149" x="123" y="641">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -70,7 +70,7 @@
       </visualDescription>
       <parameter formFieldId="edge_type" varName="E"/>
       <parameter formFieldId="vertex_type" varName="V"/>
-      <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/VertexBasic.hpe" multiple="false" name="VertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.hpe" multiple="false" name="DVertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
         <visualDescription h="60" w="149" x="123" y="641">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -91,7 +91,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="v" location="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/VertexBasic.hpe" multiple="false" name="VertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+    <innerComponent localRef="v" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.hpe" multiple="false" name="DVertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
       <visualDescription h="60" w="149" x="123" y="641">
         <color b="255" g="255" r="255"/>
       </visualDescription>

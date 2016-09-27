@@ -5,12 +5,12 @@ using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.common.KVPair;
-using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;
 using br.ufc.mdcc.common.Float;
 using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl {
-	public abstract class BaseIDEdgeWeightedImpl<V>: DataStructure, BaseIDEdgeWeighted<V> where V:IVertex {
+	public abstract class BaseIDEdgeWeightedImpl<V>: DataStructure, BaseIDEdgeWeighted<V> where V:IDVertex {
 		private IKVPair<V,V> vertices = null;
 
 		protected IKVPair<V,V> Vertices {

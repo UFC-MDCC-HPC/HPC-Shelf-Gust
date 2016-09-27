@@ -21,7 +21,7 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent localRef="v" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+    <innerComponent localRef="v" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
       <visualDescription h="60" w="100" x="438" y="517">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -32,13 +32,13 @@
     <supplyParameter cRef="v" direct="true" varName="V"/>
     <interface iRef="IDEdgeBasicImpl" nArgs="1">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl &#xA;{&#xA;&#x9;public abstract class BaseIDEdgeBasicImpl: DataStructure, BaseIDEdgeBasic&lt;V>&#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;{&#xA;&#x9;&#x9;private V vertexFactory = default(V);&#xA;&#xA;&#x9;&#x9;protected V VertexFactory&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.vertexFactory == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.vertexFactory = (V) Services.getPort(&quot;vertexFactory&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.vertexFactory;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IKVPair&lt;V> vertices = null;&#xA;&#xA;&#x9;&#x9;protected IKVPair&lt;V> Vertices&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.vertices == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.vertices = (IKVPair&lt;V>) Services.getPort(&quot;vertices&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.vertices;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDEdgeBasicImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl/bin/1.0.0.0/BaseIDEdgeBasicImpl.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl &#xA;{&#xA;&#x9;public abstract class BaseIDEdgeBasicImpl: DataStructure, BaseIDEdgeBasic&lt;V>&#xA;&#x9;&#x9;where V:IDVertex&#xA;&#x9;{&#xA;&#x9;&#x9;private V vertexFactory = default(V);&#xA;&#xA;&#x9;&#x9;protected V DVertexFactory&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.vertexFactory == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.vertexFactory = (V) Services.getPort(&quot;vertexFactory&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.vertexFactory;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IKVPair&lt;V> vertices = null;&#xA;&#xA;&#x9;&#x9;protected IKVPair&lt;V> Vertices&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.vertices == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.vertices = (IKVPair&lt;V>) Services.getPort(&quot;vertices&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.vertices;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDEdgeBasicImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl/bin/1.0.0.0/BaseIDEdgeBasicImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll</dependency>
           <dependency>br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/bin/1.0.0.0/BaseIDEdgeBasic.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl&#xA;{&#xA;&#x9;public class IDEdgeBasicImpl : BaseIDEdgeBasicImpl, IDEdgeBasic&lt;V>&#xA;where V:IVertex&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="IDEdgeBasicImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl/bin/1.0.0.0/IDEdgeBasicImpl.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl&#xA;{&#xA;&#x9;public class IDEdgeBasicImpl : BaseIDEdgeBasicImpl, IDEdgeBasic&lt;V>&#xA;where V:IDVertex&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="IDEdgeBasicImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl/bin/1.0.0.0/IDEdgeBasicImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl/bin/1.0.0.0/BaseIDEdgeBasicImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/bin/1.0.0.0/IDEdgeBasic.dll</dependency>
         </file>
@@ -46,7 +46,7 @@
       <visualDescription h="40" w="201" x="186" y="380">
         <color b="52" g="226" r="138"/>
       </visualDescription>
-      <parameter iname="IVertex" order="0" parid="vertex_type" uname="data" varid="V"/>
+      <parameter iname="IDVertex" order="0" parid="vertex_type" uname="data" varid="V"/>
     </interface>
     <unit facet="0" iRef="IDEdgeBasicImpl" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
       <super cRef="base" uRef="data"/>

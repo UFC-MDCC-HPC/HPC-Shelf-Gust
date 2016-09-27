@@ -3,12 +3,12 @@ using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.common.KVPair;
-using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;
 using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl {
-	public class IDEdgeBasicImpl<V>: BaseIDEdgeBasicImpl<V>, IDEdgeBasic<V> where V:IVertex {
+	public class IDEdgeBasicImpl<V>: BaseIDEdgeBasicImpl<V>, IDEdgeBasic<V> where V:IDVertex {
 		
 		public IDEdgeBasicImpl () { }
 

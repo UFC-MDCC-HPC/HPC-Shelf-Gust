@@ -4,12 +4,12 @@ using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Float;
-using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;
 using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl {
-	public class IDEdgeWeightedImpl<V> : BaseIDEdgeWeightedImpl<V>, IDEdgeWeighted<V> where V:IVertex {
+	public class IDEdgeWeightedImpl<V> : BaseIDEdgeWeightedImpl<V>, IDEdgeWeighted<V> where V:IDVertex {
 		
 		public IDEdgeWeightedImpl () { }
 
@@ -28,7 +28,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl {
 		public object newInstance () {
 			IKVPairInstance<V,V> kv = (IKVPairInstance<V,V>)Vertices.newInstance ();
 			IFloatInstance f = (IFloatInstance) Weight.newInstance (); 
-			this.instance = new IDEdgeWeightedInstanceImpl<V> (((IVertexInstance)kv.Key), ((IVertexInstance)kv.Value), f);
+			this.instance = new IDEdgeWeightedInstanceImpl<V> (((IDVertexInstance)kv.Key), ((IDVertexInstance)kv.Value), f);
 			return this.Instance;
 		}
 
@@ -44,25 +44,25 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl {
 	}
 
 	[Serializable]
-	public class IDEdgeWeightedInstanceImpl<V> : IDEdgeWeightedInstance<V> where V: IVertex{
+	public class IDEdgeWeightedInstanceImpl<V> : IDEdgeWeightedInstance<V> where V: IDVertex{
 
-		public IDEdgeWeightedInstanceImpl(IVertexInstance s, IVertexInstance t, IFloatInstance w){
+		public IDEdgeWeightedInstanceImpl(IDVertexInstance s, IDVertexInstance t, IFloatInstance w){
 			this.source = s;
 			this.target = t;
 			this.weight = w;
 		}
 
 		#region IDEdgeWeightedInstance implementation
-		private IVertexInstance source;
-		private IVertexInstance target;
+		private IDVertexInstance source;
+		private IDVertexInstance target;
 		private IFloatInstance weight;
 
-		public IVertexInstance Source {
+		public IDVertexInstance Source {
 			get { return source; }
 			set { this.source = value; }
 		}
 
-		public IVertexInstance Target {
+		public IDVertexInstance Target {
 			get { return target; }
 			set { this.target = value; }
 		}
@@ -73,11 +73,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl {
 		}
 
 		public object ObjValue {
-			get { return new Tuple<IVertexInstance,IVertexInstance,IFloatInstance>(source,target,weight); }
+			get { return new Tuple<IDVertexInstance,IDVertexInstance,IFloatInstance>(source,target,weight); }
 			set { 
-				this.source = ((Tuple<IVertexInstance,IVertexInstance,IFloatInstance>)value).Item1;
-				this.target = ((Tuple<IVertexInstance,IVertexInstance,IFloatInstance>)value).Item2;
-				this.weight = ((Tuple<IVertexInstance,IVertexInstance,IFloatInstance>)value).Item3;
+				this.source = ((Tuple<IDVertexInstance,IDVertexInstance,IFloatInstance>)value).Item1;
+				this.target = ((Tuple<IDVertexInstance,IDVertexInstance,IFloatInstance>)value).Item2;
+				this.weight = ((Tuple<IDVertexInstance,IDVertexInstance,IFloatInstance>)value).Item3;
 			}
 		}
 		public override int GetHashCode () {
@@ -104,7 +104,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl {
 
 		#region ICloneable implementation
 		public object Clone () {
-			IDEdgeWeightedInstance<V> clone = new IDEdgeWeightedInstanceImpl<V>((IVertexInstance)this.Source.Clone(), (IVertexInstance)this.Target.Clone(), (IFloatInstance)this.Weight.Clone());
+			IDEdgeWeightedInstance<V> clone = new IDEdgeWeightedInstanceImpl<V>((IDVertexInstance)this.Source.Clone(), (IDVertexInstance)this.Target.Clone(), (IFloatInstance)this.Weight.Clone());
 			return clone;
 		}
 		#endregion

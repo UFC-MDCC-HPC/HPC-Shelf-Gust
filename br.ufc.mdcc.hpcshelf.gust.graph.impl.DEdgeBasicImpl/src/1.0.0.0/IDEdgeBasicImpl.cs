@@ -3,12 +3,12 @@ using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.common.KVPair;
-using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;
 using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl {
-	public class IDEdgeBasicImpl<V>: BaseIDEdgeBasicImpl<V>, IDEdgeBasic<V> where V:IVertex {
+	public class IDEdgeBasicImpl<V>: BaseIDEdgeBasicImpl<V>, IDEdgeBasic<V> where V:IDVertex {
 		
 		public IDEdgeBasicImpl () { }
 
@@ -25,7 +25,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl {
 
 		public object newInstance () {
 			IKVPairInstance<V,V> kv = (IKVPairInstance<V,V>)Vertices.newInstance ();
-			this.instance = new IDEdgeBasicInstanceImpl<V> (((IVertexInstance)kv.Key), ((IVertexInstance)kv.Value));
+			this.instance = new IDEdgeBasicInstanceImpl<V> (((IDVertexInstance)kv.Key), ((IDVertexInstance)kv.Value));
 			return this.Instance;
 		}
 
@@ -41,32 +41,32 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl {
 	}
 
 	[Serializable]
-	public class IDEdgeBasicInstanceImpl<V> : IDEdgeBasicInstance<V> where V: IVertex{
+	public class IDEdgeBasicInstanceImpl<V> : IDEdgeBasicInstance<V> where V: IDVertex{
 
-		public IDEdgeBasicInstanceImpl(IVertexInstance s, IVertexInstance t){
+		public IDEdgeBasicInstanceImpl(IDVertexInstance s, IDVertexInstance t){
 			this.source = s;
 			this.target = t;
 		}
 
 		#region IDEdgeBasicInstance implementation
-		private IVertexInstance source;
-		private IVertexInstance target;
+		private IDVertexInstance source;
+		private IDVertexInstance target;
 
-		public IVertexInstance Source {
+		public IDVertexInstance Source {
 			get { return source; }
 			set { this.source = value; }
 		}
 
-		public IVertexInstance Target {
+		public IDVertexInstance Target {
 			get { return target; }
 			set { this.target = value; }
 		}
 
 		public object ObjValue {
-			get { return new Tuple<IVertexInstance,IVertexInstance>(source,target); }
+			get { return new Tuple<IDVertexInstance,IDVertexInstance>(source,target); }
 			set { 
-				this.source = ((Tuple<IVertexInstance,IVertexInstance>)value).Item1;
-				this.target = ((Tuple<IVertexInstance,IVertexInstance>)value).Item2;
+				this.source = ((Tuple<IDVertexInstance,IDVertexInstance>)value).Item1;
+				this.target = ((Tuple<IDVertexInstance,IDVertexInstance>)value).Item2;
 			}
 		}
 		public override int GetHashCode () {
@@ -93,7 +93,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl {
 
 		#region ICloneable implementation
 		public object Clone () {
-			IDEdgeBasicInstance<V> clone = new IDEdgeBasicInstanceImpl<V>((IVertexInstance)this.Source.Clone(), (IVertexInstance)this.Target.Clone());
+			IDEdgeBasicInstance<V> clone = new IDEdgeBasicInstanceImpl<V>((IDVertexInstance)this.Source.Clone(), (IDVertexInstance)this.Target.Clone());
 			return clone;
 		}
 		#endregion

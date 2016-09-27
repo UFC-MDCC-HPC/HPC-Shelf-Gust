@@ -12,7 +12,7 @@
         <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl/src/1.0.0.0/BaseIDEdgeBasicImpl.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll"/>
         <include name="br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/bin/1.0.0.0/BaseIDEdgeBasic.dll"/>
         <include/>
@@ -23,7 +23,7 @@
         <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl/src/1.0.0.0/IDEdgeBasicImpl.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl/bin/1.0.0.0/BaseIDEdgeBasicImpl.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/bin/1.0.0.0/IDEdgeBasic.dll"/>
         <include/>

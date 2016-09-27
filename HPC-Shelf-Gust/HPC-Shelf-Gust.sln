@@ -18,9 +18,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.common.Float", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.common.impl.FloatImpl", "..\br.ufc.mdcc.common.impl.FloatImpl\br.ufc.mdcc.common.impl.FloatImpl\br.ufc.mdcc.common.impl.FloatImpl.csproj", "{F9D1F2FF-E3D5-4F6B-AEFE-587C052AF9B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.Vertex", "..\br.ufc.mdcc.hpcshelf.gust.graph.Vertex\br.ufc.mdcc.hpcshelf.gust.graph.Vertex\br.ufc.mdcc.hpcshelf.gust.graph.Vertex.csproj", "{B53D1E64-E50C-4BCD-A705-EDE7AEC76D9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.DVertex", "..\br.ufc.mdcc.hpcshelf.gust.graph.DVertex\br.ufc.mdcc.hpcshelf.gust.graph.DVertex\br.ufc.mdcc.hpcshelf.gust.graph.DVertex.csproj", "{B53D1E64-E50C-4BCD-A705-EDE7AEC76D9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic", "..\br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic\br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic\br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic.csproj", "{DDD9658C-CDEA-4903-AEEC-5641EC96377E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic", "..\br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic\br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic\br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic.csproj", "{DDD9658C-CDEA-4903-AEEC-5641EC96377E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.DEdge", "..\br.ufc.mdcc.hpcshelf.gust.graph.DEdge\br.ufc.mdcc.hpcshelf.gust.graph.DEdge\br.ufc.mdcc.hpcshelf.gust.graph.DEdge.csproj", "{CE5F1F57-695B-46ED-98C1-6F6737A76CB9}"
 EndProject
@@ -52,7 +52,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.g
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.app.Tester", "..\br.ufc.mdcc.hpcshelf.gust.graph.app.Tester\br.ufc.mdcc.hpcshelf.gust.graph.app.Tester\br.ufc.mdcc.hpcshelf.gust.graph.app.Tester.csproj", "{FDE17A3A-7DFE-40FB-A9B8-AA826C0FA1FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl.csproj", "{0D0D4AFD-272C-4CA2-822B-E929E59B2435}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.DVertexBasicImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.DVertexBasicImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DVertexBasicImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DVertexBasicImpl.csproj", "{0D0D4AFD-272C-4CA2-822B-E929E59B2435}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl.csproj", "{2464A266-46AE-4E46-90C2-7A116F632E25}"
 EndProject

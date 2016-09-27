@@ -21,7 +21,7 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent localRef="vertex_type" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+    <innerComponent localRef="vertex_type" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
       <visualDescription h="60" w="129" x="354" y="210">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -36,14 +36,14 @@
         <visualDescription h="10" w="10" x="66" y="22"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.common.Float;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl &#xA;{&#xA;&#x9;public abstract class BaseIDEdgeWeightedImpl: DataStructure, BaseIDEdge&lt;V>&#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;{&#xA;&#x9;&#x9;private IKVPair&lt;V> vertices = null;&#xA;&#xA;&#x9;&#x9;protected IKVPair&lt;V> Vertices&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.vertices == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.vertices = (IKVPair&lt;V>) Services.getPort(&quot;vertices&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.vertices;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IFloat weight = null;&#xA;&#xA;&#x9;&#x9;protected IFloat Weight&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.weight == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.weight = (IFloat) Services.getPort(&quot;weight&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.weight;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDEdgeWeightedImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl/bin/1.0.0.0/BaseIDEdgeWeightedImpl.dll" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;&#xA;using br.ufc.mdcc.common.Float;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl &#xA;{&#xA;&#x9;public abstract class BaseIDEdgeWeightedImpl: DataStructure, BaseIDEdge&lt;V>&#xA;&#x9;&#x9;where V:IDVertex&#xA;&#x9;{&#xA;&#x9;&#x9;private IKVPair&lt;V> vertices = null;&#xA;&#xA;&#x9;&#x9;protected IKVPair&lt;V> Vertices&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.vertices == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.vertices = (IKVPair&lt;V>) Services.getPort(&quot;vertices&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.vertices;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IFloat weight = null;&#xA;&#xA;&#x9;&#x9;protected IFloat Weight&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.weight == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.weight = (IFloat) Services.getPort(&quot;weight&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.weight;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDEdgeWeightedImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl/bin/1.0.0.0/BaseIDEdgeWeightedImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll</dependency>
           <dependency>br.ufc.mdcc.common.Float/bin/1.0.0.0/IFloat.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/bin/1.0.0.0/BaseIDEdge.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl&#xA;{&#xA;&#x9;public class IDEdgeWeightedImpl : BaseIDEdgeWeightedImpl, IDEdge&lt;V>&#xA;where V:IVertex&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="IDEdgeWeightedImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl/bin/1.0.0.0/IDEdgeWeightedImpl.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl&#xA;{&#xA;&#x9;public class IDEdgeWeightedImpl : BaseIDEdgeWeightedImpl, IDEdge&lt;V>&#xA;where V:IDVertex&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="IDEdgeWeightedImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl/bin/1.0.0.0/IDEdgeWeightedImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl/bin/1.0.0.0/BaseIDEdgeWeightedImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/bin/1.0.0.0/IDEdge.dll</dependency>
         </file>
@@ -51,7 +51,7 @@
       <visualDescription h="40" w="190" x="159" y="393">
         <color b="52" g="226" r="138"/>
       </visualDescription>
-      <parameter iname="IVertex" order="0" parid="vertex_type" uname="data" varid="V"/>
+      <parameter iname="IDVertex" order="0" parid="vertex_type" uname="data" varid="V"/>
     </interface>
     <unit facet="0" iRef="IDEdgeWeightedImpl" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
       <super cRef="base" uRef="data"/>

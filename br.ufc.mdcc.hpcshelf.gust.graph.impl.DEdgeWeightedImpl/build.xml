@@ -13,7 +13,7 @@
       </sources>
       <references>
         <include name="br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll"/>
         <include name="br.ufc.mdcc.common.Float/bin/1.0.0.0/IFloat.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/bin/1.0.0.0/BaseIDEdge.dll"/>
         <include/>
@@ -24,7 +24,7 @@
         <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl/src/1.0.0.0/IDEdgeWeightedImpl.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl/bin/1.0.0.0/BaseIDEdgeWeightedImpl.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/bin/1.0.0.0/IDEdge.dll"/>
         <include/>

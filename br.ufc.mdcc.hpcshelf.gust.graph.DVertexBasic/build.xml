@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/cenez/hpe/cenez/cache" default="all" name="DVertexBasic">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="DVertexBasic-1.0.0.0">
+    <ifnot targetexists="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0">
+      <mkdir dir="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0/BaseIDVertexBasic.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/src/1.0.0.0/BaseIDVertexBasic.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/BaseIDVertex.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0/IDVertexBasic.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/src/1.0.0.0/IDVertexBasic.cs"/>
+      </sources>
+      <references>
+        <include name="/br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0/BaseIDVertexBasic.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="DVertexBasic-1.0.0.0" name="all"/>
+</project>

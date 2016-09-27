@@ -11,7 +11,7 @@
         </visualDescription>
         <parameter formFieldId="edge_type" varName="E"/>
         <parameter formFieldId="vertex_type" varName="V"/>
-        <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+        <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
           <visualDescription h="60" w="149" x="65" y="462">
             <color b="255" g="255" r="255"/>
           </visualDescription>
@@ -41,7 +41,7 @@
   <componentInfo>
     <parameter componentRef="vertex_type" formFieldId="vertex_type" order="0" variance="contravariant" varName="V"/>
     <parameter componentRef="edge_type" formFieldId="edge_type" order="1" variance="contravariant" varName="E"/>
-    <innerComponent localRef="vertex_type" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="vertex_type" exposed="false">
+    <innerComponent localRef="vertex_type" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="vertex_type" exposed="false">
       <visualDescription h="60" w="137" x="475" y="249">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -60,13 +60,13 @@
     </innerComponent>
     <interface iRef="IUndirectedContainerE" nArgs="2">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainerE&#xA;{&#xA;&#x9;public interface BaseIUndirectedContainerE&lt;V, E> : BaseIUndirectedContainer&lt;V, E>, IDataStructureKind &#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;&#x9;where E:IDEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIUndirectedContainerE.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainerE/bin/1.0.0.0/BaseIUndirectedContainerE.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainerE&#xA;{&#xA;&#x9;public interface BaseIUndirectedContainerE&lt;V, E> : BaseIUndirectedContainer&lt;V, E>, IDataStructureKind &#xA;&#x9;&#x9;where V:IDVertex&#xA;&#x9;&#x9;where E:IDEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIUndirectedContainerE.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainerE/bin/1.0.0.0/BaseIUndirectedContainerE.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainer/bin/1.0.0.0/BaseIUndirectedContainer.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainerE&#xA;{&#xA;&#x9;public interface IUndirectedContainerE&lt;V, E> : BaseIUndirectedContainerE&lt;V, E>, IUndirectedContainer&lt;V, E>&#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;&#x9;where E:IDEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IUndirectedContainerE.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainerE/bin/1.0.0.0/IUndirectedContainerE.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainerE&#xA;{&#xA;&#x9;public interface IUndirectedContainerE&lt;V, E> : BaseIUndirectedContainerE&lt;V, E>, IUndirectedContainer&lt;V, E>&#xA;&#x9;&#x9;where V:IDVertex&#xA;&#x9;&#x9;where E:IDEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IUndirectedContainerE.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainerE/bin/1.0.0.0/IUndirectedContainerE.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainerE/bin/1.0.0.0/BaseIUndirectedContainerE.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainer/bin/1.0.0.0/IUndirectedContainer.dll</dependency>
@@ -75,7 +75,7 @@
       <visualDescription h="40" w="228" x="177" y="190">
         <color b="52" g="226" r="138"/>
       </visualDescription>
-      <parameter iname="IVertex" order="0" parid="vertex_type" uname="data" varid="V"/>
+      <parameter iname="IDVertex" order="0" parid="vertex_type" uname="data" varid="V"/>
       <parameter iname="IDEdge" order="1" parid="edge_type" uname="data" varid="E"/>
     </interface>
     <unit facet="0" iRef="IUndirectedContainerE" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">

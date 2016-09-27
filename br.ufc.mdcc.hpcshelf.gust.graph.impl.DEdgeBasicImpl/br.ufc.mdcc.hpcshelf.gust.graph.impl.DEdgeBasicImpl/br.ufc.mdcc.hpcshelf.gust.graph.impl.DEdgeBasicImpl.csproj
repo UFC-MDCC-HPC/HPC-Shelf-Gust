@@ -56,9 +56,9 @@
       <Project>{505F8DBD-BC4D-41C4-88AE-C58C962D6463}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.Vertex\br.ufc.mdcc.hpcshelf.gust.graph.Vertex\br.ufc.mdcc.hpcshelf.gust.graph.Vertex.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.DVertex\br.ufc.mdcc.hpcshelf.gust.graph.DVertex\br.ufc.mdcc.hpcshelf.gust.graph.DVertex.csproj">
       <Project>{B53D1E64-E50C-4BCD-A705-EDE7AEC76D9A}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.gust.graph.Vertex</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.DVertex</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data.csproj">
       <Project>{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}</Project>

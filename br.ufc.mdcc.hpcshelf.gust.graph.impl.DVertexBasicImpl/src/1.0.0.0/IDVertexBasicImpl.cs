@@ -2,44 +2,44 @@ using System;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
-using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
+using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic;
 
-namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl {
-	public class IVertexBasicImpl : BaseIVertexBasicImpl, IVertexBasic {
+namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DVertexBasicImpl {
+	public class IDVertexBasicImpl : BaseIDVertexBasicImpl, IDVertexBasic {
 
-		public IVertexBasicImpl () { }
+		public IDVertexBasicImpl () { }
 
 		override public void after_initialize () {
 			newInstance (); 
 		}
 
-		public IVertexInstance newInstance (int i) {
-			IVertexBasicInstance instance = (IVertexBasicInstance)newInstance ();
+		public IDVertexInstance newInstance (int i) {
+			IDVertexBasicInstance instance = (IDVertexBasicInstance)newInstance ();
 			instance.Id = i;
 			return instance;
 		}
 
 		public object newInstance () {
-			this.instance = new IVertexBasicInstanceImpl ();
+			this.instance = new IDVertexBasicInstanceImpl ();
 			return this.Instance;
 		}
 
-		private IVertexBasicInstance instance;
+		private IDVertexBasicInstance instance;
 
 		public object Instance {
 			get { return instance; }
-			set { this.instance = (IVertexBasicInstance)value; }
+			set { this.instance = (IDVertexBasicInstance)value; }
 		}
-		public IVertexInstance VInstance {
+		public IDVertexInstance VInstance {
 			get { return instance; }
 		}
 	}
 
 	[Serializable]
-	public class IVertexBasicInstanceImpl : IVertexBasicInstance {
+	public class IDVertexBasicInstanceImpl : IDVertexBasicInstance {
 
-		#region IVertexBasicInstance implementation
+		#region IDVertexBasicInstance implementation
 		private int val;
 
 		public int Id {
@@ -61,8 +61,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl {
 		}
 
 		public override bool Equals (object obj) {
-			if (obj is IVertexBasicInstanceImpl)
-				return Id == (((IVertexBasicInstanceImpl)obj).Id);
+			if (obj is IDVertexBasicInstanceImpl)
+				return Id == (((IDVertexBasicInstanceImpl)obj).Id);
 			else if (obj is int)
 					return Id == (int)obj;
 				else
@@ -72,7 +72,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl {
 
 		#region ICloneable implementation
 		public object Clone () {
-			IVertexBasicInstance clone = new IVertexBasicInstanceImpl ();
+			IDVertexBasicInstance clone = new IDVertexBasicInstanceImpl ();
 			clone.Id = this.Id;
 			return clone;
 		}

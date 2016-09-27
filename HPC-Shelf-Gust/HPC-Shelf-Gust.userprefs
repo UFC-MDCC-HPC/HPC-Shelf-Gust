@@ -12,11 +12,11 @@
       <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.DEdge/src/1.0.0.0/IDEdge.cs" Line="13" Column="2" />
       <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/src/1.0.0.0/IDEdgeBasic.cs" Line="1" Column="1" />
       <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/src/1.0.0.0/IDEdgeWeighted.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl/src/1.0.0.0/IVertexBasicImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.DVertexBasicImpl/src/1.0.0.0/IDVertexBasicImpl.cs" Line="1" Column="1" />
       <File FileName="../br.ufc.mdcc.common.KVPair/src/1.0.0.0/IKVPair.cs" Line="1" Column="1" />
       <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.DEdge/src/1.0.0.0/BaseIDEdge.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/src/1.0.0.0/IVertexBasic.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.Vertex/src/1.0.0.0/IVertex.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/src/1.0.0.0/IDVertexBasic.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.DVertex/src/1.0.0.0/IDVertex.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
