@@ -10,4 +10,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic {
 	}
 	public interface IDEdgeBasicInstance<V> : IDEdgeInstance<V>, ICloneable where V: IDVertex{
 	}
+	public interface IRootEdgeBasic<RV>: IRootEdge<RV> {
+	}
 }
