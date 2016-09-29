@@ -1,5 +1,5 @@
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainer;
+using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected;
 using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;
 using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
@@ -7,7 +7,7 @@ using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
 namespace br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph
 {
 	public interface IDirectedGraph<CTN, V, E> : BaseIDirectedGraph<CTN, V, E>, IGraph<CTN, V, E>
-		where CTN:IDirectedContainer<V, E>
+		where CTN:IDataContainerDirected<V, E>
 		where V:IDVertex
 		where E:IDEdge<V>
 	{

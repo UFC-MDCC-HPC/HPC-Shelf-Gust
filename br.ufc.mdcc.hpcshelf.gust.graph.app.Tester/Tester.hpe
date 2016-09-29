@@ -64,7 +64,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="ctn" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainerV/DirectedContainerV.hpe" multiple="false" name="DirectedContainerV" package="br.ufc.mdcc.hpcshelf.gust.graph.container" exposed="false">
+    <innerComponent localRef="ctn" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirectedV/DataContainerDirectedV.hpe" multiple="false" name="DataContainerDirectedV" package="br.ufc.mdcc.hpcshelf.gust.graph.container" exposed="false">
       <visualDescription h="60" w="100" x="524" y="207">
         <color b="255" g="255" r="255"/>
       </visualDescription>

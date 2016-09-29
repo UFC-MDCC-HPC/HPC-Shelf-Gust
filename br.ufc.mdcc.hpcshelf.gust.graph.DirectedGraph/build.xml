@@ -12,7 +12,7 @@
         <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/src/1.0.0.0/BaseIDirectedGraph.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainer/bin/1.0.0.0/IDirectedContainer.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected/bin/1.0.0.0/IDataContainerDirected.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.Graph/bin/1.0.0.0/BaseIGraph.dll"/>
@@ -24,7 +24,7 @@
         <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/HPC-Shelf-Graph/br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/src/1.0.0.0/IDirectedGraph.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainer/bin/1.0.0.0/IDirectedContainer.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected/bin/1.0.0.0/IDataContainerDirected.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/bin/1.0.0.0/BaseIDirectedGraph.dll"/>

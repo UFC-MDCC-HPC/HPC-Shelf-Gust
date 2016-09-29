@@ -64,9 +64,9 @@
       <Project>{F648AF83-CBB9-4742-AA9F-F5D5287833B8}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.graph.Graph</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData\br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData\br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer.csproj">
       <Project>{7B6A36EC-21B3-4C93-888C-01788A9423F8}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
