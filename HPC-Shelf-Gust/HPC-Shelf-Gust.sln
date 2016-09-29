@@ -58,6 +58,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.g
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl.csproj", "{8DFC8087-3862-4E4D-81FF-8BB70B5AF8D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.DVertexImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.DVertexImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DVertexImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DVertexImpl.csproj", "{3E3F03D0-F417-4544-8202-819A6E853DD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeImpl.csproj", "{B60C7B28-79D5-442E-9023-F5B31A691629}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -80,6 +84,10 @@ Global
 		{2464A266-46AE-4E46-90C2-7A116F632E25}.Debug|x86.Build.0 = Debug|Any CPU
 		{2464A266-46AE-4E46-90C2-7A116F632E25}.Release|x86.ActiveCfg = Release|Any CPU
 		{2464A266-46AE-4E46-90C2-7A116F632E25}.Release|x86.Build.0 = Release|Any CPU
+		{3E3F03D0-F417-4544-8202-819A6E853DD5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3E3F03D0-F417-4544-8202-819A6E853DD5}.Debug|x86.Build.0 = Debug|Any CPU
+		{3E3F03D0-F417-4544-8202-819A6E853DD5}.Release|x86.ActiveCfg = Release|Any CPU
+		{3E3F03D0-F417-4544-8202-819A6E853DD5}.Release|x86.Build.0 = Release|Any CPU
 		{476F03C1-DF48-4DA7-B4E4-1A187571F48D}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{476F03C1-DF48-4DA7-B4E4-1A187571F48D}.Debug|x86.Build.0 = Debug|Any CPU
 		{476F03C1-DF48-4DA7-B4E4-1A187571F48D}.Release|x86.ActiveCfg = Release|Any CPU
@@ -136,6 +144,10 @@ Global
 		{B53D1E64-E50C-4BCD-A705-EDE7AEC76D9A}.Debug|x86.Build.0 = Debug|Any CPU
 		{B53D1E64-E50C-4BCD-A705-EDE7AEC76D9A}.Release|x86.ActiveCfg = Release|Any CPU
 		{B53D1E64-E50C-4BCD-A705-EDE7AEC76D9A}.Release|x86.Build.0 = Release|Any CPU
+		{B60C7B28-79D5-442E-9023-F5B31A691629}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B60C7B28-79D5-442E-9023-F5B31A691629}.Debug|x86.Build.0 = Debug|Any CPU
+		{B60C7B28-79D5-442E-9023-F5B31A691629}.Release|x86.ActiveCfg = Release|Any CPU
+		{B60C7B28-79D5-442E-9023-F5B31A691629}.Release|x86.Build.0 = Release|Any CPU
 		{C3ED1E5E-DA68-44F0-9048-26DEB8792CC9}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{C3ED1E5E-DA68-44F0-9048-26DEB8792CC9}.Debug|x86.Build.0 = Debug|Any CPU
 		{C3ED1E5E-DA68-44F0-9048-26DEB8792CC9}.Release|x86.ActiveCfg = Release|Any CPU

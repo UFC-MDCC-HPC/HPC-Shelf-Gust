@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/cenez/hpe/cenez/cache" default="all" name="DEdgeImpl">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="DEdgeImpl-1.0.0.0">
+    <ifnot targetexists="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeImpl/bin/1.0.0.0">
+      <mkdir dir="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeImpl/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeImpl/DEdgeImpl.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeImpl/bin/1.0.0.0/BaseIDEdgeImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeImpl/src/1.0.0.0/BaseIDEdgeImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/BaseIDEdge.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeImpl/DEdgeImpl.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeImpl/bin/1.0.0.0/IDEdgeImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeImpl/src/1.0.0.0/IDEdgeImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll"/>
+        <include name="/br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeImpl/bin/1.0.0.0/BaseIDEdgeImpl.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="DEdgeImpl-1.0.0.0" name="all"/>
+</project>

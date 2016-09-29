@@ -10,8 +10,9 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.DEdge {
 		IDVertexInstance Source { get; set;}
 		IDVertexInstance Target { set; get; }
 	}
-	public interface IRootEdge<RV> {
+	public interface IRootDEdge<RV> {
 		RV Source { get; set; }
 		RV Target { set; get; }
+		float Weight { get; }
 	}
 }
