@@ -12,6 +12,33 @@
         <parameter formFieldId="edge_type" varName="E"/>
         <parameter formFieldId="container" varName="CTN"/>
         <parameter formFieldId="vertex_type" varName="V"/>
+        <port localRef="dataContainer" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/DataContainer.hpe" multiple="false" name="DataContainer" package="br.ufc.mdcc.hpcshelf.gust.graph.container" exposed="true">
+          <visualDescription h="60" w="187" x="305" y="581">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="edge_type" varName="E"/>
+          <parameter formFieldId="vertex_type" varName="V"/>
+          <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+            <visualDescription h="60" w="149" x="120" y="491">
+              <color b="255" g="255" r="255"/>
+            </visualDescription>
+            <unitBounds parallel="false" uRef="data">
+              <visualDescription h="20" w="20" x="5" y="2"/>
+            </unitBounds>
+          </port>
+          <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/DEdge.hpe" multiple="false" name="DEdge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+            <visualDescription h="60" w="190" x="503" y="498">
+              <color b="255" g="255" r="255"/>
+            </visualDescription>
+            <parameter formFieldId="vertex_type" varName="V"/>
+            <unitBounds parallel="false" uRef="data">
+              <visualDescription h="20" w="20" x="5" y="2"/>
+            </unitBounds>
+          </port>
+          <unitBounds parallel="false" uRef="data">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
         <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
           <visualDescription h="60" w="149" x="120" y="491">
             <color b="255" g="255" r="255"/>

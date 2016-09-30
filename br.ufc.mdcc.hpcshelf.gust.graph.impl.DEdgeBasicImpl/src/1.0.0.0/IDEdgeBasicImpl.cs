@@ -38,6 +38,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl {
 		public IDEdgeBasicInstance<V> EInstance {
 			get { return instance; }
 		}
+
+		public IRootDEdge<int> RootDEdge {
+			get {
+				return new IRootDEdgeBasicImpl<int> (instance.Source.Id, instance.Target.Id);
+			}
+		}
 	}
 
 	[Serializable]
@@ -70,13 +76,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl {
 			}
 		}
 		public override int GetHashCode () {
-			int a = this.source.Id;
-			int b = this.target.Id;
-			var A = (ulong)(a >= 0 ? 2 * (long)a : -2 * (long)a - 1);
-			var B = (ulong)(b >= 0 ? 2 * (long)b : -2 * (long)b - 1);
-			var C = (long)((A >= B ? A * A + A + B : A + B * B) / 2);
-			var R = a < 0 && b < 0 || a >= 0 && b >= 0 ? C : -C - 1;
-			return (int)R;
+			return CommonFunc.pairingFunction (this.source.Id, this.target.Id);
 		}
 		public override string ToString () {
 			return "" + source.Id + ":" + target.Id + "";
@@ -97,5 +97,63 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl {
 			return clone;
 		}
 		#endregion
+	}
+
+	//************************************** IRootDEdgeBasic **************************************
+	public class IRootDEdgeBasicImpl<RV>: IRootDEdgeBasic<RV> {
+
+		private RV _source = default(RV);
+		private RV _target = default(RV);
+
+		public IRootDEdgeBasicImpl(){ }
+
+		public IRootDEdgeBasicImpl(RV source, RV target):this(){ 
+			this._source = source;
+			this._target = target;
+		}
+		public virtual float Weight {
+			get { return 1.0f; }
+		}
+		public RV Source {
+			get { return _source; }
+			set { this._source = value;	}
+		}
+		public RV Target {
+			get { return _target; }
+			set { this._target = value;	}
+		}
+
+		public virtual IRootDEdge<RV> newInstance (){
+			return new IRootDEdgeBasicImpl<RV> ();
+		}
+		public virtual IRootDEdge<RV> newInstance (RV source, RV target){
+			return new IRootDEdgeBasicImpl<RV> (source, target);
+		}
+		public virtual IRootDEdge<RV> newInstance (RV source, RV target, float weight){
+			throw new NotSupportedException();
+		}
+		public virtual string ToString () {
+			return "" + Source + "," + Target + "";
+		}
+		public override bool Equals (object obj) {
+			if (typeof(IRootDEdgeBasic<RV>).IsAssignableFrom (obj.GetType ())) {
+				IRootDEdgeBasic<RV> o = (IRootDEdgeBasic<RV>)obj;
+				if (o.Source.Equals(this.Source) && o.Target.Equals(this.Target))// && o.Weight == this.Weight)
+					return true;
+			}
+			return false;
+		}
+		public override int GetHashCode () {
+			return CommonFunc.pairingFunction (this.Source.GetHashCode (), this.Target.GetHashCode ());
+		}
+	}
+	internal class CommonFunc{
+		public static int pairingFunction (int a, int b) {
+			var A = (ulong)(a >= 0 ? 2 * (long)a : -2 * (long)a - 1);
+			var B = (ulong)(b >= 0 ? 2 * (long)b : -2 * (long)b - 1);
+			var C = (long)((A >= B ? A * A + A + B : A + B * B) / 2);
+			var R = a < 0 && b < 0 || a >= 0 && b >= 0 ? C : -C - 1;
+			return (int)R;
+		}
 	}
 }

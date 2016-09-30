@@ -11,7 +11,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer
 		where V:IDVertex
 		where E:IDEdge<V>
 	{
-		E DEdgeFactory {get;}
-		V DVertex {get;}
+		E EdgeFactory {get;}
+		V Vertex {get;}
 	}
 }

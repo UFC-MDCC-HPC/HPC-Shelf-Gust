@@ -13,5 +13,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted {
 		IFloatInstance Weight { get; set; }
 	}
 	public interface IRootDEdgeWeighted<RV>: IRootDEdge<RV> {
+		IRootDEdgeWeighted<RV> newInstance (RV source, RV target, float weight);
 	}
 }
