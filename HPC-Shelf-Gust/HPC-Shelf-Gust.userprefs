@@ -1,9 +1,9 @@
 ﻿<Properties StartupItem="HPC-Shelf-Gust/HPC-Shelf-Gust.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.gust.graph.Graph/src/1.0.0.0/IGraph.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl/src/1.0.0.0/IDirectedGraphVImpl.cs">
     <Files>
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl/src/1.0.0.0/IDirectedGraphVImpl.cs" Line="28" Column="4" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.Graph/src/1.0.0.0/IGraph.cs" Line="39" Column="22" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl/src/1.0.0.0/IDirectedGraphVImpl.cs" Line="34" Column="57" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.Graph/src/1.0.0.0/IGraph.cs" Line="17" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

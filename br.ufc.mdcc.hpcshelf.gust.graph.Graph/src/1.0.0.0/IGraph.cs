@@ -13,7 +13,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.Graph
 		where E:IDEdge<V>
 	{
 	}
-	public interface IGraphDelegate<V, E, RV, RE> 
+	public interface IGraphHelper<V, E, RV, RE> 
 		where V:IDVertex
 		where E:IDEdge<V> 
 		where RE: IDEdgeInstance<V, RV>{

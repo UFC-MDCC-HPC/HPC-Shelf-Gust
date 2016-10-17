@@ -20,18 +20,18 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 
 		public override void main() {
 		}
-		public IGraphDelegate<V, E, T, IDEdgeBasicInstance<V, T>> InstanceTFactoryDelegate<T>(T i, T j){
-			return new IGraphDelegateVImpl<V, E, T, IDEdgeBasicInstance<V, T>> (DataContainer.InstanceTFactory<T>(i, j));		
+		public IGraphHelper<V, E, T, IDEdgeBasicInstance<V, T>> InstanceTFactoryHelper<T>(T i, T j){
+			return new IGraphHelperVImpl<V, E, T, IDEdgeBasicInstance<V, T>> (DataContainer.InstanceTFactory<T>(i, j));		
 		}
-		public IGraphDelegate<V, E, int, IDEdgeBasicInstance<V, int>> createDefaultDelegate(){
-			return new IGraphDelegateVImpl<V, E, int, IDEdgeBasicInstance<V, int>> (DataContainer.DataContainerVInstance);	
+		public IGraphHelper<V, E, int, IDEdgeBasicInstance<V, int>> createDefaultHelper(){
+			return new IGraphHelperVImpl<V, E, int, IDEdgeBasicInstance<V, int>> (DataContainer.DataContainerVInstance);	
 		}
 
 		public class DirectedGraphV<V, E, RV, RE> where V:IDVertexBasic  where E:IDEdgeBasic<V> where RE: IDEdgeBasicInstance<V, RV> {
 
-			public IGraphDelegateV<V, E, RV, RE> delegator;
+			public IGraphHelperV<V, E, RV, RE> delegator;
 
-			public DirectedGraphV(IGraphDelegateV<V, E, RV, RE> d){
+			public DirectedGraphV(IGraphHelperV<V, E, RV, RE> d){
 				delegator = d;
 			}
 			public ICollection<RE> getAllEdges (RV sourceVertex, RV targetVertex) {
@@ -297,11 +297,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 				return delegator.degreeOf (vertex);
 			}
 		}
-		public interface IGraphDelegateV<V, E, RV, RE>: IGraphDelegate<V, E, RV, RE> 
+		public interface IGraphHelperV<V, E, RV, RE>: IGraphHelper<V, E, RV, RE> 
 			where V:IDVertexBasic where E:IDEdgeBasic<V> where RE: IDEdgeBasicInstance<V, RV> {
 			IDataContainerVInstance<V, E, RV> Container { get; set; }
 		}
-		internal class IGraphDelegateVImpl<V, E, RV, RE>: IGraphDelegateV<V, E, RV, RE> 
+		internal class IGraphHelperVImpl<V, E, RV, RE>: IGraphHelperV<V, E, RV, RE> 
 			where V:IDVertexBasic 
 			where E:IDEdgeBasic<V>
 			where RE: IDEdgeBasicInstance<V, RV> {
@@ -309,7 +309,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 			private int count_edges = 0;
 			private IDataContainerVInstance<V, E, RV> container;
 
-			public IGraphDelegateVImpl (IDataContainerVInstance<V, E, RV> c) {
+			public IGraphHelperVImpl (IDataContainerVInstance<V, E, RV> c) {
 				container = c;
 			}
 
