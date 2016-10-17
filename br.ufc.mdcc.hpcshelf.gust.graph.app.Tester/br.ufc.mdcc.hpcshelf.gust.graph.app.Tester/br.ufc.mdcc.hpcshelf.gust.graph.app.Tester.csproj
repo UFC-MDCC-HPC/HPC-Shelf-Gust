@@ -56,10 +56,6 @@
       <Project>{7B6A36EC-21B3-4C93-888C-01788A9423F8}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected.csproj">
-      <Project>{C82BA29D-5D3E-4588-B1D4-07F2F11B6CDA}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph\br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph\br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph.csproj">
       <Project>{90671855-07C4-4E67-8F2F-2384704D1F6B}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph</Name>
@@ -84,9 +80,9 @@
       <Project>{B53D1E64-E50C-4BCD-A705-EDE7AEC76D9A}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.graph.DVertex</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirectedV\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirectedV\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirectedV.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV.csproj">
       <Project>{1A45736A-A938-4026-B292-AEA8ED4A8651}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirectedV</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

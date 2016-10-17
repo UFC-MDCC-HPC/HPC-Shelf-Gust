@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/cenez/hpe/cenez/cache" default="all" name="DirectedGraphEImpl">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="DirectedGraphEImpl-1.0.0.0">
+    <ifnot targetexists="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl/bin/1.0.0.0">
+      <mkdir dir="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl/DirectedGraphEImpl.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl/bin/1.0.0.0/BaseIDirectedGraphEImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl/src/1.0.0.0/BaseIDirectedGraphEImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0/IDVertexBasic.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/bin/1.0.0.0/IDataContainer.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/bin/1.0.0.0/IDEdgeBasic.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE/bin/1.0.0.0/IDataContainerE.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/bin/1.0.0.0/BaseIDirectedGraph.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl/DirectedGraphEImpl.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl/bin/1.0.0.0/IDirectedGraphEImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl/src/1.0.0.0/IDirectedGraphEImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE/bin/1.0.0.0/IDataContainerE.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0/IDVertexBasic.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/bin/1.0.0.0/IDEdgeBasic.dll"/>
+        <include name="/br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl/bin/1.0.0.0/BaseIDirectedGraphEImpl.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/bin/1.0.0.0/IDirectedGraph.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="DirectedGraphEImpl-1.0.0.0" name="all"/>
+</project>

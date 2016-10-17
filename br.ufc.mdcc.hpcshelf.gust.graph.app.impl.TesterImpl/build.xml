@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/cenez/hpe/cenez/cache" default="all" name="TesterImpl">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="TesterImpl-1.0.0.0">
+    <ifnot targetexists="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.app.impl.TesterImpl/bin/1.0.0.0">
+      <mkdir dir="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.app.impl.TesterImpl/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.app.impl.TesterImpl/TesterImpl.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.app.impl.TesterImpl/bin/1.0.0.0/BaseITesterImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.app.impl.TesterImpl/src/1.0.0.0/BaseITesterImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.app.TesterContext/bin/1.0.0.0/ITesterContext.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/bin/1.0.0.0/IDirectedGraph.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE/bin/1.0.0.0/IDataContainerE.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0/IDVertexBasic.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/bin/1.0.0.0/IDEdgeBasic.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Graph/bin/1.0.0.0/IGraph.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.app.Tester/bin/1.0.0.0/BaseITester.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.app.impl.TesterImpl/TesterImpl.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.app.impl.TesterImpl/bin/1.0.0.0/ITesterImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.app.impl.TesterImpl/src/1.0.0.0/ITesterImpl.cs"/>
+      </sources>
+      <references>
+        <include name="/br.ufc.mdcc.hpcshelf.gust.graph.app.impl.TesterImpl/bin/1.0.0.0/BaseITesterImpl.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.app.Tester/bin/1.0.0.0/ITester.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="TesterImpl-1.0.0.0" name="all"/>
+</project>

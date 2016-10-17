@@ -7,71 +7,94 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent localRef="vertex_type" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
-      <visualDescription h="60" w="140" x="231" y="324">
+    <innerComponent localRef="comp" location="br.ufc.mdcc.hpcshelf.gust.graph.app.TesterContext/TesterContext.hpe" multiple="false" name="TesterContext" package="br.ufc.mdcc.hpcshelf.gust.graph.app" exposed="false">
+      <visualDescription h="60" w="157" x="108" y="562">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="false" uRef="vertex">
+      <parameter formFieldId="graph_type" varName="G"/>
+      <parameter formFieldId="edge_type" varName="E"/>
+      <parameter formFieldId="container" varName="CTN"/>
+      <parameter formFieldId="vertex_type" varName="V"/>
+      <port localRef="graph" location="br.ufc.mdcc.hpcshelf.gust.graph.Graph/Graph.hpe" multiple="false" name="Graph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+        <visualDescription h="60" w="178" x="251" y="655">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="edge_type" varName="E"/>
+        <parameter formFieldId="container" varName="CTN"/>
+        <parameter formFieldId="vertex_type" varName="V"/>
+        <unitBounds parallel="false" uRef="graph">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <unitBounds parallel="false" uRef="tester_context">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="edge_type" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/DEdge.hpe" multiple="false" name="DEdge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
-      <visualDescription h="60" w="219" x="465" y="306">
+    <innerComponent localRef="e" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/DEdge.hpe" multiple="false" name="DEdge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="100" x="581" y="221">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="vertex_type" varName="V"/>
-      <unitBounds parallel="false" uRef="edge">
+      <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="DGraph" location="br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/DirectedGraph.hpe" multiple="false" name="DirectedGraph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
-      <visualDescription h="60" w="100" x="757" y="476">
+    <innerComponent localRef="v" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="100" x="549" y="328">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="g" location="br.ufc.mdcc.hpcshelf.gust.graph.Graph/Graph.hpe" multiple="false" name="Graph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="100" x="724" y="487">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="edge_type" varName="E"/>
       <parameter formFieldId="container" varName="CTN"/>
       <parameter formFieldId="vertex_type" varName="V"/>
-      <port localRef="container" location="br.ufc.mdcc.hpcshelf.gust.graph.container.Container/Container.hpe" multiple="false" name="Container" package="br.ufc.mdcc.hpcshelf.gust.graph.container" exposed="false">
-        <visualDescription h="60" w="153" x="899" y="638">
+      <port localRef="dataContainer" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/DataContainer.hpe" multiple="false" name="DataContainer" package="br.ufc.mdcc.hpcshelf.gust.graph.container" exposed="false">
+        <visualDescription h="60" w="153" x="433" y="534">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="edge_type" varName="E"/>
         <parameter formFieldId="vertex_type" varName="V"/>
         <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
-          <visualDescription h="60" w="167" x="819" y="323">
+          <visualDescription h="60" w="149" x="598" y="654">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <unitBounds parallel="false" uRef="vertex">
+          <unitBounds parallel="false" uRef="data">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
         <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/DEdge.hpe" multiple="false" name="DEdge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
-          <visualDescription h="60" w="208" x="979" y="489">
+          <visualDescription h="60" w="190" x="808" y="568">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="vertex_type" varName="V"/>
-          <unitBounds parallel="false" uRef="edge">
+          <unitBounds parallel="false" uRef="data">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <unitBounds parallel="false" uRef="container">
+        <unitBounds parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
       <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
-        <visualDescription h="60" w="167" x="819" y="323">
+        <visualDescription h="60" w="149" x="598" y="654">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <unitBounds parallel="false" uRef="vertex">
+        <unitBounds parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
       <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/DEdge.hpe" multiple="false" name="DEdge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
-        <visualDescription h="60" w="208" x="979" y="489">
+        <visualDescription h="60" w="190" x="808" y="568">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="vertex_type" varName="V"/>
-        <unitBounds parallel="false" uRef="edge">
+        <unitBounds parallel="false" uRef="data">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
@@ -79,35 +102,58 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <interface iRef="ITester" nArgs="0">
-      <slice isRef="graph">
-        <originRef cRef="graph" iRef="IGraph"/>
-        <visualDescription h="10" w="10" x="27" y="17"/>
-      </slice>
-      <visualDescription h="40" w="237" x="300" y="450">
-        <color b="54" g="52" r="46"/>
+    <innerComponent localRef="ctn" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/DataContainer.hpe" multiple="false" name="DataContainer" package="br.ufc.mdcc.hpcshelf.gust.graph.container" exposed="false">
+      <visualDescription h="60" w="100" x="358" y="236">
+        <color b="255" g="255" r="255"/>
       </visualDescription>
-      <port name="container">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="container" sRef="graph"/>
+      <parameter formFieldId="edge_type" varName="E"/>
+      <parameter formFieldId="vertex_type" varName="V"/>
+      <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+        <visualDescription h="60" w="149" x="194" y="200">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
       </port>
-      <port name="vertex">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="vertex" sRef="graph"/>
+      <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/DEdge.hpe" multiple="false" name="DEdge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+        <visualDescription h="60" w="190" x="313" y="327">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="vertex_type" varName="V"/>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
       </port>
-      <port name="edgeFactory">
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="ITester" nArgs="0">
+      <slice isRef="comp">
+        <originRef cRef="comp" iRef="ITesterContext"/>
+        <visualDescription h="10" w="10" x="20" y="23"/>
+      </slice>
+      <visualDescription h="40" w="163" x="97" y="369">
+        <color b="128" g="128" r="128"/>
+      </visualDescription>
+      <port name="graph">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="edgeFactory" sRef="graph"/>
+        <slice pRef="graph" sRef="comp"/>
       </port>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="ITester" multiple="false" private="false" replica="0" uRef="tester" visibleInterface="true">
-      <slices cRef="graph" inner_replica="0" slice_replica="0" uRef="graph" sliceName="graph" transitive="false">
-        <visualDescription h="10" w="10" x="27" y="17"/>
+      <slices cRef="graph" inner_replica="0" slice_replica="0" uRef="graph" sliceName="graph" transitive="true">
+        <visualDescription h="10" w="10" x="31" y="25"/>
       </slices>
-      <visualDescription h="40" w="237" x="300" y="530"/>
+      <slices cRef="comp" inner_replica="0" slice_replica="0" uRef="tester_context" sliceName="comp" transitive="false">
+        <visualDescription h="10" w="10" x="20" y="23"/>
+        <port>graph</port>
+      </slices>
+      <visualDescription h="40" w="163" x="97" y="449"/>
     </unit>
   </componentInfo>
 </component:component>

@@ -1,7 +1,7 @@
 #!/bin/sh
-OLD="ContainerData"
+OLD="DataContainer"
 OLDNSpace="br.ufc.mdcc.hpcshelf.gust.graph.container"
-NEW="DataContainer"
+NEW="ContainerGraph"
 NEWNSpace="br.ufc.mdcc.hpcshelf.gust.graph.container"
 
 #A="$OLDNSpace $OLD""UndirectedRootEdgeRef $NEWNSpace $NEW""UndirectedRootEdgeRef"
@@ -11,44 +11,45 @@ NEWNSpace="br.ufc.mdcc.hpcshelf.gust.graph.container"
 #E="$OLDNSpace $OLD $NEWNSpace $NEW"
 
 E="$OLDNSpace $OLD $NEWNSpace $NEW"
-#./renameComponent.sh $E
-echo $E
-
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.UndirectedContainerEWeightedImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.UndirectedContainerVWeightedImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DirectedContainerEWeightedImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DirectedContainerVWeightedImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.UndirectedContainerEImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.UndirectedContainerVImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DirectedContainerEImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DirectedContainerVImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainerE
-#br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainerV
-#br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainerE
-#br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainerV
-#br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainer
-#br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainer
-#br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData
-########################################################
+./renameComponent.sh $E
+#echo $E
 
 
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerUndirectedEWeightedImpl
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerDirectedEWeightedImpl
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerUndirectedVWeightedImpl
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerDirectedVWeightedImpl
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerUndirectedEImpl
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerDirectedEImpl
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerUndirectedVImpl
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerDirectedVImpl
+#br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerUndirectedE
+#br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerUndirectedV
+#br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirectedE
+#br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirectedV
+#br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerUndirected
+#br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected
+#br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer
+#####################################################################3
+#####################################################################3
+#br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer
 
-##########################################################
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.UndirectedContainerEWeightedImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.UndirectedContainerVWeightedImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.UndirectedContainerEImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.UndirectedContainerVImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainerE
-#br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainerV
-#br.ufc.mdcc.hpcshelf.gust.graph.container.UndirectedContainer
+#br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected
+#br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirectedE
+#br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirectedV
 
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DirectedContainerEWeightedImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DirectedContainerVWeightedImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DirectedContainerEImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DirectedContainerVImpl
-#br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainerE
-#br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainerV
-#br.ufc.mdcc.hpcshelf.gust.graph.container.DirectedContainer
+#br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerUndirected
+#br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerUndirectedE
+#br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerUndirectedV
 
-#br.ufc.mdcc.hpcshelf.gust.graph.container.ContainerData
-##########################################################
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerDirectedEImpl
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerDirectedEWeightedImpl
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerDirectedVImpl
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerDirectedVWeightedImpl
+
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerUndirectedEImpl
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerUndirectedEWeightedImpl
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerUndirectedVImpl
+#br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerUndirectedVWeightedImpl
+#########################################################################
+

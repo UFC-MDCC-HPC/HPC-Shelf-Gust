@@ -1,11 +1,9 @@
 ﻿<Properties StartupItem="HPC-Shelf-Gust/HPC-Shelf-Gust.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/src/1.0.0.0/IDataContainer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.gust.graph.Graph/src/1.0.0.0/IGraph.cs">
     <Files>
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.DEdge/src/1.0.0.0/IDEdge.cs" Line="8" Column="37" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/src/1.0.0.0/IDataContainer.cs" Line="10" Column="3" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/src/1.0.0.0/BaseIDataContainer.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl/src/1.0.0.0/IDEdgeBasicImpl.cs" Line="11" Column="15" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl/src/1.0.0.0/IDirectedGraphVImpl.cs" Line="28" Column="4" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.Graph/src/1.0.0.0/IGraph.cs" Line="39" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

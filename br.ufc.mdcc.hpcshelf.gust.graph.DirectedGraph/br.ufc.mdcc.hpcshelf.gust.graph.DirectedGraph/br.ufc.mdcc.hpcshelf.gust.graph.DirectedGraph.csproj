@@ -56,10 +56,6 @@
       <Project>{7B6A36EC-21B3-4C93-888C-01788A9423F8}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected.csproj">
-      <Project>{C82BA29D-5D3E-4588-B1D4-07F2F11B6CDA}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.DEdge\br.ufc.mdcc.hpcshelf.gust.graph.DEdge\br.ufc.mdcc.hpcshelf.gust.graph.DEdge.csproj">
       <Project>{CE5F1F57-695B-46ED-98C1-6F6737A76CB9}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.graph.DEdge</Name>

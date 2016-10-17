@@ -6,7 +6,7 @@ using System;
 //using br.ufc.mdcc.mapreduce.user.PartitionFunction;
 //using br.ufc.mdcc.common.String;
 //using br.ufc.mdcc.common.Integer;
-//using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Runtime.Remoting;
 using System.Diagnostics;
 //using br.ufc.pargo.hpe.basic;

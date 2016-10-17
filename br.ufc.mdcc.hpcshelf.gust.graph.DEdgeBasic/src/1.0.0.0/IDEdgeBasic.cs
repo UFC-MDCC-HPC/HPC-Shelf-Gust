@@ -5,11 +5,11 @@ using System;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic {
 	public interface IDEdgeBasic<V> : BaseIDEdgeBasic<V>, IDEdge<V> where V:IDVertex {
-		IDEdgeBasicInstance<V> newInstance (int source, int target);
-		IDEdgeBasicInstance<V> EInstance { get; }
+		IDEdgeBasicInstance<V, int> DEdgeBasicInstance { get; }
+		IDEdgeBasicInstance<V, T> InstanceTFactory<T> (T s, T t, float w);
 	}
-	public interface IDEdgeBasicInstance<V> : IDEdgeInstance<V>, ICloneable where V: IDVertex{
+	public interface IDEdgeBasicInstance<V, RV> : IDEdgeInstance<V, RV>, ICloneable where V: IDVertex{
 	}
-	public interface IRootDEdgeBasic<RV>: IRootDEdge<RV> {
-	}
+//	public interface IRootDEdgeBasic<RV>: IRootDEdge<RV> {
+//	}
 }

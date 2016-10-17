@@ -12,11 +12,9 @@
         <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/src/1.0.0.0/BaseIDataContainer.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll"/>
         <include/>
       </references>
@@ -26,8 +24,7 @@
         <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/src/1.0.0.0/IDataContainer.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/bin/1.0.0.0/BaseIDataContainer.dll"/>
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include/>

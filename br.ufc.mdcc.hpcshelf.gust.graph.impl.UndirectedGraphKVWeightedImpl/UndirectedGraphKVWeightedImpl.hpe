@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003911f05fe3ba1f414469edf2106e6d8ded45328a4dbd460c87fadb4a2ae56de20343fe57eb7a7e03c152ac214ae44092f5e2c23540ff2a157cd0af98d7626c38f638c2a8de4baf032cbc6b656a3de341a88dc0a42a027452524ba8fc86ff1524f251243bfde740c42dad27128c561011d4b00fa0f613a2e507dde8cce1e285d1" isAbstract="false" kind="Computation" name="UndirectedGraphKVWeightedImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.graph.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005ffc9a5ea7b1bc330b6acbdf9ff28f9a70d78273bc228a9926f8bc93ab7febe866f4a0b63c5a1c3ab118db59b7c610bd5a36d2e9c8c7a7efd6071cabb310c26dc3f7d498d53b78427f729df375d64bc44fdf86e9b75a81394974d5e5b045eb7ffc63dba001125b3c31441ba42fd2fd818c753bca2ddb4485e4d645fa524d05dc" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph/UndirectedGraph.hpe" name="UndirectedGraph" package="br.ufc.mdcc.hpcshelf.gust.graph" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="257" y="423">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="edge_type" varName="E"/>
+        <parameter formFieldId="container" varName="CTN"/>
+        <parameter formFieldId="vertex_type" varName="V"/>
+        <port localRef="dataContainer" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV/DataContainerKV.hpe" multiple="false" name="DataContainerKV" package="br.ufc.mdcc.hpcshelf.gust.graph.container" exposed="true">
+          <visualDescription h="60" w="153" x="239" y="565">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="edge_type" varName="E"/>
+          <parameter formFieldId="vertex_type" varName="V"/>
+          <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.hpe" multiple="false" name="DVertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+            <visualDescription h="60" w="149" x="50" y="510">
+              <color b="255" g="255" r="255"/>
+            </visualDescription>
+            <unitBounds parallel="false" uRef="data">
+              <visualDescription h="20" w="20" x="5" y="2"/>
+            </unitBounds>
+          </port>
+          <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/DEdgeWeighted.hpe" multiple="false" name="DEdgeWeighted" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+            <visualDescription h="60" w="190" x="432" y="514">
+              <color b="255" g="255" r="255"/>
+            </visualDescription>
+            <parameter formFieldId="vertex_type" varName="V"/>
+            <unitBounds parallel="false" uRef="data">
+              <visualDescription h="20" w="20" x="5" y="2"/>
+            </unitBounds>
+          </port>
+          <unitBounds parallel="false" uRef="data">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.hpe" multiple="false" name="DVertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+          <visualDescription h="60" w="149" x="50" y="510">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <unitBounds parallel="false" uRef="data">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/DEdgeWeighted.hpe" multiple="false" name="DEdgeWeighted" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+          <visualDescription h="60" w="190" x="432" y="514">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="vertex_type" varName="V"/>
+          <unitBounds parallel="false" uRef="data">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="false" uRef="graph">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="ctn" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV/DataContainerKV.hpe" multiple="false" name="DataContainerKV" package="br.ufc.mdcc.hpcshelf.gust.graph.container" exposed="true">
+      <visualDescription h="60" w="153" x="239" y="565">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="edge_type" varName="E"/>
+      <parameter formFieldId="vertex_type" varName="V"/>
+      <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.hpe" multiple="false" name="DVertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+        <visualDescription h="60" w="149" x="50" y="510">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/DEdgeWeighted.hpe" multiple="false" name="DEdgeWeighted" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+        <visualDescription h="60" w="190" x="432" y="514">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="vertex_type" varName="V"/>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="v" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.hpe" multiple="false" name="DVertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+      <visualDescription h="60" w="149" x="50" y="510">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="e" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/DEdgeWeighted.hpe" multiple="false" name="DEdgeWeighted" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+      <visualDescription h="60" w="190" x="432" y="514">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="vertex_type" varName="V"/>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="v" direct="true" varName="V"/>
+    <supplyParameter cRef="e" direct="true" varName="E"/>
+    <supplyParameter cRef="ctn" direct="true" varName="CTN"/>
+    <interface iRef="IUndirectedGraphKVWeightedImpl" nArgs="3">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphKVWeightedImpl &#xA;{&#xA;&#x9;public abstract class BaseIUndirectedGraphKVWeightedImpl: Computation, BaseIUndirectedGraph&lt;CTN, V, E>&#xA;&#x9;&#x9;where CTN:IDataContainerKV&lt;V, E>&#xA;&#x9;&#x9;where V:IDVertexBasic&#xA;&#x9;&#x9;where E:IDEdgeWeighted&lt;V>&#xA;&#x9;{&#xA;&#x9;&#x9;private E edgeFactory = default(E);&#xA;&#xA;&#x9;&#x9;public E EdgeFactory&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.edgeFactory == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.edgeFactory = (E) Services.getPort(&quot;edgeFactory&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.edgeFactory;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private V vertex = default(V);&#xA;&#xA;&#x9;&#x9;public V Vertex&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.vertex == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.vertex = (V) Services.getPort(&quot;vertex&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.vertex;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private CTN dataContainer = default(CTN);&#xA;&#xA;&#x9;&#x9;public CTN DataContainer&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.dataContainer == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.dataContainer = (CTN) Services.getPort(&quot;dataContainer&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.dataContainer;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIUndirectedGraphKVWeightedImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphKVWeightedImpl/bin/1.0.0.0/BaseIUndirectedGraphKVWeightedImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0/IDVertexBasic.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/bin/1.0.0.0/IDataContainer.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/bin/1.0.0.0/IDEdgeWeighted.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV/bin/1.0.0.0/IDataContainerKV.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph/bin/1.0.0.0/BaseIUndirectedGraph.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphKVWeightedImpl&#xA;{&#xA;&#x9;public class IUndirectedGraphKVWeightedImpl : BaseIUndirectedGraphKVWeightedImpl, IUndirectedGraph&lt;CTN, V, E>&#xA;where CTN:IDataContainerKV&lt;V, E>&#xA;where V:IDVertexBasic&#xA;where E:IDEdgeWeighted&lt;V>&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IUndirectedGraphKVWeightedImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphKVWeightedImpl/bin/1.0.0.0/IUndirectedGraphKVWeightedImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV/bin/1.0.0.0/IDataContainerKV.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0/IDVertexBasic.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/bin/1.0.0.0/IDEdgeWeighted.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphKVWeightedImpl/bin/1.0.0.0/BaseIUndirectedGraphKVWeightedImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph/bin/1.0.0.0/IUndirectedGraph.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="277" x="93" y="237">
+        <color b="207" g="159" r="114"/>
+      </visualDescription>
+      <parameter iname="IDataContainerKV" order="2" parid="container" uname="data" varid="CTN"/>
+      <parameter iname="IDVertexBasic" order="1" parid="vertex_type" uname="data" varid="V"/>
+      <parameter iname="IDEdgeWeighted" order="0" parid="edge_type" uname="data" varid="E"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IUndirectedGraphKVWeightedImpl" multiple="false" private="false" replica="0" uRef="graph" visibleInterface="true">
+      <super cRef="base" uRef="graph"/>
+      <visualDescription h="40" w="182" x="174" y="326"/>
+    </unit>
+  </componentInfo>
+</component:component>

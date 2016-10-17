@@ -6,20 +6,20 @@
         <extends>true</extends>
       </extensionType>
       <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000616d0cbbb07ad8e5e179a13771d0f21e1b36323c39eb2145b2312b34b1ca7f8828ccd8121de67ee7fc2759cde4e61d4ffeea9e5b8c8b097463ec09c84c62e9d46e514629dc69f133c93b3d9aa3d391d6e7de3e0adff1e2ebabb8643181d6279666328607ac10b2c450f5efcc9443035e1973e94c1712289994f9b56beff6578f" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.graph.Graph/Graph.hpe" name="Graph" package="br.ufc.mdcc.hpcshelf.gust.graph" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="298" y="412">
+        <visualDescription h="60" w="100" x="356" y="592">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="edge_type" varName="E"/>
         <parameter formFieldId="container" varName="CTN"/>
         <parameter formFieldId="vertex_type" varName="V"/>
         <port localRef="dataContainer" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/DataContainer.hpe" multiple="false" name="DataContainer" package="br.ufc.mdcc.hpcshelf.gust.graph.container" exposed="true">
-          <visualDescription h="60" w="187" x="258" y="544">
+          <visualDescription h="60" w="153" x="324" y="762">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="edge_type" varName="E"/>
           <parameter formFieldId="vertex_type" varName="V"/>
           <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
-            <visualDescription h="60" w="149" x="63" y="414">
+            <visualDescription h="60" w="149" x="101" y="625">
               <color b="255" g="255" r="255"/>
             </visualDescription>
             <unitBounds parallel="false" uRef="data">
@@ -27,7 +27,7 @@
             </unitBounds>
           </port>
           <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/DEdge.hpe" multiple="false" name="DEdge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
-            <visualDescription h="60" w="190" x="463" y="416">
+            <visualDescription h="60" w="190" x="588" y="613">
               <color b="255" g="255" r="255"/>
             </visualDescription>
             <parameter formFieldId="vertex_type" varName="V"/>
@@ -40,7 +40,7 @@
           </unitBounds>
         </port>
         <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
-          <visualDescription h="60" w="149" x="63" y="414">
+          <visualDescription h="60" w="149" x="101" y="625">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <unitBounds parallel="false" uRef="data">
@@ -48,7 +48,7 @@
           </unitBounds>
         </port>
         <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/DEdge.hpe" multiple="false" name="DEdge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
-          <visualDescription h="60" w="190" x="463" y="416">
+          <visualDescription h="60" w="190" x="588" y="613">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="vertex_type" varName="V"/>
@@ -67,19 +67,11 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <parameter componentRef="vertex_type" formFieldId="vertex_type" order="0" variance="contravariant" varName="V"/>
-    <parameter componentRef="edge_type" formFieldId="edge_type" order="1" variance="contravariant" varName="E"/>
-    <parameter componentRef="container" formFieldId="container" order="2" variance="contravariant" varName="CTN"/>
-    <innerComponent localRef="vertex_type" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="vertex_type" exposed="false">
-      <visualDescription h="60" w="123" x="684" y="165">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="false" uRef="data">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
+    <parameter componentRef="edge_type" formFieldId="edge_type" order="0" variance="contravariant" varName="E"/>
+    <parameter componentRef="vertex_type" formFieldId="vertex_type" order="1" variance="contravariant" varName="V"/>
+    <parameter componentRef="container" formFieldId="container" order="1" variance="contravariant" varName="CTN"/>
     <innerComponent localRef="edge_type" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/DEdge.hpe" multiple="false" name="DEdge" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="edge_type" exposed="false">
-      <visualDescription h="60" w="132" x="647" y="189">
+      <visualDescription h="60" w="187" x="519" y="224">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="vertex_type" varName="V"/>
@@ -87,14 +79,22 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="container" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected/DataContainerDirected.hpe" multiple="false" name="DataContainerDirected" package="br.ufc.mdcc.hpcshelf.gust.graph.container" parameter_id="container" exposed="false">
-      <visualDescription h="60" w="129" x="717" y="332">
+    <innerComponent localRef="vertex_type" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="vertex_type" exposed="false">
+      <visualDescription h="60" w="159" x="558" y="368">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="container" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/DataContainer.hpe" multiple="false" name="DataContainer" package="br.ufc.mdcc.hpcshelf.gust.graph.container" parameter_id="container" exposed="false">
+      <visualDescription h="60" w="124" x="606" y="412">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="edge_type" varName="E"/>
       <parameter formFieldId="vertex_type" varName="V"/>
       <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/DVertex.hpe" multiple="false" name="DVertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
-        <visualDescription h="60" w="149" x="500" y="354">
+        <visualDescription h="60" w="149" x="472" y="287">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -102,7 +102,7 @@
         </unitBounds>
       </port>
       <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/DEdge.hpe" multiple="false" name="DEdge" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
-        <visualDescription h="60" w="190" x="884" y="346">
+        <visualDescription h="60" w="190" x="789" y="411">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="vertex_type" varName="V"/>
@@ -116,33 +116,33 @@
     </innerComponent>
     <interface iRef="IDirectedGraph" nArgs="3">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph&#xA;{&#xA;&#x9;public interface BaseIDirectedGraph&lt;CTN, V, E> : BaseIGraph&lt;CTN, V, E>, IComputationKind &#xA;&#x9;&#x9;where CTN:IDataContainerDirected&lt;V, E>&#xA;&#x9;&#x9;where V:IDVertex&#xA;&#x9;&#x9;where E:IDEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDirectedGraph.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/bin/1.0.0.0/BaseIDirectedGraph.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected/bin/1.0.0.0/IDataContainerDirected.dll</dependency>
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph&#xA;{&#xA;&#x9;public interface BaseIDirectedGraph&lt;CTN, V, E> : BaseIGraph&lt;CTN, V, E>, IComputationKind &#xA;&#x9;&#x9;where CTN:IDataContainer&lt;V, E>&#xA;&#x9;&#x9;where V:IDVertex&#xA;&#x9;&#x9;where E:IDEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDirectedGraph.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/bin/1.0.0.0/BaseIDirectedGraph.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/bin/1.0.0.0/IDataContainer.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Graph/bin/1.0.0.0/BaseIGraph.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph&#xA;{&#xA;&#x9;public interface IDirectedGraph&lt;CTN, V, E> : BaseIDirectedGraph&lt;CTN, V, E>, IGraph&lt;CTN, V, E>&#xA;&#x9;&#x9;where CTN:IDataContainerDirected&lt;V, E>&#xA;&#x9;&#x9;where V:IDVertex&#xA;&#x9;&#x9;where E:IDEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDirectedGraph.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/bin/1.0.0.0/IDirectedGraph.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerDirected/bin/1.0.0.0/IDataContainerDirected.dll</dependency>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph&#xA;{&#xA;&#x9;public interface IDirectedGraph&lt;CTN, V, E> : BaseIDirectedGraph&lt;CTN, V, E>, IGraph&lt;CTN, V, E>&#xA;&#x9;&#x9;where CTN:IDataContainer&lt;V, E>&#xA;&#x9;&#x9;where V:IDVertex&#xA;&#x9;&#x9;where E:IDEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDirectedGraph.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/bin/1.0.0.0/IDirectedGraph.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/bin/1.0.0.0/IDataContainer.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/bin/1.0.0.0/BaseIDirectedGraph.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Graph/bin/1.0.0.0/IGraph.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="189" x="220" y="233">
+      <visualDescription h="40" w="182" x="251" y="378">
         <color b="207" g="159" r="114"/>
       </visualDescription>
-      <parameter iname="IDataContainerDirected" order="2" parid="container" uname="data" varid="CTN"/>
-      <parameter iname="IDVertex" order="0" parid="vertex_type" uname="data" varid="V"/>
-      <parameter iname="IDEdge" order="1" parid="edge_type" uname="data" varid="E"/>
+      <parameter iname="IDataContainer" parid="container" uname="data" varid="CTN"/>
+      <parameter iname="IDVertex" order="1" parid="vertex_type" uname="data" varid="V"/>
+      <parameter iname="IDEdge" order="0" parid="edge_type" uname="data" varid="E"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IDirectedGraph" multiple="false" private="false" replica="0" uRef="graph" visibleInterface="true">
       <super cRef="base" uRef="graph"/>
-      <visualDescription h="40" w="189" x="220" y="313"/>
+      <visualDescription h="40" w="182" x="251" y="458"/>
     </unit>
   </componentInfo>
 </component:component>

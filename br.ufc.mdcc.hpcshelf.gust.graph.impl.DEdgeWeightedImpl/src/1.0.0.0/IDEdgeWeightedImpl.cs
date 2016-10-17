@@ -16,151 +16,94 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl {
 		override public void after_initialize () {
 			newInstance (); 
 		}
-
-		public IDEdgeWeightedInstance<V> newInstance (int source, int target, float weight) {
-			newInstance ();
-			instance.Source.Id = source;
-			instance.Target.Id = target;
-			instance.Weight.Value = weight;
-			return instance;
-		}
-
 		public object newInstance () {
 			IKVPairInstance<V,V> kv = (IKVPairInstance<V,V>)Vertices.newInstance ();
-			IFloatInstance f = (IFloatInstance) Weight.newInstance (); 
-			this.instance = new IDEdgeWeightedInstanceImpl<V> (((IDVertexInstance)kv.Key), ((IDVertexInstance)kv.Value), f);
-			return this.Instance;
+			this.instance = new IDEdgeWeightedInstanceImpl<V, int> (((IDVertexInstance)kv.Key).Id, ((IDVertexInstance)kv.Value).Id, 1.0f);
+			return this.instance;
 		}
-
-		private IDEdgeWeightedInstance<V> instance;
+		private object instance;
 		public object Instance {
 			get { return instance; }
-			set { this.instance = (IDEdgeWeightedInstance<V>)value; }
+			set { this.instance = value; }
 		}
 
-		public IDEdgeWeightedInstance<V> EInstance {
-			get { return instance; }
-		}
-
-		public IRootDEdge<int> RootDEdge {
-			get {
-				return new IRootDEdgeWeightedImpl<int> (instance.Source.Id, instance.Target.Id);
+		public IDEdgeWeightedInstance<V, int> DEdgeWeightedInstance {
+			get { 
+				IDEdgeWeightedInstance<V, int> e=null;
+				try{
+					e = (IDEdgeWeightedInstance<V, int>)instance; 
+				} catch {
+					new InvalidCastException ("Cast Error: IDEdgeWeightedInstance<V, int> IDEdgeWeightedInstanceImpl");
+				}
+				return e;
 			}
+		}
+		public IDEdgeWeightedInstance<V, T> InstanceTFactory<T> (T s, T t, float w){
+			//IKVPairInstance<V,V> kv = (IKVPairInstance<V,V>)Vertices.newInstance ();
+			IDEdgeWeightedInstance<V, T> instanceT = new IDEdgeWeightedInstanceImpl<V, T> (s, t, w);
+			return instanceT;
+		}
+		public IDEdgeInstance<V, T> InstanceTFactory<T> (T s, T t){
+			return InstanceTFactory<T>(s,t,1.0f);
 		}
 	}
 
 	[Serializable]
-	public class IDEdgeWeightedInstanceImpl<V> : IDEdgeWeightedInstance<V> where V: IDVertex{
-
-		public IDEdgeWeightedInstanceImpl(IDVertexInstance s, IDVertexInstance t, IFloatInstance w){
+	public class IDEdgeWeightedInstanceImpl<V, RV> : IDEdgeWeightedInstance<V, RV> where V: IDVertex{
+		public IDEdgeWeightedInstanceImpl(){}
+		public IDEdgeWeightedInstanceImpl(RV s, RV t, float w){
 			this.source = s;
 			this.target = t;
 			this.weight = w;
 		}
 
 		#region IDEdgeWeightedInstance implementation
-		private IDVertexInstance source;
-		private IDVertexInstance target;
-		private IFloatInstance weight;
+		private RV source;
+		private RV target;
+		private float weight = 1.0f;
 
-		public IDVertexInstance Source {
-			get { return source; }
-			set { this.source = value; }
-		}
-
-		public IDVertexInstance Target {
-			get { return target; }
-			set { this.target = value; }
-		}
-
-		public IFloatInstance Weight {
-			get { return weight; }
-			set { this.weight = value; }
-		}
+		public RV Source { get { return source; } set { this.source = value; } }
+		public RV Target { get { return target; } set { this.target = value; } }
+		public float Weight { get { return weight; } set { this.weight = value; } }
 
 		public object ObjValue {
-			get { return new Tuple<IDVertexInstance,IDVertexInstance,IFloatInstance>(source,target,weight); }
+			get { return new Tuple<RV,RV,float>(source,target,weight); }
 			set { 
-				this.source = ((Tuple<IDVertexInstance,IDVertexInstance,IFloatInstance>)value).Item1;
-				this.target = ((Tuple<IDVertexInstance,IDVertexInstance,IFloatInstance>)value).Item2;
-				this.weight = ((Tuple<IDVertexInstance,IDVertexInstance,IFloatInstance>)value).Item3;
+				this.source = ((Tuple<RV,RV,float>)value).Item1;
+				this.target = ((Tuple<RV,RV,float>)value).Item2;
+				this.weight = ((Tuple<RV,RV,float>)value).Item3;
 			}
 		}
 		public override int GetHashCode () {
-			return CommonFunc.pairingFunction (this.source.Id, this.target.Id);
+			return CommonFunc.pairingFunction (this.source.GetHashCode(), this.target.GetHashCode());
 		}
-		public override string ToString () {
-			return "" + source.Id + ":" + target.Id + "|"+string.Format("{0:N1}",weight.Value);
-		}
+		public override string ToString () { return CommonFunc.edgeToString(source.GetHashCode(),target.GetHashCode(),weight);}
 		public override bool Equals (object obj) {
-			if (typeof(IDEdgeWeightedInstance<V>).IsAssignableFrom (obj.GetType ())) {
-				IDEdgeWeightedInstance<V> o = (IDEdgeWeightedInstance<V>)obj;
-				if (o.Source.Id.Equals(this.source.Id) && o.Target.Id.Equals(this.target.Id))// && o.Weight.Value == this.Weight.Value)
+			if (typeof(IDEdgeWeightedInstance<V, RV>).IsAssignableFrom (obj.GetType ())) {
+				IDEdgeWeightedInstance<V, RV> o = (IDEdgeWeightedInstance<V, RV>)obj;
+				if (o.Source.Equals(this.source) && o.Target.Equals(this.target))// && o.Weight.Value == this.Weight.Value)
 					return true;
 			}
 			return false;
 		}
+		public IDEdgeInstance<V,RV> newInstance () { return new IDEdgeWeightedInstanceImpl<V, RV> (); }
+		public IDEdgeInstance<V,RV> newInstance (RV s, RV t) { return new IDEdgeWeightedInstanceImpl<V, RV> (s,t, 1.0f); }
+		public IDEdgeInstance<V,RV> newInstance (RV s, RV t, float w) { return new IDEdgeWeightedInstanceImpl<V, RV> (s, t, w); }
 		#endregion
 
 		#region ICloneable implementation
 		public object Clone () {
-			IDEdgeWeightedInstance<V> clone = new IDEdgeWeightedInstanceImpl<V>((IDVertexInstance)this.Source.Clone(), (IDVertexInstance)this.Target.Clone(), (IFloatInstance)this.Weight.Clone());
+			IDEdgeWeightedInstance<V,RV> clone;
+			Type[] types = this.GetType ().GenericTypeArguments;
+			if (typeof(ICloneable).IsAssignableFrom (types [1])) {
+				return new IDEdgeWeightedInstanceImpl<V, RV> ((RV)((ICloneable)this.Source).Clone (), (RV)((ICloneable)this.Target).Clone (), 1.0f);
+			}
+			try {return this.MemberwiseClone(); } catch (NotSupportedException e) { }
+			clone = new IDEdgeWeightedInstanceImpl<V, RV> (source, target, 1.0f);
 			return clone;
 		}
 		#endregion
-	}
 
-	//************************************** IRootDEdgeWeighted **************************************
-	public class IRootDEdgeWeightedImpl<RV>: IRootDEdgeWeighted<RV> {
-
-		private RV _source = default(RV);
-		private RV _target = default(RV);
-		private float _weight = 1.0f;
-
-		public IRootDEdgeWeightedImpl(){ }
-		public IRootDEdgeWeightedImpl(RV source, RV target):this(){ 
-			this._source = source;
-			this._target = target;
-		}
-		public IRootDEdgeWeightedImpl(RV source, RV target, float weight):this(source, target) { 
-			this._weight = weight;
-		}
-
-		public RV Source {
-			get { return _source; }
-			set { this._source = value;	}
-		}
-		public RV Target {
-			get { return _target; }
-			set { this._target = value;	}
-		}
-		public virtual float Weight {
-			get { return _weight; }
-		}
-
-		public virtual IRootDEdge<RV> newInstance (){
-			return new IRootDEdgeWeightedImpl<RV> ();
-		}
-		public virtual IRootDEdge<RV> newInstance (RV source, RV target){
-			return new IRootDEdgeWeightedImpl<RV> (source, target);
-		}
-		public virtual IRootDEdgeWeighted<RV> newInstance (RV source, RV target, float weight){
-			return new IRootDEdgeWeightedImpl<RV> (source, target, weight);
-		}
-		public virtual string ToString () {
-			return "" + Source + ":"+ Target + "|"+string.Format("{0:N1}",Weight);
-		}
-		public override bool Equals (object obj) {
-			if (typeof(IRootDEdgeWeighted<RV>).IsAssignableFrom (obj.GetType ())) {
-				IRootDEdgeWeighted<RV> o = (IRootDEdgeWeighted<RV>)obj;
-				if (o.Source.Equals(this.Source) && o.Target.Equals(this.Target))// && o.Weight == this.Weight)
-					return true;
-			}
-			return false;
-		}
-		public override int GetHashCode () {
-			return CommonFunc.pairingFunction (this.Source.GetHashCode (), this.Target.GetHashCode ());
-		}
 	}
 	internal class CommonFunc{
 		public static int pairingFunction (int a, int b) {
@@ -170,5 +113,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl {
 			var R = a < 0 && b < 0 || a >= 0 && b >= 0 ? C : -C - 1;
 			return (int)R;
 		}
+		public static string edgeToString(int a, int b, float w) { return "" + a + ":"+ b + "|"+string.Format("{0:N1}",w); }
 	}
 }
