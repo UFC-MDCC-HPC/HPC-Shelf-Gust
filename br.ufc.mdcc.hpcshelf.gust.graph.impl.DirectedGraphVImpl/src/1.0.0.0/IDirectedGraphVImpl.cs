@@ -6,6 +6,7 @@ using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
 using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
 using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;
+using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;
 using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
 using System;
@@ -19,7 +20,15 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 		where E:IEdgeBasic<V> {
 
 		public override void main() {
+			//control=new InstanceControlImpl<V,E,int,IEdgeBasicInstance<V,int>>();
 		}
+//		IInstanceControl<V, E, int, IEdgeBasicInstance<V, int>> control;
+//		public IInstanceControl<V, E, int, IEdgeInstance<V, int>> InstanceControl{ 
+//			get{ 
+//				return control;
+//			}
+//		}
+
 		public IGraphHelper<V, E, T, IEdgeBasicInstance<V, T>> InstanceTFactoryHelper<T>(T i, T j){
 			return new IGraphHelperVImpl<V, E, T, IEdgeBasicInstance<V, T>> (DataContainer.InstanceTFactory<T>(i, j));		
 		}
@@ -27,11 +36,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 			return new IGraphHelperVImpl<V, E, int, IEdgeBasicInstance<V, int>> (DataContainer.DataContainerVInstance);	
 		}
 
-		public class DirectedGraphV<V, E, TV, TE> where V:IVertexBasic  where E:IEdgeBasic<V> where TE: IEdgeBasicInstance<V, TV> {
+		public class InstanceControlImpl<V, E, TV, TE>: IInstanceControl<V, E, TV, TE> where V:IVertexBasic  where E:IEdgeBasic<V> where TE: IEdgeBasicInstance<V, TV> {
 
 			public IGraphHelperV<V, E, TV, TE> delegator;
 
-			public DirectedGraphV(IGraphHelperV<V, E, TV, TE> d){
+			public InstanceControlImpl(){}
+			public InstanceControlImpl(IGraphHelperV<V, E, TV, TE> d){
 				delegator = d;
 			}
 			public ICollection<TE> getAllEdges (TV sourceVertex, TV targetVertex) {
