@@ -11,7 +11,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted {
 		IDEdgeWeightedInstance<V, int> DEdgeWeightedInstance { get; }
 		IDEdgeWeightedInstance<V, T> InstanceTFactory<T> (T s, T t, float w);
 	}
-	public interface IDEdgeWeightedInstance<V, RV> : IDEdgeInstance<V, RV>, ICloneable where V:IDVertex {
+	public interface IDEdgeWeightedInstance<V, TV> : IDEdgeInstance<V, TV>, ICloneable where V:IDVertex {
 		float Weight { get; set; }
 	}
 //	public interface IRootDEdgeWeighted<RV>: IRootDEdge<RV> {

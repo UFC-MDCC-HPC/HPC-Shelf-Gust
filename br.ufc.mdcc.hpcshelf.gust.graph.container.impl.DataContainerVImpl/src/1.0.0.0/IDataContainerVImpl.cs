@@ -50,66 +50,66 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl {
 	}
 
 	[Serializable]
-	public class IDataContainerVInstanceImpl<V, E, RV> : IDataContainerVInstance<V, E, RV> 
+	public class IDataContainerVInstanceImpl<V, E, TV> : IDataContainerVInstance<V, E, TV> 
 		where V: IDVertexBasic 
 		where E:IDEdgeBasic<V> {
 
 		public IDataContainerVInstanceImpl(){}
-		public IDataContainerVInstanceImpl(RV v, IDEdgeBasicInstance<V, RV> e, int part){
+		public IDataContainerVInstanceImpl(TV v, IDEdgeBasicInstance<V, TV> e, int part){
 			this.vertex = v;
 			this.edgeFactory = e;
 			rankPartition = part;
 		}
 		#region ICloneable implementation
 		public object Clone () {
-			IDataContainerVInstanceImpl<V, E, RV> clone = new IDataContainerVInstanceImpl<V, E, RV> ();
+			IDataContainerVInstanceImpl<V, E, TV> clone = new IDataContainerVInstanceImpl<V, E, TV> ();
 			Type[] types = this.GetType ().GenericTypeArguments;
 			if (typeof(ICloneable).IsAssignableFrom (types [2]))
-				clone.Vertex = (RV)((ICloneable)vertex).Clone ();
+				clone.Vertex = (TV)((ICloneable)vertex).Clone ();
 			else
 				clone.Vertex = vertex;
-			clone.EdgeFactory = (IDEdgeBasicInstance<V, RV>)edgeFactory.Clone ();
+			clone.EdgeFactory = (IDEdgeBasicInstance<V, TV>)edgeFactory.Clone ();
 			clone.RankPartition = rankPartition;
 			clone.AllowingLoops = _allowingLoops;
 			clone.AllowingMultipleEdges = _allowingMultipleEdges;
-			clone.DataSet =  new Dictionary<RV, IEdgeContainer<RV>> (dataSet);
-			return (IDataContainerVInstance<V, E, RV>) clone;
+			clone.DataSet =  new Dictionary<TV, IEdgeContainer<TV>> (dataSet);
+			return (IDataContainerVInstance<V, E, TV>) clone;
 		}
 		#endregion
 
 		#region IDataContainerVInstance implementation
-		private RV vertex;
-		private IDEdgeBasicInstance<V, RV> edgeFactory;
+		private TV vertex;
+		private IDEdgeBasicInstance<V, TV> edgeFactory;
 		private int rankPartition = 0;
 		private bool _allowingLoops = true;
 		private bool _allowingMultipleEdges = false; 
-		private IDictionary<RV, IEdgeContainer<RV>> dataSet; 
+		private IDictionary<TV, IEdgeContainer<TV>> dataSet; 
 
-		public RV Vertex { get { return vertex; } set { this.vertex = (RV)value; } }
-		public IDEdgeBasicInstance<V, RV> EdgeFactory { get { return edgeFactory; } set { this.edgeFactory = (IDEdgeBasicInstance<V, RV>)value; } }
+		public TV Vertex { get { return vertex; } set { this.vertex = (TV)value; } }
+		public IDEdgeBasicInstance<V, TV> EdgeFactory { get { return edgeFactory; } set { this.edgeFactory = (IDEdgeBasicInstance<V, TV>)value; } }
 		public int RankPartition { get { return rankPartition; } set { this.rankPartition = value; } }
 		public bool AllowingLoops{ get { return _allowingLoops; } set{ _allowingLoops = value; } }
 		public bool AllowingMultipleEdges{ get { return _allowingMultipleEdges; } set{ _allowingMultipleEdges = value; } }
-		public IDictionary<RV, IEdgeContainer<RV>> DataSet { 
-			get { if (dataSet == null) dataSet = new Dictionary<RV, IEdgeContainer<RV>> (); return dataSet; } 
-			set { dataSet = (IDictionary<RV, IEdgeContainer<RV>>)value; }
+		public IDictionary<TV, IEdgeContainer<TV>> DataSet { 
+			get { if (dataSet == null) dataSet = new Dictionary<TV, IEdgeContainer<TV>> (); return dataSet; } 
+			set { dataSet = (IDictionary<TV, IEdgeContainer<TV>>)value; }
 		}
 
 		public object ObjValue {
-			get { return new Tuple<RV,IDEdgeBasicInstance<V, RV>, int, bool, bool, IDictionary<RV, IEdgeContainer<RV>>>(vertex,edgeFactory,rankPartition,_allowingLoops,_allowingMultipleEdges,dataSet); }
+			get { return new Tuple<TV,IDEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>(vertex,edgeFactory,rankPartition,_allowingLoops,_allowingMultipleEdges,dataSet); }
 			set { 
-				this.vertex =                 ((Tuple<RV,IDEdgeBasicInstance<V, RV>, int, bool, bool, IDictionary<RV, IEdgeContainer<RV>>>)value).Item1;
-				this.edgeFactory =            ((Tuple<RV,IDEdgeBasicInstance<V, RV>, int, bool, bool, IDictionary<RV, IEdgeContainer<RV>>>)value).Item2;
-				this.rankPartition =          ((Tuple<RV,IDEdgeBasicInstance<V, RV>, int, bool, bool, IDictionary<RV, IEdgeContainer<RV>>>)value).Item3;
-				this._allowingLoops =         ((Tuple<RV,IDEdgeBasicInstance<V, RV>, int, bool, bool, IDictionary<RV, IEdgeContainer<RV>>>)value).Item4;
-				this._allowingMultipleEdges = ((Tuple<RV,IDEdgeBasicInstance<V, RV>, int, bool, bool, IDictionary<RV, IEdgeContainer<RV>>>)value).Item5;
-				this.dataSet =            ((Tuple<RV,IDEdgeBasicInstance<V, RV>, int, bool, bool, IDictionary<RV, IEdgeContainer<RV>>>)value).Item6;
+				this.vertex =                 ((Tuple<TV,IDEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item1;
+				this.edgeFactory =            ((Tuple<TV,IDEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item2;
+				this.rankPartition =          ((Tuple<TV,IDEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item3;
+				this._allowingLoops =         ((Tuple<TV,IDEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item4;
+				this._allowingMultipleEdges = ((Tuple<TV,IDEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item5;
+				this.dataSet =            ((Tuple<TV,IDEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item6;
 
 			}
 		}
 		public override bool Equals (object obj) {
-			if (typeof(IDataContainerVInstance<V, E, RV>).IsAssignableFrom (obj.GetType ())) {
-				IDataContainerVInstance<V, E, RV> o = (IDataContainerVInstance<V, E, RV>)obj;
+			if (typeof(IDataContainerVInstance<V, E, TV>).IsAssignableFrom (obj.GetType ())) {
+				IDataContainerVInstance<V, E, TV> o = (IDataContainerVInstance<V, E, TV>)obj;
 				if (o.RankPartition == this.RankPartition)
 					return true;
 			}
@@ -118,7 +118,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl {
 		public override int GetHashCode () { return rankPartition; }
 
 		public void newDataSet (int size) {
-			dataSet = new Dictionary<RV, IEdgeContainer<RV>> (size);
+			dataSet = new Dictionary<TV, IEdgeContainer<TV>> (size);
 		}
 		#endregion
 	}

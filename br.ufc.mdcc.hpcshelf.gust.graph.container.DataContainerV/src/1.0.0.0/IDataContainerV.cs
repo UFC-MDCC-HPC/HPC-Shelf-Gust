@@ -14,13 +14,13 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV
 		IDataContainerVInstance<V, E, int> DataContainerVInstance { get; set; }
 		IDataContainerVInstance<V, E, T> InstanceTFactory<T> (T i, T j);
 	}
-	public interface IDataContainerVInstance<V, E, RV> : IDataContainerInstance<V, E>, ICloneable 
+	public interface IDataContainerVInstance<V, E, TV> : IDataContainerInstance<V, E>, ICloneable 
 		where V:IDVertexBasic 
 		where E:IDEdgeBasic<V> {
 
-		RV Vertex { get; set; }
-		IDEdgeBasicInstance<V, RV> EdgeFactory { set; get; }
-		IDictionary<RV, IEdgeContainer<RV>> DataSet { get; }
+		TV Vertex { get; set; }
+		IDEdgeBasicInstance<V, TV> EdgeFactory { set; get; }
+		IDictionary<TV, IEdgeContainer<TV>> DataSet { get; }
 		void newDataSet (int size);
 	}
 }

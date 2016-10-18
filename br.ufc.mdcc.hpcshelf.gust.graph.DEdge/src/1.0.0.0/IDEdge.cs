@@ -10,13 +10,13 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.DEdge {
 		//IDEdgeInstance<V, T> InstanceTFactory<T> (T s, T t, float f);
 		IDEdgeInstance<V, T> InstanceTFactory<T> (T s, T t);
 	}
-	public interface IDEdgeInstance<V, RV> : IDataInstance, ICloneable where V:IDVertex {
-		RV Source { get; set; }
-		RV Target { set; get; }
+	public interface IDEdgeInstance<V, TV> : IDataInstance, ICloneable where V:IDVertex {
+		TV Source { get; set; }
+		TV Target { set; get; }
 		float Weight { get; }
-		IDEdgeInstance<V, RV> newInstance();
-		IDEdgeInstance<V, RV> newInstance(RV s, RV t);
-		IDEdgeInstance<V, RV> newInstance(RV s, RV t, float w);
+		IDEdgeInstance<V, TV> newInstance();
+		IDEdgeInstance<V, TV> newInstance(TV s, TV t);
+		IDEdgeInstance<V, TV> newInstance(TV s, TV t, float w);
 //		IDVertexInstance Source { get; set; }
 //		IDVertexInstance Target { set; get; }
 //		IRootDEdge<int> RootDEdge { get; }

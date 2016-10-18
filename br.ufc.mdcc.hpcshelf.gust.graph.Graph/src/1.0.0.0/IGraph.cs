@@ -13,29 +13,29 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.Graph
 		where E:IDEdge<V>
 	{
 	}
-	public interface IGraphHelper<V, E, RV, RE> 
+	public interface IGraphHelper<V, E, TV, TE> 
 		where V:IDVertex
 		where E:IDEdge<V> 
-		where RE: IDEdgeInstance<V, RV>{
-		IEnumerator<RE> edgeSet ();
-		ICollection<RE> edgesOf (RV vertex);
-		IEnumerator<RE> iteratorEdgesOf (RV vertex);
-		ICollection<RV> vertexSet ();
-		void addIncomingEdge (RE e);
-		void addOutgoingEdge (RE e);
-		void removeIncomingEdge (RE e);
-		void removeOutgoingEdge (RE e);
-		ICollection<T> incoming<T> (RV vertex);
-		ICollection<T> outgoing<T> (RV vertex);
-		void noSafeAdd (RE e);
-		void noSafeAdd (RV source, RV target);
-		void noSafeAdd (RV source, RV target, float weight);
-		bool addVertex (RV vertex);
-		bool containsEdge(RE e);
-		bool containsVertex (RV v);
-		bool removeVertex (RV v);
+		where TE: IDEdgeInstance<V, TV>{
+		IEnumerator<TE> edgeSet ();
+		ICollection<TE> edgesOf (TV vertex);
+		IEnumerator<TE> iteratorEdgesOf (TV vertex);
+		ICollection<TV> vertexSet ();
+		void addIncomingEdge (TE e);
+		void addOutgoingEdge (TE e);
+		void removeIncomingEdge (TE e);
+		void removeOutgoingEdge (TE e);
+		ICollection<T> incoming<T> (TV vertex);
+		ICollection<T> outgoing<T> (TV vertex);
+		void noSafeAdd (TE e);
+		void noSafeAdd (TV source, TV target);
+		void noSafeAdd (TV source, TV target, float weight);
+		bool addVertex (TV vertex);
+		bool containsEdge(TE e);
+		bool containsVertex (TV v);
+		bool removeVertex (TV v);
 		int countE();
 		int countV();
-		int degreeOf(RV v);
+		int degreeOf(TV v);
 	}
 }

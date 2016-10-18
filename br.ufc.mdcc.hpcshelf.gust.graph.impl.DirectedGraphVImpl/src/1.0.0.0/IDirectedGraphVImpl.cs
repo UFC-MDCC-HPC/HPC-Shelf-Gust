@@ -27,24 +27,24 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 			return new IGraphHelperVImpl<V, E, int, IDEdgeBasicInstance<V, int>> (DataContainer.DataContainerVInstance);	
 		}
 
-		public class DirectedGraphV<V, E, RV, RE> where V:IDVertexBasic  where E:IDEdgeBasic<V> where RE: IDEdgeBasicInstance<V, RV> {
+		public class DirectedGraphV<V, E, TV, TE> where V:IDVertexBasic  where E:IDEdgeBasic<V> where TE: IDEdgeBasicInstance<V, TV> {
 
-			public IGraphHelperV<V, E, RV, RE> delegator;
+			public IGraphHelperV<V, E, TV, TE> delegator;
 
-			public DirectedGraphV(IGraphHelperV<V, E, RV, RE> d){
+			public DirectedGraphV(IGraphHelperV<V, E, TV, TE> d){
 				delegator = d;
 			}
-			public ICollection<RE> getAllEdges (RV sourceVertex, RV targetVertex) {
-				ICollection<RE> edges = null; 
+			public ICollection<TE> getAllEdges (TV sourceVertex, TV targetVertex) {
+				ICollection<TE> edges = null; 
 
 				if (containsVertex (sourceVertex) && containsVertex (targetVertex)) {
-					edges = new List<RE> ();
+					edges = new List<TE> ();
 
-					IEnumerator<RV> iter = delegator.outgoing<RV> (sourceVertex).GetEnumerator();
+					IEnumerator<TV> iter = delegator.outgoing<TV> (sourceVertex).GetEnumerator();
 					while (iter.MoveNext ()) {
 
 						if (iter.Current.Equals (targetVertex)) {
-							RE e = (RE) delegator.Container.EdgeFactory.newInstance (sourceVertex, iter.Current);
+							TE e = (TE) delegator.Container.EdgeFactory.newInstance (sourceVertex, iter.Current);
 							edges.Add (e);
 						}
 					}
@@ -52,36 +52,36 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 
 				return edges;
 			}
-			public RE getEdge (RV sourceVertex, RV targetVertex) {
+			public TE getEdge (TV sourceVertex, TV targetVertex) {
 				if (containsVertex (sourceVertex) && containsVertex (targetVertex)) {
 
-					IEnumerator<RV> iter = delegator.outgoing<RV> (sourceVertex).GetEnumerator();
+					IEnumerator<TV> iter = delegator.outgoing<TV> (sourceVertex).GetEnumerator();
 					while (iter.MoveNext ()) {
 
 						if (iter.Current.Equals (targetVertex)) {
-							RE e = (RE) delegator.Container.EdgeFactory.newInstance (sourceVertex, iter.Current);
+							TE e = (TE) delegator.Container.EdgeFactory.newInstance (sourceVertex, iter.Current);
 							return e;
 						}
 					}
 				}
 
-				return default(RE);
+				return default(TE);
 			}
-			public RE addEdge (RV sourceVertex, RV targetVertex) {
+			public TE addEdge (TV sourceVertex, TV targetVertex) {
 				if (containsVertex (sourceVertex) && containsVertex (targetVertex)) {
 					if (!delegator.Container.AllowingMultipleEdges && containsEdge (sourceVertex, targetVertex)) {
-						return default(RE);
+						return default(TE);
 					}
 
 					if (!delegator.Container.AllowingLoops && sourceVertex.Equals (targetVertex)) { throw new ArgumentException ("loops not allowed"); }
 
-					RE e = (RE) delegator.Container.EdgeFactory.newInstance (sourceVertex, targetVertex);
+					TE e = (TE) delegator.Container.EdgeFactory.newInstance (sourceVertex, targetVertex);
 					addEdgeToContainer (e);
 					return e;
 				}
-				return default(RE);
+				return default(TE);
 			}
-			public bool addEdge (RE e) {
+			public bool addEdge (TE e) {
 				if (e == null || e.Source == null || e.Target == null) {
 					throw new EntryPointNotFoundException ();
 				} 
@@ -99,59 +99,59 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 					return false;
 				}
 			}
-			public bool addVertex (RV v) {
+			public bool addVertex (TV v) {
 				return delegator.addVertex (v);
 			}
-			public bool containsEdge(RV sourceVertex, RV targetVertex){
-				return delegator.outgoing<RV> (sourceVertex).Contains (targetVertex);
+			public bool containsEdge(TV sourceVertex, TV targetVertex){
+				return delegator.outgoing<TV> (sourceVertex).Contains (targetVertex);
 			}
-			public bool containsEdge(RE e){
+			public bool containsEdge(TE e){
 				if (e != null) {
 					if (containsVertex (e.Source) && containsVertex (e.Target))
-						return delegator.outgoing<RV> (e.Source).Contains (e.Target);
+						return delegator.outgoing<TV> (e.Source).Contains (e.Target);
 					else
 						return false;
 				}
 				return false;
 			}
-			public bool containsVertex (RV v){
+			public bool containsVertex (TV v){
 				if(v==null)
 					throw new ArgumentNullException ("WARNING: Method containsVertex receive parameter null! ");
 				return delegator.containsVertex (v);
 			}
-			public IEnumerator<RE> edgeSet () {
+			public IEnumerator<TE> edgeSet () {
 				return delegator.edgeSet ();
 			}
-			public ICollection<RE> edgesOf (RV vertex) {
+			public ICollection<TE> edgesOf (TV vertex) {
 				return delegator.edgesOf (vertex);
 			}
-			public IEnumerator<RE> iteratorEdgesOf (RV vertex) {
+			public IEnumerator<TE> iteratorEdgesOf (TV vertex) {
 				return delegator.iteratorEdgesOf (vertex);
 			}
-			public ICollection<RV> neighborsOf (RV vertex){
-				ICollection<RV> o = delegator.outgoing<RV> (vertex);
-				ICollection<RV> i = delegator.incoming<RV> (vertex);
-				return new HashSet<RV> (o.Union (i));
+			public ICollection<TV> neighborsOf (TV vertex){
+				ICollection<TV> o = delegator.outgoing<TV> (vertex);
+				ICollection<TV> i = delegator.incoming<TV> (vertex);
+				return new HashSet<TV> (o.Union (i));
 			}
-			public IEnumerator<RV> iteratorNeighborsOf (RV vertex){
-				ICollection<RV> o = delegator.outgoing<RV> (vertex);
-				ICollection<RV> i = delegator.incoming<RV> (vertex);
-				foreach(RV v in o)
+			public IEnumerator<TV> iteratorNeighborsOf (TV vertex){
+				ICollection<TV> o = delegator.outgoing<TV> (vertex);
+				ICollection<TV> i = delegator.incoming<TV> (vertex);
+				foreach(TV v in o)
 					yield return v;
-				foreach(RV v in i)
+				foreach(TV v in i)
 					yield return v;
 			}
-			public bool removeAllEdges(ICollection<RE> edges){
+			public bool removeAllEdges(ICollection<TE> edges){
 				bool modified = false;
 
-				foreach (RE e in edges) {
+				foreach (TE e in edges) {
 					modified |= removeEdge(e);
 				}
 
 				return modified;
 			}
-			public ICollection<RE> removeAllEdges(RV sourceVertex, RV targetVertex){
-				ICollection<RE> removed = getAllEdges(sourceVertex, targetVertex);
+			public ICollection<TE> removeAllEdges(TV sourceVertex, TV targetVertex){
+				ICollection<TE> removed = getAllEdges(sourceVertex, targetVertex);
 				if (removed == null) {
 					return null;
 				}
@@ -159,35 +159,35 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 
 				return removed;
 			}
-			public bool removeAllVertices(ICollection<RV> vertices){
+			public bool removeAllVertices(ICollection<TV> vertices){
 				bool modified = false;
 
-				foreach (RV v in vertices) {
+				foreach (TV v in vertices) {
 					modified |= removeVertex(v);
 				}
 
 				return modified;
 			}
 
-			public RE removeEdge (RV sourceVertex, RV targetVertex) {
-				RE e = getEdge (sourceVertex, targetVertex);
+			public TE removeEdge (TV sourceVertex, TV targetVertex) {
+				TE e = getEdge (sourceVertex, targetVertex);
 
 				if (e != null) {
 					removeEdgeFromContainer (e);
 				}
 				return e;
 			}
-			public bool removeEdge (RE e) {
+			public bool removeEdge (TE e) {
 				if (containsEdge (e)) {
 					removeEdgeFromContainer (e);
 					return true;
 				} 
 				else { return false; }
 			}
-			public bool removeVertex (RV v) {
+			public bool removeVertex (TV v) {
 				if (containsVertex (v)) {
-					ICollection<RE> edges = edgesOf (v);
-					foreach (RE e in edges) {
+					ICollection<TE> edges = edgesOf (v);
+					foreach (TE e in edges) {
 						removeEdgeFromContainer (e);
 					}
 					return delegator.removeVertex (v);
@@ -195,26 +195,26 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 					return false;
 				}
 			}
-			public ICollection<RV> vertexSet () {
+			public ICollection<TV> vertexSet () {
 				return delegator.vertexSet ();
 			}
-			public RV getEdgeSource (RE e) {
+			public TV getEdgeSource (TE e) {
 				return e.Source;
 			}
 
-			public RV getEdgeTarget (RE e) {
+			public TV getEdgeTarget (TE e) {
 				return e.Target; 
 			}
-			public float getEdgeWeight (RE e) {
+			public float getEdgeWeight (TE e) {
 				return 1.0f;//Default e.Weight;
 			}
-			public void setEdgeWeight (RE e, float weight) {
+			public void setEdgeWeight (TE e, float weight) {
 				throw new NotSupportedException ("SetEdgeWeight not Supported");
 			}
-			public void setEdgeWeight (RV sourceVertex, RV targetVertex, float weight){
+			public void setEdgeWeight (TV sourceVertex, TV targetVertex, float weight){
 				throw new NotSupportedException ("SetEdgeWeight not Supported");
 			}
-			public float getEdgeWeight (RV sourceVertex, RV targetVertex){
+			public float getEdgeWeight (TV sourceVertex, TV targetVertex){
 				return 1.0f;//Default e.Weight;
 			}
 			// end interface implements
@@ -226,8 +226,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 			public bool isAllowingMultipleEdges () { return delegator.Container.AllowingMultipleEdges; }
 
 			public override string ToString () { 
-				IEnumerator<RV> vertexSet = this.vertexSet ().GetEnumerator();
-				IEnumerator<RE> edgeSet = this.edgeSet ();
+				IEnumerator<TV> vertexSet = this.vertexSet ().GetEnumerator();
+				IEnumerator<TE> edgeSet = this.edgeSet ();
 				System.Text.StringBuilder sb = new System.Text.StringBuilder();
 				String ret = "";
 				sb.Append ("Vertexs [");
@@ -246,177 +246,177 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 				return ret;
 			}
 
-			public void noSafeAdd(RE e){
+			public void noSafeAdd(TE e){
 				delegator.noSafeAdd (e);
 			}
-			public void noSafeAdd(RV source, RV target){
+			public void noSafeAdd(TV source, TV target){
 				delegator.noSafeAdd (source, target);
 			}
-			public void noSafeAdd(RV source, RV target, float weight){
+			public void noSafeAdd(TV source, TV target, float weight){
 				delegator.noSafeAdd (source, target, weight);
 			}
-			public void addEdgeToContainer (RE e) {
+			public void addEdgeToContainer (TE e) {
 				delegator.addOutgoingEdge (e);
 				delegator.addIncomingEdge (e);
 			}
-			public int inDegreeOf (RV vertex) {
-				return delegator.incoming<RV> (vertex).Count;
+			public int inDegreeOf (TV vertex) {
+				return delegator.incoming<TV> (vertex).Count;
 			}
-			public int outDegreeOf (RV vertex) {
-				return delegator.outgoing<RV> (vertex).Count;
+			public int outDegreeOf (TV vertex) {
+				return delegator.outgoing<TV> (vertex).Count;
 			}
-			public ICollection<RE> incomingEdgesOf (RV vertex) {
-				ICollection<RV> incoming_list = delegator.incoming<RV> (vertex);
-				ICollection<RE> edges;
+			public ICollection<TE> incomingEdgesOf (TV vertex) {
+				ICollection<TV> incoming_list = delegator.incoming<TV> (vertex);
+				ICollection<TE> edges;
 				if (!delegator.Container.AllowingMultipleEdges)
-					edges = new HashSet<RE> ();
+					edges = new HashSet<TE> ();
 				else
-					edges = new List<RE> ();
-				foreach (RV v in incoming_list)
-					edges.Add ((RE) delegator.Container.EdgeFactory.newInstance(v, vertex));
+					edges = new List<TE> ();
+				foreach (TV v in incoming_list)
+					edges.Add ((TE) delegator.Container.EdgeFactory.newInstance(v, vertex));
 				return edges;
 			}
-			public ICollection<RE> outgoingEdgesOf (RV vertex) {
-				ICollection<RV> outgoing_list = delegator.outgoing<RV> (vertex);
-				ICollection<RE> edges;
+			public ICollection<TE> outgoingEdgesOf (TV vertex) {
+				ICollection<TV> outgoing_list = delegator.outgoing<TV> (vertex);
+				ICollection<TE> edges;
 				if (!delegator.Container.AllowingMultipleEdges)
-					edges = new HashSet<RE> ();
+					edges = new HashSet<TE> ();
 				else
-					edges = new List<RE> ();
-				foreach (RV v in outgoing_list)
-					edges.Add ((RE) delegator.Container.EdgeFactory.newInstance(vertex, v));
+					edges = new List<TE> ();
+				foreach (TV v in outgoing_list)
+					edges.Add ((TE) delegator.Container.EdgeFactory.newInstance(vertex, v));
 				return edges;
 			}
-			public void removeEdgeFromContainer (RE e) {
+			public void removeEdgeFromContainer (TE e) {
 				delegator.removeOutgoingEdge (e);
 				delegator.removeIncomingEdge (e);
 			}
 			public int countE() { return delegator.countE(); }
 			public int countV() { return delegator.countV(); }
-			public int degreeOf(RV vertex) { 
+			public int degreeOf(TV vertex) { 
 				return delegator.degreeOf (vertex);
 			}
 		}
-		public interface IGraphHelperV<V, E, RV, RE>: IGraphHelper<V, E, RV, RE> 
-			where V:IDVertexBasic where E:IDEdgeBasic<V> where RE: IDEdgeBasicInstance<V, RV> {
-			IDataContainerVInstance<V, E, RV> Container { get; set; }
+		public interface IGraphHelperV<V, E, TV, TE>: IGraphHelper<V, E, TV, TE> 
+			where V:IDVertexBasic where E:IDEdgeBasic<V> where TE: IDEdgeBasicInstance<V, TV> {
+			IDataContainerVInstance<V, E, TV> Container { get; set; }
 		}
-		internal class IGraphHelperVImpl<V, E, RV, RE>: IGraphHelperV<V, E, RV, RE> 
+		internal class IGraphHelperVImpl<V, E, TV, TE>: IGraphHelperV<V, E, TV, TE> 
 			where V:IDVertexBasic 
 			where E:IDEdgeBasic<V>
-			where RE: IDEdgeBasicInstance<V, RV> {
+			where TE: IDEdgeBasicInstance<V, TV> {
 
 			private int count_edges = 0;
-			private IDataContainerVInstance<V, E, RV> container;
+			private IDataContainerVInstance<V, E, TV> container;
 
-			public IGraphHelperVImpl (IDataContainerVInstance<V, E, RV> c) {
+			public IGraphHelperVImpl (IDataContainerVInstance<V, E, TV> c) {
 				container = c;
 			}
 
-			public IDataContainerVInstance<V, E, RV> Container{
+			public IDataContainerVInstance<V, E, TV> Container{
 				get{ return this.container; }
-				set{ this.container = (IDataContainerVInstance<V, E, RV>)value; }
+				set{ this.container = (IDataContainerVInstance<V, E, TV>)value; }
 			}
-			public IEnumerator<RE> edgeSet () {
-				ICollection<RV> collection = container.DataSet.Keys;
-				foreach (RV v in collection) {
-					IEdgeContainer<RV> ec = container.DataSet[v];
-					IEnumerator<RV> iterator = ec.incoming.GetEnumerator();
+			public IEnumerator<TE> edgeSet () {
+				ICollection<TV> collection = container.DataSet.Keys;
+				foreach (TV v in collection) {
+					IEdgeContainer<TV> ec = container.DataSet[v];
+					IEnumerator<TV> iterator = ec.incoming.GetEnumerator();
 					while (iterator.MoveNext ()) {
-						yield return (RE) container.EdgeFactory.newInstance (iterator.Current, v);
+						yield return (TE) container.EdgeFactory.newInstance (iterator.Current, v);
 					}
 				}
 			}
-			public ICollection<RE> edgesOf (RV vertex) {
-				IEdgeContainer<RV> ec;
-				ICollection<RE> edges;
+			public ICollection<TE> edgesOf (TV vertex) {
+				IEdgeContainer<TV> ec;
+				ICollection<TE> edges;
 				if (!container.AllowingMultipleEdges)
-					edges = new HashSet<RE> ();
+					edges = new HashSet<TE> ();
 				else
-					edges = new List<RE> ();
+					edges = new List<TE> ();
 				if (container.DataSet.TryGetValue (vertex, out ec)) {
-					foreach (RV v in ec.incoming)
-						edges.Add ((RE)container.EdgeFactory.newInstance (v, vertex));
-					foreach (RV v in ec.outgoing) {
+					foreach (TV v in ec.incoming)
+						edges.Add ((TE)container.EdgeFactory.newInstance (v, vertex));
+					foreach (TV v in ec.outgoing) {
 						if (!vertex.Equals (v))
-							edges.Add ((RE)container.EdgeFactory.newInstance (vertex, v));
+							edges.Add ((TE)container.EdgeFactory.newInstance (vertex, v));
 					}
 				}
 				return edges;
 			}
-			public IEnumerator<RE> iteratorEdgesOf (RV vertex) {
-				IEdgeContainer<RV> ec;
+			public IEnumerator<TE> iteratorEdgesOf (TV vertex) {
+				IEdgeContainer<TV> ec;
 				if (container.DataSet.TryGetValue (vertex, out ec)) {
-					foreach (RV v in ec.incoming)
-						yield return ((RE)container.EdgeFactory.newInstance (v, vertex));
-					foreach (RV v in ec.outgoing) {
+					foreach (TV v in ec.incoming)
+						yield return ((TE)container.EdgeFactory.newInstance (v, vertex));
+					foreach (TV v in ec.outgoing) {
 						if (!vertex.Equals (v))
-							yield return ((RE)container.EdgeFactory.newInstance (vertex, v));
+							yield return ((TE)container.EdgeFactory.newInstance (vertex, v));
 					}
 				}
 			}
-			public ICollection<RV> vertexSet () {
+			public ICollection<TV> vertexSet () {
 				return container.DataSet.Keys;
 			}
-			public void addIncomingEdge (RE e) {
+			public void addIncomingEdge (TE e) {
 				container.DataSet [e.Target].incoming.Add (e.Source); 
 				count_edges++;
 			}
-			public void addOutgoingEdge (RE e) { 
+			public void addOutgoingEdge (TE e) { 
 				container.DataSet [e.Source].outgoing.Add (e.Target);
 			}
-			public void removeIncomingEdge (RE e) { 
+			public void removeIncomingEdge (TE e) { 
 				container.DataSet [e.Target].incoming.Remove (e.Source);
 				count_edges--;
 			}
-			public void removeOutgoingEdge (RE e) { 
+			public void removeOutgoingEdge (TE e) { 
 				container.DataSet [e.Source].outgoing.Remove (e.Target); 
 			}
-			public void noSafeAdd(RE e){
+			public void noSafeAdd(TE e){
 				addOutgoingEdge (e);
 				addIncomingEdge (e);
 			}
-			public void noSafeAdd(RV source, RV target){
+			public void noSafeAdd(TV source, TV target){
 				container.DataSet [source].outgoing.Add (target);
 				container.DataSet [target].incoming.Add (source); 
 				count_edges++;
 			}
-			public void noSafeAdd(RV source, RV target, float weight){
+			public void noSafeAdd(TV source, TV target, float weight){
 				new  NotSupportedException ("Weight not Supported Exception!");
 			}
-			public ICollection<T> incoming<T>(RV vertex){
-				IEdgeContainer<RV> ec;
+			public ICollection<T> incoming<T>(TV vertex){
+				IEdgeContainer<TV> ec;
 				if (container.DataSet.TryGetValue (vertex, out ec))
 					return ((List<T>)ec.incoming).AsReadOnly();
 				return new List<T>().AsReadOnly();
 			}
-			public ICollection<T> outgoing<T>(RV vertex){
-				IEdgeContainer<RV> ec;
+			public ICollection<T> outgoing<T>(TV vertex){
+				IEdgeContainer<TV> ec;
 				if (container.DataSet.TryGetValue (vertex, out ec))
 					return ((List<T>)ec.outgoing).AsReadOnly();
 				return new List<T>().AsReadOnly();
 			}
-			public bool addVertex (RV vertex) {
+			public bool addVertex (TV vertex) {
 				if (container.DataSet.ContainsKey (vertex)) return false;
 				else { 
-					IEdgeContainer<RV> ec = new EdgeContainer<RV>(); ec.outgoing = new List<RV> (); ec.incoming = new List<RV> ();
+					IEdgeContainer<TV> ec = new EdgeContainer<TV>(); ec.outgoing = new List<TV> (); ec.incoming = new List<TV> ();
 					container.DataSet[vertex] = ec;
 					return true; 
 				}
 			}
-			public bool containsEdge(RE e){
+			public bool containsEdge(TE e){
 				return container.DataSet [e.Source].outgoing.Contains (e.Target);
 			}
-			public bool containsVertex (RV v){ 
+			public bool containsVertex (TV v){ 
 				return container.DataSet.ContainsKey (v); 
 			}
-			public bool removeVertex (RV v) { 
+			public bool removeVertex (TV v) { 
 				return container.DataSet.Remove (v);
 			}
 			public int countE() { return count_edges; }
 			public int countV() { return container.DataSet.Count; }
-			public int degreeOf(RV v) { 
-				IEdgeContainer<RV> ec; 
+			public int degreeOf(TV v) { 
+				IEdgeContainer<TV> ec; 
 				if (container.DataSet.TryGetValue (v, out ec)) 
 					return ec.outgoing.Count + ec.incoming.Count; 
 				return 0; 

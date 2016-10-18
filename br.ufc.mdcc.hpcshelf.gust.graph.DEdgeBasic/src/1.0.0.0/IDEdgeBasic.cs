@@ -8,7 +8,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic {
 		IDEdgeBasicInstance<V, int> DEdgeBasicInstance { get; }
 		IDEdgeBasicInstance<V, T> InstanceTFactory<T> (T s, T t, float w);
 	}
-	public interface IDEdgeBasicInstance<V, RV> : IDEdgeInstance<V, RV>, ICloneable where V: IDVertex{
+	public interface IDEdgeBasicInstance<V, TV> : IDEdgeInstance<V, TV>, ICloneable where V: IDVertex{
 	}
 //	public interface IRootDEdgeBasic<RV>: IRootDEdge<RV> {
 //	}

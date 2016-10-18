@@ -12,14 +12,14 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV {
 		IDataContainerKVInstance<V, E, int> DataContainerKVInstance { get; set; }
 		IDataContainerKVInstance<V, E, T> InstanceTFactory<T> (T i, T j, float w);
 	}
-	public interface IDataContainerKVInstance<V, E, RV> : IDataContainerInstance<V, E>, ICloneable 
+	public interface IDataContainerKVInstance<V, E, TV> : IDataContainerInstance<V, E>, ICloneable 
 		where V:IDVertexBasic 
 		where E:IDEdgeWeighted<V>  {
 
-		RV Vertex { get; set; }
-		IDEdgeWeightedInstance<V, RV> EdgeFactory { set; get; }
+		TV Vertex { get; set; }
+		IDEdgeWeightedInstance<V, TV> EdgeFactory { set; get; }
 
-		IDictionary<RV, IEdgeContainer<KeyValuePair<RV, float>>> DataSet { get; }
+		IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>> DataSet { get; }
 		void newDataSet (int size);
 	}
 }

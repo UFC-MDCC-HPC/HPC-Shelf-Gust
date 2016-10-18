@@ -49,29 +49,29 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl {
 	}
 
 	[Serializable]
-	public class IDEdgeWeightedInstanceImpl<V, RV> : IDEdgeWeightedInstance<V, RV> where V: IDVertex{
+	public class IDEdgeWeightedInstanceImpl<V, TV> : IDEdgeWeightedInstance<V, TV> where V: IDVertex{
 		public IDEdgeWeightedInstanceImpl(){}
-		public IDEdgeWeightedInstanceImpl(RV s, RV t, float w){
+		public IDEdgeWeightedInstanceImpl(TV s, TV t, float w){
 			this.source = s;
 			this.target = t;
 			this.weight = w;
 		}
 
 		#region IDEdgeWeightedInstance implementation
-		private RV source;
-		private RV target;
+		private TV source;
+		private TV target;
 		private float weight = 1.0f;
 
-		public RV Source { get { return source; } set { this.source = value; } }
-		public RV Target { get { return target; } set { this.target = value; } }
+		public TV Source { get { return source; } set { this.source = value; } }
+		public TV Target { get { return target; } set { this.target = value; } }
 		public float Weight { get { return weight; } set { this.weight = value; } }
 
 		public object ObjValue {
-			get { return new Tuple<RV,RV,float>(source,target,weight); }
+			get { return new Tuple<TV,TV,float>(source,target,weight); }
 			set { 
-				this.source = ((Tuple<RV,RV,float>)value).Item1;
-				this.target = ((Tuple<RV,RV,float>)value).Item2;
-				this.weight = ((Tuple<RV,RV,float>)value).Item3;
+				this.source = ((Tuple<TV,TV,float>)value).Item1;
+				this.target = ((Tuple<TV,TV,float>)value).Item2;
+				this.weight = ((Tuple<TV,TV,float>)value).Item3;
 			}
 		}
 		public override int GetHashCode () {
@@ -79,27 +79,27 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeWeightedImpl {
 		}
 		public override string ToString () { return CommonFunc.edgeToString(source.GetHashCode(),target.GetHashCode(),weight);}
 		public override bool Equals (object obj) {
-			if (typeof(IDEdgeWeightedInstance<V, RV>).IsAssignableFrom (obj.GetType ())) {
-				IDEdgeWeightedInstance<V, RV> o = (IDEdgeWeightedInstance<V, RV>)obj;
+			if (typeof(IDEdgeWeightedInstance<V, TV>).IsAssignableFrom (obj.GetType ())) {
+				IDEdgeWeightedInstance<V, TV> o = (IDEdgeWeightedInstance<V, TV>)obj;
 				if (o.Source.Equals(this.source) && o.Target.Equals(this.target))// && o.Weight.Value == this.Weight.Value)
 					return true;
 			}
 			return false;
 		}
-		public IDEdgeInstance<V,RV> newInstance () { return new IDEdgeWeightedInstanceImpl<V, RV> (); }
-		public IDEdgeInstance<V,RV> newInstance (RV s, RV t) { return new IDEdgeWeightedInstanceImpl<V, RV> (s,t, 1.0f); }
-		public IDEdgeInstance<V,RV> newInstance (RV s, RV t, float w) { return new IDEdgeWeightedInstanceImpl<V, RV> (s, t, w); }
+		public IDEdgeInstance<V,TV> newInstance () { return new IDEdgeWeightedInstanceImpl<V, TV> (); }
+		public IDEdgeInstance<V,TV> newInstance (TV s, TV t) { return new IDEdgeWeightedInstanceImpl<V, TV> (s,t, 1.0f); }
+		public IDEdgeInstance<V,TV> newInstance (TV s, TV t, float w) { return new IDEdgeWeightedInstanceImpl<V, TV> (s, t, w); }
 		#endregion
 
 		#region ICloneable implementation
 		public object Clone () {
-			IDEdgeWeightedInstance<V,RV> clone;
+			IDEdgeWeightedInstance<V,TV> clone;
 			Type[] types = this.GetType ().GenericTypeArguments;
 			if (typeof(ICloneable).IsAssignableFrom (types [1])) {
-				return new IDEdgeWeightedInstanceImpl<V, RV> ((RV)((ICloneable)this.Source).Clone (), (RV)((ICloneable)this.Target).Clone (), 1.0f);
+				return new IDEdgeWeightedInstanceImpl<V, TV> ((TV)((ICloneable)this.Source).Clone (), (TV)((ICloneable)this.Target).Clone (), 1.0f);
 			}
 			try {return this.MemberwiseClone(); } catch (NotSupportedException e) { }
-			clone = new IDEdgeWeightedInstanceImpl<V, RV> (source, target, 1.0f);
+			clone = new IDEdgeWeightedInstanceImpl<V, TV> (source, target, 1.0f);
 			return clone;
 		}
 		#endregion

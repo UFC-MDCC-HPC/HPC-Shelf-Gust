@@ -47,54 +47,54 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeBasicImpl {
 	}
 
 	[Serializable]
-	public class IDEdgeBasicInstanceImpl<V, RV> : IDEdgeBasicInstance<V, RV> where V: IDVertex{
+	public class IDEdgeBasicInstanceImpl<V, TV> : IDEdgeBasicInstance<V, TV> where V: IDVertex{
 		public IDEdgeBasicInstanceImpl(){}
-		public IDEdgeBasicInstanceImpl(RV s, RV t):this(){
+		public IDEdgeBasicInstanceImpl(TV s, TV t):this(){
 			this.source = s;
 			this.target = t;
 		}
-		public IDEdgeBasicInstanceImpl(RV s, RV t, float w):this(s, t){ }
+		public IDEdgeBasicInstanceImpl(TV s, TV t, float w):this(s, t){ }
 
 		#region IDEdgeBasicInstance implementation
-		private RV source;
-		private RV target;
+		private TV source;
+		private TV target;
 
-		public RV Source { get { return source; } set { this.source = value; } }
-		public RV Target { get { return target; } set { this.target = value; } }
+		public TV Source { get { return source; } set { this.source = value; } }
+		public TV Target { get { return target; } set { this.target = value; } }
 		public float Weight { get { return 1.0f; } }
 
 		public object ObjValue {
-			get { return new Tuple<RV,RV>(source,target); }
+			get { return new Tuple<TV,TV>(source,target); }
 			set { 
-				this.source = ((Tuple<RV,RV>)value).Item1;
-				this.target = ((Tuple<RV,RV>)value).Item2;
+				this.source = ((Tuple<TV,TV>)value).Item1;
+				this.target = ((Tuple<TV,TV>)value).Item2;
 			}
 		}
 		public override int GetHashCode () { return CommonFunc.pairingFunction (this.source.GetHashCode(), this.target.GetHashCode()); }
 		public override string ToString () { return CommonFunc.edgeToString(source.GetHashCode(),target.GetHashCode());}
 		public override bool Equals (object obj) {
-			if (typeof(IDEdgeBasicInstance<V, RV>).IsAssignableFrom (obj.GetType ())) {
-				IDEdgeBasicInstance<V, RV> o = (IDEdgeBasicInstance<V, RV>)obj;
+			if (typeof(IDEdgeBasicInstance<V, TV>).IsAssignableFrom (obj.GetType ())) {
+				IDEdgeBasicInstance<V, TV> o = (IDEdgeBasicInstance<V, TV>)obj;
 				if (o.Source.Equals(this.source) && o.Target.Equals(this.target))// && o.Weight == this.Weight)
 					return true;
 			}
 			return false;
 		}
 
-		public IDEdgeInstance<V,RV> newInstance () { return new IDEdgeBasicInstanceImpl<V, RV> (); }
-		public IDEdgeInstance<V,RV> newInstance (RV s, RV t) { return new IDEdgeBasicInstanceImpl<V, RV> (s,t); }
-		public IDEdgeInstance<V,RV> newInstance (RV s, RV t, float w) { return new IDEdgeBasicInstanceImpl<V, RV> (s, t, w); }
+		public IDEdgeInstance<V,TV> newInstance () { return new IDEdgeBasicInstanceImpl<V, TV> (); }
+		public IDEdgeInstance<V,TV> newInstance (TV s, TV t) { return new IDEdgeBasicInstanceImpl<V, TV> (s,t); }
+		public IDEdgeInstance<V,TV> newInstance (TV s, TV t, float w) { return new IDEdgeBasicInstanceImpl<V, TV> (s, t, w); }
 		#endregion
 
 		#region ICloneable implementation
 		public object Clone () {
-			IDEdgeBasicInstance<V,RV> clone;
+			IDEdgeBasicInstance<V,TV> clone;
 			Type[] types = this.GetType ().GenericTypeArguments;
 			if (typeof(ICloneable).IsAssignableFrom (types [1])) {
-				return new IDEdgeBasicInstanceImpl<V, RV> ((RV)((ICloneable)this.Source).Clone (), (RV)((ICloneable)this.Target).Clone ());
+				return new IDEdgeBasicInstanceImpl<V, TV> ((TV)((ICloneable)this.Source).Clone (), (TV)((ICloneable)this.Target).Clone ());
 			}
 			try {return this.MemberwiseClone(); } catch (NotSupportedException e) { }
-			clone = new IDEdgeBasicInstanceImpl<V, RV> (source, target);
+			clone = new IDEdgeBasicInstanceImpl<V, TV> (source, target);
 			return clone;
 		}
 		#endregion

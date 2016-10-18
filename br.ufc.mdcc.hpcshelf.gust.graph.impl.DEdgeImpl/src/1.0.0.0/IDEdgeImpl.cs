@@ -45,33 +45,33 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeImpl {
 	}
 
 	[Serializable]
-	public class IDEdgeInstanceImpl<V, RV> : IDEdgeInstance<V, RV> where V: IDVertex{
+	public class IDEdgeInstanceImpl<V, TV> : IDEdgeInstance<V, TV> where V: IDVertex{
 		public IDEdgeInstanceImpl(){}
-		public IDEdgeInstanceImpl(RV s, RV t):this(){
+		public IDEdgeInstanceImpl(TV s, TV t):this(){
 			this.source = s;
 			this.target = t;
 		}
-		public IDEdgeInstanceImpl(RV s, RV t, float w):this(s, t){ }
+		public IDEdgeInstanceImpl(TV s, TV t, float w):this(s, t){ }
 
 		#region IDEdgeInstance implementation
-		private RV source;
-		private RV target;
+		private TV source;
+		private TV target;
 
-		public RV Source { get { return source; } set { this.source = value; } }
-		public RV Target { get { return target; } set { this.target = value; } }
+		public TV Source { get { return source; } set { this.source = value; } }
+		public TV Target { get { return target; } set { this.target = value; } }
 		public float Weight { get { return 1.0f; } }
 
 		public object ObjValue {
-			get { return new Tuple<RV,RV>(source,target); }
+			get { return new Tuple<TV,TV>(source,target); }
 			set { 
-				this.source = ((Tuple<RV,RV>)value).Item1;
-				this.target = ((Tuple<RV,RV>)value).Item2;
+				this.source = ((Tuple<TV,TV>)value).Item1;
+				this.target = ((Tuple<TV,TV>)value).Item2;
 			}
 		}
 		public override string ToString () { return CommonFunc.edgeToString(source.GetHashCode (), target.GetHashCode ()); }
 		public override bool Equals (object obj) {
-			if (typeof(IDEdgeInstance<V, RV>).IsAssignableFrom (obj.GetType ())) {
-				IDEdgeInstance<V, RV> o = (IDEdgeInstance<V,RV>)obj;
+			if (typeof(IDEdgeInstance<V, TV>).IsAssignableFrom (obj.GetType ())) {
+				IDEdgeInstance<V, TV> o = (IDEdgeInstance<V,TV>)obj;
 				if (o.Source.Equals(this.source) && o.Target.Equals(this.target))
 					return true;
 			}
@@ -79,20 +79,20 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DEdgeImpl {
 		}
 		public override int GetHashCode () { return CommonFunc.pairingFunction (this.source.GetHashCode(), this.target.GetHashCode()); }
 
-		public IDEdgeInstance<V,RV> newInstance () { return new IDEdgeInstanceImpl<V, RV> (); }
-		public IDEdgeInstance<V,RV> newInstance (RV s, RV t) { return new IDEdgeInstanceImpl<V, RV> (s,t); }
-		public IDEdgeInstance<V,RV> newInstance (RV s, RV t, float w) { return new IDEdgeInstanceImpl<V, RV> (s, t, w); }
+		public IDEdgeInstance<V,TV> newInstance () { return new IDEdgeInstanceImpl<V, TV> (); }
+		public IDEdgeInstance<V,TV> newInstance (TV s, TV t) { return new IDEdgeInstanceImpl<V, TV> (s,t); }
+		public IDEdgeInstance<V,TV> newInstance (TV s, TV t, float w) { return new IDEdgeInstanceImpl<V, TV> (s, t, w); }
 		#endregion
 
 		#region ICloneable implementation
 		public object Clone () {
-			IDEdgeInstance<V,RV> clone;
+			IDEdgeInstance<V,TV> clone;
 			Type[] types = this.GetType ().GenericTypeArguments;
 			if (typeof(ICloneable).IsAssignableFrom (types [1])) {
-				return new IDEdgeInstanceImpl<V, RV> ((RV)((ICloneable)this.Source).Clone (), (RV)((ICloneable)this.Target).Clone ());
+				return new IDEdgeInstanceImpl<V, TV> ((TV)((ICloneable)this.Source).Clone (), (TV)((ICloneable)this.Target).Clone ());
 			}
 			try {return this.MemberwiseClone(); } catch (NotSupportedException e) { }
-			clone = new IDEdgeInstanceImpl<V, RV> (source, target);
+			clone = new IDEdgeInstanceImpl<V, TV> (source, target);
 			return clone;
 		}
 		#endregion
