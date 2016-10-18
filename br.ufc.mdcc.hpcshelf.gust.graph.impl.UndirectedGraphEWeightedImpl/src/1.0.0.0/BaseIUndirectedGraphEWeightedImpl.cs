@@ -4,11 +4,11 @@ using System;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;
-using br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic;
-using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
+using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
+using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
-using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted;
+using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE;
 using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;
 
@@ -16,8 +16,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphEWeightedImpl
 {
 	public abstract class BaseIUndirectedGraphEWeightedImpl: Computation, BaseIUndirectedGraph<CTN, V, E>
 		where CTN:IDataContainerE<V, E>
-		where V:IDVertexBasic
-		where E:IDEdgeWeighted<V>
+		where V:IVertexBasic
+		where E:IEdgeWeighted<V>
 	{
 		private E edgeFactory = default(E);
 

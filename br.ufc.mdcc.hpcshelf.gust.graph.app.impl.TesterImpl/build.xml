@@ -15,8 +15,8 @@
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.app.TesterContext/bin/1.0.0.0/ITesterContext.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/bin/1.0.0.0/IDirectedGraph.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE/bin/1.0.0.0/IDataContainerE.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0/IDVertexBasic.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/bin/1.0.0.0/IDEdgeBasic.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertexBasic.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/bin/1.0.0.0/IEdgeBasic.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.Graph/bin/1.0.0.0/IGraph.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.app.Tester/bin/1.0.0.0/BaseITester.dll"/>
         <include/>

@@ -12,10 +12,10 @@
         <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerKVImpl/src/1.0.0.0/BaseIDataContainerKVImpl.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0/IDVertexBasic.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/bin/1.0.0.0/IDEdgeWeighted.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertexBasic.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/bin/1.0.0.0/IEdgeWeighted.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV/bin/1.0.0.0/BaseIDataContainerKV.dll"/>
         <include/>
       </references>
@@ -25,8 +25,8 @@
         <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerKVImpl/src/1.0.0.0/IDataContainerKVImpl.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0/IDVertexBasic.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/bin/1.0.0.0/IDEdgeWeighted.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertexBasic.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/bin/1.0.0.0/IEdgeWeighted.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerKVImpl/bin/1.0.0.0/BaseIDataContainerKVImpl.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV/bin/1.0.0.0/IDataContainerKV.dll"/>
         <include/>

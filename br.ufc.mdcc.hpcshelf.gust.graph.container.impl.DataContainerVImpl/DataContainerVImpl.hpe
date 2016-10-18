@@ -11,7 +11,7 @@
         </visualDescription>
         <parameter formFieldId="edge_type" varName="E"/>
         <parameter formFieldId="vertex_type" varName="V"/>
-        <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.hpe" multiple="false" name="DVertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+        <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/VertexBasic.hpe" multiple="false" name="VertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
           <visualDescription h="60" w="149" x="96" y="624">
             <color b="255" g="255" r="255"/>
           </visualDescription>
@@ -19,7 +19,7 @@
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/DEdgeBasic.hpe" multiple="false" name="DEdgeBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+        <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/EdgeBasic.hpe" multiple="false" name="EdgeBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
           <visualDescription h="60" w="190" x="420" y="644">
             <color b="255" g="255" r="255"/>
           </visualDescription>
@@ -39,7 +39,7 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent localRef="e" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/DEdgeBasic.hpe" multiple="false" name="DEdgeBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+    <innerComponent localRef="e" location="br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/EdgeBasic.hpe" multiple="false" name="EdgeBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
       <visualDescription h="60" w="190" x="420" y="644">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -48,7 +48,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="v" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.hpe" multiple="false" name="DVertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+    <innerComponent localRef="v" location="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/VertexBasic.hpe" multiple="false" name="VertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
       <visualDescription h="60" w="149" x="96" y="624">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -60,16 +60,16 @@
     <supplyParameter cRef="e" direct="true" varName="E"/>
     <interface iRef="IDataContainerVImpl" nArgs="2">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataContainerVImpl: DataStructure, BaseIDataContainerV&lt;V, E>&#xA;&#x9;&#x9;where V:IDVertexBasic&#xA;&#x9;&#x9;where E:IDEdgeBasic&lt;V>&#xA;&#x9;{&#xA;&#x9;&#x9;private E edgeFactory = default(E);&#xA;&#xA;&#x9;&#x9;public E EdgeFactory&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.edgeFactory == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.edgeFactory = (E) Services.getPort(&quot;edgeFactory&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.edgeFactory;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private V vertex = default(V);&#xA;&#xA;&#x9;&#x9;public V Vertex&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.vertex == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.vertex = (V) Services.getPort(&quot;vertex&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.vertex;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataContainerVImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl/bin/1.0.0.0/BaseIDataContainerVImpl.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0/IDVertexBasic.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/bin/1.0.0.0/IDEdgeBasic.dll</dependency>
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataContainerVImpl: DataStructure, BaseIDataContainerV&lt;V, E>&#xA;&#x9;&#x9;where V:IVertexBasic&#xA;&#x9;&#x9;where E:IEdgeBasic&lt;V>&#xA;&#x9;{&#xA;&#x9;&#x9;private E edgeFactory = default(E);&#xA;&#xA;&#x9;&#x9;public E EdgeFactory&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.edgeFactory == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.edgeFactory = (E) Services.getPort(&quot;edgeFactory&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.edgeFactory;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private V vertex = default(V);&#xA;&#xA;&#x9;&#x9;public V Vertex&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.vertex == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.vertex = (V) Services.getPort(&quot;vertex&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.vertex;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataContainerVImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl/bin/1.0.0.0/BaseIDataContainerVImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertexBasic.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/bin/1.0.0.0/IEdgeBasic.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV/bin/1.0.0.0/BaseIDataContainerV.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl&#xA;{&#xA;&#x9;public class IDataContainerVImpl : BaseIDataContainerVImpl, IDataContainerV&lt;V, E>&#xA;where V:IDVertexBasic&#xA;where E:IDEdgeBasic&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="IDataContainerVImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl/bin/1.0.0.0/IDataContainerVImpl.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0/IDVertexBasic.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic/bin/1.0.0.0/IDEdgeBasic.dll</dependency>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl&#xA;{&#xA;&#x9;public class IDataContainerVImpl : BaseIDataContainerVImpl, IDataContainerV&lt;V, E>&#xA;where V:IVertexBasic&#xA;where E:IEdgeBasic&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="IDataContainerVImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl/bin/1.0.0.0/IDataContainerVImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertexBasic.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/bin/1.0.0.0/IEdgeBasic.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl/bin/1.0.0.0/BaseIDataContainerVImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV/bin/1.0.0.0/IDataContainerV.dll</dependency>
         </file>
@@ -77,8 +77,8 @@
       <visualDescription h="40" w="290" x="163" y="305">
         <color b="52" g="226" r="138"/>
       </visualDescription>
-      <parameter iname="IDVertexBasic" parid="vertex_type" uname="data" varid="V"/>
-      <parameter iname="IDEdgeBasic" order="0" parid="edge_type" uname="data" varid="E"/>
+      <parameter iname="IVertexBasic" parid="vertex_type" uname="data" varid="V"/>
+      <parameter iname="IEdgeBasic" order="0" parid="edge_type" uname="data" varid="E"/>
     </interface>
     <unit facet="0" iRef="IDataContainerVImpl" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
       <super cRef="base" uRef="data"/>

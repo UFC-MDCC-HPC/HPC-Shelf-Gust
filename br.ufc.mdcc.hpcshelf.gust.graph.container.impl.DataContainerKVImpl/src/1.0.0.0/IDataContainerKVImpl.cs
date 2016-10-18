@@ -2,26 +2,26 @@ using System;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic;
-using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted;
+using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
+using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;
 
-using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;
-using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;
+using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
 using System.Collections.Generic;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerKVImpl {
 	public class IDataContainerKVImpl<V, E> : BaseIDataContainerKVImpl<V, E>, IDataContainerKV<V, E> 
-		where V:IDVertexBasic 
-		where E:IDEdgeWeighted<V> {
+		where V:IVertexBasic 
+		where E:IEdgeWeighted<V> {
 		public IDataContainerKVImpl(){ }
 		override public void after_initialize () { 
 			newInstance (); 
 		}
 		public object newInstance () {
-			IDVertexBasicInstance v = (IDVertexBasicInstance) this.Vertex.newInstance ();
-			IDEdgeWeightedInstance<V, int> e = (IDEdgeWeightedInstance<V, int>)this.EdgeFactory.newInstance ();
+			IVertexBasicInstance v = (IVertexBasicInstance) this.Vertex.newInstance ();
+			IEdgeWeightedInstance<V, int> e = (IEdgeWeightedInstance<V, int>)this.EdgeFactory.newInstance ();
 			instance = new IDataContainerKVInstanceImpl<V, E, int> (v.Id, e, Rank);
 			return instance;
 		}
@@ -43,7 +43,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerKVImpl {
 			}
 		}
 		public IDataContainerKVInstance<V, E, T> InstanceTFactory<T> (T i, T j, float w) {
-			IDEdgeWeightedInstance<V, T> e = (IDEdgeWeightedInstance<V, T>)this.EdgeFactory.InstanceTFactory<T>(i,j,w);
+			IEdgeWeightedInstance<V, T> e = (IEdgeWeightedInstance<V, T>)this.EdgeFactory.InstanceTFactory<T>(i,j,w);
 			IDataContainerKVInstance<V, E, T> instanceT = new IDataContainerKVInstanceImpl<V, E, T> (e.Source, e, Rank); 
 			return instanceT;
 		}
@@ -51,11 +51,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerKVImpl {
 
 	[Serializable]
 	public class IDataContainerKVInstanceImpl<V, E, TV> : IDataContainerKVInstance<V, E, TV> 
-		where V: IDVertexBasic 
-		where E:IDEdgeWeighted<V> {
+		where V: IVertexBasic 
+		where E:IEdgeWeighted<V> {
 
 		public IDataContainerKVInstanceImpl(){}
-		public IDataContainerKVInstanceImpl(TV v, IDEdgeWeightedInstance<V, TV> e, int part){
+		public IDataContainerKVInstanceImpl(TV v, IEdgeWeightedInstance<V, TV> e, int part){
 			this.vertex = v;
 			this.edgeFactory = e;
 			rankPartition = part;
@@ -68,7 +68,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerKVImpl {
 				clone.Vertex = (TV)((ICloneable)vertex).Clone ();
 			else
 				clone.Vertex = vertex;
-			clone.EdgeFactory = (IDEdgeWeightedInstance<V, TV>)edgeFactory.Clone ();
+			clone.EdgeFactory = (IEdgeWeightedInstance<V, TV>)edgeFactory.Clone ();
 			clone.RankPartition = rankPartition;
 			clone.AllowingLoops = _allowingLoops;
 			clone.AllowingMultipleEdges = _allowingMultipleEdges;
@@ -79,14 +79,14 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerKVImpl {
 
 		#region IDataContainerKVInstance implementation
 		private TV vertex;
-		private IDEdgeWeightedInstance<V, TV> edgeFactory;
+		private IEdgeWeightedInstance<V, TV> edgeFactory;
 		private int rankPartition = 0;
 		private bool _allowingLoops = true;
 		private bool _allowingMultipleEdges = false; 
 		private IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>> dataSet; 
 
 		public TV Vertex { get { return vertex; } set { this.vertex = (TV)value; } }
-		public IDEdgeWeightedInstance<V, TV> EdgeFactory { get { return edgeFactory; } set { this.edgeFactory = (IDEdgeWeightedInstance<V, TV>)value; } }
+		public IEdgeWeightedInstance<V, TV> EdgeFactory { get { return edgeFactory; } set { this.edgeFactory = (IEdgeWeightedInstance<V, TV>)value; } }
 		public int RankPartition { get { return rankPartition; } set { this.rankPartition = value; } }
 		public bool AllowingLoops{ get { return _allowingLoops; } set{ _allowingLoops = value; } }
 		public bool AllowingMultipleEdges{ get { return _allowingMultipleEdges; } set{ _allowingMultipleEdges = value; } }
@@ -96,14 +96,14 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerKVImpl {
 		}
 
 		public object ObjValue {
-			get { return new Tuple<TV,IDEdgeWeightedInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>>>(vertex,edgeFactory,rankPartition,_allowingLoops,_allowingMultipleEdges,dataSet); }
+			get { return new Tuple<TV,IEdgeWeightedInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>>>(vertex,edgeFactory,rankPartition,_allowingLoops,_allowingMultipleEdges,dataSet); }
 			set { 
-				this.vertex =                 ((Tuple<TV,IDEdgeWeightedInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>>>)value).Item1;
-				this.edgeFactory =            ((Tuple<TV,IDEdgeWeightedInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>>>)value).Item2;
-				this.rankPartition =          ((Tuple<TV,IDEdgeWeightedInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>>>)value).Item3;
-				this._allowingLoops =         ((Tuple<TV,IDEdgeWeightedInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>>>)value).Item4;
-				this._allowingMultipleEdges = ((Tuple<TV,IDEdgeWeightedInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>>>)value).Item5;
-				this.dataSet =            ((Tuple<TV,IDEdgeWeightedInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>>>)value).Item6;
+				this.vertex =                 ((Tuple<TV,IEdgeWeightedInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>>>)value).Item1;
+				this.edgeFactory =            ((Tuple<TV,IEdgeWeightedInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>>>)value).Item2;
+				this.rankPartition =          ((Tuple<TV,IEdgeWeightedInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>>>)value).Item3;
+				this._allowingLoops =         ((Tuple<TV,IEdgeWeightedInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>>>)value).Item4;
+				this._allowingMultipleEdges = ((Tuple<TV,IEdgeWeightedInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>>>)value).Item5;
+				this.dataSet =            ((Tuple<TV,IEdgeWeightedInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>>>)value).Item6;
 
 			}
 		}

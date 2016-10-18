@@ -18,7 +18,7 @@
           </visualDescription>
           <parameter formFieldId="edge_type" varName="E"/>
           <parameter formFieldId="vertex_type" varName="V"/>
-          <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.hpe" multiple="false" name="DVertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+          <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/VertexBasic.hpe" multiple="false" name="VertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
             <visualDescription h="60" w="149" x="62" y="671">
               <color b="255" g="255" r="255"/>
             </visualDescription>
@@ -26,7 +26,7 @@
               <visualDescription h="20" w="20" x="5" y="2"/>
             </unitBounds>
           </port>
-          <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/DEdgeWeighted.hpe" multiple="false" name="DEdgeWeighted" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+          <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/EdgeWeighted.hpe" multiple="false" name="EdgeWeighted" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
             <visualDescription h="60" w="190" x="487" y="646">
               <color b="255" g="255" r="255"/>
             </visualDescription>
@@ -39,7 +39,7 @@
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.hpe" multiple="false" name="DVertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+        <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/VertexBasic.hpe" multiple="false" name="VertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
           <visualDescription h="60" w="149" x="62" y="671">
             <color b="255" g="255" r="255"/>
           </visualDescription>
@@ -47,7 +47,7 @@
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/DEdgeWeighted.hpe" multiple="false" name="DEdgeWeighted" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+        <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/EdgeWeighted.hpe" multiple="false" name="EdgeWeighted" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
           <visualDescription h="60" w="190" x="487" y="646">
             <color b="255" g="255" r="255"/>
           </visualDescription>
@@ -67,7 +67,7 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent localRef="v" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.hpe" multiple="false" name="DVertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+    <innerComponent localRef="v" location="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/VertexBasic.hpe" multiple="false" name="VertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
       <visualDescription h="60" w="149" x="62" y="671">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -75,7 +75,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="e" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/DEdgeWeighted.hpe" multiple="false" name="DEdgeWeighted" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+    <innerComponent localRef="e" location="br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/EdgeWeighted.hpe" multiple="false" name="EdgeWeighted" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
       <visualDescription h="60" w="190" x="487" y="646">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -90,7 +90,7 @@
       </visualDescription>
       <parameter formFieldId="edge_type" varName="E"/>
       <parameter formFieldId="vertex_type" varName="V"/>
-      <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/DVertexBasic.hpe" multiple="false" name="DVertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+      <port localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/VertexBasic.hpe" multiple="false" name="VertexBasic" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
         <visualDescription h="60" w="149" x="62" y="671">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -98,7 +98,7 @@
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/DEdgeWeighted.hpe" multiple="false" name="DEdgeWeighted" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+      <port localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/EdgeWeighted.hpe" multiple="false" name="EdgeWeighted" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
         <visualDescription h="60" w="190" x="487" y="646">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -116,19 +116,19 @@
     <supplyParameter cRef="ctn" direct="true" varName="CTN"/>
     <interface iRef="IUndirectedGraphEWeightedImpl" nArgs="3">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphEWeightedImpl &#xA;{&#xA;&#x9;public abstract class BaseIUndirectedGraphEWeightedImpl: Computation, BaseIUndirectedGraph&lt;CTN, V, E>&#xA;&#x9;&#x9;where CTN:IDataContainerE&lt;V, E>&#xA;&#x9;&#x9;where V:IDVertexBasic&#xA;&#x9;&#x9;where E:IDEdgeWeighted&lt;V>&#xA;&#x9;{&#xA;&#x9;&#x9;private E edgeFactory = default(E);&#xA;&#xA;&#x9;&#x9;public E EdgeFactory&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.edgeFactory == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.edgeFactory = (E) Services.getPort(&quot;edgeFactory&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.edgeFactory;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private V vertex = default(V);&#xA;&#xA;&#x9;&#x9;public V Vertex&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.vertex == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.vertex = (V) Services.getPort(&quot;vertex&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.vertex;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private CTN dataContainer = default(CTN);&#xA;&#xA;&#x9;&#x9;public CTN DataContainer&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.dataContainer == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.dataContainer = (CTN) Services.getPort(&quot;dataContainer&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.dataContainer;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIUndirectedGraphEWeightedImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphEWeightedImpl/bin/1.0.0.0/BaseIUndirectedGraphEWeightedImpl.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdge/bin/1.0.0.0/IDEdge.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0/IDVertexBasic.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertex/bin/1.0.0.0/IDVertex.dll</dependency>
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphEWeightedImpl &#xA;{&#xA;&#x9;public abstract class BaseIUndirectedGraphEWeightedImpl: Computation, BaseIUndirectedGraph&lt;CTN, V, E>&#xA;&#x9;&#x9;where CTN:IDataContainerE&lt;V, E>&#xA;&#x9;&#x9;where V:IVertexBasic&#xA;&#x9;&#x9;where E:IEdgeWeighted&lt;V>&#xA;&#x9;{&#xA;&#x9;&#x9;private E edgeFactory = default(E);&#xA;&#xA;&#x9;&#x9;public E EdgeFactory&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.edgeFactory == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.edgeFactory = (E) Services.getPort(&quot;edgeFactory&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.edgeFactory;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private V vertex = default(V);&#xA;&#xA;&#x9;&#x9;public V Vertex&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.vertex == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.vertex = (V) Services.getPort(&quot;vertex&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.vertex;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private CTN dataContainer = default(CTN);&#xA;&#xA;&#x9;&#x9;public CTN DataContainer&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.dataContainer == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.dataContainer = (CTN) Services.getPort(&quot;dataContainer&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.dataContainer;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIUndirectedGraphEWeightedImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphEWeightedImpl/bin/1.0.0.0/BaseIUndirectedGraphEWeightedImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertexBasic.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/bin/1.0.0.0/IDataContainer.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/bin/1.0.0.0/IDEdgeWeighted.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/bin/1.0.0.0/IEdgeWeighted.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE/bin/1.0.0.0/IDataContainerE.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph/bin/1.0.0.0/BaseIUndirectedGraph.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphEWeightedImpl&#xA;{&#xA;&#x9;public class IUndirectedGraphEWeightedImpl : BaseIUndirectedGraphEWeightedImpl, IUndirectedGraph&lt;CTN, V, E>&#xA;where CTN:IDataContainerE&lt;V, E>&#xA;where V:IDVertexBasic&#xA;where E:IDEdgeWeighted&lt;V>&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IUndirectedGraphEWeightedImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphEWeightedImpl/bin/1.0.0.0/IUndirectedGraphEWeightedImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphEWeightedImpl&#xA;{&#xA;&#x9;public class IUndirectedGraphEWeightedImpl : BaseIUndirectedGraphEWeightedImpl, IUndirectedGraph&lt;CTN, V, E>&#xA;where CTN:IDataContainerE&lt;V, E>&#xA;where V:IVertexBasic&#xA;where E:IEdgeWeighted&lt;V>&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IUndirectedGraphEWeightedImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphEWeightedImpl/bin/1.0.0.0/IUndirectedGraphEWeightedImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE/bin/1.0.0.0/IDataContainerE.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic/bin/1.0.0.0/IDVertexBasic.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted/bin/1.0.0.0/IDEdgeWeighted.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertexBasic.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/bin/1.0.0.0/IEdgeWeighted.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphEWeightedImpl/bin/1.0.0.0/BaseIUndirectedGraphEWeightedImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph/bin/1.0.0.0/IUndirectedGraph.dll</dependency>
         </file>
@@ -137,8 +137,8 @@
         <color b="207" g="159" r="114"/>
       </visualDescription>
       <parameter iname="IDataContainerE" order="2" parid="container" uname="data" varid="CTN"/>
-      <parameter iname="IDVertexBasic" order="1" parid="vertex_type" uname="data" varid="V"/>
-      <parameter iname="IDEdgeWeighted" order="0" parid="edge_type" uname="data" varid="E"/>
+      <parameter iname="IVertexBasic" order="1" parid="vertex_type" uname="data" varid="V"/>
+      <parameter iname="IEdgeWeighted" order="0" parid="edge_type" uname="data" varid="E"/>
       <action id="main">
         <protocol/>
       </action>

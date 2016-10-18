@@ -48,13 +48,13 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.DEdge\br.ufc.mdcc.hpcshelf.gust.graph.DEdge\br.ufc.mdcc.hpcshelf.gust.graph.DEdge.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.Edge\br.ufc.mdcc.hpcshelf.gust.graph.Edge\br.ufc.mdcc.hpcshelf.gust.graph.Edge.csproj">
       <Project>{CE5F1F57-695B-46ED-98C1-6F6737A76CB9}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.gust.graph.DEdge</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.Edge</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.DVertex\br.ufc.mdcc.hpcshelf.gust.graph.DVertex\br.ufc.mdcc.hpcshelf.gust.graph.DVertex.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.Vertex\br.ufc.mdcc.hpcshelf.gust.graph.Vertex\br.ufc.mdcc.hpcshelf.gust.graph.Vertex.csproj">
       <Project>{B53D1E64-E50C-4BCD-A705-EDE7AEC76D9A}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.gust.graph.DVertex</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.Vertex</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.Graph\br.ufc.mdcc.hpcshelf.gust.graph.Graph\br.ufc.mdcc.hpcshelf.gust.graph.Graph.csproj">
       <Project>{F648AF83-CBB9-4742-AA9F-F5D5287833B8}</Project>

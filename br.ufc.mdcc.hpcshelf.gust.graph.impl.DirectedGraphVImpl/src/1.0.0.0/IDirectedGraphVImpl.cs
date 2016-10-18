@@ -4,8 +4,8 @@ using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
-using br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic;
-using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic;
+using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
+using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;
 using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;
 using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
 using System;
@@ -15,19 +15,19 @@ using System.Linq;
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 	public class IDirectedGraphVImpl<CTN, V, E> : BaseIDirectedGraphVImpl<CTN, V, E>, IDirectedGraph<CTN, V, E>
 		where CTN:IDataContainerV<V, E>
-		where V:IDVertexBasic
-		where E:IDEdgeBasic<V> {
+		where V:IVertexBasic
+		where E:IEdgeBasic<V> {
 
 		public override void main() {
 		}
-		public IGraphHelper<V, E, T, IDEdgeBasicInstance<V, T>> InstanceTFactoryHelper<T>(T i, T j){
-			return new IGraphHelperVImpl<V, E, T, IDEdgeBasicInstance<V, T>> (DataContainer.InstanceTFactory<T>(i, j));		
+		public IGraphHelper<V, E, T, IEdgeBasicInstance<V, T>> InstanceTFactoryHelper<T>(T i, T j){
+			return new IGraphHelperVImpl<V, E, T, IEdgeBasicInstance<V, T>> (DataContainer.InstanceTFactory<T>(i, j));		
 		}
-		public IGraphHelper<V, E, int, IDEdgeBasicInstance<V, int>> createDefaultHelper(){
-			return new IGraphHelperVImpl<V, E, int, IDEdgeBasicInstance<V, int>> (DataContainer.DataContainerVInstance);	
+		public IGraphHelper<V, E, int, IEdgeBasicInstance<V, int>> createDefaultHelper(){
+			return new IGraphHelperVImpl<V, E, int, IEdgeBasicInstance<V, int>> (DataContainer.DataContainerVInstance);	
 		}
 
-		public class DirectedGraphV<V, E, TV, TE> where V:IDVertexBasic  where E:IDEdgeBasic<V> where TE: IDEdgeBasicInstance<V, TV> {
+		public class DirectedGraphV<V, E, TV, TE> where V:IVertexBasic  where E:IEdgeBasic<V> where TE: IEdgeBasicInstance<V, TV> {
 
 			public IGraphHelperV<V, E, TV, TE> delegator;
 
@@ -298,13 +298,13 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 			}
 		}
 		public interface IGraphHelperV<V, E, TV, TE>: IGraphHelper<V, E, TV, TE> 
-			where V:IDVertexBasic where E:IDEdgeBasic<V> where TE: IDEdgeBasicInstance<V, TV> {
+			where V:IVertexBasic where E:IEdgeBasic<V> where TE: IEdgeBasicInstance<V, TV> {
 			IDataContainerVInstance<V, E, TV> Container { get; set; }
 		}
 		internal class IGraphHelperVImpl<V, E, TV, TE>: IGraphHelperV<V, E, TV, TE> 
-			where V:IDVertexBasic 
-			where E:IDEdgeBasic<V>
-			where TE: IDEdgeBasicInstance<V, TV> {
+			where V:IVertexBasic 
+			where E:IEdgeBasic<V>
+			where TE: IEdgeBasicInstance<V, TV> {
 
 			private int count_edges = 0;
 			private IDataContainerVInstance<V, E, TV> container;

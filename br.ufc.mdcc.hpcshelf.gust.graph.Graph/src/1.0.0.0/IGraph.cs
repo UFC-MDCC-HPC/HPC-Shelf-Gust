@@ -1,7 +1,7 @@
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
-using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;
-using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;
+using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using System;
 using System.Collections.Generic;
 
@@ -9,14 +9,14 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.Graph
 {
 	public interface IGraph<CTN, V, E> : BaseIGraph<CTN, V, E>
 		where CTN:IDataContainer<V, E>
-		where V:IDVertex
-		where E:IDEdge<V>
+		where V:IVertex
+		where E:IEdge<V>
 	{
 	}
 	public interface IGraphHelper<V, E, TV, TE> 
-		where V:IDVertex
-		where E:IDEdge<V> 
-		where TE: IDEdgeInstance<V, TV>{
+		where V:IVertex
+		where E:IEdge<V> 
+		where TE: IEdgeInstance<V, TV>{
 		IEnumerator<TE> edgeSet ();
 		ICollection<TE> edgesOf (TV vertex);
 		IEnumerator<TE> iteratorEdgesOf (TV vertex);

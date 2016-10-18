@@ -2,26 +2,26 @@ using System;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic;
-using br.ufc.mdcc.hpcshelf.gust.graph.DEdgeBasic;
+using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
+using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;
 
-using br.ufc.mdcc.hpcshelf.gust.graph.DVertex;
-using br.ufc.mdcc.hpcshelf.gust.graph.DEdge;
+using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
 using System.Collections.Generic;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl {
 	public class IDataContainerVImpl<V, E> : BaseIDataContainerVImpl<V, E>, IDataContainerV<V, E> 
-		where V:IDVertexBasic 
-		where E:IDEdgeBasic<V> {
+		where V:IVertexBasic 
+		where E:IEdgeBasic<V> {
 		public IDataContainerVImpl(){ }
 		override public void after_initialize () { 
 			newInstance (); 
 		}
 		public object newInstance () {
-			IDVertexBasicInstance v = (IDVertexBasicInstance) this.Vertex.newInstance ();
-			IDEdgeBasicInstance<V, int> e = (IDEdgeBasicInstance<V, int>)this.EdgeFactory.newInstance ();
+			IVertexBasicInstance v = (IVertexBasicInstance) this.Vertex.newInstance ();
+			IEdgeBasicInstance<V, int> e = (IEdgeBasicInstance<V, int>)this.EdgeFactory.newInstance ();
 			instance = new IDataContainerVInstanceImpl<V, E, int> (v.Id, e, Rank);
 			return instance;
 		}
@@ -43,7 +43,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl {
 			}
 		}
 		public IDataContainerVInstance<V, E, T> InstanceTFactory<T> (T i, T j) {
-			IDEdgeBasicInstance<V, T> e = (IDEdgeBasicInstance<V, T>)this.EdgeFactory.InstanceTFactory<T>(i,j,1.0f);
+			IEdgeBasicInstance<V, T> e = (IEdgeBasicInstance<V, T>)this.EdgeFactory.InstanceTFactory<T>(i,j,1.0f);
 			IDataContainerVInstance<V, E, T> instanceT = new IDataContainerVInstanceImpl<V, E, T> (e.Source, e, Rank); 
 			return instanceT;
 		}
@@ -51,11 +51,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl {
 
 	[Serializable]
 	public class IDataContainerVInstanceImpl<V, E, TV> : IDataContainerVInstance<V, E, TV> 
-		where V: IDVertexBasic 
-		where E:IDEdgeBasic<V> {
+		where V: IVertexBasic 
+		where E:IEdgeBasic<V> {
 
 		public IDataContainerVInstanceImpl(){}
-		public IDataContainerVInstanceImpl(TV v, IDEdgeBasicInstance<V, TV> e, int part){
+		public IDataContainerVInstanceImpl(TV v, IEdgeBasicInstance<V, TV> e, int part){
 			this.vertex = v;
 			this.edgeFactory = e;
 			rankPartition = part;
@@ -68,7 +68,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl {
 				clone.Vertex = (TV)((ICloneable)vertex).Clone ();
 			else
 				clone.Vertex = vertex;
-			clone.EdgeFactory = (IDEdgeBasicInstance<V, TV>)edgeFactory.Clone ();
+			clone.EdgeFactory = (IEdgeBasicInstance<V, TV>)edgeFactory.Clone ();
 			clone.RankPartition = rankPartition;
 			clone.AllowingLoops = _allowingLoops;
 			clone.AllowingMultipleEdges = _allowingMultipleEdges;
@@ -79,14 +79,14 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl {
 
 		#region IDataContainerVInstance implementation
 		private TV vertex;
-		private IDEdgeBasicInstance<V, TV> edgeFactory;
+		private IEdgeBasicInstance<V, TV> edgeFactory;
 		private int rankPartition = 0;
 		private bool _allowingLoops = true;
 		private bool _allowingMultipleEdges = false; 
 		private IDictionary<TV, IEdgeContainer<TV>> dataSet; 
 
 		public TV Vertex { get { return vertex; } set { this.vertex = (TV)value; } }
-		public IDEdgeBasicInstance<V, TV> EdgeFactory { get { return edgeFactory; } set { this.edgeFactory = (IDEdgeBasicInstance<V, TV>)value; } }
+		public IEdgeBasicInstance<V, TV> EdgeFactory { get { return edgeFactory; } set { this.edgeFactory = (IEdgeBasicInstance<V, TV>)value; } }
 		public int RankPartition { get { return rankPartition; } set { this.rankPartition = value; } }
 		public bool AllowingLoops{ get { return _allowingLoops; } set{ _allowingLoops = value; } }
 		public bool AllowingMultipleEdges{ get { return _allowingMultipleEdges; } set{ _allowingMultipleEdges = value; } }
@@ -96,14 +96,14 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl {
 		}
 
 		public object ObjValue {
-			get { return new Tuple<TV,IDEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>(vertex,edgeFactory,rankPartition,_allowingLoops,_allowingMultipleEdges,dataSet); }
+			get { return new Tuple<TV,IEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>(vertex,edgeFactory,rankPartition,_allowingLoops,_allowingMultipleEdges,dataSet); }
 			set { 
-				this.vertex =                 ((Tuple<TV,IDEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item1;
-				this.edgeFactory =            ((Tuple<TV,IDEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item2;
-				this.rankPartition =          ((Tuple<TV,IDEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item3;
-				this._allowingLoops =         ((Tuple<TV,IDEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item4;
-				this._allowingMultipleEdges = ((Tuple<TV,IDEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item5;
-				this.dataSet =            ((Tuple<TV,IDEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item6;
+				this.vertex =                 ((Tuple<TV,IEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item1;
+				this.edgeFactory =            ((Tuple<TV,IEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item2;
+				this.rankPartition =          ((Tuple<TV,IEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item3;
+				this._allowingLoops =         ((Tuple<TV,IEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item4;
+				this._allowingMultipleEdges = ((Tuple<TV,IEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item5;
+				this.dataSet =            ((Tuple<TV,IEdgeBasicInstance<V, TV>, int, bool, bool, IDictionary<TV, IEdgeContainer<TV>>>)value).Item6;
 
 			}
 		}

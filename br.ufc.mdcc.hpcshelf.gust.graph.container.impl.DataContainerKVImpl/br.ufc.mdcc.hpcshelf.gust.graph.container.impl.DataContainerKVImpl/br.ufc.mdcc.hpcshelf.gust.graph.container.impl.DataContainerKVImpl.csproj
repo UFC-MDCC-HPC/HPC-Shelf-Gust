@@ -60,21 +60,21 @@
       <Project>{81CE7329-F4BF-4250-A830-D63902949A17}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.DEdge\br.ufc.mdcc.hpcshelf.gust.graph.DEdge\br.ufc.mdcc.hpcshelf.gust.graph.DEdge.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.Edge\br.ufc.mdcc.hpcshelf.gust.graph.Edge\br.ufc.mdcc.hpcshelf.gust.graph.Edge.csproj">
       <Project>{CE5F1F57-695B-46ED-98C1-6F6737A76CB9}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.gust.graph.DEdge</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.Edge</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.DVertex\br.ufc.mdcc.hpcshelf.gust.graph.DVertex\br.ufc.mdcc.hpcshelf.gust.graph.DVertex.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.Vertex\br.ufc.mdcc.hpcshelf.gust.graph.Vertex\br.ufc.mdcc.hpcshelf.gust.graph.Vertex.csproj">
       <Project>{B53D1E64-E50C-4BCD-A705-EDE7AEC76D9A}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.gust.graph.DVertex</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.Vertex</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic\br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic\br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic\br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic\br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic.csproj">
       <Project>{DDD9658C-CDEA-4903-AEEC-5641EC96377E}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.gust.graph.DVertexBasic</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted\br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted\br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted\br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted\br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted.csproj">
       <Project>{476F03C1-DF48-4DA7-B4E4-1A187571F48D}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.gust.graph.DEdgeWeighted</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
