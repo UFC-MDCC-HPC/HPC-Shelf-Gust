@@ -21,6 +21,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE
 		IEdgeInstance<V, TV> EdgeFactory { set; get; }
 
 		IDictionary<TV, IEdgeContainer<IEdgeInstance<V, TV>>> DataSet { get; }
-		void newDataSet (int size);
+		//void newDataSet (int size);
 	}
 }

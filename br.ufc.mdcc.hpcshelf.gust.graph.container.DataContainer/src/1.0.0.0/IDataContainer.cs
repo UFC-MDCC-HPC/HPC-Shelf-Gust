@@ -16,6 +16,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer {
 		int RankPartition { get; set; }
 		bool AllowingMultipleEdges { get; }
 		bool AllowingLoops { get; }
+		void newDataSet (int size);
 	}
 	public class EdgeContainer<T>: IEdgeContainer<T> { 
 		public ICollection<T> _outgoing;

@@ -20,6 +20,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV {
 		IEdgeWeightedInstance<V, TV> EdgeFactory { set; get; }
 
 		IDictionary<TV, IEdgeContainer<KeyValuePair<TV, float>>> DataSet { get; }
-		void newDataSet (int size);
+		//void newDataSet (int size);
 	}
 }
