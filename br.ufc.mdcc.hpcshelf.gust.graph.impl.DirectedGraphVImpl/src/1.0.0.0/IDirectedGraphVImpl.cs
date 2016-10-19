@@ -20,27 +20,41 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 		where E:IEdgeBasic<V> {
 
 		public override void main() {
-			//control=new InstanceControlImpl<V,E,int,IEdgeBasicInstance<V,int>>();
-		}
-//		IInstanceControl<V, E, int, IEdgeBasicInstance<V, int>> control;
-//		public IInstanceControl<V, E, int, IEdgeInstance<V, int>> InstanceControl{ 
-//			get{ 
-//				return control;
-//			}
-//		}
 
-		public IGraphHelper<V, E, T, IEdgeBasicInstance<V, T>> InstanceTFactoryHelper<T>(T i, T j){
-			return new IGraphHelperVImpl<V, E, T, IEdgeBasicInstance<V, T>> (DataContainer.InstanceTFactory<T>(i, j));		
 		}
-		public IGraphHelper<V, E, int, IEdgeBasicInstance<V, int>> createDefaultHelper(){
-			return new IGraphHelperVImpl<V, E, int, IEdgeBasicInstance<V, int>> (DataContainer.DataContainerVInstance);	
+		private object instanceControl = null;
+		public object InstanceControl { 
+			get{ 
+				return this.instanceControl;
+			}
+		}
+		public IInstanceControl<V, E, TV, TE> newInstanceControlT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
+			IDataContainerVInstance<V, E, TV> dc = DataContainer.InstanceTFactory<TV>(e.Source, e.Target);
+			dc.newDataSet (size);
+			IGraphHelperV<V, E, TV, TE> h = new IGraphHelperVImpl<V, E, TV, TE>(dc);
+			this.instanceControl = new InstanceControlImpl<V, E, TV, TE> (h);
+			return (IInstanceControl<V, E, TV, TE>) this.instanceControl;
+		}
+		public IInstanceControl<V, E, int, TE> newInstanceControl<TE> (int size)  where TE: IEdgeInstance<V, int> {
+			DataContainer.DataContainerVInstance.newDataSet (size);
+			IDataContainerVInstance<V, E, int> dc = DataContainer.DataContainerVInstance;
+			IGraphHelperV<V, E, int, TE> h = new IGraphHelperVImpl<V, E, int, TE>(dc);
+			this.instanceControl = new InstanceControlImpl<V, E, int, TE> (h);
+			return (IInstanceControl<V, E, int, TE>) this.instanceControl;
 		}
 
-		public class InstanceControlImpl<V, E, TV, TE>: IInstanceControl<V, E, TV, TE> where V:IVertexBasic  where E:IEdgeBasic<V> where TE: IEdgeBasicInstance<V, TV> {
+		public class InstanceControlImpl<V, E, TV, TE>: IInstanceControl<V, E, TV, TE> 
+			where V:IVertexBasic  
+			where E:IEdgeBasic<V> 
+			where TE: IEdgeInstance<V, TV> {
 
 			public IGraphHelperV<V, E, TV, TE> delegator;
 
-			public InstanceControlImpl(){}
+			public IDataContainerInstance<V, E> DataContainer{
+				get{ return this.delegator.Container; }
+				set{ this.delegator.Container = (IDataContainerVInstance<V, E, TV>)value; }
+			}
+
 			public InstanceControlImpl(IGraphHelperV<V, E, TV, TE> d){
 				delegator = d;
 			}
@@ -308,13 +322,13 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 			}
 		}
 		public interface IGraphHelperV<V, E, TV, TE>: IGraphHelper<V, E, TV, TE> 
-			where V:IVertexBasic where E:IEdgeBasic<V> where TE: IEdgeBasicInstance<V, TV> {
+			where V:IVertexBasic where E:IEdgeBasic<V> where TE: IEdgeInstance<V, TV> {
 			IDataContainerVInstance<V, E, TV> Container { get; set; }
 		}
 		internal class IGraphHelperVImpl<V, E, TV, TE>: IGraphHelperV<V, E, TV, TE> 
 			where V:IVertexBasic 
 			where E:IEdgeBasic<V>
-			where TE: IEdgeBasicInstance<V, TV> {
+			where TE: IEdgeInstance<V, TV> {
 
 			private int count_edges = 0;
 			private IDataContainerVInstance<V, E, TV> container;
@@ -324,6 +338,10 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 			}
 
 			public IDataContainerVInstance<V, E, TV> Container{
+				get{ return this.container; }
+				set{ this.container = (IDataContainerVInstance<V, E, TV>)value; }
+			}
+			public IDataContainerInstance<V, E> DataContainer{
 				get{ return this.container; }
 				set{ this.container = (IDataContainerVInstance<V, E, TV>)value; }
 			}

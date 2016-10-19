@@ -12,23 +12,17 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.Graph
 		where V:IVertex
 		where E:IEdge<V>
 	{
-	}
+		IInstanceControl<V, E, TV, TE> newInstanceControlT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV>;
+		IInstanceControl<V, E, int, TE> newInstanceControl<TE> (int size)  where TE: IEdgeInstance<V, int>;
 
-	public interface IInstanceControl<V, E, TV, TE> 
-		where V:IVertex
-		where E:IEdge<V> 
-		where TE: IEdgeInstance<V, TV> {
+		object InstanceControl { get; }
+	}
+	public interface IInstanceControl<V, E, TV, TE>: ICommon<V, E, TV, TE> where V:IVertex where E:IEdge<V> where TE: IEdgeInstance<V, TV> {
 		ICollection<TE> getAllEdges(TV sourceVertex, TV targetVertex);
 		TE getEdge(TV sourceVertex, TV targetVertex);
 		TE addEdge(TV sourceVertex, TV targetVertex);
 		bool addEdge(TE e);
-		bool addVertex(TV v);
 		bool containsEdge(TV sourceVertex, TV targetVertex);
-		bool containsEdge(TE e);
-		bool containsVertex(TV v);
-		IEnumerator<TE> edgeSet();
-		ICollection<TE> edgesOf(TV vertex);
-		IEnumerator<TE> iteratorEdgesOf(TV vertex);
 		ICollection<TV> neighborsOf (TV vertex);
 		IEnumerator<TV> iteratorNeighborsOf (TV vertex);
 		bool removeAllEdges(ICollection<TE> edges);
@@ -36,35 +30,28 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.Graph
 		bool removeAllVertices(ICollection<TV> vertices);
 		TE removeEdge(TV sourceVertex, TV targetVertex);
 		bool removeEdge(TE e);
-		bool removeVertex(TV v);
-		ICollection<TV> vertexSet();
 		TV getEdgeSource(TE e);
 		TV getEdgeTarget(TE e);
 		void setEdgeWeight (TE e, float weight);
 		void setEdgeWeight (TV sourceVertex, TV targetVertex, float weight);
 		float getEdgeWeight (TV sourceVertex, TV targetVertex);
-		int countE();
-		int countV();
-		int degreeOf(TV vertex);
-		void noSafeAdd (TE e);
-		void noSafeAdd (TV source, TV target);
-		void noSafeAdd (TV source, TV target, float weight);
-		//IContainer<TV, TE> container { get; }
 	}
-	public interface IGraphHelper<V, E, TV, TE> 
-		where V:IVertex
-		where E:IEdge<V> 
-		where TE: IEdgeInstance<V, TV>{
-		IEnumerator<TE> edgeSet ();
-		ICollection<TE> edgesOf (TV vertex);
-		IEnumerator<TE> iteratorEdgesOf (TV vertex);
-		ICollection<TV> vertexSet ();
+	public interface IGraphHelper<V, E, TV, TE>: ICommon<V, E, TV, TE> where V:IVertex	where E:IEdge<V> where TE: IEdgeInstance<V, TV>{
 		void addIncomingEdge (TE e);
 		void addOutgoingEdge (TE e);
 		void removeIncomingEdge (TE e);
 		void removeOutgoingEdge (TE e);
 		ICollection<T> incoming<T> (TV vertex);
 		ICollection<T> outgoing<T> (TV vertex);
+	}
+	public interface ICommon<V, E, TV, TE> 
+		where V:IVertex
+		where E:IEdge<V> 
+		where TE: IEdgeInstance<V, TV> {
+		IEnumerator<TE> edgeSet();
+		ICollection<TE> edgesOf (TV vertex);
+		IEnumerator<TE> iteratorEdgesOf (TV vertex);
+		ICollection<TV> vertexSet ();
 		void noSafeAdd (TE e);
 		void noSafeAdd (TV source, TV target);
 		void noSafeAdd (TV source, TV target, float weight);
@@ -75,5 +62,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.Graph
 		int countE();
 		int countV();
 		int degreeOf(TV v);
+		IDataContainerInstance<V, E> DataContainer { get; set; }
 	}
 }
