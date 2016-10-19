@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="HPC-Shelf-Gust/HPC-Shelf-Gust.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl/src/1.0.0.0/IDirectedGraphVImpl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/src/1.0.0.0/IDirectedGraph.cs">
     <Files>
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.Graph/src/1.0.0.0/IGraph.cs" Line="15" Column="66" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/src/1.0.0.0/IDirectedGraph.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl/src/1.0.0.0/IDirectedGraphVImpl.cs" Line="24" Column="4" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.Graph/src/1.0.0.0/IGraph.cs" Line="15" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/src/1.0.0.0/IDirectedGraph.cs" Line="18" Column="3" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl/src/1.0.0.0/IDirectedGraphVImpl.cs" Line="45" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
