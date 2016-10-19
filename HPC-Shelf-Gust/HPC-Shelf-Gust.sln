@@ -64,6 +64,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.g
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl.csproj", "{60E81969-029D-4CF2-8857-6318889E8136}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphKVWeightedImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphKVWeightedImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphKVWeightedImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphKVWeightedImpl.csproj", "{FE03D83B-397B-497B-A3C2-2EDA9938A4EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -186,6 +188,10 @@ Global
 		{FDE17A3A-7DFE-40FB-A9B8-AA826C0FA1FD}.Debug|x86.Build.0 = Debug|Any CPU
 		{FDE17A3A-7DFE-40FB-A9B8-AA826C0FA1FD}.Release|x86.ActiveCfg = Release|Any CPU
 		{FDE17A3A-7DFE-40FB-A9B8-AA826C0FA1FD}.Release|x86.Build.0 = Release|Any CPU
+		{FE03D83B-397B-497B-A3C2-2EDA9938A4EC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FE03D83B-397B-497B-A3C2-2EDA9938A4EC}.Debug|x86.Build.0 = Debug|Any CPU
+		{FE03D83B-397B-497B-A3C2-2EDA9938A4EC}.Release|x86.ActiveCfg = Release|Any CPU
+		{FE03D83B-397B-497B-A3C2-2EDA9938A4EC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection

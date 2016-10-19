@@ -22,17 +22,17 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 		public override void main() {
 
 		}
-		private IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>> control = null;
-		public IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>> Control { 
-			get{ 
-				if (control == null) {
-					IGraphHelperV<V, E, int, IEdgeInstance<V, int>> h = 
-						new IGraphHelperVImpl<V, E, int, IEdgeInstance<V, int>>(DataContainer.DataContainerVInstance);
-					this.control = new InstanceControlImpl<V, E, int, IEdgeInstance<V, int>> (h);
-				}
-				return this.control;
-			}
-		}
+//		private IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>> control = null;
+//		public IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>> Control { 
+//			get{ 
+//				if (control == null) {
+//					IGraphHelperV<V, E, int, IEdgeInstance<V, int>> h = 
+//						new IGraphHelperVImpl<V, E, int, IEdgeInstance<V, int>>(DataContainer.DataContainerVInstance);
+//					this.control = new InstanceControlImpl<V, E, int, IEdgeInstance<V, int>> (h);
+//				}
+//				return this.control;
+//			}
+//		}
 
 		private object instanceControl = null;
 		public object InstanceControl { 

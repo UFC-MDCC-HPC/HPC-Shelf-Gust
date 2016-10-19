@@ -14,7 +14,7 @@ using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphKVWeightedImpl 
 {
-	public abstract class BaseIDirectedGraphKVWeightedImpl: Computation, BaseIDirectedGraph<CTN, V, E>
+	public abstract class BaseIDirectedGraphKVWeightedImpl<CTN, V, E>: Computation, BaseIDirectedGraph<CTN, V, E>
 		where CTN:IDataContainerKV<V, E>
 		where V:IVertexBasic
 		where E:IEdgeWeighted<V>
