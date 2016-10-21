@@ -105,7 +105,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeWeightedImpl {
 		#endregion
 
 	}
-	internal class CommonFunc{
+	internal static class CommonFunc{
 		public static int pairingFunction (int a, int b) {
 			var A = (ulong)(a >= 0 ? 2 * (long)a : -2 * (long)a - 1);
 			var B = (ulong)(b >= 0 ? 2 * (long)b : -2 * (long)b - 1);

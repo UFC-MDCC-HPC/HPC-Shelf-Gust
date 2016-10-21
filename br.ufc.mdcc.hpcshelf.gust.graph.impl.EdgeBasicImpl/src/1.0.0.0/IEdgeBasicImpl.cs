@@ -61,7 +61,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl {
 
 		public TV Source { get { return source; } set { this.source = value; } }
 		public TV Target { get { return target; } set { this.target = value; } }
-		public float Weight { get { return 1.0f; } }
+		public float Weight { get { return CommonFunc.WeightDefault; } set { CommonFunc.WeightDefault = value; } }
 
 		public object ObjValue {
 			get { return new Tuple<TV,TV>(source,target); }
@@ -100,7 +100,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl {
 		#endregion
 
 	}
-	internal class CommonFunc{
+	internal static class CommonFunc{
+		public static float WeightDefault = 1.0f;
 		public static int pairingFunction (int a, int b) {
 			var A = (ulong)(a >= 0 ? 2 * (long)a : -2 * (long)a - 1);
 			var B = (ulong)(b >= 0 ? 2 * (long)b : -2 * (long)b - 1);

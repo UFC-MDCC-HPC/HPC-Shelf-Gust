@@ -13,7 +13,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.Edge {
 	public interface IEdgeInstance<V, TV> : IDataInstance, ICloneable where V:IVertex {
 		TV Source { get; set; }
 		TV Target { set; get; }
-		float Weight { get; }
+		float Weight { get; set; }
 		IEdgeInstance<V, TV> newInstance();
 		IEdgeInstance<V, TV> newInstance(TV s, TV t);
 		IEdgeInstance<V, TV> newInstance(TV s, TV t, float w);
