@@ -66,6 +66,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.g
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphKVWeightedImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphKVWeightedImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphKVWeightedImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphKVWeightedImpl.csproj", "{FE03D83B-397B-497B-A3C2-2EDA9938A4EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl.csproj", "{7FE4118D-CAB3-40C5-8DA6-98393251D0EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -124,6 +126,10 @@ Global
 		{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}.Debug|x86.Build.0 = Debug|Any CPU
 		{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}.Release|x86.ActiveCfg = Release|Any CPU
 		{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}.Release|x86.Build.0 = Release|Any CPU
+		{7FE4118D-CAB3-40C5-8DA6-98393251D0EF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7FE4118D-CAB3-40C5-8DA6-98393251D0EF}.Debug|x86.Build.0 = Debug|Any CPU
+		{7FE4118D-CAB3-40C5-8DA6-98393251D0EF}.Release|x86.ActiveCfg = Release|Any CPU
+		{7FE4118D-CAB3-40C5-8DA6-98393251D0EF}.Release|x86.Build.0 = Release|Any CPU
 		{81CE7329-F4BF-4250-A830-D63902949A17}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{81CE7329-F4BF-4250-A830-D63902949A17}.Debug|x86.Build.0 = Debug|Any CPU
 		{81CE7329-F4BF-4250-A830-D63902949A17}.Release|x86.ActiveCfg = Release|Any CPU

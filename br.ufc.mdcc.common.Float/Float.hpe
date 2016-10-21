@@ -25,7 +25,7 @@
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.common.Float&#xA;{&#xA;&#x9;public interface BaseIFloat : BaseIData, IDataStructureKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIFloat.cs" srcType="base" uri="br.ufc.mdcc.common.Float/bin/1.0.0.0/BaseIFloat.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.common.Float&#xA;{&#xA;&#x9;public interface IFloat : BaseIFloat, IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IFloat.cs" srcType="user" uri="br.ufc.mdcc.common.Float/bin/1.0.0.0/IFloat.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using System;&#xA;&#xA;namespace br.ufc.mdcc.common.Float { &#xA;&#xA;&#x9;public interface IFloat : BaseIFloat, IData&#xA;&#x9;{&#xA;&#x9;&#x9;IFloatInstance newInstance(float i);&#xA;&#x9;} // end main interface &#xA;&#xA;&#x9;public interface IFloatInstance : IDataInstance, ICloneable&#xA;&#x9;{&#xA;&#x9;&#x9;float Value { set; get; }&#xA;&#x9;}&#xA;&#xA;} // end namespace &#xA;" name="IFloat.cs" srcType="user" uri="br.ufc.mdcc.common.Float/bin/1.0.0.0/IFloat.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.common.Float/bin/1.0.0.0/BaseIFloat.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
         </file>
