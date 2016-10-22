@@ -5,13 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}</ProjectGuid>
+    <ProjectGuid>{31772FB4-EA01-45AE-83D3-D6C2D8A570D1}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>br.ufc.mdcc.common.Data</RootNamespace>
-    <AssemblyName>br.ufc.mdcc.common.Data</AssemblyName>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\Data.snk</AssemblyOriginatorKeyFile>
+    <RootNamespace>br.ufc.mdcc.common.impl.StringImpl</RootNamespace>
+    <AssemblyName>br.ufc.mdcc.common.impl.StringImpl</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\StringImpl.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,17 +34,27 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="DGAC">
-      <HintPath>..\..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\DGAC\DGAC.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\usr\lib\mono\DGAC\DGAC.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseIData.cs">
-      <Link>BaseIData.cs</Link>
+    <Compile Include="..\src\1.0.0.0\BaseIStringImpl.cs">
+      <Link>BaseIStringImpl.cs</Link>
     </Compile>
-    <Compile Include="..\src\1.0.0.0\IData.cs">
-      <Link>IData.cs</Link>
+    <Compile Include="..\src\1.0.0.0\IStringImpl.cs">
+      <Link>IStringImpl.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data.csproj">
+      <Project>{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}</Project>
+      <Name>br.ufc.mdcc.common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.String\br.ufc.mdcc.common.String\br.ufc.mdcc.common.String.csproj">
+      <Project>{1F1C11D1-910D-4B0B-AE3A-80EC9882759C}</Project>
+      <Name>br.ufc.mdcc.common.String</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

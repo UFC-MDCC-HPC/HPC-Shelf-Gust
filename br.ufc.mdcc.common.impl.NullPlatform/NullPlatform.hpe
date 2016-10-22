@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000069a76bfae61ad104ee75111d266fadd99748475fc225f644de5b81d7824509b18a1345bf8facedade18ef1c08b67aabe0b6c2f36fd6b36d03b1aca1b7ca82312ede239f4f706dae63fdb24905338ec0344f85aff0ded4184edff48a57a7d94ab4fb2295d617b1a7cc99a2a6c9684eff4859933b5e5a9f343ff260a217b17fa88" isAbstract="false" kind="Platform" name="NullPlatform" packagePath="br.ufc.mdcc.common.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000611b8f9bd697f844d17c106abd429d867bff585d6176e781a8a98137b7f0fee63bc38a79d2401755a4d1a9bd23a3634b415c561bd1bf19f72327abb6414df3490f5de9df409e9fcb4ea947c622d15b26139ff251511372fa3c13d09f21748d0811fb3d28f375409b985c70a2b940dd3b64dacd14a58051af15e0e524216fad9c" localRef="base" location="br.ufc.mdcc.common.Platform/Platform.hpe" name="Platform" package="br.ufc.mdcc.common" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="169" y="310">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="true" uRef="platform">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="INullPlatform" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Platform;&#xA;&#xA;namespace br.ufc.mdcc.common.impl.NullPlatform { &#xA;&#xA;public abstract class BaseINullPlatform: br.ufc.pargo.hpe.kinds.Platform, BaseIPlatform&#xA;{&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;}&#xA;" name="BaseINullPlatform.cs" srcType="base" uri="br.ufc.mdcc.common.impl.NullPlatform/bin/1.0.0.0/BaseINullPlatform.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Platform/bin/1.0.0.0/BaseIPlatform.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Platform;&#xA;&#xA;namespace br.ufc.mdcc.common.impl.NullPlatform { &#xA;&#xA;public class INullPlatform : BaseINullPlatform, IPlatform&#xA;{&#xA;&#xA;public INullPlatform() { &#xA;&#xA;} &#xA;&#xA;&#xA;}&#xA;&#xA;}&#xA;" name="INullPlatform.cs" srcType="user" uri="br.ufc.mdcc.common.impl.NullPlatform/bin/1.0.0.0/INullPlatform.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.common.impl.NullPlatform/bin/1.0.0.0/BaseINullPlatform.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="248" y="124">
+        <color b="0" g="255" r="0"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="INullPlatform" multiple="true" private="false" replica="0" uRef="platform" visibleInterface="true">
+      <super cRef="base" uRef="platform"/>
+      <visualDescription h="40" w="80" x="160" y="216"/>
+    </unit>
+  </componentInfo>
+</component:component>
