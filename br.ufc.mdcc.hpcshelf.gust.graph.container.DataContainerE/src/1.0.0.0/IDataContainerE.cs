@@ -10,17 +10,18 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE
 	public interface IDataContainerE<V, E> : BaseIDataContainerE<V, E>, IDataContainer<V, E>
 		where V:IVertexBasic
 		where E:IEdge<V> {
-		IDataContainerEInstance<V, E, int> DataContainerEInstance { get; set; }
-		IDataContainerEInstance<V, E, T> InstanceTFactory<T> (T i, T j, float w);
+		IDataContainerEInstance<V, E, int, IEdgeInstance<V, int>> DataContainerEInstance { get; set; }
+		IDataContainerEInstance<V, E, TV, TE> InstanceTFactory<TV, TE> (TE e) where TE: IEdgeInstance<V, TV>;
 	}
-	public interface IDataContainerEInstance<V, E, TV> : IDataContainerInstance<V, E>, ICloneable 
+	public interface IDataContainerEInstance<V, E, TV, TE> : IDataContainerInstance<V, E>, ICloneable 
 		where V:IVertexBasic
-		where E:IEdge<V>  {
+		where E:IEdge<V>  
+		where TE: IEdgeInstance<V, TV> {
 
 		TV Vertex { get; set; }
-		IEdgeInstance<V, TV> EdgeFactory { set; get; }
+		TE EdgeFactory { set; get; }
 
-		IDictionary<TV, IEdgeContainer<IEdgeInstance<V, TV>>> DataSet { get; }
+		IDictionary<TV, IEdgeContainer<TE>> DataSet { get; }
 		//void newDataSet (int size);
 	}
 }

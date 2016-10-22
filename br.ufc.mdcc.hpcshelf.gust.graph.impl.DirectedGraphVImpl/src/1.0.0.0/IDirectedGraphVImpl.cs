@@ -22,18 +22,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 		public override void main() {
 
 		}
-//		private IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>> control = null;
-//		public IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>> Control { 
-//			get{ 
-//				if (control == null) {
-//					IGraphHelperV<V, E, int, IEdgeInstance<V, int>> h = 
-//						new IGraphHelperVImpl<V, E, int, IEdgeInstance<V, int>>(DataContainer.DataContainerVInstance);
-//					this.control = new InstanceControlImpl<V, E, int, IEdgeInstance<V, int>> (h);
-//				}
-//				return this.control;
-//			}
-//		}
-
 		private object instanceControl = null;
 		public object InstanceControl { 
 			get{ 
@@ -41,20 +29,19 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 			}
 		}
 		public IInstanceControlDirected<V, E, TV, TE> newInstanceControlT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
-			IDataContainerVInstance<V, E, TV> dc = DataContainer.InstanceTFactory<TV>(e.Source, e.Target);
+			IDataContainerVInstance<V, E, TV, TE> dc = DataContainer.InstanceTFactory<TV, TE>(e);
 			dc.newDataSet (size);
 			IGraphHelperV<V, E, TV, TE> h = new IGraphHelperVImpl<V, E, TV, TE>(dc);
 			this.instanceControl = new InstanceControlImpl<V, E, TV, TE> (h);
 			return (IInstanceControlDirected<V, E, TV, TE>) this.instanceControl;
 		}
-		public IInstanceControlDirected<V, E, int, TE> newInstanceControl<TE> (int size)  where TE: IEdgeInstance<V, int> {
-			DataContainer.DataContainerVInstance.newDataSet (size);
-			IDataContainerVInstance<V, E, int> dc = DataContainer.DataContainerVInstance;
-			IGraphHelperV<V, E, int, TE> h = new IGraphHelperVImpl<V, E, int, TE>(dc);
-			this.instanceControl = new InstanceControlImpl<V, E, int, TE> (h);
-			return (IInstanceControlDirected<V, E, int, TE>) this.instanceControl;
+		public IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>> newInstanceControl(int size) {
+			IDataContainerVInstance<V, E, int, IEdgeInstance<V, int>> dc = DataContainer.DataContainerVInstance;
+			dc.newDataSet (size);
+			IGraphHelperV<V, E, int, IEdgeInstance<V, int>> h = new IGraphHelperVImpl<V, E, int, IEdgeInstance<V, int>>(dc);
+			this.instanceControl = new InstanceControlImpl<V, E, int, IEdgeInstance<V, int>> (h);
+			return (IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>>) this.instanceControl;
 		}
-
 		public class InstanceControlImpl<V, E, TV, TE>: IInstanceControlDirected<V, E, TV, TE> 
 			where V:IVertexBasic  
 			where E:IEdgeBasic<V> 
@@ -64,7 +51,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 
 			public IDataContainerInstance<V, E> DataContainer{
 				get{ return this.delegator.Container; }
-				set{ this.delegator.Container = (IDataContainerVInstance<V, E, TV>)value; }
+				set{ this.delegator.Container = (IDataContainerVInstance<V, E, TV, TE>)value; }
 			}
 
 			public InstanceControlImpl(IGraphHelperV<V, E, TV, TE> d){
@@ -335,7 +322,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 		}
 		public interface IGraphHelperV<V, E, TV, TE>: IGraphHelper<V, E, TV, TE> 
 			where V:IVertexBasic where E:IEdgeBasic<V> where TE: IEdgeInstance<V, TV> {
-			IDataContainerVInstance<V, E, TV> Container { get; set; }
+			IDataContainerVInstance<V, E, TV, TE> Container { get; set; }
 		}
 		internal class IGraphHelperVImpl<V, E, TV, TE>: IGraphHelperV<V, E, TV, TE> 
 			where V:IVertexBasic 
@@ -343,19 +330,19 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 			where TE: IEdgeInstance<V, TV> {
 
 			private int count_edges = 0;
-			private IDataContainerVInstance<V, E, TV> container;
+			private IDataContainerVInstance<V, E, TV, TE> container;
 
-			public IGraphHelperVImpl (IDataContainerVInstance<V, E, TV> c) {
+			public IGraphHelperVImpl (IDataContainerVInstance<V, E, TV, TE> c) {
 				container = c;
 			}
 
-			public IDataContainerVInstance<V, E, TV> Container{
+			public IDataContainerVInstance<V, E, TV, TE> Container{
 				get{ return this.container; }
-				set{ this.container = (IDataContainerVInstance<V, E, TV>)value; }
+				set{ this.container = (IDataContainerVInstance<V, E, TV, TE>)value; }
 			}
 			public IDataContainerInstance<V, E> DataContainer{
 				get{ return this.container; }
-				set{ this.container = (IDataContainerVInstance<V, E, TV>)value; }
+				set{ this.container = (IDataContainerVInstance<V, E, TV, TE>)value; }
 			}
 			public IEnumerator<TE> edgeSet () {
 				ICollection<TV> collection = container.DataSet.Keys;

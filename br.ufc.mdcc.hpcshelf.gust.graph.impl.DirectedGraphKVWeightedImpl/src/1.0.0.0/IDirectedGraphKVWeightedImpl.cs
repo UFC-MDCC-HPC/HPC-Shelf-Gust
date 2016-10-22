@@ -23,18 +23,6 @@ where E:IEdgeWeighted<V>
 		public override void main()
 		{
 		}
-//		private IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>> control = null;
-//		public IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>> Control { 
-//			get{ 
-//				if (control == null) {
-//					IGraphHelperKV<V, E, int, IEdgeInstance<V, int>> h = 
-//						new IGraphHelperKVImpl<V, E, int, IEdgeInstance<V, int>>(DataContainer.DataContainerKVInstance);
-//					this.control = new InstanceControlImpl<V, E, int, IEdgeInstance<V, int>> (h);
-//				}
-//				return this.control;
-//			}
-//		}
-
 		private object instanceControl = null;
 		public object InstanceControl { 
 			get{ 
@@ -42,18 +30,18 @@ where E:IEdgeWeighted<V>
 			}
 		}
 		public IInstanceControlDirected<V, E, TV, TE> newInstanceControlT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
-			IDataContainerKVInstance<V, E, TV> dc = DataContainer.InstanceTFactory<TV>(e.Source, e.Target, 1.0f);
+			IDataContainerKVInstance<V, E, TV, TE> dc = DataContainer.InstanceTFactory<TV, TE> (e);
 			dc.newDataSet (size);
 			IGraphHelperKV<V, E, TV, TE> h = new IGraphHelperKVImpl<V, E, TV, TE>(dc);
 			this.instanceControl = new InstanceControlImpl<V, E, TV, TE> (h);
 			return (IInstanceControlDirected<V, E, TV, TE>) this.instanceControl;
 		}
-		public IInstanceControlDirected<V, E, int, TE> newInstanceControl<TE> (int size)  where TE: IEdgeInstance<V, int> {
-			DataContainer.DataContainerKVInstance.newDataSet (size);
-			IDataContainerKVInstance<V, E, int> dc = DataContainer.DataContainerKVInstance;
-			IGraphHelperKV<V, E, int, TE> h = new IGraphHelperKVImpl<V, E, int, TE>(dc);
-			this.instanceControl = new InstanceControlImpl<V, E, int, TE> (h);
-			return (IInstanceControlDirected<V, E, int, TE>) this.instanceControl;
+		public IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>> newInstanceControl(int size) {
+			IDataContainerKVInstance<V, E, int, IEdgeInstance<V, int>> dc = DataContainer.DataContainerKVInstance;
+			dc.newDataSet (size);
+			IGraphHelperKV<V, E, int, IEdgeInstance<V, int>> h = new IGraphHelperKVImpl<V, E, int, IEdgeInstance<V, int>>(dc);
+			this.instanceControl = new InstanceControlImpl<V, E, int, IEdgeInstance<V, int>> (h);
+			return (IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>>) this.instanceControl;
 		}
 
 		public class InstanceControlImpl<V, E, TV, TE>: IInstanceControlDirected<V, E, TV, TE> 
@@ -65,7 +53,7 @@ where E:IEdgeWeighted<V>
 
 			public IDataContainerInstance<V, E> DataContainer{
 				get{ return this.delegator.Container; }
-				set{ this.delegator.Container = (IDataContainerKVInstance<V, E, TV>)value; }
+				set{ this.delegator.Container = (IDataContainerKVInstance<V, E, TV, TE>)value; }
 			}
 
 			public InstanceControlImpl(IGraphHelperKV<V, E, TV, TE> d){
@@ -364,7 +352,7 @@ where E:IEdgeWeighted<V>
 		}
 		public interface IGraphHelperKV<V, E, TV, TE>: IGraphHelper<V, E, TV, TE> 
 			where V:IVertexBasic where E:IEdgeWeighted<V> where TE: IEdgeInstance<V, TV> {
-			IDataContainerKVInstance<V, E, TV> Container { get; set; }
+			IDataContainerKVInstance<V, E, TV, TE> Container { get; set; }
 		}
 		internal class IGraphHelperKVImpl<V, E, TV, TE>: IGraphHelperKV<V, E, TV, TE> 
 			where V:IVertexBasic 
@@ -372,19 +360,19 @@ where E:IEdgeWeighted<V>
 			where TE: IEdgeInstance<V, TV> {
 
 			private int count_edges = 0;
-			private IDataContainerKVInstance<V, E, TV> container;
+			private IDataContainerKVInstance<V, E, TV, TE> container;
 
-			public IGraphHelperKVImpl (IDataContainerKVInstance<V, E, TV> c) {
+			public IGraphHelperKVImpl (IDataContainerKVInstance<V, E, TV, TE> c) {
 				container = c;
 			}
 
-			public IDataContainerKVInstance<V, E, TV> Container{
+			public IDataContainerKVInstance<V, E, TV, TE> Container{
 				get{ return this.container; }
-				set{ this.container = (IDataContainerKVInstance<V, E, TV>)value; }
+				set{ this.container = (IDataContainerKVInstance<V, E, TV, TE>)value; }
 			}
 			public IDataContainerInstance<V, E> DataContainer{
 				get{ return this.container; }
-				set{ this.container = (IDataContainerKVInstance<V, E, TV>)value; }
+				set{ this.container = (IDataContainerKVInstance<V, E, TV, TE>)value; }
 			}
 
 			public IEnumerator<TE> edgeSet () {

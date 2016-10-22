@@ -14,7 +14,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph
 		where E:IEdge<V>
 	{
 		IInstanceControlDirected<V, E, TV, TE> newInstanceControlT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV>;
-		IInstanceControlDirected<V, E, int, TE> newInstanceControl<TE> (int size)  where TE: IEdgeInstance<V, int>;
+		IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>> newInstanceControl (int size);
 
 		object InstanceControl { get; }
 	}

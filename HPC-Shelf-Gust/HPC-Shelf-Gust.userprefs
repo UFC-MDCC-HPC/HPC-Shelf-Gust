@@ -1,6 +1,10 @@
 ﻿<Properties StartupItem="HPC-Shelf-Gust/HPC-Shelf-Gust.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl/src/1.0.0.0/IDirectedGraphEImpl.cs">
+    <Files>
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl/src/1.0.0.0/IDirectedGraphEImpl.cs" Line="82" Column="47" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
