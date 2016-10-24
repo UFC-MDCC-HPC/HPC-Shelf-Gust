@@ -239,10 +239,10 @@ where E:IEdge<V>
 			public float getEdgeWeight (TE e) {
 				return getEdgeWeight (e.Source, e.Target);
 			}
-			public void setEdgeWeight (TE e, float weight) {
-				setEdgeWeight (e.Source, e.Target, weight);
+			public void setAllEdgeWeight (TE e, float weight) {
+				setAllEdgeWeight (e.Source, e.Target, weight);
 			}
-			public void setEdgeWeight (TV sourceVertex, TV targetVertex, float weight){
+			public void setAllEdgeWeight (TV sourceVertex, TV targetVertex, float weight){
 				if (delegator.Container.AllowingMultipleEdges) {
 					ICollection<TE> list = this.getAllEdges (sourceVertex, targetVertex);
 					foreach (TE ei in list)
@@ -254,8 +254,10 @@ where E:IEdge<V>
 				}
 			}
 			public float getEdgeWeight (TV sourceVertex, TV targetVertex){
-				TE ei = this.getEdge (sourceVertex, targetVertex);
-				return ei.Weight;
+				TE e = this.getEdge (sourceVertex, targetVertex);
+				if(e!=null) 
+					return e.Weight;
+				return 0f;
 			}
 			// end interface implements
 			public object Clone () {

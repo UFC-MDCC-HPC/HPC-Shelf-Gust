@@ -29,8 +29,9 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.Graph
 		bool removeEdge(TE e);
 		TV getEdgeSource(TE e);
 		TV getEdgeTarget(TE e);
-		void setEdgeWeight (TE e, float weight);
-		void setEdgeWeight (TV sourceVertex, TV targetVertex, float weight);
+		float getEdgeWeight (TE e);
+		void setAllEdgeWeight (TE e, float weight);
+		void setAllEdgeWeight (TV sourceVertex, TV targetVertex, float weight);
 		float getEdgeWeight (TV sourceVertex, TV targetVertex);
 	}
 	public interface IGraphHelper<V, E, TV, TE>: ICommon<V, E, TV, TE> where V:IVertex	where E:IEdge<V> where TE: IEdgeInstance<V, TV>{

@@ -229,16 +229,16 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 				return e.Target; 
 			}
 			public float getEdgeWeight (TE e) {
-				return 1.0f;//Default e.Weight;
+				return getEdgeWeight (e.Source, e.Target);
 			}
-			public void setEdgeWeight (TE e, float weight) {
-				throw new NotSupportedException ("SetEdgeWeight not Supported");
+			public void setAllEdgeWeight (TE e, float weight) {
+				setAllEdgeWeight (e.Source, e.Target, weight);
 			}
-			public void setEdgeWeight (TV sourceVertex, TV targetVertex, float weight){
+			public void setAllEdgeWeight (TV sourceVertex, TV targetVertex, float weight){
 				throw new NotSupportedException ("SetEdgeWeight not Supported");
 			}
 			public float getEdgeWeight (TV sourceVertex, TV targetVertex){
-				return 1.0f;//Default e.Weight;
+				return delegator.Container.EdgeFactory.newInstance (sourceVertex, targetVertex).Weight;
 			}
 			// end interface implements
 			public object Clone () {

@@ -251,24 +251,33 @@ where E:IEdgeWeighted<V>
 				return e.Target; 
 			}
 			public float getEdgeWeight (TE e) {
-				return e.Weight;
+				return getEdgeWeight (e.Source, e.Target);
 			}
-			// end interface implements
-			public void setEdgeWeight (TE e, float weight) {
-				bool b = removeEdge (e.Source, e.Target)!=null;
-				if (b) {
-					addEdgeToContainer ( (TE) delegator.Container.EdgeFactory.newInstance(e.Source, e.Target, weight));
-				}
+			public void setAllEdgeWeight (TE e, float weight) {
+				setAllEdgeWeight (e.Source, e.Target, weight);
 			}
-			public void setEdgeWeight (TV sourceVertex, TV targetVertex, float weight){
-				bool b = removeEdge (sourceVertex, targetVertex)!=null;
-				if (b) {
-					addEdgeToContainer ( (TE) delegator.Container.EdgeFactory.newInstance(sourceVertex, targetVertex, weight));
+			public void setAllEdgeWeight (TV sourceVertex, TV targetVertex, float weight){
+				if (delegator.Container.AllowingMultipleEdges) {
+					ICollection<TE> list = this.getAllEdges (sourceVertex, targetVertex);
+					removeAllEdges (list);
+					foreach (TE ei in list) {
+						addEdgeToContainer ( (TE) delegator.Container.EdgeFactory.newInstance(sourceVertex, targetVertex, weight));
+					}
+				} else {
+					bool b = removeEdge (sourceVertex, targetVertex)!=null;
+					if (b) {
+						addEdgeToContainer ( (TE) delegator.Container.EdgeFactory.newInstance(sourceVertex, targetVertex, weight));
+					}
 				}
 			}
 			public float getEdgeWeight (TV sourceVertex, TV targetVertex){
-				return getEdge (sourceVertex, targetVertex).Weight;
+				TE e = this.getEdge (sourceVertex, targetVertex);
+				if (e != null) {
+					return e.Weight;
+				}
+				return 0f;
 			}
+			// end interface implements
 			public object Clone () {
 				throw new NotSupportedException ("Clone: Not Supported Exception");
 			}
