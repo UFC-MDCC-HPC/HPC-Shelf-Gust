@@ -14,7 +14,7 @@ using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphVImpl 
 {
-	public abstract class BaseIUndirectedGraphVImpl: Computation, BaseIUndirectedGraph<CTN, V, E>
+	public abstract class BaseIUndirectedGraphVImpl<CTN, V, E>: Computation, BaseIUndirectedGraph<CTN, V, E>
 		where CTN:IDataContainerV<V, E>
 		where V:IVertexBasic
 		where E:IEdgeBasic<V>
