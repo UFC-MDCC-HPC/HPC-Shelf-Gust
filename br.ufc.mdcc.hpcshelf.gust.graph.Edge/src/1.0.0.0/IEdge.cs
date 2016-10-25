@@ -1,10 +1,13 @@
+using System;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.common.Data;
-using System;
 
-namespace br.ufc.mdcc.hpcshelf.gust.graph.Edge {
-	public interface IEdge<V> : BaseIEdge<V>, IData where V:IVertex {
+namespace br.ufc.mdcc.hpcshelf.gust.graph.Edge 
+{
+	public interface IEdge<V> : BaseIEdge<V>, IData 
+	    where V:IVertex 
+	{
 		//IEdgeInstance<V> newInstance(IRootEdge<int> rde);
 		//IEdgeInstance<V, int> EInstance { get; }
 		//IEdgeInstance<V, T> InstanceTFactory<T> (T s, T t, float f);
