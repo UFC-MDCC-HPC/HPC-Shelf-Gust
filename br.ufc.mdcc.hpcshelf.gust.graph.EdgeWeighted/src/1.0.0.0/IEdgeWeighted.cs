@@ -1,8 +1,7 @@
+using System;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
-using br.ufc.mdcc.common.Float;
-using System;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted {
 	public interface IEdgeWeighted<V> : BaseIEdgeWeighted<V>, IEdge<V> where V:IVertex {

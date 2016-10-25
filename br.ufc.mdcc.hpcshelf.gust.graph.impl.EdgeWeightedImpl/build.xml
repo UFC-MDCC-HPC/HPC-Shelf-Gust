@@ -14,8 +14,7 @@
       <references>
         <include name="br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
-        <include name="br.ufc.mdcc.common.Float/bin/1.0.0.0/IFloat.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/bin/1.0.0.0/BaseIEdge.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/bin/1.0.0.0/BaseIEdgeWeighted.dll"/>
         <include/>
       </references>
     </csc>
@@ -26,7 +25,7 @@
       <references>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeWeightedImpl/bin/1.0.0.0/BaseIEdgeWeightedImpl.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/bin/1.0.0.0/IEdge.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/bin/1.0.0.0/IEdgeWeighted.dll"/>
         <include/>
       </references>
     </csc>
