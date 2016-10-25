@@ -5,8 +5,10 @@ using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
 
-namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl {
-	public class IVertexBasicImpl : BaseIVertexBasicImpl, IVertexBasic {
+namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl 
+{
+	public class IVertexBasicImpl : BaseIVertexBasicImpl, IVertexBasic 
+	{
 
 		public IVertexBasicImpl () { }
 
