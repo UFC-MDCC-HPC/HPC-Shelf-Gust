@@ -8,16 +8,16 @@ using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
 using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
-using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;
+using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE;
 using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphEImpl 
 {
-	public abstract class BaseIUndirectedGraphEImpl: Computation, BaseIUndirectedGraph<CTN, V, E>
+	public abstract class BaseIUndirectedGraphEImpl<CTN, V, E>: Computation, BaseIUndirectedGraph<CTN, V, E>
 		where CTN:IDataContainerE<V, E>
 		where V:IVertexBasic
-		where E:IEdgeBasic<V>
+		where E:IEdge<V>
 	{
 		private E edgeFactory = default(E);
 
