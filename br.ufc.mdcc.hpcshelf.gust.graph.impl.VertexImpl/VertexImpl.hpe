@@ -6,7 +6,7 @@
         <implements>true</implements>
       </extensionType>
       <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d310c1eb7f2e5221e313263b61858cb4f7d2fcd44819057648aabdfbda27dd4602092fb2a4308d3d503698d0d9888eca5746e461b4aa9c6f5e637f4bae07f1c3e672829b1c119971da95808b208dc16ff6c00e83dc239ed20c956cce1e95522fe80112484a62af534cf558f218503efbba5b23bef4a3f158da67cf4c267007ae" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="233" y="592">
+        <visualDescription h="60" w="100" x="197" y="587">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -30,13 +30,13 @@
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="174" x="160" y="408">
+      <visualDescription h="40" w="208" x="96" y="424">
         <color b="207" g="159" r="114"/>
       </visualDescription>
     </interface>
     <unit facet="0" iRef="IVertexImpl" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
       <super cRef="base" uRef="data"/>
-      <visualDescription h="40" w="80" x="243" y="479"/>
+      <visualDescription h="40" w="80" x="164" y="504"/>
     </unit>
   </componentInfo>
 </component:component>
