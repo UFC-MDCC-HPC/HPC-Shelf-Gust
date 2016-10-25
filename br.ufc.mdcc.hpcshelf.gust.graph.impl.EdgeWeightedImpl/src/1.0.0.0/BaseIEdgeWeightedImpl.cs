@@ -6,7 +6,6 @@ using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
-using br.ufc.mdcc.common.Float;
 using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeWeightedImpl {
@@ -18,15 +17,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeWeightedImpl {
 				if (this.vertices == null)
 					this.vertices = (IKVPair<V,V>)Services.getPort ("vertices");
 				return this.vertices;
-			}
-		}
-
-		private IFloat weight = null;
-		protected IFloat Weight {
-			get {
-				if (this.weight == null)
-					this.weight = (IFloat)Services.getPort ("weight");
-				return this.weight;
 			}
 		}
 	}

@@ -52,10 +52,6 @@
       <Project>{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}</Project>
       <Name>br.ufc.mdcc.common.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.common.Float\br.ufc.mdcc.common.Float\br.ufc.mdcc.common.Float.csproj">
-      <Project>{1D8806B1-C748-4FB4-A126-1D9562075688}</Project>
-      <Name>br.ufc.mdcc.common.Float</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.common.KVPair\br.ufc.mdcc.common.KVPair\br.ufc.mdcc.common.KVPair.csproj">
       <Project>{9B499C49-DA84-475A-B783-2A3D2DEAAA97}</Project>
       <Name>br.ufc.mdcc.common.KVPair</Name>
