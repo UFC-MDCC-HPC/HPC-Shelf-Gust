@@ -14,7 +14,7 @@ using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphKVWeightedImpl 
 {
-	public abstract class BaseIUndirectedGraphKVWeightedImpl: Computation, BaseIUndirectedGraph<CTN, V, E>
+	public abstract class BaseIUndirectedGraphKVWeightedImpl<CTN, V, E>: Computation, BaseIUndirectedGraph<CTN, V, E>
 		where CTN:IDataContainerKV<V, E>
 		where V:IVertexBasic
 		where E:IEdgeWeighted<V>

@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
@@ -9,9 +11,6 @@ using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;
 using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
 using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphKVWeightedImpl
 {

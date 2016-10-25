@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
@@ -9,9 +11,6 @@ using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;
 using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 	public class IDirectedGraphVImpl<CTN, V, E> : BaseIDirectedGraphVImpl<CTN, V, E>, IDirectedGraph<CTN, V, E>
