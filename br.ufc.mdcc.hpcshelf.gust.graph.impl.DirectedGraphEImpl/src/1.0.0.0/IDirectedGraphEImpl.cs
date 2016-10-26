@@ -21,25 +21,25 @@ where E:IEdge<V>
 		public override void main()
 		{
 		}
-		private object instanceControl = null;
-		public object InstanceControl { 
+		private object instanceControlT = null;
+		public object InstanceControlT { 
 			get{ 
-				return this.instanceControl;
+				return this.instanceControlT;
 			}
 		}
 		public IInstanceControlDirected<V, E, TV, TE> newInstanceControlT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
 			IDataContainerEInstance<V, E, TV, TE> dc = DataContainer.InstanceTFactory<TV, TE> (e);//e.Source, e.Target, 1.0f);
 			dc.newDataSet (size);
 			IGraphHelperE<V, E, TV, TE> h = new IGraphHelperEImpl<V, E, TV, TE>(dc);
-			this.instanceControl = new InstanceControlImpl<V, E, TV, TE> (h);
-			return (IInstanceControlDirected<V, E, TV, TE>) this.instanceControl;
+			this.instanceControlT = new InstanceControlImpl<V, E, TV, TE> (h);
+			return (IInstanceControlDirected<V, E, TV, TE>) this.instanceControlT;
 		}
 		public IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>> newInstanceControl(int size) {
 			IDataContainerEInstance<V, E, int, IEdgeInstance<V, int>> dc = DataContainer.DataContainerEInstance;//e.Source, e.Target, 1.0f);
 			dc.newDataSet (size);
 			IGraphHelperE<V, E, int, IEdgeInstance<V, int>> h = new IGraphHelperEImpl<V, E, int, IEdgeInstance<V, int>>(dc);
-			this.instanceControl = new InstanceControlImpl<V, E, int, IEdgeInstance<V, int>> (h);
-			return (IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>>) this.instanceControl;
+			this.instanceControlT = new InstanceControlImpl<V, E, int, IEdgeInstance<V, int>> (h);
+			return (IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>>) this.instanceControlT;
 		}
 
 		public class InstanceControlImpl<V, E, TV, TE>: IInstanceControlDirected<V, E, TV, TE> 

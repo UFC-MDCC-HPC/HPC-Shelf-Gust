@@ -12,7 +12,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.Graph
 		where V:IVertex
 		where E:IEdge<V>
 	{
-
+		//IInstanceControl<V, E, int, IEdgeInstance<V, int>> InstanceControl { get; }
 	}
 	public interface IInstanceControl<V, E, TV, TE>: ICommon<V, E, TV, TE> where V:IVertex where E:IEdge<V> where TE: IEdgeInstance<V, TV> {
 		ICollection<TE> getAllEdges(TV sourceVertex, TV targetVertex);
