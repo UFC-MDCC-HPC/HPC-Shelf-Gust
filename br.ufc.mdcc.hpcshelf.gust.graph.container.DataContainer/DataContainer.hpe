@@ -6,7 +6,7 @@
         <extends>true</extends>
       </extensionType>
       <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002b679e8f63c6925bfcc928a7cc3013906b15c175a4e98fab23a035f735fa6c0ad73ed2eae507a31345dd1d315a36138fc3377a2b0953350e14b7cf31e6b06c33f4f4ee03b53200f4bfdbaab49b63edb35bda74c698665df952a90b9df4bdf2e6bc62129a9da0a4ba4ee78fb225d5b4353e96afd6e47927b6943bf6ace9cf0cb0" localRef="base" location="br.ufc.mdcc.common.Data/Data.hpe" name="Data" package="br.ufc.mdcc.common" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="303" y="399">
+        <visualDescription h="60" w="100" x="329" y="435">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -23,7 +23,7 @@
     <parameter componentRef="vertex" formFieldId="vertex_type" order="0" variance="contravariant" varName="V"/>
     <parameter componentRef="edgeFactory" formFieldId="edge_type" order="1" variance="contravariant" varName="E"/>
     <innerComponent localRef="vertex" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="vertex_type" exposed="true">
-      <visualDescription h="60" w="149" x="96" y="397">
+      <visualDescription h="60" w="142" x="156" y="387">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
@@ -31,7 +31,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="edgeFactory" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" multiple="false" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="edge_type" exposed="true">
-      <visualDescription h="60" w="190" x="465" y="404">
+      <visualDescription h="60" w="161" x="438" y="375">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="vertex_type" varName="V"/>
@@ -42,14 +42,14 @@
     <interface iRef="IDataContainer" nArgs="2">
       <slice isRef="vertex">
         <originRef cRef="vertex" iRef="IVertex"/>
-        <visualDescription h="10" w="10" x="12" y="24"/>
+        <visualDescription h="10" w="10" x="7" y="26"/>
       </slice>
       <slice isRef="edgeFactory">
         <originRef cRef="edgeFactory" iRef="IEdge"/>
-        <visualDescription h="10" w="10" x="65" y="24"/>
+        <visualDescription h="10" w="10" x="62" y="21"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer&#xA;{&#xA;&#x9;public interface BaseIDataContainer&lt;V, E> : BaseIData&lt;V, E>, IDataStructureKind &#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;&#x9;where E:IEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;&#x9;E EdgeFactory {get;}&#xA;&#x9;&#x9;V Vertex {get;}&#xA;&#x9;}&#xA;}" name="BaseIDataContainer.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/bin/1.0.0.0/BaseIDataContainer.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer&#xA;{&#xA;&#x9;public interface BaseIDataContainer&lt;V, E> : BaseIData, IDataStructureKind &#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;&#x9;where E:IEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;&#x9;E EdgeFactory {get;}&#xA;&#x9;&#x9;V Vertex {get;}&#xA;&#x9;}&#xA;}" name="BaseIDataContainer.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/bin/1.0.0.0/BaseIDataContainer.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
@@ -57,14 +57,14 @@
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer&#xA;{&#xA;&#x9;public interface IDataContainer&lt;V, E> : BaseIDataContainer&lt;V, E>, IData&lt;V, E>&#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;&#x9;where E:IEdge&lt;V>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDataContainer.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/bin/1.0.0.0/IDataContainer.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.common.Data;&#xA;using System.Collections.Generic;&#xA;using System;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer {&#xA;&#x9;public interface IDataContainer&lt;V, E> : BaseIDataContainer&lt;V, E>, IData where V:IVertex where E:IEdge&lt;V> {&#xA;&#x9;&#x9;&#xA;&#x9;}&#xA;&#xA;&#x9;public interface IDataContainerInstance&lt;V, E> : IDataInstance, ICloneable &#xA;&#x9;&#x9;where V:IVertex &#xA;&#x9;&#x9;where E:IEdge&lt;V> {&#xA;&#x9;&#x9;int RankPartition { get; set; }&#xA;&#x9;&#x9;bool AllowingMultipleEdges { get; }&#xA;&#x9;&#x9;bool AllowingLoops { get; }&#xA;&#x9;&#x9;void newDataSet (int size);&#xA;&#x9;}&#xA;&#x9;public class EdgeContainer&lt;T>: IEdgeContainer&lt;T> { &#xA;&#x9;&#x9;public ICollection&lt;T> _outgoing;&#xA;&#x9;&#x9;public ICollection&lt;T> outgoing{&#xA;&#x9;&#x9;&#x9;get{ &#xA;&#x9;&#x9;&#x9;&#x9;return _outgoing;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;set{ _outgoing = (ICollection&lt;T>)value;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;public ICollection&lt;T> _incoming;&#xA;&#x9;&#x9;public ICollection&lt;T> incoming{&#xA;&#x9;&#x9;&#x9;get{ &#xA;&#x9;&#x9;&#x9;&#x9;return _incoming;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;set{ _incoming = (ICollection&lt;T>)value;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;public interface IEdgeContainer&lt;T> { &#xA;&#x9;&#x9;ICollection&lt;T> incoming { get; set; } &#xA;&#x9;&#x9;ICollection&lt;T> outgoing { get; set; } &#xA;&#x9;}&#xA;}" name="IDataContainer.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/bin/1.0.0.0/IDataContainer.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer/bin/1.0.0.0/BaseIDataContainer.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="228" x="190" y="179">
+      <visualDescription h="40" w="216" x="229" y="235">
         <color b="52" g="226" r="138"/>
       </visualDescription>
       <port name="vertex">
@@ -81,12 +81,12 @@
     <unit facet="0" iRef="IDataContainer" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
       <super cRef="base" uRef="data"/>
       <slices cRef="vertex" inner_replica="0" slice_replica="0" uRef="data" sliceName="vertex" transitive="false">
-        <visualDescription h="10" w="10" x="7" y="24"/>
+        <visualDescription h="10" w="10" x="7" y="26"/>
       </slices>
       <slices cRef="edgeFactory" inner_replica="0" slice_replica="0" uRef="data" sliceName="edgeFactory" transitive="false">
-        <visualDescription h="10" w="10" x="65" y="24"/>
+        <visualDescription h="10" w="10" x="62" y="21"/>
       </slices>
-      <visualDescription h="40" w="80" x="262" y="283"/>
+      <visualDescription h="40" w="80" x="299" y="314"/>
     </unit>
   </componentInfo>
 </component:component>
