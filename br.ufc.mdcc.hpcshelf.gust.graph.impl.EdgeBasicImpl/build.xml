@@ -12,8 +12,8 @@
         <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl/src/1.0.0.0/BaseIEdgeBasicImpl.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
         <include name="br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/bin/1.0.0.0/BaseIEdgeBasic.dll"/>
         <include/>
       </references>

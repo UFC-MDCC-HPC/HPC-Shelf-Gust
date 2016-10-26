@@ -6,7 +6,7 @@
         <extends>true</extends>
       </extensionType>
       <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cb86d663f49376f1b8686cfe16f382812bd772179bcad725229002f165d0b8abb4dee575585f02e80aac0988099e3ef65cf3fd8ff03bca8893bde6a45f6f724c95e3e4387a381f2dced9c5cc7111d867afa78ac2a0fa695d87b37f609e1b78c1c3aa2ba2e8113e88ae909334de9596a9b879a22eae797aefac5387c7719edfb3" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.graph.Edge/Edge.hpe" name="Edge" package="br.ufc.mdcc.hpcshelf.gust.graph" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="277" y="552">
+        <visualDescription h="60" w="100" x="276" y="478">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="vertex_type" varName="V"/>
@@ -23,7 +23,7 @@
   <componentInfo>
     <parameter componentRef="vertex_type" formFieldId="vertex_type" order="0" variance="contravariant" varName="V"/>
     <innerComponent localRef="vertex_type" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="vertex_type" exposed="false">
-      <visualDescription h="60" w="151" x="481" y="327">
+      <visualDescription h="60" w="128" x="313" y="310">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
@@ -36,20 +36,20 @@
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/BaseIEdge.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic&#xA;{&#xA;&#x9;public interface IEdgeBasic&lt;V> : BaseIEdgeBasic&lt;V>, IEdge&lt;V>&#xA;&#x9;&#x9;where V:IVertex&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IEdgeBasic.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/bin/1.0.0.0/IEdgeBasic.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using System;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic {&#xA;&#x9;public interface IEdgeBasic&lt;V> : BaseIEdgeBasic&lt;V>, IEdge&lt;V> where V:IVertex {&#xA;&#x9;&#x9;IEdgeBasicInstance&lt;V, int> EdgeBasicInstance { get; }&#xA;&#x9;&#x9;IEdgeBasicInstance&lt;V, T> InstanceTFactory&lt;T> (T s, T t, float w);&#xA;&#x9;}&#xA;&#x9;public interface IEdgeBasicInstance&lt;V, TV> : IEdgeInstance&lt;V, TV>, ICloneable where V: IVertex{&#xA;&#x9;}&#xA;//&#x9;public interface IRootEdgeBasic&lt;RV>: IRootEdge&lt;RV> {&#xA;//&#x9;}&#xA;}" name="IEdgeBasic.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/bin/1.0.0.0/IEdgeBasic.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/bin/1.0.0.0/BaseIEdgeBasic.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Edge/bin/1.0.0.0/IEdge.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="201" x="215" y="363">
+      <visualDescription h="40" w="119" x="156" y="325">
         <color b="52" g="226" r="138"/>
       </visualDescription>
       <parameter iname="IVertex" order="0" parid="vertex_type" uname="data" varid="V"/>
     </interface>
     <unit facet="0" iRef="IEdgeBasic" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
       <super cRef="base" uRef="data"/>
-      <visualDescription h="40" w="80" x="267" y="475"/>
+      <visualDescription h="40" w="80" x="248" y="407"/>
     </unit>
   </componentInfo>
 </component:component>
