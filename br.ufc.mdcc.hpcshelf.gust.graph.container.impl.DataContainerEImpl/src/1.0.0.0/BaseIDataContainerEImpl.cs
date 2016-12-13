@@ -4,16 +4,14 @@ using System;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
-//using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
-using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
-//using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
-using br.ufc.mdcc.hpcshelf.gust.graph.Edge;//Basic;
+using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerEImpl 
 {
 	public abstract class BaseIDataContainerEImpl<V, E>: DataStructure, BaseIDataContainerE<V, E>
-		where V:IVertexBasic
+		where V:IVertex
 		where E:IEdge<V>
 	{
 		private E edgeFactory = default(E);
