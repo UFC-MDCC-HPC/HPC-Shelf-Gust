@@ -2,23 +2,25 @@ using System;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
+using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
+using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;
+using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;
+
 using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
-using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
 using System.Collections.Generic;
 
-namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl
-{
-	public class IDataContainerVImpl<V, E> : BaseIDataContainerVImpl<V, E>, IDataContainerV<V, E>
-where V:IVertex
-where E:IEdge<V> {
+namespace br.ufc.mdcc.hpcshelf.gust.graph.container.impl.DataContainerVImpl {
+	public class IDataContainerVImpl<V, E> : BaseIDataContainerVImpl<V, E>, IDataContainerV<V, E> 
+		where V:IVertexBasic 
+		where E:IEdgeBasic<V> {
 		public IDataContainerVImpl(){ }
 		override public void after_initialize () { 
 			newInstance (); 
 		}
 		public object newInstance () {
-			IVertexInstance v = (IVertexInstance)this.Vertex.newInstance ();
+			IVertexBasicInstance v = (IVertexBasicInstance)this.Vertex.newInstance ();
 			IEdgeInstance<V, int> e = (IEdgeInstance<V, int>)this.EdgeFactory.newInstance ();
 			instance = new IDataContainerVInstanceImpl<V, E, int, IEdgeInstance<V, int>> (v.Id, e, Rank);
 			return this.instance;
@@ -48,8 +50,8 @@ where E:IEdge<V> {
 
 	[Serializable]
 	public class IDataContainerVInstanceImpl<V, E, TV, TE> : IDataContainerVInstance<V, E, TV, TE> 
-		where V: IVertex 
-		where E:IEdge<V> 
+		where V: IVertexBasic 
+		where E:IEdgeBasic<V> 
 		where TE:IEdgeInstance<V, TV> {
 
 		public IDataContainerVInstanceImpl(){}
