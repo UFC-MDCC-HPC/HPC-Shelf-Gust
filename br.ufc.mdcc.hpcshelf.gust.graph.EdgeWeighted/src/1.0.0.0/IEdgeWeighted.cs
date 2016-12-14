@@ -8,7 +8,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted {
 		//IEdgeWeightedInstance<V> EdgeWeightedInstance { get; }
 
 		IEdgeWeightedInstance<V, int> EdgeWeightedInstance { get; }
-		IEdgeWeightedInstance<V, T> InstanceTFactory<T> (T s, T t, float w);
+		//IEdgeWeightedInstance<V, T> InstanceTFactory<T> (T s, T t, float w);
 	}
 	public interface IEdgeWeightedInstance<V, TV> : IEdgeInstance<V, TV>, ICloneable where V:IVertex {
 		//float Weight { get; set; }

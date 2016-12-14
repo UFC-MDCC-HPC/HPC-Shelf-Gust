@@ -6,7 +6,7 @@ using System;
 namespace br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic {
 	public interface IEdgeBasic<V> : BaseIEdgeBasic<V>, IEdge<V> where V:IVertex {
 		IEdgeBasicInstance<V, int> EdgeBasicInstance { get; }
-		IEdgeBasicInstance<V, T> InstanceTFactory<T> (T s, T t, float w);
+		//IEdgeBasicInstance<V, T> InstanceTFactory<T> (T s, T t, float w);
 	}
 	public interface IEdgeBasicInstance<V, TV> : IEdgeInstance<V, TV>, ICloneable where V: IVertex{
 	}

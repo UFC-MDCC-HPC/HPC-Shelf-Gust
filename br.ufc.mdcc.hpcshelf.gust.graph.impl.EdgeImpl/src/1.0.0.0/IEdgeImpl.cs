@@ -42,6 +42,10 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeImpl {
 			IEdgeInstance<V, T> instanceT = new IEdgeInstanceImpl<V, T> (s, t);
 			return instanceT;
 		}
+		public IEdgeInstance<V, T> InstanceTFactory<T> (T s, T t, float w){
+			IEdgeInstance<V, T> instanceT = new IEdgeInstanceImpl<V, T> (s, t, w);
+			return instanceT;
+		}
 	}
 
 	[Serializable]
@@ -51,7 +55,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeImpl {
 			this.source = s;
 			this.target = t;
 		}
-		public IEdgeInstanceImpl(TV s, TV t, float w):this(s, t){ }
+		public IEdgeInstanceImpl(TV s, TV t, float w):this(s, t){ this.Weight = w; }
 
 		#region IEdgeInstance implementation
 		private TV source;

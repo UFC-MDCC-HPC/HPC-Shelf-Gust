@@ -37,8 +37,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl {
 				return e;
 			}
 		}
-		public IEdgeBasicInstance<V, T> InstanceTFactory<T> (T s, T t, float w){
-			IEdgeBasicInstance<V, T> instanceT = new IEdgeBasicInstanceImpl<V, T> (s, t);
+		public IEdgeInstance<V, T> InstanceTFactory<T> (T s, T t, float w){
+			IEdgeBasicInstance<V, T> instanceT = new IEdgeBasicInstanceImpl<V, T> (s, t, w);
 			return instanceT;
 		}
 		public IEdgeInstance<V, T> InstanceTFactory<T> (T s, T t){
@@ -53,7 +53,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeBasicImpl {
 			this.source = s;
 			this.target = t;
 		}
-		public IEdgeBasicInstanceImpl(TV s, TV t, float w):this(s, t){ }
+		public IEdgeBasicInstanceImpl(TV s, TV t, float w):this(s, t){ this.Weight = w; }
 
 		#region IEdgeBasicInstance implementation
 		private TV source;

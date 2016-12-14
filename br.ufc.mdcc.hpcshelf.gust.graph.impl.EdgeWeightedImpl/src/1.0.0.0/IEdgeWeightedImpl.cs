@@ -37,7 +37,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.EdgeWeightedImpl {
 				return e;
 			}
 		}
-		public IEdgeWeightedInstance<V, T> InstanceTFactory<T> (T s, T t, float w){
+		public IEdgeInstance<V, T> InstanceTFactory<T> (T s, T t, float w){
 			//IKVPairInstance<V,V> kv = (IKVPairInstance<V,V>)Vertices.newInstance ();
 			IEdgeWeightedInstance<V, T> instanceT = new IEdgeWeightedInstanceImpl<V, T> (s, t, w);
 			return instanceT;

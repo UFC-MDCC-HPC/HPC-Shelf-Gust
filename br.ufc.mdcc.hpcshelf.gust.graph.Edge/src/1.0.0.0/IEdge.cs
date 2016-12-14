@@ -10,7 +10,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.Edge
 	{
 		//IEdgeInstance<V> newInstance(IRootEdge<int> rde);
 		//IEdgeInstance<V, int> EInstance { get; }
-		//IEdgeInstance<V, T> InstanceTFactory<T> (T s, T t, float f);
+		IEdgeInstance<V, T> InstanceTFactory<T> (T s, T t, float f);
 		IEdgeInstance<V, T> InstanceTFactory<T> (T s, T t);
 	}
 	public interface IEdgeInstance<V, TV> : IDataInstance, ICloneable where V:IVertex {
