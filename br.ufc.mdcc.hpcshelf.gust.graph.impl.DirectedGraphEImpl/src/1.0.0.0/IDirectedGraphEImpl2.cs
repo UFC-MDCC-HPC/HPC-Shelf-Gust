@@ -6,7 +6,7 @@ using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
-using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;
 using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
@@ -15,7 +15,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphEImpl
 {
 	public class IDirectedGraphEImpl<CTN, V, E> : BaseIDirectedGraphEImpl<CTN, V, E>, IDirectedGraph<CTN, V, E>
 where CTN:IDataContainerE<V, E>
-where V:IVertex
+where V:IVertexBasic
 where E:IEdge<V>
 	{
 		public override void main()
@@ -43,7 +43,7 @@ where E:IEdge<V>
 		}
 
 		public class InstanceControlImpl<V, E, TV, TE>: IInstanceControlDirected<V, E, TV, TE> 
-			where V:IVertex  
+			where V:IVertexBasic  
 			where E:IEdge<V> 
 			where TE: IEdgeInstance<V, TV> {
 
@@ -323,11 +323,11 @@ where E:IEdge<V>
 			}
 		}
 		public interface IGraphHelperE<V, E, TV, TE>: IGraphHelper<V, E, TV, TE> 
-			where V:IVertex where E:IEdge<V> where TE: IEdgeInstance<V, TV> {
+			where V:IVertexBasic where E:IEdge<V> where TE: IEdgeInstance<V, TV> {
 			IDataContainerEInstance<V, E, TV, TE> Container { get; set; }
 		}
 		internal class IGraphHelperEImpl<V, E, TV, TE>: IGraphHelperE<V, E, TV, TE> 
-			where V:IVertex 
+			where V:IVertexBasic 
 			where E:IEdge<V>
 			where TE: IEdgeInstance<V, TV> {
 
