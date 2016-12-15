@@ -17,8 +17,16 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphEImpl
 where CTN:IDataContainerE<V, E>
 where V:IVertex
 where E:IEdge<V> {
-		public override void main(){
+
+		public object newInstance () {
+			return newInstanceControl (0);
 		}
+
+		public object Instance {
+			get { return instanceControlT; }
+			set { this.instanceControlT = value; }
+		}
+
 		private object instanceControlT = null;
 		public object InstanceControlT { 
 			get{ 
@@ -54,6 +62,14 @@ where E:IEdge<V> {
 			public InstanceControlImpl(IGraphHelperE<V, E, TV, TE> d){
 				delegator = d;
 			}
+
+			public object ObjValue {
+				get { return new Tuple<IGraphHelperE<V, E, TV, TE>>(delegator); }
+				set { 
+					this.delegator = ((Tuple<IGraphHelperE<V, E, TV, TE>>)value).Item1;
+				}
+			}
+
 			//************** implementation ***********************
 			public ICollection<TE> getAllEdges (TV sourceVertex, TV targetVertex) {
 				ICollection<TE> edges = null;
@@ -261,9 +277,13 @@ where E:IEdge<V> {
 			public bool isAllowingLoops () { return delegator.Container.AllowingLoops; }
 			public bool isAllowingMultipleEdges () { return delegator.Container.AllowingMultipleEdges; }
 
+			#region ICloneable implementation
 			public object Clone () {
-				throw new NotSupportedException ("Not Supported Exception");
+				IGraphHelperE<V, E, TV, TE> d = (IGraphHelperE<V, E, TV, TE>) this.delegator.Clone ();
+				InstanceControlImpl<V, E, TV, TE> clone = new InstanceControlImpl<V, E, TV, TE>(d);
+				return clone;
 			}
+			#endregion
 
 			public override string ToString () { 
 				IEnumerator<TV> vertexSet = this.vertexSet ().GetEnumerator();
@@ -354,6 +374,16 @@ where E:IEdge<V> {
 				get{ return this.container; }
 				set{ this.container = (IDataContainerEInstance<V, E, TV, TE>)value; }
 			}
+
+			#region ICloneable implementation
+			public object Clone () {
+				IDataContainerEInstance<V, E, TV, TE> c = (IDataContainerEInstance<V, E, TV, TE>) this.Container.Clone ();
+				IGraphHelperEImpl<V, E, TV, TE> clone = new IGraphHelperEImpl<V, E, TV, TE> (c);
+				clone.count_edges = this.count_edges;
+				return clone;
+			}
+			#endregion
+
 			// ************************* implements ***********************************
 			public IEnumerator<TE> edgeSet () {
 				ICollection<TV> collection = container.DataSet.Keys;
