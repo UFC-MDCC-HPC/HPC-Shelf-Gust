@@ -15,7 +15,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.Graph
 	{
 		//IInstanceControl<V, E, int, IEdgeInstance<V, int>> InstanceControl { get; }
 	}
-	public interface IInstanceControl<V, E, TV, TE>: ICommon<V, E, TV, TE> where V:IVertex where E:IEdge<V> where TE: IEdgeInstance<V, TV> {
+	public interface IInstanceControl<V, E, TV, TE>: IDataInstance, ICloneable, ICommon<V, E, TV, TE> where V:IVertex where E:IEdge<V> where TE: IEdgeInstance<V, TV> {
 		ICollection<TE> getAllEdges(TV sourceVertex, TV targetVertex);
 		TE getEdge(TV sourceVertex, TV targetVertex);
 		TE addEdge(TV sourceVertex, TV targetVertex);
@@ -35,7 +35,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.Graph
 		void setAllEdgeWeight (TV sourceVertex, TV targetVertex, float weight);
 		float getEdgeWeight (TV sourceVertex, TV targetVertex);
 	}
-	public interface IGraphHelper<V, E, TV, TE>: ICommon<V, E, TV, TE> where V:IVertex	where E:IEdge<V> where TE: IEdgeInstance<V, TV>{
+	public interface IGraphHelper<V, E, TV, TE>: ICommon<V, E, TV, TE>, ICloneable where V:IVertex	where E:IEdge<V> where TE: IEdgeInstance<V, TV>{
 		void addIncomingEdge (TE e);
 		void addOutgoingEdge (TE e);
 		void removeIncomingEdge (TE e);
