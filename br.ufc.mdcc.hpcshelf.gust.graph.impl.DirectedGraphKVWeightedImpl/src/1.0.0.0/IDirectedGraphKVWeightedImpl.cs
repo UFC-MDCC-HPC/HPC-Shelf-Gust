@@ -6,9 +6,8 @@ using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;
-using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
+using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
-using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;
 using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
 using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;
 
@@ -16,8 +15,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphKVWeightedImpl
 {
 	public class IDirectedGraphKVWeightedImpl<CTN, V, E> : BaseIDirectedGraphKVWeightedImpl<CTN, V, E>, IDirectedGraph<CTN, V, E>
 where CTN:IDataContainerKV<V, E>
-where V:IVertexBasic
-where E:IEdgeWeighted<V>
+where V:IVertex
+where E:IEdge<V>
 	{
 		public override void main()
 		{
@@ -44,8 +43,8 @@ where E:IEdgeWeighted<V>
 		}
 
 		public class InstanceControlImpl<V, E, TV, TE>: IInstanceControlDirected<V, E, TV, TE> 
-			where V:IVertexBasic  
-			where E:IEdgeWeighted<V> 
+			where V:IVertex  
+			where E:IEdge<V> 
 			where TE: IEdgeInstance<V, TV> {
 
 			public IGraphHelperKV<V, E, TV, TE> delegator;
@@ -359,12 +358,12 @@ where E:IEdgeWeighted<V>
 			}
 		}
 		public interface IGraphHelperKV<V, E, TV, TE>: IGraphHelper<V, E, TV, TE> 
-			where V:IVertexBasic where E:IEdgeWeighted<V> where TE: IEdgeInstance<V, TV> {
+			where V:IVertex where E:IEdge<V> where TE: IEdgeInstance<V, TV> {
 			IDataContainerKVInstance<V, E, TV, TE> Container { get; set; }
 		}
 		internal class IGraphHelperKVImpl<V, E, TV, TE>: IGraphHelperKV<V, E, TV, TE> 
-			where V:IVertexBasic 
-			where E:IEdgeWeighted<V>
+			where V:IVertex 
+			where E:IEdge<V>
 			where TE: IEdgeInstance<V, TV> {
 
 			private int count_edges = 0;

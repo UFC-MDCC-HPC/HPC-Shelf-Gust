@@ -5,17 +5,19 @@ using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
+using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
 using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
+using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;
 using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphKVWeightedImpl 
 {
-	public abstract class BaseIDirectedGraphKVWeightedImpl<CTN, V, E>: DataStructure, BaseIDirectedGraph<CTN, V, E>
+	public abstract class BaseIDirectedGraphKVWeightedImpl<CTN, V, E>: Computation, BaseIDirectedGraph<CTN, V, E>
 		where CTN:IDataContainerKV<V, E>
-		where V:IVertex
-		where E:IEdge<V>
+		where V:IVertexBasic
+		where E:IEdgeWeighted<V>
 	{
 		private E edgeFactory = default(E);
 
