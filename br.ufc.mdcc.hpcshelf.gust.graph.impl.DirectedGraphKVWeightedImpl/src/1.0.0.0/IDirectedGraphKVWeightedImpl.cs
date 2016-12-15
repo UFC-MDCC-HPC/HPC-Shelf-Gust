@@ -18,9 +18,15 @@ where CTN:IDataContainerKV<V, E>
 where V:IVertex
 where E:IEdge<V>
 	{
-		public override void main()
-		{
+		public object newInstance () {
+			return newInstanceControl (0);
 		}
+
+		public object Instance {
+			get { return instanceControlT; }
+			set { this.instanceControlT = value; }
+		}
+
 		private object instanceControlT = null;
 		public object InstanceControlT { 
 			get{ 
@@ -56,6 +62,13 @@ where E:IEdge<V>
 
 			public InstanceControlImpl(IGraphHelperKV<V, E, TV, TE> d){
 				delegator = d;
+			}
+
+			public object ObjValue {
+				get { return new Tuple<IGraphHelperKV<V, E, TV, TE>>(delegator); }
+				set { 
+					this.delegator = ((Tuple<IGraphHelperKV<V, E, TV, TE>>)value).Item1;
+				}
 			}
 
 			public ICollection<TE> getAllEdges (TV sourceVertex, TV targetVertex) {
@@ -276,9 +289,15 @@ where E:IEdge<V>
 				return 0f;
 			}
 			// end interface implements
+
+			#region ICloneable implementation
 			public object Clone () {
-				throw new NotSupportedException ("Clone: Not Supported Exception");
+				IGraphHelperKV<V, E, TV, TE> d = (IGraphHelperKV<V, E, TV, TE>) this.delegator.Clone ();
+				InstanceControlImpl<V, E, TV, TE> clone = new InstanceControlImpl<V, E, TV, TE>(d);
+				return clone;
 			}
+			#endregion
+
 			public bool isAllowingLoops () { return delegator.Container.AllowingLoops; }
 
 			public bool isAllowingMultipleEdges () { return delegator.Container.AllowingMultipleEdges; }
@@ -381,6 +400,15 @@ where E:IEdge<V>
 				get{ return this.container; }
 				set{ this.container = (IDataContainerKVInstance<V, E, TV, TE>)value; }
 			}
+
+			#region ICloneable implementation
+			public object Clone () {
+				IDataContainerKVInstance<V, E, TV, TE> c = (IDataContainerKVInstance<V, E, TV, TE>) this.Container.Clone ();
+				IGraphHelperKVImpl<V, E, TV, TE> clone = new IGraphHelperKVImpl<V, E, TV, TE> (c);
+				clone.count_edges = this.count_edges;
+				return clone;
+			}
+			#endregion
 
 			public IEnumerator<TE> edgeSet () {
 				ICollection<TV> collection = container.DataSet.Keys;
