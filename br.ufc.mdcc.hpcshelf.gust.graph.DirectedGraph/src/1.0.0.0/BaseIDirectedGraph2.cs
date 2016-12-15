@@ -8,7 +8,7 @@ using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph
 {
-	public interface BaseIDirectedGraph<CTN, V, E> : BaseIGraph<CTN, V, E>, IDataStructureKind 
+	public interface BaseIDirectedGraph<CTN, V, E> : BaseIGraph<CTN, V, E>, IComputationKind 
 		where CTN:IDataContainer<V, E>
 		where V:IVertex
 		where E:IEdge<V>
