@@ -4,19 +4,19 @@ using System.Linq;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;
+using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
-using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
+using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;
 using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
 
-namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphVImpl
-{
-	public class IUndirectedGraphVImpl<CTN, V, E> : BaseIUndirectedGraphVImpl<CTN, V, E>, IUndirectedGraph<CTN, V, E>
-where CTN:IDataContainerV<V, E>
-where V:IVertex
-where E:IEdge<V> {
+namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphKVWeightedImpl {
+	public class IUndirectedGraphKVWeightedImpl<CTN, V, E> : BaseIUndirectedGraphKVWeightedImpl<CTN, V, E>, IUndirectedGraph<CTN, V, E>
+where CTN:IDataContainerKV<V, E>
+where V:IVertexBasic
+where E:IEdgeWeighted<V> {
 		public override void main() {
 		}
 		private object instanceControlT = null;
@@ -26,32 +26,32 @@ where E:IEdge<V> {
 			}
 		}
 		public IInstanceControlUndirected<V, E, TV, TE> newInstanceControlT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
-			IDataContainerVInstance<V, E, TV, TE> dc = DataContainer.InstanceTFactory<TV, TE>(e);
+			IDataContainerKVInstance<V, E, TV, TE> dc = DataContainer.InstanceTFactory<TV, TE>(e);
 			dc.newDataSet (size);
-			IGraphHelperV<V, E, TV, TE> h = new IGraphHelperVImpl<V, E, TV, TE>(dc);
+			IGraphHelperKV<V, E, TV, TE> h = new IGraphHelperKVImpl<V, E, TV, TE>(dc);
 			this.instanceControlT = new InstanceControlImpl<V, E, TV, TE> (h);
 			return (IInstanceControlUndirected<V, E, TV, TE>) this.instanceControlT;
 		}
 		public IInstanceControlUndirected<V, E, int, IEdgeInstance<V, int>> newInstanceControl(int size) {
-			IDataContainerVInstance<V, E, int, IEdgeInstance<V, int>> dc = DataContainer.DataContainerVInstance;
+			IDataContainerKVInstance<V, E, int, IEdgeInstance<V, int>> dc = DataContainer.DataContainerKVInstance;
 			dc.newDataSet (size);
-			IGraphHelperV<V, E, int, IEdgeInstance<V, int>> h = new IGraphHelperVImpl<V, E, int, IEdgeInstance<V, int>>(dc);
+			IGraphHelperKV<V, E, int, IEdgeInstance<V, int>> h = new IGraphHelperKVImpl<V, E, int, IEdgeInstance<V, int>>(dc);
 			this.instanceControlT = new InstanceControlImpl<V, E, int, IEdgeInstance<V, int>> (h);
 			return (IInstanceControlUndirected<V, E, int, IEdgeInstance<V, int>>) this.instanceControlT;
 		}
 		public class InstanceControlImpl<V, E, TV, TE>: IInstanceControlUndirected<V, E, TV, TE> 
-			where V:IVertex  
-			where E:IEdge<V> 
+			where V:IVertexBasic  
+			where E:IEdgeWeighted<V> 
 			where TE: IEdgeInstance<V, TV> {
 
-			public IGraphHelperV<V, E, TV, TE> delegator;
+			public IGraphHelperKV<V, E, TV, TE> delegator;
 
 			public IDataContainerInstance<V, E> DataContainer{
 				get{ return this.delegator.Container; }
-				set{ this.delegator.Container = (IDataContainerVInstance<V, E, TV, TE>)value; }
+				set{ this.delegator.Container = (IDataContainerKVInstance<V, E, TV, TE>)value; }
 			}
 
-			public InstanceControlImpl(IGraphHelperV<V, E, TV, TE> d){
+			public InstanceControlImpl(IGraphHelperKV<V, E, TV, TE> d){
 				delegator = d;
 			}
 			//************** implementation ***********************
@@ -61,7 +61,7 @@ where E:IEdge<V> {
 				if (containsVertex (sourceVertex) && containsVertex (targetVertex)) {
 					edges = new List<TE>();
 
-					IEnumerator<TE> iter = iteratorEdgesOf (sourceVertex);//.GetEnumerator ();
+					IEnumerator<TE> iter = iteratorEdgesOf (sourceVertex);
 
 					while (iter.MoveNext ()) {
 						TE e = iter.Current;
@@ -77,7 +77,7 @@ where E:IEdge<V> {
 			}
 			public TE getEdge (TV sourceVertex, TV targetVertex) {
 				if (containsVertex (sourceVertex) && containsVertex (targetVertex)) {
-					IEnumerator<TE> iter = iteratorEdgesOf (sourceVertex);//.GetEnumerator ();
+					IEnumerator<TE> iter = iteratorEdgesOf (sourceVertex);
 
 					while (iter.MoveNext ()) {
 						TE e = iter.Current;
@@ -97,9 +97,10 @@ where E:IEdge<V> {
 						return default(TE);
 					}
 					if (!delegator.Container.AllowingLoops && sourceVertex.Equals (targetVertex)) {
-						return default(TE);//throw new ArgumentException (LOOPS_NOT_ALLOWED);
+						return default(TE);
 					}
 					TE e = (TE) delegator.Container.EdgeFactory.newInstance (sourceVertex, targetVertex);
+
 					addEdgeToContainer(e);
 					return e;
 				}
@@ -108,13 +109,13 @@ where E:IEdge<V> {
 			public bool addEdge (TE e) {
 				if (e == null || e.Source == null || e.Target == null) {
 					throw new EntryPointNotFoundException ();
-				}
+				} 
 				if (containsVertex (e.Source) && containsVertex (e.Target)) {
 					if (!delegator.Container.AllowingMultipleEdges && containsEdge (e.Source, e.Target)) {
 						return false;
 					}
 					if (!delegator.Container.AllowingLoops && e.Source.Equals (e.Target)) {
-						return false; //throw new ArgumentException (LOOPS_NOT_ALLOWED);
+						return false;
 					}
 					addEdgeToContainer(e);
 					return true;
@@ -126,7 +127,7 @@ where E:IEdge<V> {
 				return delegator.addVertex (v);
 			}
 			public bool containsEdge(TV sourceVertex, TV targetVertex){
-				return delegator.outgoing<TV> (sourceVertex).Contains (targetVertex) || delegator.outgoing<TV> (targetVertex).Contains (sourceVertex); //getEdge(sourceVertex, targetVertex) != null;
+				return getEdge(sourceVertex, targetVertex) != null;
 			}
 			public bool containsEdge(TE e){
 				if (e != null) {
@@ -152,17 +153,22 @@ where E:IEdge<V> {
 				return delegator.iteratorEdgesOf (vertex);
 			}
 			public ICollection<TV> neighborsOf (TV vertex){
-				ICollection<TV> o = delegator.outgoing<TV> (vertex);
-				ICollection<TV> i = delegator.incoming<TV> (vertex);
-				return new HashSet<TV> (o.Union (i));
+				ICollection<KeyValuePair<TV, float>> i = delegator.incoming<KeyValuePair<TV, float>> (vertex);
+				ICollection<TV> edges = new HashSet<TV> ();
+				foreach (KeyValuePair<TV, float> kv in i)
+					edges.Add (kv.Key);
+				ICollection<KeyValuePair<TV, float>> o = delegator.outgoing<KeyValuePair<TV, float>> (vertex);
+				foreach (KeyValuePair<TV, float> kv in o)
+					edges.Add (kv.Key);
+				return edges;
 			}
 			public IEnumerator<TV> iteratorNeighborsOf (TV vertex){
-				ICollection<TV> o = delegator.outgoing<TV> (vertex);
-				ICollection<TV> i = delegator.incoming<TV> (vertex);
-				foreach(TV v in o)
-					yield return v;
-				foreach(TV v in i)
-					yield return v;
+				ICollection<KeyValuePair<TV, float>> o = delegator.outgoing<KeyValuePair<TV, float>> (vertex);
+				ICollection<KeyValuePair<TV, float>> i = delegator.incoming<KeyValuePair<TV, float>> (vertex);
+				foreach (KeyValuePair<TV, float> kv in o)
+					yield return kv.Key;
+				foreach (KeyValuePair<TV, float> kv in i)
+					yield return kv.Key;
 			}
 			public bool removeAllEdges(ICollection<TE> edges){
 				bool modified = false;
@@ -195,13 +201,13 @@ where E:IEdge<V> {
 				TE e = getEdge (sourceVertex, targetVertex);
 
 				if (e != null) {
-					removeEdgeFromContainer (e); //container.removeEdge (e);
+					removeEdgeFromContainer (e);
 				}
 				return e;
 			}
 			public bool removeEdge (TE e) {
 				if (containsEdge (e)) {
-					removeEdgeFromContainer (e); //container.removeEdge (e);
+					removeEdgeFromContainer (e);
 					return true;
 				} 
 				else { return false; }
@@ -210,7 +216,7 @@ where E:IEdge<V> {
 				if (containsVertex (v)) {
 					ICollection<TE> edges = edgesOf (v);
 					foreach (TE e in edges) {
-						removeEdgeFromContainer (e); //container.removeEdge (e);
+						removeEdgeFromContainer (e);
 					}
 
 					return delegator.removeVertex (v);
@@ -232,12 +238,27 @@ where E:IEdge<V> {
 			}
 			public void setAllEdgeWeight (TE e, float weight) {
 				setAllEdgeWeight (e.Source, e.Target, weight);
-			} 
+			}
 			public void setAllEdgeWeight (TV sourceVertex, TV targetVertex, float weight){
-				throw new NotSupportedException ("SetEdgeWeight not Supported");
+				if (delegator.Container.AllowingMultipleEdges) {
+					ICollection<TE> list = this.getAllEdges (sourceVertex, targetVertex);
+					removeAllEdges (list);
+					foreach (TE ei in list) {
+						addEdgeToContainer ( (TE) delegator.Container.EdgeFactory.newInstance(sourceVertex, targetVertex, weight));
+					}
+				} else {
+					bool b = removeEdge (sourceVertex, targetVertex)!=null;
+					if (b) {
+						addEdgeToContainer ( (TE) delegator.Container.EdgeFactory.newInstance(sourceVertex, targetVertex, weight));
+					}
+				}
 			}
 			public float getEdgeWeight (TV sourceVertex, TV targetVertex){
-				return delegator.Container.EdgeFactory.newInstance (sourceVertex, targetVertex).Weight;
+				TE e = this.getEdge (sourceVertex, targetVertex);
+				if (e != null) {
+					return e.Weight;
+				}
+				return 0f;
 			}
 			// End interface implements
 
@@ -284,6 +305,7 @@ where E:IEdge<V> {
 				delegator.removeOutgoingEdge (e);
 				delegator.removeIncomingEdge (e);
 			}
+
 			private bool isEqualsStraightOrInverted (Object sourceVertex, Object targetVertex, TE e) {
 				bool equalStraight = sourceVertex.Equals (e.Source) && targetVertex.Equals (e.Target);
 				bool equalInverted = sourceVertex.Equals (e.Target) && targetVertex.Equals (e.Source);
@@ -310,65 +332,65 @@ where E:IEdge<V> {
 			public int countE() { return delegator.countE(); }
 			public int countV() { return delegator.countV(); }
 		}
-		public interface IGraphHelperV<V, E, TV, TE>: IGraphHelper<V, E, TV, TE> 
-			where V:IVertex where E:IEdge<V> where TE: IEdgeInstance<V, TV> {
-			IDataContainerVInstance<V, E, TV, TE> Container { get; set; }
+		public interface IGraphHelperKV<V, E, TV, TE>: IGraphHelper<V, E, TV, TE> 
+			where V:IVertexBasic where E:IEdgeWeighted<V> where TE: IEdgeInstance<V, TV> {
+			IDataContainerKVInstance<V, E, TV, TE> Container { get; set; }
 		}
-		internal class IGraphHelperVImpl<V, E, TV, TE>: IGraphHelperV<V, E, TV, TE> 
-			where V:IVertex 
-			where E:IEdge<V>
+		internal class IGraphHelperKVImpl<V, E, TV, TE>: IGraphHelperKV<V, E, TV, TE> 
+			where V:IVertexBasic 
+			where E:IEdgeWeighted<V>
 			where TE: IEdgeInstance<V, TV> {
 
 			private int count_edges = 0;
-			private IDataContainerVInstance<V, E, TV, TE> container;
+			private IDataContainerKVInstance<V, E, TV, TE> container;
 
-			public IGraphHelperVImpl (IDataContainerVInstance<V, E, TV, TE> c) {
+			public IGraphHelperKVImpl (IDataContainerKVInstance<V, E, TV, TE> c) {
 				container = c;
 			}
 
-			public IDataContainerVInstance<V, E, TV, TE> Container{
+			public IDataContainerKVInstance<V, E, TV, TE> Container{
 				get{ return this.container; }
-				set{ this.container = (IDataContainerVInstance<V, E, TV, TE>)value; }
+				set{ this.container = (IDataContainerKVInstance<V, E, TV, TE>)value; }
 			}
 			public IDataContainerInstance<V, E> DataContainer{
 				get{ return this.container; }
-				set{ this.container = (IDataContainerVInstance<V, E, TV, TE>)value; }
+				set{ this.container = (IDataContainerKVInstance<V, E, TV, TE>)value; }
 			}
 			// ************************* implements ***********************************
 			public IEnumerator<TE> edgeSet () {
 				ICollection<TV> collection = container.DataSet.Keys;
 				foreach (TV v in collection) {
-					IEdgeContainer<TV> ec = container.DataSet[v];
-					IEnumerator<TV> iterator = ec.outgoing.GetEnumerator();
+					IEdgeContainer<KeyValuePair<TV, float>> ec = container.DataSet[v];
+					IEnumerator<KeyValuePair<TV, float>> iterator = ec.outgoing.GetEnumerator();
 					while (iterator.MoveNext ()) {
-						yield return (TE) container.EdgeFactory.newInstance (v, iterator.Current);
+						yield return (TE) container.EdgeFactory.newInstance (v, iterator.Current.Key, iterator.Current.Value);
 					}
 				}
 			}
 			public ICollection<TE> edgesOf (TV vertex) {
-				IEdgeContainer<TV> ec;
-				ICollection<TE> edges;// = new HashSet<E> ();
+				IEdgeContainer<KeyValuePair<TV, float>> ec;
+				ICollection<TE> edges;
 				if (!container.AllowingMultipleEdges)
 					edges = new HashSet<TE> ();
 				else
 					edges = new List<TE> ();
 				if (container.DataSet.TryGetValue (vertex, out ec)) {
-					foreach (TV v in ec.outgoing) {
-						edges.Add ((TE)container.EdgeFactory.newInstance (vertex, v));
+					foreach (KeyValuePair<TV, float> kv in ec.outgoing) {
+						edges.Add ((TE) container.EdgeFactory.newInstance (vertex, kv.Key, kv.Value));
 					}
-					foreach (TV v in ec.incoming)
-						if(!vertex.Equals(v)) edges.Add ((TE)container.EdgeFactory.newInstance (v, vertex));
+					foreach (KeyValuePair<TV, float> kv in ec.incoming)
+						if(!vertex.Equals(kv.Key)) edges.Add ((TE) container.EdgeFactory.newInstance (kv.Key, vertex, kv.Value));
 				}
 				return edges;
 			}
 			public IEnumerator<TE> iteratorEdgesOf (TV vertex) {
-				IEdgeContainer<TV> ec;
+				IEdgeContainer<KeyValuePair<TV, float>> ec;
 				if (container.DataSet.TryGetValue (vertex, out ec)) {
-					foreach (TV v in ec.outgoing) {
-						yield return ((TE)container.EdgeFactory.newInstance (vertex, v));
+					foreach (KeyValuePair<TV, float> kv in ec.outgoing) {
+						yield return ((TE) container.EdgeFactory.newInstance (vertex, kv.Key, kv.Value));
 					}
-					foreach (TV v in ec.incoming)
-						if(!vertex.Equals(v)) yield return ((TE)container.EdgeFactory.newInstance (v, vertex));
+					foreach (KeyValuePair<TV, float> kv in ec.incoming)
+						if(!vertex.Equals(kv.Key)) yield return ((TE) container.EdgeFactory.newInstance (kv.Key, vertex, kv.Value));
 				}
 			}
 			public ICollection<TV> vertexSet () {
@@ -377,50 +399,67 @@ where E:IEdge<V> {
 
 			public void addIncomingEdge (TE e) {//if (container.DataSet.ContainsKey (e.target))
 				if (!e.Source.Equals (e.Target)) { 
-					container.DataSet [e.Target].incoming.Add (e.Source);
+					KeyValuePair<TV, float> kv = new KeyValuePair<TV, float>(e.Source, e.Weight);
+					container.DataSet [e.Target].incoming.Add (kv);
 				}
 			}
 			public void addOutgoingEdge (TE e) { //if (container.DataSet.ContainsKey (e.source))
-				container.DataSet [e.Source].outgoing.Add (e.Target);
+				KeyValuePair<TV, float> kv = new KeyValuePair<TV, float>(e.Target, e.Weight);
+				container.DataSet [e.Source].outgoing.Add (kv);
 				count_edges++;
 			}
 			public void removeIncomingEdge (TE e) { //if (container.DataSet.ContainsKey (e.target))
-				container.DataSet [e.Target].incoming.Remove (e.Source);
+				KeyValuePair<TV, float> kv = new KeyValuePair<TV, float>(e.Source, e.Weight);
+				container.DataSet [e.Target].incoming.Remove (kv);
 				count_edges--;
 			}
 			public void removeOutgoingEdge (TE e) { //if (container.DataSet.ContainsKey (e.source))
-				container.DataSet [e.Source].outgoing.Remove (e.Target); 
+				KeyValuePair<TV, float> kv = new KeyValuePair<TV, float>(e.Target, e.Weight);
+				container.DataSet [e.Source].outgoing.Remove (kv);
 			}
 			public void noSafeAdd(TE e){
 				if (!containsEdge(e)) {
-					container.DataSet [e.Source].outgoing.Add (e.Target);
+					KeyValuePair<TV, float> kv_ou = new KeyValuePair<TV, float>(e.Target, e.Weight);
+					container.DataSet [e.Source].outgoing.Add (kv_ou);
 					if (!e.Source.Equals (e.Target)) { 
-						container.DataSet [e.Target].incoming.Add (e.Source);
+						KeyValuePair<TV, float> kv_in = new KeyValuePair<TV, float>(e.Source, e.Weight);
+						container.DataSet [e.Target].incoming.Add (kv_in);
 					}
 					count_edges++;
 				}
 			}
 			public void noSafeAdd(TV source, TV target){
-				bool b = container.DataSet [source].outgoing.Contains (target) || container.DataSet [target].outgoing.Contains (source);
+				KeyValuePair<TV, float> kv_ou = new KeyValuePair<TV, float>(target, 1.0f);
+				KeyValuePair<TV, float> kv_in = new KeyValuePair<TV, float>(source, 1.0f);
+				bool b = container.DataSet [source].outgoing.Contains (kv_ou) || container.DataSet [target].outgoing.Contains (kv_in);
 				if (!b) {
-					container.DataSet [source].outgoing.Add (target);
+					container.DataSet [source].outgoing.Add (kv_ou);
 					if (!source.Equals (target)) { 
-						container.DataSet [target].incoming.Add (source);
+						container.DataSet [target].incoming.Add (kv_in);
 					}
 					count_edges++;
 				}
 			}
 			public void noSafeAdd(TV source, TV target, float weight){
-				new NotSupportedException ("Weight not Supported Exception!");
+				KeyValuePair<TV, float> kv_ou = new KeyValuePair<TV, float>(target, weight);
+				KeyValuePair<TV, float> kv_in = new KeyValuePair<TV, float>(source, weight);
+				bool b = container.DataSet [source].outgoing.Contains (kv_ou) || container.DataSet [target].outgoing.Contains (kv_in);
+				if (!b) {
+					container.DataSet [source].outgoing.Add (kv_ou);
+					if (!source.Equals (target)) { 
+						container.DataSet [target].incoming.Add (kv_in);
+					}
+					count_edges++;
+				}
 			}
 			public ICollection<T> incoming<T>(TV vertex){
-				IEdgeContainer<TV> ec;
+				IEdgeContainer<KeyValuePair<TV, float>> ec;
 				if (container.DataSet.TryGetValue (vertex, out ec))
 					return ((List<T>)ec.incoming).AsReadOnly();
 				return new List<T>().AsReadOnly();
 			}
 			public ICollection<T> outgoing<T>(TV vertex){
-				IEdgeContainer<TV> ec;
+				IEdgeContainer<KeyValuePair<TV, float>> ec;
 				if (container.DataSet.TryGetValue (vertex, out ec))
 					return ((List<T>)ec.outgoing).AsReadOnly();
 				return new List<T>().AsReadOnly();
@@ -428,15 +467,17 @@ where E:IEdge<V> {
 			public bool addVertex (TV vertex) {
 				if (container.DataSet.ContainsKey (vertex)) return false;
 				else { 
-					IEdgeContainer<TV> ec = new EdgeContainer<TV>(); 
-					ec.outgoing = new List<TV> ();
-					ec.incoming = new List<TV> ();
+					IEdgeContainer<KeyValuePair<TV, float>> ec = new EdgeContainer<KeyValuePair<TV, float>>(); 
+					ec.outgoing = new List<KeyValuePair<TV, float>> ();
+					ec.incoming = new List<KeyValuePair<TV, float>> ();
 					container.DataSet[vertex] = ec;
 					return true; 
 				}
 			}
 			public bool containsEdge(TE e){
-				return container.DataSet [e.Source].outgoing.Contains (e.Target) || container.DataSet [e.Target].outgoing.Contains (e.Source);
+				KeyValuePair<TV, float> kv_ou = new KeyValuePair<TV, float>(e.Target, e.Weight);
+				KeyValuePair<TV, float> kv_in = new KeyValuePair<TV, float>(e.Source, e.Weight);
+				return container.DataSet [e.Source].outgoing.Contains (kv_ou) || container.DataSet [e.Target].outgoing.Contains (kv_in);
 			}
 			public bool containsVertex (TV v){
 				return container.DataSet.ContainsKey (v);
@@ -447,7 +488,7 @@ where E:IEdge<V> {
 			public int countE() { return count_edges; }
 			public int countV() { return container.DataSet.Count; }
 			public int degreeOf(TV v) { 
-				IEdgeContainer<TV> ec; 
+				IEdgeContainer<KeyValuePair<TV, float>> ec; 
 				if (container.DataSet.TryGetValue (v, out ec)) 
 					return ec.outgoing.Count + ec.incoming.Count; 
 				return 0; 

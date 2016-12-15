@@ -6,15 +6,16 @@ using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerE;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
-using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
+using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;
 using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
 
-namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphEImpl {
+namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphEImpl
+{
 	public class IUndirectedGraphEImpl<CTN, V, E> : BaseIUndirectedGraphEImpl<CTN, V, E>, IUndirectedGraph<CTN, V, E>
 where CTN:IDataContainerE<V, E>
-where V:IVertexBasic
+where V:IVertex
 where E:IEdge<V> {
 		public override void main(){
 		}
@@ -39,7 +40,7 @@ where E:IEdge<V> {
 			return (IInstanceControlUndirected<V, E, int, IEdgeInstance<V, int>>) this.instanceControlT;
 		}
 		public class InstanceControlImpl<V, E, TV, TE>: IInstanceControlUndirected<V, E, TV, TE> 
-			where V:IVertexBasic  
+			where V:IVertex  
 			where E:IEdge<V> 
 			where TE: IEdgeInstance<V, TV> {
 
@@ -330,11 +331,11 @@ where E:IEdge<V> {
 			public int countV() { return delegator.countV(); }
 		}
 		public interface IGraphHelperE<V, E, TV, TE>: IGraphHelper<V, E, TV, TE> 
-			where V:IVertexBasic where E:IEdge<V> where TE: IEdgeInstance<V, TV> {
+			where V:IVertex where E:IEdge<V> where TE: IEdgeInstance<V, TV> {
 			IDataContainerEInstance<V, E, TV, TE> Container { get; set; }
 		}
 		internal class IGraphHelperEImpl<V, E, TV, TE>: IGraphHelperE<V, E, TV, TE> 
-			where V:IVertexBasic 
+			where V:IVertex 
 			where E:IEdge<V>
 			where TE: IEdgeInstance<V, TV> {
 

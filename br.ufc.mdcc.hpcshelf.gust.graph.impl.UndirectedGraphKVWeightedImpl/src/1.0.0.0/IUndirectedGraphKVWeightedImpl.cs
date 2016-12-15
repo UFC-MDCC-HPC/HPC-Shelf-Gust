@@ -6,17 +6,17 @@ using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;
 using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
-using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
-using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;
+using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
 using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;
 using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
 
-namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphKVWeightedImpl {
+namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.UndirectedGraphKVWeightedImpl
+{
 	public class IUndirectedGraphKVWeightedImpl<CTN, V, E> : BaseIUndirectedGraphKVWeightedImpl<CTN, V, E>, IUndirectedGraph<CTN, V, E>
 where CTN:IDataContainerKV<V, E>
-where V:IVertexBasic
-where E:IEdgeWeighted<V> {
+where V:IVertex
+where E:IEdge<V> {
 		public override void main() {
 		}
 		private object instanceControlT = null;
@@ -40,8 +40,8 @@ where E:IEdgeWeighted<V> {
 			return (IInstanceControlUndirected<V, E, int, IEdgeInstance<V, int>>) this.instanceControlT;
 		}
 		public class InstanceControlImpl<V, E, TV, TE>: IInstanceControlUndirected<V, E, TV, TE> 
-			where V:IVertexBasic  
-			where E:IEdgeWeighted<V> 
+			where V:IVertex  
+			where E:IEdge<V> 
 			where TE: IEdgeInstance<V, TV> {
 
 			public IGraphHelperKV<V, E, TV, TE> delegator;
@@ -333,12 +333,12 @@ where E:IEdgeWeighted<V> {
 			public int countV() { return delegator.countV(); }
 		}
 		public interface IGraphHelperKV<V, E, TV, TE>: IGraphHelper<V, E, TV, TE> 
-			where V:IVertexBasic where E:IEdgeWeighted<V> where TE: IEdgeInstance<V, TV> {
+			where V:IVertex where E:IEdge<V> where TE: IEdgeInstance<V, TV> {
 			IDataContainerKVInstance<V, E, TV, TE> Container { get; set; }
 		}
 		internal class IGraphHelperKVImpl<V, E, TV, TE>: IGraphHelperKV<V, E, TV, TE> 
-			where V:IVertexBasic 
-			where E:IEdgeWeighted<V>
+			where V:IVertex 
+			where E:IEdge<V>
 			where TE: IEdgeInstance<V, TV> {
 
 			private int count_edges = 0;
