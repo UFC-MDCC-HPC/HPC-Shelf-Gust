@@ -1,4 +1,4 @@
-**Gust** is a Framework of Componentes for **HPC Shelf**. Components can be opened in **Eclipse**.
+**Gust** is a Framework of Componentes, for provide efficient processing of large graphs, using **HPC Shelf**. 
 
 Instructions
 ------------
@@ -6,8 +6,6 @@ Instructions
 command line:
 ----
 
-* mkdir -p ~/workspace/gust
-* cd ~/workspace/gust
 * git clone --recursive https://github.com/UFC-MDCC-HPC/HPC-Shelf-Gust
-* cd ~/workspace/gust/HPC-Shelf-Gust
+* cd HPC-Shelf-Gust
 * **./configure**
