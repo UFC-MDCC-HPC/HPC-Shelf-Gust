@@ -8,4 +8,4 @@ command line:
 
 * git clone --recursive https://github.com/UFC-MDCC-HPC/HPC-Shelf-Gust
 * cd HPC-Shelf-Gust
-* **./configure**
+* **./config-components.sh**
