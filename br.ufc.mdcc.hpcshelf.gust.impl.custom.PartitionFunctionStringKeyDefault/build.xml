@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/heron/hpe/heron/cache" default="all" name="PartitionFunctionStringKeyDefault">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="PartitionFunctionStringKeyDefault-1.0.0.0">
+    <ifnot targetexists="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.gust.user.impl.PartitionFunctionStringKeyDefault/bin/1.0.0.0">
+      <mkdir dir="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.gust.user.impl.PartitionFunctionStringKeyDefault/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.gust.user.impl.PartitionFunctionStringKeyDefault/PartitionFunctionStringKeyDefault.snk" optimize="true" output="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.gust.user.impl.PartitionFunctionStringKeyDefault/bin/1.0.0.0/BaseIPartitionStringKeyDefaultImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.gust.user.impl.PartitionFunctionStringKeyDefault/src/1.0.0.0/BaseIPartitionStringKeyDefaultImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.common.String/bin/1.0.0.0/IString.dll"/>
+        <include name="br.ufc.mdcc.gust.user.PartitionFunction/bin/1.0.0.0/BaseIPartitionFunction.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.gust.user.impl.PartitionFunctionStringKeyDefault/PartitionFunctionStringKeyDefault.snk" optimize="true" output="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.gust.user.impl.PartitionFunctionStringKeyDefault/bin/1.0.0.0/IPartitionStringKeyDefaultImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/br.ufc.mdcc.gust.user.impl.PartitionFunctionStringKeyDefault/src/1.0.0.0/IPartitionStringKeyDefaultImpl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.common.String/bin/1.0.0.0/IString.dll"/>
+        <include name="/br.ufc.mdcc.gust.user.impl.PartitionFunctionStringKeyDefault/bin/1.0.0.0/BaseIPartitionStringKeyDefaultImpl.dll"/>
+        <include name="br.ufc.mdcc.gust.user.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="PartitionFunctionStringKeyDefault-1.0.0.0" name="all"/>
+</project>

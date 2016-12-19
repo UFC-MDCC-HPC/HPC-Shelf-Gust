@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/heron/hpe/heron/cache" default="all" name="SAFePlatform">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="SAFePlatform-1.0.0.0">
+    <ifnot targetexists="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.platform.impl.SAFePlatform/bin/1.0.0.0">
+      <mkdir dir="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.platform.impl.SAFePlatform/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.platform.impl.SAFePlatform/SAFePlatform.snk" optimize="true" output="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.platform.impl.SAFePlatform/bin/1.0.0.0/BaseISafePlatform.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.platform.impl.SAFePlatform/src/1.0.0.0/BaseISafePlatform.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.platform.Maintainer/bin/1.0.0.0/IMaintainer.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost/bin/1.0.0.0/ISAFeHost.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/BaseIProcessingNode.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.platform.impl.SAFePlatform/SAFePlatform.snk" optimize="true" output="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.platform.impl.SAFePlatform/bin/1.0.0.0/ISafePlatform.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.platform.impl.SAFePlatform/src/1.0.0.0/ISafePlatform.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost/bin/1.0.0.0/ISAFeHost.dll"/>
+        <include name="/br.ufc.mdcc.hpcshelf.platform.impl.SAFePlatform/bin/1.0.0.0/BaseISafePlatform.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="SAFePlatform-1.0.0.0" name="all"/>
+</project>

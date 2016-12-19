@@ -1,22 +1,22 @@
 using System;
 
-//using br.ufc.mdcc.mapreduce.impl.FetchValuesImpl;
+//using br.ufc.mdcc.gust.impl.FetchValuesImpl;
 //using br.ufc.mdcc.common.Data;
 //using br.ufc.mdcc.common.impl.IteratorImpl;
-//using br.ufc.mdcc.mapreduce.user.PartitionFunction;
+//using br.ufc.mdcc.gust.user.PartitionFunction;
 //using br.ufc.mdcc.common.String;
-//using br.ufc.mdcc.common.Integer;
-using System.Collections.Generic;
 using System.Runtime.Remoting;
-using System.Diagnostics;
+//using br.ufc.mdcc.common.Integer;
 //using br.ufc.pargo.hpe.basic;
+using System.Diagnostics;
+//using System.Collections.Generic;
 
 namespace MapReduceforHPE
 {
 	class MainClass
 	{
-		public static void Main (string[] args) {
-		//{
+		public static void Main (string[] args)
+		{
 		//	IMapperFetchValuesImpl<IData,IData,IPartitionFunction<IData>> v 
 		//		= new IMapperFetchValuesImpl<IData,IData,IPartitionFunction<IData>>();
 			//IIteratorImpl<IData> v = new IIteratorImpl<IData> (); 

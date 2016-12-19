@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/heron/hpe/heron/cache" default="all" name="SystemImpl">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="SystemImpl-1.0.0.0">
+    <ifnot targetexists="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/bin/1.0.0.0">
+      <mkdir dir="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_0Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/src/1.0.0.0/BaseIPeer_0Impl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface/bin/1.0.0.0/IPortTypeDataSourceInterface.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.datasource.DataSource/bin/1.0.0.0/IDataSource.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingAdvance/bin/1.0.0.0/ITaskBindingAdvance.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.connector.Join/bin/1.0.0.0/IJoinReadSource.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll"/>
+        <include name="br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll"/>
+        <include name="br.ufc.mdcc.common.String/bin/1.0.0.0/IString.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingData/bin/1.0.0.0/ITaskBindingData.dll"/>
+        <include name="gust.System/bin/1.0.0.0/BaseIPeer_0.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/bin/1.0.0.0/IPeer_0Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/src/1.0.0.0/IPeer_0Impl.cs"/>
+      </sources>
+      <references>
+        <include name="/gust.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_0Impl.dll"/>
+        <include name="gust.System/bin/1.0.0.0/IPeer_0.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_1Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/src/1.0.0.0/BaseIPeer_1Impl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingAdvance/bin/1.0.0.0/ITaskBindingAdvance.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkInterface/bin/1.0.0.0/IPortTypeDataSinkInterface.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.connector.Join/bin/1.0.0.0/IJoinWriteSink.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.datasource.DataSink/bin/1.0.0.0/IDataSink.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingData/bin/1.0.0.0/ITaskBindingData.dll"/>
+        <include name="gust.System/bin/1.0.0.0/BaseIPeer_1.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/bin/1.0.0.0/IPeer_1Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/src/1.0.0.0/IPeer_1Impl.cs"/>
+      </sources>
+      <references>
+        <include name="/gust.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_1Impl.dll"/>
+        <include name="gust.System/bin/1.0.0.0/IPeer_1.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_2Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/src/1.0.0.0/BaseIPeer_2Impl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.connector.Step/bin/1.0.0.0/IStepMapCollector.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll"/>
+        <include name="br.ufc.mdcc.common.String/bin/1.0.0.0/IString.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingAdvance/bin/1.0.0.0/ITaskBindingAdvance.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.computation.Mapper/bin/1.0.0.0/IMapper.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.example.cw.WordCounter/bin/1.0.0.0/IWordCounter.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingData/bin/1.0.0.0/ITaskBindingData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.connector.Join/bin/1.0.0.0/IJoinMapFeeder.dll"/>
+        <include name="br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll"/>
+        <include name="gust.System/bin/1.0.0.0/BaseIPeer_2.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/bin/1.0.0.0/IPeer_2Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/src/1.0.0.0/IPeer_2Impl.cs"/>
+      </sources>
+      <references>
+        <include name="/gust.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_2Impl.dll"/>
+        <include name="gust.System/bin/1.0.0.0/IPeer_2.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_3Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/src/1.0.0.0/BaseIPeer_3Impl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.connector.Join/bin/1.0.0.0/IJoinGustyCollector.dll"/>
+        <include name="br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll"/>
+        <include name="br.ufc.mdcc.common.String/bin/1.0.0.0/IString.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingAdvance/bin/1.0.0.0/ITaskBindingAdvance.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.computation.Gusty/bin/1.0.0.0/IGusty.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.example.cw.Tallier/bin/1.0.0.0/ITallier.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.connector.Step/bin/1.0.0.0/IStepGustyFeeder.dll"/>
+        <include name="gust.System/bin/1.0.0.0/BaseIPeer_3.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/bin/1.0.0.0/IPeer_3Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/src/1.0.0.0/IPeer_3Impl.cs"/>
+      </sources>
+      <references>
+        <include name="/gust.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_3Impl.dll"/>
+        <include name="gust.System/bin/1.0.0.0/IPeer_3.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/bin/1.0.0.0/BaseIRootImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/src/1.0.0.0/BaseIRootImpl.cs"/>
+      </sources>
+      <references>
+        <include name="gust.Application/bin/1.0.0.0/IApplication.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingAdvance/bin/1.0.0.0/ITaskBindingAdvance.dll"/>
+        <include name="gust.Workflow/bin/1.0.0.0/IWorkflow.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingData/bin/1.0.0.0/ITaskBindingData.dll"/>
+        <include name="gust.System/bin/1.0.0.0/BaseIRoot.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/bin/1.0.0.0/IRootImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/gust.impl.SystemImpl/src/1.0.0.0/IRootImpl.cs"/>
+      </sources>
+      <references>
+        <include name="/gust.impl.SystemImpl/bin/1.0.0.0/BaseIRootImpl.dll"/>
+        <include name="gust.System/bin/1.0.0.0/IRoot.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="SystemImpl-1.0.0.0" name="all"/>
+</project>

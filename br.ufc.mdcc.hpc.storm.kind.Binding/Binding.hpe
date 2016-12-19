@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000005ff007744f9bdfb8ece49dd868e01de4c74e293b8d959baa8cce02826f3f4e61dd804fd23b384c1e233a5b1900489bb918f7c94fddfb947615f9c03e64bc07e6bcea526ed6315613732f376f77d950d9ce58ad19b5d2515b2e47edc0f469ce26d5c782414becb4783c71814316a3742dac7f5c4aeb76ac73c34dedfca2780d8b" isAbstract="true" kind="Binding" name="Binding" packagePath="br.ufc.mdcc.hpc.storm.kind">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IRoot" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.kind.Binding&#xA;{&#xA;&#x9;public interface BaseIRoot : IBindingRootKind&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIRoot.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.kind.Binding/bin/1.0.0.0/BaseIRoot.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.kind.Binding&#xA;{&#xA;&#x9;public interface IRoot : BaseIRoot&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IRoot.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.kind.Binding/bin/1.0.0.0/IRoot.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.kind.Binding/bin/1.0.0.0/BaseIRoot.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="257" y="102">
+        <color b="0" g="165" r="255"/>
+      </visualDescription>
+    </interface>
+    <interface iRef="IPeer" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.kind.Binding&#xA;{&#xA;&#x9;public interface BaseIPeer : IBindingKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIPeer.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.kind.Binding/bin/1.0.0.0/BaseIPeer.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.kind.Binding&#xA;{&#xA;&#x9;public interface IPeer : BaseIPeer&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IPeer.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.kind.Binding/bin/1.0.0.0/IPeer.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.kind.Binding/bin/1.0.0.0/BaseIPeer.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="80" x="194" y="278">
+        <color b="144" g="238" r="144"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IRoot" multiple="false" private="false" replica="0" uRef="root" visibleInterface="true">
+      <visualDescription h="40" w="80" x="258" y="186"/>
+    </unit>
+    <unit facet="0" iRef="IPeer" multiple="true" private="false" replica="0" uRef="peer" visibleInterface="true">
+      <visualDescription h="40" w="80" x="194" y="358"/>
+    </unit>
+  </componentInfo>
+</component:component>

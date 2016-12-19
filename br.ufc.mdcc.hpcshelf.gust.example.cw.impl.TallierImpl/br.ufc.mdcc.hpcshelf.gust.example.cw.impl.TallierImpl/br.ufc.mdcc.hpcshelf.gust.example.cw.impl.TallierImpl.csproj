@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD0CECDC-87B3-4E9C-8AD6-E1C4BBB8CEFD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>br.ufc.mdcc.hpcshelf.gust.example.cw.impl.TallierImpl</RootNamespace>
+    <AssemblyName>br.ufc.mdcc.hpcshelf.gust.example.cw.impl.TallierImpl</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\TallierImpl.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="DGAC">
+      <HintPath>..\..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\DGAC\DGAC.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\src\1.0.0.0\ITallierImpl.cs">
+      <Link>ITallierImpl.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\BaseITallierImpl.cs">
+      <Link>BaseITallierImpl.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.KVPair\br.ufc.mdcc.common.KVPair\br.ufc.mdcc.common.KVPair.csproj">
+      <Project>{9B499C49-DA84-475A-B783-2A3D2DEAAA97}</Project>
+      <Name>br.ufc.mdcc.common.KVPair</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.String\br.ufc.mdcc.common.String\br.ufc.mdcc.common.String.csproj">
+      <Project>{1F1C11D1-910D-4B0B-AE3A-80EC9882759C}</Project>
+      <Name>br.ufc.mdcc.common.String</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Iterator\br.ufc.mdcc.common.Iterator\br.ufc.mdcc.common.Iterator.csproj">
+      <Project>{807A087E-123C-4745-B029-C31FC9458A61}</Project>
+      <Name>br.ufc.mdcc.common.Iterator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer.csproj">
+      <Project>{97B35E58-AC6B-44A6-A536-90FA39076265}</Project>
+      <Name>br.ufc.mdcc.common.Integer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.example.cw.Tallier\br.ufc.mdcc.hpcshelf.gust.example.cw.Tallier\br.ufc.mdcc.hpcshelf.gust.example.cw.Tallier.csproj">
+      <Project>{C73CC800-2ABC-4336-96DF-9D98255B80C7}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.example.cw.Tallier</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data.csproj">
+      <Project>{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}</Project>
+      <Name>br.ufc.mdcc.common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction\br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction\br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction.csproj">
+      <Project>{F8166152-ED2A-473F-A191-3FC88F611512}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator.csproj">
+      <Project>{1784C0D3-7632-4F38-8FFF-FA8008E2A724}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner.csproj">
+      <Project>{B1988D74-54AE-4031-B185-E046226BC359}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType.csproj">
+      <Project>{4BB52CBE-64B0-4E9C-812F-921ED3FB87AF}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner.csproj">
+      <Project>{CFC8E9C1-30F7-4A4A-9B1E-9AFA4B474D9A}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.Vertex\br.ufc.mdcc.hpcshelf.gust.graph.Vertex\br.ufc.mdcc.hpcshelf.gust.graph.Vertex.csproj">
+      <Project>{B53D1E64-E50C-4BCD-A705-EDE7AEC76D9A}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.Vertex</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic\br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic\br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic.csproj">
+      <Project>{DDD9658C-CDEA-4903-AEEC-5641EC96377E}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.Graph\br.ufc.mdcc.hpcshelf.gust.graph.Graph\br.ufc.mdcc.hpcshelf.gust.graph.Graph.csproj">
+      <Project>{F648AF83-CBB9-4742-AA9F-F5D5287833B8}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.Graph</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.Edge\br.ufc.mdcc.hpcshelf.gust.graph.Edge\br.ufc.mdcc.hpcshelf.gust.graph.Edge.csproj">
+      <Project>{CE5F1F57-695B-46ED-98C1-6F6737A76CB9}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.Edge</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic\br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic\br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic.csproj">
+      <Project>{505F8DBD-BC4D-41C4-88AE-C58C962D6463}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph\br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph\br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph.csproj">
+      <Project>{90671855-07C4-4E67-8F2F-2384704D1F6B}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer.csproj">
+      <Project>{7B6A36EC-21B3-4C93-888C-01788A9423F8}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV\br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV.csproj">
+      <Project>{1A45736A-A938-4026-B292-AEA8ED4A8651}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

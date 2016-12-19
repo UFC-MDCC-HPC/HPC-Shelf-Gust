@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cb7514c385bc785b686b84fd8bd87fbb8cad3732db45a325684f2f5cd0d7b8a425f50ea6235bc9e9a2c1ee8daba75d46ed733fd3d8621847a04a31aa7f77b8371433f2091694b92ff0a8d7bb787622aeb893487fb4c8c82300c7c701a0bead403613fdc3222b0747c4ebd16ba5e58c0d4b563b09cabccf2bddf2a2ebbf0c46a3" isAbstract="false" kind="Synchronizer" name="BindingDirectMxNIterator" packagePath="br.ufc.mdcc.hpcshelf.gust.impl.binding.environment">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003f898f931c9692b180cb967a730d1d70c3700734d1c49aa46edfcddeaa820d19ac029ce19c6cc2af24006833d3f654466ba9314a3d48c6e101aca3f3ec42114d253416344bda591f33a4800c2e211657fcbd1964524ac09b4f853d2b426d767b2aaa26ea626d03951eb0d0d54b5970bfb614533d7f774bc89b6925aeae36c7d6" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="173" y="405">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="server_port_type" varName="S"/>
+        <unitBounds parallel="true" uRef="client_server">
+          <visualDescription h="20" w="20" x="51" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="244" y="620">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="576" y="696">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
+    <interface iRef="IBindingDirectMxNIterator" nArgs="1">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.BindingDirectMxNIterator &#xA;{&#xA;&#x9;public abstract class BaseIBindingDirectMxNIterator&lt;S>: Synchronizer, br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator.BaseIBindingDirectMxNIterator&lt;S>&#xA;&#x9;&#x9;// where C:IPortTypeIterator&#xA;&#x9;&#x9;where S:IPortTypeIterator&#xA;&#x9;{&#xA;&#x9;&#x9;private IPortTypeIterator client_port_type = default(IPortTypeIterator);&#xA;&#xA;&#x9;&#x9;protected IPortTypeIterator Client_port_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.client_port_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.client_port_type = (IPortTypeIterator) Services.getPort(&quot;client_port_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.client_port_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private S server_port_type = default(S);&#xA;&#xA;&#x9;&#x9;protected S Server_port_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.server_port_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.server_port_type = (S) Services.getPort(&quot;server_port_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.server_port_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIBindingDirectMxNIterator.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/BaseIBindingDirectMxNIterator.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/BaseIMbyNIntra.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;&#xA;using System.Threading;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.BindingDirectMxNIterator&#xA;{&#xA;&#x9;public class IBindingDirectMxNIterator&lt;S> : BaseIBindingDirectMxNIterator&lt;S>, br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator.IBindingDirectMxNIterator&lt;S>&#xA;&#x9;&#x9;//where C: IPortTypeIterator&#xA;&#x9;&#x9;where S: IPortTypeIterator&#xA;&#x9;{&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private ManualResetEvent sync = new ManualResetEvent(false);&#xA;&#xA;&#x9;&#x9;public IPortTypeIterator Client &#xA;&#x9;&#x9;{ &#xA;&#x9;&#x9;&#x9;get &#xA;&#x9;&#x9;&#x9;{ &#xA;&#x9;&#x9;&#x9;&#x9;sync.WaitOne ();&#xA;&#x9;&#x9;&#x9;&#x9;return server;&#xA;&#x9;&#x9;&#x9;} &#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private S server = default(S);&#xA;&#xA;&#x9;&#x9;public S Server &#xA;&#x9;&#x9;{ &#xA;&#x9;&#x9;&#x9;set &#xA;&#x9;&#x9;&#x9;{ &#xA;&#x9;&#x9;&#x9;&#x9;this.server = value; &#xA;&#x9;&#x9;&#x9;&#x9;sync.Set ();&#xA;&#x9;&#x9;&#x9;} &#xA;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IBindingDirectMxNIterator.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/IBindingDirectMxNIterator.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/BaseIBindingDirectMxNIterator.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/IMbyNIntra.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="250" x="42" y="214">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IBindingDirectMxNIterator" multiple="true" private="false" replica="0" uRef="client_server" visibleInterface="true">
+      <super cRef="base" uRef="client_server"/>
+      <visualDescription h="40" w="80" x="308" y="249"/>
+    </unit>
+  </componentInfo>
+</component:component>

@@ -49,16 +49,16 @@ if [[ "$1" =~ ^br.* ]]; then
 
 						
 						#### rename namespace
-						#find . -iname *.csproj | xargs sed -i 's/'"$OLDNAM.$NEW1"'/'"$NEWNAM.$NEW1"'/g'
-						#find . -iname *.cs | xargs sed -i 's/'"$OLDNAM.$NEW1"'/'"$NEWNAM.$NEW1"'/g'
-						#find . -iname *.userprefs | xargs sed -i 's/'"$OLDNAM.$NEW1"'/'"$NEWNAM.$NEW1"'/g'
-						#find . -iname *.sln | xargs sed -i 's/'"$OLDNAM.$NEW1"'/'"$NEWNAM.$NEW1"'/g'
-						#find . -iname *.hpe | xargs sed -i 's/'"$OLDNAM.$NEW1"'/'"$NEWNAM.$NEW1"'/g'
-						#find . -iname *.project | xargs sed -i 's/'"$OLDNAM.$NEW1"'/'"$NEWNAM.$NEW1"'/g'
-						#find . -iname *.xml | xargs sed -i 's/'"$OLDNAM.$NEW1"'/'"$NEWNAM.$NEW1"'/g'
+						find . -iname *.csproj | xargs sed -i 's/'"$OLDNAM.$NEW1"'/'"$NEWNAM.$NEW1"'/g'
+						find . -iname *.cs | xargs sed -i 's/'"$OLDNAM.$NEW1"'/'"$NEWNAM.$NEW1"'/g'
+						find . -iname *.userprefs | xargs sed -i 's/'"$OLDNAM.$NEW1"'/'"$NEWNAM.$NEW1"'/g'
+						find . -iname *.sln | xargs sed -i 's/'"$OLDNAM.$NEW1"'/'"$NEWNAM.$NEW1"'/g'
+						find . -iname *.hpe | xargs sed -i 's/'"$OLDNAM.$NEW1"'/'"$NEWNAM.$NEW1"'/g'
+						find . -iname *.project | xargs sed -i 's/'"$OLDNAM.$NEW1"'/'"$NEWNAM.$NEW1"'/g'
+						find . -iname *.xml | xargs sed -i 's/'"$OLDNAM.$NEW1"'/'"$NEWNAM.$NEW1"'/g'
 
-						#find . -iname *.hpe | xargs sed -i 's/'"name=\"$NEW1\" package=\"$OLDNAM"'/'"name=\"$NEW1\" package=\"$NEWNAM"'/g'
-						#find . -iname *.hpe | xargs sed -i 's/'"name=\"$NEW1\" packagePath=\"$OLDNAM"'/'"name=\"$NEW1\" packagePath=\"$NEWNAM"'/g'
+						find . -iname *.hpe | xargs sed -i 's/'"name=\"$NEW1\" package=\"$OLDNAM"'/'"name=\"$NEW1\" package=\"$NEWNAM"'/g'
+						find . -iname *.hpe | xargs sed -i 's/'"name=\"$NEW1\" packagePath=\"$OLDNAM"'/'"name=\"$NEW1\" packagePath=\"$NEWNAM"'/g'
 
 						
 						echo "Terminating ....."

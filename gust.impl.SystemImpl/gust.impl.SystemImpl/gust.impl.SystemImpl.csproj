@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{71736129-EEE9-4C13-A75A-1990F8296B14}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>gust.impl.SystemImpl</RootNamespace>
+    <AssemblyName>gust.impl.SystemImpl</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\SystemImpl.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="DGAC">
+      <HintPath>..\..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\DGAC\DGAC.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\src\1.0.0.0\IPeer_0Impl.cs">
+      <Link>IPeer_0Impl.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IPeer_1Impl.cs">
+      <Link>IPeer_1Impl.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IPeer_2Impl.cs">
+      <Link>IPeer_2Impl.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IPeer_3Impl.cs">
+      <Link>IPeer_3Impl.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\IRootImpl.cs">
+      <Link>IRootImpl.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase.csproj">
+      <Project>{226E5496-FDF2-4765-9C43-D2A2770EE760}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface.csproj">
+      <Project>{C8E65EC9-4750-4896-AF88-7C09BA7EFDF2}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.datasource.DataSource\br.ufc.mdcc.hpcshelf.gust.datasource.DataSource\br.ufc.mdcc.hpcshelf.gust.datasource.DataSource.csproj">
+      <Project>{BEE63437-0DC5-4A9F-A8A6-16E755AE9B3B}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.datasource.DataSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data.csproj">
+      <Project>{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}</Project>
+      <Name>br.ufc.mdcc.common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Platform\br.ufc.mdcc.common.Platform\br.ufc.mdcc.common.Platform.csproj">
+      <Project>{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}</Project>
+      <Name>br.ufc.mdcc.common.Platform</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator.csproj">
+      <Project>{1784C0D3-7632-4F38-8FFF-FA8008E2A724}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.connector.Join\br.ufc.mdcc.hpcshelf.gust.connector.Join\br.ufc.mdcc.hpcshelf.gust.connector.Join.csproj">
+      <Project>{90623C03-B24B-4448-A81E-901BB4017F36}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.connector.Join</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction\br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction\br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction.csproj">
+      <Project>{ADB1B6BE-28D3-4B10-BBFC-9224181F52C7}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer.csproj">
+      <Project>{97B35E58-AC6B-44A6-A536-90FA39076265}</Project>
+      <Name>br.ufc.mdcc.common.Integer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.String\br.ufc.mdcc.common.String\br.ufc.mdcc.common.String.csproj">
+      <Project>{1F1C11D1-910D-4B0B-AE3A-80EC9882759C}</Project>
+      <Name>br.ufc.mdcc.common.String</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gust.Application\gust.Application\gust.Application.csproj">
+      <Project>{D855AE04-5E8B-4AE5-9B48-BA6041E6076C}</Project>
+      <Name>gust.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gust.Workflow\gust.Workflow\gust.Workflow.csproj">
+      <Project>{7A5B8CCE-048A-4B0B-AA32-173BA89C7F9C}</Project>
+      <Name>gust.Workflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gust.System\gust.System\gust.System.csproj">
+      <Project>{54060882-AC1F-46E8-9DCE-B6478A5D53AF}</Project>
+      <Name>gust.System</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.datasource.DataSink\br.ufc.mdcc.hpcshelf.gust.datasource.DataSink\br.ufc.mdcc.hpcshelf.gust.datasource.DataSink.csproj">
+      <Project>{E27FAA80-9E4B-4CBE-970F-23E98879A3A0}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.datasource.DataSink</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkInterface\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkInterface\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkInterface.csproj">
+      <Project>{504A4A55-3292-4433-B83E-290ABB32ACDF}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner.csproj">
+      <Project>{CFC8E9C1-30F7-4A4A-9B1E-9AFA4B474D9A}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType.csproj">
+      <Project>{4BB52CBE-64B0-4E9C-812F-921ED3FB87AF}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner.csproj">
+      <Project>{B1988D74-54AE-4031-B185-E046226BC359}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.computation.Gusty\br.ufc.mdcc.hpcshelf.gust.computation.Gusty\br.ufc.mdcc.hpcshelf.gust.computation.Gusty.csproj">
+      <Project>{CD94FE2F-14E1-4B06-B2F1-F99E7A24F47C}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.computation.Gusty</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.connector.Step\br.ufc.mdcc.hpcshelf.gust.connector.Step\br.ufc.mdcc.hpcshelf.gust.connector.Step.csproj">
+      <Project>{2ED50770-7691-4DF8-8FC9-D1CD007B8792}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.connector.Step</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.example.cw.Tallier\br.ufc.mdcc.hpcshelf.gust.example.cw.Tallier\br.ufc.mdcc.hpcshelf.gust.example.cw.Tallier.csproj">
+      <Project>{C73CC800-2ABC-4336-96DF-9D98255B80C7}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.example.cw.Tallier</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.computation.Mapper\br.ufc.mdcc.hpcshelf.gust.computation.Mapper\br.ufc.mdcc.hpcshelf.gust.computation.Mapper.csproj">
+      <Project>{08449497-A987-494B-8DD2-B53211B3C762}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.computation.Mapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.example.cw.WordCounter\br.ufc.mdcc.hpcshelf.gust.example.cw.WordCounter\br.ufc.mdcc.hpcshelf.gust.example.cw.WordCounter.csproj">
+      <Project>{176FDF0B-6E04-446C-8077-FE5B2D50A7E7}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.example.cw.WordCounter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.custom.MapFunction\br.ufc.mdcc.hpcshelf.gust.custom.MapFunction\br.ufc.mdcc.hpcshelf.gust.custom.MapFunction.csproj">
+      <Project>{CC4908F8-3F6B-4F14-9179-64EF033B3371}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.custom.MapFunction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction\br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction\br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction.csproj">
+      <Project>{F8166152-ED2A-473F-A191-3FC88F611512}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Platform\br.ufc.mdcc.hpcshelf.platform.Platform\br.ufc.mdcc.hpcshelf.platform.Platform.csproj">
+      <Project>{37C2BDBB-CD4E-4CE5-B1B9-6B852F335535}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.Platform</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer.csproj">
+      <Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.Maintainer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction.csproj">
+      <Project>{D20F8E33-1C0C-44FF-83AD-818C99718420}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost\br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost\br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.csproj">
+      <Project>{B9018D06-D120-45ED-9A37-A713D5B715E5}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.csproj">
+      <Project>{22FB1B6B-A788-4107-967C-7D5070B8885E}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost.csproj">
+      <Project>{40D35DEE-28A1-4CE9-81EE-50280672C8DE}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

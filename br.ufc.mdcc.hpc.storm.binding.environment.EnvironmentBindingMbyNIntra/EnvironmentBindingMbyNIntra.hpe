@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009bfcc418e3205ff5f30d96b473e22ec98df70becc2cb2548ffeb487b2026f8683fa2edadce914e35244a1f558dc45ca80fcfb06626bf66c7d61d3ae7781d5dca504f3a2e99c00bd9a7799992991bd53895da1084008cc7b82d918c718cbc280f05b0fc86970860468b6bcc8f28e1837e6d35c13065e2bbbf4ea81dfc9d690081" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingMbyNIntra" packagePath="br.ufc.mdcc.hpc.storm.binding.environment">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d9e93f41ecdc24c151691986404104691fc2b4c524c9bc6317b05885a2cea9975c441bc9a9339284a55d4fbf1d7f823c026b8bba14661b578a973db0e5417436963dc58083ffd494aa312ef3b4f8b3b4b7d5cf3f03f39a874207d655148bd32f89785cd862e93165cd9ec40b8a09f27b326d1238b158bbd796774dae2ae44dc2" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN/EnvironmentBindingMbyN.hpe" name="EnvironmentBindingMbyN" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+        <visualDescription h="60" w="166" x="141" y="227">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="client_port_type" varName="C"/>
+        <parameter formFieldId="server_port_type" varName="S"/>
+        <unitBounds parallel="true" uRef="client">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="server">
+          <visualDescription h="20" w="20" x="43" y="4"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <parameter componentRef="client_port_type" formFieldId="client_port_type" order="0" variance="invariant" varName="C"/>
+    <parameter componentRef="server_port_type" formFieldId="server_port_type" order="1" variance="invariant" varName="S"/>
+    <innerComponent localRef="client_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="client_port_type" exposed="false">
+      <visualDescription h="60" w="100" x="136" y="317">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="server_port_type" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner/EnvironmentPortTypeMultiplePartner.hpe" multiple="false" name="EnvironmentPortTypeMultiplePartner" package="br.ufc.mdcc.hpc.storm.binding.environment" parameter_id="server_port_type" exposed="false">
+      <visualDescription h="60" w="100" x="225" y="470">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <interface iRef="IMbyNIntra" nArgs="2">
+      <slice isRef="client_port_type">
+        <originRef cRef="client_port_type" iRef="IEnvironmentPortType"/>
+        <visualDescription h="10" w="10" x="12" y="28"/>
+      </slice>
+      <slice isRef="server_port_type">
+        <originRef cRef="server_port_type" iRef="IEnvironmentPortType"/>
+        <visualDescription h="10" w="10" x="10" y="28"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra&#xA;{&#xA;&#x9;public interface BaseIMbyNIntra&lt;C,S> : BaseIClientMbyN&lt;C>, BaseIServerMbyN&lt;S>, ISynchronizerKind &#xA;&#x9;&#x9;where C:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;&#x9;where S:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIMbyNIntra.cs" srcType="base" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/BaseIMbyNIntra.dll" versionId="1.0.0.0"/>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyN;&#xA;&#xA;namespace br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra&#xA;{&#xA;&#x9;public interface IMbyNIntra&lt;C,S> : BaseIMbyNIntra&lt;C,S>, IClientMbyN&lt;C>, IServerMbyN&lt;S>&#xA;&#x9;&#x9;where C:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;&#x9;where S:IEnvironmentPortTypeMultiplePartner&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IMbyNIntra.cs" srcType="user" uri="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/IMbyNIntra.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingMbyNIntra/bin/1.0.0.0/BaseIMbyNIntra.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="184" x="68" y="74">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <parameter iname="IEnvironmentPortTypeMultiplePartner" order="0" parid="client_port_type" uname="environment_port_type" varid="C"/>
+      <parameter iname="IEnvironmentPortTypeMultiplePartner" order="1" parid="server_port_type" uname="environment_port_type" varid="S"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IMbyNIntra" multiple="true" private="false" replica="0" uRef="client_server" visibleInterface="true">
+      <super cRef="base" uRef="client"/>
+      <super cRef="base" uRef="server"/>
+      <visualDescription h="40" w="80" x="168" y="132"/>
+    </unit>
+  </componentInfo>
+</component:component>

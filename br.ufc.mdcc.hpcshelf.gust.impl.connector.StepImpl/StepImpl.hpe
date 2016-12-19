@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a34b601ed37631048a4e4f802504857d1be8f1adcb14915dc23acdcd432e7fca2a0ce9205be0b47959e0407f738eeb0e4c0e5b948f2b0a195eaea47d9bf609c52dab5015e13b91459fb98438466d23f4be22acd3108c316f25f5b558ca517b9a5f808b7a8d09b595f897015625c7f8fa084e0f7670cbf012a8a3a8387546c9b3" isAbstract="false" kind="Synchronizer" name="StepImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.impl.connector">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007d4900344900bee415a5c2d578f3d0c04ab3ed1027955a24d179a38af36f84c3fb81fbc4a1db69f0fc56f9a6f50952df7a9f1a51205597afa46a4250c284544375971498c184e67623776790b9ac655d32b73e29bee37534c448030ec10b9bf44fd6a936f3905afd8500333e84f223a109b46be1e749ec052ce9ea2dca321aaf" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.connector.Step/Step.hpe" name="Step" package="br.ufc.mdcc.hpcshelf.gust.connector" version="1.0.0.0">
+        <visualDescription h="59" w="140" x="205" y="384">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="intermediate_value_type" varName="TValue"/>
+        <parameter formFieldId="partition_function" varName="PF"/>
+        <parameter formFieldId="platform_map_maintainer" varName="M1"/>
+        <parameter formFieldId="intermediate_key_type" varName="TKey"/>
+        <parameter formFieldId="platform_gusty_maintainer" varName="M0"/>
+        <port localRef="collect_pairs" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="true">
+          <visualDescription h="60" w="100" x="61" y="403">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="server_port_type" varName="X###1740405369"/>
+          <unitBounds parallel="false" uRef="client_server">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="feed_pairs" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="true">
+          <visualDescription h="60" w="100" x="517" y="411">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="server_port_type" varName="X###1273910264"/>
+          <unitBounds parallel="false" uRef="client_server">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="task_binding_shuffle" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="60" w="100" x="351" y="461">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###197846458"/>
+          <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+          <unitBounds parallel="true" slice_replica="1" unit_replica="0" uRef="peer">
+            <visualDescription h="20" w="20" x="27" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="platform_map" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
+          <visualDescription h="60" w="100" x="182" y="448">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="maintainer" varName="M1"/>
+          <unitBounds parallel="true" uRef="node">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="platform_gusty" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
+          <visualDescription h="60" w="100" x="451" y="452">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="maintainer" varName="M0"/>
+          <unitBounds parallel="true" uRef="node">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="true" uRef="gusty_feeder">
+          <visualDescription h="20" w="20" x="88" y="3"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="map_collector">
+          <visualDescription h="20" w="20" x="28" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="pf" location="br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.gust.custom" exposed="false">
+      <visualDescription h="60" w="100" x="469" y="620">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="input_key" varName="TKey"/>
+      <unitBounds parallel="false" uRef="partition_function">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="omk" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="100" x="41" y="455">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="omv" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="544" y="338">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="maintainer_map" location="br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost/ComputeHost.hpe" multiple="false" name="ComputeHost" package="br.ufc.mdcc.hpcshelf.platform.maintainer" exposed="false">
+      <visualDescription h="60" w="100" x="79" y="79">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="compute_host">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="maintainer_gusty" location="br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost/ComputeHost.hpe" multiple="false" name="ComputeHost" package="br.ufc.mdcc.hpcshelf.platform.maintainer" exposed="false">
+      <visualDescription h="60" w="100" x="74" y="73">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="compute_host">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="omk" direct="true" varName="TKey"/>
+    <supplyParameter cRef="omv" direct="true" varName="TValue"/>
+    <supplyParameter cRef="pf" direct="true" varName="PF"/>
+    <supplyParameter cRef="maintainer_map" direct="true" varName="M1"/>
+    <supplyParameter cRef="maintainer_gusty" direct="true" varName="M0"/>
+    <interface iRef="IStepGustyFeederImpl" nArgs="3">
+      <slice isRef="task_binding_shuffle">
+        <originRef cRef="task_binding_shuffle" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="0" y="20"/>
+      </slice>
+      <slice isRef="feed_pairs">
+        <originRef cRef="feed_pairs" iRef="IBindingDirectMxNIterator"/>
+        <visualDescription h="10" w="10" x="85" y="28"/>
+      </slice>
+      <slice isRef="platform_gusty">
+        <originRef cRef="platform_gusty" iRef="IProcessingNode"/>
+        <visualDescription h="10" w="10" x="23" y="22"/>
+      </slice>
+      <slice isRef="step_channel">
+        <originRef cRef="step_channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="5" y="8"/>
+      </slice>
+      <slice isRef="output">
+        <originRef cRef="output" iRef="IIterator"/>
+        <visualDescription h="10" w="10" x="26" y="18"/>
+      </slice>
+      <slice isRef="value_factory">
+        <originRef cRef="value_factory" iRef="IIterator"/>
+        <visualDescription h="10" w="10" x="11" y="24"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpcshelf.gust.connector.Step;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.StepImpl &#xA;{&#xA;&#x9;public abstract class BaseIStepGustyFeederImpl&lt;M0,TKey, TValue>: Synchronizer, BaseIStepGustyFeeder&lt;M0,TKey, TValue>&#xA;&#x9;&#x9;where M0:IMaintainer&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#x9;&#xA;&#x9;{&#xA;&#x9;&#x9;static protected int FACET_REDUCE = 0;&#xA;&#x9;&#x9;static protected int FACET_MAP = 1;&#xA;&#xA;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_binding_shuffle = null;&#xA;&#xA;&#x9;&#x9;public ITaskPort&lt;ITaskPortTypeAdvance> Task_binding_shuffle&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding_shuffle == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_shuffle = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_binding_shuffle&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding_shuffle;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeIterator> feed_pairs = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeIterator> Feed_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.feed_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.feed_pairs = (IServerBase&lt;IPortTypeIterator>) Services.getPort(&quot;feed_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.feed_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IChannel step_channel = null;&#xA;&#xA;&#x9;&#x9;public IChannel Step_channel&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.step_channel == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.step_channel = (IChannel) Services.getPort(&quot;step_channel&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.step_channel;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IIterator&lt;IKVPair&lt;TKey,IIterator&lt;TValue>>> output = null;&#xA;&#x9;&#x9;protected IIterator&lt;IKVPair&lt;TKey,IIterator&lt;TValue>>> Output {&#xA;&#x9;&#x9;&#x9;get {&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output = (IIterator&lt;IKVPair&lt;TKey,IIterator&lt;TValue>>>)Services.getPort(&quot;output&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IIterator&lt;TValue> value_factory = null;&#xA;&#x9;&#x9;protected IIterator&lt;TValue> Value_factory {&#xA;&#x9;&#x9;&#x9;get {&#xA;&#x9;&#x9;&#x9;&#x9;if (this.value_factory == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.value_factory = (IIterator&lt;TValue>)Services.getPort(&quot;value_factory&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.value_factory;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIStepGustyFeederImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.impl.connector.StepImpl/bin/1.0.0.0/BaseIStepGustyFeederImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingAdvance/bin/1.0.0.0/ITaskBindingAdvance.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.connector.Step/bin/1.0.0.0/BaseIStepGustyFeeder.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.connector.Step;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Data;&#xA;using System.Collections.Generic;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using System.Diagnostics;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.StepImpl&#xA;{&#xA;&#x9;public class IStepGustyFeederImpl&lt;M0,TKey, TValue> : BaseIStepGustyFeederImpl&lt;M0,TKey, TValue>, IStepGustyFeeder&lt;M0,TKey, TValue>&#xA;&#x9;&#x9;where M0:IMaintainer&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;static private int TAG_SHUFFLE_OMV_NEW_CHUNK = 345;&#xA;&#x9;&#x9;static private int TAG_SHUFFLE_OMV_END_CHUNK = 347;&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: SHUFFLER REDUCE COLLECTOR START&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;TKey,IIterator&lt;TValue>>> output_instance = (IIteratorInstance&lt;IKVPair&lt;TKey,IIterator&lt;TValue>>>) Output.Instance;&#xA;&#x9;&#x9;&#x9;Feed_pairs.Server = output_instance;&#xA;&#xA;&#x9;&#x9;&#x9;// DETERMINE COMMUNICATION SOURCEs&#xA;&#x9;&#x9;&#x9;IDictionary&lt;int,Tuple&lt;int,int>> unit_ref = new Dictionary&lt;int, Tuple&lt;int,int>> ();&#xA;&#x9;&#x9;&#x9;int nf = this.FacetMultiplicity [FACET_MAP];&#xA;&#x9;&#x9;&#x9;int senders_size = 0;&#xA;&#x9;&#x9;&#x9;foreach (int i in this.FacetIndexes[FACET_MAP]) &#xA;&#x9;&#x9;&#x9;{   &#xA;&#x9;&#x9;&#x9;&#x9;int nr0 = senders_size;&#xA;&#x9;&#x9;&#x9;&#x9;senders_size += this.UnitSizeInFacet [i] [&quot;map_collector&quot;];&#xA;&#x9;&#x9;&#x9;&#x9;for (int k=0, j=nr0; j &lt; senders_size; k++, j++) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;unit_ref [j] = new Tuple&lt;int,int> (i/*,0 INDEX OF map_collector*/,k);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;bool end_computation = false;&#xA;&#x9;&#x9;&#x9;while (!end_computation)   // next iteration&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;bool[] finished_stream = new bool[senders_size];&#xA;&#x9;&#x9;&#x9;&#x9;for (int i = 0; i &lt; senders_size; i++)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;finished_stream [i] = false;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;int count_finished_streams = 0;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;end_computation = true;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;while (count_finished_streams &lt; senders_size)     // take next chunk ... &#xA;&#x9;&#x9;&#x9;&#x9;{  &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER REDUCER...1&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IActionFuture sync_perform;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_binding_shuffle.invoke (ITaskPortAdvance.READ_CHUNK);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_binding_shuffle.invoke (ITaskPortAdvance.PERFORM, out sync_perform);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER REDUCER...2&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IDictionary&lt;object,IIteratorInstance&lt;TValue>> kv_cache = new Dictionary&lt;object,IIteratorInstance&lt;TValue>> ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// PERFORM&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;for (int i = 0; i &lt; senders_size; i++) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (!finished_stream[i])&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER REDUCER...3 i=&quot; + i);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;IList&lt;IKVPairInstance&lt;TKey,TValue>> buffer;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;CompletedStatus status;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Step_channel.Receive (unit_ref[i], MPI.Communicator.anyTag, out buffer, out status);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER REDUCER...4&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;foreach (IKVPairInstance&lt;TKey,TValue> kv in buffer)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;IIteratorInstance&lt;TValue> iterator = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (!kv_cache.ContainsKey (kv.Key)) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;iterator = Value_factory.newIteratorInstance ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;kv_cache.Add (kv.Key, iterator);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;IKVPairInstance&lt;TKey,IIterator&lt;TValue>> item = (IKVPairInstance&lt;TKey,IIterator&lt;TValue>>)Output.createItem ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;item.Key = kv.Key;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;item.Value = iterator;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;output_instance.put (item);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;} &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;kv_cache.TryGetValue (kv.Key, out iterator);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;iterator.put (kv.Value);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER REDUCER...5&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (status.Tag == TAG_SHUFFLE_OMV_END_CHUNK) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;count_finished_streams++;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;finished_stream [i] = true;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;} &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;end_computation = false;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER REDUCER...6&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;output_instance.finish ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;foreach (IIteratorInstance&lt;TValue> iterator in kv_cache.Values) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;iterator.finish ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER REDUCER...7-1&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sync_perform.wait ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER REDUCER...7-2&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// CHUNK_READY&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_binding_shuffle.invoke (ITaskPortAdvance.CHUNK_READY);   //****&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER REDUCER...8&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;output_instance.finish ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER REDUCER...9 - FINISH&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IStepGustyFeederImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.impl.connector.StepImpl/bin/1.0.0.0/IStepGustyFeederImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.impl.connector.StepImpl/bin/1.0.0.0/BaseIStepGustyFeederImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.connector.Step/bin/1.0.0.0/IStepGustyFeeder.dll</dependency>
+          <externalDependency>MPI</externalDependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="135" x="278" y="215">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <port name="task_binding_shuffle">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle" sRef="task_binding_shuffle"/>
+      </port>
+      <port name="feed_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="feed_pairs"/>
+      </port>
+      <port name="platform_gusty">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_gusty" sRef="platform_gusty"/>
+      </port>
+      <parameter iname="IComputeHost" order="0" parid="platform_gusty_maintainer" uname="compute_host" varid="M0"/>
+      <parameter iname="IData" order="1" parid="intermediate_key_type" uname="data" varid="TKey"/>
+      <parameter iname="IData" order="2" parid="intermediate_value_type" uname="data" varid="TValue"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IStepMapCollectorImpl" nArgs="4">
+      <slice isRef="task_binding_shuffle">
+        <originRef cRef="task_binding_shuffle" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="0" y="31"/>
+      </slice>
+      <slice isRef="collect_pairs">
+        <originRef cRef="collect_pairs" iRef="IBindingDirectMxNIterator"/>
+        <visualDescription h="10" w="10" x="1" y="28"/>
+      </slice>
+      <slice isRef="platform_map">
+        <originRef cRef="platform_map" iRef="IProcessingNode"/>
+        <visualDescription h="10" w="10" x="76" y="29"/>
+      </slice>
+      <slice isRef="step_channel">
+        <originRef cRef="step_channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="79" y="8"/>
+      </slice>
+      <slice isRef="partition_function">
+        <originRef cRef="partition_function" iRef="IPartitionFunction"/>
+        <visualDescription h="10" w="10" x="60" y="7"/>
+      </slice>
+      <slice isRef="input_map_collector">
+        <originRef cRef="input_map_collector" iRef="IIterator"/>
+        <visualDescription h="10" w="10" x="28" y="30"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.connector.Step;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.StepImpl &#xA;{&#xA;&#x9;public abstract class BaseIStepMapCollectorImpl&lt;M0,TKey,TValue,PF>: Synchronizer, BaseIStepMapCollector&lt;M0,TKey,TValue,PF>&#xA;&#x9;&#x9;where M0:IMaintainer&#xA;&#x9;&#x9;where PF:IPartitionFunction&lt;TKey>&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;static protected int FACET_REDUCE = 0;&#xA;&#x9;&#x9;static protected int FACET_MAP = 1;&#xA;&#xA;&#x9;&#x9;private IClientBase&lt;IPortTypeIterator> collect_pairs = null;&#xA;&#xA;&#x9;&#x9;protected IClientBase&lt;IPortTypeIterator> Collect_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.collect_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.collect_pairs = (IClientBase&lt;IPortTypeIterator>) Services.getPort(&quot;collect_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.collect_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_binding_shuffle = null;&#xA;&#xA;&#x9;&#x9;public ITaskPort&lt;ITaskPortTypeAdvance> Task_binding_shuffle&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding_shuffle == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_shuffle = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_binding_shuffle&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding_shuffle;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private TKey input_key = default(TKey);&#xA;&#x9;&#x9;protected TKey Input_key&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_key == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_key = (TKey) Services.getPort(&quot;input_key&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_key;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IInteger output_key = null;&#xA;&#x9;&#x9;protected IInteger Output_key&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_key == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_key = (IInteger) Services.getPort(&quot;output_key&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_key;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IChannel step_channel = null;&#xA;&#xA;&#x9;&#x9;public IChannel Step_channel&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.step_channel == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.step_channel = (IChannel) Services.getPort(&quot;step_channel&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.step_channel;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private PF partition_function = default(PF);&#xA;&#xA;&#x9;&#x9;protected PF Partition_function&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.partition_function == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.partition_function = (PF) Services.getPort(&quot;partition_function&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.partition_function;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIStepMapCollectorImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.impl.connector.StepImpl/bin/1.0.0.0/BaseIStepMapCollectorImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingAdvance/bin/1.0.0.0/ITaskBindingAdvance.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.connector.Step/bin/1.0.0.0/BaseIStepMapCollector.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.gust.connector.Step;&#xA;using System.Diagnostics;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using System.Collections.Generic;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.StepImpl&#x9;&#xA;{&#xA;&#x9;public class IStepMapCollectorImpl&lt;M1,TKey,TValue,PF> : BaseIStepMapCollectorImpl&lt;M1,TKey,TValue,PF>, IStepMapCollector&lt;M1,TKey,TValue,PF>&#xA;&#x9;&#x9;where M1:IMaintainer&#xA;&#x9;&#x9;where PF:IPartitionFunction&lt;TKey>&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;static private int TAG_SHUFFLE_OMV_NEW_CHUNK = 345;&#xA;&#x9;&#x9;static private int TAG_SHUFFLE_OMV_END_CHUNK = 347;&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: STARTING SHUFFLER MAP ...1&quot;);&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;TKey,TValue>> input_instance = (IIteratorInstance&lt;IKVPair&lt;TKey,TValue>>) Collect_pairs.Client;&#xA;&#x9;&#x9;&#x9;object bin_object = null;&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture sync_perform;&#xA;&#xA;&#x9;&#x9;&#x9;// DETERMINE COMMMUNICATION TARGETs&#xA;&#x9;&#x9;&#x9;IDictionary&lt;int,Tuple&lt;int,int>> unit_ref = new Dictionary&lt;int, Tuple&lt;int,int>> ();&#xA;&#x9;&#x9;&#x9;int nf = this.FacetMultiplicity [FACET_REDUCE];&#xA;&#x9;&#x9;&#x9;int gusty_size = 0;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: STARTING SHUFFLER MAP ...2&quot;);&#xA;&#x9;&#x9;&#x9;foreach (int i in this.FacetIndexes[FACET_REDUCE]) &#xA;&#x9;&#x9;&#x9;{   &#xA;&#x9;&#x9;&#x9;&#x9;int nr0 = gusty_size;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: STARTING SHUFFLER MAP ...3 - BEGIN 1 - i=&quot; + i);&#xA;&#x9;&#x9;&#x9;&#x9;foreach (KeyValuePair&lt;int,IDictionary&lt;string,int>> ttt in this.UnitSizeInFacet) &#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: STARTING SHUFFLER MAP ...3 - &quot; + (ttt.Value == null));&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;foreach (KeyValuePair&lt;string,int> tttt in ttt.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: STARTING SHUFFLER MAP ...3 --- &quot; + ttt.Key + &quot; / &quot; + tttt.Key + &quot; / &quot; + tttt.Value);&#xA;&#x9;&#x9;&#x9;&#x9;}&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#xA;&#x9;&#x9;&#x9;&#x9;gusty_size += this.UnitSizeInFacet [i] [&quot;gusty_feeder&quot;];&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: STARTING SHUFFLER MAP ...3 - BEGIN 2 - &quot; + i);&#xA;&#x9;&#x9;&#x9;&#x9;for (int k=0, j=nr0; j &lt; gusty_size; k++, j++) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;unit_ref [j] = new Tuple&lt;int,int> (i/*,0 INDEX OF gusty_feeder*/,k);&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: STARTING SHUFFLER MAP ...3 - END - &quot; + i);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;Partition_function.NumberOfPartitions = gusty_size;&#xA;&#xA;&#x9;&#x9;&#x9;bool end_computation = false;&#xA;&#x9;&#x9;&#x9;while (!end_computation) // next iteration&#xA;&#x9;&#x9;&#x9;{   &#xA;&#x9;&#x9;&#x9;&#x9;end_computation = true;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;bool end_iteration = false;&#xA;&#x9;&#x9;&#x9;&#x9;while (!end_iteration) // take next chunk ...&#xA;&#x9;&#x9;&#x9;&#x9;{  &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER MAP ...4&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_binding_shuffle.invoke (ITaskPortAdvance.READ_CHUNK);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_binding_shuffle.invoke (ITaskPortAdvance.PERFORM, out sync_perform);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER MAP ...5&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IList&lt;IKVPairInstance&lt;TKey,TValue>>[] buffer = new IList&lt;IKVPairInstance&lt;TKey,TValue>>[gusty_size];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;for (int i = 0; i &lt; gusty_size; i++)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;buffer [i] = new List&lt;IKVPairInstance&lt;TKey,TValue>> ();&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER MAP ...6&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IKVPairInstance&lt;TKey,TValue> item = null;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (!input_instance.has_next ())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;end_iteration = true;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;end_computation = false;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;int count = 0;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;while (input_instance.fetch_next (out bin_object)) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER MAP ...6 count=&quot; + count);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;item = (IKVPairInstance&lt;TKey,TValue>)bin_object;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;this.Input_key.Instance = item.Key;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Partition_function.go ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;int index = ((IIntegerInstance)this.Output_key.Instance).Value;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;buffer [index].Add (item);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER MAP ...7 count=&quot; + count);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;count++;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER MAP ...9&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;for (int i=0; i&lt;buffer.Length;i++)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (&quot;SHUFFLER MAP ...9 - buffer[&quot; + i + &quot;]=&quot; + buffer[i].Count);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// PERFORM&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;for (int i = 0; i &lt; gusty_size; i++)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Step_channel.Send (buffer [i], unit_ref [i], end_iteration ? TAG_SHUFFLE_OMV_END_CHUNK : TAG_SHUFFLE_OMV_NEW_CHUNK);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER MAP ...10&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sync_perform.wait ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER MAP ...11&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_binding_shuffle.invoke (ITaskPortAdvance.CHUNK_READY);  //****&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER MAP ...12&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;}&#x9;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER MAP ...13&quot;);&#xA;&#x9;&#x9;&#x9;}&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.GlobalRank + &quot;: SHUFFLER MAP ...14&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IStepMapCollectorImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.impl.connector.StepImpl/bin/1.0.0.0/IStepMapCollectorImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.impl.connector.StepImpl/bin/1.0.0.0/BaseIStepMapCollectorImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.connector.Step/bin/1.0.0.0/IStepMapCollector.dll</dependency>
+          <externalDependency>MPI</externalDependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="133" x="104" y="178">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <port name="task_binding_shuffle">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle" sRef="task_binding_shuffle"/>
+      </port>
+      <port name="collect_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="collect_pairs"/>
+      </port>
+      <port name="platform_map">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_map" sRef="platform_map"/>
+      </port>
+      <parameter iname="IComputeHost" order="0" parid="platform_map_maintainer" uname="compute_host" varid="M1"/>
+      <parameter iname="IPartitionFunction" order="3" parid="partition_function" uname="partition_function" varid="PF"/>
+      <parameter iname="IData" order="1" parid="intermediate_key_type" uname="data" varid="TKey"/>
+      <parameter iname="IData" order="2" parid="intermediate_value_type" uname="data" varid="TValue"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IStepGustyFeederImpl" multiple="true" private="false" replica="0" uRef="gusty_feeder" visibleInterface="true">
+      <super cRef="base" uRef="gusty_feeder"/>
+      <visualDescription h="40" w="106" x="264" y="309"/>
+    </unit>
+    <unit facet="0" iRef="IStepMapCollectorImpl" multiple="true" private="false" replica="0" uRef="map_collector" visibleInterface="true">
+      <super cRef="base" uRef="map_collector"/>
+      <visualDescription h="40" w="95" x="109" y="298"/>
+    </unit>
+  </componentInfo>
+</component:component>

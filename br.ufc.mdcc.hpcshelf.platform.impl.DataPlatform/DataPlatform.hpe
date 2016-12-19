@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a515bef1bbca7500bb0bac76a9b3dcc3eae507b98367cf355c427202123fdabba13c1d8d14257fc1dd7d8dc3c9254187bd3a07ec2210d56822795486258e0ea398a4a36ef099f4f4a5061536d1f0059e62b964a2bb313de7131176ae54f65b4629d11ccb509c0a9cb8688169a6acfb0f8138c3c9b9ceec73ae04cc5d8d02dddb" isAbstract="false" kind="Environment" name="DataPlatform" packagePath="br.ufc.mdcc.hpcshelf.platform.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ebd79c008046bda718a2f95c35b0cd4002933dc60c36efdfb393a07f9ca13cd4c728f25333d8c2789a444a0f463cb178981abc27031cd830f5bb51f3644442d0dbb1cea891e129b8fefdf6997c4e5b555f9e8b2d3a0c347bb974e5773abb58418e8420366243b910a1febecfbaf1d26731ff992a75be0a9df5508f6d19f5be83" localRef="base" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="225" y="350">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="maintainer" varName="M"/>
+        <unitBounds parallel="true" uRef="node">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="maintainer" location="br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/DataHost.hpe" multiple="false" name="DataHost" package="br.ufc.mdcc.hpcshelf.platform.maintainer" exposed="false">
+      <visualDescription h="60" w="100" x="228" y="293">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="data_host">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="maintainer" direct="true" varName="M"/>
+    <interface iRef="IDataPlatform" nArgs="1">
+      <slice isRef="maintainer">
+        <originRef cRef="maintainer" iRef="IMaintainer"/>
+        <visualDescription h="10" w="10" x="20" y="27"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost;&#xA;using br.ufc.mdcc.hpcshelf.platform.Platform;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.platform.impl.DataPlatform &#xA;{&#xA;&#x9;public abstract class BaseIDataPlatform&lt;M>: br.ufc.pargo.hpe.kinds.Environment, BaseIProcessingNode&lt;M>&#xA;&#x9;&#x9;where M:IDataHost&#xA;&#x9;{&#xA;&#x9;&#x9;private M maintainer = default(M);&#xA;&#xA;&#x9;&#x9;protected M Maintainer&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.maintainer == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.maintainer = (M) Services.getPort(&quot;maintainer&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.maintainer;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataPlatform.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.platform.impl.DataPlatform/bin/1.0.0.0/BaseIDataPlatform.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Maintainer/bin/1.0.0.0/IMaintainer.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/BaseIProcessingNode.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost;&#xA;using br.ufc.mdcc.hpcshelf.platform.Platform;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.platform.impl.DataPlatform&#xA;{&#xA;&#x9;public class IDataPlatform&lt;M>: BaseIDataPlatform&lt;M>, IProcessingNode&lt;M>&#xA;where M:IDataHost&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="IDataPlatform.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.platform.impl.DataPlatform/bin/1.0.0.0/IDataPlatform.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.platform.impl.DataPlatform/bin/1.0.0.0/BaseIDataPlatform.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
+        </file>
+        <file contents="http://localhost:8081/BackendServices.asmx&#xA;1" name="platform.settings" srcType="platform.settings" uri="br.ufc.mdcc.hpcshelf.platform.impl.DataPlatform/bin/1.0.0.0/platform.dll" versionId="1.0.0.0"/>
+      </sources>
+      <visualDescription h="40" w="80" x="211" y="112">
+        <color b="0" g="128" r="0"/>
+      </visualDescription>
+      <parameter iname="IDataHost" order="0" parid="maintainer" uname="data_host" varid="M"/>
+    </interface>
+    <unit facet="0" iRef="IDataPlatform" multiple="true" private="false" replica="0" uRef="node" visibleInterface="true">
+      <super cRef="base" uRef="node"/>
+      <visualDescription h="40" w="80" x="207" y="237"/>
+    </unit>
+  </componentInfo>
+</component:component>
