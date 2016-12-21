@@ -45,12 +45,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.cw.impl.TallierImpl
 
 			//IKVPairInstance<IString,IInteger> output_value_instance = (IKVPairInstance<IString,IInteger>)Output_value.Instance;
 			IKVPairInstance<IString,IInteger> item = (IKVPairInstance<IString,IInteger>) Output.createItem();
-			IIteratorInstance<IKVPair<IString, IInteger>> output_value_instance = (IIteratorInstance<IKVPair<IString, IInteger>>) Output.Instance;
+			IIteratorInstance<IKVPair<IString, IInteger>> output_instance = (IIteratorInstance<IKVPair<IString, IInteger>>) Output.Instance;
 
 			((IStringInstance)item.Key).Value = ((IStringInstance)input_values_instance.Key).Value;
 			((IIntegerInstance)item.Value).Value = total_count;
 
-			output_value_instance.put(item);
+			output_instance.put(item);
 
 		}
 		public void Compute(){ main (); }
