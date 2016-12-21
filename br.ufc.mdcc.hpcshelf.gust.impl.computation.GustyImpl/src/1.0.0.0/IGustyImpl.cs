@@ -42,9 +42,9 @@ where G:IData
 		private void readPair_OMK_OMVs() {
 			//Console.WriteLine (this.Rank + ": REDUCE 1");
 
-			IIteratorInstance<IKVPair<TKey, IIterator<TValue>>> collect_pairs_client_iterator_kv_input_instance = (IIteratorInstance<IKVPair<TKey, IIterator<TValue>>>)Collect_pairs.Client;
-			IIteratorInstance<IKVPair<OKey,OValue>> feed_pairs_server_iterator_kv_output_instance = (IIteratorInstance<IKVPair<OKey,OValue>>)Output.Instance;
-			Feed_pairs.Server = feed_pairs_server_iterator_kv_output_instance;
+			IIteratorInstance<IKVPair<TKey, IIterator<TValue>>> input_instance = (IIteratorInstance<IKVPair<TKey, IIterator<TValue>>>)Collect_pairs.Client;
+			IIteratorInstance<IKVPair<OKey,OValue>> output_instance = (IIteratorInstance<IKVPair<OKey,OValue>>)Output.Instance;
+			Feed_pairs.Server = output_instance;
 
 			IActionFuture sync_perform;
 
@@ -74,13 +74,13 @@ where G:IData
 					IKVPairInstance<TKey, IIterator<TValue>> kvpair = null;
 					object kvpair_object;
 
-					if (!collect_pairs_client_iterator_kv_input_instance.has_next ())
+					if (!input_instance.has_next ())
 						end_iteration = true;
 					else
 						end_computation = false;
 
 					int count=0;
-					while (collect_pairs_client_iterator_kv_input_instance.fetch_next (out kvpair_object)) {
+					while (input_instance.fetch_next (out kvpair_object)) {
 						//Console.WriteLine (this.Rank + ": REDUCER ITERATE INNER LOOP 3 count=" + count);
 
 						kvpair = (IKVPairInstance<TKey, IIterator<TValue>>)kvpair_object;
@@ -112,9 +112,9 @@ where G:IData
 					IKVPairInstance<OKey,OValue> new_pair = (IKVPairInstance<OKey,OValue>) Output_value.newInstance ();
 					new_pair.Key = output_pair.Key;
 					new_pair.Value = output_pair.Value;
-					feed_pairs_server_iterator_kv_output_instance.put (new_pair);	 
+					output_instance.put (new_pair);	 
 				}
-				feed_pairs_server_iterator_kv_output_instance.finish ();
+				output_instance.finish ();
 				gusty_chunk_ready.wait ();
 				//Console.WriteLine (this.Rank + ": REDUCER ITERATE FINISH");
 			}

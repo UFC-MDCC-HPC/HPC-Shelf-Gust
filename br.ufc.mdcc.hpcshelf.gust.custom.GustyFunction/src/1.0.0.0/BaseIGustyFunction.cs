@@ -4,7 +4,7 @@ using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.common.Iterator;
-using br.ufc.mdcc.common.Integer;
+//using br.ufc.mdcc.common.Integer;
 
 namespace br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction
 {
@@ -17,9 +17,9 @@ namespace br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction
 		where G:IData
 	{
 		IKVPair<TKey, IIterator<TValue>> Input_values {get;}
-		G Graph {get;}
-		OValue Continuation_value {get;}
-		IKVPair<IInteger, PType> Partition_graph {get;}
+		//G Graph {get;}
+		//OValue Continuation_value {get;}
+		//IKVPair<IInteger, PType> Partition_graph {get;}
 		IIterator<IKVPair<OKey, OValue>> Output {get;}
 	}
 }
