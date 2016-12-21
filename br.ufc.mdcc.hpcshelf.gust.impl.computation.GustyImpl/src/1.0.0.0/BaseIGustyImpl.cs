@@ -4,51 +4,90 @@ using System;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
+using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Data;
+using br.ufc.mdcc.common.Integer;
+using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;
+//using br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator;
 using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
 using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;
-using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;
-using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance;
-using br.ufc.mdcc.hpcshelf.gust.computation.Gusty;
+//using br.ufc.mdcc.hpcshelf.platform.Platform;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.gust.computation.Gusty;
 
 namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl 
 {
-	public abstract class BaseIGustyImpl<M,TKey, TValue, OKey, OValue, RF>: Computation, BaseIGusty<M,TKey, TValue, OKey, OValue, RF>
+	public abstract class BaseIGustyImpl<M, GF, TKey, TValue, OKey, OValue, PType, G>: Computation, BaseIGusty<M, GF, TKey, TValue, OKey, OValue, PType, G>
 		where M:IMaintainer
-		where RF:IGustyFunction<TKey, TValue, OKey, OValue>
-		where OKey:IData
-		where OValue:IData
+		where GF:IGustyFunction<TKey, TValue, OKey, OValue, PType, G>
 		where TKey:IData
 		where TValue:IData
+		where OKey:IData
+		where OValue:IData
+		where PType:IData
+		where G:IData
 	{
-		private IKVPair<OKey, OValue> output_value = null;
-		protected IKVPair<OKey, OValue> Output_value
+		private IIterator<IKVPair<OKey, OValue>> output = null;
+
+		public IIterator<IKVPair<OKey, OValue>> Output
 		{
 			get
 			{
-				if (this.output_value == null)
-					this.output_value = (IKVPair<OKey, OValue>) Services.getPort("output_value");
-				return this.output_value;
+				if (this.output == null)
+					this.output = (IIterator<IKVPair<OKey, OValue>>) Services.getPort("output");
+				return this.output;
 			}
 		}
+		private IKVPair<IInteger, PType> partition_graph = null;
 
-		private OValue continuation_value = default(OValue);
-		protected OValue Continue_value
+		public IKVPair<IInteger, PType> Partition_graph
 		{
 			get
 			{
-				if (this.continuation_value == null)
-					this.continuation_value = (OValue) Services.getPort("continuation_value");
-				return this.continuation_value;
+				if (this.partition_graph == null)
+					this.partition_graph = (IKVPair<IInteger, PType>) Services.getPort("partition_graph");
+				return this.partition_graph;
 			}
 		}
+		private G graph = default(G);
 
+		public G Graph
+		{
+			get
+			{
+				if (this.graph == null)
+					this.graph = (G) Services.getPort("graph");
+				return this.graph;
+			}
+		}
+		private GF gusty_function = default(GF);
+
+		protected GF Gusty_function
+		{
+			get
+			{
+				if (this.gusty_function == null)
+					this.gusty_function = (GF) Services.getPort("gusty_function");
+				return this.gusty_function;
+			}
+		}
+		private IServerBase<IPortTypeIterator> feed_pairs = null;
+
+		public IServerBase<IPortTypeIterator> Feed_pairs
+		{
+			get
+			{
+				if (this.feed_pairs == null)
+					this.feed_pairs = (IServerBase<IPortTypeIterator>) Services.getPort("feed_pairs");
+				return this.feed_pairs;
+			}
+		}
 		private IClientBase<IPortTypeIterator> collect_pairs = null;
-		protected IClientBase<IPortTypeIterator> Collect_pairs
+
+		public IClientBase<IPortTypeIterator> Collect_pairs
 		{
 			get
 			{
@@ -57,38 +96,15 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 				return this.collect_pairs;
 			}
 		}
-		private RF gusty_function = default(RF);
+		private OValue continuation_value = default(OValue);
 
-		protected RF Gusty_function
+		public OValue Continue_value
 		{
 			get
 			{
-				if (this.gusty_function == null)
-					this.gusty_function = (RF) Services.getPort("gusty_function");
-				return this.gusty_function;
-			}
-		}
-
-		private IKVPair<TKey, IIterator<TValue>> input_values = null;
-
-		protected IKVPair<TKey, IIterator<TValue>> Input_values
-		{
-			get
-			{
-				if (this.input_values == null)
-					this.input_values = (IKVPair<TKey, IIterator<TValue>>) Services.getPort("input_values");
-				return this.input_values;
-			}
-		}
-		private IServerBase<IPortTypeIterator> feed_pairs = null;
-
-		protected IServerBase<IPortTypeIterator> Feed_pairs
-		{
-			get
-			{
-				if (this.feed_pairs == null)
-					this.feed_pairs = (IServerBase<IPortTypeIterator>) Services.getPort("feed_pairs");
-				return this.feed_pairs;
+				if (this.continuation_value == null)
+					this.continuation_value = (OValue) Services.getPort("continuation_value");
+				return this.continuation_value;
 			}
 		}
 		private ITaskPort<ITaskPortTypeAdvance> task_gusty = null;
@@ -102,15 +118,27 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl
 				return this.task_gusty;
 			}
 		}
+//		private IProcessingNode<M> platform_gusty = null;
 
-		private IIterator<IKVPair<OKey,OValue>> output = null;
-		protected IIterator<IKVPair<OKey,OValue>> Output {
-			get {
-				if (this.output == null)
-					this.output = (IIterator<IKVPair<OKey,OValue>>)Services.getPort("output");
-				return this.output;
+//		public IProcessingNode<M> Platform_gusty
+//		{
+//			get
+//			{
+//				if (this.platform_gusty == null)
+//					this.platform_gusty = (IProcessingNode<M>) Services.getPort("platform_gusty");
+//				return this.platform_gusty;
+//			}
+//		}
+		private IKVPair<TKey, IIterator<TValue>> input_values = null;
+
+		public IKVPair<TKey, IIterator<TValue>> Input_values
+		{
+			get
+			{
+				if (this.input_values == null)
+					this.input_values = (IKVPair<TKey, IIterator<TValue>>) Services.getPort("input_values");
+				return this.input_values;
 			}
 		}
-
 	}
 }

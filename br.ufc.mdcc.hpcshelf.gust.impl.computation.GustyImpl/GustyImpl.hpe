@@ -1,53 +1,100 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001dd6c340b4e48c8cdec3b29abb8b833ac3d849c32648c1dbe9a27f6f372926f77a109d9d26942f08d12332a28dbbffcaac529a4c410990039268b5cda8755f71f86165234f8e0113acb0b181e1f57bc48b80992bc2c452411d7ffcf55c2660af4c24489ea877d6bcae863fcdb36f4ed6a137a3b9a5a93a49e232eec2bced759b" isAbstract="false" kind="Computation" name="GustyImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.impl.computation">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000008382c57de7269246eedccc2719b0cb5402e3fb920fc64feb3c66930350c5d0a5063b46e6099ad51285aafc1227f0b516f669a0b555835199f6044656e955efc0bbeb03ac5ceba423a560f36bdf70941ee0c54e2fa8678cc295349854d58af9d59e7e4c7dbece8bb2ec21924f3e4065dca3e816360bdb321554ce60351538358f" isAbstract="false" kind="Computation" name="GustyImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.impl.computation">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000006d25f85e56b7095a8bcfb18f74af86940eab579a6d829d9ad4bd64117f77e60463f0a17109772abb1fe03f5ea9aefc34ef2c181e3707522d61e00cea799eb02c127c1b4938344e6ff202c7325fd317ad244e5b944c8b6aba258c1aa6af3f8b6c987977512a58df9031c421f22a3620d57be7575298dad5fe962f46de66c977b2" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.computation.Gusty/Gusty.hpe" name="Gusty" package="br.ufc.mdcc.hpcshelf.gust.computation" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="349" y="220">
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003b9bedf38a063e53f41cd437018392bfab9d3e5877424b65cd5111257d7ee9657e411480bfdcb87b5727bb08a480adb186667dd0dc26d639a13160aa18f5034faffcb749882ec09d0cab42d469d0d7fe2b9428bc4234cd7f3b430636b450d3b861a067165759b849cb39aa2c43b96f37245bf7066999727dce5e29cd3d402cb1" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.computation.Gusty/Gusty.hpe" name="Gusty" package="br.ufc.mdcc.hpcshelf.gust.computation" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="362" y="337">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="output_value_type" varName="OValue"/>
+        <parameter formFieldId="graph_type" varName="G"/>
         <parameter formFieldId="input_key_type" varName="TKey"/>
+        <parameter formFieldId="gusty_function" varName="GF"/>
         <parameter formFieldId="input_value_type" varName="TValue"/>
         <parameter formFieldId="platform_maintainer" varName="M"/>
-        <parameter formFieldId="gusty_function" varName="RF"/>
+        <parameter formFieldId="partition_type" varName="PType"/>
         <parameter formFieldId="output_key_type" varName="OKey"/>
         <port localRef="task_gusty" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-          <visualDescription h="60" w="182" x="269" y="455">
+          <visualDescription h="60" w="182" x="88" y="350">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###602331511"/>
+          <parameter formFieldId="task_port_type" varName="X###1283598398"/>
           <unitBounds parallel="true" uRef="peer">
-            <visualDescription h="20" w="20" x="5" y="2"/>
+            <visualDescription h="20" w="20" x="154" y="20"/>
           </unitBounds>
         </port>
         <port localRef="feed_pairs" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="true">
-          <visualDescription h="60" w="112" x="457" y="378">
+          <visualDescription h="60" w="112" x="336" y="549">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###2108400616"/>
+          <parameter formFieldId="server_port_type" varName="X###192883747"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
         <port localRef="collect_pairs" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="true">
-          <visualDescription h="60" w="111" x="51" y="234">
+          <visualDescription h="66" w="138" x="99" y="436">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1651171246"/>
+          <parameter formFieldId="server_port_type" varName="X###1713950236"/>
           <unitBounds parallel="false" uRef="client_server">
-            <visualDescription h="20" w="20" x="5" y="2"/>
+            <visualDescription h="20" w="20" x="116" y="24"/>
           </unitBounds>
         </port>
         <port localRef="platform_gusty" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
-          <visualDescription h="60" w="149" x="305" y="352">
+          <visualDescription h="59" w="149" x="600" y="419">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="maintainer" varName="M"/>
           <unitBounds parallel="true" uRef="node">
+            <visualDescription h="20" w="20" x="63" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="continuation_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="53" w="194" x="586" y="350">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <unitBounds parallel="false" uRef="data">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="input_values" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="60" w="181" x="568" y="274">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="value_type" varName="X###15975594"/>
+          <parameter formFieldId="key_type" varName="TKey"/>
+          <unitBounds parallel="false" uRef="kv_pair">
+            <visualDescription h="20" w="20" x="137" y="20"/>
+          </unitBounds>
+        </port>
+        <port localRef="output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="60" w="152" x="602" y="511">
+            <color b="203" g="192" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="item_type" varName="X###66352483"/>
+          <unitBounds parallel="false" uRef="iterator">
+            <visualDescription h="20" w="20" x="3" y="21"/>
+          </unitBounds>
+        </port>
+        <port localRef="partition_graph" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="60" w="173" x="136" y="532">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="value_type" varName="PType"/>
+          <parameter formFieldId="key_type" varName="X###642168988"/>
+          <unitBounds parallel="false" uRef="kv_pair">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="graph" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="72" w="112" x="476" y="534">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <unitBounds parallel="false" uRef="data">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
@@ -62,60 +109,107 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent localRef="omk" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="100" x="551" y="201">
+    <innerComponent localRef="tkey" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="64" y="69">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="ork" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="100" x="551" y="276">
+    <innerComponent localRef="tvalue" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="178" y="75">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="omv" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="100" x="685" y="209">
+    <innerComponent localRef="okey" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="290" y="77">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="orv" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="100" x="682" y="283">
+    <innerComponent localRef="ovalue" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="53" w="194" x="586" y="350">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="platform" location="br.ufc.mdcc.common.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.common" exposed="false">
-      <visualDescription h="60" w="100" x="553" y="364">
+    <innerComponent localRef="p" location="br.ufc.mdcc.common.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="71" y="151">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="platform">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="rf" location="br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/GustyFunction.hpe" multiple="false" name="GustyFunction" package="br.ufc.mdcc.hpcshelf.gust.custom" exposed="false">
-      <visualDescription h="60" w="100" x="676" y="326">
+    <innerComponent localRef="gf" location="br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/GustyFunction.hpe" multiple="false" name="GustyFunction" package="br.ufc.mdcc.hpcshelf.gust.custom" exposed="false">
+      <visualDescription h="60" w="157" x="687" y="270">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="output_value_type" varName="OValue"/>
+      <parameter formFieldId="graph_type" varName="G"/>
       <parameter formFieldId="input_key_type" varName="TKey"/>
       <parameter formFieldId="input_value_type" varName="TValue"/>
+      <parameter formFieldId="partition_type" varName="PType"/>
       <parameter formFieldId="output_key_type" varName="OKey"/>
+      <port localRef="continuation_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="53" w="194" x="586" y="350">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <port localRef="input_values" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="60" w="181" x="68" y="302">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="value_type" varName="X###2142245140"/>
+        <parameter formFieldId="key_type" varName="TKey"/>
+        <unitBounds parallel="false" uRef="kv_pair">
+          <visualDescription h="20" w="20" x="137" y="20"/>
+        </unitBounds>
+      </port>
+      <port localRef="output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="60" w="152" x="939" y="357">
+          <color b="203" g="192" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="item_type" varName="X###3242378"/>
+        <unitBounds parallel="false" uRef="iterator">
+          <visualDescription h="20" w="20" x="3" y="21"/>
+        </unitBounds>
+      </port>
+      <port localRef="partition_graph" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="60" w="173" x="892" y="438">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="value_type" varName="PType"/>
+        <parameter formFieldId="key_type" varName="X###807555871"/>
+        <unitBounds parallel="false" uRef="kv_pair">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <port localRef="graph" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="72" w="112" x="476" y="534">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
       <unitBounds parallel="false" uRef="gusty_function">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="c" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
-      <visualDescription h="60" w="100" x="212" y="550">
+      <visualDescription h="60" w="100" x="383" y="153">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="environment_port_type">
@@ -123,77 +217,123 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="s" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
-      <visualDescription h="60" w="100" x="349" y="553">
+      <visualDescription h="60" w="100" x="505" y="157">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="true" uRef="environment_port_type">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="maintainer" location="br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost/ComputeHost.hpe" multiple="false" name="ComputeHost" package="br.ufc.mdcc.hpcshelf.platform.maintainer" exposed="false">
-      <visualDescription h="60" w="100" x="81" y="88">
+    <innerComponent localRef="ptype" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="183" y="227">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <unitBounds parallel="true" uRef="compute_host">
+      <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="omk" direct="true" varName="TKey"/>
-    <supplyParameter cRef="omv" direct="true" varName="TValue"/>
-    <supplyParameter cRef="ork" direct="true" varName="OKey"/>
-    <supplyParameter cRef="orv" direct="true" varName="OValue"/>
-    <supplyParameter cRef="platform" direct="true" varName="P"/>
-    <supplyParameter cRef="rf" direct="true" varName="RF"/>
+    <innerComponent localRef="g" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="72" w="112" x="476" y="534">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="m" location="br.ufc.mdcc.hpcshelf.platform.Maintainer/Maintainer.hpe" multiple="false" name="Maintainer" package="br.ufc.mdcc.hpcshelf.platform" exposed="false">
+      <visualDescription h="60" w="100" x="287" y="671">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="maintainer">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="tkey" direct="true" varName="TKey"/>
+    <supplyParameter cRef="tvalue" direct="true" varName="TValue"/>
+    <supplyParameter cRef="okey" direct="true" varName="OKey"/>
+    <supplyParameter cRef="ovalue" direct="true" varName="OValue"/>
+    <supplyParameter cRef="p" direct="true" varName="P"/>
     <supplyParameter cRef="c" direct="true" varName="C"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
-    <supplyParameter cRef="maintainer" direct="true" varName="M"/>
-    <interface iRef="IGustyImpl" nArgs="6">
+    <supplyParameter cRef="ptype" direct="true" varName="PType"/>
+    <supplyParameter cRef="g" direct="true" varName="G"/>
+    <supplyParameter cRef="gf" direct="true" varName="GF"/>
+    <supplyParameter cRef="m" direct="true" varName="M"/>
+    <innerComponent localRef="C###2142245140" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="152" x="455" y="455">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="item_type" varName="TValue"/>
+      <unitBounds parallel="false" uRef="iterator">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="C###2142245140" varName="X###2142245140"/>
+    <innerComponent localRef="C###3242378" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="63" w="154" x="559" y="515">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="OValue"/>
+      <parameter formFieldId="key_type" varName="OKey"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="7" y="21"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="C###3242378" varName="X###3242378"/>
+    <innerComponent localRef="C###807555871" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="412" y="405">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="C###807555871" varName="X###807555871"/>
+    <interface iRef="IGustyImpl" nArgs="8">
       <slice isRef="feed_pairs">
         <originRef cRef="feed_pairs" iRef="IBindingDirectMxNIterator"/>
-        <visualDescription h="10" w="10" x="69" y="14"/>
+        <visualDescription h="10" w="10" x="62" y="2"/>
       </slice>
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IBindingDirectMxNIterator"/>
-        <visualDescription h="10" w="10" x="46" y="26"/>
+        <visualDescription h="10" w="10" x="39" y="3"/>
+      </slice>
+      <slice isRef="platform_gusty">
+        <originRef cRef="platform_gusty" iRef="IProcessingNode"/>
+        <visualDescription h="10" w="10" x="3" y="38"/>
       </slice>
       <slice isRef="task_gusty">
         <originRef cRef="task_gusty" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="0" y="23"/>
       </slice>
-      <slice isRef="platform_gusty">
-        <originRef cRef="platform_gusty" iRef="IProcessingNode"/>
-        <visualDescription h="10" w="10" x="11" y="26"/>
-      </slice>
       <slice isRef="gusty_function">
         <originRef cRef="gusty_function" iRef="IGustyFunction"/>
-        <visualDescription h="10" w="10" x="2" y="10"/>
-      </slice>
-      <slice isRef="output">
-        <originRef cRef="output" iRef="IIterator"/>
-        <visualDescription h="10" w="10" x="60" y="25"/>
+        <visualDescription h="10" w="10" x="96" y="3"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpcshelf.gust.computation.Gusty;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl &#xA;{&#xA;&#x9;public abstract class BaseIGustyImpl&lt;M,TKey, TValue, OKey, OValue, RF>: Computation, BaseIGusty&lt;M,TKey, TValue, OKey, OValue, RF>&#xA;&#x9;&#x9;where M:IMaintainer&#xA;&#x9;&#x9;where RF:IGustyFunction&lt;TKey, TValue, OKey, OValue>&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;private IKVPair&lt;OKey, OValue> output_value = null;&#xA;&#x9;&#x9;protected IKVPair&lt;OKey, OValue> Output_value&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_value == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_value = (IKVPair&lt;OKey, OValue>) Services.getPort(&quot;output_value&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_value;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private OValue continuation_value = default(OValue);&#xA;&#x9;&#x9;protected OValue Continue_value&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.continuation_value == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.continuation_value = (OValue) Services.getPort(&quot;continuation_value&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.continuation_value;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IClientBase&lt;IPortTypeIterator> collect_pairs = null;&#xA;&#x9;&#x9;protected IClientBase&lt;IPortTypeIterator> Collect_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.collect_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.collect_pairs = (IClientBase&lt;IPortTypeIterator>) Services.getPort(&quot;collect_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.collect_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private RF gusty_function = default(RF);&#xA;&#xA;&#x9;&#x9;protected RF Gusty_function&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.gusty_function == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.gusty_function = (RF) Services.getPort(&quot;gusty_function&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.gusty_function;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IKVPair&lt;TKey, IIterator&lt;TValue>> input_values = null;&#xA;&#xA;&#x9;&#x9;protected IKVPair&lt;TKey, IIterator&lt;TValue>> Input_values&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_values == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_values = (IKVPair&lt;TKey, IIterator&lt;TValue>>) Services.getPort(&quot;input_values&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_values;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeIterator> feed_pairs = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeIterator> Feed_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.feed_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.feed_pairs = (IServerBase&lt;IPortTypeIterator>) Services.getPort(&quot;feed_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.feed_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_gusty = null;&#xA;&#xA;&#x9;&#x9;public ITaskPort&lt;ITaskPortTypeAdvance> Task_gusty&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_gusty == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_gusty = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_gusty&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_gusty;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IIterator&lt;IKVPair&lt;OKey,OValue>> output = null;&#xA;&#x9;&#x9;protected IIterator&lt;IKVPair&lt;OKey,OValue>> Output {&#xA;&#x9;&#x9;&#x9;get {&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output = (IIterator&lt;IKVPair&lt;OKey,OValue>>)Services.getPort(&quot;output&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;}&#xA;}" name="BaseIGustyImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl/bin/1.0.0.0/BaseIGustyImpl.dll" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpcshelf.platform.Platform;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.computation.Gusty;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl &#xA;{&#xA;&#x9;public abstract class BaseIGustyImpl: Computation, BaseIGusty&lt;M, GF, TKey, TValue, OKey, OValue, PType, G>&#xA;&#x9;&#x9;where M:IMaintainer&#xA;&#x9;&#x9;where GF:IGustyFunction&lt;TKey, TValue, OKey, OValue, PType, G>&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;&#x9;where PType:IData&#xA;&#x9;&#x9;where G:IData&#xA;&#x9;{&#xA;&#x9;&#x9;private IIterator&lt;IKVPair&lt;OKey, OValue>> output = null;&#xA;&#xA;&#x9;&#x9;public IIterator&lt;IKVPair&lt;OKey, OValue>> Output&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output = (IIterator&lt;IKVPair&lt;OKey, OValue>>) Services.getPort(&quot;output&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IKVPair&lt;IInteger, PType> partition_graph = null;&#xA;&#xA;&#x9;&#x9;public IKVPair&lt;IInteger, PType> Partition_graph&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.partition_graph == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.partition_graph = (IKVPair&lt;IInteger, PType>) Services.getPort(&quot;partition_graph&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.partition_graph;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private G graph = default(G);&#xA;&#xA;&#x9;&#x9;public G Graph&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.graph == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.graph = (G) Services.getPort(&quot;graph&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.graph;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private GF gusty_function = default(GF);&#xA;&#xA;&#x9;&#x9;protected GF Gusty_function&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.gusty_function == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.gusty_function = (GF) Services.getPort(&quot;gusty_function&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.gusty_function;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IBindingDirectMxNIterator&lt;IPortTypeIterator> feed_pairs = null;&#xA;&#xA;&#x9;&#x9;public IBindingDirectMxNIterator&lt;IPortTypeIterator> Feed_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.feed_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.feed_pairs = (IBindingDirectMxNIterator&lt;IPortTypeIterator>) Services.getPort(&quot;feed_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.feed_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IBindingDirectMxNIterator&lt;IPortTypeIterator> collect_pairs = null;&#xA;&#xA;&#x9;&#x9;public IBindingDirectMxNIterator&lt;IPortTypeIterator> Collect_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.collect_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.collect_pairs = (IBindingDirectMxNIterator&lt;IPortTypeIterator>) Services.getPort(&quot;collect_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.collect_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private OValue continuation_value = default(OValue);&#xA;&#xA;&#x9;&#x9;public OValue Continuation_value&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.continuation_value == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.continuation_value = (OValue) Services.getPort(&quot;continuation_value&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.continuation_value;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_gusty = null;&#xA;&#xA;&#x9;&#x9;public ITaskPort&lt;ITaskPortTypeAdvance> Task_gusty&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_gusty == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_gusty = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_gusty&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_gusty;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IProcessingNode&lt;M> platform_gusty = null;&#xA;&#xA;&#x9;&#x9;public IProcessingNode&lt;M> Platform_gusty&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform_gusty == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform_gusty = (IProcessingNode&lt;M>) Services.getPort(&quot;platform_gusty&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform_gusty;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IKVPair&lt;TKey, IIterator&lt;TValue>> input_values = null;&#xA;&#xA;&#x9;&#x9;public IKVPair&lt;TKey, IIterator&lt;TValue>> Input_values&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_values == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_values = (IKVPair&lt;TKey, IIterator&lt;TValue>>) Services.getPort(&quot;input_values&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_values;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIGustyImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl/bin/1.0.0.0/BaseIGustyImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Iterator/bin/1.0.0.0/IIterator.dll</dependency>
           <dependency>br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
-          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/IGustyFunction.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.binding.task.TaskBindingAdvance/bin/1.0.0.0/ITaskBindingAdvance.dll</dependency>
-          <dependency>br.ufc.mdcc.common.Set/bin/1.0.0.0/ISet.dll</dependency>
-          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/IBindingDirectMxNIterator.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Maintainer/bin/1.0.0.0/IMaintainer.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.computation.Gusty/bin/1.0.0.0/BaseIGusty.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.gust.computation.Gusty;&#xA;using System.Diagnostics;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using System.Collections.Generic;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl&#xA;{&#xA;&#x9;public class IGustyImpl&lt;M,TKey, TValue, OKey, OValue, RF> : BaseIGustyImpl&lt;M,TKey, TValue, OKey, OValue, RF>, IGusty&lt;M,TKey, TValue, OKey, OValue, RF>&#xA;&#x9;&#x9;where M:IMaintainer&#xA;&#x9;&#x9;where RF:IGustyFunction&lt;TKey, TValue, OKey, OValue>&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main() {&#xA;&#x9;&#x9;&#x9;/* 1. Ler pares chave (TKey) e valores (TValue) de Input.&#xA;             * 2. Para cada par, atribuir a Key e Values e chamar Gusty_function.go();&#xA;             * 3. Pegar o resultado de Reduction_function.go() de Output_gusty (OValue) &#xA;             *    e colocar no iterator Output.&#xA;             */&#xA;&#x9;&#x9;&#x9;readPair_OMK_OMVs(); //startThreads();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private void readPair_OMK_OMVs() &#x9;&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCE 1&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;TKey, IIterator&lt;TValue>>> input_instance = (IIteratorInstance&lt;IKVPair&lt;TKey, IIterator&lt;TValue>>>)Collect_pairs.Client;&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;OKey,OValue>> output_instance = (IIteratorInstance&lt;IKVPair&lt;OKey,OValue>>)Output.Instance;&#xA;&#x9;&#x9;&#x9;Feed_pairs.Server = output_instance;&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture sync_perform;&#xA;&#xA;&#x9;&#x9;&#x9;// TODO: Dividir em chunks a saa de pares (OKey,OValue)&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER 2&quot;);&#xA;&#xA;//&#x9;&#x9;&#x9;object gusty_lock = new object ();&#xA;&#xA;&#x9;&#x9;&#x9;bool end_computation = false;&#xA;&#x9;&#x9;&#x9;while (!end_computation)    // new iteration&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;IDictionary&lt;object,object> cont_dict = new Dictionary&lt;object, object> ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER LOOP&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;end_computation = true;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;bool end_iteration = false;&#xA;&#x9;&#x9;&#x9;&#x9;while (!end_iteration)    // take next chunk ...&#xA;&#x9;&#x9;&#x9;&#x9;{          &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE 1&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_gusty.invoke (ITaskPortAdvance.READ_CHUNK);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_gusty.invoke (ITaskPortAdvance.PERFORM, out sync_perform);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE 2&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IKVPairInstance&lt;TKey, IIterator&lt;TValue>> kvpair = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;object kvpair_object;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (!input_instance.has_next ())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;end_iteration = true;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;end_computation = false;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;int count=0;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;while (input_instance.fetch_next (out kvpair_object)) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE INNER LOOP 3 count=&quot; + count);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;kvpair = (IKVPairInstance&lt;TKey, IIterator&lt;TValue>>)kvpair_object;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;object acc_value;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (!cont_dict.TryGetValue(kvpair.Key, out acc_value))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;cont_dict[kvpair.Key] = new object();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;((IDataInstance)Continue_value.Instance).ObjValue = acc_value;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Input_values.Instance = kvpair; &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Gusty_function.go ();&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;cont_dict [kvpair.Key] = ((IDataInstance)((IKVPairInstance&lt;OKey,OValue>)Output_value.Instance).Value).ObjValue;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;count++;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE 4 count=&quot; + count);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sync_perform.wait ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE 5&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE END ITERATION&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;int chunk_counter = 1;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;IActionFuture gusty_chunk_ready;&#xA;&#x9;&#x9;&#x9;&#x9;Task_gusty.invoke (ITaskPortAdvance.CHUNK_READY, out gusty_chunk_ready);  //***&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;foreach (KeyValuePair&lt;object,object> output_pair in cont_dict) &#xA;&#x9;&#x9;&#x9;&#x9;{&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IKVPairInstance&lt;OKey,OValue> new_pair = (IKVPairInstance&lt;OKey,OValue>) Output_value.newInstance ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;new_pair.Key = output_pair.Key;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;new_pair.Value = output_pair.Value;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;output_instance.put (new_pair);&#x9; &#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;output_instance.finish ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;gusty_chunk_ready.wait ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE FINISH&quot;);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER FINISH ... &quot;);&#xA;&#x9;&#x9;}&#xA;&#xA;&#xA;&#x9;&#x9;private void startThreads() {&#xA;&#x9;&#x9;&#x9;/*Instancias*/&#xA;&#x9;&#x9;&#x9;Thread treadPairOMKOMV = new Thread(new ThreadStart(readPair_OMK_OMVs));&#xA;&#xA;&#x9;&#x9;&#x9;/*Starting*/&#xA;&#x9;&#x9;&#x9;treadPairOMKOMV.Start(); &#x9;&#xA;&#x9;&#x9;&#x9;/* Joins*/&#xA;&#x9;&#x9;&#x9;treadPairOMKOMV.Join();&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;}&#xA;}&#xA;" name="IGustyImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl/bin/1.0.0.0/IGustyImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.gust.computation.Gusty;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl&#xA;{&#xA;&#x9;public class IGustyImpl : BaseIGustyImpl, IGusty&lt;M, GF, TKey, TValue, OKey, OValue, PType, G>&#xA;where M:IMaintainer&#xA;where GF:IGustyFunction&lt;TKey, TValue, OKey, OValue, PType, G>&#xA;where TKey:IData&#xA;where TValue:IData&#xA;where OKey:IData&#xA;where OValue:IData&#xA;where PType:IData&#xA;where G:IData&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IGustyImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl/bin/1.0.0.0/IGustyImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Maintainer/bin/1.0.0.0/IMaintainer.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/IGustyFunction.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl/bin/1.0.0.0/BaseIGustyImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.computation.Gusty/bin/1.0.0.0/IGusty.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="91" x="202" y="188">
+      <visualDescription h="54" w="123" x="216" y="147">
         <color b="0" g="0" r="255"/>
       </visualDescription>
       <port name="feed_pairs">
@@ -204,27 +344,49 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="collect_pairs"/>
       </port>
-      <port name="task_gusty">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_gusty" sRef="task_gusty"/>
-      </port>
       <port name="platform_gusty">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_gusty" sRef="platform_gusty"/>
       </port>
-      <parameter iname="IComputeHost" order="0" parid="platform_maintainer" uname="compute_host" varid="M"/>
-      <parameter iname="IGustyFunction" order="5" parid="gusty_function" uname="gusty_function" varid="RF"/>
-      <parameter iname="IData" order="3" parid="output_key_type" uname="data" varid="OKey"/>
-      <parameter iname="IData" order="4" parid="output_value_type" uname="data" varid="OValue"/>
-      <parameter iname="IData" order="1" parid="input_key_type" uname="data" varid="TKey"/>
-      <parameter iname="IData" order="2" parid="input_value_type" uname="data" varid="TValue"/>
+      <port name="task_gusty">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_gusty" sRef="task_gusty"/>
+      </port>
+      <port name="continuation_value">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="continuation_value" sRef="gusty_function"/>
+      </port>
+      <port name="graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="graph" sRef="gusty_function"/>
+      </port>
+      <port name="partition_graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="partition_graph" sRef="gusty_function"/>
+      </port>
+      <port name="input_values">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_values" sRef="gusty_function"/>
+      </port>
+      <port name="output">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output" sRef="gusty_function"/>
+      </port>
+      <parameter iname="IMaintainer" order="0" parid="platform_maintainer" uname="maintainer" varid="M"/>
+      <parameter iname="IGustyFunction" order="1" parid="gusty_function" uname="gusty_function" varid="GF"/>
+      <parameter iname="IData" order="2" parid="input_key_type" uname="data" varid="TKey"/>
+      <parameter iname="IData" order="3" parid="input_value_type" uname="data" varid="TValue"/>
+      <parameter iname="IData" order="4" parid="output_key_type" uname="data" varid="OKey"/>
+      <parameter iname="IData" order="5" parid="output_value_type" uname="data" varid="OValue"/>
+      <parameter iname="IData" order="6" parid="partition_type" uname="data" varid="PType"/>
+      <parameter iname="IData" order="7" parid="graph_type" uname="data" varid="G"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IGustyImpl" multiple="true" private="false" replica="0" uRef="gusty" visibleInterface="true">
       <super cRef="base" uRef="gusty"/>
-      <visualDescription h="40" w="91" x="159" y="394"/>
+      <visualDescription h="49" w="154" x="284" y="237"/>
     </unit>
   </componentInfo>
 </component:component>

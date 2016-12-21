@@ -35,10 +35,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="MPI">
-      <HintPath>..\..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\MPI\MPI.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\MPI\MPI.dll</HintPath>
     </Reference>
     <Reference Include="DGAC">
-      <HintPath>..\..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\DGAC\DGAC.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\DGAC\DGAC.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +107,10 @@
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer.csproj">
       <Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>
       <Name>br.ufc.mdcc.hpcshelf.platform.Maintainer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer.csproj">
+      <Project>{97B35E58-AC6B-44A6-A536-90FA39076265}</Project>
+      <Name>br.ufc.mdcc.common.Integer</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

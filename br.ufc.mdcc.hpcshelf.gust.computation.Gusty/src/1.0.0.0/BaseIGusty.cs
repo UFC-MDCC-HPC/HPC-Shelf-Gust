@@ -5,7 +5,8 @@ using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.common.Integer;
-using br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator;
+//using br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator;
+using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
 using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance;
@@ -28,9 +29,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.computation.Gusty
 		IIterator<IKVPair<OKey, OValue>> Output {get;}
 		IKVPair<IInteger, PType> Partition_graph {get;}
 		G Graph {get;}
-		IBindingDirectMxNIterator<IPortTypeIterator> Feed_pairs {get;}
-		IBindingDirectMxNIterator<IPortTypeIterator> Collect_pairs {get;}
+		IServerBase<IPortTypeIterator> Feed_pairs {get;}
+		IClientBase<IPortTypeIterator> Collect_pairs {get;}
 		ITaskPort<ITaskPortTypeAdvance> Task_gusty {get;}
+		OValue Continue_value {get;}
+		IKVPair<TKey, IIterator<TValue>> Input_values {get;}
 		//IProcessingNode<M> Platform_gusty {get;}
 	}
 }
