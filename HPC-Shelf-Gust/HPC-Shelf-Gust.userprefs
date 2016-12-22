@@ -1,6 +1,11 @@
 ﻿<Properties StartupItem="HPC-Shelf-Gust/HPC-Shelf-Gust.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl/src/1.0.0.0/IGustyImpl.cs">
+    <Files>
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.example.cw.impl.TallierImpl/src/1.0.0.0/ITallierImpl.cs" Line="48" Column="56" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl/src/1.0.0.0/IGustyImpl.cs" Line="99" Column="7" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/MapReduce-for-HPE/MapReduce-for-HPE/Program.cs" line="24" column="16" />
