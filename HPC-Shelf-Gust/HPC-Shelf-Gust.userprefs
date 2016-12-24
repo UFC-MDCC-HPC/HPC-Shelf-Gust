@@ -1,9 +1,17 @@
 ﻿<Properties StartupItem="HPC-Shelf-Gust/HPC-Shelf-Gust.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl/src/1.0.0.0/IGustyImpl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingReadData/src/1.0.0.0/IReadDataImpl.cs">
     <Files>
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.example.cw.impl.TallierImpl/src/1.0.0.0/ITallierImpl.cs" Line="48" Column="56" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl/src/1.0.0.0/IGustyImpl.cs" Line="99" Column="7" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.example.cw.impl.TallierImpl/src/1.0.0.0/BaseITallierImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.example.cw.impl.TallierImpl/src/1.0.0.0/ITallierImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl/src/1.0.0.0/IGustyImpl.cs" Line="42" Column="37" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.computation.MapperImpl/src/1.0.0.0/IMapperImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.example.cw.impl.WordCounterImpl/src/1.0.0.0/IWordCounterImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.connector.StepImpl/src/1.0.0.0/IStepGustyFeederImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.connector.StepImpl/src/1.0.0.0/BaseIStepGustyFeederImpl.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl/src/1.0.0.0/IJoinReadSourceImpl.cs" Line="1" Column="14" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl/src/1.0.0.0/IDataSourceImpl.cs" Line="28" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingReadData/src/1.0.0.0/IReadDataImpl.cs" Line="61" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
