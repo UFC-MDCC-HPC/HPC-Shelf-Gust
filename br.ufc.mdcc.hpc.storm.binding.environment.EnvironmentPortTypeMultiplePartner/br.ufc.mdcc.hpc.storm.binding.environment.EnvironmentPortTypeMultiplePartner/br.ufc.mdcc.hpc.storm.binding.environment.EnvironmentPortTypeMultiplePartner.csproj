@@ -34,10 +34,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="DGAC">
-      <HintPath>..\..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\DGAC\DGAC.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\DGAC\DGAC.dll</HintPath>
     </Reference>
     <Reference Include="MPI">
-      <HintPath>..\..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\MPI\MPI.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\MPI\MPI.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
