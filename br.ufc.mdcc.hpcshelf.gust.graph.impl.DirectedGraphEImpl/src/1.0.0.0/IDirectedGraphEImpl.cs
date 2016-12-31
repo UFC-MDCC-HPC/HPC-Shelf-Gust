@@ -18,6 +18,10 @@ where CTN:IDataContainerE<V, E>
 where V:IVertex
 where E:IEdge<V>
 	{
+		override public void after_initialize()
+		{
+			newInstance(); 
+		}
 
 		public object newInstance () {
 			return newInstanceControl (0);
