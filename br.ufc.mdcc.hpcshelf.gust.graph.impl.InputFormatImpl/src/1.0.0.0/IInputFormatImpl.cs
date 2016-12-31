@@ -8,7 +8,7 @@ using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using br.ufc.mdcc.common.Data;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
-	public class IInputFormatImpl : BaseIInputFormatImpl, IData {
+	public class IInputFormatImpl : BaseIInputFormatImpl, IInputFormat {
 		public IInputFormatImpl () {
 		}
 

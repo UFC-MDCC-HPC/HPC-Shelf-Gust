@@ -9,7 +9,7 @@ using br.ufc.mdcc.common.Data;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl 
 {
-	public abstract class BaseIInputFormatImpl: DataStructure, BaseIData
+	public abstract class BaseIInputFormatImpl: DataStructure, BaseIInputFormat
 	{
 	}
 }
