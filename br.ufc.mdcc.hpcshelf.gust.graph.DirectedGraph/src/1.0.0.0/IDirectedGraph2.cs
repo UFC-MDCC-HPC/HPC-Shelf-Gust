@@ -13,13 +13,13 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph
 		where V:IVertex
 		where E:IEdge<V>
 	{
-		IGraphInstanceDirected<V, E, TV, TE> newInstanceT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV>;
-		IGraphInstanceDirected<V, E, int, IEdgeInstance<V, int>> newInstance (int size);
+		IDirectedGraphInstance<V, E, TV, TE> newInstanceT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV>;
+		IDirectedGraphInstance<V, E, int, IEdgeInstance<V, int>> newInstance (int size);
 
 		object GraphInstanceT { get; }
 	}
 
-	public interface IGraphInstanceDirected<V, E, TV, TE>: IGraphInstance<V, E, TV, TE> where V:IVertex where E:IEdge<V> where TE: IEdgeInstance<V, TV> {
+	public interface IDirectedGraphInstance<V, E, TV, TE>: IGraphInstance<V, E, TV, TE> where V:IVertex where E:IEdge<V> where TE: IEdgeInstance<V, TV> {
 		int inDegreeOf(TV vertex);
 		ICollection<TE> incomingEdgesOf(TV vertex);
 		int outDegreeOf(TV vertex);

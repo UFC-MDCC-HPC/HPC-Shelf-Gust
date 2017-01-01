@@ -27,21 +27,21 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl {
 				return this.graphInstanceT;
 			}
 		}
-		public IGraphInstanceDirected<V, E, TV, TE> newInstanceT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
+		public IDirectedGraphInstance<V, E, TV, TE> newInstanceT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
 			IDataContainerVInstance<V, E, TV, TE> dc = DataContainer.InstanceTFactory<TV, TE>(e);
 			dc.newDataSet (size);
 			IGraphHelperV<V, E, TV, TE> h = new IGraphHelperVImpl<V, E, TV, TE>(dc);
 			this.graphInstanceT = new GraphInstanceImpl<V, E, TV, TE> (h);
-			return (IGraphInstanceDirected<V, E, TV, TE>) this.graphInstanceT;
+			return (IDirectedGraphInstance<V, E, TV, TE>) this.graphInstanceT;
 		}
-		public IGraphInstanceDirected<V, E, int, IEdgeInstance<V, int>> newInstance(int size) {
+		public IDirectedGraphInstance<V, E, int, IEdgeInstance<V, int>> newInstance(int size) {
 			IDataContainerVInstance<V, E, int, IEdgeInstance<V, int>> dc = DataContainer.DataContainerVInstance;
 			dc.newDataSet (size);
 			IGraphHelperV<V, E, int, IEdgeInstance<V, int>> h = new IGraphHelperVImpl<V, E, int, IEdgeInstance<V, int>>(dc);
 			this.graphInstanceT = new GraphInstanceImpl<V, E, int, IEdgeInstance<V, int>> (h);
-			return (IGraphInstanceDirected<V, E, int, IEdgeInstance<V, int>>) this.graphInstanceT;
+			return (IDirectedGraphInstance<V, E, int, IEdgeInstance<V, int>>) this.graphInstanceT;
 		}
-		public class GraphInstanceImpl<V, E, TV, TE>: IGraphInstanceDirected<V, E, TV, TE> 
+		public class GraphInstanceImpl<V, E, TV, TE>: IDirectedGraphInstance<V, E, TV, TE> 
 			where V:IVertexBasic  
 			where E:IEdgeBasic<V> 
 			where TE: IEdgeInstance<V, TV> {

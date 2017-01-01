@@ -25,21 +25,21 @@ where E:IEdgeWeighted<V> {
 				return this.graphInstanceT;
 			}
 		}
-		public IGraphInstanceUndirected<V, E, TV, TE> newInstanceT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
+		public IUndirectedGraphInstance<V, E, TV, TE> newInstanceT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
 			IDataContainerKVInstance<V, E, TV, TE> dc = DataContainer.InstanceTFactory<TV, TE>(e);
 			dc.newDataSet (size);
 			IGraphHelperKV<V, E, TV, TE> h = new IGraphHelperKVImpl<V, E, TV, TE>(dc);
 			this.graphInstanceT = new GraphInstanceImpl<V, E, TV, TE> (h);
-			return (IGraphInstanceUndirected<V, E, TV, TE>) this.graphInstanceT;
+			return (IUndirectedGraphInstance<V, E, TV, TE>) this.graphInstanceT;
 		}
-		public IGraphInstanceUndirected<V, E, int, IEdgeInstance<V, int>> newInstance(int size) {
+		public IUndirectedGraphInstance<V, E, int, IEdgeInstance<V, int>> newInstance(int size) {
 			IDataContainerKVInstance<V, E, int, IEdgeInstance<V, int>> dc = DataContainer.DataContainerKVInstance;
 			dc.newDataSet (size);
 			IGraphHelperKV<V, E, int, IEdgeInstance<V, int>> h = new IGraphHelperKVImpl<V, E, int, IEdgeInstance<V, int>>(dc);
 			this.graphInstanceT = new GraphInstanceImpl<V, E, int, IEdgeInstance<V, int>> (h);
-			return (IGraphInstanceUndirected<V, E, int, IEdgeInstance<V, int>>) this.graphInstanceT;
+			return (IUndirectedGraphInstance<V, E, int, IEdgeInstance<V, int>>) this.graphInstanceT;
 		}
-		public class GraphInstanceImpl<V, E, TV, TE>: IGraphInstanceUndirected<V, E, TV, TE> 
+		public class GraphInstanceImpl<V, E, TV, TE>: IUndirectedGraphInstance<V, E, TV, TE> 
 			where V:IVertexBasic  
 			where E:IEdgeWeighted<V> 
 			where TE: IEdgeInstance<V, TV> {
