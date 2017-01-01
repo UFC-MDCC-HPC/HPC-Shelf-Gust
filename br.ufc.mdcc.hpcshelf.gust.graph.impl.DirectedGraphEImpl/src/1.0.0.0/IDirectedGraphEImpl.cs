@@ -28,32 +28,32 @@ where E:IEdge<V>
 		}
 
 		public object Instance {
-			get { return instanceControlT; }
-			set { this.instanceControlT = value; }
+			get { return graphInstanceT; }
+			set { this.graphInstanceT = value; }
 		}
 
-		private object instanceControlT = null;
-		public object InstanceControlT { 
+		private object graphInstanceT = null;
+		public object GraphInstanceT { 
 			get{ 
-				return this.instanceControlT;
+				return this.graphInstanceT;
 			}
 		}
-		public IInstanceControlDirected<V, E, TV, TE> newInstanceT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
+		public IGraphInstanceDirected<V, E, TV, TE> newInstanceT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
 			IDataContainerEInstance<V, E, TV, TE> dc = DataContainer.InstanceTFactory<TV, TE> (e);//e.Source, e.Target, 1.0f);
 			dc.newDataSet (size);
 			IGraphHelperE<V, E, TV, TE> h = new IGraphHelperEImpl<V, E, TV, TE>(dc);
-			this.instanceControlT = new InstanceControlImpl<V, E, TV, TE> (h);
-			return (IInstanceControlDirected<V, E, TV, TE>) this.instanceControlT;
+			this.graphInstanceT = new GraphInstanceImpl<V, E, TV, TE> (h);
+			return (IGraphInstanceDirected<V, E, TV, TE>) this.graphInstanceT;
 		}
-		public IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>> newInstance(int size) {
+		public IGraphInstanceDirected<V, E, int, IEdgeInstance<V, int>> newInstance(int size) {
 			IDataContainerEInstance<V, E, int, IEdgeInstance<V, int>> dc = DataContainer.DataContainerEInstance;//e.Source, e.Target, 1.0f);
 			dc.newDataSet (size);
 			IGraphHelperE<V, E, int, IEdgeInstance<V, int>> h = new IGraphHelperEImpl<V, E, int, IEdgeInstance<V, int>>(dc);
-			this.instanceControlT = new InstanceControlImpl<V, E, int, IEdgeInstance<V, int>> (h);
-			return (IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>>) this.instanceControlT;
+			this.graphInstanceT = new GraphInstanceImpl<V, E, int, IEdgeInstance<V, int>> (h);
+			return (IGraphInstanceDirected<V, E, int, IEdgeInstance<V, int>>) this.graphInstanceT;
 		}
 
-		public class InstanceControlImpl<V, E, TV, TE>: IInstanceControlDirected<V, E, TV, TE> 
+		public class GraphInstanceImpl<V, E, TV, TE>: IGraphInstanceDirected<V, E, TV, TE> 
 			where V:IVertex  
 			where E:IEdge<V> 
 			where TE: IEdgeInstance<V, TV> {
@@ -65,7 +65,7 @@ where E:IEdge<V>
 				set{ this.delegator.Container = (IDataContainerEInstance<V, E, TV, TE>)value; }
 			}
 
-			public InstanceControlImpl(IGraphHelperE<V, E, TV, TE> d){
+			public GraphInstanceImpl(IGraphHelperE<V, E, TV, TE> d){
 				delegator = d;
 			}
 
@@ -281,7 +281,7 @@ where E:IEdge<V>
 			#region ICloneable implementation
 			public object Clone () {
 				IGraphHelperE<V, E, TV, TE> d = (IGraphHelperE<V, E, TV, TE>) this.delegator.Clone ();
-				InstanceControlImpl<V, E, TV, TE> clone = new InstanceControlImpl<V, E, TV, TE>(d);
+				GraphInstanceImpl<V, E, TV, TE> clone = new GraphInstanceImpl<V, E, TV, TE>(d);
 				return clone;
 			}
 			#endregion

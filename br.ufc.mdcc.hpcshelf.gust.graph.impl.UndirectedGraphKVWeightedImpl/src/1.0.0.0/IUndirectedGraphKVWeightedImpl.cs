@@ -27,31 +27,31 @@ where E:IEdge<V> {
 		}
 
 		public object Instance {
-			get { return instanceControlT; }
-			set { this.instanceControlT = value; }
+			get { return graphInstanceT; }
+			set { this.graphInstanceT = value; }
 		}
 
-		private object instanceControlT = null;
-		public object InstanceControlT { 
+		private object graphInstanceT = null;
+		public object GraphInstanceT { 
 			get{ 
-				return this.instanceControlT;
+				return this.graphInstanceT;
 			}
 		}
-		public IInstanceControlUndirected<V, E, TV, TE> newInstanceT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
+		public IGraphInstanceUndirected<V, E, TV, TE> newInstanceT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
 			IDataContainerKVInstance<V, E, TV, TE> dc = DataContainer.InstanceTFactory<TV, TE>(e);
 			dc.newDataSet (size);
 			IGraphHelperKV<V, E, TV, TE> h = new IGraphHelperKVImpl<V, E, TV, TE>(dc);
-			this.instanceControlT = new InstanceControlImpl<V, E, TV, TE> (h);
-			return (IInstanceControlUndirected<V, E, TV, TE>) this.instanceControlT;
+			this.graphInstanceT = new GraphInstanceImpl<V, E, TV, TE> (h);
+			return (IGraphInstanceUndirected<V, E, TV, TE>) this.graphInstanceT;
 		}
-		public IInstanceControlUndirected<V, E, int, IEdgeInstance<V, int>> newInstance(int size) {
+		public IGraphInstanceUndirected<V, E, int, IEdgeInstance<V, int>> newInstance(int size) {
 			IDataContainerKVInstance<V, E, int, IEdgeInstance<V, int>> dc = DataContainer.DataContainerKVInstance;
 			dc.newDataSet (size);
 			IGraphHelperKV<V, E, int, IEdgeInstance<V, int>> h = new IGraphHelperKVImpl<V, E, int, IEdgeInstance<V, int>>(dc);
-			this.instanceControlT = new InstanceControlImpl<V, E, int, IEdgeInstance<V, int>> (h);
-			return (IInstanceControlUndirected<V, E, int, IEdgeInstance<V, int>>) this.instanceControlT;
+			this.graphInstanceT = new GraphInstanceImpl<V, E, int, IEdgeInstance<V, int>> (h);
+			return (IGraphInstanceUndirected<V, E, int, IEdgeInstance<V, int>>) this.graphInstanceT;
 		}
-		public class InstanceControlImpl<V, E, TV, TE>: IInstanceControlUndirected<V, E, TV, TE> 
+		public class GraphInstanceImpl<V, E, TV, TE>: IGraphInstanceUndirected<V, E, TV, TE> 
 			where V:IVertex  
 			where E:IEdge<V> 
 			where TE: IEdgeInstance<V, TV> {
@@ -63,7 +63,7 @@ where E:IEdge<V> {
 				set{ this.delegator.Container = (IDataContainerKVInstance<V, E, TV, TE>)value; }
 			}
 
-			public InstanceControlImpl(IGraphHelperKV<V, E, TV, TE> d){
+			public GraphInstanceImpl(IGraphHelperKV<V, E, TV, TE> d){
 				delegator = d;
 			}
 
@@ -288,7 +288,7 @@ where E:IEdge<V> {
 			#region ICloneable implementation
 			public object Clone () {
 				IGraphHelperKV<V, E, TV, TE> d = (IGraphHelperKV<V, E, TV, TE>) this.delegator.Clone ();
-				InstanceControlImpl<V, E, TV, TE> clone = new InstanceControlImpl<V, E, TV, TE>(d);
+				GraphInstanceImpl<V, E, TV, TE> clone = new GraphInstanceImpl<V, E, TV, TE>(d);
 				return clone;
 			}
 			#endregion

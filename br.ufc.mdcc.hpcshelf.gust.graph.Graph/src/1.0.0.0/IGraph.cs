@@ -13,9 +13,9 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.Graph
 		where V:IVertex
 		where E:IEdge<V>
 	{
-		//IInstanceControl<V, E, int, IEdgeInstance<V, int>> InstanceControl { get; }
+		//IGraphInstance<V, E, int, IEdgeInstance<V, int>> GraphInstance { get; }
 	}
-	public interface IInstanceControl<V, E, TV, TE>: IDataInstance, ICloneable, ICommon<V, E, TV, TE> where V:IVertex where E:IEdge<V> where TE: IEdgeInstance<V, TV> {
+	public interface IGraphInstance<V, E, TV, TE>: IDataInstance, ICloneable, ICommon<V, E, TV, TE> where V:IVertex where E:IEdge<V> where TE: IEdgeInstance<V, TV> {
 		ICollection<TE> getAllEdges(TV sourceVertex, TV targetVertex);
 		TE getEdge(TV sourceVertex, TV targetVertex);
 		TE addEdge(TV sourceVertex, TV targetVertex);

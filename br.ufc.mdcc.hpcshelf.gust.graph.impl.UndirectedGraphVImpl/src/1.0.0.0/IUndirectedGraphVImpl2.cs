@@ -19,27 +19,27 @@ where V:IVertexBasic
 where E:IEdgeBasic<V> {
 		public override void main() {
 		}
-		private object instanceControlT = null;
-		public object InstanceControlT { 
+		private object graphInstanceT = null;
+		public object GraphInstanceT { 
 			get{ 
-				return this.instanceControlT;
+				return this.graphInstanceT;
 			}
 		}
-		public IInstanceControlUndirected<V, E, TV, TE> newInstanceT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
+		public IGraphInstanceUndirected<V, E, TV, TE> newInstanceT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
 			IDataContainerVInstance<V, E, TV, TE> dc = DataContainer.InstanceTFactory<TV, TE>(e);
 			dc.newDataSet (size);
 			IGraphHelperV<V, E, TV, TE> h = new IGraphHelperVImpl<V, E, TV, TE>(dc);
-			this.instanceControlT = new InstanceControlImpl<V, E, TV, TE> (h);
-			return (IInstanceControlUndirected<V, E, TV, TE>) this.instanceControlT;
+			this.graphInstanceT = new GraphInstanceImpl<V, E, TV, TE> (h);
+			return (IGraphInstanceUndirected<V, E, TV, TE>) this.graphInstanceT;
 		}
-		public IInstanceControlUndirected<V, E, int, IEdgeInstance<V, int>> newInstance(int size) {
+		public IGraphInstanceUndirected<V, E, int, IEdgeInstance<V, int>> newInstance(int size) {
 			IDataContainerVInstance<V, E, int, IEdgeInstance<V, int>> dc = DataContainer.DataContainerVInstance;
 			dc.newDataSet (size);
 			IGraphHelperV<V, E, int, IEdgeInstance<V, int>> h = new IGraphHelperVImpl<V, E, int, IEdgeInstance<V, int>>(dc);
-			this.instanceControlT = new InstanceControlImpl<V, E, int, IEdgeInstance<V, int>> (h);
-			return (IInstanceControlUndirected<V, E, int, IEdgeInstance<V, int>>) this.instanceControlT;
+			this.graphInstanceT = new GraphInstanceImpl<V, E, int, IEdgeInstance<V, int>> (h);
+			return (IGraphInstanceUndirected<V, E, int, IEdgeInstance<V, int>>) this.graphInstanceT;
 		}
-		public class InstanceControlImpl<V, E, TV, TE>: IInstanceControlUndirected<V, E, TV, TE> 
+		public class GraphInstanceImpl<V, E, TV, TE>: IGraphInstanceUndirected<V, E, TV, TE> 
 			where V:IVertexBasic  
 			where E:IEdgeBasic<V> 
 			where TE: IEdgeInstance<V, TV> {
@@ -51,7 +51,7 @@ where E:IEdgeBasic<V> {
 				set{ this.delegator.Container = (IDataContainerVInstance<V, E, TV, TE>)value; }
 			}
 
-			public InstanceControlImpl(IGraphHelperV<V, E, TV, TE> d){
+			public GraphInstanceImpl(IGraphHelperV<V, E, TV, TE> d){
 				delegator = d;
 			}
 			//************** implementation ***********************
