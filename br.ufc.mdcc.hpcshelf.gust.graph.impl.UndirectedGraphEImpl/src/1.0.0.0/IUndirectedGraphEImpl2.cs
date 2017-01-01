@@ -24,14 +24,14 @@ where E:IEdge<V> {
 				return this.instanceControlT;
 			}
 		}
-		public IInstanceControlUndirected<V, E, TV, TE> newInstanceControlT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
+		public IInstanceControlUndirected<V, E, TV, TE> newInstanceT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
 			IDataContainerEInstance<V, E, TV, TE> dc = DataContainer.InstanceTFactory<TV, TE>(e);
 			dc.newDataSet (size);
 			IGraphHelperE<V, E, TV, TE> h = new IGraphHelperEImpl<V, E, TV, TE>(dc);
 			this.instanceControlT = new InstanceControlImpl<V, E, TV, TE> (h);
 			return (IInstanceControlUndirected<V, E, TV, TE>) this.instanceControlT;
 		}
-		public IInstanceControlUndirected<V, E, int, IEdgeInstance<V, int>> newInstanceControl(int size) {
+		public IInstanceControlUndirected<V, E, int, IEdgeInstance<V, int>> newInstance(int size) {
 			IDataContainerEInstance<V, E, int, IEdgeInstance<V, int>> dc = DataContainer.DataContainerEInstance;
 			dc.newDataSet (size);
 			IGraphHelperE<V, E, int, IEdgeInstance<V, int>> h = new IGraphHelperEImpl<V, E, int, IEdgeInstance<V, int>>(dc);

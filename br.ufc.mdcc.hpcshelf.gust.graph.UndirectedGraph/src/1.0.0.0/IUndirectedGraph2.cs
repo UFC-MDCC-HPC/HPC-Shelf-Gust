@@ -13,8 +13,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph
 		where V:IVertex
 		where E:IEdge<V>
 	{
-		IInstanceControlUndirected<V, E, TV, TE> newInstanceControlT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV>;
-		IInstanceControlUndirected<V, E, int, IEdgeInstance<V, int>> newInstanceControl (int size);
+		IInstanceControlUndirected<V, E, TV, TE> newInstanceT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV>;
+		IInstanceControlUndirected<V, E, int, IEdgeInstance<V, int>> newInstance (int size);
 
 		object InstanceControlT { get; }
 	}

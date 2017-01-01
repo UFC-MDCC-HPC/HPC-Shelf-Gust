@@ -24,7 +24,7 @@ where E:IEdge<V>
 		}
 
 		public object newInstance () {
-			return newInstanceControl (0);
+			return newInstance (0);
 		}
 
 		public object Instance {
@@ -38,14 +38,14 @@ where E:IEdge<V>
 				return this.instanceControlT;
 			}
 		}
-		public IInstanceControlDirected<V, E, TV, TE> newInstanceControlT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
+		public IInstanceControlDirected<V, E, TV, TE> newInstanceT<TV, TE> (TE e, int size)  where TE: IEdgeInstance<V, TV> {
 			IDataContainerKVInstance<V, E, TV, TE> dc = DataContainer.InstanceTFactory<TV, TE> (e);
 			dc.newDataSet (size);
 			IGraphHelperKV<V, E, TV, TE> h = new IGraphHelperKVImpl<V, E, TV, TE>(dc);
 			this.instanceControlT = new InstanceControlImpl<V, E, TV, TE> (h);
 			return (IInstanceControlDirected<V, E, TV, TE>) this.instanceControlT;
 		}
-		public IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>> newInstanceControl(int size) {
+		public IInstanceControlDirected<V, E, int, IEdgeInstance<V, int>> newInstance(int size) {
 			IDataContainerKVInstance<V, E, int, IEdgeInstance<V, int>> dc = DataContainer.DataContainerKVInstance;
 			dc.newDataSet (size);
 			IGraphHelperKV<V, E, int, IEdgeInstance<V, int>> h = new IGraphHelperKVImpl<V, E, int, IEdgeInstance<V, int>>(dc);
