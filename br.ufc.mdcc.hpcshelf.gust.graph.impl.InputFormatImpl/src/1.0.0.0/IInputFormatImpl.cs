@@ -54,6 +54,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 		private int esize = 0;
 		private int vsize = 0;
 		private int partition_size = DEFAULT_PARTITION_SIZE;
+		private int partid = -1;
 		private int count = 0;
 
 		public int[] Source { get{ return source; } }
@@ -64,6 +65,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 		public int ESIZE { get{ return esize; } }
 		public int VSIZE { get{ return vsize; } }
 		public int PARTITION_SIZE { get{ return partition_size; } set { partition_size = (int) value; } }
+		public int PARTID { get{ return partid; } set { partid = (int) value; } }
 
 		private int[] getInts() { int[] INTS = {esize,vsize,partition_size,count}; return INTS; }
 		public object ObjValue {
@@ -84,6 +86,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 			bool weighted = this.Weight.Length > 1;
 			for (int i = 0; i < this.PARTITION_SIZE; i++) {
 				dic [i] = new IInputFormatInstanceImpl ();
+				dic [i].PARTID = i;
 			}
 			for (int i = 0; i < this.ESIZE; i++) {
 				int s = this.Source [i];
