@@ -41,17 +41,17 @@ where E:IEdge<V> {
 			IDataContainerVInstance<V, E, TV, TE> dc = DataContainer.InstanceTFactory<TV, TE>(e);
 			dc.newDataSet (size);
 			IGraphHelperV<V, E, TV, TE> h = new IGraphHelperVImpl<V, E, TV, TE>(dc);
-			this.graphInstanceT = new GraphInstanceImpl<V, E, TV, TE> (h);
+			this.graphInstanceT = new IUndirectedGraphVInstanceImpl<V, E, TV, TE> (h);
 			return (IUndirectedGraphInstance<V, E, TV, TE>) this.graphInstanceT;
 		}
 		public IUndirectedGraphInstance<V, E, int, IEdgeInstance<V, int>> newInstance(int size) {
 			IDataContainerVInstance<V, E, int, IEdgeInstance<V, int>> dc = DataContainer.DataContainerVInstance;
 			dc.newDataSet (size);
 			IGraphHelperV<V, E, int, IEdgeInstance<V, int>> h = new IGraphHelperVImpl<V, E, int, IEdgeInstance<V, int>>(dc);
-			this.graphInstanceT = new GraphInstanceImpl<V, E, int, IEdgeInstance<V, int>> (h);
+			this.graphInstanceT = new IUndirectedGraphVInstanceImpl<V, E, int, IEdgeInstance<V, int>> (h);
 			return (IUndirectedGraphInstance<V, E, int, IEdgeInstance<V, int>>) this.graphInstanceT;
 		}
-		public class GraphInstanceImpl<V, E, TV, TE>: IUndirectedGraphInstance<V, E, TV, TE> 
+		public class IUndirectedGraphVInstanceImpl<V, E, TV, TE>: IUndirectedGraphInstance<V, E, TV, TE> 
 			where V:IVertex  
 			where E:IEdge<V> 
 			where TE: IEdgeInstance<V, TV> {
@@ -63,7 +63,7 @@ where E:IEdge<V> {
 				set{ this.delegator.Container = (IDataContainerVInstance<V, E, TV, TE>)value; }
 			}
 
-			public GraphInstanceImpl(IGraphHelperV<V, E, TV, TE> d){
+			public IUndirectedGraphVInstanceImpl(IGraphHelperV<V, E, TV, TE> d){
 				delegator = d;
 			}
 
@@ -267,7 +267,7 @@ where E:IEdge<V> {
 			#region ICloneable implementation
 			public object Clone () {
 				IGraphHelperV<V, E, TV, TE> d = (IGraphHelperV<V, E, TV, TE>) this.delegator.Clone ();
-				GraphInstanceImpl<V, E, TV, TE> clone = new GraphInstanceImpl<V, E, TV, TE>(d);
+				IUndirectedGraphVInstanceImpl<V, E, TV, TE> clone = new IUndirectedGraphVInstanceImpl<V, E, TV, TE>(d);
 				return clone;
 			}
 			#endregion
