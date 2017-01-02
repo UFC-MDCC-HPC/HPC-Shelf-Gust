@@ -7,5 +7,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction
 		where IPK:IData
 	{
 		int NumberOfPartitions {set; get;}
+		int[] PartitionTABLE { get; set; }
 	}
 }

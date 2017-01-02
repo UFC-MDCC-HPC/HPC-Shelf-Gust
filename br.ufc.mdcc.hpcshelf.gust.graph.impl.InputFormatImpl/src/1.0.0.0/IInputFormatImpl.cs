@@ -46,14 +46,14 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 		}
 
 		#region IInputFormatInstance implementation
-		public static int DEFAULT_PARTITION = 8;
+		public static int DEFAULT_PARTITION_SIZE = 8;
 		private int[] source;
 		private int[] target;
 		private float[] weight;
 		private int[] partition_table;
 		private int esize = 0;
 		private int vsize = 0;
-		private int part = DEFAULT_PARTITION;
+		private int partition_size = DEFAULT_PARTITION_SIZE;
 		private int count = 0;
 
 		public int[] Source { get{ return source; } }
@@ -63,9 +63,9 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 
 		public int ESIZE { get{ return esize; } }
 		public int VSIZE { get{ return vsize; } }
-		public int PART { get{ return part; } set { part = (int) value; } }
+		public int PARTITION_SIZE { get{ return partition_size; } set { partition_size = (int) value; } }
 
-		private int[] getInts() { int[] INTS = {esize,vsize,part,count}; return INTS; }
+		private int[] getInts() { int[] INTS = {esize,vsize,partition_size,count}; return INTS; }
 		public object ObjValue {
 			get { return new Tuple<int[],int[],float[],int[],int[]>(source,target,weight,partition_table,getInts()); }
 			set { 
@@ -74,15 +74,15 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 				this.weight =          ((Tuple<int[],int[],float[],int[],int[]>)value).Item3;
 				this.partition_table = ((Tuple<int[],int[],float[],int[],int[]>)value).Item4;
 				int[] INTS = ((Tuple<int[],int[],float[],int[],int[]>)value).Item5;
-				esize = INTS[0]; vsize = INTS[1]; part = INTS[2]; count = INTS[3];
+				esize = INTS[0]; vsize = INTS[1]; partition_size = INTS[2]; count = INTS[3];
 			}
 		}
 
 		public IDictionary<int, IInputFormatInstance> extractBins(){
 			this.extractFile();
-			IDictionary<int, IInputFormatInstance> dic = new Dictionary<int, IInputFormatInstance> (this.PART);
+			IDictionary<int, IInputFormatInstance> dic = new Dictionary<int, IInputFormatInstance> (this.PARTITION_SIZE);
 			bool weighted = this.Weight.Length > 1;
-			for (int i = 0; i < this.PART; i++) {
+			for (int i = 0; i < this.PARTITION_SIZE; i++) {
 				dic [i] = new IInputFormatInstanceImpl ();
 			}
 			for (int i = 0; i < this.ESIZE; i++) {
@@ -101,11 +101,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 						dic [tpart].Add (s, t, f);
 				}
 			}
-			for (int i = 0; i < this.PART; i++) {
+			for (int i = 0; i < this.PARTITION_SIZE; i++) {
 				IInputFormatInstance tmp = dic [i]; 
 				tmp.Trim ();
 				tmp.PartitionTABLE = this.PartitionTABLE;
-				tmp.PART = this.PART;
+				tmp.PARTITION_SIZE = this.PARTITION_SIZE;
 				//Graphviz.Directed (tmp.Source, tmp.Target, tmp.VPartition, "/home/cenez/Dropbox/Programacao/JGraphT/Graph-In-HPC-Shelf/tmp.dot");
 			}
 			source = new int[1];
@@ -156,7 +156,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 			partition_table = new int[1];
 			esize = 0;
 			vsize = 0;
-			part = DEFAULT_PARTITION;
+			partition_size = DEFAULT_PARTITION;
 			count = 0;
 		}
 		public void extractFile(){
@@ -217,7 +217,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 							string[] ij = line.Split ((char)b[0],(char)b[1],(char)b[2]);
 							vsize = int.Parse(ij[0]);
 							esize = int.Parse(ij[1]);
-							part =  int.Parse(ij[2]);
+							partition_size =  int.Parse(ij[2]);
 							break;
 						}
 					}
@@ -246,7 +246,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 					}
 					System.IO.StreamWriter wfile =  new System.IO.StreamWriter(fileName+".head");
 					try{
-						wfile.WriteLine(vsize+" "+esize+" "+part);
+						wfile.WriteLine(vsize+" "+esize+" "+partition_size);
 					}
 					catch (System.IO.IOException e) {
 						Console.WriteLine("Error writing from {0}. Message = {1}", fileName+".head", e.Message);
@@ -269,12 +269,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 			source = new int[esize];
 			target = new int[esize]; //weight = new float[esize];
 			partition_table = new int[vsize];
-			bool metisPart = System.IO.File.Exists (fileName+".metis.part."+part);
+			bool metisPart = System.IO.File.Exists (fileName+".metis.part."+partition_size);
 			int idx = 0;
 			try	{
 				string line;
 				if(metisPart){
-					file = new System.IO.StreamReader(fileName+".metis.part."+part);
+					file = new System.IO.StreamReader(fileName+".metis.part."+partition_size);
 					while((line = file.ReadLine()) != null) {
 						if (!(line.Trim().Equals (""))) {
 							string[] p = line.Split ((char)b[0],(char)b[1],(char)b[2]);
@@ -287,12 +287,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 					int tmp = 0; //System.IO.StreamWriter wfile =  new System.IO.StreamWriter(fileName+".metis.part."+part);
 					for(int i=0;i<vsize;i++){
 						partition_table[i] = tmp; //wfile.Write(""+tmp+Environment.NewLine);
-						if((i%part)==part-1) tmp = ++tmp==part?0:tmp;
+						if((i%partition_size)==partition_size-1) tmp = ++tmp==partition_size?0:tmp;
 					} //wfile.Close();
 				}
 			}
 			catch (System.IO.IOException e) {
-				Console.WriteLine("Error reading from {0}. Message = {1}", fileName+".metis.part."+part, e.Message);
+				Console.WriteLine("Error reading from {0}. Message = {1}", fileName+".metis.part."+partition_size, e.Message);
 			}
 			finally {
 				if (file != null) {
@@ -313,7 +313,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 			clone.partition_table = (int[])this.partition_table.Clone ();
 			clone.esize = this.esize;
 			clone.vsize = this.vsize;
-			clone.part = this.part;
+			clone.partition_size = this.partition_size;
 			clone.count = this.count;
 			return clone;
 		}

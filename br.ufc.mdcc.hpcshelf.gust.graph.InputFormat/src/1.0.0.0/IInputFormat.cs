@@ -26,6 +26,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.InputFormat
 	   
 	   int ESIZE { get; }
 	   int VSIZE { get; }
-	   int PART { get; set; }
+		int PARTITION_SIZE { get; set; }
 	}
 }
