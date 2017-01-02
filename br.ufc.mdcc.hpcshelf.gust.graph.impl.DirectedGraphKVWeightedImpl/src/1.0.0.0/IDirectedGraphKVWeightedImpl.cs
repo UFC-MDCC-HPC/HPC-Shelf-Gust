@@ -42,18 +42,18 @@ where E:IEdge<V>
 			IDataContainerKVInstance<V, E, TV, TE> dc = DataContainer.InstanceTFactory<TV, TE> (e);
 			dc.newDataSet (size);
 			IGraphHelperKV<V, E, TV, TE> h = new IGraphHelperKVImpl<V, E, TV, TE>(dc);
-			this.graphInstanceT = new GraphInstanceImpl<V, E, TV, TE> (h);
+			this.graphInstanceT = new IDirectedGraphKVWeightedInstanceImpl<V, E, TV, TE> (h);
 			return (IDirectedGraphInstance<V, E, TV, TE>) this.graphInstanceT;
 		}
 		public IDirectedGraphInstance<V, E, int, IEdgeInstance<V, int>> newInstance(int size) {
 			IDataContainerKVInstance<V, E, int, IEdgeInstance<V, int>> dc = DataContainer.DataContainerKVInstance;
 			dc.newDataSet (size);
 			IGraphHelperKV<V, E, int, IEdgeInstance<V, int>> h = new IGraphHelperKVImpl<V, E, int, IEdgeInstance<V, int>>(dc);
-			this.graphInstanceT = new GraphInstanceImpl<V, E, int, IEdgeInstance<V, int>> (h);
+			this.graphInstanceT = new IDirectedGraphKVWeightedInstanceImpl<V, E, int, IEdgeInstance<V, int>> (h);
 			return (IDirectedGraphInstance<V, E, int, IEdgeInstance<V, int>>) this.graphInstanceT;
 		}
 
-		public class GraphInstanceImpl<V, E, TV, TE>: IDirectedGraphInstance<V, E, TV, TE> 
+		public class IDirectedGraphKVWeightedInstanceImpl<V, E, TV, TE>: IDirectedGraphInstance<V, E, TV, TE> 
 			where V:IVertex  
 			where E:IEdge<V> 
 			where TE: IEdgeInstance<V, TV> {
@@ -65,7 +65,7 @@ where E:IEdge<V>
 				set{ this.delegator.Container = (IDataContainerKVInstance<V, E, TV, TE>)value; }
 			}
 
-			public GraphInstanceImpl(IGraphHelperKV<V, E, TV, TE> d){
+			public IDirectedGraphKVWeightedInstanceImpl(IGraphHelperKV<V, E, TV, TE> d){
 				delegator = d;
 			}
 
@@ -298,7 +298,7 @@ where E:IEdge<V>
 			#region ICloneable implementation
 			public object Clone () {
 				IGraphHelperKV<V, E, TV, TE> d = (IGraphHelperKV<V, E, TV, TE>) this.delegator.Clone ();
-				GraphInstanceImpl<V, E, TV, TE> clone = new GraphInstanceImpl<V, E, TV, TE>(d);
+				IDirectedGraphKVWeightedInstanceImpl<V, E, TV, TE> clone = new IDirectedGraphKVWeightedInstanceImpl<V, E, TV, TE>(d);
 				return clone;
 			}
 			#endregion
