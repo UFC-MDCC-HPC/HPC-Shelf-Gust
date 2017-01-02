@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000033fe2230098fdbccc0b5b5558d8b4fa7a8162b34565dd1570a8eb1ebd8cb92cb0f25516f245e9d186bcff0237232f6b316a7a5fba7039d452dadc6d09930b0d543cb427b48aa5cbc8268fc7ef756db3e08902306a56c39e2336db64fd7f3cbc4fa020aabdef996330d5d605039f3dce491536f8e45d026753758382f06b863c7" isAbstract="true" kind="Computation" name="DataSource" packagePath="br.ufc.mdcc.hpcshelf.gust.datasource">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000610069b4add107e89387a9d220f61107f88f716863c8d9a70011b70cc6bb9137107a064350583096a6ab63cf0a8eed31ea98afa4a663ac64d679741ca685c11b9fc48834e15e746f478d6762c064362a0e5d95d4b7dbfc5bd0c0b4bb7d19d480d4761507a7dab000e02a0997dd97da117b965229519308358bf9dfdf727689db" isAbstract="true" kind="Computation" name="DataSource" packagePath="br.ufc.mdcc.hpcshelf.gust.datasource">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -46,6 +46,14 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="shardBins" location="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/InputFormat.hpe" multiple="false" name="InputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="119" x="377" y="315">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="server_port_type" direct="true" varName="S"/>
     <interface iRef="IDataSource" nArgs="1">
       <slice isRef="reader">
@@ -55,6 +63,10 @@
       <slice isRef="platform_data_source">
         <originRef cRef="platform_data_source" iRef="IProcessingNode"/>
         <visualDescription h="10" w="10" x="20" y="23"/>
+      </slice>
+      <slice isRef="shardBins">
+        <originRef cRef="shardBins" iRef="IInputFormat"/>
+        <visualDescription h="10" w="10" x="192" y="21"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.datasource.DataSource&#xA;{&#xA;&#x9;public interface BaseIDataSource&lt;P> : IComputationKind &#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDataSource.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.datasource.DataSource/bin/1.0.0.0/BaseIDataSource.dll" versionId="1.0.0.0">
@@ -90,6 +102,9 @@
       </slices>
       <slices cRef="platform_data_source" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_data_source" transitive="false">
         <visualDescription h="10" w="10" x="20" y="23"/>
+      </slices>
+      <slices cRef="shardBins" inner_replica="0" slice_replica="0" uRef="data" sliceName="shardBins" transitive="false">
+        <visualDescription h="10" w="10" x="192" y="21"/>
       </slices>
       <visualDescription h="40" w="213" x="86" y="278"/>
     </unit>

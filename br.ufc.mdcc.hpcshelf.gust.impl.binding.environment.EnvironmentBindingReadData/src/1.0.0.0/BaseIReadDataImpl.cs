@@ -13,7 +13,7 @@ using br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Integer;
-using br.ufc.mdcc.common.String;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingReadData 
 {
@@ -43,13 +43,13 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingR
 			}
 		}
 
-		private IIterator<IKVPair<IInteger,IString>> input_pairs_iterator = null;
-		protected IIterator<IKVPair<IInteger,IString>> Input_pairs_iterator
+		private IIterator<IKVPair<IInteger,IInputFormat>> input_pairs_iterator = null;
+		protected IIterator<IKVPair<IInteger,IInputFormat>> Input_pairs_iterator
 		{
 			get
 			{
 				if (this.input_pairs_iterator == null)
-					this.input_pairs_iterator = (IIterator<IKVPair<IInteger,IString>>) Services.getPort("input_pairs_iterator");
+					this.input_pairs_iterator = (IIterator<IKVPair<IInteger,IInputFormat>>) Services.getPort("input_pairs_iterator");
 				return this.input_pairs_iterator;
 			}
 		}

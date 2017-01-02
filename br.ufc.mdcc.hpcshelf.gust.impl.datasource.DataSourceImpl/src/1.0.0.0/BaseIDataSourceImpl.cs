@@ -8,6 +8,7 @@ using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
 using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface;
 using br.ufc.mdcc.hpcshelf.gust.datasource.DataSource;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl 
 {
@@ -34,6 +35,17 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl
 				if (this.platform == null)
 					this.platform = (P) Services.getPort("platform");
 				return this.platform;
+			}
+		}
+
+		private IInputFormat shardBins = null;
+		protected IInputFormat ShardBins
+		{
+			get
+			{
+				if (this.shardBins == null)
+					this.shardBins = (IInputFormat) Services.getPort("shardBins");
+				return this.shardBins;
 			}
 		}
 	}

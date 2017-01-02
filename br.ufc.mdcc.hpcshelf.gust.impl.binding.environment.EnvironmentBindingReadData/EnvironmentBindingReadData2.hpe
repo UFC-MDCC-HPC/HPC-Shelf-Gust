@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ad8c227a2773a1d5961a0ca05a33f05490062c27ddbdea684fe7e1be9132bc9d3257642d3ee65392dde1a6e69a236d2a9db054a3acca7231132781115985eb926c4f7e5b2b0cc5f19debd38c9b23ed9f9fabd6c216af5e7868bb5f01016c6136fb4df151b79f094d9a5be1bd41648e634fb53572a45b6a35a4bde9417225fd98" isAbstract="false" kind="Synchronizer" name="EnvironmentBindingReadData" packagePath="br.ufc.mdcc.hpcshelf.gust.impl.binding.environment">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cff491d8fb5d92bc1cfd578a6b95113b12e7e098376c0219b1db8d0fdd49979eb38ae95d28a8f9cccaa5c41f12b7168683b83824ccd7c6ef7209a3697cb5396f924047b6696211ecf70da2e0e1f23ee1997974c74a8ae31a7b4418e8a0f145536ecce5d3110f329f611b877586c0d3d94b6d444b5f73f412b783965855ad3489" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData/EnvironmentBindingReadData.hpe" name="EnvironmentBindingReadData" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="379" y="466">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="server_port_type" varName="S"/>
+        <unitBounds parallel="false" uRef="client_server">
+          <visualDescription h="20" w="20" x="51" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface/PortTypeDataSourceInterface.hpe" multiple="false" name="PortTypeDataSourceInterface" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="446" y="635">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
+    <interface iRef="IReadDataImpl" nArgs="1">
+      <slice isRef="input_pairs_iterator">
+        <originRef cRef="input_pairs_iterator" iRef="IIterator"/>
+        <visualDescription h="10" w="10" x="44" y="22"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface;&#xA;using br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.common.String;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingReadData &#xA;{&#xA;&#x9;public abstract class BaseIReadDataImpl&lt;S>: Synchronizer, BaseIReadData&lt;S>&#xA;&#x9;&#x9;//where C:IPortTypeIterator&#xA;&#x9;&#x9;where S:IPortTypeDataSourceInterface&#xA;&#x9;{&#xA;&#x9;&#x9;private IPortTypeIterator client_port_type = null;&#xA;&#x9;&#x9;protected IPortTypeIterator Client_port_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.client_port_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.client_port_type = (IPortTypeIterator) Services.getPort(&quot;client_port_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.client_port_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private S server_port_type = default(S);&#xA;&#x9;&#x9;protected S Server_port_type&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.server_port_type == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.server_port_type = (S) Services.getPort(&quot;server_port_type&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.server_port_type;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IIterator&lt;IKVPair&lt;IInteger,IString>> input_pairs_iterator = null;&#xA;&#x9;&#x9;protected IIterator&lt;IKVPair&lt;IInteger,IString>> Input_pairs_iterator&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_pairs_iterator == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_pairs_iterator = (IIterator&lt;IKVPair&lt;IInteger,IString>>) Services.getPort(&quot;input_pairs_iterator&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_pairs_iterator;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;}&#xA;}" name="BaseIReadDataImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingReadData/bin/1.0.0.0/BaseIReadDataImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/bin/1.0.0.0/BaseIBindingDirect.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.common.String;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using System.Threading;&#xA;using System.Collections.Generic;&#xA;using br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingReadData&#xA;{&#xA;&#x9;public class IReadDataImpl&lt;S> : BaseIReadDataImpl&lt;S>, IReadData&lt;S>&#xA;&#x9;&#x9;where S:IPortTypeDataSourceInterface&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private Thread thread_file_reader = null;&#xA;&#xA;&#x9;&#x9;public override void after_initialize()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;client = Input_pairs_iterator.newIteratorInstance ();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;public void startReadSource()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;thread_file_reader = new Thread (file_reader);&#xA;&#x9;&#x9;&#x9;thread_file_reader.Start ();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IPortTypeIterator client = null;&#xA;&#x9;&#x9;public IPortTypeIterator Client { get {&#x9;return client; } }&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;private S server = default(S);&#xA;&#x9;&#x9;public S Server { set {&#x9;server = value; } }&#xA;&#xA;&#x9;&#x9;private static int CHUNK_SIZE = 50;&#xA;&#xA;&#x9;&#x9;private string[] file_name_list = null;&#x9;&#xA;&#xA;&#x9;&#x9;int counter_write_chunk = 0;&#xA;&#x9;&#x9;int counter_write_global = 0;&#xA;&#xA;&#x9;&#x9;private void file_reader()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;if (file_name_list == null)&#xA;&#x9;&#x9;&#x9;&#x9;file_name_list = server.fetchFileNames ();&#xA;&#xA;&#x9;&#x9;&#x9;foreach (string fn in file_name_list) &#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;IEnumerable&lt;string> file_line_list = server.fetchFileContents (fn);&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;foreach (string line in file_line_list) &#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IKVPairInstance&lt;IInteger,IString> item = (IKVPairInstance&lt;IInteger,IString>) client.createItem ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;((IIntegerInstance)item.Key).Value = counter_write_global;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;((IStringInstance)item.Value).Value = line;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;client.put(item);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;counter_write_chunk++;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;counter_write_global++;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (counter_write_chunk >= CHUNK_SIZE) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (&quot;NEW CHUNK size=&quot; + counter_write_chunk);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;counter_write_chunk = 0;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;client.finish ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;client.finish ();&#xA;&#xA;&#x9;&#x9;&#x9;client.finish ();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;FINISHING READING DATA SOURCE&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IReadDataImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingReadData/bin/1.0.0.0/IReadDataImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingReadData/bin/1.0.0.0/BaseIReadDataImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/bin/1.0.0.0/IBindingDirect.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="111" x="126" y="78">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IReadDataImpl" multiple="false" private="false" replica="0" uRef="client_server" visibleInterface="true">
+      <super cRef="base" uRef="client_server"/>
+      <visualDescription h="40" w="190" x="183" y="386"/>
+    </unit>
+  </componentInfo>
+</component:component>

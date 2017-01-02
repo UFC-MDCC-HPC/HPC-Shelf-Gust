@@ -88,10 +88,6 @@
       <Project>{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}</Project>
       <Name>br.ufc.mdcc.common.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.common.String\br.ufc.mdcc.common.String\br.ufc.mdcc.common.String.csproj">
-      <Project>{1F1C11D1-910D-4B0B-AE3A-80EC9882759C}</Project>
-      <Name>br.ufc.mdcc.common.String</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer.csproj">
       <Project>{97B35E58-AC6B-44A6-A536-90FA39076265}</Project>
       <Name>br.ufc.mdcc.common.Integer</Name>
@@ -103,6 +99,10 @@
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData\br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData\br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData.csproj">
       <Project>{E75203E1-30CC-4745-8FA0-670F039089C7}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.InputFormat\br.ufc.mdcc.hpcshelf.gust.graph.InputFormat\br.ufc.mdcc.hpcshelf.gust.graph.InputFormat.csproj">
+      <Project>{6A7BA994-391F-404F-939C-077CA597C821}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
