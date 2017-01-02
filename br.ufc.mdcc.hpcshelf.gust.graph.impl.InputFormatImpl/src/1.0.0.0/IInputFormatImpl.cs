@@ -156,7 +156,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 			partition_table = new int[1];
 			esize = 0;
 			vsize = 0;
-			partition_size = DEFAULT_PARTITION;
+			partition_size = DEFAULT_PARTITION_SIZE;
 			count = 0;
 		}
 		public void extractFile(){
