@@ -67,7 +67,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 		public int PARTITION_SIZE { get{ return partition_size; } set { partition_size = (int) value; } }
 		public int PARTID { get{ return partid; } set { partid = (int) value; } }
 
-		private int[] getInts() { int[] INTS = {esize,vsize,partition_size,count}; return INTS; }
+		private int[] getInts() { int[] INTS = {esize,vsize,partition_size,partid,count}; return INTS; }
 		public object ObjValue {
 			get { return new Tuple<int[],int[],float[],int[],int[]>(source,target,weight,partition_table,getInts()); }
 			set { 
@@ -76,7 +76,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 				this.weight =          ((Tuple<int[],int[],float[],int[],int[]>)value).Item3;
 				this.partition_table = ((Tuple<int[],int[],float[],int[],int[]>)value).Item4;
 				int[] INTS = ((Tuple<int[],int[],float[],int[],int[]>)value).Item5;
-				esize = INTS[0]; vsize = INTS[1]; partition_size = INTS[2]; count = INTS[3];
+				esize = INTS[0]; vsize = INTS[1]; partition_size = INTS[2]; partid = INTS[3]; count = INTS[4];
 			}
 		}
 
@@ -116,6 +116,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 			weight = new float[1];
 			esize = 0;
 			vsize = 0;
+			partid = -1;
 			count = 0;
 			return dic;
 		}
@@ -160,6 +161,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 			esize = 0;
 			vsize = 0;
 			partition_size = DEFAULT_PARTITION_SIZE;
+			partid = -1;
 			count = 0;
 		}
 		public void extractFile(){
@@ -317,6 +319,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 			clone.esize = this.esize;
 			clone.vsize = this.vsize;
 			clone.partition_size = this.partition_size;
+			clone.PARTID = this.PARTID;
 			clone.count = this.count;
 			return clone;
 		}
