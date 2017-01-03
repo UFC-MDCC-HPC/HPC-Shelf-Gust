@@ -47,11 +47,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingR
 		//int counter_write_global = 0;
 
 		private void file_reader () {
-			IEnumerable<ShardInputFormat> file_line_list = server.fetchFileContent ();	
-			foreach (ShardInputFormat sub_graph_shard in file_line_list) {
-				IKVPairInstance<IInteger,IInputFormatInstance> item = (IKVPairInstance<IInteger,IInputFormatInstance>)client.createItem ();
-				((IIntegerInstance)item.Key).Value = sub_graph_shard.Id; //counter_write_global;
-				((IInputFormatInstance)item.Value) = sub_graph_shard.Shard; //sub_graph_shard;
+			IEnumerable<IInputFormatInstance> file_input_format = server.fetchFileContent ();	
+			foreach (IInputFormatInstance shard in file_input_format) {
+				IKVPairInstance<IInteger,IInputFormat> item = (IKVPairInstance<IInteger,IInputFormat>)client.createItem ();
+				int first_vertex_id_from_partition = shard.firstVertex (shard.PARTID);
+				((IIntegerInstance)item.Key).Value = first_vertex_id_from_partition; //counter_write_global;
+				item.Value = shard; //sub_graph_shard;
 				client.put (item);
 
 				counter_write_chunk++;

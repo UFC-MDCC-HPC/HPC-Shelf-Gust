@@ -23,12 +23,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl {
 			
 			private IInputFormatInstance shardInstance;
 
-			public IEnumerable<ShardInputFormat> fetchFileContent() {
+			public IEnumerable<IInputFormatInstance> fetchFileContent() {
 				IDictionary<int, IInputFormatInstance> data_source = shardInstance.extractBins ();
 				foreach(KeyValuePair<int, IInputFormatInstance> kv in data_source){
-					int simbolicVertex = kv.Value.firstVertex (kv.Key); //OBS: kv.Key="partitionID" e firstVertex(kv.Key)="primeiro vertice da tabela de particionamento vinculado ao partitionID"
-					ShardInputFormat part = new ShardInputFormat (simbolicVertex, kv.Value);
-					yield return part;
+					//int simbolicVertex = kv.Value.firstVertex (kv.Key); //OBS: kv.Key="partitionID" e firstVertex(kv.Key)="primeiro vertice da tabela de particionamento vinculado ao partitionID"
+					//ShardInputFormat part = new ShardInputFormat (simbolicVertex, kv.Value);
+					yield return kv.Value;//part;
 				}
 				//string fileName = System.Environment.GetEnvironmentVariable (PATH_GRAPH_FILE);
 				//return File.ReadLines (fileName);
