@@ -1,24 +1,22 @@
 ﻿<Properties StartupItem="HPC-Shelf-Gust/HPC-Shelf-Gust.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl/src/1.0.0.0/IInputFormatImpl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl/src/1.0.0.0/IJoinReadSourceImpl.cs">
     <Files>
       <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.computation.GustyImpl/src/1.0.0.0/IGustyImpl.cs" Line="1" Column="1" />
       <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.computation.MapperImpl/src/1.0.0.0/IMapperImpl.cs" Line="1" Column="1" />
       <File FileName="../br.ufc.mdcc.hpcshelf.gust.example.cw.impl.WordCounterImpl/src/1.0.0.0/IWordCounterImpl.cs" Line="1" Column="1" />
       <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.connector.StepImpl/src/1.0.0.0/IStepGustyFeederImpl.cs" Line="1" Column="1" />
       <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.connector.StepImpl/src/1.0.0.0/BaseIStepGustyFeederImpl.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl/src/1.0.0.0/IJoinReadSourceImpl.cs" Line="1" Column="1" />
       <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl/src/1.0.0.0/IJoinMapFeederImpl.cs" Line="1" Column="1" />
       <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl/src/1.0.0.0/IJoinGustyCollectorImpl.cs" Line="1" Column="1" />
       <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl/src/1.0.0.0/IJoinWriteSinkImpl.cs" Line="1" Column="1" />
       <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.custom.PartitionFunctionIntegerKeyDefault/src/1.0.0.0/IPartitionIntegerKeyDefaultImpl.cs" Line="1" Column="1" />
       <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.connector.StepImpl/src/1.0.0.0/IStepMapCollectorImpl.cs" Line="1" Column="1" />
       <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingReadData/src/1.0.0.0/BaseIReadDataImpl.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingReadData/src/1.0.0.0/IReadDataImpl.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface/src/1.0.0.0/IPortTypeDataSourceInterface.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl/src/1.0.0.0/IDataSourceImpl.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl/src/1.0.0.0/IInputFormatImpl.cs" Line="1" Column="1" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/src/1.0.0.0/IInputFormat.cs" Line="1" Column="1" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl/src/1.0.0.0/IJoinReadSourceImpl.cs" Line="34" Column="36" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl/src/1.0.0.0/IDataSourceImpl.cs" Line="32" Column="6" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingReadData/src/1.0.0.0/IReadDataImpl.cs" Line="53" Column="39" />
+      <File FileName="../br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface/src/1.0.0.0/IPortTypeDataSourceInterface.cs" Line="19" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
