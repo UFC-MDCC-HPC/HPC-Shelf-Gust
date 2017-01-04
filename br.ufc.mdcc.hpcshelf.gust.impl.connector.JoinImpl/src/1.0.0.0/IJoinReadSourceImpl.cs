@@ -37,11 +37,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl
 			Task_binding_data.TraceFlag = true;
 			Task_binding_data.invoke (ITaskPortData.READ_SOURCE);
 
-			Console.WriteLine (this.Rank + ": SPLITTER 2 ");
-
-			Source.startReadSource ();
-
-			Console.WriteLine (this.Rank + ": SPLITTER 3 ");
+//			Console.WriteLine (this.Rank + ": SPLITTER 2 ");
+//
+//			Source.startReadSource ();
+//
+//			Console.WriteLine (this.Rank + ": SPLITTER 3 ");
 
 			object bin_object = null;
 
@@ -55,6 +55,13 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl
 				for (int k = 0, j = nr0; j < m_size; k++, j++)
 					unit_ref [j] = new Tuple<int,int> (i/*, 0 INDEX OF map_feeder */,k);
 			}
+
+			Console.WriteLine (this.Rank + ": SPLITTER 2 ");
+
+			Source.startReadSource (m_size); // é necessário o aviso prévio de m_size para que os dados sejam lidos mapeando vértices à tabela de partiçäo
+
+			Console.WriteLine (this.Rank + ": SPLITTER 3 ");
+
 
 			Console.WriteLine (this.Rank + ": SPLITTER 4 ");
 
