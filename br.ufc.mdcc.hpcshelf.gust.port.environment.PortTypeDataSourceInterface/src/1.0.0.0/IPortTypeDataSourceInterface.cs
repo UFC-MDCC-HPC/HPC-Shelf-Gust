@@ -7,7 +7,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface
 	public interface IPortTypeDataSourceInterface : BaseIPortTypeDataSourceInterface, IEnvironmentPortTypeSinglePartner {
 		//string[] fetchFileNames ();
 		//IEnumerable<string> fetchFileContents(string fileName);
-		IEnumerable<IInputFormatInstance> fetchFileContent();
+		IInputFormatInstance fetchFileContent();
 	}
 
 	// IInputFormatInstance contém os dados do arquivo fonte, na forma int[0..|E|] Source, int[0..|E|] Target, onde |E| é o total de arestas i j em cada linha do arquivo.

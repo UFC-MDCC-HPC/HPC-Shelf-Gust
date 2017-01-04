@@ -10,7 +10,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadDa
 		where S:IPortTypeDataSourceInterface
 	{
 
-		void startReadSource();
+		void startReadSource(int part_size);
 
 	}
 }

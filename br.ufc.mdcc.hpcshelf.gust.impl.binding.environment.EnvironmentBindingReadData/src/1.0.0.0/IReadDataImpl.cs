@@ -28,7 +28,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingR
 			client = Input_pairs_iterator.newIteratorInstance ();
 		}
 
-		public void startReadSource () {
+		public void startReadSource (int part_size) {
+			partition_size = part_size;
 			thread_file_reader = new Thread (file_reader);
 			thread_file_reader.Start ();
 		}
@@ -45,14 +46,20 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingR
 
 		int counter_write_chunk = 0;
 		//int counter_write_global = 0;
+		int partition_size;
 
 		private void file_reader () {
-			IEnumerable<IInputFormatInstance> file_input_format = server.fetchFileContent ();	
-			foreach (IInputFormatInstance shard in file_input_format) {
+			string fileName = System.Environment.GetEnvironmentVariable ("PATH_GRAPH_FILE");
+
+			IInputFormatInstance extractor_input_format = server.fetchFileContent ();
+			extractor_input_format.PARTITION_SIZE = partition_size;
+			IDictionary<int, IInputFormatInstance> sub_formats = extractor_input_format.extractBins (fileName);
+
+			foreach (IInputFormatInstance shard in sub_formats.Values) {
 				IKVPairInstance<IInteger,IInputFormat> item = (IKVPairInstance<IInteger,IInputFormat>)client.createItem ();
 				int first_vertex_id_from_partition = shard.firstVertex (shard.PARTID);
 				((IIntegerInstance)item.Key).Value = first_vertex_id_from_partition; //counter_write_global;
-				item.Value = shard; //sub_graph_shard;
+				item.Value = shard;
 				client.put (item);
 
 				counter_write_chunk++;
