@@ -15,6 +15,7 @@ using System.Threading;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData;
 using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl
 {
