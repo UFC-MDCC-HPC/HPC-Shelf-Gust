@@ -6,16 +6,16 @@
         <implements>true</implements>
       </extensionType>
       <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000610069b4add107e89387a9d220f61107f88f716863c8d9a70011b70cc6bb9137107a064350583096a6ab63cf0a8eed31ea98afa4a663ac64d679741ca685c11b9fc48834e15e746f478d6762c064362a0e5d95d4b7dbfc5bd0c0b4bb7d19d480d4761507a7dab000e02a0997dd97da117b965229519308358bf9dfdf727689db" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.datasource.DataSource/DataSource.hpe" name="DataSource" package="br.ufc.mdcc.hpcshelf.gust.datasource" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="232" y="467">
+        <visualDescription h="60" w="100" x="251" y="457">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="platform_maintainer" varName="M"/>
         <port localRef="reader" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
-          <visualDescription h="60" w="100" x="197" y="381">
+          <visualDescription h="60" w="100" x="404" y="490">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###718582548"/>
-          <parameter formFieldId="server_port_type" varName="X###1916337155"/>
+          <parameter formFieldId="client_port_type" varName="X###646004188"/>
+          <parameter formFieldId="server_port_type" varName="X###1862552131"/>
           <unitBounds parallel="false" uRef="client">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -24,7 +24,7 @@
           </unitBounds>
         </port>
         <port localRef="platform_data_source" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
-          <visualDescription h="60" w="100" x="67" y="439">
+          <visualDescription h="60" w="100" x="99" y="513">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="maintainer" varName="M"/>
@@ -88,12 +88,12 @@
         <originRef cRef="platform_data_source" iRef="IProcessingNode"/>
         <visualDescription h="10" w="10" x="20" y="23"/>
       </slice>
-      <slice isRef="shardBins">
-        <originRef cRef="shardBins" iRef="IInputFormat"/>
+      <slice isRef="data_format">
+        <originRef cRef="data_format" iRef="IInputFormat"/>
         <visualDescription h="10" w="10" x="192" y="21"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface;&#xA;using br.ufc.mdcc.hpcshelf.platform.Platform;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.datasource.DataSource;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataSourceImpl: Computation, BaseIDataSource&lt;M>&#xA;&#x9;&#x9;where M:IDataHost&#xA;&#x9;{&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeDataSourceInterface> reader = null;&#xA;&#xA;&#x9;&#x9;public IServerBase&lt;IPortTypeDataSourceInterface> Reader&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.reader == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.reader = (IServerBase&lt;IPortTypeDataSourceInterface>) Services.getPort(&quot;reader&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.reader;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IProcessingNode&lt;M> platform_data_source = null;&#xA;&#xA;&#x9;&#x9;public IProcessingNode&lt;M> Platform_data_source&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform_data_source == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform_data_source = (IProcessingNode&lt;M>) Services.getPort(&quot;platform_data_source&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform_data_source;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IInputFormat shardBins = null;&#xA;&#xA;&#x9;&#x9;protected IInputFormat ShardBins&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.shardBins == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.shardBins = (IInputFormat) Services.getPort(&quot;shardBins&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.shardBins;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataSourceImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl/bin/1.0.0.0/BaseIDataSourceImpl.dll" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface;&#xA;using br.ufc.mdcc.hpcshelf.gust.datasource.DataSource;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataSourceImpl&lt;P>: Computation, BaseIDataSource&lt;P>&#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;{&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeDataSourceInterface> reader = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeDataSourceInterface> Reader&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.reader == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.reader = (IServerBase&lt;IPortTypeDataSourceInterface>) Services.getPort(&quot;reader&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.reader;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private P platform = default(P);&#xA;&#xA;&#x9;&#x9;protected P Platform&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform = (P) Services.getPort(&quot;platform&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IInputFormat data_format = null;&#xA;&#x9;&#x9;protected IInputFormat Data_format&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.data_format == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.data_format = (IInputFormat) Services.getPort(&quot;data_format&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.data_format;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataSourceImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl/bin/1.0.0.0/BaseIDataSourceImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface/bin/1.0.0.0/IPortTypeDataSourceInterface.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
@@ -101,13 +101,13 @@
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.datasource.DataSource/bin/1.0.0.0/BaseIDataSource.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost;&#xA;using br.ufc.mdcc.hpcshelf.gust.datasource.DataSource;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl&#xA;{&#xA;&#x9;public class IDataSourceImpl : BaseIDataSourceImpl, IDataSource&lt;M>&#xA;where M:IDataHost&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IDataSourceImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl/bin/1.0.0.0/IDataSourceImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.datasource.DataSource;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface;&#xA;using System.Collections.Generic;&#xA;using System.IO;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl {&#xA;&#x9;public class IDataSourceImpl&lt;P> : BaseIDataSourceImpl&lt;P>, IDataSource&lt;P>&#xA;    where P:IMaintainer {&#xA;&#x9;&#x9;public override void main() {&#xA;&#x9;&#x9;&#x9;IInputFormatInstance shardInstance = Data_format.newInstanceIF ();&#xA;&#x9;&#x9;&#x9;Reader.Server = new DataSourceReader(shardInstance);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private class DataSourceReader : IPortTypeDataSourceInterface {&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;private IInputFormatInstance shardInstance;&#xA;&#xA;&#x9;&#x9;&#x9;public object fetchFileContentObject() {&#xA;&#x9;&#x9;&#x9;&#x9;return shardInstance;&#xA;&#x9;&#x9;&#x9;&#x9;//string fileName = System.Environment.GetEnvironmentVariable (PATH_GRAPH_FILE);&#xA;&#x9;&#x9;&#x9;&#x9;//return File.ReadLines (fileName);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;public DataSourceReader(IInputFormatInstance _shardInstance){&#xA;&#x9;&#x9;&#x9;&#x9;shardInstance = _shardInstance;&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IDataSourceImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl/bin/1.0.0.0/IDataSourceImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl/bin/1.0.0.0/BaseIDataSourceImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.datasource.DataSource/bin/1.0.0.0/IDataSource.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="213" x="74" y="122">
+      <visualDescription h="40" w="213" x="126" y="189">
         <color b="0" g="128" r="0"/>
       </visualDescription>
       <port name="reader">
