@@ -109,7 +109,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 				tmp.Trim ();
 				tmp.PartitionTABLE = this.PartitionTABLE;
 				tmp.PARTITION_SIZE = this.PARTITION_SIZE;
-				//Graphviz.Directed (tmp.Source, tmp.Target, tmp.VPartition, "/home/cenez/Dropbox/Programacao/JGraphT/Graph-In-HPC-Shelf/tmp.dot");
 			}
 			source = new int[1];
 			target = new int[1];
