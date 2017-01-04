@@ -22,7 +22,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.InputFormat
 	   void Clear ();
 	   void Trim();
 	   int firstVertex (int partID);
-	   IDictionary<int, IInputFormatInstance> extractBins();
+	   IDictionary<int, IInputFormatInstance> extractBins(string fileName);
 	   
 	   int ESIZE { get; }
 	   int VSIZE { get; }

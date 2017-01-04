@@ -80,8 +80,9 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 			}
 		}
 
-		public IDictionary<int, IInputFormatInstance> extractBins(){
-			this.extractFile();
+		public IDictionary<int, IInputFormatInstance> extractBins(string fileName){
+			//fileName = System.Environment.GetEnvironmentVariable ("PATH_GRAPH_FILE");
+			this.extractFile(fileName);
 			IDictionary<int, IInputFormatInstance> dic = new Dictionary<int, IInputFormatInstance> (this.PARTITION_SIZE);
 			bool weighted = this.Weight.Length > 1;
 			for (int i = 0; i < this.PARTITION_SIZE; i++) {
@@ -163,8 +164,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 			partid = -1;
 			count = 0;
 		}
-		public void extractFile(){
-			string fileName = System.Environment.GetEnvironmentVariable ("PATH_GRAPH_FILE");
+		public void extractFile(string fileName){
 			byte[] b = {9, 13, 32};
 			System.IO.StreamReader file = null;
 			checkFiles (fileName, b, file);
@@ -211,7 +211,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 			bool graph = System.IO.File.Exists (fileName);
 			bool headExists = System.IO.File.Exists (fileName+".head");
 			if (!graph)
-				throw new EntryPointNotFoundException ("** PATH_GRAPH_FILE **: Environment Variable NOT FOUND EXCEPTION");
+				throw new EntryPointNotFoundException ("** PATH_GRAPH_FILE **: File Name NOT FOUND EXCEPTION");
 			try	{
 				string line;
 				if(headExists){
