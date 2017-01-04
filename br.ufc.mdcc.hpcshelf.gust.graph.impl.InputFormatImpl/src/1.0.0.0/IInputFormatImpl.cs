@@ -222,7 +222,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 							string[] ij = line.Split ((char)b[0],(char)b[1],(char)b[2]);
 							vsize = int.Parse(ij[0]);
 							esize = int.Parse(ij[1]);
-							partition_size =  int.Parse(ij[2]);
+							//partition_size =  int.Parse(ij[2]);
 							break;
 						}
 					}
@@ -251,7 +251,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 					}
 					System.IO.StreamWriter wfile =  new System.IO.StreamWriter(fileName+".head");
 					try{
-						wfile.WriteLine(vsize+" "+esize+" "+partition_size);
+						wfile.WriteLine(vsize+" "+esize);//+" "+partition_size);
 					}
 					catch (System.IO.IOException e) {
 						Console.WriteLine("Error writing from {0}. Message = {1}", fileName+".head", e.Message);
