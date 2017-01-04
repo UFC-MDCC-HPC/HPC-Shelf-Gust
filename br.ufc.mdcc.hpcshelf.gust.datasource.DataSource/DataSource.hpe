@@ -46,7 +46,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="shardBins" location="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/InputFormat.hpe" multiple="false" name="InputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+    <innerComponent localRef="data_format" location="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/InputFormat.hpe" multiple="false" name="InputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
       <visualDescription h="60" w="119" x="377" y="315">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -64,8 +64,8 @@
         <originRef cRef="platform_data_source" iRef="IProcessingNode"/>
         <visualDescription h="10" w="10" x="20" y="23"/>
       </slice>
-      <slice isRef="shardBins">
-        <originRef cRef="shardBins" iRef="IInputFormat"/>
+      <slice isRef="data_format">
+        <originRef cRef="data_format" iRef="IInputFormat"/>
         <visualDescription h="10" w="10" x="192" y="21"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
@@ -103,7 +103,7 @@
       <slices cRef="platform_data_source" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_data_source" transitive="false">
         <visualDescription h="10" w="10" x="20" y="23"/>
       </slices>
-      <slices cRef="shardBins" inner_replica="0" slice_replica="0" uRef="data" sliceName="shardBins" transitive="false">
+      <slices cRef="data_format" inner_replica="0" slice_replica="0" uRef="data" sliceName="data_format" transitive="false">
         <visualDescription h="10" w="10" x="192" y="21"/>
       </slices>
       <visualDescription h="40" w="213" x="86" y="278"/>

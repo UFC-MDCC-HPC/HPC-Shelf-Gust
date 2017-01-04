@@ -38,14 +38,14 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl
 			}
 		}
 
-		private IInputFormat shardBins = null;
-		protected IInputFormat ShardBins
+		private IInputFormat data_format = null;
+		protected IInputFormat Data_format
 		{
 			get
 			{
-				if (this.shardBins == null)
-					this.shardBins = (IInputFormat) Services.getPort("shardBins");
-				return this.shardBins;
+				if (this.data_format == null)
+					this.data_format = (IInputFormat) Services.getPort("data_format");
+				return this.data_format;
 			}
 		}
 	}

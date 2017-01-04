@@ -13,7 +13,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl {
 	public class IDataSourceImpl<P> : BaseIDataSourceImpl<P>, IDataSource<P>
     where P:IMaintainer {
 		public override void main() {
-			IInputFormatInstance shardInstance = ShardBins.newInstanceIF ();
+			IInputFormatInstance shardInstance = Data_format.newInstanceIF ();
 			Reader.Server = new DataSourceReader(shardInstance);
 		}
 		private class DataSourceReader : IPortTypeDataSourceInterface {
