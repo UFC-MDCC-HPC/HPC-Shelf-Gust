@@ -51,7 +51,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingR
 		private void file_reader () {
 			string fileName = System.Environment.GetEnvironmentVariable ("PATH_GRAPH_FILE");
 
-			IInputFormatInstance extractor_input_format = server.fetchFileContent ();
+			IInputFormatInstance extractor_input_format = (IInputFormatInstance) server.fetchFileContentObject ();
 			extractor_input_format.PARTITION_SIZE = partition_size;
 			IDictionary<int, IInputFormatInstance> sub_formats = extractor_input_format.extractBins (fileName);
 
