@@ -17,6 +17,7 @@ using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData;
 using br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData;
 using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl 
 {
@@ -107,6 +108,17 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl
 				if (this.output_key == null)
 					this.output_key = (IInteger) Services.getPort("output_key");
 				return this.output_key;
+			}
+		}
+
+		private IInputFormat read_format = null;
+		protected IInputFormat Read_format
+		{
+			get
+			{
+				if (this.read_format == null)
+					this.read_format = (IInputFormat) Services.getPort("read_format");
+				return this.read_format;
 			}
 		}
 

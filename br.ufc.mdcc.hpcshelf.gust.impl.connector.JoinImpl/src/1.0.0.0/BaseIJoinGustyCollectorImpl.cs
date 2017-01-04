@@ -17,6 +17,7 @@ using br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl 
 {
@@ -161,5 +162,16 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl
 				return this.input_pairs;
 			}
 		}
+
+		private IInputFormat collect_format = null;
+		protected IInputFormat Collect_format
+		{
+			get
+			{
+				if (this.collect_format == null)
+					this.collect_format = (IInputFormat) Services.getPort("collect_format");
+				return this.collect_format;
 			}
+		}
+	}
 }
