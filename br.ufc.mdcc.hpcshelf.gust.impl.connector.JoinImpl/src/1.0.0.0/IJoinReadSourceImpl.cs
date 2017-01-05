@@ -45,6 +45,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl
 //			Console.WriteLine (this.Rank + ": SPLITTER 3 ");
 
 			object bin_object = null;
+			bool set_table_partition = true;
 
 			// CALCULATE TARGETs
 			IDictionary<int,Tuple<int,int>> unit_ref = new Dictionary<int, Tuple<int,int>> ();
@@ -102,25 +103,17 @@ namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinImpl
 				if (!input_instance.has_next()) 
 					end_iteration = true;
 
-				if (input_instance.fetch_next (out bin_object)) {
+				while (input_instance.fetch_next (out bin_object)) {
 					IKVPairInstance<IKey,IValue> item = (IKVPairInstance<IKey,IValue>)bin_object;
-					Bin_function.PartitionTABLE = ((IInputFormatInstance)item.Value).PartitionTABLE;
-
+					if (set_table_partition) {
+						set_table_partition = false;
+						Bin_function.PartitionTABLE = ((IInputFormatInstance)item.Value).PartitionTABLE;
+					}
 					this.Input_key.Instance = item.Key;
 					Bin_function.go ();
 					int index = ((IIntegerInstance)this.Output_key.Instance).Value;
 
 					buffer[index].Add(item);
-				
-					while (input_instance.fetch_next (out bin_object)) {
-						item = (IKVPairInstance<IKey,IValue>)bin_object;
-
-						this.Input_key.Instance = item.Key;
-						Bin_function.go ();
-						index = ((IIntegerInstance)this.Output_key.Instance).Value;
-
-						buffer[index].Add(item);
-					}
 				}
 
 				Console.WriteLine (this.Rank + ": END READING CHUNKS and distributing to MAPPERS");
