@@ -16,14 +16,14 @@ using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 {
-	public class IReducerImpl<M, RF, PType, TKey, TValue, OKey, OValue, G> : BaseIReducerImpl<M, RF, PType, TKey, TValue, OKey, OValue, G>, IReducer<M, RF, PType, TKey, TValue, OKey, OValue, G>
+	public class IReducerImpl<M, RF, GIF, TKey, TValue, OKey, OValue, G> : BaseIReducerImpl<M, RF, GIF, TKey, TValue, OKey, OValue, G>, IReducer<M, RF, GIF, TKey, TValue, OKey, OValue, G>
 		where M:IMaintainer
-		where RF:IReduceFunction<PType, TKey, TValue, OKey, OValue, G>
+		where RF:IReduceFunction<GIF, TKey, TValue, OKey, OValue, G>
 		where TKey:IData
 		where TValue:IData
 		where OKey:IData
 		where OValue:IData
-		where PType:IData
+		where GIF:IData
 		where G:IData
 	{
 		public override void main() {

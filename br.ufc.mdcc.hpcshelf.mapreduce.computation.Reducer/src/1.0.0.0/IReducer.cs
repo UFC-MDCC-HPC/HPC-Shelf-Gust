@@ -5,14 +5,14 @@ using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer
 {
-	public interface IReducer<M, RF, PType, TKey, TValue, OKey, OValue, G> : BaseIReducer<M, RF, PType, TKey, TValue, OKey, OValue, G>
+	public interface IReducer<M, RF, GIF, TKey, TValue, OKey, OValue, G> : BaseIReducer<M, RF, GIF, TKey, TValue, OKey, OValue, G>
 		where M:IMaintainer
-		where RF:IReduceFunction<PType, TKey, TValue, OKey, OValue, G>
+		where RF:IReduceFunction<GIF, TKey, TValue, OKey, OValue, G>
 		where TKey:IData
 		where TValue:IData
 		where OKey:IData
 		where OValue:IData
-		where PType:IData
+		where GIF:IData
 		where G:IData
 	{
 	}

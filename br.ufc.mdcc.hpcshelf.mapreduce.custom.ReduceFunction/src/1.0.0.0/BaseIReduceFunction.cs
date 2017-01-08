@@ -8,8 +8,8 @@ using br.ufc.mdcc.common.Integer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction
 {
-	public interface BaseIReduceFunction<PType, TKey, TValue, OKey, OValue, G> : IComputationKind 
-		where PType:IData
+	public interface BaseIReduceFunction<GIF, TKey, TValue, OKey, OValue, G> : IComputationKind 
+		where GIF:IData
 		where TKey:IData
 		where TValue:IData
 		where OKey:IData
@@ -18,6 +18,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction
 	{
 		IKVPair<TKey, IIterator<TValue>> Input_values {get;}
 		IIterator<IKVPair<OKey, OValue>> Output {get;}	
-		IIterator<IKVPair<IInteger,PType>> Graph_format {get;}
+		IIterator<IKVPair<IInteger,GIF>> Graph_format {get;}
 	}
 }

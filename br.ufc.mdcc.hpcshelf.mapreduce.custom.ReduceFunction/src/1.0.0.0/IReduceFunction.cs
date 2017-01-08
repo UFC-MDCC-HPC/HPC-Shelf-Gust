@@ -5,8 +5,8 @@ using br.ufc.mdcc.common.Iterator;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction
 {
-	public interface IReduceFunction<PType, TKey, TValue, OKey, OValue, G> : BaseIReduceFunction<PType, TKey, TValue, OKey, OValue, G>
-		where PType:IData
+	public interface IReduceFunction<GIF, TKey, TValue, OKey, OValue, G> : BaseIReduceFunction<GIF, TKey, TValue, OKey, OValue, G>
+		where GIF:IData
 		where TKey:IData
 		where TValue:IData
 		where OKey:IData

@@ -18,14 +18,14 @@ using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl 
 {
-	public abstract class BaseIReducerImpl<M, RF, PType, TKey, TValue, OKey, OValue, G>: Computation, BaseIReducer<M, RF, PType, TKey, TValue, OKey, OValue, G>
+	public abstract class BaseIReducerImpl<M, RF, GIF, TKey, TValue, OKey, OValue, G>: Computation, BaseIReducer<M, RF, GIF, TKey, TValue, OKey, OValue, G>
 		where M:IMaintainer
-		where RF:IReduceFunction<PType, TKey, TValue, OKey, OValue, G>
+		where RF:IReduceFunction<GIF, TKey, TValue, OKey, OValue, G>
 		where TKey:IData
 		where TValue:IData
 		where OKey:IData
 		where OValue:IData
-		where PType:IData
+		where GIF:IData
 		where G:IData
 	{
 //		private IKVPair<OKey, OValue> output_value = null;
@@ -115,13 +115,13 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 			}
 		}
 		
-		private IIterator<IKVPair<IInteger, PType>> graph_format = null;
-		public IIterator<IKVPair<IInteger, PType>> Graph_format
+		private IIterator<IKVPair<IInteger, GIF>> graph_format = null;
+		public IIterator<IKVPair<IInteger, GIF>> Graph_format
 		{
 			get
 			{
 				if (this.graph_format == null)
-					this.graph_format = (IIterator<IKVPair<IInteger, PType>>) Services.getPort("graph_format");
+					this.graph_format = (IIterator<IKVPair<IInteger, GIF>>) Services.getPort("graph_format");
 				return this.graph_format;
 			}
 		}

@@ -11,14 +11,14 @@ using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer
 {
-	public interface BaseIReducer<M, RF, PType, TKey, TValue, OKey, OValue, G> : IComputationKind 
+	public interface BaseIReducer<M, RF, GIF, TKey, TValue, OKey, OValue, G> : IComputationKind 
 		where M:IMaintainer
-		where RF:IReduceFunction<PType, TKey, TValue, OKey, OValue, G>
+		where RF:IReduceFunction<GIF, TKey, TValue, OKey, OValue, G>
 		where OKey:IData
 		where OValue:IData
 		where TKey:IData
 		where TValue:IData
-		where PType:IData
+		where GIF:IData
 		where G:IData
 	{
 	}
