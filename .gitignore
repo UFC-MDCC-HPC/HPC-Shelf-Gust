@@ -23,16 +23,16 @@ RemoteSystemsTempFiles
 Debug
 bin
 obj
-local_files
+#local_files
 tools
 .metadata
-external
+#external
 
 # begin temp
 #Teste.cs
 #Program.cs
 #end temp
 
-moving.sh
-unmoving.sh
+#moving.sh
+#unmoving.sh
 
