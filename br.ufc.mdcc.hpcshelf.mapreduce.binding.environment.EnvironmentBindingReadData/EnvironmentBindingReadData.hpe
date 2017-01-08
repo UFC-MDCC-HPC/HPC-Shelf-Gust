@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000061a1a4b8244411d14939f3fc57591714640762a00ad3300e5b6334dd0ef9b2352ecab70aaa6cea5a10ee69f4a9ff9791516f1a7cc013fbe7b35f98565fd7a15ed89d4330741151902f234b21588e9aac06e188b9380324fc698d7611b7113a534e41e39f691fc8ea400b7e0fa0d75a593acaeabf906deb8330e1e2df0e95bbac" isAbstract="true" kind="Synchronizer" name="EnvironmentBindingReadData" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007377e44873392fd5d90eae23a2d70a028e46569a224534ab2f541c8a6abdb694e0d80697b9939e3471f7d8063f2087ef2c614919aab923f93cd3f543edfe5b6c679c56064e5d56a2c2c9727ff5b82f15412d0d85620866507592b293dba3beb70bc4a96aea9b8a192a1d3c21d7174bcde6e2e05c5d5c66a2bf9c26424380a3d6" localRef="base" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/EnvironmentBindingBaseDirect.hpe" name="EnvironmentBindingBaseDirect" package="br.ufc.mdcc.hpc.storm.binding.environment" version="1.0.0.0">
+        <visualDescription h="83" w="163" x="178" y="322">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="client_port_type" varName="C"/>
+        <parameter formFieldId="server_port_type" varName="S"/>
+        <unitBounds parallel="true" uRef="client_server">
+          <visualDescription h="20" w="20" x="31" y="26"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <parameter componentRef="server_port_type" formFieldId="server_port_type" order="0" variance="invariant" varName="S"/>
+    <innerComponent localRef="client_port_type" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="195" y="320">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="server_port_type" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface/PortTypeDataSourceInterface.hpe" multiple="false" name="PortTypeDataSourceInterface" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" parameter_id="server_port_type" exposed="false">
+      <visualDescription h="60" w="100" x="107" y="99">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="input_pair_factory" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="75" w="206" x="371" y="353">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="V"/>
+      <parameter formFieldId="key_type" varName="K"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="61" y="50"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="377" y="512">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="input_pairs_iterator" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="228" x="426" y="248">
+        <color b="203" g="192" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="item_type" varName="T"/>
+      <unitBounds parallel="true" uRef="iterator">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="value" location="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/InputFormat.hpe" multiple="false" name="InputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="100" x="440" y="519">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="client_port_type" direct="true" varName="C"/>
+    <supplyParameter cRef="key" direct="true" varName="K"/>
+    <supplyParameter cRef="value" direct="true" varName="V"/>
+    <supplyParameter cRef="input_pair_factory" direct="true" varName="T"/>
+    <interface iRef="IReadData" nArgs="1">
+      <slice isRef="input_pairs_iterator">
+        <originRef cRef="input_pairs_iterator" iRef="IIterator"/>
+        <visualDescription h="10" w="10" x="44" y="22"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData&#xA;{&#xA;&#x9;public interface BaseIReadData&lt;S> : BaseIBindingDirect&lt;IPortTypeIterator,S>, ISynchronizerKind &#xA;&#x9;&#x9;//where C:IPortTypeIterator&#xA;&#x9;&#x9;where S:IPortTypeDataSourceInterface&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIReadData.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData/bin/1.0.0.0/BaseIReadData.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/bin/1.0.0.0/BaseIBindingDirect.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData&#xA;{&#xA;&#x9;public interface IReadData&lt;S> : BaseIReadData&lt;S>, IBindingDirect&lt;IPortTypeIterator,S>&#xA;&#x9;&#x9;//where C:IPortTypeIterator&#xA;&#x9;&#x9;where S:IPortTypeDataSourceInterface&#xA;&#x9;{&#xA;&#xA;&#x9;&#x9;void startReadSource();&#xA;&#xA;&#x9;}&#xA;}" name="IReadData.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData/bin/1.0.0.0/IReadData.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData/bin/1.0.0.0/BaseIReadData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect/bin/1.0.0.0/IBindingDirect.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="211" x="143" y="130">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <parameter iname="IPortTypeDataSourceInterface" order="0" parid="server_port_type" uname="environment_port_type" varid="S"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IReadData" multiple="true" private="false" replica="0" uRef="client_server" visibleInterface="true">
+      <super cRef="base" uRef="client_server"/>
+      <slices cRef="input_pairs_iterator" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="input_pairs_iterator" transitive="false">
+        <visualDescription h="10" w="10" x="119" y="26"/>
+      </slices>
+      <visualDescription h="40" w="140" x="175" y="230"/>
+    </unit>
+  </componentInfo>
+</component:component>

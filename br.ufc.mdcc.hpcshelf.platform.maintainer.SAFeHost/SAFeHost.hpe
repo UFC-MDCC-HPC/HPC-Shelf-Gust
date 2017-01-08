@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000d7dc972721bc3dd16112909ccc78fc6cc5d4fd9f89ba3630d7a8b1b6e72f17d206deca853f8b26cbf5e7dd23681fd200654ed9a1297babd8cf622324b6adace03dbcc0c584cbc8aa5fa3d80caef104f02f20ae41e648fe08b22b6b30e953be4b9342e35e43d7473a21ca462bf3c1b4d5285cd4ca151f8a8deb7c87fe9e96c488" isAbstract="true" kind="Qualifier" name="SAFeHost" packagePath="br.ufc.mdcc.hpcshelf.platform.maintainer">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000679c27b29ad182a1aca6f4621fd2c98662b812986e4d7d1700a8d611e7b1deb71942860e11974ac2a591803437293fc5a6a29faedeff390fd355063703fa96937dd78be0636e9b49cdeb3a1b1c5131aa3511ac020292fc1ae0c78a7b08fb43110a292b713b44387a78e9286fcec450642f6a1e3028d2c0cb431414dd613554cc" localRef="base" location="br.ufc.mdcc.hpcshelf.platform.Maintainer/Maintainer.hpe" name="Maintainer" package="br.ufc.mdcc.hpcshelf.platform" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="180" y="158">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="true" uRef="maintainer">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="ISAFeHost" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost&#xA;{&#xA;&#x9;public interface BaseISAFeHost : BaseIMaintainer, IQualifierKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseISAFeHost.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost/bin/1.0.0.0/BaseISAFeHost.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Maintainer/bin/1.0.0.0/BaseIMaintainer.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost&#xA;{&#xA;&#x9;public interface ISAFeHost : BaseISAFeHost, IMaintainer&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ISAFeHost.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost/bin/1.0.0.0/ISAFeHost.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost/bin/1.0.0.0/BaseISAFeHost.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Maintainer/bin/1.0.0.0/IMaintainer.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="183" x="262" y="245">
+        <color b="203" g="192" r="255"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="ISAFeHost" multiple="true" private="false" replica="0" uRef="safe_host" visibleInterface="true">
+      <super cRef="base" uRef="maintainer"/>
+      <visualDescription h="40" w="183" x="113" y="321"/>
+    </unit>
+  </componentInfo>
+</component:component>

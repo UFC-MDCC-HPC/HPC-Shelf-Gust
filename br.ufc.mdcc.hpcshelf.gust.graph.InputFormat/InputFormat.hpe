@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000004735cbded9dd2c56e9fe5ac9c9aa1c6bcdc0badce19a747416a91c878d8c631888d129a1c2b66e98824d131c32da58a5c4042a2be4207d15114de2e928dc520f0ae8377f5641b4f0b57a82baf311d90281e4c963ab27be93f4eab883ded57ef923e2a0a61ad28cc17c62f88ea914fc27f35e9df4fb6da4b8f80876a846603ea4" isAbstract="true" kind="Data" name="InputFormat" packagePath="br.ufc.mdcc.hpcshelf.gust.graph">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002b679e8f63c6925bfcc928a7cc3013906b15c175a4e98fab23a035f735fa6c0ad73ed2eae507a31345dd1d315a36138fc3377a2b0953350e14b7cf31e6b06c33f4f4ee03b53200f4bfdbaab49b63edb35bda74c698665df952a90b9df4bdf2e6bc62129a9da0a4ba4ee78fb225d5b4353e96afd6e47927b6943bf6ace9cf0cb0" localRef="base" location="br.ufc.mdcc.common.Data/Data.hpe" name="Data" package="br.ufc.mdcc.common" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="354" y="531">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IInputFormat" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.InputFormat&#xA;{&#xA;&#x9;public interface BaseIInputFormat : BaseIData, IDataStructureKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIInputFormat.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/BaseIInputFormat.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.InputFormat&#xA;{&#xA;&#x9;public interface IInputFormat : BaseIInputFormat, IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IInputFormat.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/BaseIInputFormat.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="168" x="165" y="370">
+        <color b="83" g="87" r="85"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IInputFormat" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
+      <super cRef="base" uRef="data"/>
+      <visualDescription h="40" w="80" x="255" y="446"/>
+    </unit>
+  </componentInfo>
+</component:component>

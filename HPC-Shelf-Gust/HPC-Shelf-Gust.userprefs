@@ -1,0 +1,12 @@
+﻿<Properties StartupItem="HPC-Shelf-Gust/HPC-Shelf-Gust.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/MapReduce-for-HPE/MapReduce-for-HPE/Program.cs" line="24" column="16" />
+      <Breakpoint file="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/MapReduce-for-HPE/MapReduce-for-HPE/Program.cs" line="27" column="29" />
+      <Breakpoint file="/home/heron/Dropbox/Copy/ufc_mdcc_hpc/HPC-Shelf-Gust/br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/src/1.0.0.0/IClientBase.cs" line="2" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
