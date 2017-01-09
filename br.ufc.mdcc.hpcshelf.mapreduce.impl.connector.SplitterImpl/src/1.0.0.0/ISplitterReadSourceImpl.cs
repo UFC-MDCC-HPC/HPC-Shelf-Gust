@@ -38,6 +38,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			Task_binding_data.invoke (ITaskPortData.READ_SOURCE);
 
 			// CALCULATE SubGraph TARGET
+			int nfr = this.FacetMultiplicity [FACET_REDUCE];
 			int r_size = 0;
 			foreach (int i in this.FacetIndexes[FACET_REDUCE]) {   
 				r_size += this.UnitSizeInFacet [i] ["reduce_collector"];
