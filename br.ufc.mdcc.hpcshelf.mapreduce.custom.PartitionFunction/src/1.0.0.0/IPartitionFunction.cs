@@ -7,6 +7,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction
 		where IPK:IData
 	{
 		int NumberOfPartitions {set; get;}
-		int[] PartitionTABLE { get; set; }
+		//int[] PartitionTABLE { get; set; }
+		object PartitionTABLE { get; set; }
 	}
 }

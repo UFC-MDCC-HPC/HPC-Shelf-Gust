@@ -11,7 +11,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingR
 	{
 
 		void startReadSource(int part_size);
-		int[] PartitionTABLE{ get; set; }
+		//int[] PartitionTABLE{ get; set; }
+		object PartitionTABLE{ get; set; }
 
 	}
 }

@@ -45,8 +45,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBin
 		private S server = default(S);
 		public S Server { set {	server = value; } }
 
-		private int[] partition_table = null;
-		public int[] PartitionTABLE{ get{ return partition_table; } set{ this.partition_table = (int[])value; } }
+		private object partition_table = null;
+		public object PartitionTABLE{ get{ return partition_table; } set{ this.partition_table = (int[])value; } }
 
 		private static int CHUNK_SIZE = 50;
 
