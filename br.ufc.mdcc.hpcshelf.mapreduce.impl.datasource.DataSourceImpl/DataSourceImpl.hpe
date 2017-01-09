@@ -10,12 +10,13 @@
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="platform_maintainer" varName="M"/>
+        <parameter formFieldId="graph_input_format" varName="GIF"/>
         <port localRef="reader" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
           <visualDescription h="60" w="100" x="390" y="433">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###80618064"/>
-          <parameter formFieldId="server_port_type" varName="X###2033104038"/>
+          <parameter formFieldId="client_port_type" varName="X###1826443634"/>
+          <parameter formFieldId="server_port_type" varName="X###906906420"/>
           <unitBounds parallel="false" uRef="client">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -75,11 +76,20 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="gif" location="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/InputFormat.hpe" multiple="false" name="InputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="100" x="577" y="327">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="in" direct="true" varName="IN"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
     <supplyParameter cRef="platform" direct="true" varName="P"/>
     <supplyParameter cRef="maintainer" direct="true" varName="M"/>
-    <interface iRef="IDataSourceImpl" nArgs="1">
+    <supplyParameter cRef="gif" direct="true" varName="GIF"/>
+    <interface iRef="IDataSourceImpl" nArgs="2">
       <slice isRef="reader">
         <originRef cRef="reader" iRef="IServerBase"/>
         <visualDescription h="10" w="10" x="154" y="31"/>
@@ -88,21 +98,22 @@
         <originRef cRef="platform_data_source" iRef="IProcessingNode"/>
         <visualDescription h="10" w="10" x="20" y="23"/>
       </slice>
-      <slice isRef="data_format">
-        <originRef cRef="data_format" iRef="IInputFormat"/>
+      <slice isRef="graph_input_format">
+        <originRef cRef="graph_input_format" iRef="IInputFormat"/>
         <visualDescription h="10" w="10" x="190" y="16"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataSourceImpl&lt;P>: Computation, BaseIDataSource&lt;P>&#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;{&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeDataSourceInterface> reader = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeDataSourceInterface> Reader&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.reader == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.reader = (IServerBase&lt;IPortTypeDataSourceInterface>) Services.getPort(&quot;reader&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.reader;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private P platform = default(P);&#xA;&#xA;&#x9;&#x9;protected P Platform&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform = (P) Services.getPort(&quot;platform&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;private IInputFormat data_format = null;&#xA;&#x9;&#x9;protected IInputFormat Data_format&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.data_format == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.data_format = (IInputFormat) Services.getPort(&quot;data_format&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.data_format;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataSourceImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl/bin/1.0.0.0/BaseIDataSourceImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface/bin/1.0.0.0/IPortTypeDataSourceInterface.dll</dependency>
-          <dependency>br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll</dependency>
-          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource/bin/1.0.0.0/BaseIDataSource.dll</dependency>
         </file>
         <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;&#xA;using System.Collections.Generic;&#xA;using System.IO;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl&#xA;{&#xA;&#x9;public class IDataSourceImpl&lt;P> : BaseIDataSourceImpl&lt;P>, IDataSource&lt;P>&#xA;    where P:IMaintainer&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;//Reader.Server = new DataSourceReader();&#xA;&#x9;&#x9;&#x9;IInputFormatInstance input_format_instance = Data_format.newInstanceIF ();&#xA;&#x9;&#x9;&#x9;Reader.Server = new DataSourceReader(input_format_instance);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private class DataSourceReader : IPortTypeDataSourceInterface {&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;private IInputFormatInstance input_format_instance;&#xA;&#xA;&#x9;&#x9;&#x9;public object fetchFileContentObject() {&#xA;&#x9;&#x9;&#x9;&#x9;return input_format_instance;&#xA;&#x9;&#x9;&#x9;&#x9;//string fileName = System.Environment.GetEnvironmentVariable (PATH_GRAPH_FILE);&#xA;&#x9;&#x9;&#x9;&#x9;//return File.ReadLines (fileName);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;public DataSourceReader(IInputFormatInstance o){&#xA;&#x9;&#x9;&#x9;&#x9;input_format_instance = o;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IDataSourceImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl/bin/1.0.0.0/IDataSourceImpl.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
-          <dependency>br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl/bin/1.0.0.0/BaseIDataSourceImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource/bin/1.0.0.0/IDataSource.dll</dependency>
         </file>
@@ -118,7 +129,8 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_data_source" sRef="platform_data_source"/>
       </port>
-      <parameter iname="IDataHost" order="0" parid="platform_maintainer" uname="data_host" varid="M"/>
+      <parameter iname="IDataHost" parid="platform_maintainer" uname="data_host" varid="M"/>
+      <parameter iname="IInputFormat" order="0" parid="graph_input_format" uname="data" varid="GIF"/>
       <action id="main">
         <protocol/>
       </action>

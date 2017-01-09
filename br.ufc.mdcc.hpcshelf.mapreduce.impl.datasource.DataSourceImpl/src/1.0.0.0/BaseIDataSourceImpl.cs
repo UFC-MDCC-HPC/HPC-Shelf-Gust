@@ -12,8 +12,9 @@ using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl 
 {
-	public abstract class BaseIDataSourceImpl<P>: Computation, BaseIDataSource<P>
+	public abstract class BaseIDataSourceImpl<P, GIF>: Computation, BaseIDataSource<P, GIF>
 		where P:IMaintainer
+		where GIF:IInputFormat
 	{
 		private IServerBase<IPortTypeDataSourceInterface> reader = null;
 
@@ -38,13 +39,13 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl
 			}
 		}
 		
-		private IInputFormat data_format = null;
-		protected IInputFormat Data_format
+		private GIF data_format = default(GIF);
+		protected GIF Data_format
 		{
 			get
 			{
 				if (this.data_format == null)
-					this.data_format = (IInputFormat) Services.getPort("data_format");
+					this.data_format = (GIF) Services.getPort("data_format");
 				return this.data_format;
 			}
 		}

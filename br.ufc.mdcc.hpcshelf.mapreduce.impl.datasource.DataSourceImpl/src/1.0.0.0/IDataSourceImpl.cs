@@ -11,8 +11,9 @@ using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl
 {
-	public class IDataSourceImpl<P> : BaseIDataSourceImpl<P>, IDataSource<P>
+	public class IDataSourceImpl<P, GIF> : BaseIDataSourceImpl<P, GIF>, IDataSource<P, GIF>
     where P:IMaintainer
+	where GIF:IInputFormat
 	{
 		public override void main()
 		{
