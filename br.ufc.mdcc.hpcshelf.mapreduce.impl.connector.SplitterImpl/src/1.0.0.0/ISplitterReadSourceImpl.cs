@@ -37,11 +37,16 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			Task_binding_data.TraceFlag = true;
 			Task_binding_data.invoke (ITaskPortData.READ_SOURCE);
 
-//			Console.WriteLine (this.Rank + ": SPLITTER 2 ");
-//
-//			Source.startReadSource ();
-//
-//			Console.WriteLine (this.Rank + ": SPLITTER 3 ");
+			// CALCULATE SubGraph TARGET
+			int r_size = 0;
+			foreach (int i in this.FacetIndexes[FACET_REDUCE]) {   
+				r_size += this.UnitSizeInFacet [i] ["reduce_collector"];
+			}
+			Console.WriteLine (this.Rank + ": SPLITTER 2 ");
+
+			Source.startReadSource (r_size);
+
+			Console.WriteLine (this.Rank + ": SPLITTER 3 ");
 
 			object bin_object = null;
 			bool set_table_partition = true;
@@ -56,14 +61,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 				for (int k = 0, j = nr0; j < m_size; k++, j++)
 					unit_ref [j] = new Tuple<int,int> (i/*, 0 INDEX OF map_feeder */,k);
 			}
-
-			Console.WriteLine (this.Rank + ": SPLITTER 2 ");
-			// OBS: Necessário informar o m_size para construçao da "int[] PartitionTable", 
-			// A partir disso, são definidos m_size subgrafos (0 até m_size-1) para n vértices, os quais têm identificados de 1 a n.
-			// Exemplo: A particão do vértice 10000 é PartitionTable[10000-1], 
-			//          que deve retornar algum número p, tal que p>=0 e p<m_size.
-			Source.startReadSource (m_size); 
-			Console.WriteLine (this.Rank + ": SPLITTER 3 ");
 
 			Console.WriteLine (this.Rank + ": SPLITTER 4 ");
 
