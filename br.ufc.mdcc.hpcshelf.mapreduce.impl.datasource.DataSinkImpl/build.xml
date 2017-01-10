@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="ASCII"?>
-<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/heron/hpe/heron/cache" default="all" name="DataSinkImpl">
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/cenez/hpe/cenez/cache" default="all" name="DataSinkImpl">
   <property name="nant.settings.currentframework" value="mono-2.0"/>
   <property name="build" value="bin"/>
   <property name="src" value="src"/>
   <target name="DataSinkImpl-1.0.0.0">
-    <ifnot targetexists="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0">
-      <mkdir dir="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0"/>
+    <ifnot targetexists="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0">
+      <mkdir dir="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0"/>
     </ifnot>
-    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/DataSinkImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/BaseIDataSinkImpl.dll" target="library" unsafe="false">
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/DataSinkImpl.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/BaseIDataSinkImpl.dll" target="library" unsafe="false">
       <sources>
-        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/src/1.0.0.0/BaseIDataSinkImpl.cs"/>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/src/1.0.0.0/BaseIDataSinkImpl.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll"/>
-        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/IOutputFormat.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface/bin/1.0.0.0/IPortTypeDataSinkInterface.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/BaseIDataSink.dll"/>
         <include/>
       </references>
     </csc>
-    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/DataSinkImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/IDataSinkImpl.dll" target="library" unsafe="false">
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/DataSinkImpl.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/IDataSinkImpl.dll" target="library" unsafe="false">
       <sources>
-        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/src/1.0.0.0/IDataSinkImpl.cs"/>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/src/1.0.0.0/IDataSinkImpl.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
-        <include name="br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/IOutputFormat.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/BaseIDataSinkImpl.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/IDataSink.dll"/>
         <include/>
