@@ -5,11 +5,12 @@ using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.Integer;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction
 {
 	public interface BaseIReduceFunction<GIF, TKey, TValue, OKey, OValue, G> : IComputationKind 
-		where GIF:IData
+		where GIF:IInputFormat//Data
 		where TKey:IData
 		where TValue:IData
 		where OKey:IData
