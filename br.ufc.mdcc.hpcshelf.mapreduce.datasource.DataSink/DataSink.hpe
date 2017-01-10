@@ -8,7 +8,7 @@
   </header>
   <componentInfo>
     <parameter componentRef="platform_maintainer" formFieldId="platform_maintainer" order="3" variance="contravariant" varName="M"/>
-    <parameter componentRef="graph_output_format" formFieldId="graph_output_format" order="3" variance="contravariant" varName="GOF"/>
+    <parameter componentRef="output_format" formFieldId="graph_output_format" order="3" variance="contravariant" varName="GOF"/>
     <innerComponent localRef="writer" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
       <visualDescription h="60" w="100" x="252" y="356">
         <color b="255" g="255" r="255"/>
@@ -47,7 +47,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="graph_output_format" location="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/OutputFormat.hpe" multiple="false" name="OutputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="graph_output_format" exposed="false">
+    <innerComponent localRef="output_format" location="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/OutputFormat.hpe" multiple="false" name="OutputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="graph_output_format" exposed="false">
       <visualDescription h="60" w="228" x="419" y="265">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -65,8 +65,8 @@
         <originRef cRef="writer" iRef="IServerBase"/>
         <visualDescription h="10" w="10" x="87" y="24"/>
       </slice>
-      <slice isRef="graph_output_format">
-        <originRef cRef="graph_output_format" iRef="IOutputFormat"/>
+      <slice isRef="output_format">
+        <originRef cRef="output_format" iRef="IOutputFormat"/>
         <visualDescription h="10" w="10" x="149" y="15"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
@@ -108,7 +108,7 @@
       <slices cRef="writer" inner_replica="0" slice_replica="0" uRef="server" sliceName="writer" transitive="false">
         <visualDescription h="10" w="10" x="87" y="24"/>
       </slices>
-      <slices cRef="graph_output_format" inner_replica="0" slice_replica="0" uRef="data" sliceName="graph_output_format" transitive="false">
+      <slices cRef="output_format" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_format" transitive="false">
         <visualDescription h="10" w="10" x="149" y="15"/>
       </slices>
       <visualDescription h="40" w="174" x="164" y="272"/>
