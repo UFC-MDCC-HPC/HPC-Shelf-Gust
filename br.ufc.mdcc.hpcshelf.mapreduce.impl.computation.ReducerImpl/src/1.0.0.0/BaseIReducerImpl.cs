@@ -11,6 +11,7 @@ using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.Integer;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;
@@ -21,11 +22,11 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 	public abstract class BaseIReducerImpl<M, RF, GIF, TKey, TValue, OKey, OValue, G>: Computation, BaseIReducer<M, RF, GIF, TKey, TValue, OKey, OValue, G>
 		where M:IMaintainer
 		where RF:IReduceFunction<GIF, TKey, TValue, OKey, OValue, G>
+		where GIF:IInputFormat
 		where TKey:IData
 		where TValue:IData
 		where OKey:IData
 		where OValue:IData
-		where GIF:IData
 		where G:IData
 	{
 //		private IKVPair<OKey, OValue> output_value = null;

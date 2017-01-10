@@ -8,6 +8,7 @@ using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;
 using System.Diagnostics;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using System.Threading;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using System.Collections.Generic;
@@ -19,11 +20,11 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 	public class IReducerImpl<M, RF, GIF, TKey, TValue, OKey, OValue, G> : BaseIReducerImpl<M, RF, GIF, TKey, TValue, OKey, OValue, G>, IReducer<M, RF, GIF, TKey, TValue, OKey, OValue, G>
 		where M:IMaintainer
 		where RF:IReduceFunction<GIF, TKey, TValue, OKey, OValue, G>
+		where GIF:IInputFormat
 		where TKey:IData
 		where TValue:IData
 		where OKey:IData
 		where OValue:IData
-		where GIF:IData
 		where G:IData
 	{
 		public override void main() {
