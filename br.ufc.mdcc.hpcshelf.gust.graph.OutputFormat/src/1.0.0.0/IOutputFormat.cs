@@ -10,7 +10,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat
 		where OKey:IData
 		where OValue:IData
 	{
-		IOutputFormatInstance newInstance(object iterator);
+		//IOutputFormatInstance<OKey,OValue> newInstance(object iterator);
 	}
 
 	public interface IOutputFormatInstance<OKey,OValue> : IDataInstance, ICloneable
@@ -18,7 +18,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat
 		where OValue:IData
 	{
         object Iterator{get;}
-        string formatRepresentation(object o);
+        string formatRepresentation(object kv_pair);
 	}
 
 }

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000085cb1f07f988f47440d5aa3c94b1877e84deb3f70ee1e595438862be2ccedae195754630b309613e5b6b7c8ed08c290b7429add6443fd245a70ee4a10819c051156196599fa273887e7d834140321a7d61da6f302f239abf4d46cea5c331d5c4a16604c348fd149f9302b6556396b2c8b114851d7a91b9ac7f6659a6be943987" isAbstract="false" kind="Data" name="OutputFormatDefaultImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.graph">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000cd86503896470409ff3daaad2864d0fc3e1eb122251d63a6520bb65f43ba2cda0fb42e4704ae650026359bd203dede890f90817fa0338e5e9905e340a2068cab6220a313a6d0070b1af47db681592c2b2adc571f9e0603f3bfe267c1cef07a0537531e1cb2f702ed3415d286e8ab5a915e800e72a72b82c191dee72501ccc18a" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/OutputFormat.hpe" name="OutputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="287" y="377">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="output_value_type" varName="OValue"/>
+        <parameter formFieldId="output_key_type" varName="OKey"/>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="okey" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="204" y="271">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="ovalue" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="528" y="286">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="okey" direct="true" varName="OKey"/>
+    <supplyParameter cRef="ovalue" direct="true" varName="OValue"/>
+    <interface iRef="IOutputFormatDefaultImpl" nArgs="2">
+      <slice isRef="output_pairs_iterator">
+        <originRef cRef="output_pairs_iterator" iRef="IIterator"/>
+        <visualDescription h="10" w="10" x="63" y="18"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl &#xA;{&#xA;&#x9;public abstract class BaseIOutputFormatDefaultImpl: DataStructure, BaseIOutputFormat&lt;OKey, OValue>&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;private IIterator&lt;IKVPair&lt;OKey, OValue>> output_pairs_iterator = null;&#xA;&#xA;&#x9;&#x9;protected IIterator&lt;IKVPair&lt;OKey, OValue>> Output_pairs_iterator&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_pairs_iterator == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_pairs_iterator = (IIterator&lt;IKVPair&lt;OKey, OValue>>) Services.getPort(&quot;output_pairs_iterator&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_pairs_iterator;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIOutputFormatDefaultImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl/bin/1.0.0.0/BaseIOutputFormatDefaultImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Iterator/bin/1.0.0.0/IIterator.dll</dependency>
+          <dependency>br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/BaseIOutputFormat.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl&#xA;{&#xA;&#x9;public class IOutputFormatDefaultImpl : BaseIOutputFormatDefaultImpl, IOutputFormat&lt;OKey, OValue>&#xA;where OKey:IData&#xA;where OValue:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="IOutputFormatDefaultImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl/bin/1.0.0.0/IOutputFormatDefaultImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl/bin/1.0.0.0/BaseIOutputFormatDefaultImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/IOutputFormat.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="263" x="163" y="188">
+        <color b="2" g="89" r="143"/>
+      </visualDescription>
+      <parameter iname="IData" order="0" parid="output_key_type" uname="data" varid="OKey"/>
+      <parameter iname="IData" order="1" parid="output_value_type" uname="data" varid="OValue"/>
+    </interface>
+    <unit facet="0" iRef="IOutputFormatDefaultImpl" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
+      <super cRef="base" uRef="data"/>
+      <visualDescription h="40" w="80" x="237" y="289"/>
+    </unit>
+  </componentInfo>
+</component:component>

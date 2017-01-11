@@ -160,6 +160,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.g
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat", "..\br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat\br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat\br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat.csproj", "{9F703318-BB32-439F-BF43-CD7C35B1DB74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl\br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl\br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl.csproj", "{58CBCD9B-D31F-4271-AA64-C7CC74C9CFF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -290,6 +292,10 @@ Global
 		{56ED583C-9885-460A-BE2E-1840DD8A2897}.Debug|x86.Build.0 = Debug|Any CPU
 		{56ED583C-9885-460A-BE2E-1840DD8A2897}.Release|x86.ActiveCfg = Release|Any CPU
 		{56ED583C-9885-460A-BE2E-1840DD8A2897}.Release|x86.Build.0 = Release|Any CPU
+		{58CBCD9B-D31F-4271-AA64-C7CC74C9CFF9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{58CBCD9B-D31F-4271-AA64-C7CC74C9CFF9}.Debug|x86.Build.0 = Debug|Any CPU
+		{58CBCD9B-D31F-4271-AA64-C7CC74C9CFF9}.Release|x86.ActiveCfg = Release|Any CPU
+		{58CBCD9B-D31F-4271-AA64-C7CC74C9CFF9}.Release|x86.Build.0 = Release|Any CPU
 		{62252C8E-B7D2-493E-B84B-FD5A9F7FB725}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{62252C8E-B7D2-493E-B84B-FD5A9F7FB725}.Debug|x86.Build.0 = Debug|Any CPU
 		{62252C8E-B7D2-493E-B84B-FD5A9F7FB725}.Release|x86.ActiveCfg = Release|Any CPU
