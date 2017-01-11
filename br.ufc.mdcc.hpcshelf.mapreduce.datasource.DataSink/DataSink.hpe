@@ -8,7 +8,6 @@
   </header>
   <componentInfo>
     <parameter componentRef="platform_maintainer" formFieldId="platform_maintainer" order="3" variance="contravariant" varName="M"/>
-    <parameter componentRef="output_format" formFieldId="graph_output_format" order="3" variance="contravariant" varName="GOF"/>
     <innerComponent localRef="writer" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
       <visualDescription h="60" w="100" x="252" y="356">
         <color b="255" g="255" r="255"/>
@@ -47,7 +46,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="output_format" location="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/OutputFormat.hpe" multiple="false" name="OutputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" parameter_id="graph_output_format" exposed="false">
+    <innerComponent localRef="graph_output_format" location="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/OutputFormat.hpe" multiple="false" name="OutputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
       <visualDescription h="60" w="228" x="419" y="265">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -56,7 +55,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="server_port_type" direct="true" varName="S"/>
-    <interface iRef="IDataSink" nArgs="2">
+    <interface iRef="IDataSink" nArgs="1">
       <slice isRef="platform_data_sink">
         <originRef cRef="platform_data_sink" iRef="IProcessingNode"/>
         <visualDescription h="10" w="10" x="22" y="22"/>
@@ -64,10 +63,6 @@
       <slice isRef="writer">
         <originRef cRef="writer" iRef="IServerBase"/>
         <visualDescription h="10" w="10" x="87" y="24"/>
-      </slice>
-      <slice isRef="output_format">
-        <originRef cRef="output_format" iRef="IOutputFormat"/>
-        <visualDescription h="10" w="10" x="149" y="15"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink&#xA;{&#xA;&#x9;public interface BaseIDataSink&lt;P, GOF> : IComputationKind &#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;&#x9;where GOF:IOutputFormat&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDataSink.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/BaseIDataSink.dll" versionId="1.0.0.0">
@@ -95,8 +90,7 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="writer" sRef="writer"/>
       </port>
-      <parameter iname="IMaintainer" parid="platform_maintainer" uname="maintainer" varid="M"/>
-      <parameter iname="IOutputFormat" order="0" parid="graph_output_format" uname="data" varid="GOF"/>
+      <parameter iname="IMaintainer" order="0" parid="platform_maintainer" uname="maintainer" varid="M"/>
       <action id="main">
         <protocol/>
       </action>
@@ -107,9 +101,6 @@
       </slices>
       <slices cRef="writer" inner_replica="0" slice_replica="0" uRef="server" sliceName="writer" transitive="false">
         <visualDescription h="10" w="10" x="87" y="24"/>
-      </slices>
-      <slices cRef="output_format" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_format" transitive="false">
-        <visualDescription h="10" w="10" x="149" y="15"/>
       </slices>
       <visualDescription h="40" w="174" x="164" y="272"/>
     </unit>

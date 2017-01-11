@@ -1,12 +1,6 @@
 ﻿<Properties StartupItem="HPC-Shelf-Gust/HPC-Shelf-Gust.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBindingWriteData/src/1.0.0.0/IWriteDataImpl.cs">
-    <Files>
-      <File FileName="../br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/src/1.0.0.0/IOutputFormat.cs" Line="23" Column="2" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/src/1.0.0.0/IDataSinkImpl.cs" Line="34" Column="38" />
-      <File FileName="../br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBindingWriteData/src/1.0.0.0/IWriteDataImpl.cs" Line="42" Column="46" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/home/heron/Dropbox/Artigos/IEEEE TPDS - HTS/first revision/workspace/MapReduce-for-HPE/MapReduce-for-HPE/Program.cs" line="24" column="16" />

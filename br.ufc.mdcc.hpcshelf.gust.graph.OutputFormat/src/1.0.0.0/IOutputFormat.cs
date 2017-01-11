@@ -6,19 +6,19 @@ using br.ufc.mdcc.common.KVPair;
 
 namespace br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat
 {
-	public interface IOutputFormat/*<OKey,OValue>*/ : BaseIOutputFormat/*<OKey,OValue>*/, IData
-		//where OKey:IData
-		//where OValue:IData
+	public interface IOutputFormat<OKey,OValue> : BaseIOutputFormat<OKey,OValue>, IData
+		where OKey:IData
+		where OValue:IData
 	{
-		IOutputFormatInstance newInstanceT();
+		IOutputFormatInstance newInstance(object iterator);
 	}
 
-	public interface IOutputFormatInstance/*<OKey,OValue>*/ : IDataInstance, ICloneable
-		//where OKey:IData
-		//where OValue:IData
+	public interface IOutputFormatInstance<OKey,OValue> : IDataInstance, ICloneable
+		where OKey:IData
+		where OValue:IData
 	{
-		string formatRepresentation(object o);
-
+        object Iterator{get;}
+        string formatRepresentation(object o);
 	}
 
 }

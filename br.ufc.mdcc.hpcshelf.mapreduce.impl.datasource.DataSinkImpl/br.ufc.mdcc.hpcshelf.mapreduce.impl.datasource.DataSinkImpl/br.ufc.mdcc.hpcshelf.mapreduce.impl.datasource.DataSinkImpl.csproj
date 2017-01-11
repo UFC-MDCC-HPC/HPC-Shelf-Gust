@@ -77,5 +77,13 @@
       <Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>
       <Name>br.ufc.mdcc.hpcshelf.platform.Maintainer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data.csproj">
+      <Project>{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}</Project>
+      <Name>br.ufc.mdcc.common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat\br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat\br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat.csproj">
+      <Project>{9F703318-BB32-439F-BF43-CD7C35B1DB74}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

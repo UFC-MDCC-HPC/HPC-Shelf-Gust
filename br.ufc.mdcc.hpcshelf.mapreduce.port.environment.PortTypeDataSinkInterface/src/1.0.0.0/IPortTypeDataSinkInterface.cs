@@ -9,5 +9,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterf
 		void writeLines (IEnumerable<string> pairs);
 		void resetOutput ();
 		IEnumerable<string> readOutput ();
+		object representationObject();
 	}
 }
