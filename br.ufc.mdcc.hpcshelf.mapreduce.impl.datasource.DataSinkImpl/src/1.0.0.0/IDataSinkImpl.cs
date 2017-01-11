@@ -52,9 +52,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl
 			private IOutputFormatInstance<OKey, OValue> output_format = null;
 			public object IteratorProvider{ get { return this.output_format.Iterator; } }
 
-			public string formatRepresentation(object kv_pair){
-				return this.output_format.formatRepresentation (kv_pair);
-			}
+			public string formatRepresentation(object kv_pair){ return this.output_format.formatRepresentation (kv_pair); }
 
 		}
 	}

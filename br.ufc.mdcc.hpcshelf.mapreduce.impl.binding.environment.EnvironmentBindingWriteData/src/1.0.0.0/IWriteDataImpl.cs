@@ -69,8 +69,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBin
 					end_iteration = true;
 
 				while (client.fetch_next (out pair_obj)) 
-				{
-					//IKVPairInstance<IString,IInteger> pair = (IKVPairInstance<IString,IInteger>)pair_obj;
+				{	//IKVPairInstance<IString,IInteger> pair = (IKVPairInstance<IString,IInteger>)pair_obj;
 					output_buffer [pair_counter] = server.formatRepresentation(pair_obj);//pair.Key + ": " + pair.Value;
 					pair_counter++;
 					if (pair_counter >= CHUNK_SIZE) 

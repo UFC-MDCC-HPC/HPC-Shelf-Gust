@@ -6,7 +6,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterf
 {
 	public interface IPortTypeDataSinkInterface : BaseIPortTypeDataSinkInterface, IEnvironmentPortTypeSinglePartner
 	{
-		void writeLines (IEnumerable<string> pairs);
+		void writeLines (IEnumerable<string> pairs); 
 		void resetOutput ();
 		IEnumerable<string> readOutput ();
 		object IteratorProvider{ get; }
