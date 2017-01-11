@@ -6,17 +6,19 @@
         <implements>true</implements>
       </extensionType>
       <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000734cb772d009f8016dd99b430e8c1dacb8e0f8d4ac1a9456cab0e9fd3cd8945adf8fca8c8b372597ebd000889a1e527a7d39a54d9c714df0d5160a48eb2f4e436e0ddaca36bb1fbada768fdcb618c4aeac0388313241bbd4f4b361d8eaa676e6563ab9fc5bfd8949867651907dd297406d5f017b5dd6f174ef27d29bb5e79785" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/DataSink.hpe" name="DataSink" package="br.ufc.mdcc.hpcshelf.mapreduce.datasource" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="227" y="313">
+        <visualDescription h="60" w="100" x="275" y="323">
           <color b="255" g="255" r="255"/>
         </visualDescription>
+        <parameter formFieldId="output_value_type" varName="OValue"/>
         <parameter formFieldId="platform_maintainer" varName="M"/>
+        <parameter formFieldId="output_key_type" varName="OKey"/>
         <parameter formFieldId="graph_output_format" varName="GOF"/>
         <port localRef="writer" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
-          <visualDescription h="60" w="100" x="352" y="410">
+          <visualDescription h="53" w="133" x="379" y="420">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="client_port_type" varName="X###854393920"/>
-          <parameter formFieldId="server_port_type" varName="X###1722949598"/>
+          <parameter formFieldId="client_port_type" varName="X###1887490317"/>
+          <parameter formFieldId="server_port_type" varName="X###421324335"/>
           <unitBounds parallel="false" uRef="client">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -25,7 +27,7 @@
           </unitBounds>
         </port>
         <port localRef="platform_data_sink" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
-          <visualDescription h="60" w="100" x="122" y="439">
+          <visualDescription h="47" w="181" x="175" y="417">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="maintainer" varName="M"/>
@@ -44,14 +46,6 @@
     </visualAttributes>
   </header>
   <componentInfo>
-    <innerComponent localRef="out" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
-      <visualDescription h="60" w="100" x="424" y="274">
-        <color b="255" g="255" r="255"/>
-      </visualDescription>
-      <unitBounds parallel="false" uRef="data">
-        <visualDescription h="20" w="20" x="5" y="2"/>
-      </unitBounds>
-    </innerComponent>
     <innerComponent localRef="platform" location="br.ufc.mdcc.common.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="587" y="493">
         <color b="255" g="255" r="255"/>
@@ -76,20 +70,39 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="gof" location="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/OutputFormat.hpe" multiple="false" name="OutputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
-      <visualDescription h="60" w="187" x="239" y="500">
+    <innerComponent localRef="okey" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="130" y="522">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <unitBounds parallel="false" uRef="data">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="out" direct="true" varName="OUT"/>
+    <innerComponent localRef="ovalue" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="307" y="517">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="gof" location="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/OutputFormat.hpe" multiple="false" name="OutputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="100" x="476" y="516">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="output_value_type" varName="OValue"/>
+      <parameter formFieldId="output_key_type" varName="OKey"/>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="platform" direct="true" varName="P"/>
     <supplyParameter cRef="s" direct="true" varName="S"/>
     <supplyParameter cRef="maintainer" direct="true" varName="M"/>
+    <supplyParameter cRef="okey" direct="true" varName="OKey"/>
+    <supplyParameter cRef="ovalue" direct="true" varName="OValue"/>
     <supplyParameter cRef="gof" direct="true" varName="GOF"/>
-    <interface iRef="IDataSinkImpl" nArgs="2">
+    <interface iRef="IDataSinkImpl" nArgs="4">
       <slice isRef="platform_data_sink">
         <originRef cRef="platform_data_sink" iRef="IProcessingNode"/>
         <visualDescription h="10" w="10" x="22" y="22"/>
@@ -100,25 +113,27 @@
       </slice>
       <slice isRef="output_format">
         <originRef cRef="output_format" iRef="IOutputFormat"/>
-        <visualDescription h="10" w="10" x="149" y="15"/>
+        <visualDescription h="10" w="10" x="153" y="15"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataSinkImpl&lt;P, GOF>: Computation, BaseIDataSink&lt;P>&#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;&#x9;where GOF:IOutputFormat&#xA;&#x9;{&#xA;&#x9;&#x9;private GOF output_format = default(GOF);&#xA;&#xA;&#x9;&#x9;protected GOF Output_format&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_format == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_format = (GOF) Services.getPort(&quot;output_format&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_format;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;// GENERATED&#xA;//&#x9;&#x9;private IProcessingNode&lt;M> platform_data_sink = null;&#xA;//&#x9;&#x9;public IProcessingNode&lt;M> Platform_data_sink {&#xA;//&#x9;&#x9;&#x9;get{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.platform_data_sink == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.platform_data_sink = (IProcessingNode&lt;M>) Services.getPort(&quot;platform_data_sink&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.platform_data_sink;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;private P platform = default(P);&#xA;&#xA;&#x9;&#x9;protected P Platform&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform = (P) Services.getPort(&quot;platform&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeDataSinkInterface> writer = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeDataSinkInterface> Writer&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.writer == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.writer = (IServerBase&lt;IPortTypeDataSinkInterface>) Services.getPort(&quot;writer&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.writer;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataSinkImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/BaseIDataSinkImpl.dll" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataSinkImpl&lt;P, GOF, OKey, OValue>: Computation, BaseIDataSink&lt;P, GOF, OKey, OValue>&#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;&#x9;where GOF:IOutputFormat&lt;OKey, OValue>&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;private GOF output_format = default(GOF);&#xA;&#xA;&#x9;&#x9;protected GOF Output_format&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_format == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_format = (GOF) Services.getPort(&quot;output_format&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_format;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;// GENERATED&#xA;//&#x9;&#x9;private IProcessingNode&lt;M> platform_data_sink = null;&#xA;//&#x9;&#x9;public IProcessingNode&lt;M> Platform_data_sink {&#xA;//&#x9;&#x9;&#x9;get{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.platform_data_sink == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.platform_data_sink = (IProcessingNode&lt;M>) Services.getPort(&quot;platform_data_sink&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.platform_data_sink;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;private P platform = default(P);&#xA;&#xA;&#x9;&#x9;protected P Platform&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform = (P) Services.getPort(&quot;platform&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeDataSinkInterface> writer = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeDataSinkInterface> Writer&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.writer == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.writer = (IServerBase&lt;IPortTypeDataSinkInterface>) Services.getPort(&quot;writer&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.writer;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataSinkImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/BaseIDataSinkImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/IOutputFormat.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface/bin/1.0.0.0/IPortTypeDataSinkInterface.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/BaseIDataSink.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;&#xA;using System.Collections.Generic;&#xA;using System.IO;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;&#xA;          &#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl&#xA;{&#xA;&#x9;public class IDataSinkImpl&lt;P, GOF> : BaseIDataSinkImpl&lt;P>, IDataSink&lt;P>&#xA;    where P:IMaintainer&#xA;&#x9;where GOF:IOutputFormat&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Writer.Server = new DataSinkWriter();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private static string PATH_TEXT_FILES_WORD_COUNTER_OUTPUT = &quot;PATH_TEXT_FILES_WORD_COUNTER_OUTPUT&quot;;&#xA;&#xA;&#x9;&#x9;private class DataSinkWriter : IPortTypeDataSinkInterface&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;public void resetOutput() &#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;string path = System.Environment.GetEnvironmentVariable (PATH_TEXT_FILES_WORD_COUNTER_OUTPUT);&#xA;&#x9;&#x9;&#x9;&#x9;File.Delete (path);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;public void writeLines(IEnumerable&lt;string> pairs)&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;string path = System.Environment.GetEnvironmentVariable (PATH_TEXT_FILES_WORD_COUNTER_OUTPUT);&#xA;&#x9;&#x9;&#x9;&#x9;File.AppendAllLines(path, pairs);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;public IEnumerable&lt;string> readOutput()&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;string path = System.Environment.GetEnvironmentVariable (PATH_TEXT_FILES_WORD_COUNTER_OUTPUT);&#xA;&#x9;&#x9;&#x9;&#x9;return File.ReadAllLines (path);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IDataSinkImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/IDataSinkImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;&#xA;using System.Collections.Generic;&#xA;using System.IO;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;&#xA;          &#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl&#xA;{&#xA;&#x9;public class IDataSinkImpl&lt;P, GOF, OKey, OValue> : BaseIDataSinkImpl&lt;P, GOF, OKey, OValue>, IDataSink&lt;P, GOF, OKey, OValue>&#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;&#x9;where GOF:IOutputFormat&lt;OKey, OValue>&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IOutputFormatInstance o = Output_format.newInstanceT ();&#xA;&#x9;&#x9;&#x9;Writer.Server = new DataSinkWriter(o);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private static string PATH_GRAPH_FILE_RESULT = &quot;PATH_GRAPH_FILE_RESULT&quot;; //(&quot;PATH_GRAPH_FILE_RESULT&quot;);&#xA;&#xA;&#x9;&#x9;private class DataSinkWriter : IPortTypeDataSinkInterface&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;public DataSinkWriter(object o){&#xA;&#x9;&#x9;&#x9;&#x9;this.output_format = o;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;public void resetOutput() &#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;string path = System.Environment.GetEnvironmentVariable (PATH_GRAPH_FILE_RESULT);&#xA;&#x9;&#x9;&#x9;&#x9;File.Delete (path);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;public void writeLines(IEnumerable&lt;string> pairs)&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;string path = System.Environment.GetEnvironmentVariable (PATH_GRAPH_FILE_RESULT);&#xA;&#x9;&#x9;&#x9;&#x9;File.AppendAllLines(path, pairs);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;public IEnumerable&lt;string> readOutput()&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;string path = System.Environment.GetEnvironmentVariable (PATH_GRAPH_FILE_RESULT);&#xA;&#x9;&#x9;&#x9;&#x9;return File.ReadAllLines (path);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;private object output_format = null;&#xA;&#x9;&#x9;&#x9;public object representationObject(){&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_format;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IDataSinkImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/IDataSinkImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/IOutputFormat.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/BaseIDataSinkImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/IDataSink.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="174" x="130" y="137">
+      <visualDescription h="40" w="174" x="148" y="127">
         <color b="0" g="128" r="0"/>
       </visualDescription>
       <port name="platform_data_sink">
@@ -130,14 +145,16 @@
         <slice pRef="writer" sRef="writer"/>
       </port>
       <parameter iname="IDataHost" parid="platform_maintainer" uname="data_host" varid="M"/>
-      <parameter iname="IOutputFormat" order="0" parid="graph_output_format" uname="data" varid="GOF"/>
+      <parameter iname="IOutputFormat" parid="graph_output_format" uname="data" varid="GOF"/>
+      <parameter iname="IData" order="0" parid="output_key_type" uname="data" varid="OKey"/>
+      <parameter iname="IData" order="1" parid="output_value_type" uname="data" varid="OValue"/>
       <action id="main">
         <protocol/>
       </action>
     </interface>
     <unit facet="0" iRef="IDataSinkImpl" multiple="true" private="false" replica="0" uRef="data_sink" visibleInterface="true">
       <super cRef="base" uRef="data_sink"/>
-      <visualDescription h="40" w="174" x="154" y="234"/>
+      <visualDescription h="40" w="174" x="210" y="239"/>
     </unit>
   </componentInfo>
 </component:component>

@@ -11,9 +11,11 @@ using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;
           
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl
 {
-	public class IDataSinkImpl<P, GOF> : BaseIDataSinkImpl<P, GOF>, IDataSink<P, GOF>
-    where P:IMaintainer
-	where GOF:IOutputFormat
+	public class IDataSinkImpl<P, GOF, OKey, OValue> : BaseIDataSinkImpl<P, GOF, OKey, OValue>, IDataSink<P, GOF, OKey, OValue>
+		where P:IMaintainer
+		where GOF:IOutputFormat<OKey, OValue>
+		where OKey:IData
+		where OValue:IData
 	{
 		public override void main()
 		{

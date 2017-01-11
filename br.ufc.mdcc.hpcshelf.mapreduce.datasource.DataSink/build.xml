@@ -18,6 +18,7 @@
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface/bin/1.0.0.0/IPortTypeDataSinkInterface.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.platform.Maintainer/bin/1.0.0.0/IMaintainer.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/IOutputFormat.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include/>
       </references>
     </csc>
@@ -28,6 +29,7 @@
       <references>
         <include name="br.ufc.mdcc.hpcshelf.platform.Maintainer/bin/1.0.0.0/IMaintainer.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/IOutputFormat.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/BaseIDataSink.dll"/>
         <include/>
       </references>

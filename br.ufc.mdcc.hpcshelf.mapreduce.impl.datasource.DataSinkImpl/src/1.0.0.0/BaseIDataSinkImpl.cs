@@ -12,9 +12,11 @@ using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl 
 {
-	public abstract class BaseIDataSinkImpl<P, GOF>: Computation, BaseIDataSink<P, GOF>
+	public abstract class BaseIDataSinkImpl<P, GOF, OKey, OValue>: Computation, BaseIDataSink<P, GOF, OKey, OValue>
 		where P:IMaintainer
-		where GOF:IOutputFormat
+		where GOF:IOutputFormat<OKey, OValue>
+		where OKey:IData
+		where OValue:IData
 	{
 		private GOF output_format = default(GOF);
 

@@ -13,6 +13,7 @@
       </sources>
       <references>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/IOutputFormat.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
@@ -28,6 +29,7 @@
       <references>
         <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/IOutputFormat.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl/bin/1.0.0.0/BaseIDataSinkImpl.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/IDataSink.dll"/>
         <include/>
