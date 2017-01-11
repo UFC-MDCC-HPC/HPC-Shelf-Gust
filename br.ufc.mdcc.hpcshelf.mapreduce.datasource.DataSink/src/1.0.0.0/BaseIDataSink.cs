@@ -1,6 +1,7 @@
 /* AUTOMATICALLY GENERATE CODE */
 
 using br.ufc.pargo.hpe.kinds;
+using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;
 

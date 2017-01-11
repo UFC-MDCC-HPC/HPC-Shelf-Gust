@@ -8,6 +8,7 @@ using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface;
 using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl 

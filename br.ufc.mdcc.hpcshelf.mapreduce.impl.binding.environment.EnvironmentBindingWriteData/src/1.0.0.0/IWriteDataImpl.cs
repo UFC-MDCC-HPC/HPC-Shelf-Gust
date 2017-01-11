@@ -26,7 +26,13 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBin
 
 		public override void after_initialize()
 		{
-			client = Output_pairs_iterator.newIteratorInstance ();
+			//client = Output_pairs_iterator.newIteratorInstance ();
+		}
+		public void clientConnection(){
+			if(!(server==null))
+				this.client = (IPortTypeIterator) this.server.IteratorProvider;
+			else
+				new NullReferenceException ("Server is null !");
 		}
 
 		public void startWriteSink()
@@ -36,7 +42,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBin
 		}
 
 		private IPortTypeIterator client = null;
-		public IPortTypeIterator Client { get {	return client; } }
+		public IPortTypeIterator Client { get { return client; } }
 
 		private S server = default(S);
 		public S Server { set {	server = value; } }
@@ -64,8 +70,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.binding.environment.EnvironmentBin
 
 				while (client.fetch_next (out pair_obj)) 
 				{
-					IKVPairInstance<IString,IInteger> pair = (IKVPairInstance<IString,IInteger>)pair_obj;
-					output_buffer [pair_counter] = pair.Key + ": " + pair.Value;
+					//IKVPairInstance<IString,IInteger> pair = (IKVPairInstance<IString,IInteger>)pair_obj;
+					output_buffer [pair_counter] = server.formatRepresentation(pair_obj);//pair.Key + ": " + pair.Value;
 					pair_counter++;
 					if (pair_counter >= CHUNK_SIZE) 
 					{

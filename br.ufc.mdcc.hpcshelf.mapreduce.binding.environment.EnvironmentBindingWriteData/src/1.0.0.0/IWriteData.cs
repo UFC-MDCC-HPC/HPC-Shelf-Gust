@@ -8,6 +8,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingW
 	public interface IWriteData<S> : BaseIWriteData<S>, IBindingDirect<IPortTypeIterator,S>
 		where S:IPortTypeDataSinkInterface
 	{
+		void clientConnection();
 		void startWriteSink();
 	}
 }

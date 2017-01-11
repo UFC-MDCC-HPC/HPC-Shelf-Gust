@@ -2,6 +2,7 @@ using System;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
+using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;
 using System.Collections.Generic;
 using System.IO;
@@ -19,16 +20,16 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl
 	{
 		public override void main()
 		{
-			IOutputFormatInstance o = Output_format.newInstanceT ();
-			Writer.Server = new DataSinkWriter(o);
+			IOutputFormatInstance<OKey, OValue> o = (IOutputFormatInstance<OKey, OValue>)Output_format.Instance;
+			Writer.Server = new DataSinkWriter<OKey, OValue>(o);
 		}
 
 		private static string PATH_GRAPH_FILE_RESULT = "PATH_GRAPH_FILE_RESULT"; //("PATH_GRAPH_FILE_RESULT");
 
-		private class DataSinkWriter : IPortTypeDataSinkInterface
+		private class DataSinkWriter<OKey, OValue> : IPortTypeDataSinkInterface
 		{
 			public DataSinkWriter(object o){
-				this.output_format = o;
+				this.output_format = (IOutputFormatInstance<OKey, OValue>)o;
 			}
 			public void resetOutput() 
 			{
@@ -47,10 +48,14 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl
 				string path = System.Environment.GetEnvironmentVariable (PATH_GRAPH_FILE_RESULT);
 				return File.ReadAllLines (path);
 			}
-			private object output_format = null;
-			public object representationObject(){
-				return this.output_format;
+
+			private IOutputFormatInstance<OKey, OValue> output_format = null;
+			public object IteratorProvider{ get { return this.output_format.Iterator; } }
+
+			public string formatRepresentation(object kv_pair){
+				return this.output_format.formatRepresentation (kv_pair);
 			}
+
 		}
 	}
 }

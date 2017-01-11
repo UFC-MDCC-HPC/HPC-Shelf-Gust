@@ -30,6 +30,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			Task_binding_data.TraceFlag = true;
 			Console.WriteLine ("SPLITER WRITE SINK 0");
 
+			Sink.clientConnection ();
 			IPortTypeIterator output_instance = (IPortTypeIterator) Sink.Client;
 
 			Console.WriteLine ("SPLITER WRITE SINK 1");
