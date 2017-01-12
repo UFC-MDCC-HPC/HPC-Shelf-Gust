@@ -162,6 +162,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.g
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl\br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl\br.ufc.mdcc.hpcshelf.gust.graph.OutputFormatDefaultImpl.csproj", "{58CBCD9B-D31F-4271-AA64-C7CC74C9CFF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.MapFunctionForward", "..\br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.MapFunctionForward\br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.MapFunctionForward\br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.MapFunctionForward.csproj", "{677DB045-CA0A-40E0-946C-B20D8796B88F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -304,6 +306,10 @@ Global
 		{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}.Debug|x86.Build.0 = Debug|Any CPU
 		{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}.Release|x86.ActiveCfg = Release|Any CPU
 		{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}.Release|x86.Build.0 = Release|Any CPU
+		{677DB045-CA0A-40E0-946C-B20D8796B88F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{677DB045-CA0A-40E0-946C-B20D8796B88F}.Debug|x86.Build.0 = Debug|Any CPU
+		{677DB045-CA0A-40E0-946C-B20D8796B88F}.Release|x86.ActiveCfg = Release|Any CPU
+		{677DB045-CA0A-40E0-946C-B20D8796B88F}.Release|x86.Build.0 = Release|Any CPU
 		{6A7BA994-391F-404F-939C-077CA597C821}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{6A7BA994-391F-404F-939C-077CA597C821}.Debug|x86.Build.0 = Debug|Any CPU
 		{6A7BA994-391F-404F-939C-077CA597C821}.Release|x86.ActiveCfg = Release|Any CPU
