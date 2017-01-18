@@ -4,6 +4,7 @@ using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;
 using br.ufc.mdcc.common.Data;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;
 using System.Diagnostics;
 using br.ufc.mdcc.common.Integer;
@@ -16,19 +17,62 @@ using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl	
 {
-	public class IShufflerMapCollectorImpl<M1,TKey,TValue,PF> : BaseIShufflerMapCollectorImpl<M1,TKey,TValue,PF>, IShufflerMapCollector<M1,TKey,TValue,PF>
+	public class IShufflerMapCollectorImpl<M1,TKey,TValue,PF,GIF> : BaseIShufflerMapCollectorImpl<M1,TKey,TValue,PF,GIF>, IShufflerMapCollector<M1,TKey,TValue,PF,GIF>
 		where M1:IMaintainer
 		where PF:IPartitionFunction<TKey>
 		where TKey:IData
 		where TValue:IData
+		where GIF:IInputFormat
 	{
 		static private int TAG_SHUFFLE_OMV_NEW_CHUNK = 345;
 		static private int TAG_SHUFFLE_OMV_END_CHUNK = 347;
 
+		public void read_send_graph (int reduce_size, IDictionary<int,Tuple<int,int>> unit_ref) {
+			IIteratorInstance<IKVPair<IInteger,GIF>> input_instance_graph = (IIteratorInstance<IKVPair<IInteger,GIF>>)Collect_graph.Client;
+
+			object bin_object = null;
+			IActionFuture sync_perform;
+
+			Partition_function_gif.NumberOfPartitions = reduce_size;
+
+			bool end_iteration_gif = false; bool set_table = true;
+			while (!end_iteration_gif) {
+				Task_binding_shuffle.invoke (ITaskPortAdvance.READ_CHUNK);
+				Task_binding_shuffle.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+
+				IList<IKVPairInstance<IInteger,GIF>>[] buffer_gif = new IList<IKVPairInstance<IInteger,GIF>>[reduce_size];
+				for (int i = 0; i < reduce_size; i++)
+					buffer_gif [i] = new List<IKVPairInstance<IInteger,GIF>> ();
+
+				IKVPairInstance<IInteger,GIF> item = null;
+
+				if (!input_instance_graph.has_next ())
+					end_iteration_gif = true;
+
+				int count = 0;
+				while (input_instance_graph.fetch_next (out bin_object)) {
+					item = (IKVPairInstance<IInteger,GIF>)bin_object;
+					this.Input_key_gif.Instance = item.Value;//item.Key;
+					Partition_function_gif.go ();
+					int index = ((IIntegerInstance)this.Output_key_gif.Instance).Value;
+					buffer_gif [index].Add (item);
+					Console.WriteLine (this.GlobalRank + ": SHUFFLER MAP Collector Graph count=" + (count++));
+				}
+				// PERFORM
+				for (int i = 0; i < reduce_size; i++)
+					Shuffler_channel.Send (buffer_gif [i], unit_ref [i], end_iteration_gif ? TAG_SHUFFLE_OMV_END_CHUNK : TAG_SHUFFLE_OMV_NEW_CHUNK);
+
+				sync_perform.wait ();
+
+				Task_binding_shuffle.invoke (ITaskPortAdvance.CHUNK_READY);
+			}
+			Partition_function.PartitionTABLE = Partition_function_gif.PartitionTABLE;
+		}
+
 		public override void main()
 		{
 			Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER MAP ...1");
-			IIteratorInstance<IKVPair<TKey,TValue>> input_instance = (IIteratorInstance<IKVPair<TKey,TValue>>) Collect_pairs.Client;
+//			IIteratorInstance<IKVPair<TKey,TValue>> input_instance = (IIteratorInstance<IKVPair<TKey,TValue>>) Collect_pairs.Client;
 			object bin_object = null;
 
 			IActionFuture sync_perform;
@@ -54,6 +98,9 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 					unit_ref [j] = new Tuple<int,int> (i/*,0 INDEX OF reduce_feeder*/,k);
 				Console.WriteLine (this.GlobalRank + ": STARTING SHUFFLER MAP ...3 - END - " + i);
 			}
+			read_send_graph (reduce_size, unit_ref);
+
+			IIteratorInstance<IKVPair<TKey,TValue>> input_instance = (IIteratorInstance<IKVPair<TKey,TValue>>) Collect_pairs.Client;
 
 			Partition_function.NumberOfPartitions = reduce_size;
 

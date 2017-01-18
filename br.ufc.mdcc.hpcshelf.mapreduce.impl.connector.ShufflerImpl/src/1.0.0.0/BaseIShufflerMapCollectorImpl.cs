@@ -10,6 +10,7 @@ using br.ufc.mdcc.common.Integer;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 using br.ufc.mdcc.common.Data;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;
 using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;
@@ -17,17 +18,17 @@ using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl 
 {
-	public abstract class BaseIShufflerMapCollectorImpl<M0,TKey,TValue,PF>: Synchronizer, BaseIShufflerMapCollector<M0,TKey,TValue,PF>
+	public abstract class BaseIShufflerMapCollectorImpl<M0,TKey,TValue,PF,GIF>: Synchronizer, BaseIShufflerMapCollector<M0,TKey,TValue,PF,GIF>
 		where M0:IMaintainer
 		where PF:IPartitionFunction<TKey>
 		where TKey:IData
 		where TValue:IData
+		where GIF:IInputFormat
 	{
 		static protected int FACET_REDUCE = 0;
 		static protected int FACET_MAP = 1;
 
 		private IClientBase<IPortTypeIterator> collect_pairs = null;
-
 		protected IClientBase<IPortTypeIterator> Collect_pairs
 		{
 			get
@@ -35,6 +36,17 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 				if (this.collect_pairs == null)
 					this.collect_pairs = (IClientBase<IPortTypeIterator>) Services.getPort("collect_pairs");
 				return this.collect_pairs;
+			}
+		}
+
+		private IClientBase<IPortTypeIterator> collect_graph = null;
+		protected IClientBase<IPortTypeIterator> Collect_graph
+		{
+			get
+			{
+				if (this.collect_graph == null)
+					this.collect_graph = (IClientBase<IPortTypeIterator>) Services.getPort("collect_graph");
+				return this.collect_graph;
 			}
 		}
 
@@ -92,6 +104,39 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 				if (this.partition_function == null)
 					this.partition_function = (PF) Services.getPort("partition_function");
 				return this.partition_function;
+			}
+		}
+/////////////
+		private IPartitionFunction<GIF> partition_function_gif = null;//default(BF);
+		protected IPartitionFunction<GIF> Partition_function_gif
+		{
+			get
+			{
+				if (this.partition_function_gif == null)
+					this.partition_function_gif = (IPartitionFunction<GIF>) Services.getPort("partition_function_gif");
+				return this.partition_function_gif;
+			}
+		}
+
+		private GIF input_key_gif = default(GIF);
+		protected GIF Input_key_gif
+		{
+			get
+			{
+				if (this.input_key_gif == null)
+					this.input_key_gif = (GIF) Services.getPort("input_key_gif");
+				return this.input_key_gif;
+			}
+		}
+
+		private IInteger output_key_gif = null;
+		protected IInteger Output_key_gif
+		{
+			get
+			{
+				if (this.output_key_gif == null)
+					this.output_key_gif = (IInteger) Services.getPort("output_key_gif");
+				return this.output_key_gif;
 			}
 		}
 	}

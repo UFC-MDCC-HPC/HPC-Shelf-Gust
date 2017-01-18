@@ -1,9 +1,11 @@
-	using System;
+using System;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction;
 using br.ufc.mdcc.common.Data;
+using br.ufc.mdcc.common.Integer;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
@@ -14,16 +16,41 @@ using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 {
-	public class IMapperImpl<M,IKey, IValue, TKey, TValue, MF> : BaseIMapperImpl<M,IKey, IValue, TKey, TValue, MF>, IMapper<M,IKey, IValue, TKey, TValue, MF>
+	public class IMapperImpl<M,IKey, IValue, TKey, TValue, MF, GIF> : BaseIMapperImpl<M,IKey, IValue, TKey, TValue, MF, GIF>, IMapper<M,IKey, IValue, TKey, TValue, MF, GIF>
 		where M:IMaintainer
 		where MF:IMapFunction<IKey, IValue, TKey, TValue>
 		where IKey:IData
 		where IValue:IData
 		where TKey:IData
 		where TValue:IData
+		where GIF:IInputFormat
 	{
+		public void forwardGraph(){
+			IIteratorInstance<IKVPair<IInteger,GIF>> input_instance_gif = (IIteratorInstance<IKVPair<IInteger,GIF>>)Collect_graph.Client;
+			IIteratorInstance<IKVPair<IInteger,GIF>> output_instance_gif = (IIteratorInstance<IKVPair<IInteger,GIF>>)Output_gif.Instance;
+			Feed_graph.Server = output_instance_gif;
+
+			IActionFuture sync_perform;
+
+			Task_map.invoke (ITaskPortAdvance.READ_CHUNK);
+			Task_map.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+			object bin_object = null;
+			IKVPairInstance<IInteger,GIF> bin;
+			while (input_instance_gif.fetch_next (out bin_object)) {
+				bin = (IKVPairInstance<IInteger,GIF>)bin_object;
+				output_instance_gif.put (bin);
+			}
+
+			sync_perform.wait ();
+			output_instance_gif.finish ();
+			output_instance_gif.finish ();
+			Task_map.invoke (ITaskPortAdvance.CHUNK_READY);
+			//Feed_graph.Server = Collect_graph.Client;
+		}
 		public override void main()
 		{
+			forwardGraph ();
+
 			Console.WriteLine (this.Rank + ": STARTING MAPPER ...1");
 			IIteratorInstance<IKVPair<IKey,IValue>> input_instance = (IIteratorInstance<IKVPair<IKey,IValue>>)Collect_pairs.Client;
 			Console.WriteLine (this.Rank + ": STARTING MAPPER ...2 " + (input_instance == null));
@@ -81,8 +108,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.MapperImpl
 					Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 6");
 
 					Task_map.invoke (ITaskPortAdvance.CHUNK_READY);  //****
-					/* levando em conta que há sincronização pelos iteradores, talvez não haja necessidade de sincronizar o CHUNK_READY para o
-				     * shuffler começar a ler os pares */
+					/* levando em conta que hï¿½ sincronizaï¿½ï¿½o pelos iteradores, talvez nï¿½o haja necessidade de sincronizar o CHUNK_READY para o
+				     * shuffler comeï¿½ar a ler os pares */
 					Console.WriteLine (this.Rank + ": LOOP CHUNK MAPPER ... 7");
 				}
 

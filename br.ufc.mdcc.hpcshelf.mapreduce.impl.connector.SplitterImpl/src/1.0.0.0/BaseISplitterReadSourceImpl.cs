@@ -12,19 +12,22 @@ using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 using br.ufc.mdcc.common.Integer;
+using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;
 using br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl 
 {
-	public abstract class BaseISplitterReadSourceImpl<M2,IKey, IValue, BF>: Synchronizer, BaseISplitterReadSource<M2,IKey, IValue, BF>
+	public abstract class BaseISplitterReadSourceImpl<M2,BF,IKey,IValue,GIF>: Synchronizer, BaseISplitterReadSource<M2,BF,IKey,IValue,GIF>
 		where M2:IMaintainer
+		where BF:IPartitionFunction<IKey>
 		where IKey:IData
 		where IValue:IData
-		where BF:IPartitionFunction<IKey>
+		where GIF:IInputFormat
 	{
 		static protected int FACET_REDUCE = 0;
 		static protected int FACET_MAP = 1;
@@ -32,7 +35,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 		static protected int FACET_SINK = 3;
 
 		private BF bin_function = default(BF);
-
 		protected BF Bin_function
 		{
 			get
@@ -42,6 +44,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 				return this.bin_function;
 			}
 		}
+
 		private IChannel split_channel = null;
 
 		protected IChannel Split_channel
@@ -110,5 +113,47 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			}
 		}
 
+//		private IKVPair<IInteger, GIF> input_format = null;
+//		protected IKVPair<IInteger, GIF> Input_format
+//		{
+//			get
+//			{
+//				if (this.input_format == null)
+//					this.input_format = (IKVPair<IInteger, GIF>) Services.getPort("input_format");
+//				return this.input_format;
+//			}
+//		}
+		private IPartitionFunction<GIF> bin_function_gif = null;//default(BF);
+		protected IPartitionFunction<GIF> Bin_function_gif
+		{
+			get
+			{
+				if (this.bin_function_gif == null)
+					this.bin_function_gif = (IPartitionFunction<GIF>) Services.getPort("bin_function_gif");
+				return this.bin_function_gif;
+			}
+		}
+
+		private GIF input_key_gif = default(GIF);
+		protected GIF Input_key_gif
+		{
+			get
+			{
+				if (this.input_key_gif == null)
+					this.input_key_gif = (GIF) Services.getPort("input_key_gif");
+				return this.input_key_gif;
+			}
+		}
+
+		private IInteger output_key_gif = null;
+		protected IInteger Output_key_gif
+		{
+			get
+			{
+				if (this.output_key_gif == null)
+					this.output_key_gif = (IInteger) Services.getPort("output_key_gif");
+				return this.output_key_gif;
+			}
+		}
 	}
 }

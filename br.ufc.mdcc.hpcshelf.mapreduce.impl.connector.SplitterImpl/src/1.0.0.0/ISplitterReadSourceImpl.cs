@@ -15,20 +15,21 @@ using System.Threading;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 {
-	public class ISplitterReadSourceImpl<M2,IKey, IValue, BF> : BaseISplitterReadSourceImpl<M2,IKey, IValue, BF>, ISplitterReadSource<M2,IKey, IValue, BF>
+	public class ISplitterReadSourceImpl<M2,BF,IKey,IValue,GIF> : BaseISplitterReadSourceImpl<M2,BF,IKey,IValue,GIF>, ISplitterReadSource<M2,BF,IKey,IValue,GIF>
 		where M2:IMaintainer
+		where BF:IPartitionFunction<IKey>
 		where IKey:IData
 		where IValue:IData
-		where BF:IPartitionFunction<IKey>
+        where GIF:IInputFormat
 	{
 		static private int TAG_SPLIT_NEW_CHUNK = 246;
 		static private int TAG_SPLIT_END_CHUNK = 247;
 
-		public override void main()
-		{
+		public override void main(){
 			Console.WriteLine (this.Rank + ": SPLITTER 1 ");
 
 			IPortTypeIterator input_instance = (IPortTypeIterator) Source.Client;
@@ -45,7 +46,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			}
 			Console.WriteLine (this.Rank + ": SPLITTER 2 ");
 
-			Source.startReadSource (r_size);
+			Source.startReadSource (r_size); // subgrafos divididos em GIF, com destino final nos r_size redutores
 
 			Console.WriteLine (this.Rank + ": SPLITTER 3 ");
 
@@ -90,28 +91,22 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 				Task_binding_split_first.invoke (ITaskPortAdvance.READ_CHUNK); //****
 				Task_binding_split_first.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
 
-				Bin_function.NumberOfPartitions = m_size;
-
-				IList<IKVPairInstance<IKey,IValue>>[] buffer = new IList<IKVPairInstance<IKey,IValue>>[m_size];
+				IList<IKVPairInstance<IInteger,GIF>>[] buffer = new IList<IKVPairInstance<IInteger,GIF>>[m_size];
 				for (int i = 0; i < m_size; i++)
-					buffer [i] = new List<IKVPairInstance<IKey,IValue>> ();
+					buffer [i] = new List<IKVPairInstance<IInteger,GIF>> ();
 
 				Console.WriteLine (this.Rank + ": BEGIN READING CHUNKS and distributing to MAPPERS m_size=" + m_size);
 
 				if (!input_instance.has_next()) 
 					end_iteration = true;
 
-				Bin_function.PartitionTABLE = Source.PartitionTABLE;
-
-				while (input_instance.fetch_next (out bin_object)) 
-				{
-					IKVPairInstance<IKey,IValue> item = (IKVPairInstance<IKey,IValue>)bin_object;
-
-					this.Input_key.Instance = item.Key;
-					Bin_function.go ();
-					int index = ((IIntegerInstance)this.Output_key.Instance).Value;
-
-					buffer[index].Add(item);
+				Bin_function_gif.NumberOfPartitions = m_size;
+				while (input_instance.fetch_next (out bin_object)) {
+					IKVPairInstance<IInteger,GIF> item = (IKVPairInstance<IInteger,GIF>)bin_object;
+					this.Input_key_gif.Instance = item.Value;//item.Key;
+					Bin_function_gif.go ();
+					int index = ((IIntegerInstance)this.Output_key_gif.Instance).Value;
+					buffer [index].Add(item);
 				}
 
 				Console.WriteLine (this.Rank + ": END READING CHUNKS and distributing to MAPPERS");

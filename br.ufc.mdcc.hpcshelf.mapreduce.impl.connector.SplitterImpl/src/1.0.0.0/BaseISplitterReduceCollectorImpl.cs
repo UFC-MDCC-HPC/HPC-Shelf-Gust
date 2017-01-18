@@ -17,17 +17,19 @@ using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl 
 {
-	public abstract class BaseISplitterReduceCollectorImpl<M0,IKey,IValue,OKey,OValue,BF,TF>: Synchronizer, BaseISplitterReduceCollector<M0,IKey,IValue,OKey, OValue, BF,TF>
+	public abstract class BaseISplitterReduceCollectorImpl<M0,TF,IKey,IValue,OKey,OValue,BF,GIF>: Synchronizer, BaseISplitterReduceCollector<M0,TF,IKey,IValue,OKey,OValue,BF,GIF>
 		where M0:IMaintainer
+		where TF:ITerminateFunction<IKey,IValue,OKey,OValue>
 		where IKey:IData
 		where IValue:IData
 		where OKey:IData
 		where OValue:IData
 		where BF:IPartitionFunction<IKey>
-		where TF:ITerminateFunction<IKey,IValue,OKey,OValue>
+		where GIF:IInputFormat
 	{
 		static protected int FACET_REDUCE = 0;
 		static protected int FACET_MAP = 1;
@@ -57,6 +59,18 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 				if (this.collect_pairs == null)
 					this.collect_pairs = (IClientBase<IPortTypeIterator>) Services.getPort("collect_pairs");
 				return this.collect_pairs;
+			}
+		}
+
+		private IClientBase<IPortTypeIterator> collect_graph = null;
+
+		public IClientBase<IPortTypeIterator> Collect_graph
+		{
+			get
+			{
+				if (this.collect_graph == null)
+					this.collect_graph = (IClientBase<IPortTypeIterator>) Services.getPort("collect_graph");
+				return this.collect_graph;
 			}
 		}
 
@@ -161,5 +175,58 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 				return this.input_pairs;
 			}
 		}
+//		private GIF graph_input_format = default(GIF);
+//		protected GIF Graph_input_format
+//		{
+//			get
+//			{
+//				if (this.graph_input_format == null)
+//					this.graph_input_format = (GIF) Services.getPort("graph_input_format");
+//				return this.graph_input_format;
+//			}
+//		}
+
+//		private IIterator<IKVPair<IInteger, GIF>> output_gif = null;
+//		protected IIterator<IKVPair<IInteger, GIF>> Output_gif
+//		{
+//			get
+//			{
+//				if (this.output_gif == null)
+//					this.output_gif = (IIterator<IKVPair<IInteger, GIF>>) Services.getPort("output_gif");
+//				return this.output_gif;
+//			}
+//		}
+		private IPartitionFunction<GIF> bin_function_iterate_gif = null;//default(BF);
+		protected IPartitionFunction<GIF> Bin_function_iterate_gif
+		{
+			get
+			{
+				if (this.bin_function_iterate_gif == null)
+					this.bin_function_iterate_gif = (IPartitionFunction<GIF>) Services.getPort("bin_function_iterate_gif");
+				return this.bin_function_iterate_gif;
 			}
+		}
+
+		private GIF input_key_iterate_gif = default(GIF);
+		protected GIF Input_key_iterate_gif
+		{
+			get
+			{
+				if (this.input_key_iterate_gif == null)
+					this.input_key_iterate_gif = (GIF) Services.getPort("input_key_iterate_gif");
+				return this.input_key_iterate_gif;
+			}
+		}
+
+		private IInteger output_key_iterate_gif = null;
+		protected IInteger Output_key_iterate_gif
+		{
+			get
+			{
+				if (this.output_key_iterate_gif == null)
+					this.output_key_iterate_gif = (IInteger) Services.getPort("output_key_iterate_gif");
+				return this.output_key_iterate_gif;
+			}
+		}
+	}
 }

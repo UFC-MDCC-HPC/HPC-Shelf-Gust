@@ -6,6 +6,8 @@ using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Data;
+using br.ufc.mdcc.common.Integer;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using System.Collections.Generic;
 using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
 using System.Diagnostics;
@@ -15,20 +17,81 @@ using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 {
-	public class IShufflerReduceFeederImpl<M0,TKey, TValue> : BaseIShufflerReduceFeederImpl<M0,TKey, TValue>, IShufflerReduceFeeder<M0,TKey, TValue>
+	public class IShufflerReduceFeederImpl<M0,TKey, TValue,GIF> : BaseIShufflerReduceFeederImpl<M0,TKey, TValue,GIF>, IShufflerReduceFeeder<M0,TKey, TValue,GIF>
 		where M0:IMaintainer
 		where TKey:IData
 		where TValue:IData
+		where GIF:IInputFormat
 	{
 		static private int TAG_SHUFFLE_OMV_NEW_CHUNK = 345;
 		static private int TAG_SHUFFLE_OMV_END_CHUNK = 347;
+
+		public void receive_write_gif (int senders_size, IDictionary<int,Tuple<int,int>> unit_ref) {
+			IIteratorInstance<IKVPair<IInteger,IIterator<GIF>>> output_instance_gifs = (IIteratorInstance<IKVPair<IInteger,IIterator<GIF>>>)Output_gifs.Instance;
+			Feed_graph.Server = output_instance_gifs;
+
+			bool[] finished_stream = new bool[senders_size];
+			for (int i = 0; i < senders_size; i++)
+				finished_stream [i] = false;
+
+			int count_finished_streams = 0;
+
+			while (count_finished_streams < senders_size) {     // take next chunk ... 
+				IActionFuture sync_perform;
+
+				Task_binding_shuffle.invoke (ITaskPortAdvance.READ_CHUNK);
+				Task_binding_shuffle.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+
+				IDictionary<object,IIteratorInstance<GIF>> kv_cache = new Dictionary<object,IIteratorInstance<GIF>> ();
+
+				// PERFORM
+				for (int i = 0; i < senders_size; i++) {
+					if (!finished_stream [i]) {
+						IList<IKVPairInstance<IInteger,GIF>> buffer;
+						CompletedStatus status;
+						Shuffler_channel.Receive (unit_ref [i], MPI.Communicator.anyTag, out buffer, out status);
+
+						foreach (IKVPairInstance<IInteger,GIF> kv in buffer) {	
+							IIteratorInstance<GIF> iterator = null;
+							if (!kv_cache.ContainsKey (kv.Key)) {
+								iterator = Value_factory_gif.newIteratorInstance ();
+								kv_cache.Add (kv.Key, iterator);
+								IKVPairInstance<IInteger,IIterator<GIF>> item = (IKVPairInstance<IInteger,IIterator<GIF>>)Output_gifs.createItem ();
+								item.Key = kv.Key;
+								item.Value = iterator;
+								output_instance_gifs.put (item);
+							} else
+								kv_cache.TryGetValue (kv.Key, out iterator);
+
+							iterator.put (kv.Value);
+						}
+
+						if (status.Tag == TAG_SHUFFLE_OMV_END_CHUNK) {
+							count_finished_streams++;
+							finished_stream [i] = true;
+						} 
+					}	
+				}
+
+				output_instance_gifs.finish ();
+				foreach (IIteratorInstance<GIF> iterator in kv_cache.Values)
+					iterator.finish ();
+
+				sync_perform.wait ();
+
+				// CHUNK_READY
+				Task_binding_shuffle.invoke (ITaskPortAdvance.CHUNK_READY);   //****
+			}
+			output_instance_gifs.finish ();
+			output_instance_gifs.finish ();
+		}
 
 		public override void main()
 		{
 			Console.WriteLine (this.Rank + ": SHUFFLER REDUCE COLLECTOR START");
 
-			IIteratorInstance<IKVPair<TKey,IIterator<TValue>>> output_instance = (IIteratorInstance<IKVPair<TKey,IIterator<TValue>>>) Output.Instance;
-			Feed_pairs.Server = output_instance;
+//			IIteratorInstance<IKVPair<TKey,IIterator<TValue>>> output_instance = (IIteratorInstance<IKVPair<TKey,IIterator<TValue>>>) Output.Instance;
+//			Feed_pairs.Server = output_instance;
 
 			// DETERMINE COMMUNICATION SOURCEs
 			IDictionary<int,Tuple<int,int>> unit_ref = new Dictionary<int, Tuple<int,int>> ();
@@ -41,6 +104,11 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 				for (int k=0, j=nr0; j < senders_size; k++, j++) 
 					unit_ref [j] = new Tuple<int,int> (i/*,0 INDEX OF map_collector*/,k);
 			}
+
+			receive_write_gif (senders_size, unit_ref);
+
+			IIteratorInstance<IKVPair<TKey,IIterator<TValue>>> output_instance = (IIteratorInstance<IKVPair<TKey,IIterator<TValue>>>) Output.Instance;
+			Feed_pairs.Server = output_instance;
 
 			bool end_computation = false;
 			while (!end_computation)   // next iteration

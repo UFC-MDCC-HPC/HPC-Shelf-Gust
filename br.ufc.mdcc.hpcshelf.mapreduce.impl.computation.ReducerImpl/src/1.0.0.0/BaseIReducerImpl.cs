@@ -116,15 +116,50 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 			}
 		}
 		
-		private IIterator<IKVPair<IInteger, GIF>> graph_format = null;
-		public IIterator<IKVPair<IInteger, GIF>> Graph_format
+		private IIterator<IKVPair<IInteger, GIF>> output_gif = null;
+		public IIterator<IKVPair<IInteger, GIF>> Output_gif
 		{
 			get
 			{
-				if (this.graph_format == null)
-					this.graph_format = (IIterator<IKVPair<IInteger, GIF>>) Services.getPort("graph_format");
-				return this.graph_format;
+				if (this.output_gif == null)
+					this.output_gif = (IIterator<IKVPair<IInteger, GIF>>) Services.getPort("output_gif");
+				return this.output_gif;
 			}
 		}
+		//////
+		private IKVPair<IInteger, IIterator<GIF>> graph_values = null;
+		protected IKVPair<IInteger, IIterator<GIF>> Graph_values
+		{
+			get
+			{
+				if (this.graph_values == null)
+					this.graph_values = (IKVPair<IInteger, IIterator<GIF>>) Services.getPort("graph_values");
+				return this.graph_values;
+			}
+		}
+
+		private IClientBase<IPortTypeIterator> collect_graph = null;
+		protected IClientBase<IPortTypeIterator> Collect_graph
+		{
+			get
+			{
+				if (this.collect_graph == null)
+					this.collect_graph = (IClientBase<IPortTypeIterator>) Services.getPort("collect_graph");
+				return this.collect_graph;
+			}
+		}
+
+		private IServerBase<IPortTypeIterator> feed_graph = null;
+		protected IServerBase<IPortTypeIterator> Feed_graph
+		{
+			get
+			{
+				if (this.feed_graph == null)
+					this.feed_graph = (IServerBase<IPortTypeIterator>) Services.getPort("feed_graph");
+				return this.feed_graph;
+			}
+		}
+
+
 	}
 }

@@ -19,6 +19,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction
 	{
 		IKVPair<TKey, IIterator<TValue>> Input_values {get;}
 		IIterator<IKVPair<OKey, OValue>> Output {get;}	
-		IIterator<IKVPair<IInteger,GIF>> Graph_format {get;}
+		IIterator<IKVPair<IInteger,GIF>> Output_gif {get;}
 	}
 }

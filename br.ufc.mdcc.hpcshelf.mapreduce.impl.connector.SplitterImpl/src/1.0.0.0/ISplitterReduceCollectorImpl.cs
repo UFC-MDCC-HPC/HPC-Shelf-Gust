@@ -14,17 +14,19 @@ using System.Threading;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 {
-	public class ISplitterReduceCollectorImpl<M0,IKey, IValue, OKey, OValue, BF, TF> : BaseISplitterReduceCollectorImpl<M0,IKey, IValue, OKey, OValue, BF, TF>, ISplitterReduceCollector<M0,IKey, IValue, OKey, OValue, BF, TF>
+	public class ISplitterReduceCollectorImpl<M0,TF,IKey,IValue,OKey,OValue,BF,GIF> : BaseISplitterReduceCollectorImpl<M0,TF,IKey,IValue,OKey,OValue,BF,GIF>, ISplitterReduceCollector<M0,TF,IKey,IValue,OKey,OValue,BF,GIF>
 		where M0:IMaintainer
+		where TF:ITerminateFunction<IKey,IValue,OKey,OValue>
 		where IKey:IData
 		where IValue:IData
 		where OKey:IData
 		where OValue:IData
 		where BF:IPartitionFunction<IKey>
-		where TF:ITerminateFunction<IKey,IValue,OKey,OValue>
+        where GIF:IInputFormat
 	{
 		static private int TAG_SPLIT_NEW_CHUNK = 246;
 		static private int TAG_SPLIT_END_CHUNK = 247;
@@ -35,8 +37,30 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			Terminate_function.go ();
 		}
 
+		private void clear_gif_set_PartitionTABLE()	// Bin_function_iterate_gif.go() necessita apenas ser chamado para definicão do PartitionTABLE
+		{
+			Bin_function_iterate_gif.NumberOfPartitions = 8;//m_size;
+
+			//Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
+			//Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+
+			object bin_object = null;
+			IIteratorInstance<IKVPair<IInteger,GIF>> input_graph_instance = (IIteratorInstance<IKVPair<IInteger,GIF>>) Collect_graph.Client;
+			while (input_graph_instance.fetch_next (out bin_object)) {
+				IKVPairInstance<IInteger,GIF> item = (IKVPairInstance<IInteger,GIF>) bin_object;
+				this.Input_key_iterate_gif.Instance = item.Value;
+				Bin_function_iterate_gif.go ();
+				((IInputFormatInstance)item.Value).Clear (); //int index = ((IIntegerInstance)this.Output_key_iterate_gif.Instance).Value;
+			}
+			Bin_function_iterate.PartitionTABLE = Bin_function_iterate_gif.PartitionTABLE;
+
+			//sync_perform.wait ();
+		}
+
 		public override void main()
 		{
+			clear_gif_set_PartitionTABLE ();
+
 			Console.WriteLine (this.Rank + ": SPLITTER REDUCE COLLECTOR START");
 
 			IIteratorInstance<IKVPair<OKey,OValue>> input_instance = (IIteratorInstance<IKVPair<OKey,OValue>>) Collect_pairs.Client;

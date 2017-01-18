@@ -3,17 +3,19 @@ using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;
 using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter
 {
-	public interface ISplitterReduceCollector<M0,IKey,IValue,OKey,OValue,BF,TF> : BaseISplitterReduceCollector<M0,IKey,IValue,OKey,OValue,BF,TF>
+	public interface ISplitterReduceCollector<M0,TF,IKey,IValue,OKey,OValue,BF,GIF> : BaseISplitterReduceCollector<M0,TF,IKey,IValue,OKey,OValue,BF,GIF>
 		where M0:IMaintainer
+		where TF:ITerminateFunction<IKey,IValue,OKey,OValue>
 		where IKey:IData
 		where IValue:IData
 		where OKey:IData
 		where OValue:IData
 		where BF:IPartitionFunction<IKey>
-		where TF:ITerminateFunction<IKey,IValue,OKey,OValue>
+		where GIF:IInputFormat
 	{
 	}
 }

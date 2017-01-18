@@ -11,16 +11,19 @@ using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
 using br.ufc.mdcc.hpc.storm.binding.channel.Binding;
 using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;
 using br.ufc.mdcc.common.Iterator;
+using br.ufc.mdcc.common.Integer;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Data;
+using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl 
 {
-	public abstract class BaseIShufflerReduceFeederImpl<M0,TKey, TValue>: Synchronizer, BaseIShufflerReduceFeeder<M0,TKey, TValue>
+	public abstract class BaseIShufflerReduceFeederImpl<M0,TKey, TValue,GIF>: Synchronizer, BaseIShufflerReduceFeeder<M0,TKey, TValue,GIF>
 		where M0:IMaintainer
 		where TKey:IData
 		where TValue:IData	
+		where GIF:IInputFormat
 	{
 		static protected int FACET_REDUCE = 0;
 		static protected int FACET_MAP = 1;
@@ -39,7 +42,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 		}
 
 		private IServerBase<IPortTypeIterator> feed_pairs = null;
-
 		protected IServerBase<IPortTypeIterator> Feed_pairs
 		{
 			get
@@ -47,6 +49,17 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 				if (this.feed_pairs == null)
 					this.feed_pairs = (IServerBase<IPortTypeIterator>) Services.getPort("feed_pairs");
 				return this.feed_pairs;
+			}
+		}
+
+		private IServerBase<IPortTypeIterator> feed_graph = null;
+		protected IServerBase<IPortTypeIterator> Feed_graph
+		{
+			get
+			{
+				if (this.feed_graph == null)
+					this.feed_graph = (IServerBase<IPortTypeIterator>) Services.getPort("feed_graph");
+				return this.feed_graph;
 			}
 		}
 
@@ -77,6 +90,24 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.ShufflerImpl
 				if (this.value_factory == null)
 					this.value_factory = (IIterator<TValue>)Services.getPort("value_factory");
 				return this.value_factory;
+			}
+		}
+
+		private IIterator<GIF> value_factory_gif = null;
+		protected IIterator<GIF> Value_factory_gif {
+			get {
+				if (this.value_factory_gif == null)
+					this.value_factory_gif = (IIterator<GIF>)Services.getPort("value_factory_gif");
+				return this.value_factory_gif;
+			}
+		}
+
+		private IIterator<IKVPair<IInteger,IIterator<GIF>>> output_gifs = null;
+		protected IIterator<IKVPair<IInteger,IIterator<GIF>>> Output_gifs {
+			get {
+				if (this.output_gifs == null)
+					this.output_gifs = (IIterator<IKVPair<IInteger,IIterator<GIF>>>)Services.getPort("output_gifs");
+				return this.output_gifs;
 			}
 		}
 	}

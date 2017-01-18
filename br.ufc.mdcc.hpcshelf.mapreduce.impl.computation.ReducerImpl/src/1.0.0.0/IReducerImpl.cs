@@ -1,4 +1,6 @@
 using System;
+using System.Reflection;
+using System.Linq;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
@@ -7,6 +9,7 @@ using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;
 using System.Diagnostics;
 using br.ufc.mdcc.common.Iterator;
+using br.ufc.mdcc.common.Integer;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using System.Threading;
@@ -33,16 +36,60 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
              * 3. Pegar o resultado de Reduction_function.go() de Output_reduce (OValue) 
              *    e colocar no iterator Output.
              */
-			readPair_OMK_OMVs(); //startThreads();
+			graph_creator ();
+			readPair_OMK_OMVs();
+		}
+		private void graph_creator () {
+			IIteratorInstance<IKVPair<IInteger, IIterator<GIF>>> input_instance = (IIteratorInstance<IKVPair<IInteger, IIterator<GIF>>>)Collect_graph.Client;
+			IIteratorInstance<IKVPair<IInteger,GIF>> output_instance = (IIteratorInstance<IKVPair<IInteger,GIF>>)Output_gif.Instance;
+			Feed_graph.Server = output_instance;
+
+			IActionFuture sync_perform;
+
+			bool end_iteration = false;
+			while (!end_iteration) {    // take next chunk ...
+				Task_reduce.invoke (ITaskPortAdvance.READ_CHUNK);
+				Task_reduce.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+
+				IKVPairInstance<IInteger, IIterator<GIF>> kvpair = null;
+				object kvpair_object;
+
+				if (!input_instance.has_next ())
+					end_iteration = true;
+
+				while (input_instance.fetch_next (out kvpair_object)) {
+					kvpair = (IKVPairInstance<IInteger, IIterator<GIF>>)kvpair_object;
+					IIntegerInstance kgif = (IIntegerInstance) kvpair.Key;
+					IIteratorInstance<GIF> iterator = (IIteratorInstance<GIF>)kvpair.Value;
+					Graph_values.Instance = kvpair;
+					Reduce_function.graph_creator ();
+				}
+				sync_perform.wait ();
+			}
+
+			//IActionFuture reduce_chunk_ready;
+			//Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out reduce_chunk_ready);  //***
+			output_instance.finish ();
+			//output_instance.finish ();
+			//reduce_chunk_ready.wait ();
 		}
 
-		private void readPair_OMK_OMVs() 	
+		private void readPair_OMK_OMVs()
 		{
 			Console.WriteLine (this.Rank + ": REDUCE 1");
 
 			IIteratorInstance<IKVPair<TKey, IIterator<TValue>>> input_instance = (IIteratorInstance<IKVPair<TKey, IIterator<TValue>>>)Collect_pairs.Client;
 			IIteratorInstance<IKVPair<OKey,OValue>> output_instance = (IIteratorInstance<IKVPair<OKey,OValue>>)Output.Instance;
 			Feed_pairs.Server = output_instance;
+
+			IActionFuture reduce_chunk_ready_startup;
+			Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out reduce_chunk_ready_startup);
+			Reduce_function.startup_processing();
+			output_instance.finish ();
+			reduce_chunk_ready_startup.wait ();
+
+			IList<MethodInfo> phases = getGustMethods (Reduce_function); 
+			IEnumerator<MethodInfo> current_phase = phases.GetEnumerator ();
 
 			IActionFuture sync_perform;
 
@@ -55,7 +102,12 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 			bool end_computation = false;
 			while (!end_computation)    // new iteration
 			{
-				IDictionary<object,object> cont_dict = new Dictionary<object, object> ();
+				if (!current_phase.MoveNext ()) {
+					current_phase = phases.GetEnumerator ();
+					current_phase.MoveNext ();
+				}
+				MethodInfo phase = current_phase.Current;
+				//IDictionary<object,object> cont_dict = new Dictionary<object, object> ();
 
 				Console.WriteLine (this.Rank + ": REDUCER LOOP");
 
@@ -79,24 +131,26 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 					else
 						end_computation = false;
 
-					int count=0;
+					//int count=0;
 					while (input_instance.fetch_next (out kvpair_object)) 
 					{
 						Console.WriteLine (this.Rank + ": REDUCER ITERATE INNER LOOP 3 count=" + count);
 
 						kvpair = (IKVPairInstance<TKey, IIterator<TValue>>)kvpair_object;
 
-						object acc_value;
-						if (!cont_dict.TryGetValue(kvpair.Key, out acc_value))
-							cont_dict[kvpair.Key] = new object();
-						else
-							((IDataInstance)Continue_value.Instance).ObjValue = acc_value;
+//						object acc_value;
+//						if (!cont_dict.TryGetValue(kvpair.Key, out acc_value))
+//							cont_dict[kvpair.Key] = new object();
+//						else
+//							((IDataInstance)Continue_value.Instance).ObjValue = acc_value;
 						
 						Input_values.Instance = kvpair; 
-						Reduce_function.go ();				
-						cont_dict [kvpair.Key] = ((IDataInstance)((IKVPairInstance<OKey,OValue>)Output_value.Instance).Value).ObjValue;
+						//Reduce_function.go ();
+						phase.Invoke(Reduce_function,null);
 
-						count++;
+						//cont_dict [kvpair.Key] = ((IDataInstance)((IKVPairInstance<OKey,OValue>)Output_value.Instance).Value).ObjValue;
+
+						//count++;
 					}
 
 					Console.WriteLine (this.Rank + ": REDUCER ITERATE 4 count=" + count);
@@ -108,18 +162,16 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 
 				Console.WriteLine (this.Rank + ": REDUCER ITERATE END ITERATION");
 
-				int chunk_counter = 1;
-
 				IActionFuture reduce_chunk_ready;
 				Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out reduce_chunk_ready);  //***
 
-				foreach (KeyValuePair<object,object> output_pair in cont_dict) 
-				{					
-					IKVPairInstance<OKey,OValue> new_pair = (IKVPairInstance<OKey,OValue>) Output_value.newInstance ();
-					new_pair.Key = output_pair.Key;
-					new_pair.Value = output_pair.Value;
-					output_instance.put (new_pair);	 
-				}
+//				foreach (KeyValuePair<object,object> output_pair in cont_dict) 
+//				{					
+//					IKVPairInstance<OKey,OValue> new_pair = (IKVPairInstance<OKey,OValue>) Output_value.newInstance ();
+//					new_pair.Key = output_pair.Key;
+//					new_pair.Value = output_pair.Value;
+//					output_instance.put (new_pair);	 
+//				}
 
 				output_instance.finish ();
 
@@ -130,16 +182,18 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 
 			Console.WriteLine (this.Rank + ": REDUCER FINISH ... ");
 		}
-
-
-		private void startThreads() {
-			/*Instancias*/
-			Thread treadPairOMKOMV = new Thread(new ThreadStart(readPair_OMK_OMVs));
-
-			/*Starting*/
-			treadPairOMKOMV.Start(); 	
-			/* Joins*/
-			treadPairOMKOMV.Join();
-		}
+		private static IList<MethodInfo> getGustMethods(object o){
+			IList<MethodInfo> gusts_methods = new List<MethodInfo> ();
+			IList<MethodInfo> all_methods = new List<MethodInfo> (o.GetType ().GetMethods ());
+			for (int i = 0; i < all_methods.Count; i++) {
+				MethodInfo m = all_methods.ElementAt (i);
+				if (m.Name.Length >= 4) {
+					if (m.Name.Substring (0, 4).ToLower().Equals ("gust") && (m.GetParameters ().Length == 0) ) {
+						gusts_methods.Add (m);
+					}
+				}
 			}
+			return gusts_methods;
+		}
+	}
 }

@@ -85,5 +85,9 @@
       <Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>
       <Name>br.ufc.mdcc.hpcshelf.platform.Maintainer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.InputFormat\br.ufc.mdcc.hpcshelf.gust.graph.InputFormat\br.ufc.mdcc.hpcshelf.gust.graph.InputFormat.csproj">
+      <Project>{6A7BA994-391F-404F-939C-077CA597C821}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

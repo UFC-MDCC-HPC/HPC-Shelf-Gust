@@ -14,8 +14,17 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction
 		where OValue:IData
 		where G:IData
 	{
-		void Compute();
-		void Optimize();
-		void InputGraph();
+		/* método poderia ser um componenten aninhado para construir grafos, guiado pelo contexto do componente "Graph". */
+		void graph_creator(); 
+
+		/* método diretamente ligado ao algoritmo */
+		void startup_processing(); 
+
+		/* O Algoritmo deve possuir pelo menos uma etapa 0 para iterar. 
+		 Para mais etapas, deve-se escrever métodos na forma gustx, onde x>=1 */
+		void gust0(); 
+
+		// Antes de emitir KVPairs, pode-se avaliar se há redundância, uma espécie de combine para chave única.
+		void output_filter();
 	}
 }
