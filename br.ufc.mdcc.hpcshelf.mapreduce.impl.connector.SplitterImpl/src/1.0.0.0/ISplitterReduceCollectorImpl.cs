@@ -37,13 +37,9 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			Terminate_function.go ();
 		}
 
-		private void clear_gif_set_PartitionTABLE()	// Bin_function_iterate_gif.go() necessita apenas ser chamado para definicão do PartitionTABLE
+		private void clear_gif_set_PartitionTABLE()	
 		{
-			Bin_function_iterate_gif.NumberOfPartitions = 8;//m_size;
-
-			//Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
-			//Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
-
+			//Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK); Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
 			object bin_object = null;
 			IIteratorInstance<IKVPair<IInteger,GIF>> input_graph_instance = (IIteratorInstance<IKVPair<IInteger,GIF>>) Collect_graph.Client;
 			while (input_graph_instance.fetch_next (out bin_object)) {
@@ -53,7 +49,67 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 				((IInputFormatInstance)item.Value).Clear (); //int index = ((IIntegerInstance)this.Output_key_iterate_gif.Instance).Value;
 			}
 			Bin_function_iterate.PartitionTABLE = Bin_function_iterate_gif.PartitionTABLE;
+			//sync_perform.wait ();
+		}
 
+		private void send_startup () {
+			IIteratorInstance<IKVPair<IKey,IValue>> input_instance = (IIteratorInstance<IKVPair<IKey,IValue>>)Input_pairs.Instance;
+
+			object bin_object = null;
+
+			// DETERMINE COMMUNICATION TARGETs
+			IDictionary<int,Tuple<int,int>> unit_ref = new Dictionary<int, Tuple<int,int>> ();
+			int m_size = 0;
+			foreach (int i in this.FacetIndexes[FACET_MAP]) {   
+				int nr0 = m_size;
+				m_size += this.UnitSizeInFacet [i] ["map_feeder"];
+				for (int k = 0, j = nr0; j < m_size; k++, j++)
+					unit_ref [j] = new Tuple<int,int> (i/*,0 index of MAP_FEEDER*/, k);
+			}
+
+			IActionFuture sync_perform;
+
+			// SEND STARTUP TO MAPPER (new iteration)
+
+			Bin_function_iterate.NumberOfPartitions = m_size;
+
+			IList<IKVPairInstance<OKey,OValue>>[] buffer = new IList<IKVPairInstance<OKey,OValue>>[m_size];
+			for (int i = 0; i < m_size; i++)
+				buffer [i] = new List<IKVPairInstance<OKey,OValue>> ();
+
+			int count = 0;
+			while (input_instance.fetch_next (out bin_object)) {
+				IKVPairInstance<OKey,OValue> item = (IKVPairInstance<OKey,OValue>)bin_object;
+
+				this.Input_key_iterate.Instance = item.Key;
+				Bin_function_iterate.go ();
+				int index = ((IIntegerInstance)this.Output_key_iterate.Instance).Value;
+
+				buffer [index].Add (item);
+
+				if (count % CHUNK_SIZE == 0) {
+					Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
+					Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+
+					for (int i = 0; i < m_size; i++) {
+						Split_channel.Send (buffer [i], unit_ref [i], TAG_SPLIT_NEW_CHUNK);
+						buffer [i].Clear ();
+					}
+					sync_perform.wait ();
+					Task_binding_split_next.invoke (ITaskPortAdvance.CHUNK_READY);
+				}
+				count++;
+			}
+			Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
+			Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
+
+			// SEND REMAINING PAIRS AND CLOSES THE CHUNK LIST
+			for (int i = 0; i < m_size; i++)
+				Split_channel.Send (buffer [i], unit_ref [i], TAG_SPLIT_END_CHUNK);
+
+			sync_perform.wait ();
+
+			Task_binding_split_next.invoke (ITaskPortAdvance.CHUNK_READY);
 			//sync_perform.wait ();
 		}
 
@@ -68,6 +124,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 
 			Thread thread_terminate_function = new Thread (new ThreadStart(terminate_go));
 			thread_terminate_function.Start ();
+
+			send_startup ();
 
 			Thread thread_send_to_mappers = new Thread (new ThreadStart (send_to_mappers));
 			thread_send_to_mappers.Start ();

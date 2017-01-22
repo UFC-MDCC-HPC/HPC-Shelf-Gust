@@ -78,7 +78,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 		{
 			Console.WriteLine (this.Rank + ": REDUCE 1");
 
-			IIteratorInstance<IKVPair<TKey, IIterator<TValue>>> input_instance = (IIteratorInstance<IKVPair<TKey, IIterator<TValue>>>)Collect_pairs.Client;
+			//IIteratorInstance<IKVPair<TKey, IIterator<TValue>>> input_instance = (IIteratorInstance<IKVPair<TKey, IIterator<TValue>>>)Collect_pairs.Client;
 			IIteratorInstance<IKVPair<OKey,OValue>> output_instance = (IIteratorInstance<IKVPair<OKey,OValue>>)Output.Instance;
 			Feed_pairs.Server = output_instance;
 
@@ -87,6 +87,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 			Reduce_function.startup_processing();
 			output_instance.finish ();
 			reduce_chunk_ready_startup.wait ();
+
+			IIteratorInstance<IKVPair<TKey, IIterator<TValue>>> input_instance = (IIteratorInstance<IKVPair<TKey, IIterator<TValue>>>)Collect_pairs.Client;
 
 			IList<MethodInfo> phases = getGustMethods (Reduce_function); 
 			IEnumerator<MethodInfo> current_phase = phases.GetEnumerator ();
@@ -131,7 +133,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 					else
 						end_computation = false;
 
-					//int count=0;
+					int count=0;
 					while (input_instance.fetch_next (out kvpair_object)) 
 					{
 						Console.WriteLine (this.Rank + ": REDUCER ITERATE INNER LOOP 3 count=" + count);
@@ -150,7 +152,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 
 						//cont_dict [kvpair.Key] = ((IDataInstance)((IKVPairInstance<OKey,OValue>)Output_value.Instance).Value).ObjValue;
 
-						//count++;
+						count++;
 					}
 
 					Console.WriteLine (this.Rank + ": REDUCER ITERATE 4 count=" + count);
@@ -161,6 +163,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 				}
 
 				Console.WriteLine (this.Rank + ": REDUCER ITERATE END ITERATION");
+
+				Reduce_function.output_filter ();
 
 				IActionFuture reduce_chunk_ready;
 				Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out reduce_chunk_ready);  //***

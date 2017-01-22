@@ -13,7 +13,7 @@ where TKey:IInputFormat
 	{
 		public IPartitionFunctionInputFormatDefault() { } 
 
-		private int number_of_partitions;
+		private int number_of_partitions = 1;
 		public int NumberOfPartitions {
 			get { return number_of_partitions; }
 			set { this.number_of_partitions = value; }
