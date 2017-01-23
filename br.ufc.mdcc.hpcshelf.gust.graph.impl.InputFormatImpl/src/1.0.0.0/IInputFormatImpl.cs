@@ -221,7 +221,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 							string[] ij = line.Split ((char)b[0],(char)b[1],(char)b[2]);
 							vsize = int.Parse(ij[0]);
 							esize = int.Parse(ij[1]);
-							//partition_size =  int.Parse(ij[2]);
+							if(ij.Length>2) partition_size =  int.Parse(ij[2]);
 							break;
 						}
 					}

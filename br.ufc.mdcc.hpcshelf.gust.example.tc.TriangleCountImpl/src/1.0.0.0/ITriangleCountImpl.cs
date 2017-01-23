@@ -128,20 +128,38 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 			IIteratorInstance<IDataTriangle> ivalues = (IIteratorInstance<IDataTriangle>)input_values_instance.Value;
 
 			int v = ikey.Value;
-			ICollection<int> vneighbors = g.neighborsOf (v);
+			ICollection<int> vneighbors = g.neighborsOf (v); // devolve ISet<int>, de modo que Contains() é O(1)
 			object o;
 			while (ivalues.fetch_next (out o)) {
 				IDataTriangleInstance dt = ((IDataTriangleInstance)o);
 				int z = dt.V;
 				int w = dt.W;
 				if (vneighbors.Contains (z)) { //Se z é vizinho de v, forma-se um triangulo
-					IKVPairInstance<IInteger,IDataTriangle> item = (IKVPairInstance<IInteger,IDataTriangle>)Output.createItem ();
-					((IIntegerInstance)item.Key).Value = v;
-					item.Value = dt;
-					output_value_instance.put (item);
+
+// Descomentar para imprimir todos os triangulos
+//					IKVPairInstance<IInteger,IDataTriangle> item = (IKVPairInstance<IInteger,IDataTriangle>)Output.createItem ();
+//					((IIntegerInstance)item.Key).Value = v;
+//					item.Value = dt;
+//					output_value_instance.put (item);
+
+					count++;
 				}
 			}
+			step = 1;
 		}
-		public void output_filter(){} // Em cada iteração, o redutor chama uma única vez, permitindo ao desenvolvedor avaliar dados a serem emitidos. Por exemplo: evitando redundância, ou descartando valores.
+
+		// Em cada iteração, o redutor chama uma única vez, permitindo ao desenvolvedor avaliar dados a serem emitidos. Por exemplo: evitando redundância, ou descartando valores.
+		public void output_filter(){
+			if (step == 1) { // emitir como chave o somatório de triangulos do subgrafo.
+				IIteratorInstance<IKVPair<IInteger,IDataTriangle>> output_value_instance = (IIteratorInstance<IKVPair<IInteger,IDataTriangle>>)Output.Instance;
+				IKVPairInstance<IInteger,IDataTriangle> item = (IKVPairInstance<IInteger,IDataTriangle>)Output.createItem ();
+				((IIntegerInstance)item.Key).Value = count;
+				//IDataTriangleInstance dt = ((IDataTriangleInstance)item.Value);
+				//item.Value = dt;
+				output_value_instance.put (item);
+			}
+		} 
+		private int count = 0;
+		private int step = 0;
 	}
 }
