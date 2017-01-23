@@ -138,17 +138,9 @@
       <Project>{2ED50770-7691-4DF8-8FC9-D1CD007B8792}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.example.cw.Tallier\br.ufc.mdcc.hpcshelf.mapreduce.example.cw.Tallier\br.ufc.mdcc.hpcshelf.mapreduce.example.cw.Tallier.csproj">
-      <Project>{C73CC800-2ABC-4336-96DF-9D98255B80C7}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.example.cw.Tallier</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper\br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper\br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper.csproj">
       <Project>{08449497-A987-494B-8DD2-B53211B3C762}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.example.cw.WordCounter\br.ufc.mdcc.hpcshelf.mapreduce.example.cw.WordCounter\br.ufc.mdcc.hpcshelf.mapreduce.example.cw.WordCounter.csproj">
-      <Project>{176FDF0B-6E04-446C-8077-FE5B2D50A7E7}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.example.cw.WordCounter</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.MapFunction.csproj">
       <Project>{CC4908F8-3F6B-4F14-9179-64EF033B3371}</Project>

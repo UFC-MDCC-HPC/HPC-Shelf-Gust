@@ -19,6 +19,9 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionStringKeyD
 			set { this.number_of_partitions = value; }
 		}
 
+		private int[] graph_partition_table;
+		public object PartitionTABLE { get{ return graph_partition_table; } set { graph_partition_table = (int[]) value; } }
+
 		public override void main() 
 		{ 
 			IStringInstance input_string_instance = (IStringInstance) Input_key.Instance;

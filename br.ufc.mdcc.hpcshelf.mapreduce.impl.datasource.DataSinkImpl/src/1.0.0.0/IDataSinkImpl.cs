@@ -27,6 +27,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSinkImpl
 		private static string PATH_GRAPH_FILE_RESULT = "PATH_GRAPH_FILE_RESULT"; //("PATH_GRAPH_FILE_RESULT");
 
 		private class DataSinkWriter<OKey, OValue> : IPortTypeDataSinkInterface
+			where OKey:IData
+			where OValue:IData
 		{
 			public DataSinkWriter(object o){
 				this.output_format = (IOutputFormatInstance<OKey, OValue>)o;
