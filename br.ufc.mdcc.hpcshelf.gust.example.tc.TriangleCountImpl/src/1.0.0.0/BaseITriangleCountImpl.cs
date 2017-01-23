@@ -11,6 +11,14 @@ using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;
 using br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount;
+using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
+using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;
+using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;
+using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;
+using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
+using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;
+using br.ufc.mdcc.hpcshelf.gust.graph.Edge;
+using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;
 
 namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl 
 {

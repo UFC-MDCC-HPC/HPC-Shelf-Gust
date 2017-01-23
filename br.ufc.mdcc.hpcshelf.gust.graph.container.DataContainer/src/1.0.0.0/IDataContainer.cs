@@ -18,8 +18,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer
 		where V:IVertex 
 		where E:IEdge<V> {
 		int RankPartition { get; set; }
-		bool AllowingMultipleEdges { get; }
-		bool AllowingLoops { get; }
+		bool AllowingMultipleEdges { get; set;}
+		bool AllowingLoops { get; set;}
 		void newDataSet (int size);
 	}
 	public class EdgeContainer<T>: IEdgeContainer<T> { 
