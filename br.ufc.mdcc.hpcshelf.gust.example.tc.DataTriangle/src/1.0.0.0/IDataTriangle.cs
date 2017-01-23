@@ -8,14 +8,12 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle
 	{
 		IDataTriangleInstance newInstance(int v);
 		IDataTriangleInstance newInstance(int v, int w);
-		IDataTriangleInstance newInstance(int v, int w, int z);
 	} // end main interface 
 
 	public interface IDataTriangleInstance : IDataInstance, ICloneable
 	{
 		int V { set; get; }
 		int W { set; get; }
-		int Z { set; get; }
 	}
 
 } // end namespace 

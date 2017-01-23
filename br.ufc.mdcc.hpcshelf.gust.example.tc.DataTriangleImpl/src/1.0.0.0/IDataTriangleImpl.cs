@@ -23,13 +23,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl {
 			instance.W = w;
 			return instance;
 		}
-		public IDataTriangleInstance newInstance (int v, int w, int z) {
-			IDataTriangleInstance instance = (IDataTriangleInstance)newInstance ();
-			instance.V = v;
-			instance.W = w;
-			instance.Z = z;
-			return instance;
-		}
 
 		public object newInstance () {
 			this.instance = new IDataTriangleInstanceImpl ();
@@ -58,28 +51,20 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl {
 			get { return this.w; }
 			set { this.w = value; }
 		}
-		private int z;
-		public int Z {
-			get { return this.z; }
-			set { this.z = value; }
-		}
 
 		public object ObjValue {
-			get { return new Tuple<int,int,int>(v,w,z); }
+			get { return new Tuple<int,int>(v,w); }
 			set { 
-				this.v = ((Tuple<int,int,int>)value).Item1;
-				this.w = ((Tuple<int,int,int>)value).Item2;
-				this.z = ((Tuple<int,int,int>)value).Item3;
+				this.v = ((Tuple<int,int>)value).Item1;
+				this.w = ((Tuple<int,int>)value).Item2;
 			}
 		}
-		public override int GetHashCode () { return pairingFunction (this.v, pairingFunction (this.w, this.z) ); }
-		public override string ToString () { return "["+this.v+","+this.w+","+this.z+"]"; }
+		public override int GetHashCode () { return pairingFunction (this.v, this.w ); }
+		public override string ToString () { return "["+this.v+","+this.w+"]"; }
 
 		public override bool Equals (object obj) {
 			if (obj is IDataTriangleInstanceImpl)
-				return ((IDataTriangleInstanceImpl)obj).V==this.v && 
-					((IDataTriangleInstanceImpl)obj).W == this.w && 
-					((IDataTriangleInstanceImpl)obj).Z == this.z;
+				return ( ((IDataTriangleInstanceImpl)obj).V==this.v && ((IDataTriangleInstanceImpl)obj).W == this.w );
 			else 
 				return false;
 		}
@@ -99,7 +84,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangleImpl {
 			IDataTriangleInstance clone = new IDataTriangleInstanceImpl ();
 			clone.V = this.v;
 			clone.W = this.w;
-			clone.Z = this.z;
 			return clone;
 		}
 
