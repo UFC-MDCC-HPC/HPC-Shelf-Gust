@@ -35,7 +35,4 @@ tools
 
 #moving.sh
 #unmoving.sh
-br.ufc.mdcc.behavior.test.GraphContext
-br.ufc.mdcc.behavior.test.Test
-br.ufc.mdcc.behavior.test.TestImpl
 

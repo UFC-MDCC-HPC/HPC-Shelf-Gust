@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c3590168d88c524bc6e1f96fe896da74d6a2f19ad6e46b2322d632ec74fab88f74ae46437789b147be37095fcab78cb5adda3f0137905c721426b3ffd6c93fb588e322f011527e4eb639eafaf6807827b435ad6d17e78c202933bdaf245bc69f0044d8ddb018ebc7c84ab4fed5d063a7be30c111a9286e90aaa20ebbbee0488a" isAbstract="false" kind="Computation" name="TestImpl" packagePath="br.ufc.mdcc.behavior.test">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c3688c931b40038715cf15f638104a5650ae820a1f9c3f8cb4b68996e6bc27079a9e6ce5c6ae574167e6eb8ad9e2260e12e485df7c6835181f3912d6389c4eb4bd9f107d838ef06d86d625a281938483be835f5961ae1b8ee7804c1795d213b72ea177c713edaa5f5d65b884cefc0eb48f1a62cd7c9fdf37047464434f276b8a" localRef="base" location="br.ufc.mdcc.behavior.test.Test/Test.hpe" name="Test" package="br.ufc.mdcc.behavior.test" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="221" y="458">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <port localRef="graph" location="br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph/UndirectedGraph.hpe" multiple="false" name="UndirectedGraph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+          <visualDescription h="60" w="160" x="421" y="462">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="edge_type" varName="X###797126339"/>
+          <parameter formFieldId="container" varName="X###1079582366"/>
+          <parameter formFieldId="vertex_type" varName="X###1262998510"/>
+          <unitBounds parallel="false" uRef="data">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="false" uRef="test">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="ITestImpl" nArgs="0">
+      <slice isRef="graph_context">
+        <originRef cRef="graph_context" iRef="IGraphContext"/>
+        <visualDescription h="10" w="10" x="17" y="20"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;&#xA;using br.ufc.mdcc.behavior.test.GraphContext;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;&#xA;using br.ufc.mdcc.behavior.test.Test;&#xA;&#xA;namespace br.ufc.mdcc.behavior.test.TestImpl &#xA;{&#xA;&#x9;public abstract class BaseITestImpl: Computation, BaseITest&#xA;&#x9;{&#xA;&#x9;&#x9;private IGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>> graph = null;&#xA;&#xA;&#x9;&#x9;public IGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>> Graph&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.graph == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.graph = (IGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>) Services.getPort(&quot;graph&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.graph;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IGraphContext&lt;IUndirectedGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>> graph_context = null;&#xA;&#xA;&#x9;&#x9;protected IGraphContext&lt;IUndirectedGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>> Graph_context&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.graph_context == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.graph_context = (IGraphContext&lt;IUndirectedGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>) Services.getPort(&quot;graph_context&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.graph_context;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseITestImpl.cs" srcType="base" uri="br.ufc.mdcc.behavior.test.TestImpl/bin/1.0.0.0/BaseITestImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Graph/bin/1.0.0.0/IGraph.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV/bin/1.0.0.0/IDataContainerV.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertexBasic.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/bin/1.0.0.0/IEdgeBasic.dll</dependency>
+          <dependency>br.ufc.mdcc.behavior.test.GraphContext/bin/1.0.0.0/IGraphContext.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph/bin/1.0.0.0/IUndirectedGraph.dll</dependency>
+          <dependency>br.ufc.mdcc.behavior.test.Test/bin/1.0.0.0/BaseITest.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.behavior.test.Test;&#xA;&#xA;namespace br.ufc.mdcc.behavior.test.TestImpl&#xA;{&#xA;&#x9;public class ITestImpl : BaseITestImpl, ITest&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="ITestImpl.cs" srcType="user" uri="br.ufc.mdcc.behavior.test.TestImpl/bin/1.0.0.0/ITestImpl.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.behavior.test.TestImpl/bin/1.0.0.0/BaseITestImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.behavior.test.Test/bin/1.0.0.0/ITest.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="128" x="131" y="267">
+        <color b="0" g="160" r="196"/>
+      </visualDescription>
+      <port name="graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="graph" sRef="graph_context"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ITestImpl" multiple="false" private="false" replica="0" uRef="test" visibleInterface="true">
+      <super cRef="base" uRef="test"/>
+      <visualDescription h="40" w="128" x="171" y="358"/>
+    </unit>
+  </componentInfo>
+</component:component>

@@ -27,28 +27,29 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl
 				return this.output_gif;
 			}
 		}
-		private IData graph = null;
-
-		protected IData Graph
+		
+		private IUndirectedGraph<IDataContainerV<IVertexBasic, IEdgeBasic<IVertexBasic>>, IVertexBasic, IEdgeBasic<IVertexBasic>> graph = null;
+		public IUndirectedGraph<IDataContainerV<IVertexBasic, IEdgeBasic<IVertexBasic>>, IVertexBasic, IEdgeBasic<IVertexBasic>> Graph
 		{
 			get
 			{
 				if (this.graph == null)
-					this.graph = (IData) Services.getPort("graph");
+					this.graph = (IUndirectedGraph<IDataContainerV<IVertexBasic, IEdgeBasic<IVertexBasic>>, IVertexBasic, IEdgeBasic<IVertexBasic>>) Services.getPort("graph");
 				return this.graph;
 			}
 		}
-		private IData continuation_value = null;
-
-		protected IData Continuation_value
-		{
-			get
-			{
-				if (this.continuation_value == null)
-					this.continuation_value = (IData) Services.getPort("continuation_value");
-				return this.continuation_value;
-			}
-		}
+		
+//		private IData continuation_value = null;		
+//		protected IData Continuation_value
+//		{
+//			get
+//			{
+//				if (this.continuation_value == null)
+//					this.continuation_value = (IData) Services.getPort("continuation_value");
+//				return this.continuation_value;
+//			}
+//		}
+		
 		private IKVPair<IInteger, IIterator<IDataTriangle>> input_values = null;
 
 		public IKVPair<IInteger, IIterator<IDataTriangle>> Input_values
