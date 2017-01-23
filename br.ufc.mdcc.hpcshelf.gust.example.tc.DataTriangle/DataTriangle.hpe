@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003fe96c9bbe1bf3a42f903d0ca137e6252abfb5caf77a0e61a2f0ae8e93ac70801d7a10ea8a363d12d282fb893f14037500465046972a65b15db4d015396f565e146011b5ac2e776786221de66f2cf5b04e3a26831d4e7c1fb06d8d73e791e8b8ac1bf14c7e3f6f66fbe5900d2ef3700c13892d956850b1d04d5de8d421358aee" isAbstract="true" kind="Data" name="DataTriangle" packagePath="br.ufc.mdcc.hpcshelf.gust.example.tc">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002b679e8f63c6925bfcc928a7cc3013906b15c175a4e98fab23a035f735fa6c0ad73ed2eae507a31345dd1d315a36138fc3377a2b0953350e14b7cf31e6b06c33f4f4ee03b53200f4bfdbaab49b63edb35bda74c698665df952a90b9df4bdf2e6bc62129a9da0a4ba4ee78fb225d5b4353e96afd6e47927b6943bf6ace9cf0cb0" localRef="base" location="br.ufc.mdcc.common.Data/Data.hpe" name="Data" package="br.ufc.mdcc.common" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="279" y="554">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IDataTriangle" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle&#xA;{&#xA;&#x9;public interface BaseIDataTriangle : BaseIData, IDataStructureKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDataTriangle.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/bin/1.0.0.0/BaseIDataTriangle.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle&#xA;{&#xA;&#x9;public interface IDataTriangle : BaseIDataTriangle, IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDataTriangle.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/bin/1.0.0.0/IDataTriangle.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/bin/1.0.0.0/BaseIDataTriangle.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="185" x="181" y="395">
+        <color b="168" g="127" r="173"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IDataTriangle" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
+      <super cRef="base" uRef="data"/>
+      <visualDescription h="40" w="80" x="245" y="477"/>
+    </unit>
+  </componentInfo>
+</component:component>

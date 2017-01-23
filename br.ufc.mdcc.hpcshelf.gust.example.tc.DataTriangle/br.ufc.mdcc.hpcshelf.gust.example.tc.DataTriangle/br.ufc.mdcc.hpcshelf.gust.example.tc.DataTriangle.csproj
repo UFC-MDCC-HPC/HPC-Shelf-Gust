@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{740E8C90-045D-4E39-91EF-D8DABA6F249D}</ProjectGuid>
+    <ProjectGuid>{1BDCF1F2-63F0-45C8-8576-CCB2A46C94A2}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount</RootNamespace>
-    <AssemblyName>br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount</AssemblyName>
+    <RootNamespace>br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle</RootNamespace>
+    <AssemblyName>br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle</AssemblyName>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\TriangleCount.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\DataTriangle.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -39,11 +39,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\src\1.0.0.0\BaseITriangleCount.cs">
-      <Link>BaseITriangleCount.cs</Link>
+    <Compile Include="..\src\1.0.0.0\BaseIDataTriangle.cs">
+      <Link>BaseIDataTriangle.cs</Link>
     </Compile>
-    <Compile Include="..\src\1.0.0.0\ITriangleCount.cs">
-      <Link>ITriangleCount.cs</Link>
+    <Compile Include="..\src\1.0.0.0\IDataTriangle.cs">
+      <Link>IDataTriangle.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

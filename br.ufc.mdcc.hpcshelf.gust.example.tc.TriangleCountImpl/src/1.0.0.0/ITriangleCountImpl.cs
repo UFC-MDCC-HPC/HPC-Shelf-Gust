@@ -1,16 +1,15 @@
+using System;
+using br.ufc.pargo.hpe.backend.DGAC;
+using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
+using br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount;
 
-namespace br.ufc.mdcc.model.Model { 
-
-public interface IModel : BaseIModel
+namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl
 {
-		// void loadFrom (IModel o);
-		// IModel newInstance ();
-		// IModel clone();
-
-		object Instance { get; set;}
-		object newInstance ();
-
-} // end main interface 
-
-} // end namespace 
+	public class ITriangleCountImpl : BaseITriangleCountImpl, ITriangleCount
+	{
+		public override void main()
+		{
+		}
+	}
+}
