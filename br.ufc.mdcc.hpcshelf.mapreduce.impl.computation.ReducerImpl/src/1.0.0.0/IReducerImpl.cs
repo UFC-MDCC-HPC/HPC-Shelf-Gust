@@ -40,9 +40,9 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 			readPair_OMK_OMVs();
 		}
 		private void graph_creator () {
-			IIteratorInstance<IKVPair<IInteger, IIterator<GIF>>> input_instance = (IIteratorInstance<IKVPair<IInteger, IIterator<GIF>>>)Collect_graph.Client;
-			IIteratorInstance<IKVPair<IInteger,GIF>> output_instance = (IIteratorInstance<IKVPair<IInteger,GIF>>)Output_gif.Instance;
-			Feed_graph.Server = output_instance;
+			IIteratorInstance<IKVPair<IInteger, IIterator<GIF>>> input_instance_gif = (IIteratorInstance<IKVPair<IInteger, IIterator<GIF>>>)Collect_graph.Client;
+			IIteratorInstance<IKVPair<IInteger,GIF>> output_instance_gif = (IIteratorInstance<IKVPair<IInteger,GIF>>)Output_gif.Instance;
+			Feed_graph.Server = output_instance_gif;
 
 			IActionFuture sync_perform;
 
@@ -53,24 +53,21 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 
 				IKVPairInstance<IInteger, IIterator<GIF>> kvpair = null;
 				object kvpair_object;
+				object o;
 
-				if (!input_instance.has_next ())
+				if (!input_instance_gif.has_next ())
 					end_iteration = true;
 
-				while (input_instance.fetch_next (out kvpair_object)) {
+				while (input_instance_gif.fetch_next (out kvpair_object)) {
 					kvpair = (IKVPairInstance<IInteger, IIterator<GIF>>)kvpair_object;
-					IIntegerInstance kgif = (IIntegerInstance) kvpair.Key;
-					IIteratorInstance<GIF> iterator = (IIteratorInstance<GIF>)kvpair.Value;
 					Graph_values.Instance = kvpair;
 					Reduce_function.graph_creator ();
 				}
 				sync_perform.wait ();
 			}
-
 			//IActionFuture reduce_chunk_ready;
 			//Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out reduce_chunk_ready);  //***
-			output_instance.finish ();
-			//output_instance.finish ();
+			output_instance_gif.finish ();
 			//reduce_chunk_ready.wait ();
 		}
 
@@ -82,9 +79,9 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 			IIteratorInstance<IKVPair<OKey,OValue>> output_instance = (IIteratorInstance<IKVPair<OKey,OValue>>)Output.Instance;
 			Feed_pairs.Server = output_instance;
 
+			Reduce_function.startup_push();
 			IActionFuture reduce_chunk_ready_startup;
 			Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out reduce_chunk_ready_startup);
-			Reduce_function.startup_processing();
 			output_instance.finish ();
 			reduce_chunk_ready_startup.wait ();
 
@@ -147,8 +144,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 //							((IDataInstance)Continue_value.Instance).ObjValue = acc_value;
 						
 						Input_values.Instance = kvpair; 
+						Reduce_function.pull ();
 						//Reduce_function.go ();
-						phase.Invoke(Reduce_function,null);
 
 						//cont_dict [kvpair.Key] = ((IDataInstance)((IKVPairInstance<OKey,OValue>)Output_value.Instance).Value).ObjValue;
 
@@ -164,7 +161,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 
 				Console.WriteLine (this.Rank + ": REDUCER ITERATE END ITERATION");
 
-				Reduce_function.output_filter ();
+				phase.Invoke(Reduce_function,null);
 
 				IActionFuture reduce_chunk_ready;
 				Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out reduce_chunk_ready);  //***

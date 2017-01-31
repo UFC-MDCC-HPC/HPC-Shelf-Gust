@@ -26,18 +26,18 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl {
 		static private int TAG_SPLIT_NEW_CHUNK = 246;
 		static private int TAG_SPLIT_END_CHUNK = 247;
 
-		private IIteratorInstance<IKVPair<IKey,IValue>> output_instance = null;
-		private IIteratorInstance<IKVPair<IInteger,GIF>> output_instance_gif = null;
+		private IIteratorInstance<IKVPair<IKey,IIterator<IValue>>> output_instance = null;
+		private IIteratorInstance<IKVPair<IInteger,IIterator<GIF>>> output_instance_gifs = null;
 
 		public override void main () {
 			this.readSource ();
 			this.iterate ();
 		}
-
+		//CONFIG
 		public void readSource () {
 			Console.WriteLine (this.GlobalRank + ": STARTING SPLITTER READSOURCE...1");
-			output_instance_gif = (IIteratorInstance<IKVPair<IInteger,GIF>>)Output_gif.Instance;
-			Feed_graph.Server = output_instance_gif;
+			output_instance_gifs = (IIteratorInstance<IKVPair<IInteger,IIterator<GIF>>>)Output_gifs.Instance;
+			Feed_graph.Server = output_instance_gifs;
 			Console.WriteLine (this.GlobalRank + ": STARTING SPLITTER READSOURCE...2");
 
 			// RECEIVE PAIR FROM THE SOURCE (1st iteration)
@@ -74,16 +74,35 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl {
 				Task_binding_split_first.invoke (ITaskPortAdvance.READ_CHUNK);  //****
 				Task_binding_split_first.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
 
+				IDictionary<object,IIteratorInstance<GIF>> kv_cache = new Dictionary<object,IIteratorInstance<GIF>> ();
+
 				Console.WriteLine (this.Rank + ": SPLITTER MAP FEEDER !!! PERFORM OK !");
 
 				Split_channel.Receive (unit_ref_source, MPI.Communicator.anyTag, out buffer, out status);
 
 				Console.WriteLine (this.Rank + ": CHUNK PAIRS RECEIVED !!! from source buffer.Count=" + buffer.Count);
 
-				foreach (IKVPairInstance<IInteger,GIF> kv in buffer)
-					output_instance_gif.put (kv);
+				//foreach (IKVPairInstance<IInteger,GIF> kv in buffer)
+				//	output_instance_gif.put (kv);
 
-				output_instance_gif.finish ();
+				foreach (IKVPairInstance<IInteger,GIF> kv in buffer) {	
+					IIteratorInstance<GIF> iterator = null;
+					if (!kv_cache.ContainsKey (kv.Key)) {
+						iterator = Value_factory_gif.newIteratorInstance ();
+						kv_cache.Add (kv.Key, iterator);
+						IKVPairInstance<IInteger,IIterator<GIF>> item = (IKVPairInstance<IInteger,IIterator<GIF>>)Output_gifs.createItem ();
+						item.Key = kv.Key;
+						item.Value = iterator;
+						output_instance_gifs.put (item);
+					} else
+						kv_cache.TryGetValue (kv.Key, out iterator);
+
+					iterator.put (kv.Value);
+				}
+
+				output_instance_gifs.finish ();
+				foreach (IIteratorInstance<IValue> iterator in kv_cache.Values) 
+					iterator.finish ();
 
 				sync_perform.wait ();
 
@@ -95,6 +114,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl {
 				Console.WriteLine (this.Rank + ": SPLITTER MAP FEEDER 2");
 			} while (status.Tag != TAG_SPLIT_END_CHUNK);
 
+			output_instance_gifs.finish ();
+
 			Console.WriteLine (this.Rank + ": FINISH READING CHUNKS OF SOURCE");
 		}
 
@@ -104,7 +125,7 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl {
 			CompletedStatus status;
 
 			Console.WriteLine (this.GlobalRank + ": STARTING SPLITTER ITERATE...1");
-			output_instance = (IIteratorInstance<IKVPair<IKey,IValue>>)Output.Instance;
+			output_instance = (IIteratorInstance<IKVPair<IKey,IIterator<IValue>>>)Output.Instance;
 			Feed_pairs.Server = output_instance;
 			Console.WriteLine (this.GlobalRank + ": STARTING SPLITTER ITERATE...2");
 
@@ -133,6 +154,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl {
 					Task_binding_split_next.invoke (ITaskPortAdvance.READ_CHUNK);
 					Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, out sync_perform);
 
+					IDictionary<object,IIteratorInstance<IValue>> kv_cache = new Dictionary<object,IIteratorInstance<IValue>> ();
+
 					Console.WriteLine (this.Rank + ": SPLITTER MAP FEEDER NEXT 2");
 
 					for (int i = 0; i < senders_size; i++) {					
@@ -150,8 +173,26 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl {
 						try {
 							buffer = (IList<IKVPairInstance<IKey,IValue>>)buffer_obj;
 
-							foreach (IKVPairInstance<IKey,IValue> kv in buffer)
-								output_instance.put (kv);
+							//foreach (IKVPairInstance<IKey,IValue> kv in buffer)
+							//	output_instance.put (kv);
+
+							foreach (IKVPairInstance<IKey,IValue> kv in buffer){
+								IIteratorInstance<IValue> iterator = null;
+								if (!kv_cache.ContainsKey (kv.Key)) 
+								{
+									iterator = Value_factory.newIteratorInstance ();
+									kv_cache.Add (kv.Key, iterator);
+									IKVPairInstance<IKey,IIterator<IValue>> item = (IKVPairInstance<IKey,IIterator<IValue>>)Output.createItem ();
+									item.Key = kv.Key;
+									item.Value = iterator;
+									output_instance.put (item);
+								} 
+								else 
+									kv_cache.TryGetValue (kv.Key, out iterator);
+
+								iterator.put (kv.Value);
+							}
+
 						} catch (InvalidCastException e) {
 							Console.WriteLine ("SPLITTER MAPPER: incompatible input !");
 							count_finished_streams++;
@@ -159,6 +200,8 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl {
 					}
 
 					output_instance.finish ();
+					foreach (IIteratorInstance<IValue> iterator in kv_cache.Values) 
+						iterator.finish ();
 
 					Console.WriteLine (this.Rank + ": SPLITTER MAP FEEDER NEXT 3");
 

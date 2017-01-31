@@ -67,15 +67,6 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			}
 		}
 
-		private IIterator<IKVPair<IKey,IValue>> output = null;
-		protected IIterator<IKVPair<IKey,IValue>> Output {
-			get {
-				if (this.output == null)
-					this.output = (IIterator<IKVPair<IKey,IValue>>)Services.getPort("output");
-				return this.output;
-			}
-		}
-
 		private ITaskPort<ITaskPortTypeAdvance> task_binding_split_first = null;
 		public ITaskPort<ITaskPortTypeAdvance> Task_binding_split_first
 		{
@@ -108,15 +99,60 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 				return this.task_binding_data;
 			}
 		}
-		
-		private IIterator<IKVPair<IInteger, GIF>> output_gif = null;
-		protected IIterator<IKVPair<IInteger, GIF>> Output_gif
-		{
-			get
-			{
-				if (this.output_gif == null)
-					this.output_gif = (IIterator<IKVPair<IInteger, GIF>>) Services.getPort("output_gif");
-				return this.output_gif;
+
+//		private IIterator<IKVPair<IKey,IValue>> output_kv = null;
+//		protected IIterator<IKVPair<IKey,IValue>> Output_kv {
+//			get {
+//				if (this.output_kv == null)
+//					this.output_kv = (IIterator<IKVPair<IKey,IValue>>)Services.getPort("output_kv");
+//				return this.output_kv;
+//			}
+//		}
+//
+//		private IIterator<IKVPair<IInteger, GIF>> output_kv_gif = null;
+//		protected IIterator<IKVPair<IInteger, GIF>> Output_kv_gif
+//		{
+//			get
+//			{
+//				if (this.output_kv_gif == null)
+//					this.output_kv_gif = (IIterator<IKVPair<IInteger, GIF>>) Services.getPort("output_kv_gif");
+//				return this.output_kv_gif;
+//			}
+//		}
+
+		private IIterator<IKVPair<IKey,IIterator<IValue>>> output = null;
+		protected IIterator<IKVPair<IKey,IIterator<IValue>>> Output {
+			get {
+				if (this.output == null)
+					this.output = (IIterator<IKVPair<IKey,IIterator<IValue>>>)Services.getPort("output");
+				return this.output;
+			}
+		}
+
+		private IIterator<IValue> value_factory = null;
+		protected IIterator<IValue> Value_factory {
+			get {
+				if (this.value_factory == null)
+					this.value_factory = (IIterator<IValue>)Services.getPort("value_factory");
+				return this.value_factory;
+			}
+		}
+
+		private IIterator<GIF> value_factory_gif = null;
+		protected IIterator<GIF> Value_factory_gif {
+			get {
+				if (this.value_factory_gif == null)
+					this.value_factory_gif = (IIterator<GIF>)Services.getPort("value_factory_gif");
+				return this.value_factory_gif;
+			}
+		}
+
+		private IIterator<IKVPair<IInteger,IIterator<GIF>>> output_gifs = null;
+		protected IIterator<IKVPair<IInteger,IIterator<GIF>>> Output_gifs {
+			get {
+				if (this.output_gifs == null)
+					this.output_gifs = (IIterator<IKVPair<IInteger,IIterator<GIF>>>)Services.getPort("output_gifs");
+				return this.output_gifs;
 			}
 		}
 	}
