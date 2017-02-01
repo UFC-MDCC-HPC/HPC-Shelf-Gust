@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{0B8363BE-935C-4EBF-B4ED-C45141D60353}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>br.ufc.mdcc.hpcshelf.mapreduceimpl.datasource.DataSourceImpl</RootNamespace>
+    <RootNamespace>br.ufc.mdcc.hpcshelf.mapreduce.impl.datasource.DataSourceImpl</RootNamespace>
     <AssemblyName>br.ufc.mdcc.hpcshelf.mapreduceimpl.datasource.DataSourceImpl</AssemblyName>
     <BaseDirectory>..\src\1.0.0.0</BaseDirectory>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
