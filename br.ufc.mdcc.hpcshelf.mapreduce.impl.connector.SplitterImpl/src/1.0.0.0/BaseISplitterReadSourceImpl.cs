@@ -22,11 +22,12 @@ using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl 
 {
-	public abstract class BaseISplitterReadSourceImpl<M2,BF,IKey,IValue,GIF>: Synchronizer, BaseISplitterReadSource<M2,BF,IKey,IValue,GIF>
+	//public abstract class BaseISplitterReadSourceImpl<M2,BF,IKey,IValue,GIF>: Synchronizer, BaseISplitterReadSource<M2,BF,IKey,IValue,GIF>
+	public abstract class BaseISplitterReadSourceImpl<M2,BF,GIF>: Synchronizer, BaseISplitterReadSource<M2,BF,GIF>
 		where M2:IMaintainer
-		where BF:IPartitionFunction<IKey>
-		where IKey:IData
-		where IValue:IData
+		where BF:IPartitionFunction<GIF>
+		//where IKey:IData
+		//where IValue:IData
 		where GIF:IInputFormat
 	{
 		static protected int FACET_REDUCE = 0;
@@ -34,14 +35,14 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 		static protected int FACET_SOURCE = 2;
 		static protected int FACET_SINK = 3;
 
-		private BF bin_function = default(BF);
-		protected BF Bin_function
+		private BF bin_function_gif = default(BF);
+		protected BF Bin_function_gif
 		{
 			get
 			{
-				if (this.bin_function == null)
-					this.bin_function = (BF) Services.getPort("bin_function");
-				return this.bin_function;
+				if (this.bin_function_gif == null)
+					this.bin_function_gif = (BF) Services.getPort("bin_function_gif");
+				return this.bin_function_gif;
 			}
 		}
 
@@ -91,27 +92,27 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 			}
 		}
 
-		private IKey input_key = default(IKey);
-		protected IKey Input_key
-		{
-			get
-			{
-				if (this.input_key == null)
-					this.input_key = (IKey) Services.getPort("input_key");
-				return this.input_key;
-			}
-		}
-
-		private IInteger output_key = null;
-		protected IInteger Output_key
-		{
-			get
-			{
-				if (this.output_key == null)
-					this.output_key = (IInteger) Services.getPort("output_key");
-				return this.output_key;
-			}
-		}
+//		private IKey input_key = default(IKey);
+//		protected IKey Input_key
+//		{
+//			get
+//			{
+//				if (this.input_key == null)
+//					this.input_key = (IKey) Services.getPort("input_key");
+//				return this.input_key;
+//			}
+//		}
+//
+//		private IInteger output_key = null;
+//		protected IInteger Output_key
+//		{
+//			get
+//			{
+//				if (this.output_key == null)
+//					this.output_key = (IInteger) Services.getPort("output_key");
+//				return this.output_key;
+//			}
+//		}
 
 //		private IKVPair<IInteger, GIF> input_format = null;
 //		protected IKVPair<IInteger, GIF> Input_format
@@ -123,16 +124,16 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 //				return this.input_format;
 //			}
 //		}
-		private IPartitionFunction<GIF> bin_function_gif = null;//default(BF);
-		protected IPartitionFunction<GIF> Bin_function_gif
-		{
-			get
-			{
-				if (this.bin_function_gif == null)
-					this.bin_function_gif = (IPartitionFunction<GIF>) Services.getPort("bin_function_gif");
-				return this.bin_function_gif;
-			}
-		}
+//		private IPartitionFunction<GIF> bin_function_gif = null;//default(BF);
+//		protected IPartitionFunction<GIF> Bin_function_gif
+//		{
+//			get
+//			{
+//				if (this.bin_function_gif == null)
+//					this.bin_function_gif = (IPartitionFunction<GIF>) Services.getPort("bin_function_gif");
+//				return this.bin_function_gif;
+//			}
+//		}
 
 		private GIF input_key_gif = default(GIF);
 		protected GIF Input_key_gif

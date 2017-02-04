@@ -11,7 +11,7 @@
     <parameter componentRef="input_value_type" formFieldId="input_value_type" order="5" variance="contravariant" varName="IValue"/>
     <parameter componentRef="output_value_type" formFieldId="output_value_type" order="7" variance="contravariant" varName="OValue"/>
     <parameter componentRef="output_key_type" formFieldId="output_key_type" order="6" variance="contravariant" varName="OKey"/>
-    <parameter componentRef="bin_function_gif" formFieldId="bin_function" order="8" variance="contravariant" varName="BF"/>
+    <parameter componentRef="bin_function" formFieldId="bin_function" order="8" variance="contravariant" varName="BF"/>
     <parameter componentRef="bin_function_iterate" formFieldId="bin_function" order="8" variance="contravariant" varName="BF"/>
     <parameter componentRef="terminate_function" formFieldId="terminate_function" order="9" variance="contravariant" varName="TF"/>
     <parameter componentRef="platform_data_source_maintainer" formFieldId="platform_data_source_maintainer" order="0" variance="contravariant" varName="M2"/>
@@ -71,13 +71,13 @@
         <visualDescription h="20" w="20" x="107" y="19"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="bin_function_gif" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" parameter_id="bin_function" exposed="false">
-      <visualDescription h="56" w="165" x="28" y="222">
+    <innerComponent localRef="bin_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" parameter_id="bin_function" exposed="false">
+      <visualDescription h="53" w="128" x="54" y="222">
         <color b="255" g="255" r="255"/>
       </visualDescription>
-      <parameter formFieldId="input_key" varName="GIF"/>
+      <parameter formFieldId="input_key" varName="IKey"/>
       <port localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
-        <visualDescription h="31" w="151" x="127" y="304">
+        <visualDescription h="31" w="103" x="127" y="304">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -85,7 +85,7 @@
         </unitBounds>
       </port>
       <port localRef="output_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
-        <visualDescription h="39" w="135" x="27" y="337">
+        <visualDescription h="39" w="108" x="45" y="342">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="false" uRef="data">
@@ -93,7 +93,7 @@
         </unitBounds>
       </port>
       <unitBounds parallel="false" uRef="partition_function">
-        <visualDescription h="20" w="20" x="141" y="12"/>
+        <visualDescription h="20" w="20" x="106" y="15"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="sink" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingWriteData/EnvironmentBindingWriteData.hpe" multiple="false" name="EnvironmentBindingWriteData" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
@@ -260,7 +260,7 @@
         <visualDescription h="34" w="109" x="277" y="654">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###550357236"/>
+        <parameter formFieldId="item_type" varName="X###500456742"/>
         <unitBounds parallel="true" uRef="iterator">
           <visualDescription h="20" w="20" x="22" y="18"/>
         </unitBounds>
@@ -269,7 +269,7 @@
         <visualDescription h="41" w="96" x="401" y="671">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###641997823"/>
+        <parameter formFieldId="item_type" varName="X###1630501142"/>
         <unitBounds parallel="true" uRef="iterator">
           <visualDescription h="20" w="20" x="20" y="17"/>
         </unitBounds>
@@ -286,6 +286,16 @@
       <parameter formFieldId="key_type" varName="OKey"/>
       <unitBounds parallel="false" uRef="kv_pair">
         <visualDescription h="20" w="20" x="131" y="16"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="input_pair_type" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="52" w="160" x="53" y="160">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="IValue"/>
+      <parameter formFieldId="key_type" varName="IKey"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="138" y="11"/>
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="platform_reduce" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
@@ -441,6 +451,31 @@
         <visualDescription h="20" w="20" x="87" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="bin_function_gif" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" exposed="false">
+      <visualDescription h="61" w="167" x="392" y="104">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="input_key" varName="GIF"/>
+      <port localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="42" w="125" x="440" y="54">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <port localRef="output_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="true">
+        <visualDescription h="42" w="157" x="585" y="49">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </port>
+      <unitBounds parallel="false" uRef="partition_function">
+        <visualDescription h="20" w="20" x="46" y="39"/>
+      </unitBounds>
+    </innerComponent>
     <innerComponent localRef="output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="true" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="225" x="875" y="637">
         <color b="203" g="192" r="255"/>
@@ -511,7 +546,7 @@
     <supplyParameter cRef="ikey_ivalues" direct="true" varName="IKeyIValues"/>
     <supplyParameter cRef="value_factory_gif" direct="true" varName="GIFS"/>
     <supplyParameter cRef="kvgifs" direct="true" varName="KVGIFS"/>
-    <innerComponent localRef="C###550357236" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###500456742" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="193" y="485">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -521,8 +556,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###550357236" varName="X###550357236"/>
-    <innerComponent localRef="C###641997823" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <supplyParameter cRef="C###500456742" varName="X###500456742"/>
+    <innerComponent localRef="C###1630501142" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="420" y="345">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -532,13 +567,13 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###641997823" varName="X###641997823"/>
+    <supplyParameter cRef="C###1630501142" varName="X###1630501142"/>
     <innerRenaming cNewName="output_key_iterate_gif" cOldName="output_key" cRef="bin_function_iterate_gif"/>
+    <innerRenaming cNewName="output_key_iterate" cOldName="output_key" cRef="bin_function_iterate"/>
     <innerRenaming cNewName="input_key_iterate" cOldName="input_key" cRef="bin_function_iterate"/>
+    <innerRenaming cNewName="output_key_gif" cOldName="output_key" cRef="bin_function_gif"/>
     <innerRenaming cNewName="input_key_iterate_gif" cOldName="input_key" cRef="bin_function_iterate_gif"/>
     <innerRenaming cNewName="input_key_gif" cOldName="input_key" cRef="bin_function_gif"/>
-    <innerRenaming cNewName="output_key_gif" cOldName="output_key" cRef="bin_function_gif"/>
-    <innerRenaming cNewName="output_key_iterate" cOldName="output_key" cRef="bin_function_iterate"/>
     <interface iRef="ISplitterReduceCollector" nArgs="8">
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IBindingDirectMxNIterator"/>
@@ -622,29 +657,29 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_next" sRef="task_binding_split_next"/>
       </port>
-      <port name="output_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_pairs" sRef="terminate_function"/>
-      </port>
       <port name="input_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_pairs" sRef="terminate_function"/>
       </port>
-      <port name="input_key_iterate">
+      <port name="output_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="bin_function_iterate"/>
+        <slice pRef="output_pairs" sRef="terminate_function"/>
       </port>
       <port name="output_key_iterate">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_key" sRef="bin_function_iterate"/>
       </port>
-      <port name="output_key_iterate_gif">
+      <port name="input_key_iterate">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_key" sRef="bin_function_iterate_gif"/>
+        <slice pRef="input_key" sRef="bin_function_iterate"/>
       </port>
       <port name="input_key_iterate_gif">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="bin_function_iterate_gif"/>
+      </port>
+      <port name="output_key_iterate_gif">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="bin_function_iterate_gif"/>
       </port>
       <parameter iname="IMaintainer" order="0" parid="platform_reduce_maintainer" uname="maintainer" varid="M0"/>
       <parameter iname="ITerminateFunction" parid="terminate_function" uname="terminate_function" varid="TF"/>
@@ -759,7 +794,7 @@
         <protocol/>
       </action>
     </interface>
-    <interface iRef="ISplitterReadSource" nArgs="3">
+    <interface iRef="ISplitterReadSource" nArgs="5">
       <slice isRef="source">
         <originRef cRef="source" iRef="IReadData"/>
         <visualDescription h="10" w="10" x="100" y="2"/>
@@ -780,12 +815,20 @@
         <originRef cRef="split_channel" iRef="IChannel"/>
         <visualDescription h="10" w="10" x="116" y="1"/>
       </slice>
-      <slice isRef="bin_function_gif">
-        <originRef cRef="bin_function_gif" iRef="IPartitionFunction"/>
+      <slice isRef="bin_function">
+        <originRef cRef="bin_function" iRef="IPartitionFunction"/>
         <visualDescription h="10" w="10" x="25" y="3"/>
       </slice>
+      <slice isRef="input_pair_type">
+        <originRef cRef="input_pair_type" iRef="IKVPair"/>
+        <visualDescription h="10" w="10" x="7" y="21"/>
+      </slice>
+      <slice isRef="bin_function_gif">
+        <originRef cRef="bin_function_gif" iRef="IPartitionFunction"/>
+        <visualDescription h="10" w="10" x="79" y="33"/>
+      </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter&#xA;{&#xA;&#x9;//public interface BaseISplitterReadSource&lt;M2, BF, IKey, IValue, GIF> : ISynchronizerKind &#xA;&#x9;public interface BaseISplitterReadSource&lt;M2, BF, GIF> : ISynchronizerKind &#xA;&#x9;&#x9;where M2:IMaintainer&#xA;&#x9;&#x9;where BF:IPartitionFunction&lt;GIF>&#xA;&#x9;&#x9;//where IKey:IData&#xA;&#x9;&#x9;//where IValue:IData&#xA;&#x9;&#x9;where GIF:IInputFormat&#xA;&#x9;{&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPortTypeAdvance> Task_binding_split_first {get;}&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPortTypeData> Task_binding_data&#x9;{ get; } &#xA;&#x9;&#x9;IReadData&lt;IPortTypeDataSourceInterface> Source { get; }&#xA;&#x9;}&#xA;}" name="BaseISplitterReadSource.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/bin/1.0.0.0/BaseISplitterReadSource.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter&#xA;{&#xA;&#x9;public interface BaseISplitterReadSource&lt;M2, BF, IKey, IValue, GIF> : ISynchronizerKind &#xA;&#x9;&#x9;where M2:IMaintainer&#xA;&#x9;&#x9;where BF:IPartitionFunction&lt;IKey>&#xA;&#x9;&#x9;where IKey:IData&#xA;&#x9;&#x9;where IValue:IData&#xA;&#x9;&#x9;where GIF:IInputFormat&#xA;&#x9;{&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPortTypeAdvance> Task_binding_split_first {get;}&#xA;&#x9;&#x9;ITaskPort&lt;ITaskPortTypeData> Task_binding_data&#x9;{ get; } &#xA;&#x9;&#x9;IReadData&lt;IPortTypeDataSourceInterface> Source { get; }&#xA;&#x9;}&#xA;}" name="BaseISplitterReadSource.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/bin/1.0.0.0/BaseISplitterReadSource.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData/bin/1.0.0.0/IReadData.dll</dependency>
           <dependency>br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
@@ -800,7 +843,7 @@
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter&#xA;{&#xA;&#x9;//public interface ISplitterReadSource&lt;M2, BF, IKey, IValue, GIF> : BaseISplitterReadSource&lt;M2, BF, IKey, IValue, GIF>&#xA;&#x9;public interface ISplitterReadSource&lt;M2, BF, GIF> : BaseISplitterReadSource&lt;M2, BF, GIF>&#xA;&#x9;&#x9;where M2:IMaintainer&#xA;&#x9;&#x9;where BF:IPartitionFunction&lt;GIF>&#xA;&#x9;&#x9;//where IKey:IData&#xA;&#x9;&#x9;//where IValue:IData&#xA;&#x9;&#x9;where GIF:IInputFormat&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ISplitterReadSource.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/bin/1.0.0.0/ISplitterReadSource.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter&#xA;{&#xA;&#x9;public interface ISplitterReadSource&lt;M2, BF, IKey, IValue, GIF> : BaseISplitterReadSource&lt;M2, BF, IKey, IValue, GIF>&#xA;&#x9;&#x9;where M2:IMaintainer&#xA;&#x9;&#x9;where BF:IPartitionFunction&lt;IKey>&#xA;&#x9;&#x9;where IKey:IData&#xA;&#x9;&#x9;where IValue:IData&#xA;&#x9;&#x9;where GIF:IInputFormat&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ISplitterReadSource.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/bin/1.0.0.0/ISplitterReadSource.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.platform.Maintainer/bin/1.0.0.0/IMaintainer.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
@@ -827,6 +870,14 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_data" sRef="task_binding_data"/>
       </port>
+      <port name="input_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="bin_function"/>
+      </port>
+      <port name="output_key">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="bin_function"/>
+      </port>
       <port name="output_key_gif">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_key" sRef="bin_function_gif"/>
@@ -836,8 +887,10 @@
         <slice pRef="input_key" sRef="bin_function_gif"/>
       </port>
       <parameter iname="IMaintainer" order="0" parid="platform_data_source_maintainer" uname="maintainer" varid="M2"/>
-      <parameter iname="IPartitionFunction" order="1" parid="bin_function" uname="partition_function" varid="BF"/>
-      <parameter iname="IInputFormat" order="2" parid="graph_input_format" uname="data" varid="GIF"/>
+      <parameter iname="IPartitionFunction" order="3" parid="bin_function" uname="partition_function" varid="BF"/>
+      <parameter iname="IData" order="1" parid="input_key_type" uname="data" varid="IKey"/>
+      <parameter iname="IData" order="2" parid="input_value_type" uname="data" varid="IValue"/>
+      <parameter iname="IInputFormat" order="4" parid="graph_input_format" uname="data" varid="GIF"/>
       <action id="main">
         <protocol/>
       </action>
@@ -989,6 +1042,9 @@
       <visualDescription h="61" w="146" x="659" y="445"/>
     </unit>
     <unit facet="2" iRef="ISplitterReadSource" multiple="true" private="false" replica="0" uRef="read_input" visibleInterface="true">
+      <slices cRef="input_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key" transitive="true">
+        <visualDescription h="10" w="10" x="24" y="26"/>
+      </slices>
       <slices cRef="source" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="source" transitive="false">
         <visualDescription h="10" w="10" x="5" y="6"/>
       </slices>
@@ -1007,11 +1063,22 @@
       <slices cRef="input_key_gif" inner_replica="0" slice_replica="0" uRef="data" sliceName="input_key_gif" transitive="true">
         <visualDescription h="10" w="10" x="24" y="26"/>
       </slices>
+      <slices cRef="output_key" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_key" transitive="true">
+        <visualDescription h="10" w="10" x="130" y="24"/>
+      </slices>
       <slices cRef="split_channel" inner_replica="0" slice_replica="0" uRef="peer" sliceName="split_channel" transitive="false">
         <visualDescription h="10" w="10" x="112" y="33"/>
       </slices>
-      <slices cRef="bin_function_gif" inner_replica="0" slice_replica="0" uRef="partition_function" sliceName="bin_function_gif" transitive="false">
+      <slices cRef="bin_function" inner_replica="0" slice_replica="0" uRef="partition_function" sliceName="bin_function" transitive="false">
         <visualDescription h="10" w="10" x="4" y="32"/>
+        <port>input_key</port>
+        <port>output_key</port>
+      </slices>
+      <slices cRef="input_pair_type" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="input_pair_type" transitive="false">
+        <visualDescription h="10" w="10" x="7" y="21"/>
+      </slices>
+      <slices cRef="bin_function_gif" inner_replica="0" slice_replica="0" uRef="partition_function" sliceName="bin_function_gif" transitive="false">
+        <visualDescription h="10" w="10" x="112" y="6"/>
         <port>output_key_gif</port>
         <port>input_key_gif</port>
       </slices>

@@ -7,11 +7,12 @@ using br.ufc.mdcc.common.Integer;
 
 namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter
 {
-	public interface ISplitterReadSource<M2, BF, IKey, IValue, GIF> : BaseISplitterReadSource<M2, BF, IKey, IValue, GIF>
+	//public interface ISplitterReadSource<M2, BF, IKey, IValue, GIF> : BaseISplitterReadSource<M2, BF, IKey, IValue, GIF>
+	public interface ISplitterReadSource<M2, BF, GIF> : BaseISplitterReadSource<M2, BF, GIF>
 		where M2:IMaintainer
-		where BF:IPartitionFunction<IKey>
-		where IKey:IData
-		where IValue:IData
+		where BF:IPartitionFunction<GIF>
+		//where IKey:IData
+		//where IValue:IData
 		where GIF:IInputFormat
 	{
 	}
