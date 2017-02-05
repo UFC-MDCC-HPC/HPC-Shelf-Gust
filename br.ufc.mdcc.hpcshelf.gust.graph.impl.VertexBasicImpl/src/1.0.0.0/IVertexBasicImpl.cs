@@ -54,21 +54,17 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.VertexBasicImpl
 			set { this.val = (int)value; }
 		}
 
-		public override int GetHashCode () {
-			return Id.GetHashCode ();	
-		}
-
 		public override string ToString () {
 			return Id.ToString ();
 		}
 
+		public override int GetHashCode () {
+			return this.Id;
+		}
 		public override bool Equals (object obj) {
-			if (obj is IVertexBasicInstanceImpl)
-				return Id == (((IVertexBasicInstanceImpl)obj).Id);
-			else if (obj is int)
-					return Id == (int)obj;
-				else
-					return false;
+			if (typeof(IVertexInstance).IsAssignableFrom (obj.GetType ()))
+				return this.Id == ((IVertexInstance)obj).Id;
+			return false;
 		}
 		#endregion
 

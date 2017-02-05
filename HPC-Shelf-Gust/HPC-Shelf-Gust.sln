@@ -218,6 +218,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.g
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl", "..\br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl\br.ufc.mdcc.hpcshelf.gust.graph.impl.DirectedGraphVImpl.csproj", "{60E81969-029D-4CF2-8857-6318889E8136}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionVertexKeyDefault", "..\br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionVertexKeyDefault\br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionVertexKeyDefault\br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionVertexKeyDefault.csproj", "{DF985DB2-96E9-4919-A29E-8158FE79330F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -608,6 +610,10 @@ Global
 		{DDD9658C-CDEA-4903-AEEC-5641EC96377E}.Debug|x86.Build.0 = Debug|Any CPU
 		{DDD9658C-CDEA-4903-AEEC-5641EC96377E}.Release|x86.ActiveCfg = Release|Any CPU
 		{DDD9658C-CDEA-4903-AEEC-5641EC96377E}.Release|x86.Build.0 = Release|Any CPU
+		{DF985DB2-96E9-4919-A29E-8158FE79330F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DF985DB2-96E9-4919-A29E-8158FE79330F}.Debug|x86.Build.0 = Debug|Any CPU
+		{DF985DB2-96E9-4919-A29E-8158FE79330F}.Release|x86.ActiveCfg = Release|Any CPU
+		{DF985DB2-96E9-4919-A29E-8158FE79330F}.Release|x86.Build.0 = Release|Any CPU
 		{E27FAA80-9E4B-4CBE-970F-23E98879A3A0}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{E27FAA80-9E4B-4CBE-970F-23E98879A3A0}.Debug|x86.Build.0 = Debug|Any CPU
 		{E27FAA80-9E4B-4CBE-970F-23E98879A3A0}.Release|x86.ActiveCfg = Release|Any CPU
