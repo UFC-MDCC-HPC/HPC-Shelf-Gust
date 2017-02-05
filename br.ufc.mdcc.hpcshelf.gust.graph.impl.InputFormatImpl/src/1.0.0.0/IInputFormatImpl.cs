@@ -80,6 +80,15 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.impl.InputFormatImpl {
 			}
 		}
 
+		public override int GetHashCode () {
+			return this.PARTID;	
+		}
+		public override bool Equals (object obj) {
+			if (typeof(IInputFormatInstance).IsAssignableFrom (obj.GetType ()))
+				return this.PARTID == ((IInputFormatInstance)obj).PARTID;
+			return false;
+		}
+
 		public IDictionary<int, IInputFormatInstance> extractBins(string fileName){
 			//fileName = System.Environment.GetEnvironmentVariable ("PATH_GRAPH_FILE");
 			this.extractFile(fileName);
