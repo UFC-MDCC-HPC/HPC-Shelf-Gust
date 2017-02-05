@@ -40,16 +40,16 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl
 //			}
 //		}
 
-		private OValue continuation_value = default(OValue);
-		protected OValue Continue_value
-		{
-			get
-			{
-				if (this.continuation_value == null)
-					this.continuation_value = (OValue) Services.getPort("continuation_value");
-				return this.continuation_value;
-			}
-		}
+//		private OValue continuation_value = default(OValue);
+//		protected OValue Continue_value
+//		{
+//			get
+//			{
+//				if (this.continuation_value == null)
+//					this.continuation_value = (OValue) Services.getPort("continuation_value");
+//				return this.continuation_value;
+//			}
+//		}
 
 		private IClientBase<IPortTypeIterator> collect_pairs = null;
 		protected IClientBase<IPortTypeIterator> Collect_pairs

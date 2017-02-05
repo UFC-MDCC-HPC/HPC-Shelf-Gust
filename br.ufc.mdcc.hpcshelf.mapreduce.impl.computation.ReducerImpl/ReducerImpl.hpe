@@ -6,7 +6,7 @@
         <implements>true</implements>
       </extensionType>
       <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000fd0066e1b11706d2697d3f915b1b0a6cab76b4fd39e69f2faa0d8cf902f37ba995ff41e9efa10921224e5e21f10501719d0ffa52dae8ad4a54759743096ddde3714bfedf01c22fffa8fc964c078f9f6c869056143e5df548dd23313083ee8c909752b4b545caab0b3a2c947c4b51f887249292b81a3676053c3102f8f3650f99" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer/Reducer.hpe" name="Reducer" package="br.ufc.mdcc.hpcshelf.mapreduce.computation" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="361" y="359">
+        <visualDescription h="60" w="100" x="353" y="317">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="output_value_type" varName="OValue"/>
@@ -18,34 +18,34 @@
         <parameter formFieldId="reduce_function" varName="RF"/>
         <parameter formFieldId="output_key_type" varName="OKey"/>
         <port localRef="task_reduce" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-          <visualDescription h="36" w="138" x="339" y="543">
+          <visualDescription h="36" w="138" x="331" y="501">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1812247805"/>
+          <parameter formFieldId="task_port_type" varName="X###901726880"/>
           <unitBounds parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="147" y="20"/>
           </unitBounds>
         </port>
         <port localRef="feed_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
-          <visualDescription h="37" w="109" x="90" y="467">
+          <visualDescription h="37" w="109" x="82" y="425">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1276178123"/>
+          <parameter formFieldId="server_port_type" varName="X###1491045277"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="2" y="25"/>
           </unitBounds>
         </port>
         <port localRef="collect_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
-          <visualDescription h="42" w="112" x="95" y="412">
+          <visualDescription h="42" w="112" x="87" y="370">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1734453272"/>
+          <parameter formFieldId="server_port_type" varName="X###2007827559"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="98" y="20"/>
           </unitBounds>
         </port>
         <port localRef="platform_reduce" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
-          <visualDescription h="38" w="143" x="258" y="492">
+          <visualDescription h="38" w="143" x="250" y="450">
             <color b="255" g="255" r="255"/>
           </visualDescription>
           <parameter formFieldId="maintainer" varName="M"/>
@@ -54,57 +54,57 @@
           </unitBounds>
         </port>
         <port localRef="collect_graph" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
-          <visualDescription h="44" w="137" x="80" y="348">
+          <visualDescription h="44" w="137" x="72" y="306">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###905786275"/>
+          <parameter formFieldId="server_port_type" varName="X###1353477524"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="136" y="20"/>
           </unitBounds>
         </port>
         <port localRef="feed_graph" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
-          <visualDescription h="44" w="126" x="85" y="292">
+          <visualDescription h="44" w="126" x="77" y="250">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###346204365"/>
+          <parameter formFieldId="server_port_type" varName="X###1300850712"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="2" y="24"/>
           </unitBounds>
         </port>
         <port localRef="input_values" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
-          <visualDescription h="43" w="134" x="593" y="366">
+          <visualDescription h="43" w="134" x="585" y="324">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###1123562832"/>
+          <parameter formFieldId="value_type" varName="X###2014390124"/>
           <parameter formFieldId="key_type" varName="TKey"/>
           <unitBounds parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="137" y="20"/>
           </unitBounds>
         </port>
         <port localRef="output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
-          <visualDescription h="31" w="110" x="560" y="428">
+          <visualDescription h="31" w="110" x="552" y="386">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###896809353"/>
+          <parameter formFieldId="item_type" varName="X###775119113"/>
           <unitBounds parallel="false" uRef="iterator">
             <visualDescription h="20" w="20" x="9" y="20"/>
           </unitBounds>
         </port>
         <port localRef="graph_values" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
-          <visualDescription h="40" w="141" x="486" y="475">
+          <visualDescription h="40" w="141" x="478" y="433">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###1634561225"/>
-          <parameter formFieldId="key_type" varName="X###1459696151"/>
+          <parameter formFieldId="value_type" varName="X###791129489"/>
+          <parameter formFieldId="key_type" varName="X###1442063046"/>
           <unitBounds parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="189" y="15"/>
           </unitBounds>
         </port>
         <port localRef="output_gif" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
-          <visualDescription h="34" w="134" x="573" y="298">
+          <visualDescription h="34" w="134" x="565" y="256">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###260026529"/>
+          <parameter formFieldId="item_type" varName="X###253174080"/>
           <unitBounds parallel="false" uRef="iterator">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -174,7 +174,7 @@
         <visualDescription h="60" w="181" x="109" y="273">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###718553993"/>
+        <parameter formFieldId="value_type" varName="X###290430186"/>
         <parameter formFieldId="key_type" varName="TKey"/>
         <unitBounds parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="137" y="20"/>
@@ -184,7 +184,7 @@
         <visualDescription h="60" w="134" x="582" y="228">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###1436413270"/>
+        <parameter formFieldId="item_type" varName="X###29806471"/>
         <unitBounds parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="9" y="20"/>
         </unitBounds>
@@ -193,8 +193,8 @@
         <visualDescription h="56" w="225" x="96" y="339">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###1934152963"/>
-        <parameter formFieldId="key_type" varName="X###848884502"/>
+        <parameter formFieldId="value_type" varName="X###593668346"/>
+        <parameter formFieldId="key_type" varName="X###574867260"/>
         <unitBounds parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="189" y="15"/>
         </unitBounds>
@@ -203,7 +203,7 @@
         <visualDescription h="60" w="157" x="588" y="329">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###1467958093"/>
+        <parameter formFieldId="item_type" varName="X###265110967"/>
         <unitBounds parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -263,7 +263,7 @@
     <supplyParameter cRef="maintainer" direct="true" varName="M"/>
     <supplyParameter cRef="gif" direct="true" varName="GIF"/>
     <supplyParameter cRef="g" direct="true" varName="G"/>
-    <innerComponent localRef="C###718553993" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###290430186" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="152" x="455" y="455">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -272,8 +272,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###718553993" varName="X###718553993"/>
-    <innerComponent localRef="C###1436413270" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+    <supplyParameter cRef="C###290430186" varName="X###290430186"/>
+    <innerComponent localRef="C###29806471" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="63" w="154" x="394" y="343">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -283,8 +283,8 @@
         <visualDescription h="20" w="20" x="7" y="21"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1436413270" varName="X###1436413270"/>
-    <innerComponent localRef="C###1934152963" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+    <supplyParameter cRef="C###29806471" varName="X###29806471"/>
+    <innerComponent localRef="C###593668346" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="60" w="207" x="524" y="464">
         <color b="203" g="192" r="255"/>
       </visualDescription>
@@ -293,8 +293,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1934152963" varName="X###1934152963"/>
-    <innerComponent localRef="C###848884502" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
+    <supplyParameter cRef="C###593668346" varName="X###593668346"/>
+    <innerComponent localRef="C###574867260" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="116" y="505">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -302,8 +302,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###848884502" varName="X###848884502"/>
-    <innerComponent localRef="C###1679532315" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
+    <supplyParameter cRef="C###574867260" varName="X###574867260"/>
+    <innerComponent localRef="C###1838938491" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="116" y="505">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -311,18 +311,18 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1679532315" varName="X###1679532315"/>
-    <innerComponent localRef="C###1467958093" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <supplyParameter cRef="C###1838938491" varName="X###1838938491"/>
+    <innerComponent localRef="C###265110967" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="218" x="589" y="426">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="value_type" varName="GIF"/>
-      <parameter formFieldId="key_type" varName="X###1679532315"/>
+      <parameter formFieldId="key_type" varName="X###1838938491"/>
       <unitBounds parallel="false" uRef="kv_pair">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1467958093" varName="X###1467958093"/>
+    <supplyParameter cRef="C###265110967" varName="X###265110967"/>
     <interface iRef="IReducerImpl" nArgs="8">
       <slice isRef="feed_pairs">
         <originRef cRef="feed_pairs" iRef="IBindingDirectMxNIterator"/>
@@ -366,14 +366,14 @@
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer/bin/1.0.0.0/BaseIReducer.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;&#xA;using System.Diagnostics;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using System.Collections.Generic;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl&#xA;{&#xA;&#x9;public class IReducerImpl&lt;M, RF, GIF, TKey, TValue, OKey, OValue, G> : BaseIReducerImpl&lt;M, RF, GIF, TKey, TValue, OKey, OValue, G>, IReducer&lt;M, RF, GIF, TKey, TValue, OKey, OValue, G>&#xA;&#x9;&#x9;where M:IMaintainer&#xA;&#x9;&#x9;where RF:IReduceFunction&lt;GIF, TKey, TValue, OKey, OValue, G>&#xA;&#x9;&#x9;where GIF:IInputFormat&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;&#x9;where G:IData&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main() {&#xA;&#x9;&#x9;&#x9;/* 1. Ler pares chave (TKey) e valores (TValue) de Input.&#xA;             * 2. Para cada par, atribuir a Key e Values e chamar Reduce_function.go();&#xA;             * 3. Pegar o resultado de Reduction_function.go() de Output_reduce (OValue) &#xA;             *    e colocar no iterator Output.&#xA;             */&#xA;&#x9;&#x9;&#x9;readPair_OMK_OMVs(); //startThreads();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private void readPair_OMK_OMVs()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCE 1&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;TKey, IIterator&lt;TValue>>> input_instance = (IIteratorInstance&lt;IKVPair&lt;TKey, IIterator&lt;TValue>>>)Collect_pairs.Client;&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;OKey,OValue>> output_instance = (IIteratorInstance&lt;IKVPair&lt;OKey,OValue>>)Output.Instance;&#xA;&#x9;&#x9;&#x9;Feed_pairs.Server = output_instance;&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture sync_perform;&#xA;&#xA;&#x9;&#x9;&#x9;// TODO: Dividir em chunks a saa de pares (OKey,OValue)&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER 2&quot;);&#xA;&#xA;//&#x9;&#x9;&#x9;object reduce_lock = new object ();&#xA;&#xA;&#x9;&#x9;&#x9;bool end_computation = false;&#xA;&#x9;&#x9;&#x9;while (!end_computation)    // new iteration&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;IDictionary&lt;object,object> cont_dict = new Dictionary&lt;object, object> ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER LOOP&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;end_computation = true;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;bool end_iteration = false;&#xA;&#x9;&#x9;&#x9;&#x9;while (!end_iteration)    // take next chunk ...&#xA;&#x9;&#x9;&#x9;&#x9;{          &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE 1&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_reduce.invoke (ITaskPortAdvance.READ_CHUNK);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_reduce.invoke (ITaskPortAdvance.PERFORM, out sync_perform);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE 2&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IKVPairInstance&lt;TKey, IIterator&lt;TValue>> kvpair = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;object kvpair_object;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (!input_instance.has_next ())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;end_iteration = true;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;end_computation = false;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;int count=0;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;while (input_instance.fetch_next (out kvpair_object)) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE INNER LOOP 3 count=&quot; + count);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;kvpair = (IKVPairInstance&lt;TKey, IIterator&lt;TValue>>)kvpair_object;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;object acc_value;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (!cont_dict.TryGetValue(kvpair.Key, out acc_value))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;cont_dict[kvpair.Key] = new object();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;((IDataInstance)Continue_value.Instance).ObjValue = acc_value;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Input_values.Instance = kvpair; &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Reduce_function.go ();&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;cont_dict [kvpair.Key] = ((IDataInstance)((IKVPairInstance&lt;OKey,OValue>)Output_value.Instance).Value).ObjValue;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;count++;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE 4 count=&quot; + count);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sync_perform.wait ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE 5&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE END ITERATION&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;int chunk_counter = 1;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;IActionFuture reduce_chunk_ready;&#xA;&#x9;&#x9;&#x9;&#x9;Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out reduce_chunk_ready);  //***&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;foreach (KeyValuePair&lt;object,object> output_pair in cont_dict) &#xA;&#x9;&#x9;&#x9;&#x9;{&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IKVPairInstance&lt;OKey,OValue> new_pair = (IKVPairInstance&lt;OKey,OValue>) Output_value.newInstance ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;new_pair.Key = output_pair.Key;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;new_pair.Value = output_pair.Value;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;output_instance.put (new_pair);&#x9; &#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;output_instance.finish ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;reduce_chunk_ready.wait ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE FINISH&quot;);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER FINISH ... &quot;);&#xA;&#x9;&#x9;}&#xA;&#xA;&#xA;&#x9;&#x9;private void startThreads() {&#xA;&#x9;&#x9;&#x9;/*Instancias*/&#xA;&#x9;&#x9;&#x9;Thread treadPairOMKOMV = new Thread(new ThreadStart(readPair_OMK_OMVs));&#xA;&#xA;&#x9;&#x9;&#x9;/*Starting*/&#xA;&#x9;&#x9;&#x9;treadPairOMKOMV.Start(); &#x9;&#xA;&#x9;&#x9;&#x9;/* Joins*/&#xA;&#x9;&#x9;&#x9;treadPairOMKOMV.Join();&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;}&#xA;}&#xA;" name="IReducerImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl/bin/1.0.0.0/IReducerImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using System.Reflection;&#xA;using System.Linq;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;&#xA;using System.Diagnostics;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using System.Collections.Generic;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl&#xA;{&#xA;&#x9;public class IReducerImpl&lt;M, RF, GIF, TKey, TValue, OKey, OValue, G> : BaseIReducerImpl&lt;M, RF, GIF, TKey, TValue, OKey, OValue, G>, IReducer&lt;M, RF, GIF, TKey, TValue, OKey, OValue, G>&#xA;&#x9;&#x9;where M:IMaintainer&#xA;&#x9;&#x9;where RF:IReduceFunction&lt;GIF, TKey, TValue, OKey, OValue, G>&#xA;&#x9;&#x9;where GIF:IInputFormat&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;&#x9;where G:IData&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main() {&#xA;&#x9;&#x9;&#x9;/* 1. Ler pares chave (TKey) e valores (TValue) de Input.&#xA;             * 2. Para cada par, atribuir a Key e Values e chamar Reduce_function.go();&#xA;             * 3. Pegar o resultado de Reduction_function.go() de Output_reduce (OValue) &#xA;             *    e colocar no iterator Output.&#xA;             */&#xA;&#x9;&#x9;&#x9;graph_creator ();&#xA;&#x9;&#x9;&#x9;readPair_OMK_OMVs();&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private void graph_creator () {&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;IInteger, IIterator&lt;GIF>>> input_instance_gif = (IIteratorInstance&lt;IKVPair&lt;IInteger, IIterator&lt;GIF>>>)Collect_graph.Client;&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;IInteger,GIF>> output_instance_gif = (IIteratorInstance&lt;IKVPair&lt;IInteger,GIF>>)Output_gif.Instance;&#xA;&#x9;&#x9;&#x9;Feed_graph.Server = output_instance_gif;&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture sync_perform;&#xA;&#xA;&#x9;&#x9;&#x9;bool end_iteration = false;&#xA;&#x9;&#x9;&#x9;while (!end_iteration) {    // take next chunk ...&#xA;&#x9;&#x9;&#x9;&#x9;Task_reduce.invoke (ITaskPortAdvance.READ_CHUNK);&#xA;&#x9;&#x9;&#x9;&#x9;Task_reduce.invoke (ITaskPortAdvance.PERFORM, out sync_perform);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;IKVPairInstance&lt;IInteger, IIterator&lt;GIF>> kvpair = null;&#xA;&#x9;&#x9;&#x9;&#x9;object kvpair_object;&#xA;&#x9;&#x9;&#x9;&#x9;object o;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;if (!input_instance_gif.has_next ())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;end_iteration = true;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;while (input_instance_gif.fetch_next (out kvpair_object)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;kvpair = (IKVPairInstance&lt;IInteger, IIterator&lt;GIF>>)kvpair_object;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Graph_values.Instance = kvpair;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Reduce_function.graph_creator ();&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;sync_perform.wait ();&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;//IActionFuture reduce_chunk_ready;&#xA;&#x9;&#x9;&#x9;//Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out reduce_chunk_ready);  //***&#xA;&#x9;&#x9;&#x9;output_instance_gif.finish ();&#xA;&#x9;&#x9;&#x9;//reduce_chunk_ready.wait ();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private void readPair_OMK_OMVs()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCE 1&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;//IIteratorInstance&lt;IKVPair&lt;TKey, IIterator&lt;TValue>>> input_instance = (IIteratorInstance&lt;IKVPair&lt;TKey, IIterator&lt;TValue>>>)Collect_pairs.Client;&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;OKey,OValue>> output_instance = (IIteratorInstance&lt;IKVPair&lt;OKey,OValue>>)Output.Instance;&#xA;&#x9;&#x9;&#x9;Feed_pairs.Server = output_instance;&#xA;&#xA;&#x9;&#x9;&#x9;Reduce_function.startup_push();&#xA;&#x9;&#x9;&#x9;IActionFuture reduce_chunk_ready_startup;&#xA;&#x9;&#x9;&#x9;Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out reduce_chunk_ready_startup);&#xA;&#x9;&#x9;&#x9;output_instance.finish ();&#xA;&#x9;&#x9;&#x9;reduce_chunk_ready_startup.wait ();&#xA;&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;TKey, IIterator&lt;TValue>>> input_instance = (IIteratorInstance&lt;IKVPair&lt;TKey, IIterator&lt;TValue>>>)Collect_pairs.Client;&#xA;&#xA;&#x9;&#x9;&#x9;IList&lt;MethodInfo> phases = getGustMethods (Reduce_function); &#xA;&#x9;&#x9;&#x9;IEnumerator&lt;MethodInfo> current_phase = phases.GetEnumerator ();&#xA;&#xA;&#x9;&#x9;&#x9;IActionFuture sync_perform;&#xA;&#xA;&#x9;&#x9;&#x9;// TODO: Dividir em chunks a saa de pares (OKey,OValue)&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER 2&quot;);&#xA;&#xA;//&#x9;&#x9;&#x9;object reduce_lock = new object ();&#xA;&#xA;&#x9;&#x9;&#x9;bool end_computation = false;&#xA;&#x9;&#x9;&#x9;while (!end_computation)    // new iteration&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (!current_phase.MoveNext ()) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;current_phase = phases.GetEnumerator ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;current_phase.MoveNext ();&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;MethodInfo phase = current_phase.Current;&#xA;&#x9;&#x9;&#x9;&#x9;//IDictionary&lt;object,object> cont_dict = new Dictionary&lt;object, object> ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER LOOP&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;end_computation = true;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;bool end_iteration = false;&#xA;&#x9;&#x9;&#x9;&#x9;while (!end_iteration)    // take next chunk ...&#xA;&#x9;&#x9;&#x9;&#x9;{          &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE 1&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_reduce.invoke (ITaskPortAdvance.READ_CHUNK);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_reduce.invoke (ITaskPortAdvance.PERFORM, out sync_perform);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE 2&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IKVPairInstance&lt;TKey, IIterator&lt;TValue>> kvpair = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;object kvpair_object;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (!input_instance.has_next ())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;end_iteration = true;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;end_computation = false;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;int count=0;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;while (input_instance.fetch_next (out kvpair_object)) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE INNER LOOP 3 count=&quot; + count);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;kvpair = (IKVPairInstance&lt;TKey, IIterator&lt;TValue>>)kvpair_object;&#xA;&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;object acc_value;&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (!cont_dict.TryGetValue(kvpair.Key, out acc_value))&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;cont_dict[kvpair.Key] = new object();&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;((IDataInstance)Continue_value.Instance).ObjValue = acc_value;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Input_values.Instance = kvpair; &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Reduce_function.pull ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;//Reduce_function.go ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;//cont_dict [kvpair.Key] = ((IDataInstance)((IKVPairInstance&lt;OKey,OValue>)Output_value.Instance).Value).ObjValue;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;count++;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE 4 count=&quot; + count);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sync_perform.wait ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE 5&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE END ITERATION&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;phase.Invoke(Reduce_function,null);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;IActionFuture reduce_chunk_ready;&#xA;&#x9;&#x9;&#x9;&#x9;Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out reduce_chunk_ready);  //***&#xA;&#xA;//&#x9;&#x9;&#x9;&#x9;foreach (KeyValuePair&lt;object,object> output_pair in cont_dict) &#xA;//&#x9;&#x9;&#x9;&#x9;{&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;IKVPairInstance&lt;OKey,OValue> new_pair = (IKVPairInstance&lt;OKey,OValue>) Output_value.newInstance ();&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;new_pair.Key = output_pair.Key;&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;new_pair.Value = output_pair.Value;&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;output_instance.put (new_pair);&#x9; &#xA;//&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;output_instance.finish ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;reduce_chunk_ready.wait ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER ITERATE FINISH&quot;);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: REDUCER FINISH ... &quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private static IList&lt;MethodInfo> getGustMethods(object o){&#xA;&#x9;&#x9;&#x9;IList&lt;MethodInfo> gusts_methods = new List&lt;MethodInfo> ();&#xA;&#x9;&#x9;&#x9;IList&lt;MethodInfo> all_methods = new List&lt;MethodInfo> (o.GetType ().GetMethods ());&#xA;&#x9;&#x9;&#x9;for (int i = 0; i &lt; all_methods.Count; i++) {&#xA;&#x9;&#x9;&#x9;&#x9;MethodInfo m = all_methods.ElementAt (i);&#xA;&#x9;&#x9;&#x9;&#x9;if (m.Name.Length >= 4) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (m.Name.Substring (0, 4).ToLower().Equals (&quot;gust&quot;) &amp;&amp; (m.GetParameters ().Length == 0) ) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;gusts_methods.Add (m);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;return gusts_methods;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IReducerImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl/bin/1.0.0.0/IReducerImpl.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/bin/1.0.0.0/IReduceFunction.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.impl.computation.ReducerImpl/bin/1.0.0.0/BaseIReducerImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer/bin/1.0.0.0/IReducer.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="176" x="372" y="189">
+      <visualDescription h="40" w="176" x="364" y="147">
         <color b="0" g="0" r="255"/>
       </visualDescription>
       <port name="feed_pairs">
@@ -400,17 +400,17 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_graph" sRef="collect_graph"/>
       </port>
-      <port name="graph_values">
+      <port name="output">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="graph_values" sRef="reduce_function"/>
+        <slice pRef="output" sRef="reduce_function"/>
       </port>
       <port name="input_values">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_values" sRef="reduce_function"/>
       </port>
-      <port name="output">
+      <port name="graph_values">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output" sRef="reduce_function"/>
+        <slice pRef="graph_values" sRef="reduce_function"/>
       </port>
       <port name="output_gif">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -430,7 +430,7 @@
     </interface>
     <unit facet="0" iRef="IReducerImpl" multiple="true" private="false" replica="0" uRef="reducer" visibleInterface="true">
       <super cRef="base" uRef="reducer"/>
-      <visualDescription h="40" w="91" x="344" y="273"/>
+      <visualDescription h="40" w="91" x="336" y="231"/>
     </unit>
   </componentInfo>
 </component:component>

@@ -48,7 +48,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="task_reduce" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-      <visualDescription h="60" w="182" x="110" y="340">
+      <visualDescription h="60" w="182" x="123" y="306">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="task_port_type" varName="TAdvance"/>
@@ -57,7 +57,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="feed_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
-      <visualDescription h="60" w="134" x="501" y="229">
+      <visualDescription h="60" w="134" x="514" y="195">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="server_port_type" varName="S"/>
@@ -66,7 +66,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="collect_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
-      <visualDescription h="60" w="120" x="155" y="253">
+      <visualDescription h="60" w="120" x="168" y="219">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="server_port_type" varName="S"/>
@@ -111,7 +111,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="platform_reduce" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
-      <visualDescription h="60" w="187" x="520" y="394">
+      <visualDescription h="60" w="187" x="533" y="360">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="maintainer" varName="M"/>
@@ -152,7 +152,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="collect_graph" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
-      <visualDescription h="60" w="168" x="109" y="170">
+      <visualDescription h="60" w="168" x="122" y="136">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="server_port_type" varName="S"/>
@@ -161,7 +161,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="feed_graph" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="true">
-      <visualDescription h="60" w="148" x="488" y="153">
+      <visualDescription h="60" w="148" x="501" y="119">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="server_port_type" varName="S"/>
@@ -188,7 +188,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="reduce_function" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/ReduceFunction.hpe" multiple="false" name="ReduceFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" parameter_id="reduce_function" exposed="false">
-      <visualDescription h="60" w="168" x="563" y="306">
+      <visualDescription h="60" w="168" x="576" y="272">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="output_value_type" varName="OValue"/>
@@ -198,39 +198,39 @@
       <parameter formFieldId="graph_input_format" varName="GIF"/>
       <parameter formFieldId="output_key_type" varName="OKey"/>
       <port localRef="input_values" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="43" w="134" x="728" y="219">
+        <visualDescription h="43" w="134" x="741" y="185">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###891905548"/>
+        <parameter formFieldId="value_type" varName="X###1399414125"/>
         <parameter formFieldId="key_type" varName="TKey"/>
         <unitBounds parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="137" y="20"/>
         </unitBounds>
       </port>
       <port localRef="output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="31" w="110" x="764" y="283">
+        <visualDescription h="31" w="110" x="777" y="249">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###820689176"/>
+        <parameter formFieldId="item_type" varName="X###712296931"/>
         <unitBounds parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="9" y="20"/>
         </unitBounds>
       </port>
       <port localRef="graph_values" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="40" w="141" x="749" y="355">
+        <visualDescription h="40" w="141" x="762" y="321">
           <color b="255" g="255" r="255"/>
         </visualDescription>
-        <parameter formFieldId="value_type" varName="X###35516351"/>
-        <parameter formFieldId="key_type" varName="X###2070341038"/>
+        <parameter formFieldId="value_type" varName="X###1500670939"/>
+        <parameter formFieldId="key_type" varName="X###1728521405"/>
         <unitBounds parallel="false" uRef="kv_pair">
           <visualDescription h="20" w="20" x="189" y="15"/>
         </unitBounds>
       </port>
       <port localRef="output_gif" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
-        <visualDescription h="34" w="134" x="735" y="442">
+        <visualDescription h="34" w="134" x="748" y="408">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###544293325"/>
+        <parameter formFieldId="item_type" varName="X###100477219"/>
         <unitBounds parallel="false" uRef="iterator">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
@@ -246,7 +246,7 @@
     <supplyParameter cRef="task_port_type_advance" direct="true" varName="TAdvance"/>
     <supplyParameter cRef="kgif" direct="true" varName="KGIF"/>
     <supplyParameter cRef="kvgif" direct="true" varName="KVGIF"/>
-    <innerComponent localRef="C###891905548" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###1399414125" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="152" x="455" y="455">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -255,8 +255,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###891905548" varName="X###891905548"/>
-    <innerComponent localRef="C###820689176" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+    <supplyParameter cRef="C###1399414125" varName="X###1399414125"/>
+    <innerComponent localRef="C###712296931" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="63" w="154" x="394" y="343">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -266,8 +266,8 @@
         <visualDescription h="20" w="20" x="7" y="21"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###820689176" varName="X###820689176"/>
-    <innerComponent localRef="C###35516351" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+    <supplyParameter cRef="C###712296931" varName="X###712296931"/>
+    <innerComponent localRef="C###1500670939" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
       <visualDescription h="60" w="207" x="524" y="464">
         <color b="203" g="192" r="255"/>
       </visualDescription>
@@ -276,8 +276,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###35516351" varName="X###35516351"/>
-    <innerComponent localRef="C###2070341038" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
+    <supplyParameter cRef="C###1500670939" varName="X###1500670939"/>
+    <innerComponent localRef="C###1728521405" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="116" y="505">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -285,8 +285,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###2070341038" varName="X###2070341038"/>
-    <innerComponent localRef="C###1805060702" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
+    <supplyParameter cRef="C###1728521405" varName="X###1728521405"/>
+    <innerComponent localRef="C###798473191" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="116" y="505">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -294,18 +294,18 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1805060702" varName="X###1805060702"/>
-    <innerComponent localRef="C###544293325" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <supplyParameter cRef="C###798473191" varName="X###798473191"/>
+    <innerComponent localRef="C###100477219" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="218" x="589" y="426">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="value_type" varName="GIF"/>
-      <parameter formFieldId="key_type" varName="X###1805060702"/>
+      <parameter formFieldId="key_type" varName="X###798473191"/>
       <unitBounds parallel="false" uRef="kv_pair">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###544293325" varName="X###544293325"/>
+    <supplyParameter cRef="C###100477219" varName="X###100477219"/>
     <interface iRef="IReducer" nArgs="8">
       <slice isRef="feed_pairs">
         <originRef cRef="feed_pairs" iRef="IBindingDirectMxNIterator"/>
@@ -366,7 +366,7 @@
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer/bin/1.0.0.0/BaseIReducer.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="91" x="330" y="179">
+      <visualDescription h="40" w="91" x="343" y="145">
         <color b="0" g="0" r="255"/>
       </visualDescription>
       <port name="feed_pairs">
@@ -393,21 +393,21 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_reduce" sRef="platform_reduce"/>
       </port>
-      <port name="output">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output" sRef="reduce_function"/>
-      </port>
       <port name="output_gif">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_gif" sRef="reduce_function"/>
       </port>
-      <port name="input_values">
+      <port name="output">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_values" sRef="reduce_function"/>
+        <slice pRef="output" sRef="reduce_function"/>
       </port>
       <port name="graph_values">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="graph_values" sRef="reduce_function"/>
+      </port>
+      <port name="input_values">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_values" sRef="reduce_function"/>
       </port>
       <parameter iname="IMaintainer" parid="platform_maintainer" uname="maintainer" varid="M"/>
       <parameter iname="IReduceFunction" parid="reduce_function" uname="reduce_function" varid="RF"/>
@@ -459,7 +459,7 @@
         <port>input_values</port>
         <port>output</port>
       </slices>
-      <visualDescription h="49" w="119" x="330" y="259"/>
+      <visualDescription h="49" w="119" x="343" y="225"/>
     </unit>
   </componentInfo>
 </component:component>
