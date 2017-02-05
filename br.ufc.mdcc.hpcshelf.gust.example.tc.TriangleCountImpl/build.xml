@@ -17,6 +17,7 @@
         <include name="br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll"/>
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/bin/1.0.0.0/IDataTriangle.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount/bin/1.0.0.0/BaseITriangleCount.dll"/>
         <include/>

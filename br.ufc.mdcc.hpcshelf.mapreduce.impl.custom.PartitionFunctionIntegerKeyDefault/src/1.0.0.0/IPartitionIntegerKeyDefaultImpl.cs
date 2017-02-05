@@ -26,14 +26,14 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.custom.PartitionFunctionIntegerKey
 		public override void main() 
 		{ 
 			IIntegerInstance input_integer_instance = (IIntegerInstance) Input_key.Instance;
-			IIntegerInstance output_string_instance = (IIntegerInstance) Output_key.Instance;
+			IIntegerInstance output_integer_instance = (IIntegerInstance) Output_key.Instance;
 
-			//int value = (int) input_integer_instance.Value;
-			int value = graph_partition_table[((int) input_integer_instance.Value) -1];
+			int value = (int) input_integer_instance.Value;
+			//int value = graph_partition_table[((int) input_integer_instance.Value) -1];
 
 //			Trace.WriteLine("BIN FUNCTION " + (value % NumberOfPartitions) + "value=" + value + ", npart=" + NumberOfPartitions);
 
-			output_string_instance.Value = value % NumberOfPartitions;
+			output_integer_instance.Value = value % NumberOfPartitions;
 
 
 		}

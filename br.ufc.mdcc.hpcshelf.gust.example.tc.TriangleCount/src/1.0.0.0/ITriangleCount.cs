@@ -16,9 +16,9 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount
 {
 	public interface ITriangleCount : BaseITriangleCount, IReduceFunction<
 	IInputFormat, 
-	IInteger, 
+	IVertex, 
 	IDataTriangle, 
-	IInteger, 
+	IVertex, 
 	IDataTriangle, 
 	IUndirectedGraph<IDataContainerV<IVertexBasic, IEdgeBasic<IVertexBasic>>, IVertexBasic, IEdgeBasic<IVertexBasic>>
 	>

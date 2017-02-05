@@ -58,14 +58,14 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl
 //			}
 //		}
 		
-		private IKVPair<IInteger, IIterator<IDataTriangle>> input_values = null;
+		private IKVPair<IVertex, IIterator<IDataTriangle>> input_values = null;
 
-		public IKVPair<IInteger, IIterator<IDataTriangle>> Input_values
+		public IKVPair<IVertex, IIterator<IDataTriangle>> Input_values
 		{
 			get
 			{
 				if (this.input_values == null)
-					this.input_values = (IKVPair<IInteger, IIterator<IDataTriangle>>) Services.getPort("input_values");
+					this.input_values = (IKVPair<IVertex, IIterator<IDataTriangle>>) Services.getPort("input_values");
 				return this.input_values;
 			}
 		}
@@ -80,14 +80,14 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl
 				return this.graph_values;
 			}
 		}
-		private IIterator<IKVPair<IInteger, IDataTriangle>> output = null;
+		private IIterator<IKVPair<IVertex, IDataTriangle>> output = null;
 
-		public IIterator<IKVPair<IInteger, IDataTriangle>> Output
+		public IIterator<IKVPair<IVertex, IDataTriangle>> Output
 		{
 			get
 			{
 				if (this.output == null)
-					this.output = (IIterator<IKVPair<IInteger, IDataTriangle>>) Services.getPort("output");
+					this.output = (IIterator<IKVPair<IVertex, IDataTriangle>>) Services.getPort("output");
 				return this.output;
 			}
 		}

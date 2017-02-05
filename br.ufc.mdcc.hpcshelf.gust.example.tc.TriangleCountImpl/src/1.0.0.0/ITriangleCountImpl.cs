@@ -75,23 +75,23 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 		}
 
 		public void pull(){
-			IKVPairInstance<IInteger,IIterator<IDataTriangle>> input_values_instance = (IKVPairInstance<IInteger,IIterator<IDataTriangle>>)Input_values.Instance;
-			IIntegerInstance ikey = (IIntegerInstance)input_values_instance.Key;
+			IKVPairInstance<IVertex,IIterator<IDataTriangle>> input_values_instance = (IKVPairInstance<IVertex,IIterator<IDataTriangle>>)Input_values.Instance;
+			IVertexInstance ikey = (IVertexInstance)input_values_instance.Key;
 			IIteratorInstance<IDataTriangle> ivalues = (IIteratorInstance<IDataTriangle>)input_values_instance.Value;
 
 			object o;
 			while (ivalues.fetch_next (out o)) {
 				IList<KeyValuePair<int,int>> l;
-				if(!messages.TryGetValue(ikey.Value, out l)){
+				if(!messages.TryGetValue(ikey.Id, out l)){
 					l = new List<KeyValuePair<int,int>> ();
-					messages[ikey.Value] = l;
+					messages[ikey.Id] = l;
 				}
 				l.Add(new KeyValuePair<int,int>( ((IDataTriangleInstance) o).V, ((IDataTriangleInstance) o).W ) );
 			}
 		}
 
 		public void startup_push(){ // Chamado uma vez pelo processo Redutor, após graph_creator() ser completado. Aqui começa o algoritmo
-			IIteratorInstance<IKVPair<IInteger,IDataTriangle>> output_value_instance = (IIteratorInstance<IKVPair<IInteger,IDataTriangle>>)Output.Instance;
+			IIteratorInstance<IKVPair<IVertex,IDataTriangle>> output_value_instance = (IIteratorInstance<IKVPair<IVertex,IDataTriangle>>)Output.Instance;
 			int v, ordered, i, j;
 			IEnumerator<int> V = g.vertexSet ().GetEnumerator ();
 			while (V.MoveNext ()) { // itera em todo vertice da particao partid
@@ -102,10 +102,10 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 						int bigger = vneighbors.Current;
 						if (v < bigger) { //busca nos vizinhos os vérices maiores
 							if (isGhost(bigger)) { // fantasma: true se bigger estiver fora da particao local
-								IKVPairInstance<IInteger,IDataTriangle> item = (IKVPairInstance<IInteger,IDataTriangle>)Output.createItem ();
-								IIntegerInstance ok = (IIntegerInstance)item.Key;
+								IKVPairInstance<IVertex,IDataTriangle> item = (IKVPairInstance<IVertex,IDataTriangle>)Output.createItem ();
+								IVertexInstance ok = (IVertexInstance)item.Key;
 								IDataTriangleInstance ov = (IDataTriangleInstance)item.Value;
-								ok.Value = bigger;
+								ok.Id = bigger;
 								ov.V = v;
 								output_value_instance.put (item);
 							} else {
@@ -123,7 +123,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 		}
 
 		public void gust0(){
-			IIteratorInstance<IKVPair<IInteger,IDataTriangle>> output_value_instance = (IIteratorInstance<IKVPair<IInteger,IDataTriangle>>)Output.Instance;
+			IIteratorInstance<IKVPair<IVertex,IDataTriangle>> output_value_instance = (IIteratorInstance<IKVPair<IVertex,IDataTriangle>>)Output.Instance;
 
 			ConcurrentDictionary<int, IList<KeyValuePair<int,int>>> buffer_tmp = new ConcurrentDictionary<int, IList<KeyValuePair<int,int>>>();
 
@@ -140,10 +140,10 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 						foreach (KeyValuePair<int,int> kvw in l) {
 							int v = kvw.Key;
 							if (isGhost (v)) {
-								IKVPairInstance<IInteger,IDataTriangle> item = (IKVPairInstance<IInteger,IDataTriangle>)Output.createItem ();
-								IIntegerInstance ok = (IIntegerInstance)item.Key;
+								IKVPairInstance<IVertex,IDataTriangle> item = (IKVPairInstance<IVertex,IDataTriangle>)Output.createItem ();
+								IVertexInstance ok = (IVertexInstance)item.Key;
 								IDataTriangleInstance ov = (IDataTriangleInstance)item.Value;
-								ok.Value = v;
+								ok.Id = v;
 								ov.V = z;
 								ov.W = w;
 								output_value_instance.put (item);
@@ -163,7 +163,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 		}
 
 		public void gust1(){
-			IIteratorInstance<IKVPair<IInteger,IDataTriangle>> output_value_instance = (IIteratorInstance<IKVPair<IInteger,IDataTriangle>>)Output.Instance;
+			IIteratorInstance<IKVPair<IVertex,IDataTriangle>> output_value_instance = (IIteratorInstance<IKVPair<IVertex,IDataTriangle>>)Output.Instance;
 			IEnumerator<int> next = messages.Keys.GetEnumerator();
 			while(next.MoveNext()){
 				int v = next.Current;
@@ -177,8 +177,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 					if (vneighbors.Contains (z)) { //Se z é vizinho de v, forma-se um triangulo
 
 						// Descomentar para imprimir todos os triangulos
-						//					IKVPairInstance<IInteger,IDataTriangle> item = (IKVPairInstance<IInteger,IDataTriangle>)Output.createItem ();
-						//					((IIntegerInstance)item.Key).Value = v;
+						//					IKVPairInstance<IVertex,IDataTriangle> item = (IKVPairInstance<IVertex,IDataTriangle>)Output.createItem ();
+						//					((IVertexInstance)item.Key).Value = v;
 						//					item.Value = dt;
 						//					output_value_instance.put (item);
 
@@ -186,8 +186,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 					}
 				}
 			}
-			IKVPairInstance<IInteger,IDataTriangle> item = (IKVPairInstance<IInteger,IDataTriangle>)Output.createItem ();
-			((IIntegerInstance)item.Key).Value = count;
+			IKVPairInstance<IVertex,IDataTriangle> item = (IKVPairInstance<IVertex,IDataTriangle>)Output.createItem ();
+			((IVertexInstance)item.Key).Id = count;
 			//IDataTriangleInstance dt = ((IDataTriangleInstance)item.Value);
 			//item.Value = dt;
 			output_value_instance.put (item);
