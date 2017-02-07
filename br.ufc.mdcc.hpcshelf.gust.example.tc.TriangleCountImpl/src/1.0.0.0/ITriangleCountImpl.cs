@@ -24,21 +24,21 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 
 		private IUndirectedGraphInstance<IVertexBasic, IEdgeBasic<IVertexBasic>, int, IEdgeInstance<IVertexBasic, int>> g = null;
 		private int[] partition = null;
+		private bool[]  partition_own = null;
 		private int partid = 0;
 		private int partition_size = 0;
-		private bool newInstance = true;
 		private ConcurrentDictionary<int, IList<KeyValuePair<int,int>>> messages = new ConcurrentDictionary<int, IList<KeyValuePair<int,int>>>();
 
 		public override void main() {}
 		public override void after_initialize() { }
 
-		public bool isGhost(int v){ return this.partition [v - 1] != this.partid; }
+		public bool isGhost(int v){ return !partition_own[this.partition [v - 1]]; }//return this.partition [v - 1] != this.partid; }
 		public void graph_creator(){ //Chamado uma vez pelo processo Redutor
 			IKVPairInstance<IInteger,IIterator<IInputFormat>> input_gifs_instance = (IKVPairInstance<IInteger,IIterator<IInputFormat>>)Graph_values.Instance;
 			IIteratorInstance<IInputFormat> vgifs = (IIteratorInstance<IInputFormat>)input_gifs_instance.Value;
 
 			object o;
-			if (newInstance){
+			if (partition_own==null){
 				if (vgifs.fetch_next (out o)) {
 					IInputFormatInstance gif = (IInputFormatInstance)o;
 					// grava-se informações que poderão auxiliar nas decisões de emissão de KVPairs
@@ -49,11 +49,13 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 					g.DataContainer.AllowingLoops = false; // não serão premitidos laços
 					g.DataContainer.AllowingMultipleEdges = false; // não serão permitidas múltiplas arestas
 					graph_creator_aux (gif); // inserem-se dados no grafo
-					newInstance = false;
+					partition_own = new bool[partition_size];
+					partition_own [partid] = true;
 				}
 			}
 			while (vgifs.fetch_next (out o)) {
 				graph_creator_aux ((IInputFormatInstance)o);
+				partition_own [((IInputFormatInstance)o).PARTID] = true;
 			}
 		}
 		private void graph_creator_aux(IInputFormatInstance gif){ //funcao privada auxiliar de graph_creator()
