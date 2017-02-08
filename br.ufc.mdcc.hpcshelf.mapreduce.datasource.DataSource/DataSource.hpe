@@ -55,7 +55,16 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="334" y="508">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="server_port_type" direct="true" varName="S"/>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
     <interface iRef="IDataSource" nArgs="2">
       <slice isRef="reader">
         <originRef cRef="reader" iRef="IServerBase"/>

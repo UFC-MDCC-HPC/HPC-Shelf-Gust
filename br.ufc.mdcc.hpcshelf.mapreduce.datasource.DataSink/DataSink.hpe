@@ -75,7 +75,16 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="316" y="488">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
     <supplyParameter cRef="server_port_type" direct="true" varName="S"/>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
     <interface iRef="IDataSink" nArgs="4">
       <slice isRef="platform_data_sink">
         <originRef cRef="platform_data_sink" iRef="IProcessingNode"/>
@@ -90,7 +99,7 @@
         <visualDescription h="10" w="10" x="153" y="15"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink&#xA;{&#xA;&#x9;public interface BaseIDataSink&lt;P, GOF, OKey, OValue> : IComputationKind &#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;&#x9;where GOF:IOutputFormat&lt;OKey, OValue>&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDataSink.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/BaseIDataSink.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink&#xA;{&#xA;&#x9;public interface BaseIDataSink&lt;P, GOF, OKey, OValue> : IComputationKind &#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;&#x9;where GOF:IOutputFormat&lt;OKey, OValue>&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDataSink.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/BaseIDataSink.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.platform.Maintainer/bin/1.0.0.0/IMaintainer.dll</dependency>
           <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
@@ -99,7 +108,7 @@
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/IOutputFormat.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink&#xA;{&#xA;&#x9;public interface IDataSink&lt;P, GOF, OKey, OValue> : BaseIDataSink&lt;P, GOF, OKey, OValue>&#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;&#x9;where GOF:IOutputFormat&lt;OKey, OValue>&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDataSink.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/IDataSink.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink&#xA;{&#xA;&#x9;public interface IDataSink&lt;P, GOF, OKey, OValue> : BaseIDataSink&lt;P, GOF, OKey, OValue>&#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;&#x9;where GOF:IOutputFormat&lt;OKey, OValue>&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDataSink.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/IDataSink.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.platform.Maintainer/bin/1.0.0.0/IMaintainer.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/IOutputFormat.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>

@@ -24,7 +24,7 @@
           <visualDescription h="37" w="110" x="347" y="190">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1394091765"/>
+          <parameter formFieldId="server_port_type" varName="X###1062449529"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="87" y="11"/>
           </unitBounds>
@@ -33,7 +33,7 @@
           <visualDescription h="39" w="123" x="455" y="129">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###563215266"/>
+          <parameter formFieldId="server_port_type" varName="X###1451712471"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="100" y="12"/>
           </unitBounds>
@@ -42,7 +42,7 @@
           <visualDescription h="41" w="115" x="223" y="148">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1140509974"/>
+          <parameter formFieldId="server_port_type" varName="X###825713540"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -51,7 +51,7 @@
           <visualDescription h="33" w="106" x="695" y="522">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###796542420"/>
+          <parameter formFieldId="server_port_type" varName="X###928789805"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -60,7 +60,7 @@
           <visualDescription h="37" w="205" x="251" y="540">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###75397542"/>
+          <parameter formFieldId="task_port_type" varName="X###111622592"/>
           <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
             <visualDescription h="20" w="20" x="2" y="16"/>
           </unitBounds>
@@ -72,7 +72,7 @@
           <visualDescription h="43" w="197" x="157" y="481">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###191136664"/>
+          <parameter formFieldId="task_port_type" varName="X###1287679913"/>
           <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
             <visualDescription h="20" w="20" x="2" y="17"/>
           </unitBounds>
@@ -84,7 +84,7 @@
           <visualDescription h="48" w="201" x="395" y="593">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1945859583"/>
+          <parameter formFieldId="task_port_type" varName="X###1843586972"/>
           <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
             <visualDescription h="20" w="20" x="2" y="24"/>
           </unitBounds>
@@ -135,7 +135,7 @@
           <visualDescription h="60" w="142" x="677" y="551">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###341467080"/>
+          <parameter formFieldId="server_port_type" varName="X###2088697787"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -144,7 +144,7 @@
           <visualDescription h="60" w="143" x="90" y="607">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###5147919"/>
+          <parameter formFieldId="server_port_type" varName="X###674713343"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="116" y="7"/>
           </unitBounds>
@@ -357,13 +357,13 @@
         <originRef cRef="collect_pairs" iRef="IBindingDirectMxNIterator"/>
         <visualDescription h="10" w="10" x="28" y="20"/>
       </slice>
-      <slice isRef="platform_reduce">
-        <originRef cRef="platform_reduce" iRef="IProcessingNode"/>
-        <visualDescription h="10" w="10" x="0" y="26"/>
-      </slice>
       <slice isRef="collect_graph">
         <originRef cRef="collect_graph" iRef="IBindingDirectMxNIterator"/>
         <visualDescription h="10" w="10" x="11" y="31"/>
+      </slice>
+      <slice isRef="platform_reduce">
+        <originRef cRef="platform_reduce" iRef="IProcessingNode"/>
+        <visualDescription h="10" w="10" x="0" y="26"/>
       </slice>
       <slice isRef="task_binding_split_next">
         <originRef cRef="task_binding_split_next" iRef="ITaskPort"/>
@@ -418,33 +418,33 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="collect_pairs"/>
       </port>
-      <port name="platform_reduce">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_reduce" sRef="platform_reduce"/>
-      </port>
       <port name="collect_graph">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_graph" sRef="collect_graph"/>
+      </port>
+      <port name="platform_reduce">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_reduce" sRef="platform_reduce"/>
       </port>
       <port name="task_binding_split_next">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_next" sRef="task_binding_split_next"/>
       </port>
-      <port name="output_key_iterate">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_key" sRef="bin_function_iterate"/>
-      </port>
       <port name="input_key_iterate">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="bin_function_iterate"/>
       </port>
-      <port name="output_key_iterate_gif">
+      <port name="output_key_iterate">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_key" sRef="bin_function_iterate_gif"/>
+        <slice pRef="output_key" sRef="bin_function_iterate"/>
       </port>
       <port name="input_key_iterate_gif">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="bin_function_iterate_gif"/>
+      </port>
+      <port name="output_key_iterate_gif">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="bin_function_iterate_gif"/>
       </port>
       <parameter iname="IComputeHost" order="0" parid="platform_reduce_maintainer" uname="compute_host" varid="M0"/>
       <parameter iname="ITerminateFunction" parid="terminate_function" uname="terminate_function" varid="TF"/>
@@ -572,13 +572,13 @@
         <originRef cRef="task_binding_split_first" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="80" y="0"/>
       </slice>
-      <slice isRef="task_binding_data">
-        <originRef cRef="task_binding_data" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="62" y="0"/>
-      </slice>
       <slice isRef="platform_data_source">
         <originRef cRef="platform_data_source" iRef="IProcessingNode"/>
         <visualDescription h="10" w="10" x="55" y="26"/>
+      </slice>
+      <slice isRef="task_binding_data">
+        <originRef cRef="task_binding_data" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="62" y="0"/>
       </slice>
       <slice isRef="split_channel">
         <originRef cRef="split_channel" iRef="IChannel"/>
@@ -624,13 +624,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_first" sRef="task_binding_split_first"/>
       </port>
-      <port name="task_binding_data">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_data" sRef="task_binding_data"/>
-      </port>
       <port name="platform_data_source">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_data_source" sRef="platform_data_source"/>
+      </port>
+      <port name="task_binding_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_data" sRef="task_binding_data"/>
       </port>
       <port name="output_key_iterate">
         <visualDescription h="10" w="10" x="0" y="0"/>
