@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a551bc874f600ffbaba6954a7594c2a8461fe851ed4999a05edd374461aa953c47aacd66cb668b92062eb3f5a98af693dda884fc1cc070c0d9eeca72d0b58b57df5fec300ec3e1b7658778d46c6624806139f33a9bd8426f129f7f25b7c18789e2fadde37c05a368144945944b07dd5eb51ce14d0b224071686999fbeec1c285" isAbstract="true" kind="Computation" name="TerminateFunctionTC" packagePath="br.ufc.mdcc.hpcshelf.gust.example.tc">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003da363ced1d2b03683abe8dd2fcd3e756505f193cc63447a50c93101bb0be32d3ca0b16f79e8b034b47d1cc81a087df43c30a2b01dbf5294db115c9a24e00a6b02a33957d80952ca0cc1bf93a972406d2959eaf7333212b4773f2b22246cd196e2a7dac4036a5072affd6d9a0d0282f051ab590171b3e2cd2896915354fabcdc" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction/TerminateFunction.hpe" name="TerminateFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="332" y="379">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="output_value_type" varName="OValue"/>
+        <parameter formFieldId="input_key_type" varName="IKey"/>
+        <parameter formFieldId="input_value_type" varName="IValue"/>
+        <parameter formFieldId="output_key_type" varName="OKey"/>
+        <port localRef="output_pairs" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="60" w="195" x="32" y="304">
+            <color b="203" g="192" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="item_type" varName="X###138356377"/>
+          <unitBounds parallel="true" uRef="iterator">
+            <visualDescription h="20" w="20" x="22" y="18"/>
+          </unitBounds>
+        </port>
+        <port localRef="input_pairs" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="60" w="209" x="488" y="247">
+            <color b="203" g="192" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="item_type" varName="X###1778322185"/>
+          <unitBounds parallel="true" uRef="iterator">
+            <visualDescription h="20" w="20" x="20" y="17"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="true" uRef="terminate_function">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="ikey" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="100" x="106" y="424">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="okey" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="100" x="121" y="508">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="ivalue" location="br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/DataTriangle.hpe" multiple="false" name="DataTriangle" package="br.ufc.mdcc.hpcshelf.gust.example.tc" exposed="false">
+      <visualDescription h="60" w="100" x="239" y="443">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="ovalue" location="br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/DataTriangle.hpe" multiple="false" name="DataTriangle" package="br.ufc.mdcc.hpcshelf.gust.example.tc" exposed="false">
+      <visualDescription h="60" w="100" x="252" y="523">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="ikey" direct="true" varName="IKey"/>
+    <supplyParameter cRef="ivalue" direct="true" varName="IValue"/>
+    <supplyParameter cRef="okey" direct="true" varName="OKey"/>
+    <supplyParameter cRef="ovalue" direct="true" varName="OValue"/>
+    <interface iRef="ITerminateFunctionTC" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC&#xA;{&#xA;&#x9;public interface BaseITerminateFunctionTC : BaseITerminateFunction, IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseITerminateFunctionTC.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC/bin/1.0.0.0/BaseITerminateFunctionTC.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction/bin/1.0.0.0/BaseITerminateFunction.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC&#xA;{&#xA;&#x9;public interface ITerminateFunctionTC : BaseITerminateFunctionTC, ITerminateFunction&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITerminateFunctionTC.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC/bin/1.0.0.0/ITerminateFunctionTC.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC/bin/1.0.0.0/BaseITerminateFunctionTC.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction/bin/1.0.0.0/ITerminateFunction.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="36" w="217" x="171" y="235">
+        <color b="0" g="128" r="0"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ITerminateFunctionTC" multiple="true" private="false" replica="0" uRef="terminate_function" visibleInterface="true">
+      <super cRef="base" uRef="terminate_function"/>
+      <visualDescription h="33" w="189" x="244" y="295"/>
+    </unit>
+  </componentInfo>
+</component:component>
