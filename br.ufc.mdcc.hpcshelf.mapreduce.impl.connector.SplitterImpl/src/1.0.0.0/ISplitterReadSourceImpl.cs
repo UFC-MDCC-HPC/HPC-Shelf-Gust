@@ -20,9 +20,9 @@ using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 {
 	//public class ISplitterReadSourceImpl<M2,BF,IKey,IValue,GIF> : BaseISplitterReadSourceImpl<M2,BF,IKey,IValue,GIF>, ISplitterReadSource<M2,BF,IKey,IValue,GIF>
-	public class ISplitterReadSourceImpl<M2,BF,GIF> : BaseISplitterReadSourceImpl<M2,BF,GIF>, ISplitterReadSource<M2,BF,GIF>
+	public class ISplitterReadSourceImpl<M2,GIF> : BaseISplitterReadSourceImpl<M2,GIF>, ISplitterReadSource<M2,GIF>
 		where M2:IMaintainer
-		where BF:IPartitionFunction<GIF>
+		//where BF:IPartitionFunction<GIF>
 		//where IKey:IData
 		//where IValue:IData
         where GIF:IInputFormat

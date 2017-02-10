@@ -16,9 +16,9 @@ using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 namespace br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter
 {
 	//public interface BaseISplitterReadSource<M2, BF, IKey, IValue, GIF> : ISynchronizerKind 
-	public interface BaseISplitterReadSource<M2, BF, GIF> : ISynchronizerKind 
+	public interface BaseISplitterReadSource<M2, GIF> : ISynchronizerKind 
 		where M2:IMaintainer
-		where BF:IPartitionFunction<GIF>
+		//where BF:IPartitionFunction<GIF>
 		//where IKey:IData
 		//where IValue:IData
 		where GIF:IInputFormat

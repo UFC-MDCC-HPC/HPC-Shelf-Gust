@@ -23,9 +23,9 @@ using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl 
 {
 	//public abstract class BaseISplitterReadSourceImpl<M2,BF,IKey,IValue,GIF>: Synchronizer, BaseISplitterReadSource<M2,BF,IKey,IValue,GIF>
-	public abstract class BaseISplitterReadSourceImpl<M2,BF,GIF>: Synchronizer, BaseISplitterReadSource<M2,BF,GIF>
+	public abstract class BaseISplitterReadSourceImpl<M2,GIF>: Synchronizer, BaseISplitterReadSource<M2,GIF>
 		where M2:IMaintainer
-		where BF:IPartitionFunction<GIF>
+		//where BF:IPartitionFunction<GIF>
 		//where IKey:IData
 		//where IValue:IData
 		where GIF:IInputFormat
@@ -35,13 +35,13 @@ namespace br.ufc.mdcc.hpcshelf.mapreduce.impl.connector.SplitterImpl
 		static protected int FACET_SOURCE = 2;
 		static protected int FACET_SINK = 3;
 
-		private BF bin_function_gif = default(BF);
-		protected BF Bin_function_gif
+		private IPartitionFunction<GIF> bin_function_gif = default(IPartitionFunction<GIF>);
+		protected IPartitionFunction<GIF> Bin_function_gif
 		{
 			get
 			{
 				if (this.bin_function_gif == null)
-					this.bin_function_gif = (BF) Services.getPort("bin_function_gif");
+					this.bin_function_gif = (IPartitionFunction<GIF>) Services.getPort("bin_function_gif");
 				return this.bin_function_gif;
 			}
 		}
