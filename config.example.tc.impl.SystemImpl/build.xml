@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/heron/hpe/heron/cache" default="all" name="SystemImpl">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="SystemImpl-1.0.0.0">
+    <ifnot targetexists="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/bin/1.0.0.0">
+      <mkdir dir="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_0Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/src/1.0.0.0/BaseIPeer_0Impl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface/bin/1.0.0.0/IPortTypeDataSourceInterface.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource/bin/1.0.0.0/IDataSource.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance/bin/1.0.0.0/ITaskBindingAdvance.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/bin/1.0.0.0/ISplitterReadSource.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll"/>
+        <include name="br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll"/>
+        <include name="br.ufc.mdcc.common.String/bin/1.0.0.0/IString.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData/bin/1.0.0.0/ITaskBindingData.dll"/>
+        <include name="config.example.tc.System/bin/1.0.0.0/BaseIPeer_0.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/bin/1.0.0.0/IPeer_0Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/src/1.0.0.0/IPeer_0Impl.cs"/>
+      </sources>
+      <references>
+        <include name="/config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_0Impl.dll"/>
+        <include name="config.example.tc.System/bin/1.0.0.0/IPeer_0.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_1Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/src/1.0.0.0/BaseIPeer_1Impl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance/bin/1.0.0.0/ITaskBindingAdvance.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface/bin/1.0.0.0/IPortTypeDataSinkInterface.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/bin/1.0.0.0/ISplitterWriteSink.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/IDataSink.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
+        <include name="br.ufc.mdcc.common.Platform/bin/1.0.0.0/IPlatform.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData/bin/1.0.0.0/ITaskBindingData.dll"/>
+        <include name="config.example.tc.System/bin/1.0.0.0/BaseIPeer_1.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/bin/1.0.0.0/IPeer_1Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/src/1.0.0.0/IPeer_1Impl.cs"/>
+      </sources>
+      <references>
+        <include name="/config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_1Impl.dll"/>
+        <include name="config.example.tc.System/bin/1.0.0.0/IPeer_1.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_2Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/src/1.0.0.0/BaseIPeer_2Impl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/1.0.0.0/IShufflerMapCollector.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll"/>
+        <include name="br.ufc.mdcc.common.String/bin/1.0.0.0/IString.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance/bin/1.0.0.0/ITaskBindingAdvance.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper/bin/1.0.0.0/IMapper.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.example.cw.WordCounter/bin/1.0.0.0/IWordCounter.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData/bin/1.0.0.0/ITaskBindingData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/bin/1.0.0.0/ISplitterMapFeeder.dll"/>
+        <include name="br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll"/>
+        <include name="config.example.tc.System/bin/1.0.0.0/BaseIPeer_2.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/bin/1.0.0.0/IPeer_2Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/src/1.0.0.0/IPeer_2Impl.cs"/>
+      </sources>
+      <references>
+        <include name="/config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_2Impl.dll"/>
+        <include name="config.example.tc.System/bin/1.0.0.0/IPeer_2.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_3Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/src/1.0.0.0/BaseIPeer_3Impl.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IClientBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/bin/1.0.0.0/ISplitterReduceCollector.dll"/>
+        <include name="br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll"/>
+        <include name="br.ufc.mdcc.common.String/bin/1.0.0.0/IString.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance/bin/1.0.0.0/ITaskBindingAdvance.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer/bin/1.0.0.0/IReducer.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.example.cw.Tallier/bin/1.0.0.0/ITallier.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler/bin/1.0.0.0/IShufflerReduceFeeder.dll"/>
+        <include name="config.example.tc.System/bin/1.0.0.0/BaseIPeer_3.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/bin/1.0.0.0/IPeer_3Impl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/src/1.0.0.0/IPeer_3Impl.cs"/>
+      </sources>
+      <references>
+        <include name="/config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_3Impl.dll"/>
+        <include name="config.example.tc.System/bin/1.0.0.0/IPeer_3.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIRootImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/src/1.0.0.0/BaseIRootImpl.cs"/>
+      </sources>
+      <references>
+        <include name="config.example.tc.Application/bin/1.0.0.0/IApplication.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingAdvance/bin/1.0.0.0/ITaskBindingAdvance.dll"/>
+        <include name="config.example.tc.Workflow/bin/1.0.0.0/IWorkflow.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.binding.task.TaskBindingData/bin/1.0.0.0/ITaskBindingData.dll"/>
+        <include name="config.example.tc.System/bin/1.0.0.0/BaseIRoot.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/SystemImpl.snk" optimize="true" output="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/bin/1.0.0.0/IRootImpl.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/heron/Copy/ufc_mdcc_hpc/HPC-Shelf-MapReduce/config.example.tc.impl.SystemImpl/src/1.0.0.0/IRootImpl.cs"/>
+      </sources>
+      <references>
+        <include name="/config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIRootImpl.dll"/>
+        <include name="config.example.tc.System/bin/1.0.0.0/IRoot.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="SystemImpl-1.0.0.0" name="all"/>
+</project>
