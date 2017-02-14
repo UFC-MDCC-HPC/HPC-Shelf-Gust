@@ -334,6 +334,33 @@ where E:IEdge<V> {
 					edges.Add ((TE) delegator.Container.EdgeFactory.newInstance(vertex, v));
 				return edges;
 			}
+			//
+			public ICollection<TV> outgoingVertexOf (TV vertex) {
+				ICollection<TV> outgoing_list = delegator.outgoing<TV> (vertex);
+				ICollection<TV> edges;
+				if (!delegator.Container.AllowingMultipleEdges)
+					return (new HashSet<TV> (outgoing_list));
+				else
+					return outgoing_list;
+			}
+			public IEnumerator<TV> iteratorOutgoingVertexOf(TV vertex){
+				ICollection<TV> outgoing_list = delegator.outgoing<TV> (vertex);
+				ICollection<TV> edges;
+				if (!delegator.Container.AllowingMultipleEdges) {
+					edges = new HashSet<TV> ();
+					foreach (TV v in outgoing_list) {
+						bool contain = edges.Contains (v);
+						if (!contain) {
+							edges.Add (v);
+							yield return v;
+						}
+					}
+				}
+				else
+					foreach (TV v in outgoing_list)
+						yield return v;
+			}
+			//
 			public void removeEdgeFromContainer (TE e) {
 				delegator.removeOutgoingEdge (e);
 				delegator.removeIncomingEdge (e);

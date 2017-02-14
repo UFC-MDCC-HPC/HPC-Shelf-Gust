@@ -24,5 +24,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph
 		ICollection<TE> incomingEdgesOf(TV vertex);
 		int outDegreeOf(TV vertex);
 		ICollection<TE> outgoingEdgesOf(TV vertex);
+
+		ICollection<TV> outgoingVertexOf(TV vertex);
+		IEnumerator<TV> iteratorOutgoingVertexOf(TV vertex);
 	}
 }

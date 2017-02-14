@@ -371,6 +371,36 @@ where E:IEdge<V>
 					edges.Add ((TE) delegator.Container.EdgeFactory.newInstance(vertex, kv.Key, kv.Value));
 				return edges;
 			}
+			//
+			public ICollection<TV> outgoingVertexOf (TV vertex) {
+				ICollection<KeyValuePair<TV, float>> outgoing_list = delegator.outgoing<KeyValuePair<TV, float>> (vertex);
+				ICollection<TV> edges;
+				if (!delegator.Container.AllowingMultipleEdges)
+					edges = new HashSet<TV> ();
+				else
+					edges = new List<TV> ();
+				foreach (KeyValuePair<TV, float> kv in outgoing_list)
+					edges.Add (kv.Key);
+				return edges;
+			}
+			public IEnumerator<TV> iteratorOutgoingVertexOf(TV vertex){
+				ICollection<KeyValuePair<TV, float>> outgoing_list = delegator.outgoing<KeyValuePair<TV, float>> (vertex);
+				ICollection<TV> edges;
+				if (!delegator.Container.AllowingMultipleEdges) {
+					edges = new HashSet<TV> ();
+					foreach (KeyValuePair<TV, float> kv in outgoing_list) {
+						bool contain = edges.Contains (kv.Key);
+						if (!contain) {
+							edges.Add (kv.Key);
+							yield return kv.Key;
+						}
+					}
+				}
+				else
+					foreach (KeyValuePair<TV, float> kv in outgoing_list)
+						yield return kv.Key;
+			}
+			//
 			public void removeEdgeFromContainer (TE e) {
 				delegator.removeOutgoingEdge (e);
 				delegator.removeIncomingEdge (e);
