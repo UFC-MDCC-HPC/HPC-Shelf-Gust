@@ -372,6 +372,23 @@ where E:IEdge<V>
 				return edges;
 			}
 			//
+			public IEnumerator<KeyValuePair<TV, float>> iteratorOutgoingVertexWeightOf(TV vertex){
+				ICollection<KeyValuePair<TV, float>> outgoing_list = delegator.outgoing<KeyValuePair<TV, float>> (vertex);
+				ICollection<TV> edges;
+				if (!delegator.Container.AllowingMultipleEdges) {
+					edges = new HashSet<TV> ();
+					foreach (KeyValuePair<TV, float> kv in outgoing_list) {
+						bool contain = edges.Contains (kv.Key);
+						if (!contain) {
+							edges.Add (kv.Key);
+							yield return kv;
+						}
+					}
+				}
+				else
+					foreach (KeyValuePair<TV, float> kv in outgoing_list)
+						yield return kv;
+			}
 			public ICollection<TV> outgoingVertexOf (TV vertex) {
 				ICollection<KeyValuePair<TV, float>> outgoing_list = delegator.outgoing<KeyValuePair<TV, float>> (vertex);
 				ICollection<TV> edges;

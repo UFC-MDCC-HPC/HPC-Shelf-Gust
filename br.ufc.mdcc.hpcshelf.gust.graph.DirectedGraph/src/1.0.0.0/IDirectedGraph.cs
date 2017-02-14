@@ -27,5 +27,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph
 
 		ICollection<TV> outgoingVertexOf(TV vertex);
 		IEnumerator<TV> iteratorOutgoingVertexOf(TV vertex);
+
+		IEnumerator<KeyValuePair<TV, float>> iteratorOutgoingVertexWeightOf (TV vertex);
 	}
 }

@@ -335,6 +335,25 @@ where E:IEdge<V> {
 				return edges;
 			}
 			//
+			public IEnumerator<KeyValuePair<TV, float>> iteratorOutgoingVertexWeightOf(TV vertex){
+				float weight_default = ((TE) delegator.Container.EdgeFactory.newInstance(vertex, vertex)).Weight;
+				ICollection<TV> outgoing_list = delegator.outgoing<TV> (vertex);
+				ICollection<TV> edges;
+				if (!delegator.Container.AllowingMultipleEdges) {
+					edges = new HashSet<TV> ();
+					foreach (TV v in outgoing_list) {
+						KeyValuePair<TV, float> kv = (new KeyValuePair<TV, float>(v, weight_default));
+						bool contain = edges.Contains (kv.Key);
+						if (!contain) {
+							edges.Add (kv.Key);
+							yield return kv;
+						}
+					}
+				}
+				else
+					foreach (TV v in outgoing_list)
+						yield return (new KeyValuePair<TV, float>(v, weight_default));
+			}
 			public ICollection<TV> outgoingVertexOf (TV vertex) {
 				ICollection<TV> outgoing_list = delegator.outgoing<TV> (vertex);
 				ICollection<TV> edges;
