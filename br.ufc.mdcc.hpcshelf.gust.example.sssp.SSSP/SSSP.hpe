@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000fb0894102015aa8f8b353b2d9d91d56cb1e3dc1b85202f8728b6bdf2bc3a94d22140ee4823679b534a6d74870ac5638514931880ad39982130b0025deb8532512ddf61af50da10df84c87254c45f763c73cb7293f261cd6581da630422752b22104b2937ae856aaaa56822a2b76e1d8cab9c7b8dbce76e81f4ebb02e2ec2a6c4" isAbstract="true" kind="Computation" name="SSSP" packagePath="br.ufc.mdcc.hpcshelf.gust.example.sssp">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007f4cbebfe57de16a460e9a3aae6647a3b14d609b000ac58312afed4cc2c1b904f33e352cfd40765886c6d6e1d9f5c8b905b1a20519b6b60ac094e6b94fb46c5f84beb2e0ee4e9d4e947c44775c07382e9104f227336fb976619ecd6ad43a917b5277f7f3f09156a8e8ff9ade1f8ae48aa97d9a48c0d25f6aed72cf75213c138b" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/ReduceFunction.hpe" name="ReduceFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="389" y="338">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="output_value_type" varName="OValue"/>
+        <parameter formFieldId="graph_type" varName="G"/>
+        <parameter formFieldId="input_key_type" varName="TKey"/>
+        <parameter formFieldId="input_value_type" varName="TValue"/>
+        <parameter formFieldId="graph_input_format" varName="GIF"/>
+        <parameter formFieldId="output_key_type" varName="OKey"/>
+        <port localRef="input_values" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="60" w="181" x="118" y="348">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="value_type" varName="X###279436774"/>
+          <parameter formFieldId="key_type" varName="TKey"/>
+          <unitBounds parallel="false" uRef="kv_pair">
+            <visualDescription h="20" w="20" x="137" y="20"/>
+          </unitBounds>
+        </port>
+        <port localRef="output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="60" w="134" x="534" y="339">
+            <color b="203" g="192" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="item_type" varName="X###2094608276"/>
+          <unitBounds parallel="false" uRef="iterator">
+            <visualDescription h="20" w="20" x="9" y="20"/>
+          </unitBounds>
+        </port>
+        <port localRef="graph_values" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="56" w="225" x="122" y="419">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="value_type" varName="X###381869461"/>
+          <parameter formFieldId="key_type" varName="X###1398893791"/>
+          <unitBounds parallel="false" uRef="kv_pair">
+            <visualDescription h="20" w="20" x="189" y="15"/>
+          </unitBounds>
+        </port>
+        <port localRef="output_gif" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+          <visualDescription h="60" w="157" x="498" y="412">
+            <color b="203" g="192" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="item_type" varName="X###556977981"/>
+          <unitBounds parallel="false" uRef="iterator">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="false" uRef="reduce_function">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="tkey" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="131" y="558">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="tvalue" location="br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/DataSSSP.hpe" multiple="false" name="DataSSSP" package="br.ufc.mdcc.hpcshelf.gust.example.sssp" exposed="false">
+      <visualDescription h="60" w="100" x="257" y="554">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="okey" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="126" y="629">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="ovalue" location="br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/DataSSSP.hpe" multiple="false" name="DataSSSP" package="br.ufc.mdcc.hpcshelf.gust.example.sssp" exposed="false">
+      <visualDescription h="60" w="100" x="259" y="623">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="gif" location="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/InputFormat.hpe" multiple="false" name="InputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="100" x="296" y="522">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="g" location="br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph/DirectedGraph.hpe" multiple="false" name="DirectedGraph" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="100" x="374" y="580">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="edge_type" varName="E"/>
+      <parameter formFieldId="container" varName="CTN"/>
+      <parameter formFieldId="vertex_type" varName="V"/>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="ctn" location="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV/DataContainerKV.hpe" multiple="false" name="DataContainerKV" package="br.ufc.mdcc.hpcshelf.gust.graph.container" exposed="false">
+      <visualDescription h="60" w="100" x="657" y="585">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="edge_type" varName="E"/>
+      <parameter formFieldId="vertex_type" varName="V"/>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="v" location="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/Vertex.hpe" multiple="false" name="Vertex" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="142" x="544" y="674">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="e" location="br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/EdgeWeighted.hpe" multiple="false" name="EdgeWeighted" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="161" x="745" y="678">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="vertex_type" varName="V"/>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="tkey" direct="true" varName="TKey"/>
+    <supplyParameter cRef="tvalue" direct="true" varName="TValue"/>
+    <supplyParameter cRef="okey" direct="true" varName="OKey"/>
+    <supplyParameter cRef="ovalue" direct="true" varName="OValue"/>
+    <supplyParameter cRef="gif" direct="true" varName="GIF"/>
+    <supplyParameter cRef="v" direct="true" varName="V"/>
+    <supplyParameter cRef="e" direct="true" varName="E"/>
+    <supplyParameter cRef="ctn" direct="true" varName="CTN"/>
+    <supplyParameter cRef="g" direct="true" varName="G"/>
+    <interface iRef="ISSSP" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP&#xA;{&#xA;&#x9;public interface BaseISSSP : BaseIReduceFunction, IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseISSSP.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP/bin/1.0.0.0/BaseISSSP.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/bin/1.0.0.0/BaseIReduceFunction.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP&#xA;{&#xA;&#x9;public interface ISSSP : BaseISSSP, IReduceFunction&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ISSSP.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP/bin/1.0.0.0/ISSSP.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP/bin/1.0.0.0/BaseISSSP.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/bin/1.0.0.0/IReduceFunction.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="43" w="182" x="272" y="195">
+        <color b="0" g="165" r="255"/>
+      </visualDescription>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="ISSSP" multiple="false" private="false" replica="0" uRef="reduce_function" visibleInterface="true">
+      <super cRef="base" uRef="reduce_function"/>
+      <visualDescription h="40" w="190" x="301" y="274"/>
+    </unit>
+  </componentInfo>
+</component:component>

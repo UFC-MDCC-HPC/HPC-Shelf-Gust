@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000edd5844ca5a53c306cf7cc0e8fca2123a7951e4479879191ed161ee02d9ef366737547f92299f10151d1fad591426e1a9407c77ed50231f39f5038a5ffe166f494dd078e9a65c24ee9b26772087056947cd5995a734e4da30daec6b56cb31e4b5a86b8bc7c75e0c8af6086d5d9da74df6183a5dff6ff0d1206b4faf57b307fd0" isAbstract="true" kind="Data" name="Float" packagePath="br.ufc.mdcc.common">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002b679e8f63c6925bfcc928a7cc3013906b15c175a4e98fab23a035f735fa6c0ad73ed2eae507a31345dd1d315a36138fc3377a2b0953350e14b7cf31e6b06c33f4f4ee03b53200f4bfdbaab49b63edb35bda74c698665df952a90b9df4bdf2e6bc62129a9da0a4ba4ee78fb225d5b4353e96afd6e47927b6943bf6ace9cf0cb0" localRef="base" location="br.ufc.mdcc.common.Data/Data.hpe" name="Data" package="br.ufc.mdcc.common" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="281" y="446">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IFloat" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.common.Float&#xA;{&#xA;&#x9;public interface BaseIFloat : BaseIData, IDataStructureKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIFloat.cs" srcType="base" uri="br.ufc.mdcc.common.Float/bin/1.0.0.0/BaseIFloat.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.common.Float&#xA;{&#xA;&#x9;public interface IFloat : BaseIFloat, IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IFloat.cs" srcType="user" uri="br.ufc.mdcc.common.Float/bin/1.0.0.0/IFloat.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.common.Float/bin/1.0.0.0/BaseIFloat.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="156" x="196" y="304">
+        <color b="168" g="127" r="173"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IFloat" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
+      <super cRef="base" uRef="data"/>
+      <visualDescription h="40" w="80" x="268" y="367"/>
+    </unit>
+  </componentInfo>
+</component:component>
