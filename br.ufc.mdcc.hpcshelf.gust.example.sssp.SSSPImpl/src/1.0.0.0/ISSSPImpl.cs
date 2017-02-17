@@ -35,7 +35,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 		public override void after_initialize() { }
 		public bool isGhost(int v){ return !partition_own[this.partition [v - 1]]; }
 
-		public void graph_creator(){ // START: Bloco de alimentacao do componente DirectedGraph com peso nas arestas
+		#region Create Directed Graph Weight
+		public void graph_creator(){
 			IKVPairInstance<IInteger,IIterator<IInputFormat>> input_gifs_instance = (IKVPairInstance<IInteger,IIterator<IInputFormat>>)Graph_values.Instance;
 			IIteratorInstance<IInputFormat> vgifs = (IIteratorInstance<IInputFormat>)input_gifs_instance.Value;
 
@@ -76,18 +77,20 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 			((IIntegerInstance)item.Key).Value = gif.PARTID;
 			item.Value = gif;
 			output_gifs_instance.put (item);
-		} // END: Bloco de alimentacao do componente DirectedGraph com peso nas arestas
+		}
+		#endregion
 
-		public void startup_push() { // Inicio do Algoritmo 
+		#region Algorithm implementation
+		public void startup_push() {
 			int v = 1; float tmp; emite = new bool[partition_size]; emite[this.partid] = true; // Prepara source vertex numero 1
 			messages = new Dictionary<int, float>[partition_size]; //Preparar buffer de mensagens
 			for (int i = 0; i < partition_size; i++)
 				messages[i] = new Dictionary<int, float> ();
 
-			if (g.containsVertex (v)) { // Busca em profundidade
+			if (g.containsVertex (v)) {
 				messages[partition [v - 1]][v]=0f;
 				Queue<int> queue = new Queue<int> (); queue.Enqueue (v);
-				while (queue.Count > 0) {
+				while (queue.Count > 0) { // Busca em profundidade
 					v = queue.Dequeue ();
 					float vw = messages[partition [v - 1]][v];
 					IEnumerator<KeyValuePair<int, float>> vneighbors = g.iteratorOutgoingVertexWeightOf (v);
@@ -104,7 +107,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 			}
 			gust0 ();
 		}
-		public void gust0(){ //emissor de saída de dados
+		public void gust0(){ //emite saídas
 			IIteratorInstance<IKVPair<IInteger,IDataSSSP>> output_value_instance = (IIteratorInstance<IKVPair<IInteger,IDataSSSP>>)Output.Instance;
 
 			bool any_emite = false;
@@ -137,7 +140,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 			halt_sum = 0;
 		}
 
-		public void pull() { //pull de mensagens das particoes distribuidas
+		public void pull() {
 			IKVPairInstance<IInteger,IIterator<IDataSSSP>> input_values_instance = (IKVPairInstance<IInteger,IIterator<IDataSSSP>>)Input_values.Instance;
 			IIntegerInstance ikey = (IIntegerInstance)input_values_instance.Key;
 			IIteratorInstance<IDataSSSP> ivalues = (IIteratorInstance<IDataSSSP>)input_values_instance.Value;
@@ -152,7 +155,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 					if (!messages [partition [v - 1]].TryGetValue (v, out tmp) || tmp > vw) {
 						messages [partition [v - 1]] [v] = vw;
 						queue.Enqueue (v);
-						while (queue.Count > 0) {
+						while (queue.Count > 0) { // Busca em profundidade
 							v = queue.Dequeue ();
 							vw = messages [partition [v - 1]] [v];
 							IEnumerator<KeyValuePair<int, float>> vneighbors = g.iteratorOutgoingVertexWeightOf (v);
@@ -170,6 +173,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 				}
 			}
 		}
+		#endregion
 	}
 }
 
