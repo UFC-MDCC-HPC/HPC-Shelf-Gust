@@ -92,13 +92,13 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 				Queue<int> queue = new Queue<int> (); queue.Enqueue (v);
 				while (queue.Count > 0) { // Busca em profundidade
 					v = queue.Dequeue ();
-					float vw = messages[partition [v - 1]][v];
+					float v_distance_min = messages[partition [v - 1]][v];
 					IEnumerator<KeyValuePair<int, float>> vneighbors = g.iteratorOutgoingVertexWeightOf (v);
 					while (vneighbors.MoveNext ()) {
 						int n = vneighbors.Current.Key;
-						float nw = vneighbors.Current.Value+vw; 
-						if (!messages [partition [n - 1]].TryGetValue(n,out tmp) || tmp > nw) {
-							messages [partition [n - 1]] [n] = nw;
+						float n_distance_min = vneighbors.Current.Value+v_distance_min; 
+						if (!messages [partition [n - 1]].TryGetValue(n,out tmp) || tmp > n_distance_min) {
+							messages [partition [n - 1]] [n] = n_distance_min;
 							queue.Enqueue (n);
 							emite[partition [n - 1]] = true;
 						}
@@ -150,20 +150,20 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 				IDataSSSPInstance VALUE = (IDataSSSPInstance)o;
 				halt_sum += VALUE.Halt;
 				foreach (KeyValuePair<int, float> kv in VALUE.Path_size) {
-					int v = kv.Key; float vw = kv.Value;
+					int v = kv.Key; float v_distance_min = kv.Value;
 					Queue<int> queue = new Queue<int> ();
-					if (!messages [partition [v - 1]].TryGetValue (v, out tmp) || tmp > vw) {
-						messages [partition [v - 1]] [v] = vw;
+					if (!messages [partition [v - 1]].TryGetValue (v, out tmp) || tmp > v_distance_min) {
+						messages [partition [v - 1]] [v] = v_distance_min;
 						queue.Enqueue (v);
 						while (queue.Count > 0) { // Busca em profundidade
 							v = queue.Dequeue ();
-							vw = messages [partition [v - 1]] [v];
+							v_distance_min = messages [partition [v - 1]] [v];
 							IEnumerator<KeyValuePair<int, float>> vneighbors = g.iteratorOutgoingVertexWeightOf (v);
 							while (vneighbors.MoveNext ()) {
 								int n = vneighbors.Current.Key;
-								float nw = vneighbors.Current.Value + vw; 
-								if (!messages [partition [n - 1]].TryGetValue (n, out tmp) || tmp > nw) {
-									messages [partition [n - 1]] [n] = nw;
+								float n_distance_min = vneighbors.Current.Value + v_distance_min; 
+								if (!messages [partition [n - 1]].TryGetValue (n, out tmp) || tmp > n_distance_min) {
+									messages [partition [n - 1]] [n] = n_distance_min;
 									queue.Enqueue (n);
 									emite [partition [n - 1]] = true;
 								}
