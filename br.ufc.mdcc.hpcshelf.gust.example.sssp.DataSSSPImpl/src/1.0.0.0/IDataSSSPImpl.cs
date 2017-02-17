@@ -37,11 +37,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSPImpl
 		#region IDataSSSPInstance implementation
 
 		private IDictionary<int, float> path_size = new Dictionary<int, float>();
-		private bool activated = true;
+		private int halt = 0;
 
 		public IDataSSSPInstanceImpl(){ }
 
-		public bool Activated { get { return activated; } set { activated = (bool) value; } }
+		public int Halt { get { return halt; } set { halt = (int) value; } }
 
 		public IDictionary<int, float> Path_size {
 			get { return this.path_size; }
@@ -49,10 +49,10 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSPImpl
 		}
 
 		public object ObjValue {
-			get { return new Tuple<IDictionary<int, float>, bool>(this.path_size, this.activated); }
+			get { return new Tuple<IDictionary<int, float>, int>(this.path_size, this.halt); }
 			set { 
-				this.path_size = ((Tuple<IDictionary<int, float>, bool>)value).Item1;
-				this.activated =  ((Tuple<IDictionary<int, float>, bool>)value).Item2;
+				this.path_size = ((Tuple<IDictionary<int, float>, int>)value).Item1;
+				this.halt =  ((Tuple<IDictionary<int, float>, int>)value).Item2;
 			}
 		}
 
@@ -61,7 +61,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSPImpl
 		#region ICloneable implementation
 		public object Clone () {
 			IDataSSSPInstance clone = new IDataSSSPInstanceImpl ();
-			clone.Activated = this.Activated;
+			clone.Halt = this.Halt;
 			clone.Path_size = new Dictionary<int, float> (this.Path_size);
 			return clone;
 		}

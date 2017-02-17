@@ -11,6 +11,6 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP
 
 	public interface IDataSSSPInstance : IDataInstance, ICloneable {
 		IDictionary<int, float> Path_size { get; set; }
-		bool Activated { get; set; }
+		int Halt { get; set; }
 	}
 } // end namespace 

@@ -26,8 +26,9 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 		private int[] partition = null;
 		private bool[]  partition_own = null;
 		private int partition_size = 0;
-		private bool done = true;
-		private bool[] activates;
+		private bool[] emite;
+		private int partid = 0;
+		private int halt_sum = 1;
 		private IDictionary<int, float>[] messages = null;
 
 		public override void main() {} 
@@ -43,14 +44,14 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 				if (vgifs.fetch_next (out o)) {
 					IInputFormatInstance gif = (IInputFormatInstance)o;
 					partition = gif.PartitionTABLE; 
-					int partid = gif.PARTID;
 					partition_size = gif.PARTITION_SIZE; 
 					g = Graph.newInstance (gif.VSIZE);
 					g.DataContainer.AllowingLoops = false;
 					g.DataContainer.AllowingMultipleEdges = false;
 					graph_creator_aux (gif);
 					partition_own = new bool[partition_size];
-					partition_own [partid] = true;
+					partition_own [gif.PARTID] = true;
+					this.partid = gif.PARTID;
 				}
 			}
 			while (vgifs.fetch_next (out o)) {
@@ -78,17 +79,13 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 		} // END: Bloco de alimentacao do componente DirectedGraph com peso nas arestas
 
 		public void startup_push() { // Inicio do Algoritmo 
+			int v = 1; float tmp; emite = new bool[partition_size]; emite[this.partid] = true; // Prepara source vertex numero 1
 			messages = new Dictionary<int, float>[partition_size]; //Preparar buffer de mensagens
-			ICollection<int> V = g.vertexSet ();
 			for (int i = 0; i < partition_size; i++)
 				messages[i] = new Dictionary<int, float> ();
 
-			bool is_source = g.containsVertex (1);
-			activates = new bool[partition_size];
-			if (is_source) { // Busca em profundidade
-				int v = 1; float tmp;
+			if (g.containsVertex (v)) { // Busca em profundidade
 				messages[partition [v - 1]][v]=0f;
-				activates [partition [v - 1]] = true;
 				Queue<int> queue = new Queue<int> (); queue.Enqueue (v);
 				while (queue.Count > 0) {
 					v = queue.Dequeue ();
@@ -100,13 +97,46 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 						if (!messages [partition [n - 1]].TryGetValue(n,out tmp) || tmp > nw) {
 							messages [partition [n - 1]] [n] = nw;
 							queue.Enqueue (n);
-							activates [partition [n - 1]] = true;
+							emite[partition [n - 1]] = true;
 						}
 					}
 				}
 			}
 			gust0 ();
 		}
+		public void gust0(){ //emissor de saída de dados
+			IIteratorInstance<IKVPair<IInteger,IDataSSSP>> output_value_instance = (IIteratorInstance<IKVPair<IInteger,IDataSSSP>>)Output.Instance;
+
+			bool any_emite = false;
+			foreach (bool any in emite) 
+				any_emite = any_emite || any;
+			if (!any_emite && halt_sum == 0) {
+				output_value_instance.finish (); // TerminatedFunctionSSSP é avisado com um finish(), preparando-se para a emissão definitiva de saída
+
+				IKVPairInstance<IInteger,IDataSSSP> ITEM = (IKVPairInstance<IInteger,IDataSSSP>)Output.createItem ();
+				((IIntegerInstance)ITEM.Key).Value = this.partid;
+				((IDataSSSPInstance)ITEM.Value).Path_size = messages [((IIntegerInstance)ITEM.Key).Value];
+				((IDataSSSPInstance)ITEM.Value).Halt = 0;
+				output_value_instance.put (ITEM);
+
+			} else {
+				for (int i = 0; i < partition_size; i++) {
+					IKVPairInstance<IInteger,IDataSSSP> ITEM = (IKVPairInstance<IInteger,IDataSSSP>)Output.createItem ();
+					((IIntegerInstance)ITEM.Key).Value = i;
+
+					if (partition_own [i] || !emite [i])
+						((IDataSSSPInstance)ITEM.Value).Path_size = new Dictionary<int, float> ();
+					else
+						((IDataSSSPInstance)ITEM.Value).Path_size = messages [i];
+
+					((IDataSSSPInstance)ITEM.Value).Halt = any_emite ? 1 : 0;
+					output_value_instance.put (ITEM);
+				}
+			}
+			emite = new bool[partition_size];
+			halt_sum = 0;
+		}
+
 		public void pull() { //pull de mensagens das particoes distribuidas
 			IKVPairInstance<IInteger,IIterator<IDataSSSP>> input_values_instance = (IKVPairInstance<IInteger,IIterator<IDataSSSP>>)Input_values.Instance;
 			IIntegerInstance ikey = (IIntegerInstance)input_values_instance.Key;
@@ -115,57 +145,30 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 			object o; float tmp;
 			while (ivalues.fetch_next (out o)) {
 				IDataSSSPInstance VALUE = (IDataSSSPInstance)o;
-				if (!VALUE.Activated) {
-					foreach (KeyValuePair<int, float> kv in VALUE.Path_size) {
-						int v = kv.Key;
-						Queue<int> queue = new Queue<int> ();
+				halt_sum += VALUE.Halt;
+				foreach (KeyValuePair<int, float> kv in VALUE.Path_size) {
+					int v = kv.Key; float vw = kv.Value;
+					Queue<int> queue = new Queue<int> ();
+					if (!messages [partition [v - 1]].TryGetValue (v, out tmp) || tmp > vw) {
+						messages [partition [v - 1]] [v] = vw;
 						queue.Enqueue (v);
 						while (queue.Count > 0) {
 							v = queue.Dequeue ();
-							float vw = messages [partition [v - 1]] [v];
-							if (!messages [partition [v - 1]].TryGetValue (v, out tmp) || tmp > vw) {
-								done = false;
-								IEnumerator<KeyValuePair<int, float>> vneighbors = g.iteratorOutgoingVertexWeightOf (v);
-								while (vneighbors.MoveNext ()) {
-									int n = vneighbors.Current.Key;
-									float nw = vneighbors.Current.Value + vw; 
-									if (!messages [partition [n - 1]].TryGetValue (n, out tmp) || tmp > nw) {
-										messages [partition [n - 1]] [n] = nw;
-										queue.Enqueue (n);
-										activates [partition [n - 1]] = true;
-									}
+							vw = messages [partition [v - 1]] [v];
+							IEnumerator<KeyValuePair<int, float>> vneighbors = g.iteratorOutgoingVertexWeightOf (v);
+							while (vneighbors.MoveNext ()) {
+								int n = vneighbors.Current.Key;
+								float nw = vneighbors.Current.Value + vw; 
+								if (!messages [partition [n - 1]].TryGetValue (n, out tmp) || tmp > nw) {
+									messages [partition [n - 1]] [n] = nw;
+									queue.Enqueue (n);
+									emite [partition [n - 1]] = true;
 								}
 							}
 						}
 					}
 				}
 			}
-		}
-
-		public void gust0(){ //emissor de saída de dados
-			IIteratorInstance<IKVPair<IInteger,IDataSSSP>> output_value_instance = (IIteratorInstance<IKVPair<IInteger,IDataSSSP>>)Output.Instance;
-
-			bool any_activated = false;
-			foreach (bool any in activates) 
-				any_activated = any_activated || any;
-			if (!any_activated) 
-				output_value_instance.finish (); // Caso todos estejam Activated=false, TerminatedFunctionSSSP é avisado com um finish(), preparando-se para a emissão definitiva de saída
-
-			for (int i = 0; i<partition_size;i++) {
-				IKVPairInstance<IInteger,IDataSSSP> ITEM = (IKVPairInstance<IInteger,IDataSSSP>)Output.createItem ();
-				IIntegerInstance KEY = (IIntegerInstance)ITEM.Key;
-				IDataSSSPInstance VALUE = (IDataSSSPInstance)ITEM.Value;
-				KEY.Value = i;
-
-				if (partition_own [i] || !activates[i])
-					VALUE.Path_size = new Dictionary<int, float> ();
-				else
-					VALUE.Path_size = messages [i];
-
-				VALUE.Activated = activates[i];
-				output_value_instance.put (ITEM);
-			}
-			activates = new bool[partition_size];
 		}
 	}
 }
