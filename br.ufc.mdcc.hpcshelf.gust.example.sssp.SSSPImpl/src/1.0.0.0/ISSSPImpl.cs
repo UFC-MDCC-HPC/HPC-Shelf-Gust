@@ -82,7 +82,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 
 		#region Algorithm implementation
 		public void startup_push() {
-			int v = 1; float tmp; emite = new bool[partition_size]; emite[this.partid] = true; // Prepara source vertex numero 1
+			int v = 1; float distance_min; emite = new bool[partition_size]; emite[this.partid] = true; // Prepara source vertex numero 1
 			messages = new Dictionary<int, float>[partition_size]; //Preparar buffer de mensagens
 			for (int i = 0; i < partition_size; i++)
 				messages[i] = new Dictionary<int, float> ();
@@ -92,13 +92,13 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 				Queue<int> queue = new Queue<int> (); queue.Enqueue (v);
 				while (queue.Count > 0) { // Busca em profundidade
 					v = queue.Dequeue ();
-					float v_distance_min = messages[partition [v - 1]][v];
+					float v_distance_min_candidate = messages[partition [v - 1]][v];
 					IEnumerator<KeyValuePair<int, float>> vneighbors = g.iteratorOutgoingVertexWeightOf (v);
 					while (vneighbors.MoveNext ()) {
 						int n = vneighbors.Current.Key;
-						float n_distance_min = vneighbors.Current.Value+v_distance_min; 
-						if (!messages [partition [n - 1]].TryGetValue(n,out tmp) || tmp > n_distance_min) {
-							messages [partition [n - 1]] [n] = n_distance_min;
+						float n_distance_min_candidate = vneighbors.Current.Value+v_distance_min_candidate; 
+						if (!messages [partition [n - 1]].TryGetValue(n,out distance_min) || distance_min > n_distance_min_candidate) {
+							messages [partition [n - 1]] [n] = n_distance_min_candidate;
 							queue.Enqueue (n);
 							emite[partition [n - 1]] = true;
 						}
@@ -145,25 +145,25 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 			IIntegerInstance ikey = (IIntegerInstance)input_values_instance.Key;
 			IIteratorInstance<IDataSSSP> ivalues = (IIteratorInstance<IDataSSSP>)input_values_instance.Value;
 
-			object o; float tmp;
+			object o; float distance_min;
 			while (ivalues.fetch_next (out o)) {
 				IDataSSSPInstance VALUE = (IDataSSSPInstance)o;
 				halt_sum += VALUE.Halt;
 				foreach (KeyValuePair<int, float> kv in VALUE.Path_size) {
-					int v = kv.Key; float v_distance_min = kv.Value;
+					int v = kv.Key; float v_distance_min_candidate = kv.Value;
 					Queue<int> queue = new Queue<int> ();
-					if (!messages [partition [v - 1]].TryGetValue (v, out tmp) || tmp > v_distance_min) {
-						messages [partition [v - 1]] [v] = v_distance_min;
+					if (!messages [partition [v - 1]].TryGetValue (v, out distance_min) || distance_min > v_distance_min_candidate) {
+						messages [partition [v - 1]] [v] = v_distance_min_candidate;
 						queue.Enqueue (v);
 						while (queue.Count > 0) { // Busca em profundidade
 							v = queue.Dequeue ();
-							v_distance_min = messages [partition [v - 1]] [v];
+							v_distance_min_candidate = messages [partition [v - 1]] [v];
 							IEnumerator<KeyValuePair<int, float>> vneighbors = g.iteratorOutgoingVertexWeightOf (v);
 							while (vneighbors.MoveNext ()) {
 								int n = vneighbors.Current.Key;
-								float n_distance_min = vneighbors.Current.Value + v_distance_min; 
-								if (!messages [partition [n - 1]].TryGetValue (n, out tmp) || tmp > n_distance_min) {
-									messages [partition [n - 1]] [n] = n_distance_min;
+								float n_distance_min_candidate = vneighbors.Current.Value + v_distance_min_candidate; 
+								if (!messages [partition [n - 1]].TryGetValue (n, out distance_min) || distance_min > n_distance_min_candidate) {
+									messages [partition [n - 1]] [n] = n_distance_min_candidate;
 									queue.Enqueue (n);
 									emite [partition [n - 1]] = true;
 								}
