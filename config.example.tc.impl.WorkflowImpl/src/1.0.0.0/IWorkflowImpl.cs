@@ -318,16 +318,16 @@ namespace config.example.tc.impl.WorkflowImpl {
 			}
 		}
 
-		private ITaskPort<ITaskPortTypeAdvance> task_binding_shuffle = null;
-		protected ITaskPort<ITaskPortTypeAdvance> Task_binding_shuffle 
-		{ 
-			get 
-			{   
-				if (task_binding_shuffle == null)
-					task_binding_shuffle = (ITaskPort<ITaskPortTypeAdvance>) this.Services.getPort ("task_binding_shuffle");
-				return task_binding_shuffle;
-			}
-		}
+//		private ITaskPort<ITaskPortTypeAdvance> task_binding_shuffle = null;
+//		protected ITaskPort<ITaskPortTypeAdvance> Task_binding_shuffle 
+//		{ 
+//			get 
+//			{   
+//				if (task_binding_shuffle == null)
+//					task_binding_shuffle = (ITaskPort<ITaskPortTypeAdvance>) this.Services.getPort ("task_binding_shuffle");
+//				return task_binding_shuffle;
+//			}
+//		}
 
 		private ITaskPort<ITaskPortTypeAdvance> task_reduce = null;
 		protected ITaskPort<ITaskPortTypeAdvance> Task_reduce 
@@ -340,16 +340,16 @@ namespace config.example.tc.impl.WorkflowImpl {
 			}
 		}
 
-		private ITaskPort<ITaskPortTypeAdvance> task_map = null;
-		protected ITaskPort<ITaskPortTypeAdvance> Task_map 
-		{ 
-			get 
-			{  
-				if (task_map == null)
-					task_map = (ITaskPort<ITaskPortTypeAdvance>) this.Services.getPort ("task_map");
-				return task_map;
-			}
-		}
+//		private ITaskPort<ITaskPortTypeAdvance> task_map = null;
+//		protected ITaskPort<ITaskPortTypeAdvance> Task_map 
+//		{ 
+//			get 
+//			{  
+//				if (task_map == null)
+//					task_map = (ITaskPort<ITaskPortTypeAdvance>) this.Services.getPort ("task_map");
+//				return task_map;
+//			}
+//		}
 
 
     }
