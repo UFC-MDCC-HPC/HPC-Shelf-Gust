@@ -56,6 +56,19 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSPImpl
 			}
 		}
 
+		public override string ToString () { 
+			System.Text.StringBuilder sb = new System.Text.StringBuilder();
+			IEnumerator<KeyValuePair<int, float>> iterator = this.Path_size.GetEnumerator ();
+			if (iterator.MoveNext ()) {
+				sb.Append (iterator.Current.Key + ":" + iterator.Current.Value);
+				while (iterator.MoveNext ())
+					sb.Append (System.Environment.NewLine+iterator.Current.Key + ":" + iterator.Current.Value);
+			}
+			string r = sb.ToString ();
+			sb.Clear ();
+			return r;
+		}
+
 		#endregion
 
 		#region ICloneable implementation
