@@ -27,13 +27,16 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 		private bool[]  partition_own = null;
 		private int partid = 0;
 		private int partition_size = 0;
+		private int count = 0;
 		private ConcurrentDictionary<int, IList<KeyValuePair<int,int>>> messages = new ConcurrentDictionary<int, IList<KeyValuePair<int,int>>>();
 
 		public override void main() {}
 		public override void after_initialize() { }
 
-		public bool isGhost(int v){ return !partition_own[this.partition [v - 1]]; }//return this.partition [v - 1] != this.partid; }
-		public void graph_creator(){ //Chamado uma vez pelo processo Redutor
+		public bool isGhost(int v){ return !partition_own[this.partition [v - 1]]; }
+
+		#region Create Undirected Graph
+		public void graph_creator(){ 
 			IKVPairInstance<IInteger,IIterator<IInputFormat>> input_gifs_instance = (IKVPairInstance<IInteger,IIterator<IInputFormat>>)Graph_values.Instance;
 			IIteratorInstance<IInputFormat> vgifs = (IIteratorInstance<IInputFormat>)input_gifs_instance.Value;
 
@@ -41,11 +44,10 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 			if (partition_own==null){
 				if (vgifs.fetch_next (out o)) {
 					IInputFormatInstance gif = (IInputFormatInstance)o;
-					// grava-se informações que poderão auxiliar nas decisões de emissão de KVPairs
 					partition = gif.PartitionTABLE; 
 					partid = gif.PARTID; 
 					partition_size = gif.PARTITION_SIZE; 
-					g = Graph.newInstance (gif.VSIZE); // pega-se instancia do graph, com previsão de tamanho para VSIZE
+					g = Graph.newInstance (gif.VSIZE); // pega-se uma instancia do graph, com vertices do tipo inteiro, com tamanho previsto VSIZE
 					g.DataContainer.AllowingLoops = false; // não serão premitidos laços
 					g.DataContainer.AllowingMultipleEdges = false; // não serão permitidas múltiplas arestas
 					graph_creator_aux (gif); // inserem-se dados no grafo
@@ -58,7 +60,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 				partition_own [((IInputFormatInstance)o).PARTID] = true;
 			}
 		}
-		private void graph_creator_aux(IInputFormatInstance gif){ //funcao privada auxiliar de graph_creator()
+		private void graph_creator_aux(IInputFormatInstance gif){
 			for (int i = 0; i < gif.ESIZE;) {
 				if (gif.Target [i] != 0) { // Será usada a forma canonica: i->j, onde i<j
 					int s = gif.Source [i] < gif.Target [i] ? gif.Source [i] : gif.Target [i]; 
@@ -75,35 +77,21 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 			item.Value = gif;
 			output_gifs_instance.put (item); // emite-se gif novamente: para a funcão de particionamento do conector setar o PartitionTABLE.
 		}
+		#endregion
 
-		public void pull(){
-			IKVPairInstance<IVertex,IIterator<IDataTriangle>> input_values_instance = (IKVPairInstance<IVertex,IIterator<IDataTriangle>>)Input_values.Instance;
-			IVertexInstance ikey = (IVertexInstance)input_values_instance.Key;
-			IIteratorInstance<IDataTriangle> ivalues = (IIteratorInstance<IDataTriangle>)input_values_instance.Value;
-
-			object o;
-			while (ivalues.fetch_next (out o)) {
-				IList<KeyValuePair<int,int>> l;
-				if(!messages.TryGetValue(ikey.Id, out l)){
-					l = new List<KeyValuePair<int,int>> ();
-					messages[ikey.Id] = l;
-				}
-				l.Add(new KeyValuePair<int,int>( ((IDataTriangleInstance) o).V, ((IDataTriangleInstance) o).W ) );
-			}
-		}
-
-		public void startup_push(){ // Chamado uma vez pelo processo Redutor, após graph_creator() ser completado. Aqui começa o algoritmo
+		#region Algorithm implementation
+		public void startup_push(){ 
 			IIteratorInstance<IKVPair<IVertex,IDataTriangle>> output_value_instance = (IIteratorInstance<IKVPair<IVertex,IDataTriangle>>)Output.Instance;
 			int v, ordered, i, j;
 			IEnumerator<int> V = g.vertexSet ().GetEnumerator ();
-			while (V.MoveNext ()) { // itera em todo vertice da particao partid
+			while (V.MoveNext ()) { 
 				v = V.Current;
 				if (!isGhost(v)) {
 					IEnumerator<int> vneighbors = g.iteratorNeighborsOf (v);
 					while (vneighbors.MoveNext ()) {
 						int bigger = vneighbors.Current;
-						if (v < bigger) { //busca nos vizinhos os vérices maiores
-							if (isGhost(bigger)) { // fantasma: true se bigger estiver fora da particao local
+						if (v < bigger) { //buscam-se os vérices maiores
+							if (isGhost(bigger)) { 
 								IKVPairInstance<IVertex,IDataTriangle> item = (IKVPairInstance<IVertex,IDataTriangle>)Output.createItem ();
 								IVertexInstance ok = (IVertexInstance)item.Key;
 								IDataTriangleInstance ov = (IDataTriangleInstance)item.Value;
@@ -124,6 +112,22 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 			}
 		}
 
+		public void pull(){
+			IKVPairInstance<IVertex,IIterator<IDataTriangle>> input_values_instance = (IKVPairInstance<IVertex,IIterator<IDataTriangle>>)Input_values.Instance;
+			IVertexInstance ikey = (IVertexInstance)input_values_instance.Key;
+			IIteratorInstance<IDataTriangle> ivalues = (IIteratorInstance<IDataTriangle>)input_values_instance.Value;
+
+			object o;
+			while (ivalues.fetch_next (out o)) {
+				IList<KeyValuePair<int,int>> l;
+				if(!messages.TryGetValue(ikey.Id, out l)){
+					l = new List<KeyValuePair<int,int>> ();
+					messages[ikey.Id] = l;
+				}
+				l.Add(new KeyValuePair<int,int>( ((IDataTriangleInstance) o).V, ((IDataTriangleInstance) o).W ) );
+			}
+		}
+
 		public void gust0(){
 			IIteratorInstance<IKVPair<IVertex,IDataTriangle>> output_value_instance = (IIteratorInstance<IKVPair<IVertex,IDataTriangle>>)Output.Instance;
 
@@ -132,8 +136,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 			IEnumerator<int> next = messages.Keys.GetEnumerator();
 
 			while(next.MoveNext()){
-				int w = next.Current;//kv.Key;
-				IList<KeyValuePair<int,int>> l;// = kv.Value;
+				int w = next.Current;
+				IList<KeyValuePair<int,int>> l;
 				messages.TryRemove(w, out l);
 				IEnumerator<int> wneighbors = g.iteratorNeighborsOf (w);
 				while (wneighbors.MoveNext ()) { 
@@ -166,34 +170,36 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 
 		public void gust1(){
 			IIteratorInstance<IKVPair<IVertex,IDataTriangle>> output_value_instance = (IIteratorInstance<IKVPair<IVertex,IDataTriangle>>)Output.Instance;
+			IKVPairInstance<IVertex,IDataTriangle> item;
 			IEnumerator<int> next = messages.Keys.GetEnumerator();
 			while(next.MoveNext()){
 				int v = next.Current;
-				IList<KeyValuePair<int,int>> l;// = kv.Value;
+				IList<KeyValuePair<int,int>> l;
 				messages.TryRemove(v, out l);
 
 				ICollection<int> vneighbors = g.neighborsOf (v); // devolve ISet<int>, de modo que Contains() é O(1)
 				foreach(KeyValuePair<int,int> kv in l){
-					int z = kv.Key;//dt.V;
-					int w = kv.Value;//dt.W;
+					int z = kv.Key;
+					int w = kv.Value;
 					if (vneighbors.Contains (z)) { //Se z é vizinho de v, forma-se um triangulo
 
 						// Descomentar para imprimir todos os triangulos
-						//					IKVPairInstance<IVertex,IDataTriangle> item = (IKVPairInstance<IVertex,IDataTriangle>)Output.createItem ();
-						//					((IVertexInstance)item.Key).Value = v;
-						//					item.Value = dt;
-						//					output_value_instance.put (item);
+//						item = (IKVPairInstance<IVertex,IDataTriangle>)Output.createItem ();
+//						((IVertexInstance)item.Key).Id = v;     //v menor que w
+//						((IDataTriangleInstance)item.Value).V = w; //w menor que z
+//						((IDataTriangleInstance)item.Value).W = z;
+//						output_value_instance.put (item);
 
 						count++;
 					}
 				}
 			}
-			IKVPairInstance<IVertex,IDataTriangle> item = (IKVPairInstance<IVertex,IDataTriangle>)Output.createItem ();
+			item = (IKVPairInstance<IVertex,IDataTriangle>)Output.createItem ();
 			((IVertexInstance)item.Key).Id = count;
 			//IDataTriangleInstance dt = ((IDataTriangleInstance)item.Value);
 			//item.Value = dt;
 			output_value_instance.put (item);
 		}
-		private int count = 0;
+		#endregion
 	}
 }
