@@ -75,8 +75,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCountImpl {
 			IKVPairInstance<IInteger,IInputFormat> item = (IKVPairInstance<IInteger,IInputFormat>)Output_gif.createItem ();
 			((IIntegerInstance)item.Key).Value = gif.PARTID;
 			item.Value = gif;
-			output_gifs_instance.put (item); // emite-se gif novamente: para a funcão de particionamento do conector setar o PartitionTABLE.
-		}
+			output_gifs_instance.put (item); // Emite-se gif novamente para que a funcão de particionamento do conector receba a instancia PartitionTABLE.
+		}                                    // Isso é necessário no caso de IKey ser do tipo IVertex.
 		#endregion
 
 		#region Algorithm implementation
