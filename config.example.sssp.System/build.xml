@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd" basedir="/home/cenez/hpe/cenez/cache" default="all" name="System">
+  <property name="nant.settings.currentframework" value="mono-2.0"/>
+  <property name="build" value="bin"/>
+  <property name="src" value="src"/>
+  <target name="System-1.0.0.0">
+    <ifnot targetexists="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/bin/1.0.0.0">
+      <mkdir dir="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/bin/1.0.0.0"/>
+    </ifnot>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/System.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/bin/1.0.0.0/BaseIPeer_0.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/src/1.0.0.0/BaseIPeer_0.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface/bin/1.0.0.0/IPortTypeDataSourceInterface.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData/bin/1.0.0.0/IReadData.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/System.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/bin/1.0.0.0/IPeer_0.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/src/1.0.0.0/IPeer_0.cs"/>
+      </sources>
+      <references>
+        <include name="/config.example.sssp.System/bin/1.0.0.0/BaseIPeer_0.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/System.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/bin/1.0.0.0/BaseIPeer_1.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/src/1.0.0.0/BaseIPeer_1.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingWriteData/bin/1.0.0.0/IWriteData.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface/bin/1.0.0.0/IPortTypeDataSinkInterface.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/System.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/bin/1.0.0.0/IPeer_1.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/src/1.0.0.0/IPeer_1.cs"/>
+      </sources>
+      <references>
+        <include name="/config.example.sssp.System/bin/1.0.0.0/BaseIPeer_1.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/System.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/bin/1.0.0.0/BaseIRoot.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/src/1.0.0.0/BaseIRoot.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost/bin/1.0.0.0/ISAFeHost.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/System.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/bin/1.0.0.0/IRoot.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/src/1.0.0.0/IRoot.cs"/>
+      </sources>
+      <references>
+        <include name="/config.example.sssp.System/bin/1.0.0.0/BaseIRoot.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/System.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/bin/1.0.0.0/BaseIPeer_2.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/src/1.0.0.0/BaseIPeer_2.cs"/>
+      </sources>
+      <references>
+        <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/IBindingDirectMxNIterator.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
+        <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost/bin/1.0.0.0/IComputeHost.dll"/>
+        <include/>
+      </references>
+    </csc>
+    <csc debug="true" keyfile="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/System.snk" optimize="true" output="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/bin/1.0.0.0/IPeer_2.dll" target="library" unsafe="false">
+      <sources>
+        <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.System/src/1.0.0.0/IPeer_2.cs"/>
+      </sources>
+      <references>
+        <include name="/config.example.sssp.System/bin/1.0.0.0/BaseIPeer_2.dll"/>
+        <include/>
+      </references>
+    </csc>
+  </target>
+  <target depends="System-1.0.0.0" name="all"/>
+</project>
