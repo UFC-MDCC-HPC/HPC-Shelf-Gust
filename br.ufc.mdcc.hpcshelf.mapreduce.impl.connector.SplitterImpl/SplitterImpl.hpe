@@ -24,7 +24,7 @@
           <visualDescription h="28" w="110" x="225" y="112">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###708067478"/>
+          <parameter formFieldId="server_port_type" varName="X###1430406168"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="87" y="11"/>
           </unitBounds>
@@ -33,7 +33,7 @@
           <visualDescription h="33" w="92" x="192" y="143">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1825392456"/>
+          <parameter formFieldId="server_port_type" varName="X###947905353"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="100" y="12"/>
           </unitBounds>
@@ -42,7 +42,7 @@
           <visualDescription h="39" w="121" x="874" y="381">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1821630950"/>
+          <parameter formFieldId="server_port_type" varName="X###1425846906"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -51,7 +51,7 @@
           <visualDescription h="33" w="106" x="868" y="344">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1922415470"/>
+          <parameter formFieldId="server_port_type" varName="X###1737145168"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -60,7 +60,7 @@
           <visualDescription h="38" w="203" x="212" y="486">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1145335175"/>
+          <parameter formFieldId="task_port_type" varName="X###1158657611"/>
           <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
             <visualDescription h="20" w="20" x="2" y="16"/>
           </unitBounds>
@@ -72,7 +72,7 @@
           <visualDescription h="41" w="199" x="333" y="528">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1752358164"/>
+          <parameter formFieldId="task_port_type" varName="X###176757081"/>
           <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
             <visualDescription h="20" w="20" x="2" y="17"/>
           </unitBounds>
@@ -84,7 +84,7 @@
           <visualDescription h="37" w="168" x="163" y="429">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1292927390"/>
+          <parameter formFieldId="task_port_type" varName="X###786376566"/>
           <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
             <visualDescription h="20" w="20" x="2" y="24"/>
           </unitBounds>
@@ -135,7 +135,7 @@
           <visualDescription h="33" w="119" x="857" y="308">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###205585871"/>
+          <parameter formFieldId="server_port_type" varName="X###1114659572"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -144,25 +144,9 @@
           <visualDescription h="30" w="127" x="853" y="278">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###635014217"/>
+          <parameter formFieldId="server_port_type" varName="X###83403621"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="116" y="7"/>
-          </unitBounds>
-        </port>
-        <port localRef="input_key_iterate_gif" location="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/InputFormat.hpe" multiple="false" name="InputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
-          <visualDescription h="42" w="192" x="851" y="426">
-            <color b="255" g="255" r="255"/>
-          </visualDescription>
-          <unitBounds parallel="false" uRef="data">
-            <visualDescription h="20" w="20" x="5" y="2"/>
-          </unitBounds>
-        </port>
-        <port localRef="output_key_iterate_gif" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="true">
-          <visualDescription h="43" w="186" x="861" y="474">
-            <color b="255" g="255" r="255"/>
-          </visualDescription>
-          <unitBounds parallel="false" uRef="data">
-            <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
         <unitBounds parallel="true" uRef="reduce_collector">
@@ -409,7 +393,7 @@
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/bin/1.0.0.0/ISplitterReduceCollector.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="137" x="143" y="372">
+      <visualDescription h="40" w="228" x="52" y="372">
         <color b="0" g="0" r="255"/>
       </visualDescription>
       <port name="collect_pairs">
@@ -428,21 +412,21 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_next" sRef="task_binding_split_next"/>
       </port>
-      <port name="input_key_iterate">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="bin_function_iterate"/>
-      </port>
       <port name="output_key_iterate">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_key" sRef="bin_function_iterate"/>
       </port>
-      <port name="input_key_iterate_gif">
+      <port name="input_key_iterate">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="bin_function_iterate_gif"/>
+        <slice pRef="input_key" sRef="bin_function_iterate"/>
       </port>
       <port name="output_key_iterate_gif">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_key" sRef="bin_function_iterate_gif"/>
+      </port>
+      <port name="input_key_iterate_gif">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="bin_function_iterate_gif"/>
       </port>
       <parameter iname="IComputeHost" order="0" parid="platform_reduce_maintainer" uname="compute_host" varid="M0"/>
       <parameter iname="ITerminateFunction" parid="terminate_function" uname="terminate_function" varid="TF"/>
@@ -594,7 +578,7 @@
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter/bin/1.0.0.0/ISplitterReadSource.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="120" x="146" y="199">
+      <visualDescription h="40" w="198" x="42" y="201">
         <color b="0" g="128" r="0"/>
       </visualDescription>
       <port name="source">
@@ -613,13 +597,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_data_source" sRef="platform_data_source"/>
       </port>
-      <port name="output_key_gif">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_key" sRef="bin_function_gif"/>
-      </port>
       <port name="input_key_gif">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="bin_function_gif"/>
+      </port>
+      <port name="output_key_gif">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="bin_function_gif"/>
       </port>
       <parameter iname="IDataHost" order="0" parid="platform_data_source_maintainer" uname="data_host" varid="M2"/>
       <parameter iname="IInputFormat" order="1" parid="graph_input_format" uname="data" varid="GIF"/>
@@ -663,7 +647,7 @@
           <externalDependency>MPI</externalDependency>
         </file>
       </sources>
-      <visualDescription h="40" w="125" x="726" y="187">
+      <visualDescription h="40" w="164" x="726" y="187">
         <color b="0" g="128" r="0"/>
       </visualDescription>
       <port name="platform_data_sink">

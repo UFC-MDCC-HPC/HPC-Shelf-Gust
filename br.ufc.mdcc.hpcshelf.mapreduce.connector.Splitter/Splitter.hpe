@@ -259,7 +259,7 @@
         <visualDescription h="34" w="109" x="277" y="654">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###1561196652"/>
+        <parameter formFieldId="item_type" varName="X###1260438622"/>
         <unitBounds parallel="true" uRef="iterator">
           <visualDescription h="20" w="20" x="22" y="18"/>
         </unitBounds>
@@ -268,7 +268,7 @@
         <visualDescription h="41" w="96" x="401" y="671">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###1076931118"/>
+        <parameter formFieldId="item_type" varName="X###1413225946"/>
         <unitBounds parallel="true" uRef="iterator">
           <visualDescription h="20" w="20" x="20" y="17"/>
         </unitBounds>
@@ -420,7 +420,7 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="input_key" varName="GIF"/>
-      <port localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+      <port localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
         <visualDescription h="42" w="192" x="477" y="716">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -428,7 +428,7 @@
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <port localRef="output_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="true">
+      <port localRef="output_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
         <visualDescription h="43" w="186" x="579" y="663">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -528,7 +528,7 @@
     <supplyParameter cRef="kvgifs" direct="true" varName="KVGIFS"/>
     <supplyParameter cRef="dws" direct="true" varName="DWS"/>
     <supplyParameter cRef="dss" direct="true" varName="DSS"/>
-    <innerComponent localRef="C###1561196652" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###1260438622" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="193" y="485">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -538,8 +538,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1561196652" varName="X###1561196652"/>
-    <innerComponent localRef="C###1076931118" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <supplyParameter cRef="C###1260438622" varName="X###1260438622"/>
+    <innerComponent localRef="C###1413225946" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="420" y="345">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -549,13 +549,13 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1076931118" varName="X###1076931118"/>
+    <supplyParameter cRef="C###1413225946" varName="X###1413225946"/>
     <innerRenaming cNewName="output_key_gif" cOldName="output_key" cRef="bin_function_gif"/>
-    <innerRenaming cNewName="output_key_iterate_gif" cOldName="output_key" cRef="bin_function_iterate_gif"/>
-    <innerRenaming cNewName="input_key_iterate" cOldName="input_key" cRef="bin_function_iterate"/>
-    <innerRenaming cNewName="output_key_iterate" cOldName="output_key" cRef="bin_function_iterate"/>
     <innerRenaming cNewName="input_key_gif" cOldName="input_key" cRef="bin_function_gif"/>
     <innerRenaming cNewName="input_key_iterate_gif" cOldName="input_key" cRef="bin_function_iterate_gif"/>
+    <innerRenaming cNewName="output_key_iterate_gif" cOldName="output_key" cRef="bin_function_iterate_gif"/>
+    <innerRenaming cNewName="output_key_iterate" cOldName="output_key" cRef="bin_function_iterate"/>
+    <innerRenaming cNewName="input_key_iterate" cOldName="input_key" cRef="bin_function_iterate"/>
     <interface iRef="ISplitterReduceCollector" nArgs="8">
       <slice isRef="collect_pairs">
         <originRef cRef="collect_pairs" iRef="IBindingDirectMxNIterator"/>
@@ -655,13 +655,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="bin_function_iterate"/>
       </port>
-      <port name="output_key_iterate_gif">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_key" sRef="bin_function_iterate_gif"/>
-      </port>
       <port name="input_key_iterate_gif">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="bin_function_iterate_gif"/>
+      </port>
+      <port name="output_key_iterate_gif">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="bin_function_iterate_gif"/>
       </port>
       <parameter iname="IMaintainer" order="0" parid="platform_reduce_maintainer" uname="maintainer" varid="M0"/>
       <parameter iname="ITerminateFunction" parid="terminate_function" uname="terminate_function" varid="TF"/>
