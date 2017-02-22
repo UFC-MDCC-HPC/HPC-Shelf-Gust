@@ -6,7 +6,7 @@
         <implements>true</implements>
       </extensionType>
       <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009500085125b029988bf5f81ab25ae8a4bcae2e8eff90fff4457e77aa4f6a183e38119743c09601800dde9b767d36b56f272fd4fa4f3c59db3aa3cdc1ccc3fb757a886be51d46fbefc2259dd1b4fabfc7e5f1c94dba20398e930f360dd5c5574139f839bac98e632408663c501113dafebee11d268f4230cca24c84e73ca90fc1" localRef="base" location="config.example.tc.System/System.hpe" name="System" package="config.example.tc" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="278" y="435">
+        <visualDescription h="60" w="100" x="316" y="274">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <unitBounds parallel="true" uRef="peer_0">
@@ -39,35 +39,29 @@
         <visualDescription h="10" w="10" x="27" y="6"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource;&#xA;using br.ufc.mdcc.hpcshelf.platform.Platform;&#xA;using config.example.tc.System;&#xA;&#xA;namespace config.example.tc.impl.SystemImpl &#xA;{&#xA;&#x9;public abstract class BaseIPeer_0Impl: Application, BaseIPeer_0&#xA;&#x9;{&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeDataSourceInterface> input_data = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeDataSourceInterface> Input_data&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_data == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_data = (IServerBase&lt;IPortTypeDataSourceInterface>) Services.getPort(&quot;input_data&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_data;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IReadData input_data = null;&#xA;&#xA;&#x9;&#x9;protected IReadData Input_data&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_data == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_data = (IReadData) Services.getPort(&quot;input_data&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_data;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeData> task_binding_data = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeData> Task_binding_data&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding_data == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_data = (ITaskPort&lt;ITaskPortTypeData>) Services.getPort(&quot;task_binding_data&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding_data;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IJoinLoopReadSource&lt;IDataHost, IInputFormat> join_loop = null;&#xA;&#xA;&#x9;&#x9;protected IJoinLoopReadSource&lt;IDataHost, IInputFormat> Join_loop&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.join_loop == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.join_loop = (IJoinLoopReadSource&lt;IDataHost, IInputFormat>) Services.getPort(&quot;join_loop&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.join_loop;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_binding_split_first = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvance> Task_binding_split_first&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding_split_first == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_split_first = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_binding_split_first&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding_split_first;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IDataSource&lt;IDataHost, IInputFormat> data_source = null;&#xA;&#xA;&#x9;&#x9;protected IDataSource&lt;IDataHost, IInputFormat> Data_source&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.data_source == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.data_source = (IDataSource&lt;IDataHost, IInputFormat>) Services.getPort(&quot;data_source&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.data_source;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IProcessingNode&lt;IDataHost> platform_data_source = null;&#xA;&#xA;&#x9;&#x9;protected IProcessingNode&lt;IDataHost> Platform_data_source&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform_data_source == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform_data_source = (IProcessingNode&lt;IDataHost>) Services.getPort(&quot;platform_data_source&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform_data_source;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIPeer_0Impl.cs" srcType="base" uri="config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_0Impl.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface/bin/1.0.0.0/IPortTypeDataSourceInterface.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData/bin/1.0.0.0/IReadData.dll</dependency>
-          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop/bin/1.0.0.0/IJoinLoopReadSource.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource/bin/1.0.0.0/IDataSource.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
-          <dependency>config.example.tc.System/bin/1.0.0.0/BaseIPeer_0.dll</dependency>
-        </file>
-        <file contents="// ------------------------------------------------------------------------------&#xA;//  &lt;autogenerated>&#xA;//      This code was generated by a tool.&#xA;//      Mono Runtime Version: 4.0.30319.17020&#xA;// &#xA;//      Changes to this file may cause incorrect behavior and will be lost if &#xA;//      the code is regenerated.&#xA;//  &lt;/autogenerated>&#xA;// ------------------------------------------------------------------------------&#xA;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using config.example.tc.System;&#xA;using System;&#xA;using System.Threading;&#xA;&#xA;&#xA;namespace config.example.tc.impl.SystemImpl {&#xA;    &#xA;    &#xA;    public class IPeer_0Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_0 {&#xA;        &#xA;        private void Go(Object o) {&#xA;            ((Activate)(o)).go();&#xA;        }&#xA;        &#xA;        public override void main() {&#xA;          /*  IDataSource&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost> data_source = ((IDataSource&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost>)(this.Services.getPort(&quot;data_source&quot;)));&#xA;            Thread go_data_source = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_data_source.Start(data_source);&#xA;            ISplitterReadSource&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction.IPartitionFunction&lt;br.ufc.mdcc.common.Integer.IInteger>> splitter = ((ISplitterReadSource&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction.IPartitionFunction&lt;br.ufc.mdcc.common.Integer.IInteger>>)(this.Services.getPort(&quot;splitter&quot;)));&#xA;            Thread go_splitter = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_splitter.Start(splitter);&#xA;            go_data_source.Join();&#xA;            go_splitter.Join();*/&#xA;        }&#xA;    }&#xA;}&#xA;" name="IPeer_0Impl.cs" srcType="user" uri="config.example.tc.impl.SystemImpl/bin/1.0.0.0/IPeer_0Impl.dll" versionId="1.0.0.0">
+        <file contents="// ------------------------------------------------------------------------------&#xA;//  &lt;autogenerated>&#xA;//      This code was generated by a tool.&#xA;//      Mono Runtime Version: 4.0.30319.17020&#xA;// &#xA;//      Changes to this file may cause incorrect behavior and will be lost if &#xA;//      the code is regenerated.&#xA;//  &lt;/autogenerated>&#xA;// ------------------------------------------------------------------------------&#xA;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using config.example.tc.System;&#xA;using System;&#xA;using System.Threading;&#xA;&#xA;&#xA;namespace config.example.tc.impl.SystemImpl {&#xA;    &#xA;    &#xA;    public class IPeer_0Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_0 {&#xA;        &#xA;        private void Go(Object o) {&#xA;            ((Activate)(o)).go();&#xA;        }&#xA;        &#xA;        public override void main() {&#xA;          /*  IDataSource&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost> data_source = ((IDataSource&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost>)(this.Services.getPort(&quot;data_source&quot;)));&#xA;            Thread go_data_source = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_data_source.Start(data_source);&#xA;            ISplitterReadSource&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction.IPartitionFunction&lt;br.ufc.mdcc.common.Integer.IInteger>> splitter = ((ISplitterReadSource&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction.IPartitionFunction&lt;br.ufc.mdcc.common.Integer.IInteger>>)(this.Services.getPort(&quot;splitter&quot;)));&#xA;            Thread go_splitter = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_splitter.Start(splitter);&#xA;            go_data_source.Join();&#xA;            go_splitter.Join();*/&#xA;        }&#xA;    }&#xA;}&#xA;" name="IPeer_0Impl.cs" srcType="user" uri="config.example.tc.impl.SystemImpl/bin/1.0.0.0/IPeer_0Impl.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_0Impl.dll</dependency>
           <dependency>config.example.tc.System/bin/1.0.0.0/IPeer_0.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="193" x="49" y="535">
+      <visualDescription h="40" w="142" x="111" y="327">
         <color b="79" g="233" r="252"/>
       </visualDescription>
+      <port name="platform_data_source">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_data_source" sRef="data_source"/>
+      </port>
       <port name="input_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="reader" sRef="data_source"/>
       </port>
+      <port name="input_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="source" sRef="join_loop"/>
+      </port>
       <port name="platform_data_source">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_data_source" sRef="data_source"/>
+        <slice pRef="platform_data_source" sRef="join_loop"/>
       </port>
       <port name="task_binding_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -76,14 +70,6 @@
       <port name="task_binding_split_first">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_first" sRef="join_loop"/>
-      </port>
-      <port name="platform_data_source">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_data_source" sRef="join_loop"/>
-      </port>
-      <port name="input_data">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="source" sRef="join_loop"/>
       </port>
       <action id="main">
         <protocol/>
@@ -99,27 +85,12 @@
         <visualDescription h="10" w="10" x="5" y="6"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingWriteData;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface;&#xA;using br.ufc.mdcc.hpcshelf.platform.Platform;&#xA;using config.example.tc.System;&#xA;&#xA;namespace config.example.tc.impl.SystemImpl &#xA;{&#xA;&#x9;public abstract class BaseIPeer_1Impl: Application, BaseIPeer_1&#xA;&#x9;{&#xA;&#x9;&#x9;private IJoinLoopWriteSink&lt;IDataHost, IVertex, IDataTriangle> join_loop = null;&#xA;&#xA;&#x9;&#x9;protected IJoinLoopWriteSink&lt;IDataHost, IVertex, IDataTriangle> Join_loop&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.join_loop == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.join_loop = (IJoinLoopWriteSink&lt;IDataHost, IVertex, IDataTriangle>) Services.getPort(&quot;join_loop&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.join_loop;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IWriteData output_data = null;&#xA;&#xA;&#x9;&#x9;protected IWriteData Output_data&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_data == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_data = (IWriteData) Services.getPort(&quot;output_data&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_data;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeData> task_binding_data = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeData> Task_binding_data&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding_data == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_data = (ITaskPort&lt;ITaskPortTypeData>) Services.getPort(&quot;task_binding_data&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding_data;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IDataSink&lt;IDataHost, IOutputFormat&lt;IVertex, IDataTriangle>, IVertex, IDataTriangle> data_sink = null;&#xA;&#xA;&#x9;&#x9;protected IDataSink&lt;IDataHost, IOutputFormat&lt;IVertex, IDataTriangle>, IVertex, IDataTriangle> Data_sink&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.data_sink == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.data_sink = (IDataSink&lt;IDataHost, IOutputFormat&lt;IVertex, IDataTriangle>, IVertex, IDataTriangle>) Services.getPort(&quot;data_sink&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.data_sink;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeDataSinkInterface> output_data = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeDataSinkInterface> Output_data&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_data == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_data = (IServerBase&lt;IPortTypeDataSinkInterface>) Services.getPort(&quot;output_data&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_data;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IProcessingNode&lt;IDataHost> platform_data_sink = null;&#xA;&#xA;&#x9;&#x9;protected IProcessingNode&lt;IDataHost> Platform_data_sink&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform_data_sink == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform_data_sink = (IProcessingNode&lt;IDataHost>) Services.getPort(&quot;platform_data_sink&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform_data_sink;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIPeer_1Impl.cs" srcType="base" uri="config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_1Impl.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop/bin/1.0.0.0/IJoinLoopWriteSink.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/bin/1.0.0.0/IDataTriangle.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingWriteData/bin/1.0.0.0/IWriteData.dll</dependency>
-          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/IDataSink.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/IOutputFormat.dll</dependency>
-          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface/bin/1.0.0.0/IPortTypeDataSinkInterface.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
-          <dependency>config.example.tc.System/bin/1.0.0.0/BaseIPeer_1.dll</dependency>
-        </file>
-        <file contents="// ------------------------------------------------------------------------------&#xA;//  &lt;autogenerated>&#xA;//      This code was generated by a tool.&#xA;//      Mono Runtime Version: 4.0.30319.17020&#xA;// &#xA;//      Changes to this file may cause incorrect behavior and will be lost if &#xA;//      the code is regenerated.&#xA;//  &lt;/autogenerated>&#xA;// ------------------------------------------------------------------------------&#xA;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using config.example.tc.System;&#xA;using System;&#xA;using System.Threading;&#xA;&#xA;&#xA;namespace config.example.tc.impl.SystemImpl {&#xA;    &#xA;    &#xA;    public class IPeer_1Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_1 {&#xA;        &#xA;        private void Go(Object o) {&#xA;            ((Activate)(o)).go();&#xA;        }&#xA;        &#xA;        public override void main() {&#xA;         /*   IDataSink&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost> data_sink = ((IDataSink&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost>)(this.Services.getPort(&quot;data_sink&quot;)));&#xA;            Thread go_data_sink = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_data_sink.Start(data_sink);&#xA;            ISplitterWriteSink&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger> splitter = ((ISplitterWriteSink&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger>)(this.Services.getPort(&quot;splitter&quot;)));&#xA;            Thread go_splitter = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_splitter.Start(splitter);&#xA;            go_data_sink.Join();&#xA;            go_splitter.Join();*/&#xA;        }&#xA;    }&#xA;}&#xA;" name="IPeer_1Impl.cs" srcType="user" uri="config.example.tc.impl.SystemImpl/bin/1.0.0.0/IPeer_1Impl.dll" versionId="1.0.0.0">
+        <file contents="// ------------------------------------------------------------------------------&#xA;//  &lt;autogenerated>&#xA;//      This code was generated by a tool.&#xA;//      Mono Runtime Version: 4.0.30319.17020&#xA;// &#xA;//      Changes to this file may cause incorrect behavior and will be lost if &#xA;//      the code is regenerated.&#xA;//  &lt;/autogenerated>&#xA;// ------------------------------------------------------------------------------&#xA;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using config.example.tc.System;&#xA;using System;&#xA;using System.Threading;&#xA;&#xA;&#xA;namespace config.example.tc.impl.SystemImpl {&#xA;    &#xA;    &#xA;    public class IPeer_1Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_1 {&#xA;        &#xA;        private void Go(Object o) {&#xA;            ((Activate)(o)).go();&#xA;        }&#xA;        &#xA;        public override void main() {&#xA;         /*   IDataSink&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost> data_sink = ((IDataSink&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost>)(this.Services.getPort(&quot;data_sink&quot;)));&#xA;            Thread go_data_sink = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_data_sink.Start(data_sink);&#xA;            ISplitterWriteSink&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger> splitter = ((ISplitterWriteSink&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.IDataHost, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger>)(this.Services.getPort(&quot;splitter&quot;)));&#xA;            Thread go_splitter = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_splitter.Start(splitter);&#xA;            go_data_sink.Join();&#xA;            go_splitter.Join();*/&#xA;        }&#xA;    }&#xA;}&#xA;" name="IPeer_1Impl.cs" srcType="user" uri="config.example.tc.impl.SystemImpl/bin/1.0.0.0/IPeer_1Impl.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_1Impl.dll</dependency>
           <dependency>config.example.tc.System/bin/1.0.0.0/IPeer_1.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="164" x="29" y="334">
+      <visualDescription h="40" w="165" x="299" y="434">
         <color b="79" g="233" r="252"/>
       </visualDescription>
       <port name="output_data">
@@ -130,6 +101,10 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_data_sink" sRef="data_sink"/>
       </port>
+      <port name="platform_data_sink">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_data_sink" sRef="join_loop"/>
+      </port>
       <port name="task_binding_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_data" sRef="join_loop"/>
@@ -138,10 +113,6 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="sink" sRef="join_loop"/>
       </port>
-      <port name="platform_data_sink">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_data_sink" sRef="join_loop"/>
-      </port>
       <action id="main">
         <protocol/>
       </action>
@@ -149,46 +120,36 @@
     <interface iRef="IRootImpl" nArgs="0">
       <slice isRef="workflow">
         <originRef cRef="workflow" iRef="IWorkflow"/>
-        <visualDescription h="10" w="10" x="9" y="25"/>
+        <visualDescription h="10" w="10" x="35" y="26"/>
       </slice>
       <slice isRef="application">
         <originRef cRef="application" iRef="IApplication"/>
-        <visualDescription h="10" w="10" x="3" y="14"/>
+        <visualDescription h="10" w="10" x="6" y="6"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpcshelf.platform.Platform;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;&#xA;using config.example.tc.Workflow;&#xA;using config.example.tc.Application;&#xA;using config.example.tc.System;&#xA;&#xA;namespace config.example.tc.impl.SystemImpl &#xA;{&#xA;&#x9;public abstract class BaseIRootImpl: Application, BaseIRoot&#xA;&#x9;{&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeData> task_binding_data = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeData> Task_binding_data&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding_data == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_data = (ITaskPort&lt;ITaskPortTypeData>) Services.getPort(&quot;task_binding_data&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding_data;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_reduce = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvance> Task_reduce&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_reduce == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_reduce = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_reduce&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_reduce;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_binding_split_first = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvance> Task_binding_split_first&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding_split_first == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_split_first = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_binding_split_first&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding_split_first;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_binding_split_next = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvance> Task_binding_split_next&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding_split_next == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_split_next = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_binding_split_next&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding_split_next;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IProcessingNode&lt;ISAFeHost> platform_SAFe = null;&#xA;&#xA;&#x9;&#x9;protected IProcessingNode&lt;ISAFeHost> Platform_SAFe&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform_SAFe == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform_SAFe = (IProcessingNode&lt;ISAFeHost>) Services.getPort(&quot;platform_SAFe&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform_SAFe;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IWorkflow&lt;ISAFeHost> workflow = null;&#xA;&#xA;&#x9;&#x9;protected IWorkflow&lt;ISAFeHost> Workflow&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.workflow == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.workflow = (IWorkflow&lt;ISAFeHost>) Services.getPort(&quot;workflow&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.workflow;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IApplication&lt;ISAFeHost> application = null;&#xA;&#xA;&#x9;&#x9;protected IApplication&lt;ISAFeHost> Application&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.application == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.application = (IApplication&lt;ISAFeHost>) Services.getPort(&quot;application&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.application;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIRootImpl.cs" srcType="base" uri="config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIRootImpl.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost/bin/1.0.0.0/ISAFeHost.dll</dependency>
-          <dependency>config.example.tc.Workflow/bin/1.0.0.0/IWorkflow.dll</dependency>
-          <dependency>config.example.tc.Application/bin/1.0.0.0/IApplication.dll</dependency>
-          <dependency>config.example.tc.System/bin/1.0.0.0/BaseIRoot.dll</dependency>
-        </file>
-        <file contents="// ------------------------------------------------------------------------------&#xA;//  &lt;autogenerated>&#xA;//      This code was generated by a tool.&#xA;//      Mono Runtime Version: 4.0.30319.17020&#xA;// &#xA;//      Changes to this file may cause incorrect behavior and will be lost if &#xA;//      the code is regenerated.&#xA;//  &lt;/autogenerated>&#xA;// ------------------------------------------------------------------------------&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using config.example.tc.Application;&#xA;using config.example.tc.System;&#xA;using config.example.tc.Workflow;&#xA;using System;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;&#xA;&#xA;&#xA;namespace config.example.tc.impl.SystemImpl {&#xA;    &#xA;    &#xA;    public class IRootImpl : br.ufc.pargo.hpe.kinds.Application, IRoot {&#xA;        &#xA;        private void Go(Object o) {&#xA;            ((Activate)(o)).go();&#xA;        }&#xA;        &#xA;        public override void main() {&#xA;&#x9;&#x9;/*&#x9;IWorkflow&lt;ISAFeHost> workflow = ((IWorkflow&lt;ISAFeHost>)(this.Services.getPort(&quot;workflow&quot;)));&#xA;            Thread go_workflow = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_workflow.Start(workflow);&#xA;&#x9;&#x9;&#x9;IApplication&lt;ISAFeHost> application = ((IApplication&lt;ISAFeHost>)(this.Services.getPort(&quot;application&quot;)));&#xA;            Thread go_application = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_application.Start(application);&#xA;            go_workflow.Join();&#xA;            go_application.Join();*/&#xA;        }&#xA;    }&#xA;}&#xA;" name="IRootImpl.cs" srcType="user" uri="config.example.tc.impl.SystemImpl/bin/1.0.0.0/IRootImpl.dll" versionId="1.0.0.0">
+        <file contents="// ------------------------------------------------------------------------------&#xA;//  &lt;autogenerated>&#xA;//      This code was generated by a tool.&#xA;//      Mono Runtime Version: 4.0.30319.17020&#xA;// &#xA;//      Changes to this file may cause incorrect behavior and will be lost if &#xA;//      the code is regenerated.&#xA;//  &lt;/autogenerated>&#xA;// ------------------------------------------------------------------------------&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using config.Application;&#xA;using config.example.tc.System;&#xA;using config.phase1.Workflow;&#xA;using System;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;&#xA;&#xA;&#xA;namespace config.example.tc.impl.SystemImpl {&#xA;    &#xA;    &#xA;    public class IRootImpl : br.ufc.pargo.hpe.kinds.Application, IRoot {&#xA;        &#xA;        private void Go(Object o) {&#xA;            ((Activate)(o)).go();&#xA;        }&#xA;        &#xA;        public override void main() {&#xA;&#x9;&#x9;/*&#x9;IWorkflow&lt;ISAFeHost> workflow = ((IWorkflow&lt;ISAFeHost>)(this.Services.getPort(&quot;workflow&quot;)));&#xA;            Thread go_workflow = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_workflow.Start(workflow);&#xA;&#x9;&#x9;&#x9;IApplication&lt;ISAFeHost> application = ((IApplication&lt;ISAFeHost>)(this.Services.getPort(&quot;application&quot;)));&#xA;            Thread go_application = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_application.Start(application);&#xA;            go_workflow.Join();&#xA;            go_application.Join();*/&#xA;        }&#xA;    }&#xA;}&#xA;" name="IRootImpl.cs" srcType="user" uri="config.example.tc.impl.SystemImpl/bin/1.0.0.0/IRootImpl.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIRootImpl.dll</dependency>
           <dependency>config.example.tc.System/bin/1.0.0.0/IRoot.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="153" x="206" y="241">
+      <visualDescription h="40" w="148" x="284" y="107">
         <color b="6" g="154" r="78"/>
       </visualDescription>
-      <port name="platform_SAFe">
+      <port name="task_binding_split_next">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_SAFe" sRef="workflow"/>
-      </port>
-      <port name="task_reduce">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce" sRef="workflow"/>
+        <slice pRef="task_binding_split_next" sRef="workflow"/>
       </port>
       <port name="task_binding_split_first">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_first" sRef="workflow"/>
       </port>
-      <port name="task_binding_split_next">
+      <port name="task_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_next" sRef="workflow"/>
+        <slice pRef="task_gusty" sRef="workflow"/>
+      </port>
+      <port name="platform_SAFe">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_SAFe" sRef="workflow"/>
       </port>
       <port name="task_binding_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -212,36 +173,38 @@
         <visualDescription h="10" w="10" x="39" y="7"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;&#xA;using br.ufc.mdcc.hpcshelf.platform.Platform;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using config.example.tc.System;&#xA;&#xA;namespace config.example.tc.impl.SystemImpl &#xA;{&#xA;&#x9;public abstract class BaseIPeer_2Impl: Application, BaseIPeer_2&#xA;&#x9;{&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeData> task_binding_data = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeData> Task_binding_data&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding_data == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_data = (ITaskPort&lt;ITaskPortTypeData>) Services.getPort(&quot;task_binding_data&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding_data;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IBindingDirectMxNIterator&lt;IPortTypeIterator> input_graph = null;&#xA;&#xA;&#x9;&#x9;protected IBindingDirectMxNIterator&lt;IPortTypeIterator> Input_graph&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_graph == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_graph = (IBindingDirectMxNIterator&lt;IPortTypeIterator>) Services.getPort(&quot;input_graph&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_graph;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IBindingDirectMxNIterator&lt;IPortTypeIterator> output_pairs = null;&#xA;&#xA;&#x9;&#x9;protected IBindingDirectMxNIterator&lt;IPortTypeIterator> Output_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_pairs = (IBindingDirectMxNIterator&lt;IPortTypeIterator>) Services.getPort(&quot;output_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IBindingDirectMxNIterator&lt;IPortTypeIterator> input_pairs = null;&#xA;&#xA;&#x9;&#x9;protected IBindingDirectMxNIterator&lt;IPortTypeIterator> Input_pairs&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_pairs == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_pairs = (IBindingDirectMxNIterator&lt;IPortTypeIterator>) Services.getPort(&quot;input_pairs&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_pairs;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IBindingDirectMxNIterator&lt;IPortTypeIterator> output_graph = null;&#xA;&#xA;&#x9;&#x9;protected IBindingDirectMxNIterator&lt;IPortTypeIterator> Output_graph&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_graph == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_graph = (IBindingDirectMxNIterator&lt;IPortTypeIterator>) Services.getPort(&quot;output_graph&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_graph;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_binding_split_first = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvance> Task_binding_split_first&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding_split_first == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_split_first = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_binding_split_first&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding_split_first;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_binding_split_next = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvance> Task_binding_split_next&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding_split_next == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_split_next = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_binding_split_next&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding_split_next;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_reduce = null;&#xA;&#xA;&#x9;&#x9;protected ITaskPort&lt;ITaskPortTypeAdvance> Task_reduce&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_reduce == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_reduce = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_reduce&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_reduce;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IReducer&lt;IComputeHost, ITriangleCount, IVertex, IDataTriangle, IVertex, IDataTriangle, IUndirectedGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>> reducer = null;&#xA;&#xA;&#x9;&#x9;protected IReducer&lt;IComputeHost, ITriangleCount, IVertex, IDataTriangle, IVertex, IDataTriangle, IUndirectedGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>> Reducer&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.reducer == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.reducer = (IReducer&lt;IComputeHost, ITriangleCount, IVertex, IDataTriangle, IVertex, IDataTriangle, IUndirectedGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>>) Services.getPort(&quot;reducer&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.reducer;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IProcessingNode&lt;IComputeHost> platform_reduce = null;&#xA;&#xA;&#x9;&#x9;protected IProcessingNode&lt;IComputeHost> Platform_reduce&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform_reduce == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform_reduce = (IProcessingNode&lt;IComputeHost>) Services.getPort(&quot;platform_reduce&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform_reduce;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IJoinLoop&lt;IComputeHost, ITerminateFunctionTC, IVertex, IDataTriangle, IPartitionFunction&lt;IVertex>, IInputFormat> join_loop = null;&#xA;&#xA;&#x9;&#x9;protected IJoinLoop&lt;IComputeHost, ITerminateFunctionTC, IVertex, IDataTriangle, IPartitionFunction&lt;IVertex>, IInputFormat> Join_loop&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.join_loop == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.join_loop = (IJoinLoop&lt;IComputeHost, ITerminateFunctionTC, IVertex, IDataTriangle, IPartitionFunction&lt;IVertex>, IInputFormat>) Services.getPort(&quot;join_loop&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.join_loop;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIPeer_2Impl.cs" srcType="base" uri="config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_2Impl.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/IBindingDirectMxNIterator.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer/bin/1.0.0.0/IReducer.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost/bin/1.0.0.0/IComputeHost.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount/bin/1.0.0.0/ITriangleCount.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/bin/1.0.0.0/IDataTriangle.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph/bin/1.0.0.0/IUndirectedGraph.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV/bin/1.0.0.0/IDataContainerV.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic/bin/1.0.0.0/IVertexBasic.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic/bin/1.0.0.0/IEdgeBasic.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop/bin/1.0.0.0/IJoinLoop.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC/bin/1.0.0.0/ITerminateFunctionTC.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll</dependency>
-          <dependency>config.example.tc.System/bin/1.0.0.0/BaseIPeer_2.dll</dependency>
-        </file>
-        <file contents="// ------------------------------------------------------------------------------&#xA;//  &lt;autogenerated>&#xA;//      This code was generated by a tool.&#xA;//      Mono Runtime Version: 4.0.30319.17020&#xA;// &#xA;//      Changes to this file may cause incorrect behavior and will be lost if &#xA;//      the code is regenerated.&#xA;//  &lt;/autogenerated>&#xA;// ------------------------------------------------------------------------------&#xA;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.computation.Mapper;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Shuffler;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.Splitter;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using config.example.tc.System;&#xA;using System;&#xA;using System.Threading;&#xA;&#xA;&#xA;namespace config.example.tc.impl.SystemImpl {&#xA;    &#xA;    &#xA;    public class IPeer_2Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_2 {&#xA;        &#xA;        private void Go(Object o) {&#xA;            ((Activate)(o)).go();&#xA;        }&#xA;        &#xA;        public override void main() {&#xA;          /*  IMapper&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.example.cw.WordCounter.IWordCounter> mapper = ((IMapper&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.example.cw.WordCounter.IWordCounter>)(this.Services.getPort(&quot;mapper&quot;)));&#xA;            Thread go_mapper = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_mapper.Start(mapper);&#xA;            ISplitterMapFeeder&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString> splitter = ((ISplitterMapFeeder&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString>)(this.Services.getPort(&quot;splitter&quot;)));&#xA;            Thread go_splitter = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_splitter.Start(splitter);&#xA;            IShufflerMapCollector&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction.IPartitionFunction&lt;br.ufc.mdcc.common.String.IString>> shuffler = ((IShufflerMapCollector&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction.IPartitionFunction&lt;br.ufc.mdcc.common.String.IString>>)(this.Services.getPort(&quot;shuffler&quot;)));&#xA;            Thread go_shuffler = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_shuffler.Start(shuffler);&#xA;            go_mapper.Join();&#xA;            go_splitter.Join();&#xA;            go_shuffler.Join();*/&#xA;        }&#xA;    }&#xA;}&#xA;" name="IPeer_2Impl.cs" srcType="user" uri="config.example.tc.impl.SystemImpl/bin/1.0.0.0/IPeer_2Impl.dll" versionId="1.0.0.0">
+        <file contents="// ------------------------------------------------------------------------------&#xA;//  &lt;autogenerated>&#xA;//      This code was generated by a tool.&#xA;//      Mono Runtime Version: 4.0.30319.17020&#xA;// &#xA;//      Changes to this file may cause incorrect behavior and will be lost if &#xA;//      the code is regenerated.&#xA;//  &lt;/autogenerated>&#xA;// ------------------------------------------------------------------------------&#xA;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using config.example.tc.System;&#xA;using System;&#xA;using System.Threading;&#xA;&#xA;&#xA;namespace config.example.tc.impl.SystemImpl {&#xA;    &#xA;    &#xA;    public class IPeer_2Impl : br.ufc.pargo.hpe.kinds.Application, IPeer_2 {&#xA;        &#xA;        private void Go(Object o) {&#xA;            ((Activate)(o)).go();&#xA;        }&#xA;        &#xA;        public override void main() {&#xA;          /*  IMapper&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.example.cw.WordCounter.IWordCounter> mapper = ((IMapper&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.example.cw.WordCounter.IWordCounter>)(this.Services.getPort(&quot;mapper&quot;)));&#xA;            Thread go_mapper = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_mapper.Start(mapper);&#xA;            ISplitterMapFeeder&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString> splitter = ((ISplitterMapFeeder&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.common.String.IString>)(this.Services.getPort(&quot;splitter&quot;)));&#xA;            Thread go_splitter = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_splitter.Start(splitter);&#xA;            IShufflerMapCollector&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction.IPartitionFunction&lt;br.ufc.mdcc.common.String.IString>> shuffler = ((IShufflerMapCollector&lt;br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.IComputeHost, br.ufc.mdcc.common.String.IString, br.ufc.mdcc.common.Integer.IInteger, br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction.IPartitionFunction&lt;br.ufc.mdcc.common.String.IString>>)(this.Services.getPort(&quot;shuffler&quot;)));&#xA;            Thread go_shuffler = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_shuffler.Start(shuffler);&#xA;            go_mapper.Join();&#xA;            go_splitter.Join();&#xA;            go_shuffler.Join();*/&#xA;        }&#xA;    }&#xA;}&#xA;" name="IPeer_2Impl.cs" srcType="user" uri="config.example.tc.impl.SystemImpl/bin/1.0.0.0/IPeer_2Impl.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/config.example.tc.impl.SystemImpl/bin/1.0.0.0/BaseIPeer_2Impl.dll</dependency>
           <dependency>config.example.tc.System/bin/1.0.0.0/IPeer_2.dll</dependency>
         </file>
       </sources>
-      <visualDescription h="40" w="213" x="445" y="445">
+      <visualDescription h="40" w="168" x="597" y="271">
         <color b="79" g="233" r="252"/>
       </visualDescription>
+      <port name="task_binding_split_next">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_next" sRef="join_loop"/>
+      </port>
+      <port name="output_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="join_loop"/>
+      </port>
+      <port name="task_binding_split_first">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_first" sRef="join_loop"/>
+      </port>
+      <port name="output_graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_graph" sRef="join_loop"/>
+      </port>
+      <port name="platform_reduce">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_reduce" sRef="join_loop"/>
+      </port>
+      <port name="input_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="join_loop"/>
+      </port>
       <port name="task_binding_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_data" sRef="join_loop"/>
@@ -250,53 +213,29 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feed_graph" sRef="join_loop"/>
       </port>
-      <port name="output_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="join_loop"/>
-      </port>
-      <port name="input_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="join_loop"/>
-      </port>
-      <port name="task_binding_split_first">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_first" sRef="join_loop"/>
-      </port>
-      <port name="platform_reduce">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_reduce" sRef="join_loop"/>
-      </port>
-      <port name="task_binding_split_next">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_next" sRef="join_loop"/>
-      </port>
-      <port name="output_graph">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_graph" sRef="join_loop"/>
-      </port>
       <port name="output_graph">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feed_graph" sRef="reducer"/>
-      </port>
-      <port name="input_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="reducer"/>
-      </port>
-      <port name="input_graph">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_graph" sRef="reducer"/>
-      </port>
-      <port name="task_reduce">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce" sRef="reducer"/>
       </port>
       <port name="platform_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_reduce" sRef="reducer"/>
       </port>
+      <port name="input_graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_graph" sRef="reducer"/>
+      </port>
       <port name="output_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feed_pairs" sRef="reducer"/>
+      </port>
+      <port name="task_reduce">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce" sRef="reducer"/>
+      </port>
+      <port name="input_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="reducer"/>
       </port>
       <action id="main">
         <protocol/>
@@ -304,19 +243,19 @@
     </interface>
     <unit facet="0" iRef="IPeer_0Impl" multiple="true" private="false" replica="0" uRef="peer_0" visibleInterface="true">
       <super cRef="base" uRef="peer_0"/>
-      <visualDescription h="40" w="65" x="172" y="478"/>
+      <visualDescription h="40" w="65" x="144" y="270"/>
     </unit>
     <unit facet="0" iRef="IPeer_1Impl" multiple="true" private="false" replica="0" uRef="peer_1" visibleInterface="true">
       <super cRef="base" uRef="peer_1"/>
-      <visualDescription h="40" w="61" x="183" y="386"/>
+      <visualDescription h="40" w="61" x="339" y="359"/>
     </unit>
     <unit facet="0" iRef="IRootImpl" multiple="true" private="false" replica="0" uRef="root" visibleInterface="true">
       <super cRef="base" uRef="root"/>
-      <visualDescription h="40" w="56" x="275" y="315"/>
+      <visualDescription h="40" w="56" x="343" y="177"/>
     </unit>
     <unit facet="0" iRef="IPeer_2Impl" multiple="true" private="false" replica="0" uRef="peer_2" visibleInterface="true">
       <super cRef="base" uRef="peer_2"/>
-      <visualDescription h="40" w="63" x="409" y="377"/>
+      <visualDescription h="40" w="63" x="476" y="273"/>
     </unit>
   </componentInfo>
 </component:component>
