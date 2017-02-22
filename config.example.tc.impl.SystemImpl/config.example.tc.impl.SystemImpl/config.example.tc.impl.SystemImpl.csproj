@@ -87,18 +87,6 @@
       <Project>{97B35E58-AC6B-44A6-A536-90FA39076265}</Project>
       <Name>br.ufc.mdcc.common.Integer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.common.String\br.ufc.mdcc.common.String\br.ufc.mdcc.common.String.csproj">
-      <Project>{1F1C11D1-910D-4B0B-AE3A-80EC9882759C}</Project>
-      <Name>br.ufc.mdcc.common.String</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\config.example.tc.Application\config.example.tc.Application\config.example.tc.Application.csproj">
-      <Project>{951951F2-8932-4970-A7B9-34ACCFD28FD2}</Project>
-      <Name>config.example.tc.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\config.example.tc.Workflow\config.example.tc.Workflow\config.example.tc.Workflow.csproj">
-      <Project>{DF4DE51B-AC89-4177-AD3A-F50B760727BD}</Project>
-      <Name>config.example.tc.Workflow</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\config.example.tc.System\config.example.tc.System\config.example.tc.System.csproj">
       <Project>{60628259-5FDA-4B24-A12F-F64519E4E8BF}</Project>
       <Name>config.example.tc.System</Name>
@@ -178,6 +166,14 @@
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop\br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop\br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop.csproj">
       <Project>{262FC7ED-AB78-4162-9007-45A735E3ABF8}</Project>
       <Name>br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\config.Application\config.Application\config.Application.csproj">
+      <Project>{9B50C15B-478C-4E9D-90BF-7D7178862E2A}</Project>
+      <Name>config.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\config.phase1.Workflow\config.phase1.Workflow\config.phase1.Workflow.csproj">
+      <Project>{EBE0A880-6045-4D31-BB42-44E3A37631A8}</Project>
+      <Name>config.phase1.Workflow</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

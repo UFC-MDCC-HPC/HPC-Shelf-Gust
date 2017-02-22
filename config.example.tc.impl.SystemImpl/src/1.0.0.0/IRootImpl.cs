@@ -9,9 +9,9 @@
 // ------------------------------------------------------------------------------
 
 using br.ufc.pargo.hpe.kinds;
-using config.example.tc.Application;
+using config.Application;
 using config.example.tc.System;
-using config.example.tc.Workflow;
+using config.phase1.Workflow;
 using System;
 using System.Threading;
 using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;
