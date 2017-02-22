@@ -23,7 +23,7 @@
           <visualDescription h="42" w="231" x="109" y="350">
             <color b="243" g="217" r="217"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1438870007"/>
+          <parameter formFieldId="task_port_type" varName="X###1425403670"/>
           <unitBounds parallel="true" uRef="peer">
             <visualDescription h="30" w="20" x="10" y="10"/>
           </unitBounds>
@@ -32,7 +32,7 @@
           <visualDescription h="42" w="240" x="157" y="428">
             <color b="243" g="217" r="217"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###274858782"/>
+          <parameter formFieldId="task_port_type" varName="X###1579399405"/>
           <unitBounds parallel="true" uRef="peer">
             <visualDescription h="30" w="20" x="10" y="10"/>
           </unitBounds>
@@ -41,7 +41,7 @@
           <visualDescription h="42" w="251" x="572" y="206">
             <color b="243" g="217" r="217"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###314224377"/>
+          <parameter formFieldId="task_port_type" varName="X###2067922915"/>
           <unitBounds parallel="true" uRef="peer">
             <visualDescription h="30" w="20" x="10" y="10"/>
           </unitBounds>
@@ -50,7 +50,7 @@
           <visualDescription h="42" w="270" x="616" y="318">
             <color b="243" g="217" r="217"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###506816266"/>
+          <parameter formFieldId="task_port_type" varName="X###705089357"/>
           <unitBounds parallel="true" uRef="peer">
             <visualDescription h="30" w="20" x="10" y="10"/>
           </unitBounds>
@@ -59,7 +59,7 @@
           <visualDescription h="42" w="249" x="610" y="261">
             <color b="243" g="217" r="217"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1140838660"/>
+          <parameter formFieldId="task_port_type" varName="X###622058953"/>
           <unitBounds parallel="true" uRef="peer">
             <visualDescription h="30" w="20" x="10" y="10"/>
           </unitBounds>
@@ -68,7 +68,7 @@
           <visualDescription h="42" w="248" x="659" y="373">
             <color b="243" g="217" r="217"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1341358204"/>
+          <parameter formFieldId="task_port_type" varName="X###994429475"/>
           <unitBounds parallel="true" uRef="peer">
             <visualDescription h="30" w="20" x="10" y="10"/>
           </unitBounds>
@@ -77,16 +77,16 @@
           <visualDescription h="60" w="245" x="650" y="421">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###2071492069"/>
+          <parameter formFieldId="task_port_type" varName="X###1658445371"/>
           <unitBounds parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
         <port localRef="task_binding_step1" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-          <visualDescription h="60" w="247" x="397" y="489">
+          <visualDescription h="60" w="247" x="397" y="463">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###562318519"/>
+          <parameter formFieldId="task_port_type" varName="X###1301095984"/>
           <unitBounds parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
