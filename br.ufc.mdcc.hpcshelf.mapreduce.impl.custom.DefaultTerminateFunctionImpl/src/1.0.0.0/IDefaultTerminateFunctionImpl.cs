@@ -18,7 +18,6 @@ where OValue:IData
 	{
 		private IPortTypeIterator iterate_pairs = null;
 		public IPortTypeIterator Iterate_pairs { set {this.iterate_pairs = value; } }
-		private int iterate_num = 0;
 
 		public override void main()
 		{
@@ -28,25 +27,11 @@ where OValue:IData
 			IIteratorInstance<IKVPair<IKey, IValue>> input_pairs = (IIteratorInstance<IKVPair<IKey, IValue>>)Input_pairs.Instance;
 
 			Console.WriteLine (this.Rank + ": TERMINATE FUNCTION 2");
-			object pair;
 
-//			input_pairs.finish ();
-//
-//			// All pairs are sent to the output, i.e. the algorithm is not iterative.
-//			while (iterate_pairs.fetch_next(out pair))
-//				output_pairs.put(pair);
-//
-//			output_pairs.finish ();
-
-			// For 3 iterations (Triangle Counter)
-			while ((iterate_num++) < (3-1)) {
-				while (iterate_pairs.fetch_next(out pair))
-					input_pairs.put(pair);
-				input_pairs.finish ();
-			}
 			input_pairs.finish ();
 
-			// Finally, all pairs are sent to the output.
+			// All pairs are sent to the output, i.e. the algorithm is not iterative.
+			object pair;
 			while (iterate_pairs.fetch_next(out pair))
 				output_pairs.put(pair);
 
