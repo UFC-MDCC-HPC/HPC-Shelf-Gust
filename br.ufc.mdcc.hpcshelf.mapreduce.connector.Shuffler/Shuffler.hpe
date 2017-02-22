@@ -298,7 +298,7 @@
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="input_key" varName="GIF"/>
-      <port localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+      <port localRef="input_key" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
         <visualDescription h="41" w="137" x="247" y="655">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -306,7 +306,7 @@
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <port localRef="output_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="true">
+      <port localRef="output_key" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
         <visualDescription h="36" w="144" x="431" y="661">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -476,13 +476,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_map" sRef="platform_map"/>
       </port>
-      <port name="output_key">
-        <visualDescription h="10" w="10" x="169" y="4"/>
-        <slice pRef="output_key" sRef="partition_function"/>
-      </port>
       <port name="input_key">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_key" sRef="partition_function"/>
+      </port>
+      <port name="output_key">
+        <visualDescription h="10" w="10" x="169" y="4"/>
+        <slice pRef="output_key" sRef="partition_function"/>
       </port>
       <port name="output_key_gif">
         <visualDescription h="10" w="10" x="0" y="0"/>
