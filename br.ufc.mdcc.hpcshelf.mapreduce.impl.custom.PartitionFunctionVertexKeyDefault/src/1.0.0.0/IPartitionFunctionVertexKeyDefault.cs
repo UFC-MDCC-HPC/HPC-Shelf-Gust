@@ -26,7 +26,7 @@ where TKey:IVertex
 		{ 
 			IVertexInstance input_vertex_instance = (IVertexInstance) Input_key.Instance;
 			IIntegerInstance output_integer_instance = (IIntegerInstance) Output_key.Instance;
-			int value = graph_partition_table[((int) input_vertex_instance.Id) -1];
+			int value = graph_partition_table[ Math.Abs(input_vertex_instance.Id) -1];
 			output_integer_instance.Value = value % NumberOfPartitions;
 		}
 	}
