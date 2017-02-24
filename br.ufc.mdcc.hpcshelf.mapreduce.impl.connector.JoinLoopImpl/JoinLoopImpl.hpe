@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000093cdf7ba1a36aa50f7c38367d50097a964e96fd10d2803a7d9d440ed69c6ce5b7326138711f9768e629d794573d82e80f3e47010d4b8230775e9cab9ad777ff60341d710143a832e137903124d02015ff17f9e0f894c25145925ca2f353a611627c34831ea48859e45aa704fe49dd5ec5ddb2b85fb5db79f2b9517ff5c5b0588" isAbstract="false" kind="Synchronizer" name="JoinLoopImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.connector">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000adebb11309b18df6c3feb89a90dda6a1af4d7b4095a75369883e26351485b01ce9e4786d52d43e192fef6704c8302ff3084199dec4d3f1c65eb93661c7d0fc5df240320ae8cb689ad53efa714f56e0d0d3fdf59c717a7fb7c7e81ae5902429860c584699b9063950c73d36714b94ec2d54fea1605c3a12a56116da17112a29a5" isAbstract="false" kind="Synchronizer" name="JoinLoopImpl" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.impl.connector">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000913012acf72adb5494c400dda434c4ac2eb5ef43bed854dd4a6b3ae3af89ae353e1599571d96ff91c68a412d32a4252c110fb7e5a3f90820faf8dee770291f7fb4a801e2e0fba0761d94478b6334c0dacef0316fdfa7cd7967c392a59cf4b4a37b6b3652aa3e0fe1e6b4409ac879594c6bd6b811c860cb12833a5458918e3e99" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop/JoinLoop.hpe" name="JoinLoop" package="br.ufc.mdcc.hpcshelf.mapreduce.connector" version="1.0.0.0">
-        <visualDescription h="60" w="100" x="419" y="392">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c323304580f18be7e6bf78d2b5883dc8b7e8434639d13589122b59f2f8a9fccd7d5fdf9efa5218072f48ba40c5817e1640ddb97cf48f097893c62dbc8c30dad55bd86a15e0e74f097116555a7d6114b57b7e9d1397b2f3d27c79b73636b13b598a76e1d1c7a7ac9adad700d34081992c8b04fa82311f3bc7f9cd3a9b3ad95d8f" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop/JoinLoop.hpe" name="JoinLoop" package="br.ufc.mdcc.hpcshelf.mapreduce.connector" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="384" y="401">
           <color b="255" g="255" r="255"/>
         </visualDescription>
         <parameter formFieldId="output_value_type" varName="OValue"/>
@@ -23,7 +23,7 @@
           <visualDescription h="49" w="114" x="250" y="177">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1445208932"/>
+          <parameter formFieldId="server_port_type" varName="X###1229133525"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="87" y="11"/>
           </unitBounds>
@@ -32,7 +32,7 @@
           <visualDescription h="44" w="122" x="172" y="234">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###687253926"/>
+          <parameter formFieldId="server_port_type" varName="X###382986374"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="100" y="12"/>
           </unitBounds>
@@ -41,7 +41,7 @@
           <visualDescription h="67" w="124" x="53" y="669">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###684504507"/>
+          <parameter formFieldId="server_port_type" varName="X###1122226628"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="50" y="45"/>
           </unitBounds>
@@ -50,16 +50,16 @@
           <visualDescription h="60" w="126" x="63" y="593">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1771262667"/>
+          <parameter formFieldId="server_port_type" varName="X###1773361280"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
         <port localRef="task_binding_split_first" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-          <visualDescription h="69" w="206" x="580" y="648">
+          <visualDescription h="69" w="206" x="612" y="548">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###1193329555"/>
+          <parameter formFieldId="task_port_type" varName="X###2104979894"/>
           <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
             <visualDescription h="20" w="20" x="179" y="6"/>
           </unitBounds>
@@ -68,10 +68,10 @@
           </unitBounds>
         </port>
         <port localRef="task_binding_split_next" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
-          <visualDescription h="59" w="232" x="441" y="724">
+          <visualDescription h="59" w="232" x="294" y="660">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###940051552"/>
+          <parameter formFieldId="task_port_type" varName="X###751477780"/>
           <unitBounds parallel="true" uRef="peer">
             <visualDescription h="20" w="20" x="2" y="17"/>
           </unitBounds>
@@ -80,7 +80,7 @@
           <visualDescription h="67" w="193" x="711" y="96">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="task_port_type" varName="X###409243485"/>
+          <parameter formFieldId="task_port_type" varName="X###735720453"/>
           <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
             <visualDescription h="20" w="20" x="2" y="24"/>
           </unitBounds>
@@ -122,7 +122,7 @@
           <visualDescription h="60" w="142" x="51" y="523">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###1780051411"/>
+          <parameter formFieldId="server_port_type" varName="X###2006911086"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -131,7 +131,7 @@
           <visualDescription h="60" w="143" x="54" y="451">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="server_port_type" varName="X###824767164"/>
+          <parameter formFieldId="server_port_type" varName="X###1618803319"/>
           <unitBounds parallel="false" uRef="client_server">
             <visualDescription h="20" w="20" x="116" y="7"/>
           </unitBounds>

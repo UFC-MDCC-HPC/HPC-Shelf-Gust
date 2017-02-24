@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000913012acf72adb5494c400dda434c4ac2eb5ef43bed854dd4a6b3ae3af89ae353e1599571d96ff91c68a412d32a4252c110fb7e5a3f90820faf8dee770291f7fb4a801e2e0fba0761d94478b6334c0dacef0316fdfa7cd7967c392a59cf4b4a37b6b3652aa3e0fe1e6b4409ac879594c6bd6b811c860cb12833a5458918e3e99" isAbstract="true" kind="Synchronizer" name="JoinLoop" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.connector">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c323304580f18be7e6bf78d2b5883dc8b7e8434639d13589122b59f2f8a9fccd7d5fdf9efa5218072f48ba40c5817e1640ddb97cf48f097893c62dbc8c30dad55bd86a15e0e74f097116555a7d6114b57b7e9d1397b2f3d27c79b73636b13b598a76e1d1c7a7ac9adad700d34081992c8b04fa82311f3bc7f9cd3a9b3ad95d8f" isAbstract="true" kind="Synchronizer" name="JoinLoop" packagePath="br.ufc.mdcc.hpcshelf.mapreduce.connector">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -252,7 +252,7 @@
         <visualDescription h="34" w="109" x="229" y="609">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###492437910"/>
+        <parameter formFieldId="item_type" varName="X###1639545721"/>
         <unitBounds parallel="true" uRef="iterator">
           <visualDescription h="20" w="20" x="22" y="18"/>
         </unitBounds>
@@ -261,7 +261,7 @@
         <visualDescription h="41" w="96" x="19" y="718">
           <color b="203" g="192" r="255"/>
         </visualDescription>
-        <parameter formFieldId="item_type" varName="X###1977832"/>
+        <parameter formFieldId="item_type" varName="X###1482258190"/>
         <unitBounds parallel="true" uRef="iterator">
           <visualDescription h="20" w="20" x="20" y="17"/>
         </unitBounds>
@@ -290,7 +290,7 @@
       </unitBounds>
     </innerComponent>
     <innerComponent localRef="platform_data_source" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
-      <visualDescription h="57" w="184" x="206" y="75">
+      <visualDescription h="57" w="184" x="223" y="80">
         <color b="255" g="255" r="255"/>
       </visualDescription>
       <parameter formFieldId="maintainer" varName="M2"/>
@@ -504,7 +504,7 @@
     <supplyParameter cRef="kvgifs" direct="true" varName="KVGIFS"/>
     <supplyParameter cRef="dws" direct="true" varName="DWS"/>
     <supplyParameter cRef="dss" direct="true" varName="DSS"/>
-    <innerComponent localRef="C###492437910" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <innerComponent localRef="C###1639545721" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="193" y="485">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -514,8 +514,8 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###492437910" varName="X###492437910"/>
-    <innerComponent localRef="C###1977832" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+    <supplyParameter cRef="C###1639545721" varName="X###1639545721"/>
+    <innerComponent localRef="C###1482258190" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
       <visualDescription h="60" w="100" x="420" y="345">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -525,13 +525,13 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <supplyParameter cRef="C###1977832" varName="X###1977832"/>
-    <innerRenaming cNewName="input_key_gif" cOldName="input_key" cRef="bin_function_gif"/>
-    <innerRenaming cNewName="input_key_iterate_gif" cOldName="input_key" cRef="bin_function_iterate_gif"/>
-    <innerRenaming cNewName="input_key_iterate" cOldName="input_key" cRef="bin_function_iterate"/>
+    <supplyParameter cRef="C###1482258190" varName="X###1482258190"/>
     <innerRenaming cNewName="output_key_iterate_gif" cOldName="output_key" cRef="bin_function_iterate_gif"/>
-    <innerRenaming cNewName="output_key_iterate" cOldName="output_key" cRef="bin_function_iterate"/>
     <innerRenaming cNewName="output_key_gif" cOldName="output_key" cRef="bin_function_gif"/>
+    <innerRenaming cNewName="input_key_iterate" cOldName="input_key" cRef="bin_function_iterate"/>
+    <innerRenaming cNewName="input_key_iterate_gif" cOldName="input_key" cRef="bin_function_iterate_gif"/>
+    <innerRenaming cNewName="input_key_gif" cOldName="input_key" cRef="bin_function_gif"/>
+    <innerRenaming cNewName="output_key_iterate" cOldName="output_key" cRef="bin_function_iterate"/>
     <interface iRef="IJoinLoop" nArgs="8">
       <slice isRef="feed_pairs">
         <originRef cRef="feed_pairs" iRef="IBindingDirectMxNIterator"/>
@@ -545,13 +545,13 @@
         <originRef cRef="feed_graph" iRef="IBindingDirectMxNIterator"/>
         <visualDescription h="10" w="10" x="2" y="15"/>
       </slice>
-      <slice isRef="collect_graph">
-        <originRef cRef="collect_graph" iRef="IBindingDirectMxNIterator"/>
-        <visualDescription h="10" w="10" x="1" y="26"/>
-      </slice>
       <slice isRef="platform_reduce">
         <originRef cRef="platform_reduce" iRef="IProcessingNode"/>
         <visualDescription h="10" w="10" x="69" y="1"/>
+      </slice>
+      <slice isRef="collect_graph">
+        <originRef cRef="collect_graph" iRef="IBindingDirectMxNIterator"/>
+        <visualDescription h="10" w="10" x="1" y="26"/>
       </slice>
       <slice isRef="task_binding_split_first">
         <originRef cRef="task_binding_split_first" iRef="ITaskPort"/>
@@ -646,13 +646,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feed_graph" sRef="feed_graph"/>
       </port>
-      <port name="collect_graph">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_graph" sRef="collect_graph"/>
-      </port>
       <port name="platform_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_reduce" sRef="platform_reduce"/>
+      </port>
+      <port name="collect_graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_graph" sRef="collect_graph"/>
       </port>
       <port name="task_binding_split_first">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -674,21 +674,21 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="input_pairs" sRef="terminate_function"/>
       </port>
-      <port name="input_key_iterate">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="input_key" sRef="bin_function_iterate"/>
-      </port>
       <port name="output_key_iterate">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="output_key" sRef="bin_function_iterate"/>
       </port>
-      <port name="output_key_iterate_gif">
+      <port name="input_key_iterate">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="output_key" sRef="bin_function_iterate_gif"/>
+        <slice pRef="input_key" sRef="bin_function_iterate"/>
       </port>
       <port name="input_key_iterate_gif">
         <visualDescription h="10" w="10" x="12" y="5"/>
         <slice pRef="input_key" sRef="bin_function_iterate_gif"/>
+      </port>
+      <port name="output_key_iterate_gif">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="bin_function_iterate_gif"/>
       </port>
       <parameter iname="IMaintainer" order="0" parid="platform_reduce_maintainer" uname="maintainer" varid="M1"/>
       <parameter iname="ITerminateFunction" parid="terminate_function" uname="terminate_function" varid="TF"/>
@@ -711,13 +711,13 @@
         <originRef cRef="task_binding_split_first" iRef="ITaskPort"/>
         <visualDescription h="10" w="10" x="80" y="0"/>
       </slice>
-      <slice isRef="task_binding_data">
-        <originRef cRef="task_binding_data" iRef="ITaskPort"/>
-        <visualDescription h="10" w="10" x="62" y="0"/>
-      </slice>
       <slice isRef="platform_data_source">
         <originRef cRef="platform_data_source" iRef="IProcessingNode"/>
         <visualDescription h="10" w="10" x="40" y="2"/>
+      </slice>
+      <slice isRef="task_binding_data">
+        <originRef cRef="task_binding_data" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="62" y="0"/>
       </slice>
       <slice isRef="split_channel">
         <originRef cRef="split_channel" iRef="IChannel"/>
@@ -758,13 +758,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_first" sRef="task_binding_split_first"/>
       </port>
-      <port name="task_binding_data">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_data" sRef="task_binding_data"/>
-      </port>
       <port name="platform_data_source">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_data_source" sRef="platform_data_source"/>
+      </port>
+      <port name="task_binding_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_data" sRef="task_binding_data"/>
       </port>
       <port name="input_key_gif">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -855,11 +855,11 @@
       <slices cRef="feed_graph" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="feed_graph" transitive="false">
         <visualDescription h="10" w="10" x="46" y="44"/>
       </slices>
-      <slices cRef="platform_reduce" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_reduce" transitive="false">
-        <visualDescription h="10" w="10" x="1" y="16"/>
-      </slices>
       <slices cRef="collect_graph" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="collect_graph" transitive="false">
         <visualDescription h="10" w="10" x="1" y="35"/>
+      </slices>
+      <slices cRef="platform_reduce" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_reduce" transitive="false">
+        <visualDescription h="10" w="10" x="1" y="16"/>
       </slices>
       <slices cRef="output_pairs" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="output_pairs" transitive="true">
         <visualDescription h="10" w="10" x="82" y="46"/>
@@ -921,11 +921,11 @@
       <slices cRef="task_binding_split_first" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_binding_split_first" transitive="false">
         <visualDescription h="10" w="10" x="98" y="35"/>
       </slices>
-      <slices cRef="platform_data_source" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_data_source" transitive="false">
-        <visualDescription h="10" w="10" x="26" y="4"/>
-      </slices>
       <slices cRef="task_binding_data" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_binding_data" transitive="false">
         <visualDescription h="10" w="10" x="114" y="16"/>
+      </slices>
+      <slices cRef="platform_data_source" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_data_source" transitive="false">
+        <visualDescription h="10" w="10" x="26" y="4"/>
       </slices>
       <slices cRef="output_key_gif" inner_replica="0" slice_replica="0" uRef="data" sliceName="output_key_gif" transitive="true">
         <visualDescription h="10" w="10" x="130" y="24"/>
