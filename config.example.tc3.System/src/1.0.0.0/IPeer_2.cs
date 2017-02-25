@@ -9,7 +9,7 @@
 // ------------------------------------------------------------------------------
 
 
-namespace config.example.tc.System {
+namespace config.example.tc3.System {
     
     
     public interface IPeer_2 : br.ufc.pargo.hpe.kinds.IApplicationKind {

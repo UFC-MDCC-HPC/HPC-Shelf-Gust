@@ -9,7 +9,7 @@
 // ------------------------------------------------------------------------------
 
 
-namespace config.example.tc.System {
+namespace config.example.tc3.System {
     
     
     public interface IRoot : br.ufc.pargo.hpe.kinds.IApplicationKind {
