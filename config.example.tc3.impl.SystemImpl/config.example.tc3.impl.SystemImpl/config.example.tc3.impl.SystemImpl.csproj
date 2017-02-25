@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<PropertyGroup>
+<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+<ProductVersion>8.0.30703</ProductVersion>
+<SchemaVersion>2.0</SchemaVersion>
+<ProjectGuid>{13e7f17c-4147-4f91-aa44-ba04e11c6ac0}</ProjectGuid>
+<OutputType>Library</OutputType>
+<RootNamespace>config.example.tc.impl.SystemImpl</RootNamespace>
+<AssemblyName>config.example.tc.impl.SystemImpl</AssemblyName>
+<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+<SignAssembly>true</SignAssembly>
+<AssemblyOriginatorKeyFile>..\SystemImpl.snk</AssemblyOriginatorKeyFile>
+</PropertyGroup>
+<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+<DebugSymbols>true</DebugSymbols>
+<DebugType>full</DebugType>
+<Optimize>false</Optimize>
+<OutputPath>bin\Debug</OutputPath>
+<DefineConstants>DEBUG;</DefineConstants>
+<ErrorReport>prompt</ErrorReport>
+<WarningLevel>4</WarningLevel>
+<ConsolePause>false</ConsolePause>
+</PropertyGroup>
+<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+<DebugType>full</DebugType>
+<Optimize>true</Optimize>
+<OutputPath>bin\Release</OutputPath>
+<ErrorReport>prompt</ErrorReport>
+<WarningLevel>4</WarningLevel>
+<ConsolePause>false</ConsolePause>
+</PropertyGroup>
+<ItemGroup>
+<Reference Include="System" />
+<Reference Include="DGAC">
+<HintPath>..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\DGAC\DGAC.dll</HintPath>
+</Reference>
+<Reference Include="System.Web" />
+</ItemGroup>
+<ItemGroup>
+<Compile Include="Properties\AssemblyInfo.cs" />
+<Compile Include="..\src\1.0.0.0\IPeer_0Impl.cs">
+<Link>IPeer_0Impl.cs</Link>
+</Compile>
+<Compile Include="..\src\1.0.0.0\IPeer_1Impl.cs">
+<Link>IPeer_1Impl.cs</Link>
+</Compile>
+<Compile Include="..\src\1.0.0.0\IPeer_2Impl.cs">
+<Link>IPeer_2Impl.cs</Link>
+</Compile>
+<Compile Include="..\src\1.0.0.0\IRootImpl.cs">
+<Link>IRootImpl.cs</Link>
+</Compile>
+</ItemGroup>
+<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+<ItemGroup>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase.csproj">
+<Project>{226E5496-FDF2-4765-9C43-D2A2770EE760}</Project>
+<Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface.csproj">
+<Project>{C8E65EC9-4750-4896-AF88-7C09BA7EFDF2}</Project>
+<Name>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource\br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource\br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource.csproj">
+<Project>{BEE63437-0DC5-4A9F-A8A6-16E755AE9B3B}</Project>
+<Name>br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data.csproj">
+<Project>{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}</Project>
+<Name>br.ufc.mdcc.common.Data</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.common.Platform\br.ufc.mdcc.common.Platform\br.ufc.mdcc.common.Platform.csproj">
+<Project>{64735B4D-4D79-4F10-A191-6A3A9F9D54EB}</Project>
+<Name>br.ufc.mdcc.common.Platform</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator.csproj">
+<Project>{1784C0D3-7632-4F38-8FFF-FA8008E2A724}</Project>
+<Name>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction.csproj">
+<Project>{ADB1B6BE-28D3-4B10-BBFC-9224181F52C7}</Project>
+<Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer.csproj">
+<Project>{97B35E58-AC6B-44A6-A536-90FA39076265}</Project>
+<Name>br.ufc.mdcc.common.Integer</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\config.example.tc.System\config.example.tc.System\config.example.tc.System.csproj">
+<Project>{60628259-5FDA-4B24-A12F-F64519E4E8BF}</Project>
+<Name>config.example.tc.System</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink\br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink\br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink.csproj">
+<Project>{E27FAA80-9E4B-4CBE-970F-23E98879A3A0}</Project>
+<Name>br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface.csproj">
+<Project>{504A4A55-3292-4433-B83E-290ABB32ACDF}</Project>
+<Name>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner.csproj">
+<Project>{CFC8E9C1-30F7-4A4A-9B1E-9AFA4B474D9A}</Project>
+<Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType.csproj">
+<Project>{4BB52CBE-64B0-4E9C-812F-921ED3FB87AF}</Project>
+<Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner.csproj">
+<Project>{B1988D74-54AE-4031-B185-E046226BC359}</Project>
+<Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer\br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer\br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer.csproj">
+<Project>{CD94FE2F-14E1-4B06-B2F1-F99E7A24F47C}</Project>
+<Name>br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction.csproj">
+<Project>{F8166152-ED2A-473F-A191-3FC88F611512}</Project>
+<Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Platform\br.ufc.mdcc.hpcshelf.platform.Platform\br.ufc.mdcc.hpcshelf.platform.Platform.csproj">
+<Project>{37C2BDBB-CD4E-4CE5-B1B9-6B852F335535}</Project>
+<Name>br.ufc.mdcc.hpcshelf.platform.Platform</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer.csproj">
+<Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>
+<Name>br.ufc.mdcc.hpcshelf.platform.Maintainer</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction.csproj">
+<Project>{D20F8E33-1C0C-44FF-83AD-818C99718420}</Project>
+<Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost\br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost\br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost.csproj">
+<Project>{B9018D06-D120-45ED-9A37-A713D5B715E5}</Project>
+<Name>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost.csproj">
+<Project>{22FB1B6B-A788-4107-967C-7D5070B8885E}</Project>
+<Name>br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost\br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost.csproj">
+<Project>{40D35DEE-28A1-4CE9-81EE-50280672C8DE}</Project>
+<Name>br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle\br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle\br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle.csproj">
+<Project>{1BDCF1F2-63F0-45C8-8576-CCB2A46C94A2}</Project>
+<Name>br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC\br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC\br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC.csproj">
+<Project>{17CE2DE4-FEBC-461C-9FCC-C8B54FFA9A8F}</Project>
+<Name>br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount\br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount\br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount.csproj">
+<Project>{740E8C90-045D-4E39-91EF-D8DABA6F249D}</Project>
+<Name>br.ufc.mdcc.hpcshelf.gust.example.tc.TriangleCount</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat\br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat\br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat.csproj">
+<Project>{9F703318-BB32-439F-BF43-CD7C35B1DB74}</Project>
+<Name>br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.InputFormat\br.ufc.mdcc.hpcshelf.gust.graph.InputFormat\br.ufc.mdcc.hpcshelf.gust.graph.InputFormat.csproj">
+<Project>{6A7BA994-391F-404F-939C-077CA597C821}</Project>
+<Name>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop\br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop\br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop.csproj">
+<Project>{262FC7ED-AB78-4162-9007-45A735E3ABF8}</Project>
+<Name>br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\config.Application\config.Application\config.Application.csproj">
+<Project>{9B50C15B-478C-4E9D-90BF-7D7178862E2A}</Project>
+<Name>config.Application</Name>
+</ProjectReference>
+<ProjectReference Include="..\..\config.phase1.Workflow\config.phase1.Workflow\config.phase1.Workflow.csproj">
+<Project>{EBE0A880-6045-4D31-BB42-44E3A37631A8}</Project>
+<Name>config.phase1.Workflow</Name>
+</ProjectReference>
+</ItemGroup>
+</Project>
+

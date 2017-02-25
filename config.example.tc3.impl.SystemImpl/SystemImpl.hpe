@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001d8efb8023ba58e0febe31ed147433735ddac65815326bd8d0e9e7e43cf239ada81e3290155f07f40a77c2cf99cc9f883898ad8ee0bbd078397960aafcfcf49025ecea31cba8a072f19982aa477ce490c8dfb35aa9c39434d7d961d2868f59ee3d91ac8755efa363f064aaa52d6bea5d6c818ed9ff79bbbfc052c8c7eb9f98a7" isAbstract="false" kind="Application" name="SystemImpl" packagePath="config.example.tc3.impl">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000bf0dcee6b51ede42c4ecb003d5643c2704359dba1b51b1afd8a49e9cd0cb9afbe289703da9aa1d5f313ace35e202c9b4b6502e29b0d6172a97a5b13e091bf1b01a9fb30230df5a2a93811e8e83b3520b7331e322e2beb4c6c13de59a086c7042797efce673369583d78aeb53b3197d3c3a0e86a64c3e1bfb5728985ab162c4ac" localRef="base" location="config.example.tc3.System/System.hpe" name="System" package="config.example.tc3" version="1.0.0.0">
+        <visualDescription h="140" w="218" x="407" y="402">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="true" uRef="peer_0">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="peer_1">
+          <visualDescription h="20" w="20" x="28" y="2"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="peer_2">
+          <visualDescription h="20" w="20" x="51" y="2"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="peer_3">
+          <visualDescription h="20" w="20" x="74" y="2"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="peer_4">
+          <visualDescription h="20" w="20" x="97" y="2"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="root">
+          <visualDescription h="20" w="20" x="120" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IPeer_0Impl" nArgs="0">
+      <slice isRef="join_step0">
+        <originRef cRef="join_step0" iRef="ISplitterReadSource"/>
+        <visualDescription h="10" w="10" x="55" y="9"/>
+      </slice>
+      <slice isRef="data_source">
+        <originRef cRef="data_source" iRef="IDataSource"/>
+        <visualDescription h="10" w="10" x="30" y="20"/>
+      </slice>
+      <visualDescription h="39" w="114" x="94" y="287">
+        <color b="79" g="233" r="252"/>
+      </visualDescription>
+      <port name="task_binding_split_first">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_first" sRef="join_step0"/>
+      </port>
+      <port name="input_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="source" sRef="join_step0"/>
+      </port>
+      <port name="task_binding_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_data" sRef="join_step0"/>
+      </port>
+      <port name="platform_data_source">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_data_source" sRef="join_step0"/>
+      </port>
+      <port name="platform_data_source">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_data_source" sRef="data_source"/>
+      </port>
+      <port name="input_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="reader" sRef="data_source"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IPeer_1Impl" nArgs="0">
+      <slice isRef="join_step0">
+        <originRef cRef="join_step0" iRef="ISplitterWriteSink"/>
+        <visualDescription h="10" w="10" x="13" y="5"/>
+      </slice>
+      <slice isRef="data_sink">
+        <originRef cRef="data_sink" iRef="IDataSink"/>
+        <visualDescription h="10" w="10" x="29" y="17"/>
+      </slice>
+      <visualDescription h="39" w="116" x="118" y="186">
+        <color b="79" g="233" r="252"/>
+      </visualDescription>
+      <port name="task_binding_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_data" sRef="join_step0"/>
+      </port>
+      <port name="output_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="sink" sRef="join_step0"/>
+      </port>
+      <port name="platform_data_sink">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_data_sink" sRef="join_step0"/>
+      </port>
+      <port name="output_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="writer" sRef="data_sink"/>
+      </port>
+      <port name="platform_data_sink">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_data_sink" sRef="data_sink"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IPeer_2Impl" nArgs="0">
+      <slice isRef="join_step0">
+        <originRef cRef="join_step0" iRef="ISplitterMapFeeder"/>
+        <visualDescription h="10" w="10" x="9" y="12"/>
+      </slice>
+      <slice isRef="gusty0">
+        <originRef cRef="gusty0" iRef="IReducer"/>
+        <visualDescription h="10" w="10" x="43" y="3"/>
+      </slice>
+      <slice isRef="step1">
+        <originRef cRef="step1" iRef="IShufflerMapCollector"/>
+        <visualDescription h="10" w="10" x="59" y="8"/>
+      </slice>
+      <visualDescription h="42" w="132" x="245" y="136">
+        <color b="79" g="233" r="252"/>
+      </visualDescription>
+      <port name="platform_gusty0">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_map" sRef="join_step0"/>
+      </port>
+      <port name="input_graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_graph" sRef="join_step0"/>
+      </port>
+      <port name="task_binding_split_first">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_first" sRef="join_step0"/>
+      </port>
+      <port name="input_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="join_step0"/>
+      </port>
+      <port name="task_binding_split_next">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_next" sRef="join_step0"/>
+      </port>
+      <port name="task_binding_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_data" sRef="join_step0"/>
+      </port>
+      <port name="input_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="gusty0"/>
+      </port>
+      <port name="platform_gusty0">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_reduce" sRef="gusty0"/>
+      </port>
+      <port name="task_gusty0">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce" sRef="gusty0"/>
+      </port>
+      <port name="pairs01">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="gusty0"/>
+      </port>
+      <port name="graph01">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_graph" sRef="gusty0"/>
+      </port>
+      <port name="input_graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_graph" sRef="gusty0"/>
+      </port>
+      <port name="pairs01">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="step1"/>
+      </port>
+      <port name="graph01">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_graph" sRef="step1"/>
+      </port>
+      <port name="task_binding_step1">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle" sRef="step1"/>
+      </port>
+      <port name="platform_gusty0">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_map" sRef="step1"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IPeer_3Impl" nArgs="0">
+      <slice isRef="step2">
+        <originRef cRef="step2" iRef="IShufflerReduceFeeder"/>
+        <visualDescription h="10" w="10" x="60" y="11"/>
+      </slice>
+      <slice isRef="gusty2">
+        <originRef cRef="gusty2" iRef="IReducer"/>
+        <visualDescription h="10" w="10" x="32" y="6"/>
+      </slice>
+      <slice isRef="join_step0">
+        <originRef cRef="join_step0" iRef="ISplitterReduceCollector"/>
+        <visualDescription h="10" w="10" x="0" y="11"/>
+      </slice>
+      <visualDescription h="35" w="121" x="401" y="132">
+        <color b="79" g="233" r="252"/>
+      </visualDescription>
+      <port name="platform_gusty2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_reduce" sRef="step2"/>
+      </port>
+      <port name="task_binding_step2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle" sRef="step2"/>
+      </port>
+      <port name="graph22">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_graph" sRef="step2"/>
+      </port>
+      <port name="pairs22">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="step2"/>
+      </port>
+      <port name="graph22">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_graph" sRef="gusty2"/>
+      </port>
+      <port name="pairs22">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="gusty2"/>
+      </port>
+      <port name="output_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="gusty2"/>
+      </port>
+      <port name="task_gusty2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce" sRef="gusty2"/>
+      </port>
+      <port name="output_graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_graph" sRef="gusty2"/>
+      </port>
+      <port name="platform_gusty2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_reduce" sRef="gusty2"/>
+      </port>
+      <port name="output_graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_graph" sRef="join_step0"/>
+      </port>
+      <port name="task_binding_split_next">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_next" sRef="join_step0"/>
+      </port>
+      <port name="platform_gusty2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_reduce" sRef="join_step0"/>
+      </port>
+      <port name="output_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="join_step0"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IPeer_4Impl" nArgs="0">
+      <slice isRef="step1">
+        <originRef cRef="step1" iRef="IShufflerReduceFeeder"/>
+        <visualDescription h="10" w="10" x="38" y="6"/>
+      </slice>
+      <slice isRef="gusty1">
+        <originRef cRef="gusty1" iRef="IReducer"/>
+        <visualDescription h="10" w="10" x="58" y="12"/>
+      </slice>
+      <slice isRef="step2">
+        <originRef cRef="step2" iRef="IShufflerMapCollector"/>
+        <visualDescription h="10" w="10" x="46" y="19"/>
+      </slice>
+      <visualDescription h="37" w="124" x="578" y="170">
+        <color b="79" g="233" r="252"/>
+      </visualDescription>
+      <port name="task_binding_step1">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle" sRef="step1"/>
+      </port>
+      <port name="graph11">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_graph" sRef="step1"/>
+      </port>
+      <port name="pairs11">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="step1"/>
+      </port>
+      <port name="platform_gusty1">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_reduce" sRef="step1"/>
+      </port>
+      <port name="pairs11">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="gusty1"/>
+      </port>
+      <port name="pairs12">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="gusty1"/>
+      </port>
+      <port name="platform_gusty1">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_reduce" sRef="gusty1"/>
+      </port>
+      <port name="graph12">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_graph" sRef="gusty1"/>
+      </port>
+      <port name="task_gusty1">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_reduce" sRef="gusty1"/>
+      </port>
+      <port name="graph11">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_graph" sRef="gusty1"/>
+      </port>
+      <port name="task_binding_step2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_shuffle" sRef="step2"/>
+      </port>
+      <port name="platform_gusty1">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_map" sRef="step2"/>
+      </port>
+      <port name="pairs12">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="step2"/>
+      </port>
+      <port name="graph12">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_graph" sRef="step2"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IRootImpl" nArgs="0">
+      <slice isRef="workflow">
+        <originRef cRef="workflow" iRef="IWorkflow"/>
+        <visualDescription h="10" w="10" x="4" y="20"/>
+      </slice>
+      <slice isRef="application">
+        <originRef cRef="application" iRef="IApplication"/>
+        <visualDescription h="10" w="10" x="59" y="14"/>
+      </slice>
+      <visualDescription h="39" w="132" x="689" y="295">
+        <color b="52" g="226" r="138"/>
+      </visualDescription>
+      <port name="task_binding_step2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_step2" sRef="workflow"/>
+      </port>
+      <port name="platform_SAFe">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_SAFe" sRef="workflow"/>
+      </port>
+      <port name="task_binding_split_first">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_first" sRef="workflow"/>
+      </port>
+      <port name="task_binding_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_data" sRef="workflow"/>
+      </port>
+      <port name="task_gusty0">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_gusty0" sRef="workflow"/>
+      </port>
+      <port name="task_gusty2">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_gusty2" sRef="workflow"/>
+      </port>
+      <port name="task_binding_step1">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_step1" sRef="workflow"/>
+      </port>
+      <port name="task_binding_split_next">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_next" sRef="workflow"/>
+      </port>
+      <port name="task_gusty1">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_gusty1" sRef="workflow"/>
+      </port>
+      <port name="platform_SAFe">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_SAFe" sRef="application"/>
+      </port>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IPeer_0Impl" multiple="true" private="false" replica="0" uRef="peer_0" visibleInterface="true">
+      <super cRef="base" uRef="peer_0"/>
+      <visualDescription h="32" w="77" x="233" y="404"/>
+    </unit>
+    <unit facet="0" iRef="IPeer_1Impl" multiple="true" private="false" replica="0" uRef="peer_1" visibleInterface="true">
+      <super cRef="base" uRef="peer_1"/>
+      <visualDescription h="36" w="80" x="270" y="292"/>
+    </unit>
+    <unit facet="0" iRef="IPeer_2Impl" multiple="true" private="false" replica="0" uRef="peer_2" visibleInterface="true">
+      <super cRef="base" uRef="peer_2"/>
+      <visualDescription h="34" w="80" x="365" y="227"/>
+    </unit>
+    <unit facet="0" iRef="IPeer_3Impl" multiple="true" private="false" replica="0" uRef="peer_3" visibleInterface="true">
+      <super cRef="base" uRef="peer_3"/>
+      <visualDescription h="34" w="80" x="473" y="234"/>
+    </unit>
+    <unit facet="0" iRef="IPeer_4Impl" multiple="true" private="false" replica="0" uRef="peer_4" visibleInterface="true">
+      <super cRef="base" uRef="peer_4"/>
+      <visualDescription h="33" w="80" x="565" y="314"/>
+    </unit>
+    <unit facet="0" iRef="IRootImpl" multiple="true" private="false" replica="0" uRef="root" visibleInterface="true">
+      <super cRef="base" uRef="root"/>
+      <visualDescription h="35" w="80" x="624" y="379"/>
+    </unit>
+  </componentInfo>
+</component:component>
