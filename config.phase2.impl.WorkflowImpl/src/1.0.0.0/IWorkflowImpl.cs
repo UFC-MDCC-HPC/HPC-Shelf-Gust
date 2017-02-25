@@ -35,19 +35,19 @@ namespace config.phase2.impl.WorkflowImpl {
 			Console.WriteLine ("split_perform");
 		}
 
-		private void map_perform()
+		private void gusty0_perform()
 		{
-			Console.WriteLine ("map_perform");
+			Console.WriteLine ("gusty0_perform");
 		}
 
-		private void shuffle_perform()
+		private void step1_perform()
 		{
-			Console.WriteLine ("shuffle_perform");
+			Console.WriteLine ("step1_perform");
 		}
 
-		private void reduce_perform()
+		private void gusty1_perform()
 		{
-			Console.WriteLine ("reduce_perform");
+			Console.WriteLine ("gusty1_perform");
 		}
 
 		private void write_sink_source()
@@ -59,8 +59,8 @@ namespace config.phase2.impl.WorkflowImpl {
 		{
 			Console.WriteLine (this.ThisFacetInstance + "/" + this.Rank + ": WORKFLOW 1");
 
-			Task_binding_data.TraceFlag = Task_map.TraceFlag = Task_reduce.TraceFlag = Task_binding_shuffle.TraceFlag = Task_binding_split_first.TraceFlag = Task_binding_split_next.TraceFlag = true;
-			Task_binding_data.TraceFlag = Task_binding_shuffle.TraceFlag = Task_binding_split_first.TraceFlag = Task_binding_split_next.TraceFlag = true;
+			Task_binding_data.TraceFlag = Task_gusty0.TraceFlag = Task_gusty1.TraceFlag = Task_binding_step1.TraceFlag = Task_binding_split_first.TraceFlag = Task_binding_split_next.TraceFlag = true;
+			Task_binding_data.TraceFlag = Task_binding_step1.TraceFlag = Task_binding_split_first.TraceFlag = Task_binding_split_next.TraceFlag = true;
 
 			IActionFutureSet future_iteration = null;
 
@@ -80,24 +80,24 @@ namespace config.phase2.impl.WorkflowImpl {
 
 			Console.WriteLine (this.ThisFacetInstance + "/" + this.Rank + ": WORKFLOW 3");
 
-			IActionFuture future_map_chunk_ready = null;
-			Task_map.invoke (ITaskPortAdvance.CHUNK_READY, out future_map_chunk_ready);
-			int action_id_map_chunk_ready = future_map_chunk_ready.GetHashCode ();
-			future_iteration.addAction (future_map_chunk_ready);
+			IActionFuture future_gusty0_chunk_ready = null;
+			Task_gusty0.invoke (ITaskPortAdvance.CHUNK_READY, out future_gusty0_chunk_ready);
+			int action_id_gusty0_chunk_ready = future_gusty0_chunk_ready.GetHashCode ();
+			future_iteration.addAction (future_gusty0_chunk_ready);
 
 			Console.WriteLine (this.ThisFacetInstance + "/" + this.Rank + ": WORKFLOW 4");
 
-			IActionFuture future_shuffle_chunk_ready = null; 
-			Task_binding_shuffle.invoke (ITaskPortAdvance.CHUNK_READY, out future_shuffle_chunk_ready);
-			int action_id_shuffle_chunk_ready = future_shuffle_chunk_ready.GetHashCode ();
-			future_iteration.addAction (future_shuffle_chunk_ready);
+			IActionFuture future_step1_chunk_ready = null; 
+			Task_binding_step1.invoke (ITaskPortAdvance.CHUNK_READY, out future_step1_chunk_ready);
+			int action_id_step1_chunk_ready = future_step1_chunk_ready.GetHashCode ();
+			future_iteration.addAction (future_step1_chunk_ready);
 
 			Console.WriteLine (this.ThisFacetInstance + "/" + this.Rank + ": WORKFLOW 4");
 
-			IActionFuture future_reduce_chunk_ready = null;
-			Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out future_reduce_chunk_ready);
-			int action_id_reduce_chunk_ready = future_reduce_chunk_ready.GetHashCode ();
-			future_iteration.addAction (future_reduce_chunk_ready);
+			IActionFuture future_gusty1_chunk_ready = null;
+			Task_gusty1.invoke (ITaskPortAdvance.CHUNK_READY, out future_gusty1_chunk_ready);
+			int action_id_gusty1_chunk_ready = future_gusty1_chunk_ready.GetHashCode ();
+			future_iteration.addAction (future_gusty1_chunk_ready);
 
 			Console.WriteLine (this.ThisFacetInstance + "/" + this.Rank + ": WORKFLOW 5");
 
@@ -132,11 +132,11 @@ namespace config.phase2.impl.WorkflowImpl {
 				{
 					Thread t1 = new Thread((ThreadStart)delegate() 
 						{
-							Console.WriteLine ("INVOKE MAPPER READ_CHUNK - BEFORE");
-							Task_map.invoke (ITaskPortAdvance.READ_CHUNK); 
-							Console.WriteLine ("INVOKE MAPPER READ_CHUNK - AFTER");
-							IActionFuture future_map_perform = null;
-							Thread thread_map_perform = Task_map.invoke (ITaskPortAdvance.PERFORM, map_perform, out future_map_perform);
+							Console.WriteLine ("INVOKE GUSTY0 READ_CHUNK - BEFORE");
+							Task_gusty0.invoke (ITaskPortAdvance.READ_CHUNK); 
+							Console.WriteLine ("INVOKE GUSTY0 READ_CHUNK - AFTER");
+							IActionFuture future_gusty0_perform = null;
+							Thread thread_gusty0_perform = Task_gusty0.invoke (ITaskPortAdvance.PERFORM, gusty0_perform, out future_gusty0_perform);
 
 							Console.WriteLine ("END INVOKE SPLITTER CHUNK_READY");
 						});
@@ -162,52 +162,52 @@ namespace config.phase2.impl.WorkflowImpl {
 					bag_of_tasks.Add(t2);
 					t2.Start();
 				}
-				else if (action_id == action_id_map_chunk_ready)
+				else if (action_id == action_id_gusty0_chunk_ready)
 				{
-					Task_map.invoke (ITaskPortAdvance.CHUNK_READY, out future_map_chunk_ready);
-					action_id_map_chunk_ready = future_map_chunk_ready.GetHashCode ();
-					future_iteration.addAction(future_map_chunk_ready);
+					Task_gusty0.invoke (ITaskPortAdvance.CHUNK_READY, out future_gusty0_chunk_ready);
+					action_id_gusty0_chunk_ready = future_gusty0_chunk_ready.GetHashCode ();
+					future_iteration.addAction(future_gusty0_chunk_ready);
 
 					Thread t = new Thread((ThreadStart)delegate() 
 						{
 
-							Console.WriteLine ("INVOKE SHUFFLER READ_CHUNK - BEFORE");  // 110 executados (o 48 completou nos pares, mas não progrediu aqui (????), motivo do erro.
-							Task_binding_shuffle.invoke (ITaskPortAdvance.READ_CHUNK);   // 
-							Console.WriteLine ("INVOKE SHUFFLER READ_CHUNK - AFTER");   // 47 completados 
-							IActionFuture future_shuffle_perform = null;
-							Thread thread_shuffle_perform = Task_binding_shuffle.invoke (ITaskPortAdvance.PERFORM, shuffle_perform, out future_shuffle_perform);
+							Console.WriteLine ("INVOKE STEP1 READ_CHUNK - BEFORE");  // 110 executados (o 48 completou nos pares, mas não progrediu aqui (????), motivo do erro.
+							Task_binding_step1.invoke (ITaskPortAdvance.READ_CHUNK);   // 
+							Console.WriteLine ("INVOKE STEP1 READ_CHUNK - AFTER");   // 47 completados 
+							IActionFuture future_step1_perform = null;
+							Thread thread_step1_perform = Task_binding_step1.invoke (ITaskPortAdvance.PERFORM, step1_perform, out future_step1_perform);
 
-							Console.WriteLine ("END INVOKE MAPPER CHUNK_READY");
+							Console.WriteLine ("END INVOKE GUSTY0 CHUNK_READY");
 						});
 					t.Start();
 					bag_of_tasks.Add(t);
 					Console.WriteLine ("THREAD LAUNCHED 2");
 				}
-				else if (action_id == action_id_shuffle_chunk_ready)
+				else if (action_id == action_id_step1_chunk_ready)
 				{
-					Task_binding_shuffle.invoke (ITaskPortAdvance.CHUNK_READY, out future_shuffle_chunk_ready);
-					action_id_shuffle_chunk_ready = future_shuffle_chunk_ready.GetHashCode ();
-					future_iteration.addAction(future_shuffle_chunk_ready);
+					Task_binding_step1.invoke (ITaskPortAdvance.CHUNK_READY, out future_step1_chunk_ready);
+					action_id_step1_chunk_ready = future_step1_chunk_ready.GetHashCode ();
+					future_iteration.addAction(future_step1_chunk_ready);
 
 					Thread t = new Thread((ThreadStart)delegate() 
 						{
-							Console.WriteLine ("INVOKE REDUCER READ_CHUNK - BEFORE");
-							Task_reduce.invoke (ITaskPortAdvance.READ_CHUNK); // ****
-							Console.WriteLine ("INVOKE REDUCER READ_CHUNK - AFTER");
-							IActionFuture future_reduce_perform = null;
-							Thread thread_reduce_perform = Task_reduce.invoke (ITaskPortAdvance.PERFORM, reduce_perform, out future_reduce_perform);
+							Console.WriteLine ("INVOKE GUSTY1 READ_CHUNK - BEFORE");
+							Task_gusty1.invoke (ITaskPortAdvance.READ_CHUNK); // ****
+							Console.WriteLine ("INVOKE GUSTY1 READ_CHUNK - AFTER");
+							IActionFuture future_gusty1_perform = null;
+							Thread thread_gusty1_perform = Task_gusty1.invoke (ITaskPortAdvance.PERFORM, gusty1_perform, out future_gusty1_perform);
 
-							Console.WriteLine ("END INVOKE SHUFFLER CHUNK_READY");
+							Console.WriteLine ("END INVOKE STEP1 CHUNK_READY");
 						});
 					t.Start();
 					bag_of_tasks.Add(t);
 					Console.WriteLine ("THREAD LAUNCHED 3");
 				}
-				else if (action_id == action_id_reduce_chunk_ready)
+				else if (action_id == action_id_gusty1_chunk_ready)
 				{
-					Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out future_reduce_chunk_ready);
-					action_id_reduce_chunk_ready = future_reduce_chunk_ready.GetHashCode ();
-					future_iteration.addAction(future_reduce_chunk_ready);
+					Task_gusty1.invoke (ITaskPortAdvance.CHUNK_READY, out future_gusty1_chunk_ready);
+					action_id_gusty1_chunk_ready = future_gusty1_chunk_ready.GetHashCode ();
+					future_iteration.addAction(future_gusty1_chunk_ready);
 
 					Thread t = new Thread((ThreadStart)delegate() 
 						{
@@ -217,7 +217,7 @@ namespace config.phase2.impl.WorkflowImpl {
 							IActionFuture future_split_perform = null;
 							Thread thread_split_perform = Task_binding_split_next.invoke (ITaskPortAdvance.PERFORM, split_perform, out future_split_perform);
 
-							Console.WriteLine ("END INVOKE REDUCER CHUNK_READY");
+							Console.WriteLine ("END INVOKE GUSTY1 CHUNK_READY");
 						});
 					t.Start();
 					bag_of_tasks.Add(t);
@@ -227,11 +227,11 @@ namespace config.phase2.impl.WorkflowImpl {
 				{
 					Thread t1 = new Thread((ThreadStart)delegate() 
 						{
-							Console.WriteLine ("INVOKE MAP READ_CHUNK NEXT - BEFORE");  
-							Task_map.invoke (ITaskPortAdvance.READ_CHUNK);   // 
-							Console.WriteLine ("INVOKE MAP READ_CHUNK NEXT - AFTER");    
-							IActionFuture future_map_perform = null;
-							Thread thread_map_perform = Task_map.invoke (ITaskPortAdvance.PERFORM, map_perform, out future_map_perform);
+							Console.WriteLine ("INVOKE GUSTY0 READ_CHUNK NEXT - BEFORE");  
+							Task_gusty0.invoke (ITaskPortAdvance.READ_CHUNK);   // 
+							Console.WriteLine ("INVOKE GUSTY0 READ_CHUNK NEXT - AFTER");    
+							IActionFuture future_gusty0_perform = null;
+							Thread thread_gusty0_perform = Task_gusty0.invoke (ITaskPortAdvance.PERFORM, gusty0_perform, out future_gusty0_perform);
 
 							Console.WriteLine ("END INVOKE SPLIT NEXT CHUNK_READY");
 						});
@@ -318,8 +318,8 @@ namespace config.phase2.impl.WorkflowImpl {
 			}
 		}
 
-		private ITaskPort<ITaskPortTypeAdvance> task_binding_step1 = null;
-		protected ITaskPort<ITaskPortTypeAdvance> Task_binding_shuffle 
+		private ITaskPort<ITaskPortTypeAdvance> task_binding_step1 = null; //shuffle
+		protected ITaskPort<ITaskPortTypeAdvance> Task_binding_step1 
 		{ 
 			get 
 			{   
@@ -329,8 +329,8 @@ namespace config.phase2.impl.WorkflowImpl {
 			}
 		}
 
-		private ITaskPort<ITaskPortTypeAdvance> task_gusty1 = null;
-		protected ITaskPort<ITaskPortTypeAdvance> Task_reduce 
+		private ITaskPort<ITaskPortTypeAdvance> task_gusty1 = null; //reduce
+		protected ITaskPort<ITaskPortTypeAdvance> Task_gusty1 
 		{ 
 			get 
 			{   
@@ -340,8 +340,8 @@ namespace config.phase2.impl.WorkflowImpl {
 			}
 		}
 
-		private ITaskPort<ITaskPortTypeAdvance> task_gusty0 = null;
-		protected ITaskPort<ITaskPortTypeAdvance> Task_map 
+		private ITaskPort<ITaskPortTypeAdvance> task_gusty0 = null; //map
+		protected ITaskPort<ITaskPortTypeAdvance> Task_gusty0 
 		{ 
 			get 
 			{  
