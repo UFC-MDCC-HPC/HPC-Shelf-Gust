@@ -10,14 +10,14 @@
 
 using br.ufc.pargo.hpe.kinds;
 using config.Application;
-using config.example.tc.System;
-using config.phase1.Workflow;
+using config.example.tc3.System;
+using config.phase3.Workflow;
 using System;
 using System.Threading;
 using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;
 
 
-namespace config.example.tc.impl.SystemImpl {
+namespace config.example.tc3.impl.SystemImpl {
     
     
     public class IRootImpl : br.ufc.pargo.hpe.kinds.Application, IRoot {
