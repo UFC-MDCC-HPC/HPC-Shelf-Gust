@@ -90,18 +90,14 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc3.TC2Impl {
 			object o; int w = ikey.Id; 
 
 			while (ivalues.fetch_next (out o)) {
-				int v = ((IDataTriangleInstance)o).V;
-				int z = ((IDataTriangleInstance)o).W;
 				IEnumerator<int> wneighbors = g.iteratorNeighborsOf (w);
 				while (wneighbors.MoveNext ()) { 
-					int zw = wneighbors.Current;
-					if (w < zw) { 
+					int z = wneighbors.Current;
+					if (w < z) { 
 						IKVPairInstance<IVertex,IDataTriangle> item = (IKVPairInstance<IVertex,IDataTriangle>)Output.createItem ();
-						IVertexInstance ok = (IVertexInstance)item.Key;
-						IDataTriangleInstance ov = (IDataTriangleInstance)item.Value;
-						ok.Id = v;
-						ov.V = w;
-						ov.W = zw;
+						((IVertexInstance)item.Key).Id = ((IDataTriangleInstance)o).V;
+						((IDataTriangleInstance)item.Value).V = w;
+						((IDataTriangleInstance)item.Value).W = z;
 						output_value.put (item);
 					}
 				}

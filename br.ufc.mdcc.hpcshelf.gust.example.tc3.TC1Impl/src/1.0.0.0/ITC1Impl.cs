@@ -102,10 +102,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc3.TC1Impl {
 						if (v < w) { //buscam-se os vérices maiores que v e com partições distintas
 							if (partition[v-1]!=partition[w-1]){
 								IKVPairInstance<IVertex,IDataTriangle> item = (IKVPairInstance<IVertex,IDataTriangle>)Output.createItem ();
-								IVertexInstance ok = (IVertexInstance)item.Key;
-								IDataTriangleInstance ov = (IDataTriangleInstance)item.Value;
-								ok.Id = w;
-								ov.V = v;
+								((IVertexInstance)item.Key).Id = w;
+								((IDataTriangleInstance)item.Value).V = v;
 								output_value_instance.put (item);
 							}
 						}

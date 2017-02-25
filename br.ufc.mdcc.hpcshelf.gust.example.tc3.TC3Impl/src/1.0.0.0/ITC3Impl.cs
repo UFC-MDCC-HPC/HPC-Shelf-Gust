@@ -28,6 +28,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc3.TC3Impl {
 		private int partid = 0;
 		private int partition_size = 0;
 		private int count = 0;
+		IList<int> first_ids_found = new List<int> ();
 		private IDictionary<int, IList<KeyValuePair<int,int>>> triangles = new Dictionary<int, IList<KeyValuePair<int,int>>>();
 
 		public override void main() {}
@@ -67,8 +68,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc3.TC3Impl {
 					int t = gif.Target [i] > gif.Source [i] ? gif.Target [i] : gif.Source [i];
 					g.addVertex (s);
 					g.addVertex (t);
-					g.noSafeAdd (s, t);
-					i++;
+					g.noSafeAdd (s, t); //Usando noSafeAdd! Isso significa que erros no arquivo fonte não serão tratados.
+					i++;                //Ou seja, os dados serão inseridos da forma como chegam. Para tratamento, usa-se g.addEdge(s,t).
 				}
 			}
 			IIteratorInstance<IKVPair<IInteger,IInputFormat>> output_gifs_instance = (IIteratorInstance<IKVPair<IInteger,IInputFormat>>)Output_gif.Instance;
@@ -80,24 +81,16 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc3.TC3Impl {
 		#endregion
 
 		#region Algorithm implementation
-		public void startup_push(){ // Se vertice 1 nao e fantasta, emite-se pares para a etapa 1, usando ids de vertices pertencentes as 'partition_size' particoes
+		public void startup_push(){ 
+			// Talvez o startup aqui não seja necessário, desde que o pull da etapa 1 seja alcançado na iteração 2.
+			// Nesse caso, na (etapa 1).pull(), o código while (ivalues.fetch_next (out o)) { }  também não é necessário.
+			// Para teste de comunicação, este startup envia pares para a etapa 1, confirmando que inputformat chegou aqui com sucesso.
+			output_ids();
 			if (!isGhost (1)) { 
-				IList<int> first_ids_found = new List<int> ();
-				for(int part_id=0;part_id<partition_size;part_id++)
-					for (int first_id_find = 1; first_id_find <= partition.Length; first_id_find++) {
-						if (partition [first_id_find-1] == part_id) {
-							first_ids_found.Add( first_id_find);
-							break;
-						}
-					}
 				IIteratorInstance<IKVPair<IVertex,IDataTriangle>> output_value_instance = (IIteratorInstance<IKVPair<IVertex,IDataTriangle>>)Output.Instance;
 				foreach (int id in first_ids_found) {
 					IKVPairInstance<IVertex,IDataTriangle> item = (IKVPairInstance<IVertex,IDataTriangle>)Output.createItem ();
-					IVertexInstance ok = (IVertexInstance)item.Key;
-					IDataTriangleInstance ov = (IDataTriangleInstance)item.Value;
-					ok.Id = -id;
-					ov.V = this.partid;
-					ov.W = 0;
+					((IVertexInstance)item.Key).Id = -id;
 					output_value_instance.put (item);
 				}
 			}
@@ -107,21 +100,21 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc3.TC3Impl {
 			IVertexInstance ikey = (IVertexInstance)input_values_instance.Key;
 			IIteratorInstance<IDataTriangle> ivalues = (IIteratorInstance<IDataTriangle>)input_values_instance.Value;
 			IIteratorInstance<IKVPair<IVertex,IDataTriangle>> output_value = (IIteratorInstance<IKVPair<IVertex,IDataTriangle>>)Output.Instance;
-			object o; int w = ikey.Id; 
+			object o; int v = ikey.Id; 
 
-			ICollection<int> wneighbors = g.neighborsOf (w);
+			ICollection<int> vneighbors = g.neighborsOf (v);
 			while (ivalues.fetch_next (out o)) {
-				int v = ((IDataTriangleInstance)o).V;
+				int w = ((IDataTriangleInstance)o).V;
 				int z = ((IDataTriangleInstance)o).W;
-				if(wneighbors.Contains(z) && w < z){
+				if(vneighbors.Contains(z) && v < z){
 					IList<KeyValuePair<int,int>> l;
-					if (!triangles.TryGetValue (w, out l)) {
+					if (!triangles.TryGetValue (v, out l)) {
 						l = new List<KeyValuePair<int,int>> ();
-						triangles[w] = l;
+						triangles[v] = l;
 					}
-					l.Add (new KeyValuePair<int,int> (v, z));
+					l.Add (new KeyValuePair<int,int> (w, z));
 					count++;
-					//emite (w, v, z, output_value);
+					//emite (v, w, z, output_value);
 				}
 			}
 		}
@@ -154,7 +147,11 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc3.TC3Impl {
 					}
 				}
 			}
-			emite (count, 0, 0, output_value);
+			foreach (int id in first_ids_found)
+				if (!isGhost (id)) {
+					emite (id, this.partid, count, output_value);
+					break;
+				}
 		}
 		private void emite(int a, int b, int c, IIteratorInstance<IKVPair<IVertex,IDataTriangle>> output_value){
 			IKVPairInstance<IVertex,IDataTriangle> item = (IKVPairInstance<IVertex,IDataTriangle>)Output.createItem ();
@@ -162,6 +159,15 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.tc3.TC3Impl {
 			((IDataTriangleInstance)item.Value).V = b; //b menor que c
 			((IDataTriangleInstance)item.Value).W = c;
 			output_value.put (item);
+		}
+		private void output_ids(){
+			for(int part_id=0;part_id<partition_size;part_id++)
+				for (int first_id_find = 1; first_id_find <= partition.Length; first_id_find++) {
+					if (partition [first_id_find-1] == part_id) {
+						first_ids_found.Add( first_id_find);
+						break;
+					}
+				}
 		}
 		#endregion
 	}
