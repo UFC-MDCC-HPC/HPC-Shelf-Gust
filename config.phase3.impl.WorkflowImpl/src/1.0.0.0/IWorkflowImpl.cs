@@ -97,10 +97,10 @@ namespace config.phase3.impl.WorkflowImpl {
 
 			Console.WriteLine (this.ThisFacetInstance + "/" + this.Rank + ": WORKFLOW 4");
 
-			IActionFuture future_gusty_chunk_ready = null;
-			Task_gusty1.invoke (ITaskPortAdvance.CHUNK_READY, out future_gusty_chunk_ready);
-			int action_id_gusty_chunk_ready = future_gusty_chunk_ready.GetHashCode ();
-			future_iteration.addAction (future_gusty_chunk_ready);
+			IActionFuture future_gusty1_chunk_ready = null;
+			Task_gusty1.invoke (ITaskPortAdvance.CHUNK_READY, out future_gusty1_chunk_ready);
+			int action_id_gusty1_chunk_ready = future_gusty1_chunk_ready.GetHashCode ();
+			future_iteration.addAction (future_gusty1_chunk_ready);
 
 			Console.WriteLine (this.ThisFacetInstance + "/" + this.Rank + ": WORKFLOW 4-4");
 
@@ -227,11 +227,11 @@ namespace config.phase3.impl.WorkflowImpl {
 					bag_of_tasks.Add(t);
 					Console.WriteLine ("THREAD LAUNCHED 3");
 				}
-				else if (action_id == action_id_gusty_chunk_ready)
+				else if (action_id == action_id_gusty1_chunk_ready)
 				{
-					Task_gusty1.invoke (ITaskPortAdvance.CHUNK_READY, out future_gusty_chunk_ready);
-					action_id_gusty_chunk_ready = future_gusty_chunk_ready.GetHashCode ();
-					future_iteration.addAction(future_gusty_chunk_ready);
+					Task_gusty1.invoke (ITaskPortAdvance.CHUNK_READY, out future_gusty1_chunk_ready);
+					action_id_gusty1_chunk_ready = future_gusty1_chunk_ready.GetHashCode ();
+					future_iteration.addAction(future_gusty1_chunk_ready);
 
 					Thread t = new Thread((ThreadStart)delegate() 
 						{
