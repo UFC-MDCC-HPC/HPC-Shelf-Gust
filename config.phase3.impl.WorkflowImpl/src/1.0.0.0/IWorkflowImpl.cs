@@ -218,8 +218,8 @@ namespace config.phase3.impl.WorkflowImpl {
 							Console.WriteLine ("INVOKE GUSTY1 READ_CHUNK - BEFORE");
 							Task_gusty1.invoke (ITaskPortAdvance.READ_CHUNK); // ****
 							Console.WriteLine ("INVOKE GUSTY1 READ_CHUNK - AFTER");
-							IActionFuture future_gusty_perform = null;
-							Thread thread_gusty_perform = Task_gusty1.invoke (ITaskPortAdvance.PERFORM, gusty1_perform, out future_gusty_perform);
+							IActionFuture future_gusty1_perform = null;
+							Thread thread_gusty1_perform = Task_gusty1.invoke (ITaskPortAdvance.PERFORM, gusty1_perform, out future_gusty1_perform);
 
 							Console.WriteLine ("END INVOKE STEP1 CHUNK_READY");
 						});
