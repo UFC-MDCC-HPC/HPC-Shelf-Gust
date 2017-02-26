@@ -61,16 +61,15 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 			}
 		}
 		private void graph_creator_aux(IInputFormatInstance gif){
-			for (int i = 0; i < gif.ESIZE;) {
-				if (gif.Target [i] != 0) {
-					int s = gif.Source [i]; 
-					int t = gif.Target [i];
-					float f = gif.Weight [i];
-					g.addVertex (s);
-					g.addVertex (t);
-					g.noSafeAdd (s, t, f);
-					i++;
-				}
+			bool weighted = gif.Weight.Length==gif.Source.Length; float f=1.0f;
+			for (int i = 0; i < gif.ESIZE;i++) {
+				int s = gif.Source [i]; 
+				int t = gif.Target [i];
+				if(weighted) f = gif.Weight [i];
+				g.addVertex (s);
+				g.addVertex (t);
+				g.noSafeAdd (s, t, f);
+				if (s == 0 || t==0) { throw new ArgumentNullException ("WARNING: Vertex id is 0! "); }
 			}
 			IIteratorInstance<IKVPair<IInteger,IInputFormat>> output_gifs_instance = (IIteratorInstance<IKVPair<IInteger,IInputFormat>>)Output_gif.Instance;
 			IKVPairInstance<IInteger,IInputFormat> item = (IKVPairInstance<IInteger,IInputFormat>)Output_gif.createItem ();
