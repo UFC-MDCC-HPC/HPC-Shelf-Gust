@@ -35,12 +35,12 @@ namespace config.phase3.impl.WorkflowImpl {
 			Console.WriteLine ("join_step0_perform");
 		}
 
-		private void gust0_perform()
+		private void gusty0_perform()
 		{
 			Console.WriteLine ("gusty0_perform");
 		}
 
-		private void gusty_perform()
+		private void gusty1_perform()
 		{
 			Console.WriteLine ("gusty1_perform");
 		}
@@ -90,10 +90,10 @@ namespace config.phase3.impl.WorkflowImpl {
 
 			Console.WriteLine (this.ThisFacetInstance + "/" + this.Rank + ": WORKFLOW 3");
 
-			IActionFuture future_gust0_chunk_ready = null;
-			Task_gusty0.invoke (ITaskPortAdvance.CHUNK_READY, out future_gust0_chunk_ready);
-			int action_id_gust0_chunk_ready = future_gust0_chunk_ready.GetHashCode ();
-			future_iteration.addAction (future_gust0_chunk_ready);
+			IActionFuture future_gusty0_chunk_ready = null;
+			Task_gusty0.invoke (ITaskPortAdvance.CHUNK_READY, out future_gusty0_chunk_ready);
+			int action_id_gusty0_chunk_ready = future_gusty0_chunk_ready.GetHashCode ();
+			future_iteration.addAction (future_gusty0_chunk_ready);
 
 			Console.WriteLine (this.ThisFacetInstance + "/" + this.Rank + ": WORKFLOW 4");
 
@@ -156,11 +156,11 @@ namespace config.phase3.impl.WorkflowImpl {
 				{
 					Thread t1 = new Thread((ThreadStart)delegate() 
 						{
-							Console.WriteLine ("INVOKE GUST0 READ_CHUNK - BEFORE");
+							Console.WriteLine ("INVOKE GUSTY0 READ_CHUNK - BEFORE");
 							Task_gusty0.invoke (ITaskPortAdvance.READ_CHUNK); 
-							Console.WriteLine ("INVOKE GUST0 READ_CHUNK - AFTER");
-							IActionFuture future_gust0_perform = null;
-							Thread thread_gust0_perform = Task_gusty0.invoke (ITaskPortAdvance.PERFORM, gust0_perform, out future_gust0_perform);
+							Console.WriteLine ("INVOKE GUSTY0 READ_CHUNK - AFTER");
+							IActionFuture future_gusty0_perform = null;
+							Thread thread_gusty0_perform = Task_gusty0.invoke (ITaskPortAdvance.PERFORM, gusty0_perform, out future_gusty0_perform);
 
 							Console.WriteLine ("END INVOKE SPLITTER CHUNK_READY");
 						});
@@ -186,11 +186,11 @@ namespace config.phase3.impl.WorkflowImpl {
 					bag_of_tasks.Add(t2);
 					t2.Start();
 				}
-				else if (action_id == action_id_gust0_chunk_ready)
+				else if (action_id == action_id_gusty0_chunk_ready)
 				{
-					Task_gusty0.invoke (ITaskPortAdvance.CHUNK_READY, out future_gust0_chunk_ready);
-					action_id_gust0_chunk_ready = future_gust0_chunk_ready.GetHashCode ();
-					future_iteration.addAction(future_gust0_chunk_ready);
+					Task_gusty0.invoke (ITaskPortAdvance.CHUNK_READY, out future_gusty0_chunk_ready);
+					action_id_gusty0_chunk_ready = future_gusty0_chunk_ready.GetHashCode ();
+					future_iteration.addAction(future_gusty0_chunk_ready);
 
 					Thread t = new Thread((ThreadStart)delegate() 
 						{
@@ -201,7 +201,7 @@ namespace config.phase3.impl.WorkflowImpl {
 							IActionFuture future_step1_perform = null;
 							Thread thread_step1_perform = Task_binding_step1.invoke (ITaskPortAdvance.PERFORM, step1_perform, out future_step1_perform);
 
-							Console.WriteLine ("END INVOKE GUST0 CHUNK_READY");
+							Console.WriteLine ("END INVOKE GUSTY0 CHUNK_READY");
 						});
 					t.Start();
 					bag_of_tasks.Add(t);
@@ -219,7 +219,7 @@ namespace config.phase3.impl.WorkflowImpl {
 							Task_gusty1.invoke (ITaskPortAdvance.READ_CHUNK); // ****
 							Console.WriteLine ("INVOKE GUSTY1 READ_CHUNK - AFTER");
 							IActionFuture future_gusty_perform = null;
-							Thread thread_gusty_perform = Task_gusty1.invoke (ITaskPortAdvance.PERFORM, gusty_perform, out future_gusty_perform);
+							Thread thread_gusty_perform = Task_gusty1.invoke (ITaskPortAdvance.PERFORM, gusty1_perform, out future_gusty_perform);
 
 							Console.WriteLine ("END INVOKE STEP1 CHUNK_READY");
 						});
@@ -291,11 +291,11 @@ namespace config.phase3.impl.WorkflowImpl {
 				{
 					Thread t1 = new Thread((ThreadStart)delegate() 
 						{
-							Console.WriteLine ("INVOKE GUST0 READ_CHUNK NEXT - BEFORE");  
+							Console.WriteLine ("INVOKE GUSTY0 READ_CHUNK NEXT - BEFORE");  
 							Task_gusty0.invoke (ITaskPortAdvance.READ_CHUNK);   // 
-							Console.WriteLine ("INVOKE GUST0 READ_CHUNK NEXT - AFTER");    
-							IActionFuture future_gust0_perform = null;
-							Thread thread_gust0_perform = Task_gusty0.invoke (ITaskPortAdvance.PERFORM, gust0_perform, out future_gust0_perform);
+							Console.WriteLine ("INVOKE GUSTY0 READ_CHUNK NEXT - AFTER");    
+							IActionFuture future_gusty0_perform = null;
+							Thread thread_gusty0_perform = Task_gusty0.invoke (ITaskPortAdvance.PERFORM, gusty0_perform, out future_gusty0_perform);
 
 							Console.WriteLine ("END INVOKE SPLIT NEXT CHUNK_READY");
 						});
@@ -426,14 +426,14 @@ namespace config.phase3.impl.WorkflowImpl {
 			}
 		}
 
-		private ITaskPort<ITaskPortTypeAdvance> task_gust0 = null; //map
+		private ITaskPort<ITaskPortTypeAdvance> task_gusty0 = null; //map
 		protected ITaskPort<ITaskPortTypeAdvance> Task_gusty0 
 		{ 
 			get 
 			{  
-				if (task_gust0 == null)
-					task_gust0 = (ITaskPort<ITaskPortTypeAdvance>) this.Services.getPort ("task_gusty0");
-				return task_gust0;
+				if (task_gusty0 == null)
+					task_gusty0 = (ITaskPort<ITaskPortTypeAdvance>) this.Services.getPort ("task_gusty0");
+				return task_gusty0;
 			}
 		}
 
