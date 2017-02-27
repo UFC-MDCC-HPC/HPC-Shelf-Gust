@@ -13,7 +13,11 @@ Triangles count = 717719
 #Head |V| |E| P: represents amount of vertices, edges, and partition size:
  graph.e.head
 
-#Partition Map of 8 blocks. For this sample was used Metis tool:
+#Partition map for 8 blocks. 
+#Line number is vertex id, and the content is the partition number.
+#For this sample was used Metis tool:
  graph.e.metis.part.8
+
+#*************************************************************************
 
 
