@@ -1,4 +1,18 @@
-amazon0302
+#!/bin/sh
+#*************** Informacoes do grafo de exemplo ****************************
+
+Grafo disponivel em: http://snap.stanford.edu/data/
+
+Nome do grafo = amazon0302
 Triangles count = 717719
+
+#Linhas i j sao arestas do grafo, contidas no seguinte arquivo:
+ graph.e
+
+#Cabecalho = numero de vertices, numero de arestas, quantidade de particao:
+ graph.e.head
+
+#Map de particionamento para 8 particoes, particionadas pelo software Metis:
+ graph.e.metis.part.8
 
 
