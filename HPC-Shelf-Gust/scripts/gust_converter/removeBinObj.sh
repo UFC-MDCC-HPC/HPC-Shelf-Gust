@@ -25,6 +25,7 @@ case $1 in
 				S=$space''$pacote
 				rm -rf $S/$S/bin
 				rm -rf $S/$S/obj
+				rm -f bin/*
 				echo "remove $S/$S/bin"
 				echo "remove $S/$S/obj"
 		done;
