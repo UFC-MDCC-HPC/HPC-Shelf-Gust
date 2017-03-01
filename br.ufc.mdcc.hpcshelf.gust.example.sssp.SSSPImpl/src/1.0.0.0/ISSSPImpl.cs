@@ -92,7 +92,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 				while (queue.Count > 0) { // Busca em profundidade
 					v = queue.Dequeue ();
 					float v_distance_min_candidate = messages[partition [v - 1]][v];
-					IEnumerator<KeyValuePair<int, float>> vneighbors = g.iteratorOutgoingVertexWeightOf (v);
+					IEnumerator<KeyValuePair<int, float>> vneighbors = g.iteratorVertexWeightOf (v); //g.iteratorOutgoingVertexWeightOf (v);
 					while (vneighbors.MoveNext ()) {
 						int n = vneighbors.Current.Key;
 						float n_distance_min_candidate = vneighbors.Current.Value+v_distance_min_candidate; 
@@ -157,7 +157,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSPImpl {
 						while (queue.Count > 0) { // Busca em profundidade
 							v = queue.Dequeue ();
 							v_distance_min_candidate = messages [partition [v - 1]] [v];
-							IEnumerator<KeyValuePair<int, float>> vneighbors = g.iteratorOutgoingVertexWeightOf (v);
+							IEnumerator<KeyValuePair<int, float>> vneighbors = g.iteratorVertexWeightOf (v); //g.iteratorOutgoingVertexWeightOf (v);
 							while (vneighbors.MoveNext ()) {
 								int n = vneighbors.Current.Key;
 								float n_distance_min_candidate = vneighbors.Current.Value + v_distance_min_candidate; 

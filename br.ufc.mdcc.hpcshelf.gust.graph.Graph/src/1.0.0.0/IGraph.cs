@@ -34,6 +34,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.graph.Graph
 		void setAllEdgeWeight (TE e, float weight);
 		void setAllEdgeWeight (TV sourceVertex, TV targetVertex, float weight);
 		float getEdgeWeight (TV sourceVertex, TV targetVertex);
+		IEnumerator<KeyValuePair<TV, float>> iteratorVertexWeightOf (TV vertex);
 	}
 	public interface IGraphHelper<V, E, TV, TE>: ICommon<V, E, TV, TE>, ICloneable where V:IVertex	where E:IEdge<V> where TE: IEdgeInstance<V, TV>{
 		void addIncomingEdge (TE e);

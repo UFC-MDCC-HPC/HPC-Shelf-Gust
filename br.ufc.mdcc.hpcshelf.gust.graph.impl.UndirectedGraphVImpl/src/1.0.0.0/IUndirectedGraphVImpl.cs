@@ -184,6 +184,26 @@ where E:IEdge<V> {
 				foreach(TV v in i)
 					yield return v;
 			}
+			//
+			public IEnumerator<KeyValuePair<TV, float>> iteratorVertexWeightOf(TV vertex){
+				float weight_default = ((TE) delegator.Container.EdgeFactory.newInstance(vertex, vertex)).Weight;
+				IEnumerator<TV> vneighbors = this.iteratorNeighborsOf (vertex);
+				ICollection<TV> edges = new HashSet<TV> ();
+				if (!delegator.Container.AllowingMultipleEdges) {
+					while (vneighbors.MoveNext()) {
+						KeyValuePair<TV, float> kv = (new KeyValuePair<TV, float>(vneighbors.Current, weight_default));
+						bool contain = edges.Contains (kv.Key);
+						if (!contain) {
+							edges.Add (kv.Key);
+							yield return kv;
+						}
+					}
+				}
+				else
+					while (vneighbors.MoveNext())
+						yield return (new KeyValuePair<TV, float>(vneighbors.Current, weight_default));
+			}
+			//
 			public bool removeAllEdges(ICollection<TE> edges){
 				bool modified = false;
 
