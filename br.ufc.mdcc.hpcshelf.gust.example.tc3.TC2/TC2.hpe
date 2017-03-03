@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000637cb29aeabb4f9e7f23bc3f1688e57b1a5dd728efd0e3141ba978274ac973354961bde36594d273a03f28d15da98e18e5f102ebd9f4f5289458b23531fb6fdc7bcefceaba939d7a4f1875105ba5ad0d3e66ca895e57d136d04409f5d9cd281bff59b36dfe0de231d234e144be512b77920d1b90f9da90c9a8cb108a2d26358c" isAbstract="true" kind="Computation" name="TC2" packagePath="br.ufc.mdcc.hpcshelf.gust.example.tc3">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000089e59ae8dcbf949b9d67963cbd3301ac293e60dba7dbc5f10417edba70d959e883852c7cc93af024b0196d520fc36730bc3a384bb62fdf38f4e627a22730d371647c35a9ce7ac143a295d37b24fd965cf6ef4251eb950bb6f5586f08a2884c45847a3dd5d49d1397144d80553bbabc0b7c2bdef1d56bdc51be8901444756dab6" isAbstract="true" kind="Computation" name="TC2" packagePath="br.ufc.mdcc.hpcshelf.gust.example.tc3">
     <baseType>
       <extensionType>
         <extends>true</extends>
@@ -19,7 +19,7 @@
           <visualDescription h="60" w="181" x="146" y="319">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###1730795349"/>
+          <parameter formFieldId="value_type" varName="X###457213823"/>
           <parameter formFieldId="key_type" varName="TKey"/>
           <unitBounds parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="137" y="20"/>
@@ -29,7 +29,7 @@
           <visualDescription h="60" w="134" x="572" y="320">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###1811432028"/>
+          <parameter formFieldId="item_type" varName="X###696234195"/>
           <unitBounds parallel="false" uRef="iterator">
             <visualDescription h="20" w="20" x="9" y="20"/>
           </unitBounds>
@@ -38,8 +38,8 @@
           <visualDescription h="56" w="225" x="143" y="432">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###2009914724"/>
-          <parameter formFieldId="key_type" varName="X###718998958"/>
+          <parameter formFieldId="value_type" varName="X###2117206509"/>
+          <parameter formFieldId="key_type" varName="X###85765973"/>
           <unitBounds parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="189" y="15"/>
           </unitBounds>
@@ -48,7 +48,7 @@
           <visualDescription h="60" w="157" x="517" y="422">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###325005437"/>
+          <parameter formFieldId="item_type" varName="X###507181074"/>
           <unitBounds parallel="false" uRef="iterator">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
