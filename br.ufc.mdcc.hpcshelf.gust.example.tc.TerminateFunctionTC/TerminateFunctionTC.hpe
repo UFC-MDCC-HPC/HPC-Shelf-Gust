@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a551bc874f600ffbaba6954a7594c2a8461fe851ed4999a05edd374461aa953c47aacd66cb668b92062eb3f5a98af693dda884fc1cc070c0d9eeca72d0b58b57df5fec300ec3e1b7658778d46c6624806139f33a9bd8426f129f7f25b7c18789e2fadde37c05a368144945944b07dd5eb51ce14d0b224071686999fbeec1c285" isAbstract="true" kind="Computation" name="TerminateFunctionTC" packagePath="br.ufc.mdcc.hpcshelf.gust.example.tc">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b5faebfa5415d1df28d650322e4b719d547034a7a8e4b8df646f021940ccdae7176b18d2c1e8599bc6aefb0b609b28919fce9b24e6e8cadba84115da677b7fe82ce03e74f57b15d4c30a9cf1b04432127c200b7477ebd7308f0a944f30deaefaf7457e8472b79cbe15b3ee02e1b129c0c7612debf95b03f3e26e67009677f488" isAbstract="true" kind="Computation" name="TerminateFunctionTC" packagePath="br.ufc.mdcc.hpcshelf.gust.example.tc">
     <baseType>
       <extensionType>
         <extends>true</extends>
@@ -17,7 +17,7 @@
           <visualDescription h="60" w="195" x="32" y="304">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###138356377"/>
+          <parameter formFieldId="item_type" varName="X###835011325"/>
           <unitBounds parallel="true" uRef="iterator">
             <visualDescription h="20" w="20" x="22" y="18"/>
           </unitBounds>
@@ -26,7 +26,7 @@
           <visualDescription h="60" w="209" x="488" y="247">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###1778322185"/>
+          <parameter formFieldId="item_type" varName="X###229706130"/>
           <unitBounds parallel="true" uRef="iterator">
             <visualDescription h="20" w="20" x="20" y="17"/>
           </unitBounds>
@@ -80,10 +80,10 @@
     <supplyParameter cRef="ovalue" direct="true" varName="OValue"/>
     <interface iRef="ITerminateFunctionTC" nArgs="0">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC&#xA;{&#xA;&#x9;public interface BaseITerminateFunctionTC : BaseITerminateFunction, IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseITerminateFunctionTC.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC/bin/1.0.0.0/BaseITerminateFunctionTC.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC&#xA;{&#xA;&#x9;public interface BaseITerminateFunctionTC : BaseITerminateFunction&lt;IVertex, IDataTriangle, IVertex, IDataTriangle>, IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseITerminateFunctionTC.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC/bin/1.0.0.0/BaseITerminateFunctionTC.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction/bin/1.0.0.0/BaseITerminateFunction.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC&#xA;{&#xA;&#x9;public interface ITerminateFunctionTC : BaseITerminateFunctionTC, ITerminateFunction&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITerminateFunctionTC.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC/bin/1.0.0.0/ITerminateFunctionTC.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC&#xA;{&#xA;&#x9;public interface ITerminateFunctionTC : BaseITerminateFunctionTC, ITerminateFunction&lt;IVertex, IDataTriangle, IVertex, IDataTriangle>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITerminateFunctionTC.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC/bin/1.0.0.0/ITerminateFunctionTC.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC/bin/1.0.0.0/BaseITerminateFunctionTC.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction/bin/1.0.0.0/ITerminateFunction.dll</dependency>
         </file>

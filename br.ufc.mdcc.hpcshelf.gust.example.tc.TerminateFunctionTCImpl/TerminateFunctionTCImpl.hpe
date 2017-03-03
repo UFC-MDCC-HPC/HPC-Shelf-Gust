@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000008d1c55a29bea0f62c9d2c9dadcfa32dcb84fdc93343518a0a4f02a86458b90fbf23de8e91c440e46ade658ca50d73349c30b9c28edb22d0979e837e328c9d73f125a6ecfd2d0f82992ddc2af8ddf4a6b4ba147353eda0bfaf1c70f24d74e78b4a248ac287fed36208f41877eb21b9b6396f07fe20e1a781342634bc0d594d881" isAbstract="false" kind="Computation" name="TerminateFunctionTCImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.example.tc">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a9606eb17fe7cea37f01f8c305130543d2a0cde2db8a2073e8d6f1171789990b0aae649375b9ca9188aaa5fc6da741d5d08c46cc10fab78c04b685470c6afa20eb87e106556ab9ed0b6c5ff54d7c04585efe91a5f0bbc5f0b670dd7a8f9af3ee03096c1fef1fec3295f6fede83bc1e11e714ee42e69794bb9014321837945da6" isAbstract="false" kind="Computation" name="TerminateFunctionTCImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.example.tc">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a551bc874f600ffbaba6954a7594c2a8461fe851ed4999a05edd374461aa953c47aacd66cb668b92062eb3f5a98af693dda884fc1cc070c0d9eeca72d0b58b57df5fec300ec3e1b7658778d46c6624806139f33a9bd8426f129f7f25b7c18789e2fadde37c05a368144945944b07dd5eb51ce14d0b224071686999fbeec1c285" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC/TerminateFunctionTC.hpe" name="TerminateFunctionTC" package="br.ufc.mdcc.hpcshelf.gust.example.tc" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b5faebfa5415d1df28d650322e4b719d547034a7a8e4b8df646f021940ccdae7176b18d2c1e8599bc6aefb0b609b28919fce9b24e6e8cadba84115da677b7fe82ce03e74f57b15d4c30a9cf1b04432127c200b7477ebd7308f0a944f30deaefaf7457e8472b79cbe15b3ee02e1b129c0c7612debf95b03f3e26e67009677f488" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC/TerminateFunctionTC.hpe" name="TerminateFunctionTC" package="br.ufc.mdcc.hpcshelf.gust.example.tc" version="1.0.0.0">
         <visualDescription h="60" w="100" x="315" y="447">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -13,7 +13,7 @@
           <visualDescription h="60" w="195" x="32" y="304">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###1951303438"/>
+          <parameter formFieldId="item_type" varName="X###517791241"/>
           <unitBounds parallel="true" uRef="iterator">
             <visualDescription h="20" w="20" x="22" y="18"/>
           </unitBounds>
@@ -22,7 +22,7 @@
           <visualDescription h="60" w="209" x="488" y="247">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###1334109129"/>
+          <parameter formFieldId="item_type" varName="X###913649843"/>
           <unitBounds parallel="true" uRef="iterator">
             <visualDescription h="20" w="20" x="20" y="17"/>
           </unitBounds>
@@ -48,7 +48,7 @@
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC/bin/1.0.0.0/BaseITerminateFunctionTC.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTCImpl&#xA;{&#xA;&#x9;public class ITerminateFunctionTCImpl : BaseITerminateFunctionTCImpl, ITerminateFunctionTC&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="ITerminateFunctionTCImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTCImpl/bin/1.0.0.0/ITerminateFunctionTCImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTCImpl&#xA;{&#xA;&#x9;public class ITerminateFunctionTCImpl : BaseITerminateFunctionTCImpl, ITerminateFunctionTC&#xA;&#x9;{&#xA;&#x9;&#x9;private IPortTypeIterator iterate_pairs = null;&#xA;&#x9;&#x9;public IPortTypeIterator Iterate_pairs { set {this.iterate_pairs = value; } }&#xA;&#xA;&#x9;&#x9;private int iterate_num = 0;&#xA;&#xA;&#x9;&#x9;public override void main() &#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;IVertex, IDataTriangle>> output_pairs = (IIteratorInstance&lt;IKVPair&lt;IVertex, IDataTriangle>>)Output_pairs.Instance;&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;IVertex, IDataTriangle>> input_pairs = (IIteratorInstance&lt;IKVPair&lt;IVertex, IDataTriangle>>)Input_pairs.Instance;&#xA;&#xA;&#x9;&#x9;&#x9;object pair;&#xA;&#xA;&#x9;&#x9;&#x9;// For 3 iterations: startup_push, gust0, gust1&#xA;&#x9;&#x9;&#x9;while ((iterate_num++) &lt; 2) {&#xA;&#x9;&#x9;&#x9;&#x9;while (iterate_pairs.fetch_next(out pair))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;input_pairs.put(pair);&#xA;&#x9;&#x9;&#x9;&#x9;input_pairs.finish ();&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;input_pairs.finish ();&#xA;&#xA;&#x9;&#x9;&#x9;// Finally, all pairs are sent to the output.&#xA;&#x9;&#x9;&#x9;while (iterate_pairs.fetch_next(out pair))&#xA;&#x9;&#x9;&#x9;&#x9;output_pairs.put(pair);&#xA;&#xA;&#x9;&#x9;&#x9;output_pairs.finish ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="ITerminateFunctionTCImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTCImpl/bin/1.0.0.0/ITerminateFunctionTCImpl.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTCImpl/bin/1.0.0.0/BaseITerminateFunctionTCImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC/bin/1.0.0.0/ITerminateFunctionTC.dll</dependency>
         </file>

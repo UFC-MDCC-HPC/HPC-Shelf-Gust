@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000003fe96c9bbe1bf3a42f903d0ca137e6252abfb5caf77a0e61a2f0ae8e93ac70801d7a10ea8a363d12d282fb893f14037500465046972a65b15db4d015396f565e146011b5ac2e776786221de66f2cf5b04e3a26831d4e7c1fb06d8d73e791e8b8ac1bf14c7e3f6f66fbe5900d2ef3700c13892d956850b1d04d5de8d421358aee" isAbstract="true" kind="Data" name="DataTriangle" packagePath="br.ufc.mdcc.hpcshelf.gust.example.tc">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000099e22c202edf779f6a14b3fbfbfdd19b1be39d1465cfe8e298fcf78bb6cdebedf50d2823e8c86fcd3f9c39368d3c853a1e1d5365c795a0b624c2d765f6f77ed69d03b211a6c34ae9d58ef7ea8f064c5a860220afed1fdf0a0a7fedddedda4aad2832043e5d7fd9075f3c20abc757ad188dc00df074fb53c4c8749c43fc6798e9" isAbstract="true" kind="Data" name="DataTriangle" packagePath="br.ufc.mdcc.hpcshelf.gust.example.tc">
     <baseType>
       <extensionType>
         <extends>true</extends>
@@ -25,7 +25,7 @@
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle&#xA;{&#xA;&#x9;public interface BaseIDataTriangle : BaseIData, IDataStructureKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDataTriangle.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/bin/1.0.0.0/BaseIDataTriangle.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle&#xA;{&#xA;&#x9;public interface IDataTriangle : BaseIDataTriangle, IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDataTriangle.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/bin/1.0.0.0/IDataTriangle.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle&#xA;{&#xA;&#x9;public interface IDataTriangle : BaseIDataTriangle, IData&#xA;&#x9;{&#xA;&#x9;&#x9;IDataTriangleInstance newInstance(int v);&#xA;&#x9;&#x9;IDataTriangleInstance newInstance(int v, int w);&#xA;&#x9;} // end main interface &#xA;&#xA;&#x9;public interface IDataTriangleInstance : IDataInstance, ICloneable&#xA;&#x9;{&#xA;&#x9;&#x9;int V { set; get; }&#xA;&#x9;&#x9;int W { set; get; }&#xA;&#x9;}&#xA;&#xA;} // end namespace &#xA;" name="IDataTriangle.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/bin/1.0.0.0/IDataTriangle.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle/bin/1.0.0.0/BaseIDataTriangle.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
         </file>
