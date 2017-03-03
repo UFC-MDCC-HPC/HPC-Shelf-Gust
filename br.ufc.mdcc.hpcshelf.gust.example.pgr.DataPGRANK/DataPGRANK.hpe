@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001ddf0169c2bd97b4a44a53fa51cb1aeabfbda87913cfa304936ab9c3a1e87c3753483b2aa6ed2392d920050e645d20480f9d584aa9d7be24c11c9e48ece5be40f98e39493a8e3b271e7ef7c2e3d4ca048d20d2a3d811dcc22c213d6bb9a57468ada3d5aad195b76c21ad3a6f378e5945134bcbc84aab02379ef7eb5307ff9db5" isAbstract="true" kind="Data" name="DataPGRANK" packagePath="br.ufc.mdcc.hpcshelf.gust.example.pgr">
+    <baseType>
+      <extensionType>
+        <extends>true</extends>
+      </extensionType>
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002b679e8f63c6925bfcc928a7cc3013906b15c175a4e98fab23a035f735fa6c0ad73ed2eae507a31345dd1d315a36138fc3377a2b0953350e14b7cf31e6b06c33f4f4ee03b53200f4bfdbaab49b63edb35bda74c698665df952a90b9df4bdf2e6bc62129a9da0a4ba4ee78fb225d5b4353e96afd6e47927b6943bf6ace9cf0cb0" localRef="base" location="br.ufc.mdcc.common.Data/Data.hpe" name="Data" package="br.ufc.mdcc.common" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="266" y="486">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <unitBounds parallel="false" uRef="data">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <interface iRef="IDataPGRANK" nArgs="0">
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK&#xA;{&#xA;&#x9;public interface BaseIDataPGRANK : BaseIData, IDataStructureKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDataPGRANK.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/bin/1.0.0.0/BaseIDataPGRANK.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using System.Collections.Generic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK&#xA;{&#xA;&#x9;public interface IDataPGRANK : BaseIDataPGRANK, IData {&#xA;&#x9;&#x9;IDataPGRANKInstance InstanceDataPGRANK { get; }&#xA;&#x9;} // end main interface &#xA;&#xA;&#x9;public interface IDataPGRANKInstance : IDataInstance, ICloneable {&#xA;&#x9;&#x9;IDictionary&lt;int, float> Path_size { get; set; }&#xA;&#x9;&#x9;int Halt { get; set; }&#xA;&#x9;}&#xA;} // end namespace &#xA;" name="IDataPGRANK.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/bin/1.0.0.0/IDataPGRANK.dll" versionId="1.0.0.0">
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/bin/1.0.0.0/BaseIDataPGRANK.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="158" x="163" y="317">
+        <color b="110" g="185" r="233"/>
+      </visualDescription>
+    </interface>
+    <unit facet="0" iRef="IDataPGRANK" multiple="false" private="false" replica="0" uRef="data" visibleInterface="true">
+      <super cRef="base" uRef="data"/>
+      <visualDescription h="40" w="80" x="235" y="402"/>
+    </unit>
+  </componentInfo>
+</component:component>
