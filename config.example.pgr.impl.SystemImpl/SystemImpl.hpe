@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002dbe707d210536f90714398a5e430573e5634ee8e3e612a115defa16f363fb91bc38fe5a5b343f6edbb6af08bd223ed52aa7b8f9cb3caee8d8a931b565adbbb9eaf16eb00ffdd6997c70eb82b5d68c36bf73d79031b279206395feca83752bfe387cca515f2e1a15b0971d108a67e4355d7b1527ab98eda7e3cef892675cffc1" isAbstract="false" kind="Application" name="SystemImpl" packagePath="config.example.pgr.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b1fcb7e2a79e8cf4585bd15e8cbd21eafc633d63441927a403a3e4951909c5456b7929a0f30779248fc7f8e991f165ab06df8b05f94176bc27279a263cad89a23c5156af24389c63e770127055e3ca5f5e86da57960197544390d67d249214ac4181b1832ac7c2264102d3be9845f6e515ad928ae5d88afaaca3b7641b3e6283" isAbstract="false" kind="Application" name="SystemImpl" packagePath="config.example.pgr.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000000317ea92755a17929a822ae6e78c4eddece1c6d90ef83792f6d8a695fec2381e5489fe6bbea7b0dfb9f54a0e1f02ca72292f4632c4385bff6371935c8c020add7351bee4c60dabd89d2b823f3f4b96ee7c908885162967f0073060922884ea6d66e67cd01488f90fd40b2c23cfd3040ec581d52e28238bc1482ea72c8b933589" localRef="base" location="config.example.pgr.System/System.hpe" name="System" package="config.example.pgr" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000e5464b655e80ba7879bb38d68844824b6da66d0a9bf974eaa6a3dc4fad9e9cc66f43ec39f4125503a1205700e667268b782eaa83c693fed76f51d5cbbd4528f62d39ef440f2ac275f6cef7bc6b649f7566a6f3f0f47692130adc0f3c29bda3348f4ed9458806080055cda91f4054a091160c487a9626ed5845eb262f6dff43ad" localRef="base" location="config.example.pgr.System/System.hpe" name="System" package="config.example.pgr" version="1.0.0.0">
         <visualDescription h="60" w="100" x="423" y="441">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -59,6 +59,10 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_data" sRef="join_loop"/>
       </port>
+      <port name="input_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="source" sRef="join_loop"/>
+      </port>
       <port name="platform_data_source">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_data_source" sRef="join_loop"/>
@@ -66,10 +70,6 @@
       <port name="task_binding_split_first">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_first" sRef="join_loop"/>
-      </port>
-      <port name="input_data">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="source" sRef="join_loop"/>
       </port>
       <action id="main">
         <protocol/>
@@ -93,13 +93,13 @@
       <visualDescription h="40" w="206" x="316" y="603">
         <color b="79" g="233" r="252"/>
       </visualDescription>
-      <port name="platform_data_sink">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_data_sink" sRef="join_loop"/>
-      </port>
       <port name="output_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="sink" sRef="join_loop"/>
+      </port>
+      <port name="platform_data_sink">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_data_sink" sRef="join_loop"/>
       </port>
       <port name="task_binding_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -135,6 +135,26 @@
       <visualDescription h="40" w="201" x="669" y="515">
         <color b="79" g="233" r="252"/>
       </visualDescription>
+      <port name="task_binding_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_data" sRef="join_loop"/>
+      </port>
+      <port name="platform_reduce">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_reduce" sRef="join_loop"/>
+      </port>
+      <port name="task_binding_split_first">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_first" sRef="join_loop"/>
+      </port>
+      <port name="output_graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_graph" sRef="join_loop"/>
+      </port>
+      <port name="output_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="join_loop"/>
+      </port>
       <port name="input_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feed_pairs" sRef="join_loop"/>
@@ -143,53 +163,33 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feed_graph" sRef="join_loop"/>
       </port>
-      <port name="output_graph">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_graph" sRef="join_loop"/>
-      </port>
       <port name="task_binding_split_next">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_next" sRef="join_loop"/>
-      </port>
-      <port name="task_binding_data">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_data" sRef="join_loop"/>
-      </port>
-      <port name="task_binding_split_first">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_first" sRef="join_loop"/>
-      </port>
-      <port name="output_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="join_loop"/>
-      </port>
-      <port name="platform_reduce">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_reduce" sRef="join_loop"/>
-      </port>
-      <port name="task_reduce">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce" sRef="reducer"/>
-      </port>
-      <port name="output_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="reducer"/>
       </port>
       <port name="input_graph">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_graph" sRef="reducer"/>
       </port>
-      <port name="output_graph">
+      <port name="task_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_graph" sRef="reducer"/>
+        <slice pRef="task_reduce" sRef="reducer"/>
       </port>
       <port name="input_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="reducer"/>
       </port>
+      <port name="output_graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_graph" sRef="reducer"/>
+      </port>
       <port name="platform_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_reduce" sRef="reducer"/>
+      </port>
+      <port name="output_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="reducer"/>
       </port>
       <action id="main">
         <protocol/>
@@ -225,13 +225,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_SAFe" sRef="workflow"/>
       </port>
-      <port name="task_binding_split_first">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_first" sRef="workflow"/>
-      </port>
       <port name="task_binding_split_next">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_next" sRef="workflow"/>
+      </port>
+      <port name="task_binding_split_first">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_first" sRef="workflow"/>
       </port>
       <port name="platform_SAFe">
         <visualDescription h="10" w="10" x="0" y="0"/>

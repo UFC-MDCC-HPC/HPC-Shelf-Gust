@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b3505bf4695dd088646d1688d39ac445f840bf8e850f2be38d5772fe3f19f225416b48bca5b014be4aac91146424909ac9251800e7b617e8a43edcd30e9e5c034b35531a58f2a8c58a8077dfbba4cbc0860598e434c0c6f583685720dab97069dbab78ced6cca4fc33670b2eadcf17d4c62d80f8f8061d4e06f28bb76f48e68d" isAbstract="true" kind="Computation" name="TerminateFunctionPGRANK" packagePath="br.ufc.mdcc.hpcshelf.gust.example.pgr">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000334b5ca53116fce39cccbdd126c2a8172a7f1b88b3ed219fef330b262f099a5b21d5dddbd65f5d1965be5f58c36a0bc258104a0f8f4a3c1b60a033bc8024e2b4b5972ba58706c06ef04e2df7a71df7ac8fd96c67550fccd904df03fad579173b886f583a88ed945cfbad14ae4b511dbafa2ce256e3c5aa216ec278b27c3821a4" isAbstract="true" kind="Computation" name="TerminateFunctionPGRANK" packagePath="br.ufc.mdcc.hpcshelf.gust.example.pgr">
     <baseType>
       <extensionType>
         <extends>true</extends>
@@ -17,7 +17,7 @@
           <visualDescription h="60" w="195" x="490" y="431">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###1358341310"/>
+          <parameter formFieldId="item_type" varName="X###1239687899"/>
           <unitBounds parallel="true" uRef="iterator">
             <visualDescription h="20" w="20" x="22" y="18"/>
           </unitBounds>
@@ -26,7 +26,7 @@
           <visualDescription h="60" w="209" x="85" y="438">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###1891229560"/>
+          <parameter formFieldId="item_type" varName="X###548175299"/>
           <unitBounds parallel="true" uRef="iterator">
             <visualDescription h="20" w="20" x="20" y="17"/>
           </unitBounds>
