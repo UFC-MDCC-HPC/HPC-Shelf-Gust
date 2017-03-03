@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007172dd0c819cba40ca68d46fe79f0c4caee61d1200508039d29b155064de6928a2e88ae3b249c22097cacd437c4103f7c15f358f4f6db20fad7b4b784f1bcc37ee5f9157b1562e8d9dbac92c43c39da588de404c5b1bb97b398595fa1876f40f7d61d0c467053294b617adc157369cfb68dfc5c023cf44ff29377caad4d576d6" isAbstract="false" kind="Application" name="SystemImpl" packagePath="config.example.sssp.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000493acb09c2dbac25335dc3d7314109ff619dd4d4a9442b044c8c7c8dc16fe2cc45bfecdbd013c8bd509ff66256b776cb2cde1fc9f5e3adfeebcb3330d6e666736fa35ab24695b04b0fba1d93e8257634f653c2efd5aa89e6feafa86d966f21ed1d45c106e98832fac6c543a3d3186e851c42b6e42da430dfa8838b71d5a328a3" isAbstract="false" kind="Application" name="SystemImpl" packagePath="config.example.sssp.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000009500085125b029988bf5f81ab25ae8a4bcae2e8eff90fff4457e77aa4f6a183e38119743c09601800dde9b767d36b56f272fd4fa4f3c59db3aa3cdc1ccc3fb757a886be51d46fbefc2259dd1b4fabfc7e5f1c94dba20398e930f360dd5c5574139f839bac98e632408663c501113dafebee11d268f4230cca24c84e73ca90fc1" localRef="base" location="config.example.sssp.System/System.hpe" name="System" package="config.example.sssp" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c1d6477de43654ec0cacef148f955d3645bb6d3b8a8c62a8062b86f0711b7ed60005e6d16ccb209fa0bb3b1894997d7cc8c14381c319b0aa16a0506fae3bab2f116e8b266e5ffe1744d430619ef1e702bd40c9faa77adf50334d5815e6bc1dd13faa07c9183bfa840a2d6cacf49e0aedd97c71d667be1f5df285274137157a96" localRef="base" location="config.example.sssp.System/System.hpe" name="System" package="config.example.sssp" version="1.0.0.0">
         <visualDescription h="60" w="100" x="423" y="441">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -47,29 +47,29 @@
       <visualDescription h="40" w="168" x="68" y="526">
         <color b="79" g="233" r="252"/>
       </visualDescription>
-      <port name="input_data">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="reader" sRef="data_source"/>
-      </port>
       <port name="platform_data_source">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_data_source" sRef="data_source"/>
       </port>
       <port name="input_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="source" sRef="join_loop"/>
+        <slice pRef="reader" sRef="data_source"/>
       </port>
-      <port name="task_binding_split_first">
+      <port name="platform_data_source">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_first" sRef="join_loop"/>
+        <slice pRef="platform_data_source" sRef="join_loop"/>
       </port>
       <port name="task_binding_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_data" sRef="join_loop"/>
       </port>
-      <port name="platform_data_source">
+      <port name="task_binding_split_first">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_data_source" sRef="join_loop"/>
+        <slice pRef="task_binding_split_first" sRef="join_loop"/>
+      </port>
+      <port name="input_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="source" sRef="join_loop"/>
       </port>
       <action id="main">
         <protocol/>
@@ -105,13 +105,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_data" sRef="join_loop"/>
       </port>
-      <port name="platform_data_sink">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_data_sink" sRef="data_sink"/>
-      </port>
       <port name="output_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="writer" sRef="data_sink"/>
+      </port>
+      <port name="platform_data_sink">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_data_sink" sRef="data_sink"/>
       </port>
       <action id="main">
         <protocol/>
@@ -139,9 +139,9 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_data" sRef="join_loop"/>
       </port>
-      <port name="output_graph">
+      <port name="input_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_graph" sRef="join_loop"/>
+        <slice pRef="feed_pairs" sRef="join_loop"/>
       </port>
       <port name="task_binding_split_next">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -151,10 +151,6 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feed_graph" sRef="join_loop"/>
       </port>
-      <port name="input_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="join_loop"/>
-      </port>
       <port name="output_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="join_loop"/>
@@ -163,33 +159,37 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_reduce" sRef="join_loop"/>
       </port>
+      <port name="output_graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_graph" sRef="join_loop"/>
+      </port>
       <port name="task_binding_split_first">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_first" sRef="join_loop"/>
-      </port>
-      <port name="output_graph">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_graph" sRef="reducer"/>
-      </port>
-      <port name="output_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="reducer"/>
-      </port>
-      <port name="platform_reduce">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_reduce" sRef="reducer"/>
       </port>
       <port name="input_graph">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_graph" sRef="reducer"/>
       </port>
-      <port name="input_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="reducer"/>
-      </port>
       <port name="task_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_reduce" sRef="reducer"/>
+      </port>
+      <port name="platform_reduce">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_reduce" sRef="reducer"/>
+      </port>
+      <port name="output_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="reducer"/>
+      </port>
+      <port name="output_graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_graph" sRef="reducer"/>
+      </port>
+      <port name="input_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="reducer"/>
       </port>
       <action id="main">
         <protocol/>
@@ -205,7 +205,7 @@
         <visualDescription h="10" w="10" x="4" y="7"/>
       </slice>
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="// ------------------------------------------------------------------------------&#xA;//  &lt;autogenerated>&#xA;//      This code was generated by a tool.&#xA;//      Mono Runtime Version: 4.0.30319.17020&#xA;// &#xA;//      Changes to this file may cause incorrect behavior and will be lost if &#xA;//      the code is regenerated.&#xA;//  &lt;/autogenerated>&#xA;// ------------------------------------------------------------------------------&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using config.example.sssp.Application;&#xA;using config.example.sssp.System;&#xA;using config.example.sssp.Workflow;&#xA;using System;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;&#xA;&#xA;&#xA;namespace config.example.sssp.impl.SystemImpl {&#xA;    &#xA;    &#xA;    public class IRootImpl : br.ufc.pargo.hpe.kinds.Application, IRoot {&#xA;        &#xA;        private void Go(Object o) {&#xA;            ((Activate)(o)).go();&#xA;        }&#xA;        &#xA;        public override void main() {&#xA;&#x9;&#x9;/*&#x9;IWorkflow&lt;ISAFeHost> workflow = ((IWorkflow&lt;ISAFeHost>)(this.Services.getPort(&quot;workflow&quot;)));&#xA;            Thread go_workflow = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_workflow.Start(workflow);&#xA;&#x9;&#x9;&#x9;IApplication&lt;ISAFeHost> application = ((IApplication&lt;ISAFeHost>)(this.Services.getPort(&quot;application&quot;)));&#xA;            Thread go_application = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_application.Start(application);&#xA;            go_workflow.Join();&#xA;            go_application.Join();*/&#xA;        }&#xA;    }&#xA;}&#xA;" name="IRootImpl.cs" srcType="user" uri="config.example.sssp.impl.SystemImpl/bin/1.0.0.0/IRootImpl.dll" versionId="1.0.0.0">
+        <file contents="// ------------------------------------------------------------------------------&#xA;//  &lt;autogenerated>&#xA;//      This code was generated by a tool.&#xA;//      Mono Runtime Version: 4.0.30319.17020&#xA;// &#xA;//      Changes to this file may cause incorrect behavior and will be lost if &#xA;//      the code is regenerated.&#xA;//  &lt;/autogenerated>&#xA;// ------------------------------------------------------------------------------&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using config.Application;&#xA;using config.example.sssp.System;&#xA;using config.phase1.Workflow;&#xA;using System;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;&#xA;&#xA;&#xA;namespace config.example.sssp.impl.SystemImpl {&#xA;    &#xA;    &#xA;    public class IRootImpl : br.ufc.pargo.hpe.kinds.Application, IRoot {&#xA;        &#xA;        private void Go(Object o) {&#xA;            ((Activate)(o)).go();&#xA;        }&#xA;        &#xA;        public override void main() {&#xA;&#x9;&#x9;/*&#x9;IWorkflow&lt;ISAFeHost> workflow = ((IWorkflow&lt;ISAFeHost>)(this.Services.getPort(&quot;workflow&quot;)));&#xA;            Thread go_workflow = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_workflow.Start(workflow);&#xA;&#x9;&#x9;&#x9;IApplication&lt;ISAFeHost> application = ((IApplication&lt;ISAFeHost>)(this.Services.getPort(&quot;application&quot;)));&#xA;            Thread go_application = new Thread(new ParameterizedThreadStart(this.Go));&#xA;            go_application.Start(application);&#xA;            go_workflow.Join();&#xA;            go_application.Join();*/&#xA;        }&#xA;    }&#xA;}&#xA;" name="IRootImpl.cs" srcType="user" uri="config.example.sssp.impl.SystemImpl/bin/1.0.0.0/IRootImpl.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/config.example.sssp.impl.SystemImpl/bin/1.0.0.0/BaseIRootImpl.dll</dependency>
           <dependency>config.example.sssp.System/bin/1.0.0.0/IRoot.dll</dependency>
         </file>
@@ -213,18 +213,6 @@
       <visualDescription h="40" w="184" x="397" y="263">
         <color b="6" g="154" r="78"/>
       </visualDescription>
-      <port name="platform_SAFe">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_SAFe" sRef="workflow"/>
-      </port>
-      <port name="task_binding_split_first">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_first" sRef="workflow"/>
-      </port>
-      <port name="task_binding_split_next">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_next" sRef="workflow"/>
-      </port>
       <port name="task_binding_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_data" sRef="workflow"/>
@@ -232,6 +220,18 @@
       <port name="task_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_gusty" sRef="workflow"/>
+      </port>
+      <port name="task_binding_split_first">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_first" sRef="workflow"/>
+      </port>
+      <port name="platform_SAFe">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_SAFe" sRef="workflow"/>
+      </port>
+      <port name="task_binding_split_next">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_next" sRef="workflow"/>
       </port>
       <port name="platform_SAFe">
         <visualDescription h="10" w="10" x="0" y="0"/>

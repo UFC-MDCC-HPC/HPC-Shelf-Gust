@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000fb0894102015aa8f8b353b2d9d91d56cb1e3dc1b85202f8728b6bdf2bc3a94d22140ee4823679b534a6d74870ac5638514931880ad39982130b0025deb8532512ddf61af50da10df84c87254c45f763c73cb7293f261cd6581da630422752b22104b2937ae856aaaa56822a2b76e1d8cab9c7b8dbce76e81f4ebb02e2ec2a6c4" isAbstract="true" kind="Computation" name="SSSP" packagePath="br.ufc.mdcc.hpcshelf.gust.example.sssp">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000ed26e361b0730fe71911604147cf52ee4f4f1f6576295559d514e391d55b1b9f080f32c0f9e47788116ebc7fa28d52a6e01a44e2632cdcf4d65a17195a1e76cb40f0d507d792c52ab548b6f7ed72549d0a75032b98a24426e4f76f0bbce74d31bc9f17dfe81251216ecdc1e288f517e6213b47591ba5e19b36a3943c2e63e1b9" isAbstract="true" kind="Computation" name="SSSP" packagePath="br.ufc.mdcc.hpcshelf.gust.example.sssp">
     <baseType>
       <extensionType>
         <extends>true</extends>
@@ -19,7 +19,7 @@
           <visualDescription h="60" w="181" x="118" y="348">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###279436774"/>
+          <parameter formFieldId="value_type" varName="X###277510249"/>
           <parameter formFieldId="key_type" varName="TKey"/>
           <unitBounds parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="137" y="20"/>
@@ -29,7 +29,7 @@
           <visualDescription h="60" w="134" x="534" y="339">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###2094608276"/>
+          <parameter formFieldId="item_type" varName="X###1927757306"/>
           <unitBounds parallel="false" uRef="iterator">
             <visualDescription h="20" w="20" x="9" y="20"/>
           </unitBounds>
@@ -38,8 +38,8 @@
           <visualDescription h="56" w="225" x="122" y="419">
             <color b="255" g="255" r="255"/>
           </visualDescription>
-          <parameter formFieldId="value_type" varName="X###381869461"/>
-          <parameter formFieldId="key_type" varName="X###1398893791"/>
+          <parameter formFieldId="value_type" varName="X###731259653"/>
+          <parameter formFieldId="key_type" varName="X###232076190"/>
           <unitBounds parallel="false" uRef="kv_pair">
             <visualDescription h="20" w="20" x="189" y="15"/>
           </unitBounds>
@@ -48,7 +48,7 @@
           <visualDescription h="60" w="157" x="498" y="412">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###556977981"/>
+          <parameter formFieldId="item_type" varName="X###674222378"/>
           <unitBounds parallel="false" uRef="iterator">
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
@@ -153,10 +153,10 @@
     <supplyParameter cRef="g" direct="true" varName="G"/>
     <interface iRef="ISSSP" nArgs="0">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP&#xA;{&#xA;&#x9;public interface BaseISSSP : BaseIReduceFunction, IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseISSSP.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP/bin/1.0.0.0/BaseISSSP.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP&#xA;{&#xA;&#x9;public interface BaseISSSP : BaseIReduceFunction&lt;&#xA;&#x9;IInputFormat, &#xA;&#x9;IInteger, &#xA;&#x9;IDataSSSP, &#xA;&#x9;IInteger, &#xA;&#x9;IDataSSSP, &#xA;&#x9;IDirectedGraph&lt;IDataContainerKV&lt;IVertex, IEdgeWeighted&lt;IVertex>>, IVertex, IEdgeWeighted&lt;IVertex>>&#xA;&#x9;>, IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseISSSP.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP/bin/1.0.0.0/BaseISSSP.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/bin/1.0.0.0/BaseIReduceFunction.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP&#xA;{&#xA;&#x9;public interface ISSSP : BaseISSSP, IReduceFunction&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ISSSP.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP/bin/1.0.0.0/ISSSP.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.DirectedGraph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP&#xA;{&#xA;&#x9;public interface ISSSP : BaseISSSP, IReduceFunction&lt;&#xA;&#x9;IInputFormat, &#xA;&#x9;IInteger, &#xA;&#x9;IDataSSSP, &#xA;&#x9;IInteger, &#xA;&#x9;IDataSSSP, &#xA;&#x9;IDirectedGraph&lt;IDataContainerKV&lt;IVertex, IEdgeWeighted&lt;IVertex>>, IVertex, IEdgeWeighted&lt;IVertex>>&#xA;&#x9;>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ISSSP.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP/bin/1.0.0.0/ISSSP.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP/bin/1.0.0.0/BaseISSSP.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/bin/1.0.0.0/IReduceFunction.dll</dependency>
         </file>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000733bd4811cad9e47d64bb9dd04792df42c68f365c4750b39fd5ce62cba445b758a1945fa1df1351564eb86a875abaf2c1f014e2d9a38a1f98f39872125eac95c41c7725e852632310a52a3199f7aba4cccbf30b48af77b5a8283bb5db913910a7e267fdb2217e3f5fe28a28932618a8225f6f90f29437b017d56f0b46c625fb6" isAbstract="true" kind="Computation" name="TerminateFunctionSSSP" packagePath="br.ufc.mdcc.hpcshelf.gust.example.sssp">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001d443b844dc0dec09b04c0ad7310cb4f022845f3aac5331d65d848686b5a64948c695382105978e643f9370f69fadc32c2fcdfabbd6311015e0de087a88b9c0ae3ff2b92173293e3b9ad9a5656399bcd8cc48488360943ddd021d6a4eb26f0edce95a382d1a6521b2e5e91ddf3b5e3728864094f858f5ab999ea06bd81c34aab" isAbstract="true" kind="Computation" name="TerminateFunctionSSSP" packagePath="br.ufc.mdcc.hpcshelf.gust.example.sssp">
     <baseType>
       <extensionType>
         <extends>true</extends>
@@ -17,7 +17,7 @@
           <visualDescription h="60" w="195" x="479" y="442">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###1245391691"/>
+          <parameter formFieldId="item_type" varName="X###45655449"/>
           <unitBounds parallel="true" uRef="iterator">
             <visualDescription h="20" w="20" x="22" y="18"/>
           </unitBounds>
@@ -26,7 +26,7 @@
           <visualDescription h="60" w="209" x="85" y="438">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###1922526975"/>
+          <parameter formFieldId="item_type" varName="X###679469364"/>
           <unitBounds parallel="true" uRef="iterator">
             <visualDescription h="20" w="20" x="20" y="17"/>
           </unitBounds>
@@ -80,10 +80,10 @@
     <supplyParameter cRef="ovalue" direct="true" varName="OValue"/>
     <interface iRef="ITerminateFunctionSSSP" nArgs="0">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP&#xA;{&#xA;&#x9;public interface BaseITerminateFunctionSSSP : BaseITerminateFunction, IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseITerminateFunctionSSSP.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP/bin/1.0.0.0/BaseITerminateFunctionSSSP.dll" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP&#xA;{&#xA;&#x9;public interface BaseITerminateFunctionSSSP : BaseITerminateFunction&lt;IInteger, IDataSSSP, IInteger, IDataSSSP>, IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseITerminateFunctionSSSP.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP/bin/1.0.0.0/BaseITerminateFunctionSSSP.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction/bin/1.0.0.0/BaseITerminateFunction.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP&#xA;{&#xA;&#x9;public interface ITerminateFunctionSSSP : BaseITerminateFunctionSSSP, ITerminateFunction&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITerminateFunctionSSSP.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP/bin/1.0.0.0/ITerminateFunctionSSSP.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP&#xA;{&#xA;&#x9;public interface ITerminateFunctionSSSP : BaseITerminateFunctionSSSP, ITerminateFunction&lt;IInteger, IDataSSSP, IInteger, IDataSSSP>&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="ITerminateFunctionSSSP.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP/bin/1.0.0.0/ITerminateFunctionSSSP.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP/bin/1.0.0.0/BaseITerminateFunctionSSSP.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction/bin/1.0.0.0/ITerminateFunction.dll</dependency>
         </file>

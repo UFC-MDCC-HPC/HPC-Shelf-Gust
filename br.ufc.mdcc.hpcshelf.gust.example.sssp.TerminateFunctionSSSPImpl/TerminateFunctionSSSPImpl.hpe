@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000006fae45e1363c0c8f7e8defbc45e680a63e86a51e40ac953f949b3182eeafb8ad2fd897cf2b4269bbea3fb9c7e5ac69f4db34b75197fabe9c4f36b3a372888753d8d15662bd1cec8f8cc9164da13996cf8b97bbdc0121f9eb5fbba03b9e7bd83fc808fdf9133eab54622be706d51e159855ec78a9f4e3c25ff878f2b12f9869a8" isAbstract="false" kind="Computation" name="TerminateFunctionSSSPImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.example.sssp">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000add213df542d1d885e5dea3ebec80cb58fda37d286dd44bf71133ea2f8149ebaf58516b469a4c15201f6033a8d30b99375267a821f0d8663fda35253452f671aae374e8f239bf2aa012576ea0373d8407227860302baa6b3af03767624294809d37d6d669332b9564c8d28043d019464dd8702780dc48ac9d19bef020c9fc3bd" isAbstract="false" kind="Computation" name="TerminateFunctionSSSPImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.example.sssp">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000733bd4811cad9e47d64bb9dd04792df42c68f365c4750b39fd5ce62cba445b758a1945fa1df1351564eb86a875abaf2c1f014e2d9a38a1f98f39872125eac95c41c7725e852632310a52a3199f7aba4cccbf30b48af77b5a8283bb5db913910a7e267fdb2217e3f5fe28a28932618a8225f6f90f29437b017d56f0b46c625fb6" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP/TerminateFunctionSSSP.hpe" name="TerminateFunctionSSSP" package="br.ufc.mdcc.hpcshelf.gust.example.sssp" version="1.0.0.0">
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000001d443b844dc0dec09b04c0ad7310cb4f022845f3aac5331d65d848686b5a64948c695382105978e643f9370f69fadc32c2fcdfabbd6311015e0de087a88b9c0ae3ff2b92173293e3b9ad9a5656399bcd8cc48488360943ddd021d6a4eb26f0edce95a382d1a6521b2e5e91ddf3b5e3728864094f858f5ab999ea06bd81c34aab" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP/TerminateFunctionSSSP.hpe" name="TerminateFunctionSSSP" package="br.ufc.mdcc.hpcshelf.gust.example.sssp" version="1.0.0.0">
         <visualDescription h="60" w="100" x="331" y="443">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -13,7 +13,7 @@
           <visualDescription h="60" w="195" x="464" y="488">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###772422160"/>
+          <parameter formFieldId="item_type" varName="X###1757243866"/>
           <unitBounds parallel="true" uRef="iterator">
             <visualDescription h="20" w="20" x="22" y="18"/>
           </unitBounds>
@@ -22,7 +22,7 @@
           <visualDescription h="60" w="209" x="67" y="493">
             <color b="203" g="192" r="255"/>
           </visualDescription>
-          <parameter formFieldId="item_type" varName="X###560597005"/>
+          <parameter formFieldId="item_type" varName="X###1802542318"/>
           <unitBounds parallel="true" uRef="iterator">
             <visualDescription h="20" w="20" x="20" y="17"/>
           </unitBounds>
@@ -48,7 +48,7 @@
           <dependency>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP/bin/1.0.0.0/BaseITerminateFunctionSSSP.dll</dependency>
         </file>
-        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSPImpl&#xA;{&#xA;&#x9;public class ITerminateFunctionSSSPImpl : BaseITerminateFunctionSSSPImpl, ITerminateFunctionSSSP&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="ITerminateFunctionSSSPImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSPImpl/bin/1.0.0.0/ITerminateFunctionSSSPImpl.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSPImpl&#xA;{&#xA;&#x9;public class ITerminateFunctionSSSPImpl : BaseITerminateFunctionSSSPImpl, ITerminateFunctionSSSP&#xA;&#x9;{&#xA;&#x9;&#x9;private IPortTypeIterator iterate_pairs = null;&#xA;&#x9;&#x9;public IPortTypeIterator Iterate_pairs { set {this.iterate_pairs = value; } }&#xA;&#xA;&#x9;&#x9;private int iterate_num = 0;&#xA;&#xA;&#x9;&#x9;public override void main() &#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;IInteger, IDataSSSP>> output_pairs = (IIteratorInstance&lt;IKVPair&lt;IInteger, IDataSSSP>>)Output_pairs.Instance;&#xA;&#x9;&#x9;&#x9;IIteratorInstance&lt;IKVPair&lt;IInteger, IDataSSSP>> input_pairs = (IIteratorInstance&lt;IKVPair&lt;IInteger, IDataSSSP>>)Input_pairs.Instance;&#xA;&#xA;&#x9;&#x9;&#x9;object pair;&#xA;&#xA;&#x9;&#x9;&#x9;while (iterate_pairs.has_next()) {//Espera por um finish() dado no reduce_function, o que ocorre quando todo IDataSSSPInstance.Halt=0 e nao exista mensagens pendentes&#xA;&#x9;&#x9;&#x9;&#x9;while (iterate_pairs.fetch_next(out pair))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;input_pairs.put(pair);&#xA;&#x9;&#x9;&#x9;&#x9;input_pairs.finish ();&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;iterate_pairs.fetch_next (out pair);//Faz o fetch_next na finalizacao&#xA;&#x9;&#x9;&#x9;input_pairs.finish ();&#xA;&#xA;&#x9;&#x9;&#x9;while (iterate_pairs.fetch_next(out pair)) // Espera pelos dados definitivos de saida&#xA;&#x9;&#x9;&#x9;&#x9;output_pairs.put(pair);&#xA;&#xA;&#x9;&#x9;&#x9;output_pairs.finish ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="ITerminateFunctionSSSPImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSPImpl/bin/1.0.0.0/ITerminateFunctionSSSPImpl.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSPImpl/bin/1.0.0.0/BaseITerminateFunctionSSSPImpl.dll</dependency>
           <dependency>br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP/bin/1.0.0.0/ITerminateFunctionSSSP.dll</dependency>
         </file>

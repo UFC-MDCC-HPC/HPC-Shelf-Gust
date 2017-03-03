@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000057421ef58ead072abd8a980eee59d978e367422b5e5c5ba886708d59a883ab51504f913a4ba0c02fd80d11a58704d4ead558da89547575aa4bd954b3a62dea217c4d3b46abcb95f9f42ceeb3eafedfe3e2b12fb3add01004d1131c91baa04907305d64ac90eaa10e1d0df9c4602c291d0d7e54ccffd96593671a09471c0c1dbd" isAbstract="true" kind="Data" name="DataSSSP" packagePath="br.ufc.mdcc.hpcshelf.gust.example.sssp">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000002ff424c2709fc9a9b787368e5f3a4d7678374bdf531e58e55f82a5fab2b785250e6317c1c5cea24b22bef3cc7d2f8f34cbad1efea93533ec1bcbbcdef1dec188cfcc4dab8ca1c120d11211cf0985511db6ddfb8bb31a1c22995deed9359d48bb751775f442f6db44ac798fc387f266aa97f1cb53efa7efcba7336f2542c37f95" isAbstract="true" kind="Data" name="DataSSSP" packagePath="br.ufc.mdcc.hpcshelf.gust.example.sssp">
     <baseType>
       <extensionType>
         <extends>true</extends>
@@ -25,7 +25,7 @@
         <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP&#xA;{&#xA;&#x9;public interface BaseIDataSSSP : BaseIData, IDataStructureKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="BaseIDataSSSP.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/bin/1.0.0.0/BaseIDataSSSP.dll" versionId="1.0.0.0">
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/BaseIData.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP&#xA;{&#xA;&#x9;public interface IDataSSSP : BaseIDataSSSP, IData&#xA;&#x9;{&#xA;&#x9;}&#xA;}" name="IDataSSSP.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/bin/1.0.0.0/IDataSSSP.dll" versionId="1.0.0.0">
+        <file contents="using System;&#xA;using System.Collections.Generic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP&#xA;{&#xA;&#x9;public interface IDataSSSP : BaseIDataSSSP, IData {&#xA;&#x9;&#x9;IDataSSSPInstance InstanceDataSSSP { get; }&#xA;&#x9;} // end main interface &#xA;&#xA;&#x9;public interface IDataSSSPInstance : IDataInstance, ICloneable {&#xA;&#x9;&#x9;IDictionary&lt;int, float> Path_size { get; set; }&#xA;&#x9;&#x9;int Halt { get; set; }&#xA;&#x9;}&#xA;} // end namespace &#xA;" name="IDataSSSP.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/bin/1.0.0.0/IDataSSSP.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/bin/1.0.0.0/BaseIDataSSSP.dll</dependency>
           <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
         </file>
