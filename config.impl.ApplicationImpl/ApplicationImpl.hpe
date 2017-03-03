@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000071e2868abc80dd21b8ff81dbcc192defc8bc2090cbf1d51bfdf40329220067fe9d1e1c15ffd7f7ebf4355ede88dd2b764ff3cbc3c1305ccdf81cca9a86c053f69a6a8243fa64b59823eeb69f588640851ffe9d296b88582920f11705991e09499844bcde9b0493afed3f4266dc8a20efaa3fe1d9e45bb2cc1fe7eb21669329e" isAbstract="false" kind="Computation" name="ApplicationImpl" packagePath="config.impl">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000a1c7aa31022504407a6cf8c160d457f5827c48aa1c80ae9648ff06da8f4b134c2c1a3a7ef1365454b07e60e0cd81b4b22f27a6897542e5e6640c511e93286b0d5b60a65a4d43fb38bd27fbf6abd3d17d426219d4db794469aa6507904e5b71819f61e9ce18c80242f3379c6da57fffdd89c2a6275597e8490d04891c5e90ccc9" isAbstract="false" kind="Computation" name="ApplicationImpl" packagePath="config.impl">
     <baseType>
       <extensionType>
         <implements>true</implements>
       </extensionType>
-      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000993bcdf8759adb37478bdd59f54e3a44413680c3bfb6564578d3ee85f340a49f092d54b63e435bb3a152f5052c34d77a80574603bf6ae9d4b508e7dcafdb3e76add859ac33b7633ec70a294ab9843c2f7440fdffd33505c05e741129105c35c3d34e240e51ddd33dd72f19c283672d6e33fd7acc112d691d257f15da0232eee7" localRef="base" location="config.Application/Application.hpe" name="Application" package="config" version="1.0.0.0">
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b7dc271edd441ccebbf4e5b9d777386bb646634eefc2df261e67b6157221b9dd13bad642d2a77e34884a3a1c71af8a37ff55ee25084c22df83a2a540177807a7e894e8d90b8b55565b71b10116737ef595ddc92531d724225689ace9dfe3b26301669416d5961b64cf2552a1375e0c0a48157aa8edeb56097fd64f1fc281d0e9" localRef="base" location="config.Application/Application.hpe" name="Application" package="config" version="1.0.0.0">
         <visualDescription h="50" w="100" x="235" y="304">
           <color b="255" g="255" r="255"/>
         </visualDescription>

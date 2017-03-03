@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000047003692afa7ed3b984286e080e9dd8c89f4270ba88b985b13900fab43674166c5a82e084b79bcb6e42b66296c8bd48ce530aca8ef29be9cb870dab193cbecd1d76a807fd28f483b1b95d4d9f19616755f19b1d6271a54893f0aac8040489eb19ff2211acf21eb9a4e42af37cb064a4a66a0e876a38f0e9717e9708c65f638a6" isAbstract="true" kind="Computation" name="Workflow" packagePath="config.phase2">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000008b4d1aa680124f85111696704017ee09dd278511672af49a1125118c405b784499cbbb86c55b5f144e648d53d3876b72ab723d5015729583dc5d8494ec30b28e771a6fbd32e04f47d4230a4e2501c5fe8b0c273347d8105f18c10f4d87f153821eda75794d2cfa414ad83c5c5e3896ea8086ad92435be681e8b5df647785cba1" isAbstract="true" kind="Computation" name="Workflow" packagePath="config.phase2">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
@@ -150,13 +150,13 @@
         <originRef cRef="task_binding_data" iRef="ITaskPort"/>
         <visualDescription h="15" w="15" x="10" y="10"/>
       </slice>
-      <slice isRef="task_binding_split_next">
-        <originRef cRef="task_binding_split_next" iRef="ITaskPort"/>
-        <visualDescription h="15" w="15" x="10" y="10"/>
-      </slice>
       <slice isRef="platform_SAFe">
         <originRef cRef="platform_SAFe" iRef="IProcessingNode"/>
         <visualDescription h="20" w="20" x="10" y="10"/>
+      </slice>
+      <slice isRef="task_binding_split_next">
+        <originRef cRef="task_binding_split_next" iRef="ITaskPort"/>
+        <visualDescription h="15" w="15" x="10" y="10"/>
       </slice>
       <slice isRef="task_binding_step1">
         <originRef cRef="task_binding_step1" iRef="ITaskPort"/>
@@ -184,13 +184,13 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_data" sRef="task_binding_data"/>
       </port>
-      <port name="task_binding_split_next">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_next" sRef="task_binding_split_next"/>
-      </port>
       <port name="platform_SAFe">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_SAFe" sRef="platform_SAFe"/>
+      </port>
+      <port name="task_binding_split_next">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_next" sRef="task_binding_split_next"/>
       </port>
       <port name="task_binding_step1">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -214,10 +214,10 @@
       <slices cRef="task_binding_data" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_binding_data" transitive="false">
         <visualDescription h="15" w="15" x="10" y="10"/>
       </slices>
-      <slices cRef="platform_SAFe" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_SAFe" transitive="false">
+      <slices cRef="task_binding_split_next" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_binding_split_next" transitive="false">
         <visualDescription h="15" w="15" x="10" y="10"/>
       </slices>
-      <slices cRef="task_binding_split_next" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_binding_split_next" transitive="false">
+      <slices cRef="platform_SAFe" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_SAFe" transitive="false">
         <visualDescription h="15" w="15" x="10" y="10"/>
       </slices>
       <slices cRef="task_binding_step1" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_binding_step1" transitive="false">

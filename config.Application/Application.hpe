@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <component:component xmlns:component="http://www.example.org/HashComponent">
-  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000993bcdf8759adb37478bdd59f54e3a44413680c3bfb6564578d3ee85f340a49f092d54b63e435bb3a152f5052c34d77a80574603bf6ae9d4b508e7dcafdb3e76add859ac33b7633ec70a294ab9843c2f7440fdffd33505c05e741129105c35c3d34e240e51ddd33dd72f19c283672d6e33fd7acc112d691d257f15da0232eee7" isAbstract="true" kind="Computation" name="Application" packagePath="config">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b7dc271edd441ccebbf4e5b9d777386bb646634eefc2df261e67b6157221b9dd13bad642d2a77e34884a3a1c71af8a37ff55ee25084c22df83a2a540177807a7e894e8d90b8b55565b71b10116737ef595ddc92531d724225689ace9dfe3b26301669416d5961b64cf2552a1375e0c0a48157aa8edeb56097fd64f1fc281d0e9" isAbstract="true" kind="Computation" name="Application" packagePath="config">
     <versions field1="1" field2="0" field3="0" field4="0"/>
     <visualAttributes>
       <color b="255" g="255" r="255"/>
