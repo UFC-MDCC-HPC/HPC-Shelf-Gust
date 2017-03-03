@@ -55,6 +55,14 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="reader" sRef="data_source"/>
       </port>
+      <port name="input_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="source" sRef="join_loop"/>
+      </port>
+      <port name="task_binding_split_first">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_first" sRef="join_loop"/>
+      </port>
       <port name="platform_data_source">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_data_source" sRef="join_loop"/>
@@ -62,14 +70,6 @@
       <port name="task_binding_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_data" sRef="join_loop"/>
-      </port>
-      <port name="task_binding_split_first">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_first" sRef="join_loop"/>
-      </port>
-      <port name="input_data">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="source" sRef="join_loop"/>
       </port>
       <action id="main">
         <protocol/>
@@ -97,21 +97,21 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="sink" sRef="join_loop"/>
       </port>
-      <port name="platform_data_sink">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_data_sink" sRef="join_loop"/>
-      </port>
       <port name="task_binding_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_data" sRef="join_loop"/>
       </port>
-      <port name="output_data">
+      <port name="platform_data_sink">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="writer" sRef="data_sink"/>
+        <slice pRef="platform_data_sink" sRef="join_loop"/>
       </port>
       <port name="platform_data_sink">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_data_sink" sRef="data_sink"/>
+      </port>
+      <port name="output_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="writer" sRef="data_sink"/>
       </port>
       <action id="main">
         <protocol/>
@@ -135,61 +135,61 @@
       <visualDescription h="40" w="201" x="669" y="515">
         <color b="79" g="233" r="252"/>
       </visualDescription>
-      <port name="task_binding_data">
+      <port name="output_graph">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_data" sRef="join_loop"/>
-      </port>
-      <port name="input_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="join_loop"/>
+        <slice pRef="collect_graph" sRef="join_loop"/>
       </port>
       <port name="task_binding_split_next">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_next" sRef="join_loop"/>
       </port>
-      <port name="input_graph">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_graph" sRef="join_loop"/>
-      </port>
-      <port name="output_pairs">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="join_loop"/>
-      </port>
       <port name="platform_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_reduce" sRef="join_loop"/>
       </port>
-      <port name="output_graph">
+      <port name="task_binding_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_graph" sRef="join_loop"/>
+        <slice pRef="task_binding_data" sRef="join_loop"/>
       </port>
       <port name="task_binding_split_first">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="task_binding_split_first" sRef="join_loop"/>
       </port>
+      <port name="output_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="join_loop"/>
+      </port>
+      <port name="input_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="join_loop"/>
+      </port>
       <port name="input_graph">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_graph" sRef="reducer"/>
-      </port>
-      <port name="task_reduce">
-        <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce" sRef="reducer"/>
+        <slice pRef="feed_graph" sRef="join_loop"/>
       </port>
       <port name="platform_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_reduce" sRef="reducer"/>
       </port>
-      <port name="output_pairs">
+      <port name="task_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="feed_pairs" sRef="reducer"/>
+        <slice pRef="task_reduce" sRef="reducer"/>
+      </port>
+      <port name="input_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="reducer"/>
       </port>
       <port name="output_graph">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feed_graph" sRef="reducer"/>
       </port>
-      <port name="input_pairs">
+      <port name="input_graph">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="collect_pairs" sRef="reducer"/>
+        <slice pRef="collect_graph" sRef="reducer"/>
+      </port>
+      <port name="output_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="reducer"/>
       </port>
       <action id="main">
         <protocol/>
@@ -213,9 +213,9 @@
       <visualDescription h="40" w="184" x="397" y="263">
         <color b="6" g="154" r="78"/>
       </visualDescription>
-      <port name="task_binding_data">
+      <port name="task_binding_split_next">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_data" sRef="workflow"/>
+        <slice pRef="task_binding_split_next" sRef="workflow"/>
       </port>
       <port name="task_reduce">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -229,9 +229,9 @@
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="platform_SAFe" sRef="workflow"/>
       </port>
-      <port name="task_binding_split_next">
+      <port name="task_binding_data">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_binding_split_next" sRef="workflow"/>
+        <slice pRef="task_binding_data" sRef="workflow"/>
       </port>
       <port name="platform_SAFe">
         <visualDescription h="10" w="10" x="0" y="0"/>
