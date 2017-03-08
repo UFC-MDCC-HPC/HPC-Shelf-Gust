@@ -16,7 +16,7 @@
         <include name="br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll"/>
         <include name="br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK/bin/1.0.0.0/IDataPGRANK.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.example.pgr.TerminateFunctionPGRANK/bin/1.0.0.0/BaseITerminateFunctionPGRANK.dll"/>
         <include/>
       </references>

@@ -6,7 +6,7 @@ using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.common.Iterator;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
+using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;
 
 namespace br.ufc.mdcc.common.impl.IteratorImpl { 
 

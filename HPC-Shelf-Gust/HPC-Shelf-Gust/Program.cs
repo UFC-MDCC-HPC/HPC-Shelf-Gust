@@ -1,9 +1,9 @@
 using System;
 
-//using br.ufc.mdcc.mapreduce.impl.FetchValuesImpl;
+//using br.ufc.mdcc.gust.impl.FetchValuesImpl;
 //using br.ufc.mdcc.common.Data;
 //using br.ufc.mdcc.common.impl.IteratorImpl;
-//using br.ufc.mdcc.mapreduce.user.PartitionFunction;
+//using br.ufc.mdcc.gust.user.PartitionFunction;
 //using br.ufc.mdcc.common.String;
 using System.Runtime.Remoting;
 //using br.ufc.mdcc.common.Integer;

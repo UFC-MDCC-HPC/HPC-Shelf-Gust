@@ -47,7 +47,7 @@
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <unitBounds parallel="false" uRef="reduce_function">
+        <unitBounds parallel="false" uRef="gusty_function">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -81,8 +81,8 @@
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="ISSSPImpl" multiple="false" private="false" replica="0" uRef="reduce_function" visibleInterface="true">
-      <super cRef="base" uRef="reduce_function"/>
+    <unit facet="0" iRef="ISSSPImpl" multiple="false" private="false" replica="0" uRef="gusty_function" visibleInterface="true">
+      <super cRef="base" uRef="gusty_function"/>
       <visualDescription h="40" w="190" x="301" y="274"/>
     </unit>
   </componentInfo>

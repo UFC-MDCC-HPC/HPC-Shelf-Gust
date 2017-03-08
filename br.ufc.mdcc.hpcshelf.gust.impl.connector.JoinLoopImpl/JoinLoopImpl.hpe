@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000adebb11309b18df6c3feb89a90dda6a1af4d7b4095a75369883e26351485b01ce9e4786d52d43e192fef6704c8302ff3084199dec4d3f1c65eb93661c7d0fc5df240320ae8cb689ad53efa714f56e0d0d3fdf59c717a7fb7c7e81ae5902429860c584699b9063950c73d36714b94ec2d54fea1605c3a12a56116da17112a29a5" isAbstract="false" kind="Synchronizer" name="JoinLoopImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.impl.connector">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000c323304580f18be7e6bf78d2b5883dc8b7e8434639d13589122b59f2f8a9fccd7d5fdf9efa5218072f48ba40c5817e1640ddb97cf48f097893c62dbc8c30dad55bd86a15e0e74f097116555a7d6114b57b7e9d1397b2f3d27c79b73636b13b598a76e1d1c7a7ac9adad700d34081992c8b04fa82311f3bc7f9cd3a9b3ad95d8f" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop/JoinLoop.hpe" name="JoinLoop" package="br.ufc.mdcc.hpcshelf.gust.connector" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="384" y="401">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="output_value_type" varName="OValue"/>
+        <parameter formFieldId="terminate_function" varName="TF"/>
+        <parameter formFieldId="platform_data_source_maintainer" varName="M2"/>
+        <parameter formFieldId="bin_function" varName="BF"/>
+        <parameter formFieldId="input_key_type" varName="IKey"/>
+        <parameter formFieldId="input_value_type" varName="IValue"/>
+        <parameter formFieldId="platform_data_sink_maintainer" varName="M3"/>
+        <parameter formFieldId="platform_gusty_maintainer" varName="M1"/>
+        <parameter formFieldId="graph_input_format" varName="GIF"/>
+        <parameter formFieldId="output_key_type" varName="OKey"/>
+        <port localRef="sink" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteData/EnvironmentBindingWriteData.hpe" multiple="false" name="EnvironmentBindingWriteData" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="true">
+          <visualDescription h="49" w="114" x="250" y="177">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="server_port_type" varName="X###1229133525"/>
+          <unitBounds parallel="false" uRef="client_server">
+            <visualDescription h="20" w="20" x="87" y="11"/>
+          </unitBounds>
+        </port>
+        <port localRef="source" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData/EnvironmentBindingReadData.hpe" multiple="false" name="EnvironmentBindingReadData" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="true">
+          <visualDescription h="44" w="122" x="172" y="234">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="server_port_type" varName="X###382986374"/>
+          <unitBounds parallel="false" uRef="client_server">
+            <visualDescription h="20" w="20" x="100" y="12"/>
+          </unitBounds>
+        </port>
+        <port localRef="collect_pairs" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="true">
+          <visualDescription h="67" w="124" x="53" y="669">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="server_port_type" varName="X###1122226628"/>
+          <unitBounds parallel="false" uRef="client_server">
+            <visualDescription h="20" w="20" x="50" y="45"/>
+          </unitBounds>
+        </port>
+        <port localRef="feed_pairs" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="true">
+          <visualDescription h="60" w="126" x="63" y="593">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="server_port_type" varName="X###1773361280"/>
+          <unitBounds parallel="false" uRef="client_server">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="task_binding_split_first" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="69" w="206" x="612" y="548">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###2104979894"/>
+          <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
+            <visualDescription h="20" w="20" x="179" y="6"/>
+          </unitBounds>
+          <unitBounds parallel="true" slice_replica="1" unit_replica="0" uRef="peer">
+            <visualDescription h="20" w="20" x="184" y="28"/>
+          </unitBounds>
+        </port>
+        <port localRef="task_binding_split_next" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="59" w="232" x="294" y="660">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###751477780"/>
+          <unitBounds parallel="true" uRef="peer">
+            <visualDescription h="20" w="20" x="2" y="17"/>
+          </unitBounds>
+        </port>
+        <port localRef="task_binding_data" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="true">
+          <visualDescription h="67" w="193" x="711" y="96">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="task_port_type" varName="X###735720453"/>
+          <unitBounds parallel="true" slice_replica="0" unit_replica="0" uRef="peer">
+            <visualDescription h="20" w="20" x="2" y="24"/>
+          </unitBounds>
+          <unitBounds parallel="true" slice_replica="1" unit_replica="0" uRef="peer">
+            <visualDescription h="20" w="20" x="123" y="42"/>
+          </unitBounds>
+          <unitBounds parallel="true" slice_replica="2" unit_replica="0" uRef="peer">
+            <visualDescription h="20" w="20" x="72" y="45"/>
+          </unitBounds>
+        </port>
+        <port localRef="platform_gusty" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
+          <visualDescription h="47" w="147" x="756" y="320">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="maintainer" varName="M1"/>
+          <unitBounds parallel="true" uRef="node">
+            <visualDescription h="20" w="20" x="125" y="23"/>
+          </unitBounds>
+        </port>
+        <port localRef="platform_data_source" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
+          <visualDescription h="57" w="184" x="724" y="197">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="maintainer" varName="M2"/>
+          <unitBounds parallel="true" uRef="node">
+            <visualDescription h="20" w="20" x="63" y="35"/>
+          </unitBounds>
+        </port>
+        <port localRef="platform_data_sink" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
+          <visualDescription h="44" w="169" x="737" y="262">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="maintainer" varName="M3"/>
+          <unitBounds parallel="true" uRef="node">
+            <visualDescription h="20" w="20" x="147" y="13"/>
+          </unitBounds>
+        </port>
+        <port localRef="feed_graph" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="true">
+          <visualDescription h="60" w="142" x="51" y="523">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="server_port_type" varName="X###2006911086"/>
+          <unitBounds parallel="false" uRef="client_server">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="collect_graph" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="true">
+          <visualDescription h="60" w="143" x="54" y="451">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="server_port_type" varName="X###1618803319"/>
+          <unitBounds parallel="false" uRef="client_server">
+            <visualDescription h="20" w="20" x="116" y="7"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="true" uRef="join_loop">
+          <visualDescription h="20" w="20" x="40" y="0"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="read_input">
+          <visualDescription h="20" w="20" x="2" y="26"/>
+        </unitBounds>
+        <unitBounds parallel="true" uRef="write_output">
+          <visualDescription h="20" w="20" x="79" y="25"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="ikey" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="1156" y="375">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="ivalue" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="886" y="180">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="ovalue" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="895" y="256">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="okey" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="780" y="256">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="bf" location="br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.gust.custom" exposed="false">
+      <visualDescription h="60" w="100" x="1017" y="453">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="input_key" varName="IKey"/>
+      <unitBounds parallel="false" uRef="partition_function">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="c" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="1016" y="302">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="1129" y="295">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="dss" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface/PortTypeDataSourceInterface.hpe" multiple="false" name="PortTypeDataSourceInterface" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="1018" y="230">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="dws" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkInterface/PortTypeDataSinkInterface.hpe" multiple="false" name="PortTypeDataSinkInterface" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="1018" y="373">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="tfuncion" location="br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction/TerminateFunction.hpe" multiple="false" name="TerminateFunction" package="br.ufc.mdcc.hpcshelf.gust.custom" exposed="false">
+      <visualDescription h="60" w="100" x="1041" y="549">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="output_value_type" varName="OValue"/>
+      <parameter formFieldId="input_key_type" varName="IKey"/>
+      <parameter formFieldId="input_value_type" varName="IValue"/>
+      <parameter formFieldId="output_key_type" varName="OKey"/>
+      <unitBounds parallel="true" uRef="terminate_function">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="maintainer_gusty" location="br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost/ComputeHost.hpe" multiple="false" name="ComputeHost" package="br.ufc.mdcc.hpcshelf.platform.maintainer" exposed="false">
+      <visualDescription h="60" w="176" x="1060" y="160">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="compute_host">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="maintainer_data_source" location="br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/DataHost.hpe" multiple="false" name="DataHost" package="br.ufc.mdcc.hpcshelf.platform.maintainer" exposed="false">
+      <visualDescription h="60" w="201" x="1235" y="245">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="data_host">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="maintainer_data_sink" location="br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/DataHost.hpe" multiple="false" name="DataHost" package="br.ufc.mdcc.hpcshelf.platform.maintainer" exposed="false">
+      <visualDescription h="60" w="214" x="1095" y="156">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="data_host">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="gif" location="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/InputFormat.hpe" multiple="false" name="InputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="true">
+      <visualDescription h="42" w="192" x="172" y="744">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="ikey" direct="true" varName="IKey"/>
+    <supplyParameter cRef="ivalue" direct="true" varName="IValue"/>
+    <supplyParameter cRef="okey" direct="true" varName="OKey"/>
+    <supplyParameter cRef="ovalue" direct="true" varName="OValue"/>
+    <supplyParameter cRef="maintainer_data_source" direct="true" varName="M2"/>
+    <supplyParameter cRef="maintainer_data_sink" direct="true" varName="M3"/>
+    <supplyParameter cRef="maintainer_gusty" direct="true" varName="M1"/>
+    <supplyParameter cRef="c" direct="true" varName="C"/>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
+    <supplyParameter cRef="dss" direct="true" varName="DSS"/>
+    <supplyParameter cRef="dws" direct="true" varName="DWS"/>
+    <supplyParameter cRef="bf" direct="true" varName="BF"/>
+    <supplyParameter cRef="tfuncion" direct="true" varName="TF"/>
+    <supplyParameter cRef="gif" direct="true" varName="GIF"/>
+    <interface iRef="IJoinLoopImpl" nArgs="8">
+      <slice isRef="feed_pairs">
+        <originRef cRef="feed_pairs" iRef="IBindingDirectMxNIterator"/>
+        <visualDescription h="10" w="10" x="2" y="35"/>
+      </slice>
+      <slice isRef="collect_pairs">
+        <originRef cRef="collect_pairs" iRef="IBindingDirectMxNIterator"/>
+        <visualDescription h="10" w="10" x="53" y="3"/>
+      </slice>
+      <slice isRef="feed_graph">
+        <originRef cRef="feed_graph" iRef="IBindingDirectMxNIterator"/>
+        <visualDescription h="10" w="10" x="2" y="15"/>
+      </slice>
+      <slice isRef="platform_gusty">
+        <originRef cRef="platform_gusty" iRef="IProcessingNode"/>
+        <visualDescription h="10" w="10" x="69" y="1"/>
+      </slice>
+      <slice isRef="collect_graph">
+        <originRef cRef="collect_graph" iRef="IBindingDirectMxNIterator"/>
+        <visualDescription h="10" w="10" x="1" y="26"/>
+      </slice>
+      <slice isRef="task_binding_split_first">
+        <originRef cRef="task_binding_split_first" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="93" y="2"/>
+      </slice>
+      <slice isRef="task_binding_data">
+        <originRef cRef="task_binding_data" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="27" y="2"/>
+      </slice>
+      <slice isRef="task_binding_split_next">
+        <originRef cRef="task_binding_split_next" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="117" y="0"/>
+      </slice>
+      <slice isRef="split_channel">
+        <originRef cRef="split_channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="82" y="0"/>
+      </slice>
+      <slice isRef="terminate_function">
+        <originRef cRef="terminate_function" iRef="ITerminateFunction"/>
+        <visualDescription h="10" w="10" x="40" y="0"/>
+      </slice>
+      <slice isRef="bin_function_iterate">
+        <originRef cRef="bin_function_iterate" iRef="IPartitionFunction"/>
+        <visualDescription h="10" w="10" x="3" y="0"/>
+      </slice>
+      <slice isRef="bin_function_iterate_gif">
+        <originRef cRef="bin_function_iterate_gif" iRef="IPartitionFunction"/>
+        <visualDescription h="10" w="10" x="20" y="2"/>
+      </slice>
+      <slice isRef="value_factory">
+        <originRef cRef="value_factory" iRef="IIterator"/>
+        <visualDescription h="10" w="10" x="141" y="4"/>
+      </slice>
+      <slice isRef="value_factory_gif">
+        <originRef cRef="value_factory_gif" iRef="IIterator"/>
+        <visualDescription h="10" w="10" x="130" y="4"/>
+      </slice>
+      <slice isRef="output_gifs">
+        <originRef cRef="output_gifs" iRef="IIterator"/>
+        <visualDescription h="10" w="10" x="95" y="4"/>
+      </slice>
+      <slice isRef="output">
+        <originRef cRef="output" iRef="IIterator"/>
+        <visualDescription h="10" w="10" x="105" y="4"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl &#xA;{&#xA;&#x9;public abstract class BaseIJoinLoopImpl&lt;M1, TF, IKey, IValue, OKey, OValue, BF, GIF>: Synchronizer, BaseIJoinLoop&lt;M1, TF, IKey, IValue, OKey, OValue, BF, GIF>&#xA;&#x9;&#x9;where M1:IMaintainer&#xA;&#x9;&#x9;where TF:ITerminateFunction&lt;IKey, IValue, OKey, OValue>&#xA;&#x9;&#x9;where IKey:IData&#xA;&#x9;&#x9;where IValue:IData&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;&#x9;where BF:IPartitionFunction&lt;IKey>&#xA;&#x9;&#x9;where GIF:IInputFormat&#xA;&#x9;{&#xA;//&#x9;&#x9;static protected int FACET_REDUCE = 0; //static protected int FACET_MAP = 1;&#xA;//&#x9;&#x9;static protected int FACET_SOURCE = 2;&#xA;//&#x9;&#x9;static protected int FACET_SINK = 3;&#xA;//&#xA;//&#x9;&#x9;private TF terminate_function = default(TF);&#xA;//&#x9;&#x9;protected TF Terminate_function&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.terminate_function == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.terminate_function = (TF) Services.getPort(&quot;terminate_function&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.terminate_function;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private IIterator&lt;IKVPair&lt;IKey, IIterator&lt;IValue>>> output = null;&#xA;//&#x9;&#x9;protected IIterator&lt;IKVPair&lt;IKey, IIterator&lt;IValue>>> Output&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.output == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.output = (IIterator&lt;IKVPair&lt;IKey, IIterator&lt;IValue>>>) Services.getPort(&quot;output&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.output;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private IInteger output_key_iterate = null;&#xA;//&#x9;&#x9;protected IInteger Output_key_iterate&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.output_key_iterate == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.output_key_iterate = (IInteger) Services.getPort(&quot;output_key_iterate&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.output_key_iterate;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private IInteger output_key_iterate_gif = null;&#xA;//&#x9;&#x9;public IInteger Output_key_iterate_gif&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.output_key_iterate_gif == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.output_key_iterate_gif = (IInteger) Services.getPort(&quot;output_key_iterate_gif&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.output_key_iterate_gif;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeData> task_binding_data = null;&#xA;//&#x9;&#x9;public ITaskPort&lt;ITaskPortTypeData> Task_binding_data&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.task_binding_data == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_data = (ITaskPort&lt;ITaskPortTypeData>) Services.getPort(&quot;task_binding_data&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.task_binding_data;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private IIterator&lt;GIF> value_factory_gif = null;&#xA;//&#x9;&#x9;protected IIterator&lt;GIF> Value_factory_gif&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.value_factory_gif == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.value_factory_gif = (IIterator&lt;GIF>) Services.getPort(&quot;value_factory_gif&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.value_factory_gif;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private IKey input_key_iterate = default(IKey);&#xA;//&#x9;&#x9;protected IKey Input_key_iterate&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.input_key_iterate == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.input_key_iterate = (IKey) Services.getPort(&quot;input_key_iterate&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.input_key_iterate;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private IIterator&lt;IKVPair&lt;IInteger, IIterator&lt;GIF>>> output_gifs = null;&#xA;//&#x9;&#x9;protected IIterator&lt;IKVPair&lt;IInteger, IIterator&lt;GIF>>> Output_gifs&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.output_gifs == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.output_gifs = (IIterator&lt;IKVPair&lt;IInteger, IIterator&lt;GIF>>>) Services.getPort(&quot;output_gifs&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.output_gifs;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private GIF input_key_iterate_gif = default(GIF);&#xA;//&#x9;&#x9;public GIF Input_key_iterate_gif&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.input_key_iterate_gif == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.input_key_iterate_gif = (GIF) Services.getPort(&quot;input_key_iterate_gif&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.input_key_iterate_gif;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_binding_split_first = null;&#xA;//&#x9;&#x9;public ITaskPort&lt;ITaskPortTypeAdvance> Task_binding_split_first&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.task_binding_split_first == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_split_first = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_binding_split_first&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.task_binding_split_first;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_binding_split_next = null;&#xA;//&#x9;&#x9;public ITaskPort&lt;ITaskPortTypeAdvance> Task_binding_split_next&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.task_binding_split_next == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_split_next = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_binding_split_next&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.task_binding_split_next;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private BF bin_function_iterate = default(BF);&#xA;//&#x9;&#x9;protected BF Bin_function_iterate&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.bin_function_iterate == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.bin_function_iterate = (BF) Services.getPort(&quot;bin_function_iterate&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.bin_function_iterate;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private IPartitionFunction&lt;GIF> bin_function_iterate_gif = null;&#xA;//&#x9;&#x9;protected IPartitionFunction&lt;GIF> Bin_function_iterate_gif&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.bin_function_iterate_gif == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.bin_function_iterate_gif = (IPartitionFunction&lt;GIF>) Services.getPort(&quot;bin_function_iterate_gif&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.bin_function_iterate_gif;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private IServerBase&lt;IPortTypeIterator> feed_pairs = null;&#xA;//&#x9;&#x9;public IServerBase&lt;IPortTypeIterator> Feed_pairs&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.feed_pairs == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.feed_pairs = (IServerBase&lt;IPortTypeIterator>) Services.getPort(&quot;feed_pairs&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.feed_pairs;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private IClientBase&lt;IPortTypeIterator> collect_pairs = null;&#xA;//&#x9;&#x9;public IClientBase&lt;IPortTypeIterator> Collect_pairs&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.collect_pairs == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.collect_pairs = (IClientBase&lt;IPortTypeIterator>) Services.getPort(&quot;collect_pairs&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.collect_pairs;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private IServerBase&lt;IPortTypeIterator> feed_graph = null;&#xA;//&#x9;&#x9;public IServerBase&lt;IPortTypeIterator> Feed_graph&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.feed_graph == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.feed_graph = (IServerBase&lt;IPortTypeIterator>) Services.getPort(&quot;feed_graph&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.feed_graph;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private IClientBase&lt;IPortTypeIterator> collect_graph = null;&#xA;//&#x9;&#x9;public IClientBase&lt;IPortTypeIterator> Collect_graph&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.collect_graph == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.collect_graph = (IClientBase&lt;IPortTypeIterator>) Services.getPort(&quot;collect_graph&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.collect_graph;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private IChannel split_channel = null;&#xA;//&#x9;&#x9;protected IChannel Split_channel&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.split_channel == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.split_channel = (IChannel) Services.getPort(&quot;split_channel&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.split_channel;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private IIterator&lt;IValue> value_factory = null;&#xA;//&#x9;&#x9;protected IIterator&lt;IValue> Value_factory&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.value_factory == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.value_factory = (IIterator&lt;IValue>) Services.getPort(&quot;value_factory&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.value_factory;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIJoinLoopImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl/bin/1.0.0.0/BaseIJoinLoopImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction/bin/1.0.0.0/ITerminateFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Iterator/bin/1.0.0.0/IIterator.dll</dependency>
+          <dependency>br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost/bin/1.0.0.0/IComputeHost.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/IBindingDirectMxNIterator.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop/bin/1.0.0.0/BaseIJoinLoop.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using System.Threading;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl&#xA;{&#xA;&#x9;public class IJoinLoopImpl&lt;M1, TF, IKey, IValue, OKey, OValue, BF, GIF> : BaseIJoinLoopImpl&lt;M1, TF, IKey, IValue, OKey, OValue, BF, GIF>, IJoinLoop&lt;M1, TF, IKey, IValue, OKey, OValue, BF, GIF>&#xA;where M1:IMaintainer&#xA;where TF:ITerminateFunction&lt;IKey, IValue, OKey, OValue>&#xA;where IKey:IData&#xA;where IValue:IData&#xA;where OKey:IData&#xA;where OValue:IData&#xA;where BF:IPartitionFunction&lt;IKey>&#xA;where GIF:IInputFormat {&#xA;&#x9;&#x9;public override void main() {&#xA;&#x9;&#x9;&#x9;IJoinLoopFeeder&lt;M1,IKey,IValue,GIF> loop_feeder = new IJoinLoopFeederImpl&lt;M1,IKey,IValue,GIF> ();&#xA;&#x9;&#x9;&#x9;IJoinLoopCollector&lt;M1,TF,IKey,IValue,OKey,OValue,BF,GIF> loop_collector = new IJoinLoopCollectorImpl&lt;M1,TF,IKey,IValue,OKey,OValue,BF,GIF> ();&#xA;&#x9;&#x9;&#x9;Thread t_feed = new Thread (new ThreadStart (loop_feeder.main));&#xA;&#x9;&#x9;&#x9;t_feed.Start ();&#xA;&#x9;&#x9;&#x9;loop_collector.main ();&#xA;&#x9;&#x9;&#x9;t_feed.Join ();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IJoinLoopImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl/bin/1.0.0.0/IJoinLoopImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost/bin/1.0.0.0/IComputeHost.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction/bin/1.0.0.0/ITerminateFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl/bin/1.0.0.0/BaseIJoinLoopImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop/bin/1.0.0.0/IJoinLoop.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="55" w="247" x="371" y="174">
+        <color b="0" g="0" r="255"/>
+      </visualDescription>
+      <port name="feed_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_pairs" sRef="feed_pairs"/>
+      </port>
+      <port name="collect_pairs">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_pairs" sRef="collect_pairs"/>
+      </port>
+      <port name="feed_graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="feed_graph" sRef="feed_graph"/>
+      </port>
+      <port name="platform_gusty">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_gusty" sRef="platform_gusty"/>
+      </port>
+      <port name="collect_graph">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="collect_graph" sRef="collect_graph"/>
+      </port>
+      <port name="task_binding_split_first">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_first" sRef="task_binding_split_first"/>
+      </port>
+      <port name="task_binding_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_data" sRef="task_binding_data"/>
+      </port>
+      <port name="task_binding_split_next">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_next" sRef="task_binding_split_next"/>
+      </port>
+      <port name="output_key_iterate">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="bin_function_iterate"/>
+      </port>
+      <port name="input_key_iterate">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="bin_function_iterate"/>
+      </port>
+      <port name="output_key_iterate_gif">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="bin_function_iterate_gif"/>
+      </port>
+      <port name="input_key_iterate_gif">
+        <visualDescription h="10" w="10" x="12" y="5"/>
+        <slice pRef="input_key" sRef="bin_function_iterate_gif"/>
+      </port>
+      <parameter iname="IComputeHost" order="0" parid="platform_gusty_maintainer" uname="compute_host" varid="M1"/>
+      <parameter iname="ITerminateFunction" parid="terminate_function" uname="terminate_function" varid="TF"/>
+      <parameter iname="IData" order="1" parid="input_key_type" uname="data" varid="IKey"/>
+      <parameter iname="IData" order="2" parid="input_value_type" uname="data" varid="IValue"/>
+      <parameter iname="IData" order="3" parid="output_key_type" uname="data" varid="OKey"/>
+      <parameter iname="IData" order="4" parid="output_value_type" uname="data" varid="OValue"/>
+      <parameter iname="IPartitionFunction" order="5" parid="bin_function" uname="partition_function" varid="BF"/>
+      <parameter iname="IInputFormat" order="6" parid="graph_input_format" uname="data" varid="GIF"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IJoinLoopReadSourceImpl" nArgs="2">
+      <slice isRef="source">
+        <originRef cRef="source" iRef="IReadData"/>
+        <visualDescription h="10" w="10" x="100" y="2"/>
+      </slice>
+      <slice isRef="task_binding_split_first">
+        <originRef cRef="task_binding_split_first" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="80" y="0"/>
+      </slice>
+      <slice isRef="platform_data_source">
+        <originRef cRef="platform_data_source" iRef="IProcessingNode"/>
+        <visualDescription h="10" w="10" x="40" y="2"/>
+      </slice>
+      <slice isRef="task_binding_data">
+        <originRef cRef="task_binding_data" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="62" y="0"/>
+      </slice>
+      <slice isRef="split_channel">
+        <originRef cRef="split_channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="116" y="1"/>
+      </slice>
+      <slice isRef="bin_function_gif">
+        <originRef cRef="bin_function_gif" iRef="IPartitionFunction"/>
+        <visualDescription h="10" w="10" x="25" y="3"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData;&#xA;using br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl &#xA;{&#xA;&#x9;//public abstract class BaseIJoinLoopReadSourceImpl&lt;M2,BF,IKey,IValue,GIF>: Synchronizer, BaseIJoinLoopReadSource&lt;M2,BF,IKey,IValue,GIF>&#xA;&#x9;public abstract class BaseIJoinLoopReadSourceImpl&lt;M2,GIF>: Synchronizer, BaseIJoinLoopReadSource&lt;M2,GIF>&#xA;&#x9;&#x9;where M2:IMaintainer&#xA;&#x9;&#x9;//where BF:IPartitionFunction&lt;GIF>&#xA;&#x9;&#x9;//where IKey:IData&#xA;&#x9;&#x9;//where IValue:IData&#xA;&#x9;&#x9;where GIF:IInputFormat&#xA;&#x9;{&#xA;&#x9;&#x9;static protected int FACET_REDUCE = 0;&#xA;&#x9;&#x9;//static protected int FACET_MAP = 1;&#xA;&#x9;&#x9;static protected int FACET_SOURCE = 2;&#xA;&#x9;&#x9;static protected int FACET_SINK = 3;&#xA;&#xA;&#x9;&#x9;private IPartitionFunction&lt;GIF> bin_function_gif = default(IPartitionFunction&lt;GIF>);&#xA;&#x9;&#x9;protected IPartitionFunction&lt;GIF> Bin_function_gif&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.bin_function_gif == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.bin_function_gif = (IPartitionFunction&lt;GIF>) Services.getPort(&quot;bin_function_gif&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.bin_function_gif;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IChannel split_channel = null;&#xA;&#xA;&#x9;&#x9;protected IChannel Split_channel&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.split_channel == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.split_channel = (IChannel) Services.getPort(&quot;split_channel&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.split_channel;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IReadData&lt;IPortTypeDataSourceInterface> source = null;&#xA;&#xA;&#x9;&#x9;public IReadData&lt;IPortTypeDataSourceInterface> Source&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.source == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.source = (IReadData&lt;IPortTypeDataSourceInterface>) Services.getPort(&quot;source&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.source;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeAdvance> task_binding_split_first = null;&#xA;&#x9;&#x9;public ITaskPort&lt;ITaskPortTypeAdvance> Task_binding_split_first&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding_split_first == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_split_first = (ITaskPort&lt;ITaskPortTypeAdvance>) Services.getPort(&quot;task_binding_split_first&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding_split_first;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeData> task_binding_data = null;&#xA;&#x9;&#x9;public ITaskPort&lt;ITaskPortTypeData> Task_binding_data&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding_data == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_data = (ITaskPort&lt;ITaskPortTypeData>) Services.getPort(&quot;task_binding_data&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding_data;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;//&#x9;&#x9;private IKey input_key = default(IKey);&#xA;//&#x9;&#x9;protected IKey Input_key&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.input_key == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.input_key = (IKey) Services.getPort(&quot;input_key&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.input_key;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#xA;//&#x9;&#x9;private IInteger output_key = null;&#xA;//&#x9;&#x9;protected IInteger Output_key&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.output_key == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.output_key = (IInteger) Services.getPort(&quot;output_key&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.output_key;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;&#xA;//&#x9;&#x9;private IKVPair&lt;IInteger, GIF> input_format = null;&#xA;//&#x9;&#x9;protected IKVPair&lt;IInteger, GIF> Input_format&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.input_format == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.input_format = (IKVPair&lt;IInteger, GIF>) Services.getPort(&quot;input_format&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.input_format;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;//&#x9;&#x9;private IPartitionFunction&lt;GIF> bin_function_gif = null;//default(BF);&#xA;//&#x9;&#x9;protected IPartitionFunction&lt;GIF> Bin_function_gif&#xA;//&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;get&#xA;//&#x9;&#x9;&#x9;{&#xA;//&#x9;&#x9;&#x9;&#x9;if (this.bin_function_gif == null)&#xA;//&#x9;&#x9;&#x9;&#x9;&#x9;this.bin_function_gif = (IPartitionFunction&lt;GIF>) Services.getPort(&quot;bin_function_gif&quot;);&#xA;//&#x9;&#x9;&#x9;&#x9;return this.bin_function_gif;&#xA;//&#x9;&#x9;&#x9;}&#xA;//&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private GIF input_key_gif = default(GIF);&#xA;&#x9;&#x9;protected GIF Input_key_gif&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.input_key_gif == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.input_key_gif = (GIF) Services.getPort(&quot;input_key_gif&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.input_key_gif;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private IInteger output_key_gif = null;&#xA;&#x9;&#x9;protected IInteger Output_key_gif&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.output_key_gif == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.output_key_gif = (IInteger) Services.getPort(&quot;output_key_gif&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.output_key_gif;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIJoinLoopReadSourceImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl/bin/1.0.0.0/BaseIJoinLoopReadSourceImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData/bin/1.0.0.0/IReadData.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop/bin/1.0.0.0/BaseIJoinLoopReadSource.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using System.Collections.Generic;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.common.Integer;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl&#xA;{&#xA;&#x9;//public class IJoinLoopReadSourceImpl&lt;M2,BF,IKey,IValue,GIF> : BaseIJoinLoopReadSourceImpl&lt;M2,BF,IKey,IValue,GIF>, IJoinLoopReadSource&lt;M2,BF,IKey,IValue,GIF>&#xA;&#x9;public class IJoinLoopReadSourceImpl&lt;M2,GIF> : BaseIJoinLoopReadSourceImpl&lt;M2,GIF>, IJoinLoopReadSource&lt;M2,GIF>&#xA;&#x9;&#x9;where M2:IMaintainer&#xA;&#x9;&#x9;//where BF:IPartitionFunction&lt;GIF>&#xA;&#x9;&#x9;//where IKey:IData&#xA;&#x9;&#x9;//where IValue:IData&#xA;        where GIF:IInputFormat&#xA;&#x9;{&#xA;&#x9;&#x9;static private int TAG_SPLIT_NEW_CHUNK = 246;&#xA;&#x9;&#x9;static private int TAG_SPLIT_END_CHUNK = 247;&#xA;&#xA;&#x9;&#x9;public override void main(){&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: SPLITTER 1 &quot;);&#xA;&#xA;&#x9;&#x9;&#x9;IPortTypeIterator input_instance = (IPortTypeIterator) Source.Client;&#xA;&#xA;&#x9;&#x9;&#x9;// TODO: ser&#xe1; que READ_SOURCE &#xe9; necess&#xe1;ria ???&#xA;&#x9;&#x9;&#x9;Task_binding_data.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;Task_binding_data.invoke (ITaskPortData.READ_SOURCE);&#xA;&#xA;&#x9;&#x9;&#x9;// CALCULATE SubGraph TARGET&#xA;&#x9;&#x9;&#x9;int nfr = this.FacetMultiplicity [FACET_REDUCE];&#xA;&#x9;&#x9;&#x9;int r_size = 0;&#xA;&#x9;&#x9;&#x9;foreach (int i in this.FacetIndexes[FACET_REDUCE]) {   &#xA;&#x9;&#x9;&#x9;&#x9;r_size += this.UnitSizeInFacet [i] [&quot;join_loop&quot;];&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: SPLITTER 2 &quot;);&#xA;&#xA;&#x9;&#x9;&#x9;Source.startReadSource (r_size); // subgrafos divididos em GIF, com destino final nos r_size redutores&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: SPLITTER 3 &quot;);&#xA;&#xA;&#x9;&#x9;&#x9;object bin_object = null;&#xA;&#x9;&#x9;&#x9;bool set_table_partition = true;&#xA;&#xA;&#x9;&#x9;&#x9;// CALCULATE TARGETs&#xA;&#x9;&#x9;&#x9;IDictionary&lt;int,Tuple&lt;int,int>> unit_ref = new Dictionary&lt;int, Tuple&lt;int,int>> ();&#xA;&#x9;&#x9;&#x9;int nf = this.FacetMultiplicity [FACET_REDUCE];&#xA;&#x9;&#x9;&#x9;int m_size = 0;&#xA;&#x9;&#x9;&#x9;foreach (int i in this.FacetIndexes[FACET_REDUCE]) {   &#xA;&#x9;&#x9;&#x9;&#x9;int nr0 = m_size;&#xA;&#x9;&#x9;&#x9;&#x9;m_size += this.UnitSizeInFacet [i] [&quot;join_loop&quot;];&#xA;&#x9;&#x9;&#x9;&#x9;for (int k = 0, j = nr0; j &lt; m_size; k++, j++)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;unit_ref [j] = new Tuple&lt;int,int> (i/*, 0 INDEX OF gusty_feeder */,k);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: SPLITTER 4 &quot;);&#xA;&#xA;&#x9;&#x9;&#x9;Task_binding_split_first.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;Split_channel.TraceFlag = true;&#xA;&#xA;&#x9;&#x9;&#x9;Thread t_output = new Thread (new ThreadStart (delegate &#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_binding_data.invoke (ITaskPortData.TERMINATE);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Task_binding_data.invoke (ITaskPortData.WRITE_SINK);&#xA;&#x9;&#x9;&#x9;&#x9;}));&#xA;&#xA;&#x9;&#x9;&#x9;t_output.Start ();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: SPLITTER 5 &quot;);&#xA;&#xA;&#x9;&#x9;&#x9;bool end_iteration = false;&#xA;&#x9;&#x9;&#x9;while (!end_iteration) // take next chunk&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;IActionFuture sync_perform;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: SPLITTER READ SOURCE - BEFORE READ_CHUNK &quot; + m_size);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;/* All the pairs will be read from the source in a single chunk */&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Task_binding_split_first.invoke (ITaskPortAdvance.READ_CHUNK); //****&#xA;&#x9;&#x9;&#x9;&#x9;Task_binding_split_first.invoke (ITaskPortAdvance.PERFORM, out sync_perform);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;IList&lt;IKVPairInstance&lt;IInteger,GIF>>[] buffer = new IList&lt;IKVPairInstance&lt;IInteger,GIF>>[m_size];&#xA;&#x9;&#x9;&#x9;&#x9;for (int i = 0; i &lt; m_size; i++)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;buffer [i] = new List&lt;IKVPairInstance&lt;IInteger,GIF>> ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: BEGIN READING CHUNKS and distributing to MAPPERS m_size=&quot; + m_size);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;if (!input_instance.has_next()) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;end_iteration = true;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Bin_function_gif.NumberOfPartitions = m_size;&#xA;&#x9;&#x9;&#x9;&#x9;while (input_instance.fetch_next (out bin_object)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;IKVPairInstance&lt;IInteger,GIF> item = (IKVPairInstance&lt;IInteger,GIF>)bin_object;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.Input_key_gif.Instance = item.Value;//item.Key;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Bin_function_gif.go ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;int index = ((IIntegerInstance)this.Output_key_gif.Instance).Value;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;buffer [index].Add(item);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: END READING CHUNKS and distributing to MAPPERS&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;for (int i = 0; i &lt; m_size; i++)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (&quot;buffer[&quot; + i + &quot;].Count = &quot; + buffer [i].Count);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: BEGIN SENDING CHUNKS to the MAPPERS &quot;);&#xA;&#x9;&#x9;&#x9;&#x9;// PERFORM&#xA;&#x9;&#x9;&#x9;&#x9;for (int i = 0; i &lt; m_size; i++)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Split_channel.Send (buffer [i], unit_ref [i], end_iteration ? TAG_SPLIT_END_CHUNK : TAG_SPLIT_NEW_CHUNK);&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;sync_perform.wait ();&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: END SENDING CHUNKS to the MAPPERS &quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;Task_binding_split_first.invoke (ITaskPortAdvance.CHUNK_READY);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: FINISH SPLITTER READ SOURCE &quot;);&#xA;&#xA;&#x9;&#x9;&#x9;t_output.Join ();&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (this.Rank + &quot;: FINISH SPLITTER READ SOURCE - INVOKE TERMINATE&quot;);&#xA;&#xA;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IJoinLoopReadSourceImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl/bin/1.0.0.0/IJoinLoopReadSourceImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl/bin/1.0.0.0/BaseIJoinLoopReadSourceImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop/bin/1.0.0.0/IJoinLoopReadSource.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="50" w="232" x="53" y="305">
+        <color b="0" g="128" r="0"/>
+      </visualDescription>
+      <port name="source">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="source" sRef="source"/>
+      </port>
+      <port name="task_binding_split_first">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_split_first" sRef="task_binding_split_first"/>
+      </port>
+      <port name="platform_data_source">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_data_source" sRef="platform_data_source"/>
+      </port>
+      <port name="task_binding_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_data" sRef="task_binding_data"/>
+      </port>
+      <port name="input_key_gif">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_key" sRef="bin_function_gif"/>
+      </port>
+      <port name="output_key_gif">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output_key" sRef="bin_function_gif"/>
+      </port>
+      <parameter iname="IDataHost" order="0" parid="platform_data_source_maintainer" uname="data_host" varid="M2"/>
+      <parameter iname="IInputFormat" order="1" parid="graph_input_format" uname="data" varid="GIF"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <interface iRef="IJoinLoopWriteSinkImpl" nArgs="3">
+      <slice isRef="platform_data_sink">
+        <originRef cRef="platform_data_sink" iRef="IProcessingNode"/>
+        <visualDescription h="10" w="10" x="20" y="0"/>
+      </slice>
+      <slice isRef="task_binding_data">
+        <originRef cRef="task_binding_data" iRef="ITaskPort"/>
+        <visualDescription h="10" w="10" x="33" y="0"/>
+      </slice>
+      <slice isRef="sink">
+        <originRef cRef="sink" iRef="IWriteData"/>
+        <visualDescription h="10" w="10" x="4" y="2"/>
+      </slice>
+      <slice isRef="output_pair_type">
+        <originRef cRef="output_pair_type" iRef="IKVPair"/>
+        <visualDescription h="10" w="10" x="49" y="1"/>
+      </slice>
+      <slice isRef="split_channel">
+        <originRef cRef="split_channel" iRef="IChannel"/>
+        <visualDescription h="10" w="10" x="15" y="33"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop;&#xA;using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData;&#xA;using br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteData;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkInterface;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl &#xA;{&#xA;&#x9;public abstract class BaseIJoinLoopWriteSinkImpl&lt;M3,OKey,OValue>: Synchronizer, BaseIJoinLoopWriteSink&lt;M3,OKey,OValue>&#xA;&#x9;&#x9;where M3:IMaintainer&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;static protected int FACET_REDUCE = 0;&#xA;&#x9;&#x9;//static protected int FACET_MAP = 1;&#xA;&#x9;&#x9;static protected int FACET_SOURCE = 2;&#xA;&#x9;&#x9;static protected int FACET_SINK = 3;&#xA;&#xA;&#x9;&#x9;private IChannel split_channel = null;&#xA;&#xA;&#x9;&#x9;protected IChannel Split_channel&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.split_channel == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.split_channel = (IChannel) Services.getPort(&quot;split_channel&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.split_channel;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private IWriteData&lt;IPortTypeDataSinkInterface> sink = null;&#xA;&#xA;&#x9;&#x9;public IWriteData&lt;IPortTypeDataSinkInterface> Sink&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.sink == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.sink = (IWriteData&lt;IPortTypeDataSinkInterface>) Services.getPort(&quot;sink&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.sink;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#xA;&#x9;&#x9;private ITaskPort&lt;ITaskPortTypeData> task_binding_data = null;&#xA;&#x9;&#x9;public ITaskPort&lt;ITaskPortTypeData> Task_binding_data&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.task_binding_data == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.task_binding_data = (ITaskPort&lt;ITaskPortTypeData>) Services.getPort(&quot;task_binding_data&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.task_binding_data;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#xA;&#x9;}&#xA;}" name="BaseIJoinLoopWriteSinkImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl/bin/1.0.0.0/BaseIJoinLoopWriteSinkImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteData/bin/1.0.0.0/IWriteData.dll</dependency>
+          <dependency>br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
+          <dependency>br.ufc.mdcc.hpc.storm.binding.channel.Binding/bin/1.0.0.0/IChannel.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop/bin/1.0.0.0/BaseIJoinLoopWriteSink.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;&#xA;using System.Collections.Generic;&#xA;using br.ufc.mdcc.hpc.storm.binding.channel.Binding;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using System.Diagnostics;&#xA;using br.ufc.mdcc.common.Data;&#xA;using System.Threading;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl&#xA;{&#xA;&#x9;public class IJoinLoopWriteSinkImpl&lt;M3,OKey,OValue> : BaseIJoinLoopWriteSinkImpl&lt;M3,OKey,OValue>, IJoinLoopWriteSink&lt;M3,OKey,OValue>&#xA;&#x9;&#x9;where M3:IMaintainer&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;{&#xA;&#x9;&#x9;static private int TAG_SPLIT_NEW_CHUNK = 246;&#xA;&#x9;&#x9;static private int TAG_SPLIT_END_CHUNK = 247;&#xA;&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;Split_channel.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;Task_binding_data.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;SPLITER WRITE SINK 0&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;Sink.clientConnection (); &#xA;&#x9;&#x9;&#x9;IPortTypeIterator output_instance = (IPortTypeIterator) Sink.Client;&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;SPLITER WRITE SINK 1&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;Task_binding_data.TraceFlag = true;&#xA;&#x9;&#x9;&#x9;Task_binding_data.invoke (ITaskPortData.READ_SOURCE);&#xA;&#x9;&#x9;&#x9;// Do nothing ... &#xA;&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;SPLITER WRITE SINK 3&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;// RECEIVE PAIRS FROM THE REDUCERS (next iterations)&#xA;&#x9;&#x9;&#x9;IDictionary&lt;int,Tuple&lt;int,int>> unit_ref = new Dictionary&lt;int, Tuple&lt;int,int>> ();&#xA;&#x9;&#x9;&#x9;unit_ref = new Dictionary&lt;int, Tuple&lt;int,int>> ();&#xA;&#x9;&#x9;&#x9;int senders_size = 0;&#xA;&#x9;&#x9;&#x9;foreach (int i in this.FacetIndexes[FACET_REDUCE]) &#xA;&#x9;&#x9;&#x9;{   &#xA;&#x9;&#x9;&#x9;&#x9;int nr0 = senders_size;&#xA;&#x9;&#x9;&#x9;&#x9;senders_size += this.UnitSizeInFacet [i] [&quot;join_loop&quot;];&#xA;&#x9;&#x9;&#x9;&#x9;for (int k=0, j=nr0; j &lt; senders_size; k++, j++) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;unit_ref [j] = new Tuple&lt;int,int> (i,k);&#xA;&#x9;&#x9;&#x9;}&#x9;&#x9;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;SPLITER WRITE SINK 4&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;Thread t_output = new Thread (new ThreadStart (delegate &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Task_binding_data.invoke (ITaskPortData.TERMINATE);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Task_binding_data.invoke (ITaskPortData.WRITE_SINK);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Sink.startWriteSink ();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}));&#xA;&#xA;&#x9;&#x9;&#x9;t_output.Start ();&#xA;&#xA;&#x9;&#x9;&#x9;Thread[] receive_pairs_iteration_thread = new Thread[senders_size];&#xA;&#xA;&#x9;&#x9;&#x9;for (int i = 0; i &lt; senders_size; i++)&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;receive_pairs_iteration_thread [i] = new Thread (new ParameterizedThreadStart (delegate(object i_obj) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;int ii = (int) i_obj;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;receive_pairs_iteration (output_instance, senders_size, unit_ref[ii]);&#xA;&#x9;&#x9;&#x9;&#x9;}));&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;receive_pairs_iteration_thread [i].Start (i);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;for (int i = 0; i &lt; senders_size; i++)&#xA;&#x9;&#x9;&#x9;&#x9;receive_pairs_iteration_thread [i].Join ();&#xA;&#xA;&#x9;&#x9;&#x9;output_instance.finish ();&#xA;&#xA;&#x9;&#x9;&#x9;t_output.Join ();&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;SPLITER WRITE SINK - WRITTER FINISH&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;Split_channel.TraceFlag = false;&#xA;&#x9;&#x9;&#x9;Task_binding_data.TraceFlag = false;&#xA;&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;private object cs_recv = new object();&#xA;&#xA;&#x9;&#x9;private void receive_pairs_iteration(IPortTypeIterator output_instance, int senders_size, Tuple&lt;int,int> unit_ref)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;CompletedStatus status;&#xA;&#xA;&#x9;&#x9;&#x9;do &#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (&quot;SPLITER WRITE SINK 7-1 facet=&quot; + unit_ref.Item1 + &quot;/rank=&quot; + unit_ref.Item2);&#xA;&#x9;&#x9;&#x9;&#x9;IList&lt;IKVPairInstance&lt;OKey,OValue>> buffer;&#xA;&#x9;&#x9;&#x9;&#x9;lock (cs_recv) Split_channel.Receive (unit_ref, MPI.Communicator.anyTag, out buffer, out status);&#xA;&#x9;&#x9;&#x9;&#x9;foreach (IKVPairInstance&lt;OKey,OValue> kv in buffer)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;output_instance.put (kv);&#xA;&#x9;&#x9;&#x9;&#x9;Console.WriteLine (&quot;SPLITER WRITE SINK 7-2 facet=&quot; + unit_ref.Item1 + &quot;/rank=&quot; + unit_ref.Item2);&#xA;&#x9;&#x9;&#x9;} while (status.Tag == TAG_SPLIT_NEW_CHUNK);&#xA;&#xA;&#xA;&#x9;&#x9;&#x9;Console.WriteLine (&quot;SPLITER WRITE SINK - OUTPUT RECEIVED&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IJoinLoopWriteSinkImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl/bin/1.0.0.0/IJoinLoopWriteSinkImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl/bin/1.0.0.0/BaseIJoinLoopWriteSinkImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop/bin/1.0.0.0/IJoinLoopWriteSink.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="241" x="724" y="421">
+        <color b="0" g="128" r="0"/>
+      </visualDescription>
+      <port name="platform_data_sink">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_data_sink" sRef="platform_data_sink"/>
+      </port>
+      <port name="task_binding_data">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="task_binding_data" sRef="task_binding_data"/>
+      </port>
+      <port name="sink">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="sink" sRef="sink"/>
+      </port>
+      <parameter iname="IDataHost" order="0" parid="platform_data_sink_maintainer" uname="data_host" varid="M3"/>
+      <parameter iname="IData" order="1" parid="output_key_type" uname="data" varid="OKey"/>
+      <parameter iname="IData" order="2" parid="output_value_type" uname="data" varid="OValue"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IJoinLoopImpl" multiple="true" private="false" replica="0" uRef="join_loop" visibleInterface="true">
+      <super cRef="base" uRef="join_loop"/>
+      <visualDescription h="61" w="138" x="409" y="278"/>
+    </unit>
+    <unit facet="2" iRef="IJoinLoopReadSourceImpl" multiple="true" private="false" replica="0" uRef="read_input" visibleInterface="true">
+      <super cRef="base" uRef="read_input"/>
+      <visualDescription h="46" w="127" x="94" y="381"/>
+    </unit>
+    <unit facet="3" iRef="IJoinLoopWriteSinkImpl" multiple="true" private="false" replica="0" uRef="write_output" visibleInterface="true">
+      <super cRef="base" uRef="write_output"/>
+      <visualDescription h="45" w="120" x="572" y="420"/>
+    </unit>
+  </componentInfo>
+</component:component>

@@ -6,7 +6,7 @@ using br.ufc.mdcc.common.Integer;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
+using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;
 using br.ufc.mdcc.hpcshelf.gust.example.pgr.TerminateFunctionPGRANK;
 
 namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.TerminateFunctionPGRANKImpl
@@ -25,7 +25,7 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.TerminateFunctionPGRANKImpl
 
 			object pair;
 
-			while (iterate_pairs.has_next()) {//Espera por um finish() dado no reduce_function
+			while (iterate_pairs.has_next()) {//Espera por um finish() dado no gusty_function
 				while (iterate_pairs.fetch_next(out pair))
 					input_pairs.put(pair);
 				input_pairs.finish ();

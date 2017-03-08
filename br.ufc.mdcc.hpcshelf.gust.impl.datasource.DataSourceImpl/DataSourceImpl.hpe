@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="002400000480000094000000060200000024000052534131000400001100000015ee4cb4e0af5287482057408ee279ff661f4093cb633334de0f3e933e1ca1d791883c9b687fd303d0cc8c15420c6d74facd76a3a95a5f180327886391b9d3de335adbbcea15a1433ccc3256e196c3ab240d8d534ca0df756895290650e28db0319cddf0059e6dccb0d3f70f41026b7360b9861a8ec6081b4cbac3049efca9ac" isAbstract="false" kind="Computation" name="DataSourceImpl" packagePath="br.ufc.mdcc.hpcshelf.gust.impl.datasource">
+    <baseType>
+      <extensionType>
+        <implements>true</implements>
+      </extensionType>
+      <component hash_component_UID="0024000004800000940000000602000000240000525341310004000011000000b9d5e04ae0a4f6f0dad75f55de6f877cd1fba09cc23329d0617918ac787a5ec200c7296b8086d7b000b63b82b15c234ac6b4cc8c494b8906648d2fd5f908f550674cf9e48ff57124c1c1266e97955ed03b7d2254cad4c971788ccc1a56183589301fa6b4cfb01745018a998276865c441f9484d92b31271fc7b8d50f8c296e9d" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.datasource.DataSource/DataSource.hpe" name="DataSource" package="br.ufc.mdcc.hpcshelf.gust.datasource" version="1.0.0.0">
+        <visualDescription h="60" w="100" x="300" y="420">
+          <color b="255" g="255" r="255"/>
+        </visualDescription>
+        <parameter formFieldId="platform_maintainer" varName="M"/>
+        <parameter formFieldId="graph_input_format" varName="GIF"/>
+        <port localRef="reader" location="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/EnvironmentBindingBase.hpe" multiple="false" name="EnvironmentBindingBase" package="br.ufc.mdcc.hpc.storm.binding.environment" exposed="true">
+          <visualDescription h="60" w="100" x="440" y="424">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="client_port_type" varName="X###1880009426"/>
+          <parameter formFieldId="server_port_type" varName="X###1391524471"/>
+          <unitBounds parallel="false" uRef="client">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+          <unitBounds parallel="false" uRef="server">
+            <visualDescription h="20" w="20" x="28" y="2"/>
+          </unitBounds>
+        </port>
+        <port localRef="platform_data_source" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="true">
+          <visualDescription h="60" w="100" x="117" y="430">
+            <color b="255" g="255" r="255"/>
+          </visualDescription>
+          <parameter formFieldId="maintainer" varName="M"/>
+          <unitBounds parallel="true" uRef="node">
+            <visualDescription h="20" w="20" x="5" y="2"/>
+          </unitBounds>
+        </port>
+        <unitBounds parallel="true" uRef="data_source">
+          <visualDescription h="20" w="20" x="5" y="2"/>
+        </unitBounds>
+      </component>
+    </baseType>
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <innerComponent localRef="s" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface/PortTypeDataSourceInterface.hpe" multiple="false" name="PortTypeDataSourceInterface" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
+      <visualDescription h="60" w="100" x="322" y="539">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="environment_port_type">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="in" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="100" x="76" y="489">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="platform" location="br.ufc.mdcc.common.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="109" y="689">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="platform">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="maintainer" location="br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/DataHost.hpe" multiple="false" name="DataHost" package="br.ufc.mdcc.hpcshelf.platform.maintainer" exposed="false">
+      <visualDescription h="60" w="100" x="100" y="225">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="true" uRef="data_host">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="gif" location="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/InputFormat.hpe" multiple="false" name="InputFormat" package="br.ufc.mdcc.hpcshelf.gust.graph" exposed="false">
+      <visualDescription h="60" w="100" x="577" y="327">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="in" direct="true" varName="IN"/>
+    <supplyParameter cRef="s" direct="true" varName="S"/>
+    <supplyParameter cRef="platform" direct="true" varName="P"/>
+    <supplyParameter cRef="maintainer" direct="true" varName="M"/>
+    <supplyParameter cRef="gif" direct="true" varName="GIF"/>
+    <interface iRef="IDataSourceImpl" nArgs="2">
+      <slice isRef="reader">
+        <originRef cRef="reader" iRef="IServerBase"/>
+        <visualDescription h="10" w="10" x="154" y="31"/>
+      </slice>
+      <slice isRef="platform_data_source">
+        <originRef cRef="platform_data_source" iRef="IProcessingNode"/>
+        <visualDescription h="10" w="10" x="20" y="23"/>
+      </slice>
+      <slice isRef="data_format">
+        <originRef cRef="data_format" iRef="IInputFormat"/>
+        <visualDescription h="10" w="10" x="190" y="16"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* Automatically Generated Code */&#xA;&#xA;using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface;&#xA;using br.ufc.mdcc.hpcshelf.gust.datasource.DataSource;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl &#xA;{&#xA;&#x9;public abstract class BaseIDataSourceImpl&lt;P, GIF>: Computation, BaseIDataSource&lt;P, GIF>&#xA;&#x9;&#x9;where P:IMaintainer&#xA;&#x9;&#x9;where GIF:IInputFormat&#xA;&#x9;{&#xA;&#x9;&#x9;private IServerBase&lt;IPortTypeDataSourceInterface> reader = null;&#xA;&#xA;&#x9;&#x9;protected IServerBase&lt;IPortTypeDataSourceInterface> Reader&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.reader == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.reader = (IServerBase&lt;IPortTypeDataSourceInterface>) Services.getPort(&quot;reader&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.reader;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private P platform = default(P);&#xA;&#xA;&#x9;&#x9;protected P Platform&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.platform == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.platform = (P) Services.getPort(&quot;platform&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.platform;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;private GIF data_format = default(GIF);&#xA;&#x9;&#x9;protected GIF Data_format&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;get&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (this.data_format == null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.data_format = (GIF) Services.getPort(&quot;data_format&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;return this.data_format;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" name="BaseIDataSourceImpl.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl/bin/1.0.0.0/BaseIDataSourceImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface/bin/1.0.0.0/IPortTypeDataSourceInterface.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.datasource.DataSource/bin/1.0.0.0/BaseIDataSource.dll</dependency>
+        </file>
+        <file contents="using System;&#xA;using br.ufc.pargo.hpe.backend.DGAC;&#xA;using br.ufc.pargo.hpe.basic;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.datasource.DataSource;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface;&#xA;using System.Collections.Generic;&#xA;using System.IO;&#xA;using br.ufc.mdcc.hpcshelf.platform.Maintainer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl&#xA;{&#xA;&#x9;public class IDataSourceImpl&lt;P, GIF> : BaseIDataSourceImpl&lt;P, GIF>, IDataSource&lt;P, GIF>&#xA;    where P:IMaintainer&#xA;&#x9;where GIF:IInputFormat&#xA;&#x9;{&#xA;&#x9;&#x9;public override void main()&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;//Reader.Server = new DataSourceReader();&#xA;&#x9;&#x9;&#x9;IInputFormatInstance input_format_instance = Data_format.newInstanceIF ();&#xA;&#x9;&#x9;&#x9;Reader.Server = new DataSourceReader(input_format_instance);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;private class DataSourceReader : IPortTypeDataSourceInterface {&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;private IInputFormatInstance input_format_instance;&#xA;&#xA;&#x9;&#x9;&#x9;public object fetchFileContentObject() {&#xA;&#x9;&#x9;&#x9;&#x9;return input_format_instance;&#xA;&#x9;&#x9;&#x9;&#x9;//string fileName = System.Environment.GetEnvironmentVariable (PATH_GRAPH_FILE);&#xA;&#x9;&#x9;&#x9;&#x9;//return File.ReadLines (fileName);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;public DataSourceReader(IInputFormatInstance o){&#xA;&#x9;&#x9;&#x9;&#x9;input_format_instance = o;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;" name="IDataSourceImpl.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl/bin/1.0.0.0/IDataSourceImpl.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.impl.datasource.DataSourceImpl/bin/1.0.0.0/BaseIDataSourceImpl.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.datasource.DataSource/bin/1.0.0.0/IDataSource.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="213" x="174" y="196">
+        <color b="0" g="128" r="0"/>
+      </visualDescription>
+      <port name="reader">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="reader" sRef="reader"/>
+      </port>
+      <port name="platform_data_source">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="platform_data_source" sRef="platform_data_source"/>
+      </port>
+      <parameter iname="IDataHost" parid="platform_maintainer" uname="data_host" varid="M"/>
+      <parameter iname="IInputFormat" order="0" parid="graph_input_format" uname="data" varid="GIF"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IDataSourceImpl" multiple="true" private="false" replica="0" uRef="data_source" visibleInterface="true">
+      <super cRef="base" uRef="data_source"/>
+      <visualDescription h="40" w="213" x="211" y="323"/>
+    </unit>
+  </componentInfo>
+</component:component>

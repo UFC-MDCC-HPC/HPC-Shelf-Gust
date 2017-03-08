@@ -3,7 +3,7 @@ using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
 using br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
+using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;
 using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;
 using br.ufc.mdcc.common.Iterator;

@@ -49,13 +49,13 @@
       <Project>{816B876F-E438-4F9E-85D8-B98BCCE57044}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData\br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData\br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData.csproj">
       <Project>{859A9FD6-7791-4191-824D-C1890A5EE1ED}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance\br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance\br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance.csproj">
       <Project>{62252C8E-B7D2-493E-B84B-FD5A9F7FB725}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer\br.ufc.mdcc.hpcshelf.platform.Maintainer.csproj">
       <Project>{F7ABD722-31F4-4ACC-B8B6-A14DDAEB022B}</Project>

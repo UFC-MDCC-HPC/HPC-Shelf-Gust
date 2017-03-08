@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EAD7D264-63A0-4069-A9A4-EE9D6BB76D30}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingReadData</RootNamespace>
+    <AssemblyName>br.ufc.mdcc.hpcshelf.gust.impl.binding.environment.EnvironmentBindingReadData</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\EnvironmentBindingReadData.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="DGAC">
+      <HintPath>..\..\..\..\..\..\..\opt\mono-4.2.2\lib\mono\DGAC\DGAC.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\src\1.0.0.0\IReadDataImpl.cs">
+      <Link>IReadDataImpl.cs</Link>
+    </Compile>
+    <Compile Include="..\src\1.0.0.0\BaseIReadDataImpl.cs">
+      <Link>BaseIReadDataImpl.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase.csproj">
+      <Project>{226E5496-FDF2-4765-9C43-D2A2770EE760}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType.csproj">
+      <Project>{4BB52CBE-64B0-4E9C-812F-921ED3FB87AF}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface.csproj">
+      <Project>{C8E65EC9-4750-4896-AF88-7C09BA7EFDF2}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator.csproj">
+      <Project>{1784C0D3-7632-4F38-8FFF-FA8008E2A724}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner.csproj">
+      <Project>{CFC8E9C1-30F7-4A4A-9B1E-9AFA4B474D9A}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeSinglePartner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect.csproj">
+      <Project>{168E10F4-B1B8-4695-8586-CDC5598F79B8}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBaseDirect</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkInterface\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkInterface\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkInterface.csproj">
+      <Project>{504A4A55-3292-4433-B83E-290ABB32ACDF}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner.csproj">
+      <Project>{B1988D74-54AE-4031-B185-E046226BC359}</Project>
+      <Name>br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Iterator\br.ufc.mdcc.common.Iterator\br.ufc.mdcc.common.Iterator.csproj">
+      <Project>{807A087E-123C-4745-B029-C31FC9458A61}</Project>
+      <Name>br.ufc.mdcc.common.Iterator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data\br.ufc.mdcc.common.Data.csproj">
+      <Project>{7CEA4BF7-37CD-4F93-B603-CF5FB9239B1F}</Project>
+      <Name>br.ufc.mdcc.common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer\br.ufc.mdcc.common.Integer.csproj">
+      <Project>{97B35E58-AC6B-44A6-A536-90FA39076265}</Project>
+      <Name>br.ufc.mdcc.common.Integer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.common.KVPair\br.ufc.mdcc.common.KVPair\br.ufc.mdcc.common.KVPair.csproj">
+      <Project>{9B499C49-DA84-475A-B783-2A3D2DEAAA97}</Project>
+      <Name>br.ufc.mdcc.common.KVPair</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData\br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData\br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData.csproj">
+      <Project>{E75203E1-30CC-4745-8FA0-670F039089C7}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.graph.InputFormat\br.ufc.mdcc.hpcshelf.gust.graph.InputFormat\br.ufc.mdcc.hpcshelf.gust.graph.InputFormat.csproj">
+      <Project>{6A7BA994-391F-404F-939C-077CA597C821}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

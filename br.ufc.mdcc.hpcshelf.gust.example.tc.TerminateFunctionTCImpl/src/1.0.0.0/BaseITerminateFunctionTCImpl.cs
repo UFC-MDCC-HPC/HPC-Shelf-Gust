@@ -8,7 +8,7 @@ using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;
 using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
+using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;
 using br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC;
 
 namespace br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTCImpl 

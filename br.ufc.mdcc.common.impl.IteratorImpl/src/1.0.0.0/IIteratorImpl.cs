@@ -9,7 +9,7 @@ using System.Threading;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Runtime.Serialization;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
+using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;
 
 namespace br.ufc.mdcc.common.impl.IteratorImpl 
 { 	

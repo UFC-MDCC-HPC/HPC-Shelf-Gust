@@ -56,9 +56,9 @@
       <Project>{807A087E-123C-4745-B029-C31FC9458A61}</Project>
       <Name>br.ufc.mdcc.common.Iterator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator.csproj">
       <Project>{1784C0D3-7632-4F38-8FFF-FA8008E2A724}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner\br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentPortTypeMultiplePartner.csproj">
       <Project>{B1988D74-54AE-4031-B185-E046226BC359}</Project>

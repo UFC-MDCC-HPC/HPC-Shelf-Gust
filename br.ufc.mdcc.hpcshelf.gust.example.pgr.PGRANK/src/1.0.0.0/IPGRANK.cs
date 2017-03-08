@@ -1,5 +1,5 @@
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;
+using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;
 using br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK;
 using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
@@ -13,7 +13,7 @@ using br.ufc.mdcc.common.Integer;
 
 namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK
 {
-	public interface IPGRANK : BaseIPGRANK, IReduceFunction<
+	public interface IPGRANK : BaseIPGRANK, IGustyFunction<
 	IInputFormat, 
 	IInteger, 
 	IDataPGRANK, 

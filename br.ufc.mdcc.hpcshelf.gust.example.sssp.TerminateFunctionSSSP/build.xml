@@ -12,7 +12,7 @@
         <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP/src/1.0.0.0/BaseITerminateFunctionSSSP.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction/bin/1.0.0.0/BaseITerminateFunction.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction/bin/1.0.0.0/BaseITerminateFunction.dll"/>
         <include/>
       </references>
     </csc>
@@ -22,7 +22,7 @@
       </sources>
       <references>
         <include name="/br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP/bin/1.0.0.0/BaseITerminateFunctionSSSP.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction/bin/1.0.0.0/ITerminateFunction.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction/bin/1.0.0.0/ITerminateFunction.dll"/>
         <include/>
       </references>
     </csc>

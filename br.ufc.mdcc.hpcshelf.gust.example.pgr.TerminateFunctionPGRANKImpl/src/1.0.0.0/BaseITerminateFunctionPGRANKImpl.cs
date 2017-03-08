@@ -8,7 +8,7 @@ using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
 using br.ufc.mdcc.common.Integer;
 using br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator;
+using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;
 using br.ufc.mdcc.hpcshelf.gust.example.pgr.TerminateFunctionPGRANK;
 
 namespace br.ufc.mdcc.hpcshelf.gust.example.pgr.TerminateFunctionPGRANKImpl 

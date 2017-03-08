@@ -1,5 +1,5 @@
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;
+using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;
 using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;
 using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;
 using br.ufc.mdcc.hpcshelf.gust.graph.Graph;
@@ -14,7 +14,7 @@ using br.ufc.mdcc.common.Integer;
 
 namespace br.ufc.mdcc.hpcshelf.gust.example.tc3.TC1
 {
-	public interface ITC1 : BaseITC1, IReduceFunction<
+	public interface ITC1 : BaseITC1, IGustyFunction<
 	IInputFormat, 
 	IVertex, 
 	IDataTriangle, 

@@ -16,7 +16,7 @@
         <include name="br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll"/>
         <include name="br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/bin/1.0.0.0/IDataSSSP.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP/bin/1.0.0.0/BaseITerminateFunctionSSSP.dll"/>
         <include/>
       </references>

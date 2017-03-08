@@ -66,7 +66,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="data_source" location="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource/DataSource.hpe" multiple="false" name="DataSource" package="br.ufc.mdcc.hpcshelf.mapreduce.datasource" exposed="false">
+    <innerComponent localRef="data_source" location="br.ufc.mdcc.hpcshelf.gust.datasource.DataSource/DataSource.hpe" multiple="false" name="DataSource" package="br.ufc.mdcc.hpcshelf.gust.datasource" exposed="false">
       <visualDescription h="61" w="150" x="52" y="642">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -98,7 +98,7 @@
         <visualDescription h="20" w="20" x="118" y="5"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="reducer" location="br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer/Reducer.hpe" multiple="false" name="Reducer" package="br.ufc.mdcc.hpcshelf.mapreduce.computation" exposed="false">
+    <innerComponent localRef="gusty" location="br.ufc.mdcc.hpcshelf.gust.computation.Gusty/Gusty.hpe" multiple="false" name="Gusty" package="br.ufc.mdcc.hpcshelf.gust.computation" exposed="false">
       <visualDescription h="62" w="100" x="788" y="261">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -108,9 +108,9 @@
       <parameter formFieldId="input_value_type" varName="TValue"/>
       <parameter formFieldId="platform_maintainer" varName="M1"/>
       <parameter formFieldId="graph_input_format" varName="GIF"/>
-      <parameter formFieldId="reduce_function" varName="RF"/>
+      <parameter formFieldId="gusty_function" varName="RF"/>
       <parameter formFieldId="output_key_type" varName="OKey"/>
-      <port localRef="task_reduce" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="false">
+      <port localRef="task_gusty" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="false">
         <visualDescription h="42" w="203" x="693" y="131">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -119,7 +119,7 @@
           <visualDescription h="20" w="20" x="147" y="20"/>
         </unitBounds>
       </port>
-      <port localRef="feed_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="false">
+      <port localRef="feed_pairs" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="false">
         <visualDescription h="30" w="142" x="584" y="334">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -128,7 +128,7 @@
           <visualDescription h="20" w="20" x="2" y="25"/>
         </unitBounds>
       </port>
-      <port localRef="collect_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="false">
+      <port localRef="collect_pairs" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="false">
         <visualDescription h="36" w="105" x="598" y="294">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -137,7 +137,7 @@
           <visualDescription h="20" w="20" x="98" y="20"/>
         </unitBounds>
       </port>
-      <port localRef="platform_reduce" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="false">
+      <port localRef="platform_gusty" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="false">
         <visualDescription h="38" w="150" x="573" y="374">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -146,7 +146,7 @@
           <visualDescription h="20" w="20" x="62" y="2"/>
         </unitBounds>
       </port>
-      <port localRef="collect_graph" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="false">
+      <port localRef="collect_graph" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="false">
         <visualDescription h="28" w="142" x="573" y="201">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -155,7 +155,7 @@
           <visualDescription h="20" w="20" x="136" y="20"/>
         </unitBounds>
       </port>
-      <port localRef="feed_graph" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="false">
+      <port localRef="feed_graph" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="false">
         <visualDescription h="31" w="136" x="581" y="255">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -202,7 +202,7 @@
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <unitBounds parallel="true" uRef="reducer">
+      <unitBounds parallel="true" uRef="gusty">
         <visualDescription h="20" w="20" x="36" y="40"/>
       </unitBounds>
     </innerComponent>
@@ -230,7 +230,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="data_sink" location="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/DataSink.hpe" multiple="false" name="DataSink" package="br.ufc.mdcc.hpcshelf.mapreduce.datasource" exposed="false">
+    <innerComponent localRef="data_sink" location="br.ufc.mdcc.hpcshelf.gust.datasource.DataSink/DataSink.hpe" multiple="false" name="DataSink" package="br.ufc.mdcc.hpcshelf.gust.datasource" exposed="false">
       <visualDescription h="63" w="111" x="538" y="596">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -324,7 +324,7 @@
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <unitBounds parallel="false" uRef="reduce_function">
+      <unitBounds parallel="false" uRef="gusty_function">
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
@@ -354,7 +354,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="partition_f" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" exposed="false">
+    <innerComponent localRef="partition_f" location="br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction/PartitionFunction.hpe" multiple="false" name="PartitionFunction" package="br.ufc.mdcc.hpcshelf.gust.custom" exposed="false">
       <visualDescription h="60" w="130" x="406" y="784">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -379,7 +379,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="join_loop" location="br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop/JoinLoop.hpe" multiple="false" name="JoinLoop" package="br.ufc.mdcc.hpcshelf.mapreduce.connector" exposed="false">
+    <innerComponent localRef="join_loop" location="br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop/JoinLoop.hpe" multiple="false" name="JoinLoop" package="br.ufc.mdcc.hpcshelf.gust.connector" exposed="false">
       <visualDescription h="63" w="143" x="245" y="384">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -390,10 +390,10 @@
       <parameter formFieldId="input_key_type" varName="IKey"/>
       <parameter formFieldId="input_value_type" varName="IValue"/>
       <parameter formFieldId="platform_data_sink_maintainer" varName="M3"/>
-      <parameter formFieldId="platform_reduce_maintainer" varName="M1"/>
+      <parameter formFieldId="platform_gusty_maintainer" varName="M1"/>
       <parameter formFieldId="graph_input_format" varName="GIF"/>
       <parameter formFieldId="output_key_type" varName="OKey"/>
-      <port localRef="sink" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingWriteData/EnvironmentBindingWriteData.hpe" multiple="false" name="EnvironmentBindingWriteData" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="false">
+      <port localRef="sink" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteData/EnvironmentBindingWriteData.hpe" multiple="false" name="EnvironmentBindingWriteData" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="false">
         <visualDescription h="40" w="149" x="382" y="643">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -402,7 +402,7 @@
           <visualDescription h="20" w="20" x="87" y="11"/>
         </unitBounds>
       </port>
-      <port localRef="source" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData/EnvironmentBindingReadData.hpe" multiple="false" name="EnvironmentBindingReadData" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="false">
+      <port localRef="source" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData/EnvironmentBindingReadData.hpe" multiple="false" name="EnvironmentBindingReadData" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="false">
         <visualDescription h="44" w="122" x="66" y="498">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -411,7 +411,7 @@
           <visualDescription h="20" w="20" x="100" y="12"/>
         </unitBounds>
       </port>
-      <port localRef="collect_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="false">
+      <port localRef="collect_pairs" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="false">
         <visualDescription h="30" w="142" x="584" y="334">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -420,7 +420,7 @@
           <visualDescription h="20" w="20" x="50" y="45"/>
         </unitBounds>
       </port>
-      <port localRef="feed_pairs" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="false">
+      <port localRef="feed_pairs" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="false">
         <visualDescription h="36" w="105" x="598" y="294">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -465,7 +465,7 @@
           <visualDescription h="20" w="20" x="72" y="45"/>
         </unitBounds>
       </port>
-      <port localRef="platform_reduce" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="false">
+      <port localRef="platform_gusty" location="br.ufc.mdcc.hpcshelf.platform.Platform/Platform.hpe" multiple="false" name="Platform" package="br.ufc.mdcc.hpcshelf.platform" exposed="false">
         <visualDescription h="38" w="150" x="573" y="374">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -492,7 +492,7 @@
           <visualDescription h="20" w="20" x="147" y="13"/>
         </unitBounds>
       </port>
-      <port localRef="feed_graph" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="false">
+      <port localRef="feed_graph" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="false">
         <visualDescription h="28" w="142" x="573" y="201">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -501,7 +501,7 @@
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </port>
-      <port localRef="collect_graph" location="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment" exposed="false">
+      <port localRef="collect_graph" location="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/BindingDirectMxNIterator.hpe" multiple="false" name="BindingDirectMxNIterator" package="br.ufc.mdcc.hpcshelf.gust.binding.environment" exposed="false">
         <visualDescription h="31" w="136" x="581" y="255">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -534,7 +534,7 @@
           <visualDescription h="30" w="20" x="147" y="9"/>
         </unitBounds>
       </port>
-      <port localRef="task_reduce" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="false">
+      <port localRef="task_gusty" location="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/TaskBindingBase.hpe" multiple="false" name="TaskBindingBase" package="br.ufc.mdcc.hpc.storm.binding.task" exposed="false">
         <visualDescription h="42" w="203" x="693" y="131">
           <color b="243" g="217" r="217"/>
         </visualDescription>
@@ -683,7 +683,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###695227666" varName="X###695227666"/>
-    <innerComponent localRef="C###232859135" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###232859135" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="334" y="508">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -692,7 +692,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###232859135" varName="X###232859135"/>
-    <innerComponent localRef="C###948277111" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface/PortTypeDataSourceInterface.hpe" multiple="false" name="PortTypeDataSourceInterface" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###948277111" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface/PortTypeDataSourceInterface.hpe" multiple="false" name="PortTypeDataSourceInterface" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="401" y="196">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -701,7 +701,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###948277111" varName="X###948277111"/>
-    <innerComponent localRef="C###1562792008" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="C###1562792008" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="60" w="100" x="151" y="494">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -710,7 +710,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###1562792008" varName="X###1562792008"/>
-    <innerComponent localRef="C###2120275646" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###2120275646" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="124" y="144">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -719,7 +719,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###2120275646" varName="X###2120275646"/>
-    <innerComponent localRef="C###1564791758" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###1564791758" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="472" y="196">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -728,7 +728,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###1564791758" varName="X###1564791758"/>
-    <innerComponent localRef="C###1370335544" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###1370335544" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="124" y="144">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -737,7 +737,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###1370335544" varName="X###1370335544"/>
-    <innerComponent localRef="C###1013016274" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###1013016274" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="472" y="196">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -746,7 +746,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###1013016274" varName="X###1013016274"/>
-    <innerComponent localRef="C###514163702" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###514163702" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="124" y="144">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -755,7 +755,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###514163702" varName="X###514163702"/>
-    <innerComponent localRef="C###224588266" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###224588266" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="472" y="196">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -764,7 +764,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###224588266" varName="X###224588266"/>
-    <innerComponent localRef="C###1526218883" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###1526218883" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="124" y="144">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -773,7 +773,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###1526218883" varName="X###1526218883"/>
-    <innerComponent localRef="C###197898835" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###197898835" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="472" y="196">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -842,7 +842,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###1310043845" varName="X###1310043845"/>
-    <innerComponent localRef="C###1593151362" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###1593151362" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="316" y="488">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -851,7 +851,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###1593151362" varName="X###1593151362"/>
-    <innerComponent localRef="C###1268830338" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface/PortTypeDataSinkInterface.hpe" multiple="false" name="PortTypeDataSinkInterface" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###1268830338" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkInterface/PortTypeDataSinkInterface.hpe" multiple="false" name="PortTypeDataSinkInterface" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="547" y="422">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -942,7 +942,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###2005141020" varName="X###2005141020"/>
-    <innerComponent localRef="C###2091734416" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###2091734416" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="77" y="248">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -951,7 +951,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###2091734416" varName="X###2091734416"/>
-    <innerComponent localRef="C###995525238" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface/PortTypeDataSinkInterface.hpe" multiple="false" name="PortTypeDataSinkInterface" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###995525238" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkInterface/PortTypeDataSinkInterface.hpe" multiple="false" name="PortTypeDataSinkInterface" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="334" y="735">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -960,7 +960,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###995525238" varName="X###995525238"/>
-    <innerComponent localRef="C###747581289" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###747581289" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="195" y="320">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -969,7 +969,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###747581289" varName="X###747581289"/>
-    <innerComponent localRef="C###455861678" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface/PortTypeDataSourceInterface.hpe" multiple="false" name="PortTypeDataSourceInterface" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###455861678" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface/PortTypeDataSourceInterface.hpe" multiple="false" name="PortTypeDataSourceInterface" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="218" y="714">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -978,7 +978,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###455861678" varName="X###455861678"/>
-    <innerComponent localRef="C###1593053297" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###1593053297" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="124" y="144">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -987,7 +987,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###1593053297" varName="X###1593053297"/>
-    <innerComponent localRef="C###175145524" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###175145524" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="245" y="351">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -996,7 +996,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###175145524" varName="X###175145524"/>
-    <innerComponent localRef="C###1618225478" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###1618225478" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="124" y="144">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -1005,7 +1005,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###1618225478" varName="X###1618225478"/>
-    <innerComponent localRef="C###199797422" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###199797422" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="245" y="351">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -1014,7 +1014,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###199797422" varName="X###199797422"/>
-    <innerComponent localRef="C###1478331293" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="C###1478331293" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="60" w="100" x="131" y="685">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -1023,7 +1023,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###1478331293" varName="X###1478331293"/>
-    <innerComponent localRef="C###2075729308" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="C###2075729308" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="60" w="100" x="131" y="685">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -1032,7 +1032,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###2075729308" varName="X###2075729308"/>
-    <innerComponent localRef="C###910634041" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/TaskPortTypeData.hpe" multiple="false" name="TaskPortTypeData" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="C###910634041" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData/TaskPortTypeData.hpe" multiple="false" name="TaskPortTypeData" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="60" w="100" x="97" y="685">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -1041,7 +1041,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###910634041" varName="X###910634041"/>
-    <innerComponent localRef="C###2057858565" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###2057858565" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="124" y="144">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -1050,7 +1050,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###2057858565" varName="X###2057858565"/>
-    <innerComponent localRef="C###2043481224" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###2043481224" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="245" y="351">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -1059,7 +1059,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###2043481224" varName="X###2043481224"/>
-    <innerComponent localRef="C###82965297" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###82965297" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="124" y="144">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -1068,7 +1068,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###82965297" varName="X###82965297"/>
-    <innerComponent localRef="C###1417384016" location="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.mapreduce.port.environment" exposed="false">
+    <innerComponent localRef="C###1417384016" location="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/PortTypeIterator.hpe" multiple="false" name="PortTypeIterator" package="br.ufc.mdcc.hpcshelf.gust.port.environment" exposed="false">
       <visualDescription h="60" w="100" x="245" y="351">
         <color b="255" g="255" r="255"/>
       </visualDescription>
@@ -1077,7 +1077,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###1417384016" varName="X###1417384016"/>
-    <innerComponent localRef="C###2084544388" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="C###2084544388" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="30" w="40" x="10" y="10">
         <color b="23" g="200" r="117"/>
       </visualDescription>
@@ -1086,7 +1086,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###2084544388" varName="X###2084544388"/>
-    <innerComponent localRef="C###889311958" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="C###889311958" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="30" w="40" x="10" y="10">
         <color b="23" g="200" r="117"/>
       </visualDescription>
@@ -1095,7 +1095,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###889311958" varName="X###889311958"/>
-    <innerComponent localRef="C###179894986" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="C###179894986" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="30" w="40" x="10" y="10">
         <color b="23" g="200" r="117"/>
       </visualDescription>
@@ -1104,7 +1104,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###179894986" varName="X###179894986"/>
-    <innerComponent localRef="C###1985538373" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/TaskPortTypeData.hpe" multiple="false" name="TaskPortTypeData" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="C###1985538373" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData/TaskPortTypeData.hpe" multiple="false" name="TaskPortTypeData" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="30" w="40" x="10" y="10">
         <color b="23" g="200" r="117"/>
       </visualDescription>
@@ -1113,30 +1113,30 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="C###1985538373" varName="X###1985538373"/>
-    <innerRenaming cNewName="input_pairs" cOldName="collect_pairs" cRef="reducer"/>
+    <innerRenaming cNewName="input_pairs" cOldName="collect_pairs" cRef="gusty"/>
     <innerRenaming cNewName="output_data" cOldName="writer" cRef="data_sink"/>
-    <innerRenaming cNewName="output_pairs" cOldName="feed_pairs" cRef="reducer"/>
+    <innerRenaming cNewName="output_pairs" cOldName="feed_pairs" cRef="gusty"/>
     <innerRenaming cNewName="input_data" cOldName="reader" cRef="data_source"/>
-    <innerRenaming cNewName="output_graph" cOldName="feed_graph" cRef="reducer"/>
+    <innerRenaming cNewName="output_graph" cOldName="feed_graph" cRef="gusty"/>
     <innerRenaming cNewName="input_graph" cOldName="feed_graph" cRef="join_loop"/>
     <innerRenaming cNewName="input_pairs" cOldName="feed_pairs" cRef="join_loop"/>
     <innerRenaming cNewName="output_data" cOldName="sink" cRef="join_loop"/>
     <innerRenaming cNewName="input_data" cOldName="source" cRef="join_loop"/>
     <innerRenaming cNewName="output_graph" cOldName="collect_graph" cRef="join_loop"/>
     <innerRenaming cNewName="output_pairs" cOldName="collect_pairs" cRef="join_loop"/>
-    <innerRenaming cNewName="input_graph" cOldName="collect_graph" cRef="reducer"/>
+    <innerRenaming cNewName="input_graph" cOldName="collect_graph" cRef="gusty"/>
     <fusion>
       <cRefs>join_loop</cRefs>
-      <cRefs>reducer</cRefs>
+      <cRefs>gusty</cRefs>
       <pRef>input_pairs</pRef>
     </fusion>
     <fusion>
       <cRefs>join_loop</cRefs>
-      <cRefs>reducer</cRefs>
-      <pRef>platform_reduce</pRef>
+      <cRefs>gusty</cRefs>
+      <pRef>platform_gusty</pRef>
     </fusion>
     <fusion>
-      <cRefs>reducer</cRefs>
+      <cRefs>gusty</cRefs>
       <cRefs>join_loop</cRefs>
       <pRef>output_graph</pRef>
     </fusion>
@@ -1146,7 +1146,7 @@
       <pRef>task_binding_split_first</pRef>
     </fusion>
     <fusion>
-      <cRefs>reducer</cRefs>
+      <cRefs>gusty</cRefs>
       <cRefs>join_loop</cRefs>
       <pRef>output_pairs</pRef>
     </fusion>
@@ -1177,8 +1177,8 @@
     </fusion>
     <fusion>
       <cRefs>workflow</cRefs>
-      <cRefs>reducer</cRefs>
-      <pRef>task_reduce</pRef>
+      <cRefs>gusty</cRefs>
+      <pRef>task_gusty</pRef>
     </fusion>
     <fusion>
       <cRefs>workflow</cRefs>
@@ -1186,7 +1186,7 @@
       <pRef>task_binding_split_next</pRef>
     </fusion>
     <fusion>
-      <cRefs>reducer</cRefs>
+      <cRefs>gusty</cRefs>
       <cRefs>join_loop</cRefs>
       <pRef>input_graph</pRef>
     </fusion>
@@ -1277,9 +1277,9 @@
       <visualDescription h="40" w="56" x="689" y="64">
         <color b="6" g="154" r="78"/>
       </visualDescription>
-      <port name="task_reduce">
+      <port name="task_gusty">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce" sRef="workflow"/>
+        <slice pRef="task_gusty" sRef="workflow"/>
       </port>
       <port name="platform_SAFe">
         <visualDescription h="10" w="10" x="0" y="0"/>
@@ -1307,8 +1307,8 @@
         <originRef cRef="join_loop" iRef="IJoinLoop"/>
         <visualDescription h="10" w="10" x="2" y="8"/>
       </slice>
-      <slice isRef="reducer">
-        <originRef cRef="reducer" iRef="IReducer"/>
+      <slice isRef="gusty">
+        <originRef cRef="gusty" iRef="IGusty"/>
         <visualDescription h="10" w="10" x="39" y="7"/>
       </slice>
       <visualDescription h="40" w="63" x="669" y="480">
@@ -1329,31 +1329,31 @@
       <port name="output_graph">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_graph" sRef="join_loop"/>
-        <slice pRef="feed_graph" sRef="reducer"/>
+        <slice pRef="feed_graph" sRef="gusty"/>
       </port>
       <port name="input_graph">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feed_graph" sRef="join_loop"/>
-        <slice pRef="collect_graph" sRef="reducer"/>
+        <slice pRef="collect_graph" sRef="gusty"/>
       </port>
       <port name="input_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="feed_pairs" sRef="join_loop"/>
-        <slice pRef="collect_pairs" sRef="reducer"/>
+        <slice pRef="collect_pairs" sRef="gusty"/>
       </port>
       <port name="output_pairs">
         <visualDescription h="10" w="10" x="0" y="0"/>
         <slice pRef="collect_pairs" sRef="join_loop"/>
-        <slice pRef="feed_pairs" sRef="reducer"/>
+        <slice pRef="feed_pairs" sRef="gusty"/>
       </port>
-      <port name="platform_reduce">
+      <port name="platform_gusty">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="platform_reduce" sRef="join_loop"/>
-        <slice pRef="platform_reduce" sRef="reducer"/>
+        <slice pRef="platform_gusty" sRef="join_loop"/>
+        <slice pRef="platform_gusty" sRef="gusty"/>
       </port>
-      <port name="task_reduce">
+      <port name="task_gusty">
         <visualDescription h="10" w="10" x="0" y="0"/>
-        <slice pRef="task_reduce" sRef="reducer"/>
+        <slice pRef="task_gusty" sRef="gusty"/>
       </port>
       <action id="main">
         <protocol/>
@@ -1422,7 +1422,7 @@
       <visualDescription h="40" w="61" x="458" y="539"/>
     </unit>
     <unit facet="0" iRef="IRoot" multiple="true" private="false" replica="0" uRef="root" visibleInterface="true">
-      <slices cRef="task_reduce" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_reduce" transitive="true">
+      <slices cRef="task_gusty" inner_replica="0" slice_replica="0" uRef="peer" sliceName="task_gusty" transitive="true">
         <visualDescription h="15" w="15" x="10" y="10"/>
       </slices>
       <slices cRef="task_binding_split_first" inner_replica="1" slice_replica="0" uRef="peer" sliceName="task_binding_split_first" transitive="true">
@@ -1442,7 +1442,7 @@
       </slices>
       <slices cRef="workflow" inner_replica="0" slice_replica="0" uRef="workflow_unit" sliceName="workflow" transitive="false">
         <visualDescription h="10" w="10" x="9" y="25"/>
-        <port>task_reduce</port>
+        <port>task_gusty</port>
         <port>task_binding_split_first</port>
         <port>task_binding_data</port>
         <port>task_binding_split_next</port>
@@ -1467,16 +1467,16 @@
       <slices cRef="graph_values" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="graph_values" transitive="true">
         <visualDescription h="10" w="10" x="4" y="27"/>
       </slices>
-      <slices cRef="task_reduce" inner_replica="1" slice_replica="0" uRef="peer" sliceName="task_reduce" transitive="true">
+      <slices cRef="task_gusty" inner_replica="1" slice_replica="0" uRef="peer" sliceName="task_gusty" transitive="true">
         <visualDescription h="10" w="10" x="0" y="23"/>
       </slices>
       <slices cRef="input_values" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="input_values" transitive="true">
         <visualDescription h="10" w="10" x="4" y="8"/>
       </slices>
-      <slices cRef="platform_reduce" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_reduce" transitive="true">
+      <slices cRef="platform_gusty" inner_replica="0" slice_replica="0" uRef="node" sliceName="platform_gusty" transitive="true">
         <visualDescription h="10" w="10" x="1" y="16"/>
       </slices>
-      <slices cRef="platform_reduce" inner_replica="1" slice_replica="0" uRef="node" sliceName="platform_reduce" transitive="true">
+      <slices cRef="platform_gusty" inner_replica="1" slice_replica="0" uRef="node" sliceName="platform_gusty" transitive="true">
         <visualDescription h="10" w="10" x="101" y="35"/>
       </slices>
       <slices cRef="output_graph" inner_replica="0" slice_replica="0" uRef="client_server" sliceName="output_graph" transitive="true">
@@ -1513,21 +1513,21 @@
         <visualDescription h="10" w="10" x="2" y="8"/>
         <port>input_pairs</port>
         <port>output_graph</port>
-        <port>platform_reduce</port>
+        <port>platform_gusty</port>
         <port>task_binding_split_first</port>
         <port>output_pairs</port>
         <port>task_binding_data</port>
         <port>task_binding_split_next</port>
         <port>input_graph</port>
       </slices>
-      <slices cRef="reducer" inner_replica="0" slice_replica="0" uRef="reducer" sliceName="reducer" transitive="false">
+      <slices cRef="gusty" inner_replica="0" slice_replica="0" uRef="gusty" sliceName="gusty" transitive="false">
         <visualDescription h="10" w="10" x="39" y="7"/>
         <port>output_gif</port>
         <port>input_pairs</port>
         <port>graph_values</port>
         <port>input_values</port>
-        <port>task_reduce</port>
-        <port>platform_reduce</port>
+        <port>task_gusty</port>
+        <port>platform_gusty</port>
         <port>output_graph</port>
         <port>output_pairs</port>
         <port>input_graph</port>

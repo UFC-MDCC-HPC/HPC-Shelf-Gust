@@ -13,7 +13,7 @@
       </sources>
       <references>
         <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
         <include name="br.ufc.mdcc.common.Iterator/bin/1.0.0.0/BaseIIterator.dll"/>
         <include/>
       </references>

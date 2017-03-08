@@ -13,15 +13,15 @@
       </sources>
       <references>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSourceInterface/bin/1.0.0.0/IPortTypeDataSourceInterface.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingReadData/bin/1.0.0.0/IReadData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSourceInterface/bin/1.0.0.0/IPortTypeDataSourceInterface.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingReadData/bin/1.0.0.0/IReadData.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop/bin/1.0.0.0/IJoinLoopReadSource.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop/bin/1.0.0.0/IJoinLoopReadSource.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSource/bin/1.0.0.0/IDataSource.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.datasource.DataSource/bin/1.0.0.0/IDataSource.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll"/>
         <include name="config.example.sssp.System/bin/1.0.0.0/BaseIPeer_0.dll"/>
         <include/>
@@ -42,17 +42,17 @@
         <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/config.example.sssp.impl.SystemImpl/src/1.0.0.0/BaseIPeer_1Impl.cs"/>
       </sources>
       <references>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.EnvironmentBindingWriteData/bin/1.0.0.0/IWriteData.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop/bin/1.0.0.0/IJoinLoopWriteSink.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.binding.environment.EnvironmentBindingWriteData/bin/1.0.0.0/IWriteData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop/bin/1.0.0.0/IJoinLoopWriteSink.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.DataHost/bin/1.0.0.0/IDataHost.dll"/>
         <include name="br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP/bin/1.0.0.0/IDataSSSP.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.datasource.DataSink/bin/1.0.0.0/IDataSink.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.datasource.DataSink/bin/1.0.0.0/IDataSink.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.OutputFormat/bin/1.0.0.0/IOutputFormat.dll"/>
         <include name="br.ufc.mdcc.hpc.storm.binding.environment.EnvironmentBindingBase/bin/1.0.0.0/IServerBase.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeDataSinkInterface/bin/1.0.0.0/IPortTypeDataSinkInterface.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeDataSinkInterface/bin/1.0.0.0/IPortTypeDataSinkInterface.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll"/>
         <include name="config.example.sssp.System/bin/1.0.0.0/BaseIPeer_1.dll"/>
         <include/>
@@ -74,11 +74,11 @@
       </sources>
       <references>
         <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/IBindingDirectMxNIterator.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.computation.Reducer/bin/1.0.0.0/IReducer.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.binding.environment.BindingDirectMxNIterator/bin/1.0.0.0/IBindingDirectMxNIterator.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.computation.Gusty/bin/1.0.0.0/IGusty.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.ComputeHost/bin/1.0.0.0/IComputeHost.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.example.sssp.SSSP/bin/1.0.0.0/ISSSP.dll"/>
         <include name="br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll"/>
@@ -87,9 +87,9 @@
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerKV/bin/1.0.0.0/IDataContainerKV.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.Vertex/bin/1.0.0.0/IVertex.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.EdgeWeighted/bin/1.0.0.0/IEdgeWeighted.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.connector.JoinLoop/bin/1.0.0.0/IJoinLoop.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop/bin/1.0.0.0/IJoinLoop.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.example.sssp.TerminateFunctionSSSP/bin/1.0.0.0/ITerminateFunctionSSSP.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.custom.PartitionFunction/bin/1.0.0.0/IPartitionFunction.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.graph.InputFormat/bin/1.0.0.0/IInputFormat.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll"/>
         <include name="config.example.sssp.System/bin/1.0.0.0/BaseIPeer_2.dll"/>
@@ -112,8 +112,8 @@
       </sources>
       <references>
         <include name="br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase/bin/1.0.0.0/ITaskPort.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData/bin/1.0.0.0/ITaskPortTypeData.dll"/>
+        <include name="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/bin/1.0.0.0/ITaskPortTypeAdvance.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.platform.Platform/bin/1.0.0.0/IProcessingNode.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost/bin/1.0.0.0/ISAFeHost.dll"/>
         <include name="config.phase1.Workflow/bin/1.0.0.0/IWorkflow.dll"/>

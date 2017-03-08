@@ -68,13 +68,13 @@
       <Project>{B53D1E64-E50C-4BCD-A705-EDE7AEC76D9A}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.graph.Vertex</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction.csproj">
       <Project>{D20F8E33-1C0C-44FF-83AD-818C99718420}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator\br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator.csproj">
       <Project>{1784C0D3-7632-4F38-8FFF-FA8008E2A724}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.environment.PortTypeIterator</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC\br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC\br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTC.csproj">
       <Project>{17CE2DE4-FEBC-461C-9FCC-C8B54FFA9A8F}</Project>

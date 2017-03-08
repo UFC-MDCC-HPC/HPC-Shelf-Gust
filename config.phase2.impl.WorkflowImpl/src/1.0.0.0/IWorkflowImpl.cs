@@ -11,8 +11,8 @@ using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 using System;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using System.Threading;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;
+using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance;
+using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData;
 using System.Collections.Generic;
 using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;
 using config.phase2.Workflow;
@@ -24,7 +24,7 @@ namespace config.phase2.impl.WorkflowImpl {
 	public class IWorkflowImpl<M> :br.ufc.pargo.hpe.kinds.Computation ,IWorkflow<M> 
 		where M:ISAFeHost
 	{
-		// P.S.: Workflow like MapReduce (task_gust0=task_map, task_gust1=task_reduce, task_binding_step1=task_binding_shuffle)
+		// P.S.: Workflow like MapReduce (task_gust0=task_map, task_gust1=task_gusty, task_binding_step1=task_binding_shuffle)
 		private void read_data_source()
 		{
 			Console.WriteLine ("read_data_source");

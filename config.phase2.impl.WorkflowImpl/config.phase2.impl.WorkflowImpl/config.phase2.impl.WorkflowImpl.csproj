@@ -53,13 +53,13 @@
       <Project>{B785892B-10B1-43BA-897F-E6F02CC932D0}</Project>
       <Name>br.ufc.mdcc.hpc.storm.binding.task.TaskPortType</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData\br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData\br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData.csproj">
       <Project>{859A9FD6-7791-4191-824D-C1890A5EE1ED}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance\br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance\br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance\br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance.csproj">
       <Project>{62252C8E-B7D2-493E-B84B-FD5A9F7FB725}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\config.phase2.Workflow\config.phase2.Workflow\config.phase2.Workflow.csproj">
       <Project>{AAF21789-00E9-4BBC-9D72-2FD86764F12C}</Project>

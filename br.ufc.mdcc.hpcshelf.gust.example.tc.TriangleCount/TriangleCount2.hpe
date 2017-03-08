@@ -5,7 +5,7 @@
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007f4cbebfe57de16a460e9a3aae6647a3b14d609b000ac58312afed4cc2c1b904f33e352cfd40765886c6d6e1d9f5c8b905b1a20519b6b60ac094e6b94fb46c5f84beb2e0ee4e9d4e947c44775c07382e9104f227336fb976619ecd6ad43a917b5277f7f3f09156a8e8ff9ade1f8ae48aa97d9a48c0d25f6aed72cf75213c138b" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/ReduceFunction.hpe" name="ReduceFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" version="1.0.0.0">
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007f4cbebfe57de16a460e9a3aae6647a3b14d609b000ac58312afed4cc2c1b904f33e352cfd40765886c6d6e1d9f5c8b905b1a20519b6b60ac094e6b94fb46c5f84beb2e0ee4e9d4e947c44775c07382e9104f227336fb976619ecd6ad43a917b5277f7f3f09156a8e8ff9ade1f8ae48aa97d9a48c0d25f6aed72cf75213c138b" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/GustyFunction.hpe" name="GustyFunction" package="br.ufc.mdcc.hpcshelf.gust.custom" version="1.0.0.0">
         <visualDescription h="60" w="100" x="367" y="380">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -53,7 +53,7 @@
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <unitBounds parallel="false" uRef="reduce_function">
+        <unitBounds parallel="false" uRef="gusty_function">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -159,8 +159,8 @@
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="ITriangleCount" multiple="false" private="false" replica="0" uRef="reduce_function" visibleInterface="true">
-      <super cRef="base" uRef="reduce_function"/>
+    <unit facet="0" iRef="ITriangleCount" multiple="false" private="false" replica="0" uRef="gusty_function" visibleInterface="true">
+      <super cRef="base" uRef="gusty_function"/>
       <visualDescription h="40" w="190" x="287" y="293"/>
     </unit>
   </componentInfo>

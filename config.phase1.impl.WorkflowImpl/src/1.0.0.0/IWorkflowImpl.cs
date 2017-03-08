@@ -11,8 +11,8 @@ using br.ufc.mdcc.hpcshelf.platform.Maintainer;
 using System;
 using br.ufc.mdcc.hpc.storm.binding.task.TaskBindingBase;
 using System.Threading;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance;
-using br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData;
+using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance;
+using br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData;
 using System.Collections.Generic;
 using br.ufc.mdcc.hpcshelf.platform.maintainer.SAFeHost;
 using config.phase1.Workflow;
@@ -26,7 +26,7 @@ namespace config.phase1.impl.WorkflowImpl {
 	{ // P.S.: Workflow tipo BSP usando apenas um processo de reducao ou gusty 
 		// A lógica do workflow não foi alterada, usando o workflow gerado automaticamente para o MapReduce. 
 		// A única mudança ocorre nos retornos do gets, apontando para o mesmo objeto: 
-		// task_map=task_gusty, task_reduce=task_gusty, task_binding_shuffle=task_binding_split_next)
+		// task_map=task_gusty, task_gusty=task_gusty, task_binding_shuffle=task_binding_split_next)
 		private void read_data_source()
 		{
 			Console.WriteLine ("read_data_source");
@@ -47,9 +47,9 @@ namespace config.phase1.impl.WorkflowImpl {
 			Console.WriteLine ("shuffle_perform");
 		}
 
-		private void reduce_perform()
+		private void gusty_perform()
 		{
-			Console.WriteLine ("reduce_perform");
+			Console.WriteLine ("gusty_perform");
 		}
 
 		private void write_sink_source()
@@ -61,7 +61,7 @@ namespace config.phase1.impl.WorkflowImpl {
 		{
 			Console.WriteLine (this.ThisFacetInstance + "/" + this.Rank + ": WORKFLOW 1");
 
-			Task_binding_data.TraceFlag = Task_map.TraceFlag = Task_reduce.TraceFlag = Task_binding_shuffle.TraceFlag = Task_binding_split_first.TraceFlag = Task_binding_split_next.TraceFlag = true;
+			Task_binding_data.TraceFlag = Task_map.TraceFlag = Task_gusty.TraceFlag = Task_binding_shuffle.TraceFlag = Task_binding_split_first.TraceFlag = Task_binding_split_next.TraceFlag = true;
 			Task_binding_data.TraceFlag = Task_binding_shuffle.TraceFlag = Task_binding_split_first.TraceFlag = Task_binding_split_next.TraceFlag = true;
 
 			IActionFutureSet future_iteration = null;
@@ -96,10 +96,10 @@ namespace config.phase1.impl.WorkflowImpl {
 
 			Console.WriteLine (this.ThisFacetInstance + "/" + this.Rank + ": WORKFLOW 4");
 
-			IActionFuture future_reduce_chunk_ready = null;
-			Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out future_reduce_chunk_ready);
-			int action_id_reduce_chunk_ready = future_reduce_chunk_ready.GetHashCode ();
-			future_iteration.addAction (future_reduce_chunk_ready);
+			IActionFuture future_gusty_chunk_ready = null;
+			Task_gusty.invoke (ITaskPortAdvance.CHUNK_READY, out future_gusty_chunk_ready);
+			int action_id_gusty_chunk_ready = future_gusty_chunk_ready.GetHashCode ();
+			future_iteration.addAction (future_gusty_chunk_ready);
 
 			Console.WriteLine (this.ThisFacetInstance + "/" + this.Rank + ": WORKFLOW 5");
 
@@ -194,10 +194,10 @@ namespace config.phase1.impl.WorkflowImpl {
 					Thread t = new Thread((ThreadStart)delegate() 
 						{
 							Console.WriteLine ("INVOKE REDUCER READ_CHUNK - BEFORE");
-							Task_reduce.invoke (ITaskPortAdvance.READ_CHUNK); // ****
+							Task_gusty.invoke (ITaskPortAdvance.READ_CHUNK); // ****
 							Console.WriteLine ("INVOKE REDUCER READ_CHUNK - AFTER");
-							IActionFuture future_reduce_perform = null;
-							Thread thread_reduce_perform = Task_reduce.invoke (ITaskPortAdvance.PERFORM, reduce_perform, out future_reduce_perform);
+							IActionFuture future_gusty_perform = null;
+							Thread thread_gusty_perform = Task_gusty.invoke (ITaskPortAdvance.PERFORM, gusty_perform, out future_gusty_perform);
 
 							Console.WriteLine ("END INVOKE SHUFFLER CHUNK_READY");
 						});
@@ -205,11 +205,11 @@ namespace config.phase1.impl.WorkflowImpl {
 					bag_of_tasks.Add(t);
 					Console.WriteLine ("THREAD LAUNCHED 3");
 				}
-				else if (action_id == action_id_reduce_chunk_ready)
+				else if (action_id == action_id_gusty_chunk_ready)
 				{
-					Task_reduce.invoke (ITaskPortAdvance.CHUNK_READY, out future_reduce_chunk_ready);
-					action_id_reduce_chunk_ready = future_reduce_chunk_ready.GetHashCode ();
-					future_iteration.addAction(future_reduce_chunk_ready);
+					Task_gusty.invoke (ITaskPortAdvance.CHUNK_READY, out future_gusty_chunk_ready);
+					action_id_gusty_chunk_ready = future_gusty_chunk_ready.GetHashCode ();
+					future_iteration.addAction(future_gusty_chunk_ready);
 
 					Thread t = new Thread((ThreadStart)delegate() 
 						{
@@ -333,7 +333,7 @@ namespace config.phase1.impl.WorkflowImpl {
 		}
 
 		private ITaskPort<ITaskPortTypeAdvance> task_gusty = null;
-		protected ITaskPort<ITaskPortTypeAdvance> Task_reduce 
+		protected ITaskPort<ITaskPortTypeAdvance> Task_gusty 
 		{ 
 			get 
 			{   
@@ -348,7 +348,7 @@ namespace config.phase1.impl.WorkflowImpl {
 		{ 
 			get 
 			{  
-				return this.Task_reduce;
+				return this.Task_gusty;
 //				if (task_map == null)
 //					task_map = (ITaskPort<ITaskPortTypeAdvance>) this.Services.getPort ("task_map");
 //				return task_map;

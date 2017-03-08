@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component:component xmlns:component="http://www.example.org/HashComponent">
+  <header hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007f4cbebfe57de16a460e9a3aae6647a3b14d609b000ac58312afed4cc2c1b904f33e352cfd40765886c6d6e1d9f5c8b905b1a20519b6b60ac094e6b94fb46c5f84beb2e0ee4e9d4e947c44775c07382e9104f227336fb976619ecd6ad43a917b5277f7f3f09156a8e8ff9ade1f8ae48aa97d9a48c0d25f6aed72cf75213c138b" isAbstract="true" kind="Computation" name="GustyFunction" packagePath="br.ufc.mdcc.hpcshelf.gust.custom">
+    <versions field1="1" field2="0" field3="0" field4="0"/>
+    <visualAttributes>
+      <color b="255" g="255" r="255"/>
+    </visualAttributes>
+  </header>
+  <componentInfo>
+    <parameter componentRef="input_key_type" formFieldId="input_key_type" order="0" variance="contravariant" varName="TKey"/>
+    <parameter componentRef="input_value_type" formFieldId="input_value_type" order="1" variance="contravariant" varName="TValue"/>
+    <parameter componentRef="output_key_type" formFieldId="output_key_type" order="2" variance="contravariant" varName="OKey"/>
+    <parameter componentRef="continuation_value" formFieldId="output_value_type" order="3" variance="contravariant" varName="OValue"/>
+    <parameter componentRef="graph_input_format" formFieldId="graph_input_format" order="4" variance="contravariant" varName="GIF"/>
+    <parameter componentRef="graph" formFieldId="graph_type" order="5" variance="contravariant" varName="G"/>
+    <innerComponent localRef="input_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_key_type" exposed="false">
+      <visualDescription h="60" w="158" x="183" y="498">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="121" y="21"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="input_value_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="input_value_type" exposed="false">
+      <visualDescription h="60" w="147" x="317" y="166">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="output_key_type" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="output_key_type" exposed="true">
+      <visualDescription h="77" w="123" x="401" y="463">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="57" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="continuation_value" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="output_value_type" exposed="false">
+      <visualDescription h="68" w="203" x="137" y="205">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="161" y="22"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="set_values" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="152" x="455" y="455">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="item_type" varName="TValue"/>
+      <unitBounds parallel="false" uRef="iterator">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="input_values" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="181" x="106" y="376">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="SETV"/>
+      <parameter formFieldId="key_type" varName="TKey"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="137" y="20"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="output_value" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="63" w="154" x="394" y="343">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="OValue"/>
+      <parameter formFieldId="key_type" varName="OKey"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="7" y="21"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="output" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="134" x="538" y="259">
+        <color b="203" g="192" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="item_type" varName="OKV"/>
+      <unitBounds parallel="false" uRef="iterator">
+        <visualDescription h="20" w="20" x="2" y="23"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="pgraph" location="br.ufc.mdcc.common.KVPair/KVPair.hpe" multiple="false" name="KVPair" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="206" x="522" y="359">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="value_type" varName="GIF"/>
+      <parameter formFieldId="key_type" varName="PKey"/>
+      <unitBounds parallel="false" uRef="kv_pair">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="pkey" location="br.ufc.mdcc.common.Integer/Integer.hpe" multiple="false" name="Integer" package="br.ufc.mdcc.common" exposed="false">
+      <visualDescription h="60" w="100" x="178" y="537">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="graph_input_format" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="graph_input_format" exposed="false">
+      <visualDescription h="60" w="141" x="332" y="534">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="5" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="graph" location="br.ufc.mdcc.common.Data/Data.hpe" multiple="false" name="Data" package="br.ufc.mdcc.common" parameter_id="graph_type" exposed="false">
+      <visualDescription h="60" w="115" x="344" y="410">
+        <color b="255" g="255" r="255"/>
+      </visualDescription>
+      <unitBounds parallel="false" uRef="data">
+        <visualDescription h="20" w="20" x="39" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <innerComponent localRef="graph_format" location="br.ufc.mdcc.common.Iterator/Iterator.hpe" multiple="false" name="Iterator" package="br.ufc.mdcc.common" exposed="true">
+      <visualDescription h="60" w="165" x="499" y="366">
+        <color b="203" g="192" r="255"/>
+      </visualDescription>
+      <parameter formFieldId="item_type" varName="PGraph"/>
+      <unitBounds parallel="false" uRef="iterator">
+        <visualDescription h="20" w="20" x="67" y="2"/>
+      </unitBounds>
+    </innerComponent>
+    <supplyParameter cRef="set_values" direct="true" varName="SETV"/>
+    <supplyParameter cRef="output_value" direct="true" varName="OKV"/>
+    <supplyParameter cRef="pkey" direct="true" varName="PKey"/>
+    <supplyParameter cRef="pgraph" direct="true" varName="PGraph"/>
+    <interface iRef="IGustyFunction" nArgs="6">
+      <slice isRef="input_values">
+        <originRef cRef="input_values" iRef="IKVPair"/>
+        <visualDescription h="10" w="10" x="11" y="25"/>
+      </slice>
+      <slice isRef="output">
+        <originRef cRef="output" iRef="IIterator"/>
+        <visualDescription h="10" w="10" x="175" y="9"/>
+      </slice>
+      <slice isRef="graph_format">
+        <originRef cRef="graph_format" iRef="IIterator"/>
+        <visualDescription h="10" w="10" x="136" y="30"/>
+      </slice>
+      <slice isRef="graph">
+        <originRef cRef="graph" iRef="IData"/>
+        <visualDescription h="10" w="10" x="107" y="29"/>
+      </slice>
+      <slice isRef="continuation_value">
+        <originRef cRef="continuation_value" iRef="IData"/>
+        <visualDescription h="10" w="10" x="17" y="8"/>
+      </slice>
+      <sources sourceType="C# Language" versionId="1.0.0.0">
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction&#xA;{&#xA;&#x9;public interface BaseIGustyFunction&lt;TKey, TValue, OKey, OValue, GIF, G> : IComputationKind &#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;&#x9;where GIF:IData&#xA;&#x9;&#x9;where G:IData&#xA;&#x9;{&#xA;&#x9;&#x9;IKVPair&lt;TKey, IIterator&lt;TValue>> Input_values {get;}&#xA;&#x9;&#x9;IIterator&lt;IKVPair&lt;OKey, OValue>> Output {get;}&#x9;&#xA;&#x9;&#x9;IIterator&lt;IKVPair&lt;IInteger,GIF>> Graph_format {get;}&#xA;&#x9;}&#xA;}" name="BaseIGustyFunction.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/BaseIGustyFunction.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Iterator/bin/1.0.0.0/IIterator.dll</dependency>
+          <dependency>br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+        </file>
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.common.Data;&#xA;using br.ufc.mdcc.common.KVPair;&#xA;using br.ufc.mdcc.common.Iterator;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction&#xA;{&#xA;&#x9;public interface IGustyFunction&lt;TKey, TValue, OKey, OValue, GIF, G> : BaseIGustyFunction&lt;TKey, TValue, OKey, OValue, GIF, G>&#xA;&#x9;&#x9;where TKey:IData&#xA;&#x9;&#x9;where TValue:IData&#xA;&#x9;&#x9;where OKey:IData&#xA;&#x9;&#x9;where OValue:IData&#xA;&#x9;&#x9;where GIF:IData&#xA;&#x9;&#x9;where G:IData&#xA;&#x9;{&#xA;&#x9;&#x9;void Compute();&#xA;&#x9;&#x9;void Optimize();&#xA;&#x9;&#x9;void InputGraph();&#xA;&#x9;}&#xA;}" name="IGustyFunction.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/IGustyFunction.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll</dependency>
+          <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/BaseIGustyFunction.dll</dependency>
+        </file>
+      </sources>
+      <visualDescription h="40" w="190" x="427" y="173">
+        <color b="0" g="165" r="255"/>
+      </visualDescription>
+      <port name="input_values">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="input_values" sRef="input_values"/>
+      </port>
+      <port name="output">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="output" sRef="output"/>
+      </port>
+      <port name="graph_format">
+        <visualDescription h="10" w="10" x="0" y="0"/>
+        <slice pRef="graph_format" sRef="graph_format"/>
+      </port>
+      <parameter iname="IData" order="0" parid="input_key_type" uname="data" varid="TKey"/>
+      <parameter iname="IData" order="1" parid="input_value_type" uname="data" varid="TValue"/>
+      <parameter iname="IData" order="2" parid="output_key_type" uname="data" varid="OKey"/>
+      <parameter iname="IData" order="3" parid="output_value_type" uname="data" varid="OValue"/>
+      <parameter iname="IData" order="4" parid="graph_input_format" uname="data" varid="GIF"/>
+      <parameter iname="IData" order="5" parid="graph_type" uname="data" varid="G"/>
+      <action id="main">
+        <protocol/>
+      </action>
+    </interface>
+    <unit facet="0" iRef="IGustyFunction" multiple="false" private="false" replica="0" uRef="gusty_function" visibleInterface="true">
+      <slices cRef="graph_format" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="graph_format" transitive="false">
+        <visualDescription h="10" w="10" x="125" y="28"/>
+      </slices>
+      <slices cRef="input_values" inner_replica="0" slice_replica="0" uRef="kv_pair" sliceName="input_values" transitive="false">
+        <visualDescription h="10" w="10" x="11" y="25"/>
+      </slices>
+      <slices cRef="output" inner_replica="0" slice_replica="0" uRef="iterator" sliceName="output" transitive="false">
+        <visualDescription h="10" w="10" x="175" y="9"/>
+      </slices>
+      <slices cRef="graph" inner_replica="0" slice_replica="0" uRef="data" sliceName="graph" transitive="false">
+        <visualDescription h="10" w="10" x="107" y="29"/>
+      </slices>
+      <slices cRef="continuation_value" inner_replica="0" slice_replica="0" uRef="data" sliceName="continuation_value" transitive="false">
+        <visualDescription h="10" w="10" x="17" y="8"/>
+      </slices>
+      <visualDescription h="40" w="190" x="294" y="306"/>
+    </unit>
+  </componentInfo>
+</component:component>

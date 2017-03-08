@@ -17,7 +17,7 @@
         <visualDescription h="30" w="20" x="160" y="13"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="t_task_map" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="t_task_map" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="30" w="40" x="10" y="10">
         <color b="23" g="200" r="117"/>
       </visualDescription>
@@ -25,7 +25,7 @@
         <visualDescription h="20" w="20" x="5" y="2"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="t_task_reduce" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="t_task_gusty" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="30" w="40" x="10" y="10">
         <color b="23" g="200" r="117"/>
       </visualDescription>
@@ -37,12 +37,12 @@
       <visualDescription h="42" w="241" x="429" y="312">
         <color b="243" g="217" r="217"/>
       </visualDescription>
-      <parameter formFieldId="task_port_type" varName="T_task_reduce"/>
+      <parameter formFieldId="task_port_type" varName="T_task_gusty"/>
       <unitBounds parallel="true" uRef="peer">
         <visualDescription h="30" w="20" x="10" y="10"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="t_task_binding_split_first" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="t_task_binding_split_first" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="30" w="40" x="10" y="10">
         <color b="23" g="200" r="117"/>
       </visualDescription>
@@ -59,7 +59,7 @@
         <visualDescription h="30" w="20" x="236" y="6"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="t_task_binding_split_next" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="t_task_binding_split_next" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="30" w="40" x="10" y="10">
         <color b="23" g="200" r="117"/>
       </visualDescription>
@@ -76,7 +76,7 @@
         <visualDescription h="30" w="20" x="10" y="10"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="t_task_binding_data" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeData/TaskPortTypeData.hpe" multiple="false" name="TaskPortTypeData" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="t_task_binding_data" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeData/TaskPortTypeData.hpe" multiple="false" name="TaskPortTypeData" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="30" w="40" x="10" y="10">
         <color b="23" g="200" r="117"/>
       </visualDescription>
@@ -93,7 +93,7 @@
         <visualDescription h="30" w="20" x="215" y="5"/>
       </unitBounds>
     </innerComponent>
-    <innerComponent localRef="t_task_binding_shuffle" location="br.ufc.mdcc.hpcshelf.mapreduce.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.mapreduce.port.task" exposed="false">
+    <innerComponent localRef="t_task_binding_shuffle" location="br.ufc.mdcc.hpcshelf.gust.port.task.TaskPortTypeAdvance/TaskPortTypeAdvance.hpe" multiple="false" name="TaskPortTypeAdvance" package="br.ufc.mdcc.hpcshelf.gust.port.task" exposed="false">
       <visualDescription h="30" w="40" x="10" y="10">
         <color b="23" g="200" r="117"/>
       </visualDescription>
@@ -110,7 +110,7 @@
       </unitBounds>
     </innerComponent>
     <supplyParameter cRef="t_task_map" direct="true" varName="T_task_map"/>
-    <supplyParameter cRef="t_task_reduce" direct="true" varName="T_task_reduce"/>
+    <supplyParameter cRef="t_task_gusty" direct="true" varName="T_task_gusty"/>
     <supplyParameter cRef="t_task_binding_split_first" direct="true" varName="T_task_binding_split_first"/>
     <supplyParameter cRef="t_task_binding_split_next" direct="true" varName="T_task_binding_split_next"/>
     <supplyParameter cRef="t_task_binding_data" direct="true" varName="T_task_binding_data"/>

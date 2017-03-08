@@ -60,9 +60,9 @@
       <Project>{87B06CFA-3511-4743-A613-15E2DF08CE45}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.example.sssp.DataSSSP</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction.csproj">
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction\br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction.csproj">
       <Project>{D20F8E33-1C0C-44FF-83AD-818C99718420}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.mapreduce.custom.TerminateFunction</Name>
+      <Name>br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

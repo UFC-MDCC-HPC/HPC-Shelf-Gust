@@ -5,7 +5,7 @@
       <extensionType>
         <extends>true</extends>
       </extensionType>
-      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007f4cbebfe57de16a460e9a3aae6647a3b14d609b000ac58312afed4cc2c1b904f33e352cfd40765886c6d6e1d9f5c8b905b1a20519b6b60ac094e6b94fb46c5f84beb2e0ee4e9d4e947c44775c07382e9104f227336fb976619ecd6ad43a917b5277f7f3f09156a8e8ff9ade1f8ae48aa97d9a48c0d25f6aed72cf75213c138b" localRef="base" location="br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/ReduceFunction.hpe" name="ReduceFunction" package="br.ufc.mdcc.hpcshelf.mapreduce.custom" version="1.0.0.0">
+      <component hash_component_UID="00240000048000009400000006020000002400005253413100040000110000007f4cbebfe57de16a460e9a3aae6647a3b14d609b000ac58312afed4cc2c1b904f33e352cfd40765886c6d6e1d9f5c8b905b1a20519b6b60ac094e6b94fb46c5f84beb2e0ee4e9d4e947c44775c07382e9104f227336fb976619ecd6ad43a917b5277f7f3f09156a8e8ff9ade1f8ae48aa97d9a48c0d25f6aed72cf75213c138b" localRef="base" location="br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/GustyFunction.hpe" name="GustyFunction" package="br.ufc.mdcc.hpcshelf.gust.custom" version="1.0.0.0">
         <visualDescription h="60" w="100" x="394" y="320">
           <color b="255" g="255" r="255"/>
         </visualDescription>
@@ -53,7 +53,7 @@
             <visualDescription h="20" w="20" x="5" y="2"/>
           </unitBounds>
         </port>
-        <unitBounds parallel="false" uRef="reduce_function">
+        <unitBounds parallel="false" uRef="gusty_function">
           <visualDescription h="20" w="20" x="5" y="2"/>
         </unitBounds>
       </component>
@@ -153,12 +153,12 @@
     <supplyParameter cRef="gif" direct="true" varName="GIF"/>
     <interface iRef="ITC3" nArgs="0">
       <sources sourceType="C# Language" versionId="1.0.0.0">
-        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc3.TC3&#xA;{&#xA;&#x9;public interface BaseITC3 : BaseIReduceFunction&lt;&#xA;&#x9;IInputFormat, &#xA;&#x9;IVertex, &#xA;&#x9;IDataTriangle, &#xA;&#x9;IVertex, &#xA;&#x9;IDataTriangle, &#xA;&#x9;IUndirectedGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>&#xA;&#x9;>, IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="BaseITC3.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.tc3.TC3/bin/1.0.0.0/BaseITC3.dll" versionId="1.0.0.0">
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/bin/1.0.0.0/BaseIReduceFunction.dll</dependency>
+        <file contents="/* AUTOMATICALLY GENERATE CODE */&#xA;&#xA;using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc3.TC3&#xA;{&#xA;&#x9;public interface BaseITC3 : BaseIGustyFunction&lt;&#xA;&#x9;IInputFormat, &#xA;&#x9;IVertex, &#xA;&#x9;IDataTriangle, &#xA;&#x9;IVertex, &#xA;&#x9;IDataTriangle, &#xA;&#x9;IUndirectedGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>&#xA;&#x9;>, IComputationKind &#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="BaseITC3.cs" srcType="base" uri="br.ufc.mdcc.hpcshelf.gust.example.tc3.TC3/bin/1.0.0.0/BaseITC3.dll" versionId="1.0.0.0">
+          <dependency>br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/BaseIGustyFunction.dll</dependency>
         </file>
-        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc3.TC3&#xA;{&#xA;&#x9;public interface ITC3 : BaseITC3, IReduceFunction&lt;&#xA;&#x9;IInputFormat, &#xA;&#x9;IVertex, &#xA;&#x9;IDataTriangle, &#xA;&#x9;IVertex, &#xA;&#x9;IDataTriangle, &#xA;&#x9;IUndirectedGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>&#xA;&#x9;>&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="ITC3.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.tc3.TC3/bin/1.0.0.0/ITC3.dll" versionId="1.0.0.0">
+        <file contents="using br.ufc.pargo.hpe.kinds;&#xA;using br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction;&#xA;using br.ufc.mdcc.hpcshelf.gust.example.tc.DataTriangle;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.InputFormat;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Graph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.UndirectedGraph;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainer;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.container.DataContainerV;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Vertex;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.VertexBasic;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.Edge;&#xA;using br.ufc.mdcc.hpcshelf.gust.graph.EdgeBasic;&#xA;using br.ufc.mdcc.common.Integer;&#xA;&#xA;namespace br.ufc.mdcc.hpcshelf.gust.example.tc3.TC3&#xA;{&#xA;&#x9;public interface ITC3 : BaseITC3, IGustyFunction&lt;&#xA;&#x9;IInputFormat, &#xA;&#x9;IVertex, &#xA;&#x9;IDataTriangle, &#xA;&#x9;IVertex, &#xA;&#x9;IDataTriangle, &#xA;&#x9;IUndirectedGraph&lt;IDataContainerV&lt;IVertexBasic, IEdgeBasic&lt;IVertexBasic>>, IVertexBasic, IEdgeBasic&lt;IVertexBasic>>&#xA;&#x9;>&#xA;&#x9;{&#xA;&#x9;}&#xA;}&#xA;" name="ITC3.cs" srcType="user" uri="br.ufc.mdcc.hpcshelf.gust.example.tc3.TC3/bin/1.0.0.0/ITC3.dll" versionId="1.0.0.0">
           <dependency>%WORKSPACE/br.ufc.mdcc.hpcshelf.gust.example.tc3.TC3/bin/1.0.0.0/BaseITC3.dll</dependency>
-          <dependency>br.ufc.mdcc.hpcshelf.mapreduce.custom.ReduceFunction/bin/1.0.0.0/IReduceFunction.dll</dependency>
+          <dependency>br.ufc.mdcc.hpcshelf.gust.custom.GustyFunction/bin/1.0.0.0/IGustyFunction.dll</dependency>
         </file>
       </sources>
       <visualDescription h="43" w="199" x="157" y="149">
@@ -168,8 +168,8 @@
         <protocol/>
       </action>
     </interface>
-    <unit facet="0" iRef="ITC3" multiple="false" private="false" replica="0" uRef="reduce_function" visibleInterface="true">
-      <super cRef="base" uRef="reduce_function"/>
+    <unit facet="0" iRef="ITC3" multiple="false" private="false" replica="0" uRef="gusty_function" visibleInterface="true">
+      <super cRef="base" uRef="gusty_function"/>
       <visualDescription h="40" w="190" x="314" y="233"/>
     </unit>
   </componentInfo>
