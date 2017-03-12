@@ -14,8 +14,7 @@
       <references>
         <include name="br.ufc.mdcc.common.Iterator/bin/1.0.0.0/IIterator.dll"/>
         <include name="br.ufc.mdcc.common.KVPair/bin/1.0.0.0/IKVPair.dll"/>
-        <include name="br.ufc.mdcc.common.Integer/bin/1.0.0.0/IInteger.dll"/>
-        <include name="br.ufc.mdcc.hpcshelf.gust.example.common.DataSSSP/bin/1.0.0.0/IDataSSSP.dll"/>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator/bin/1.0.0.0/IPortTypeIterator.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunction/bin/1.0.0.0/BaseINTimesTerminateFunction.dll"/>
         <include/>

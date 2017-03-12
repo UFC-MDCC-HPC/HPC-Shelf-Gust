@@ -2,10 +2,9 @@ using System;
 using br.ufc.pargo.hpe.backend.DGAC;
 using br.ufc.pargo.hpe.basic;
 using br.ufc.pargo.hpe.kinds;
-using br.ufc.mdcc.common.Integer;
+using br.ufc.mdcc.common.Data;
 using br.ufc.mdcc.common.Iterator;
 using br.ufc.mdcc.common.KVPair;
-using br.ufc.mdcc.hpcshelf.gust.example.common.DataSSSP;
 using br.ufc.mdcc.hpcshelf.gust.port.environment.PortTypeIterator;
 using br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunction;
 
@@ -18,22 +17,22 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunctionImpl
 
 		private int iterate_num = 0;
 
-		public override void main() 
+		public override void main()
 		{
-			IIteratorInstance<IKVPair<IInteger, IDataSSSP>> output_pairs = (IIteratorInstance<IKVPair<IInteger, IDataSSSP>>)Output_pairs.Instance;
-			IIteratorInstance<IKVPair<IInteger, IDataSSSP>> input_pairs = (IIteratorInstance<IKVPair<IInteger, IDataSSSP>>)Input_pairs.Instance;
+			IIteratorInstance<IKVPair<IData, IData>> output_pairs = (IIteratorInstance<IKVPair<IData, IData>>)Output_pairs.Instance;
+			IIteratorInstance<IKVPair<IData, IData>> input_pairs = (IIteratorInstance<IKVPair<IData, IData>>)Input_pairs.Instance;
 
 			object pair;
 
-			while (iterate_pairs.has_next()) {//Espera por um finish() dado no gusty_function, o que ocorre quando todo IDataSSSPInstance.Halt=0 e nao exista mensagens pendentes
+			while (iterate_pairs.has_next()) {
 				while (iterate_pairs.fetch_next(out pair))
 					input_pairs.put(pair);
 				input_pairs.finish ();
 			}
-			iterate_pairs.fetch_next (out pair);//Faz o fetch_next na finalizacao
+			iterate_pairs.fetch_next (out pair);
 			input_pairs.finish ();
 
-			while (iterate_pairs.fetch_next(out pair)) // Espera pelos dados definitivos de saida
+			while (iterate_pairs.fetch_next(out pair))
 				output_pairs.put(pair);
 
 			output_pairs.finish ();

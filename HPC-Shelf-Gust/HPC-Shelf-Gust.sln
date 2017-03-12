@@ -280,6 +280,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "config.example.pgr.System",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "config.example.pgr.impl.SystemImpl", "..\config.example.pgr.impl.SystemImpl\config.example.pgr.impl.SystemImpl\config.example.pgr.impl.SystemImpl.csproj", "{6366E122-9DED-4C9E-BE34-6B1AFDC9AA25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunction", "..\br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunction\br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunction\br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunction.csproj", "{BE0F2AAA-9407-4057-86EA-19A59BB4EDF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunctionImpl", "..\br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunctionImpl\br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunctionImpl\br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunctionImpl.csproj", "{4867AB55-C1D6-4A4D-98BF-DBE33D64F41C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -458,6 +462,10 @@ Global
 		{476F03C1-DF48-4DA7-B4E4-1A187571F48D}.Debug|x86.Build.0 = Debug|Any CPU
 		{476F03C1-DF48-4DA7-B4E4-1A187571F48D}.Release|x86.ActiveCfg = Release|Any CPU
 		{476F03C1-DF48-4DA7-B4E4-1A187571F48D}.Release|x86.Build.0 = Release|Any CPU
+		{4867AB55-C1D6-4A4D-98BF-DBE33D64F41C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4867AB55-C1D6-4A4D-98BF-DBE33D64F41C}.Debug|x86.Build.0 = Debug|Any CPU
+		{4867AB55-C1D6-4A4D-98BF-DBE33D64F41C}.Release|x86.ActiveCfg = Release|Any CPU
+		{4867AB55-C1D6-4A4D-98BF-DBE33D64F41C}.Release|x86.Build.0 = Release|Any CPU
 		{48B7B3AB-A14C-4E37-8AFE-233AF08D7A7D}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{48B7B3AB-A14C-4E37-8AFE-233AF08D7A7D}.Debug|x86.Build.0 = Debug|Any CPU
 		{48B7B3AB-A14C-4E37-8AFE-233AF08D7A7D}.Release|x86.ActiveCfg = Release|Any CPU
@@ -730,6 +738,10 @@ Global
 		{BCB96804-B787-4ED7-BB0F-127F3649E5D7}.Debug|x86.Build.0 = Debug|Any CPU
 		{BCB96804-B787-4ED7-BB0F-127F3649E5D7}.Release|x86.ActiveCfg = Release|Any CPU
 		{BCB96804-B787-4ED7-BB0F-127F3649E5D7}.Release|x86.Build.0 = Release|Any CPU
+		{BE0F2AAA-9407-4057-86EA-19A59BB4EDF1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BE0F2AAA-9407-4057-86EA-19A59BB4EDF1}.Debug|x86.Build.0 = Debug|Any CPU
+		{BE0F2AAA-9407-4057-86EA-19A59BB4EDF1}.Release|x86.ActiveCfg = Release|Any CPU
+		{BE0F2AAA-9407-4057-86EA-19A59BB4EDF1}.Release|x86.Build.0 = Release|Any CPU
 		{BEE63437-0DC5-4A9F-A8A6-16E755AE9B3B}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{BEE63437-0DC5-4A9F-A8A6-16E755AE9B3B}.Debug|x86.Build.0 = Debug|Any CPU
 		{BEE63437-0DC5-4A9F-A8A6-16E755AE9B3B}.Release|x86.ActiveCfg = Release|Any CPU
