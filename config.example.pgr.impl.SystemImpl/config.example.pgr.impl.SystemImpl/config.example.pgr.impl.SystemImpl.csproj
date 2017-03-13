@@ -163,10 +163,6 @@
       <Project>{6A7BA994-391F-404F-939C-077CA597C821}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.graph.InputFormat</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop\br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop\br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop.csproj">
-      <Project>{262FC7ED-AB78-4162-9007-45A735E3ABF8}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\config.Application\config.Application\config.Application.csproj">
       <Project>{9B50C15B-478C-4E9D-90BF-7D7178862E2A}</Project>
       <Name>config.Application</Name>
@@ -174,6 +170,10 @@
     <ProjectReference Include="..\..\config.phase1.Workflow\config.phase1.Workflow\config.phase1.Workflow.csproj">
       <Project>{EBE0A880-6045-4D31-BB42-44E3A37631A8}</Project>
       <Name>config.phase1.Workflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.connector.Join\br.ufc.mdcc.hpcshelf.gust.connector.Join\br.ufc.mdcc.hpcshelf.gust.connector.Join.csproj">
+      <Project>{90623C03-B24B-4448-A81E-901BB4017F36}</Project>
+      <Name>br.ufc.mdcc.hpcshelf.gust.connector.Join</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

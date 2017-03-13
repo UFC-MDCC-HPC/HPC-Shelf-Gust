@@ -204,10 +204,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.e
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTCImpl", "..\br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTCImpl\br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTCImpl\br.ufc.mdcc.hpcshelf.gust.example.tc.TerminateFunctionTCImpl.csproj", "{4E3CD9A5-16BF-4EA0-9E31-E422A6E57FE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop", "..\br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop\br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop\br.ufc.mdcc.hpcshelf.gust.connector.JoinLoop.csproj", "{262FC7ED-AB78-4162-9007-45A735E3ABF8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl", "..\br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl\br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl\br.ufc.mdcc.hpcshelf.gust.impl.connector.JoinLoopImpl.csproj", "{AD2245E3-2AD0-4724-8A1B-E9F547DC24FE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.common.Float", "..\br.ufc.mdcc.common.Float\br.ufc.mdcc.common.Float\br.ufc.mdcc.common.Float.csproj", "{5F0005DB-2B83-4A93-B524-691C1CA9AF65}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.ufc.mdcc.common.impl.FloatImpl", "..\br.ufc.mdcc.common.impl.FloatImpl\br.ufc.mdcc.common.impl.FloatImpl\br.ufc.mdcc.common.impl.FloatImpl.csproj", "{C97607BA-761E-490D-914F-3E834098C0A0}"
@@ -394,10 +390,6 @@ Global
 		{2464A266-46AE-4E46-90C2-7A116F632E25}.Debug|x86.Build.0 = Debug|Any CPU
 		{2464A266-46AE-4E46-90C2-7A116F632E25}.Release|x86.ActiveCfg = Release|Any CPU
 		{2464A266-46AE-4E46-90C2-7A116F632E25}.Release|x86.Build.0 = Release|Any CPU
-		{262FC7ED-AB78-4162-9007-45A735E3ABF8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{262FC7ED-AB78-4162-9007-45A735E3ABF8}.Debug|x86.Build.0 = Debug|Any CPU
-		{262FC7ED-AB78-4162-9007-45A735E3ABF8}.Release|x86.ActiveCfg = Release|Any CPU
-		{262FC7ED-AB78-4162-9007-45A735E3ABF8}.Release|x86.Build.0 = Release|Any CPU
 		{2740F5B5-682D-40F2-B578-FFF3EC0645FC}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{2740F5B5-682D-40F2-B578-FFF3EC0645FC}.Debug|x86.Build.0 = Debug|Any CPU
 		{2740F5B5-682D-40F2-B578-FFF3EC0645FC}.Release|x86.ActiveCfg = Release|Any CPU
@@ -694,10 +686,6 @@ Global
 		{AAF21789-00E9-4BBC-9D72-2FD86764F12C}.Debug|x86.Build.0 = Debug|Any CPU
 		{AAF21789-00E9-4BBC-9D72-2FD86764F12C}.Release|x86.ActiveCfg = Release|Any CPU
 		{AAF21789-00E9-4BBC-9D72-2FD86764F12C}.Release|x86.Build.0 = Release|Any CPU
-		{AD2245E3-2AD0-4724-8A1B-E9F547DC24FE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{AD2245E3-2AD0-4724-8A1B-E9F547DC24FE}.Debug|x86.Build.0 = Debug|Any CPU
-		{AD2245E3-2AD0-4724-8A1B-E9F547DC24FE}.Release|x86.ActiveCfg = Release|Any CPU
-		{AD2245E3-2AD0-4724-8A1B-E9F547DC24FE}.Release|x86.Build.0 = Release|Any CPU
 		{ADB1B6BE-28D3-4B10-BBFC-9224181F52C7}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{ADB1B6BE-28D3-4B10-BBFC-9224181F52C7}.Debug|x86.Build.0 = Debug|Any CPU
 		{ADB1B6BE-28D3-4B10-BBFC-9224181F52C7}.Release|x86.ActiveCfg = Release|Any CPU
