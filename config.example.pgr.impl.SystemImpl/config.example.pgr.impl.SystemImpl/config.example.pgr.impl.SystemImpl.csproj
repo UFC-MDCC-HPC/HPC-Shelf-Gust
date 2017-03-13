@@ -147,10 +147,6 @@
       <Project>{7EC50954-0082-44F4-A493-65AC530F3D91}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.example.pgr.DataPGRANK</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.example.pgr.TerminateFunctionPGRANK\br.ufc.mdcc.hpcshelf.gust.example.pgr.TerminateFunctionPGRANK\br.ufc.mdcc.hpcshelf.gust.example.pgr.TerminateFunctionPGRANK.csproj">
-      <Project>{A377C4C1-9843-4C8D-8F62-E7DD225B311A}</Project>
-      <Name>br.ufc.mdcc.hpcshelf.gust.example.pgr.TerminateFunctionPGRANK</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK\br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK\br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK.csproj">
       <Project>{933A9ADA-B4A0-4200-9112-A3A20E18D462}</Project>
       <Name>br.ufc.mdcc.hpcshelf.gust.example.pgr.PGRANK</Name>
