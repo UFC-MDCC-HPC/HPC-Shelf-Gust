@@ -10,7 +10,11 @@ using br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunction;
 
 namespace br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunctionImpl
 {
-	public class INTimesTerminateFunctionImpl : BaseINTimesTerminateFunctionImpl, INTimesTerminateFunction
+	public class INTimesTerminateFunctionImpl<IKey, IValue, OKey, OValue> : BaseINTimesTerminateFunctionImpl<IKey, IValue, OKey, OValue>, INTimesTerminateFunction<IKey, IValue, OKey, OValue>
+where IKey:IData
+where IValue:IData
+where OKey:IData
+where OValue:IData
 	{
 		private IPortTypeIterator iterate_pairs = null;
 		public IPortTypeIterator Iterate_pairs { set {this.iterate_pairs = value; } }
@@ -19,8 +23,8 @@ namespace br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunctionImpl
 
 		public override void main()
 		{
-			IIteratorInstance<IKVPair<IData, IData>> output_pairs = (IIteratorInstance<IKVPair<IData, IData>>)Output_pairs.Instance;
-			IIteratorInstance<IKVPair<IData, IData>> input_pairs = (IIteratorInstance<IKVPair<IData, IData>>)Input_pairs.Instance;
+			IIteratorInstance<IKVPair<OKey, OValue>> output_pairs = (IIteratorInstance<IKVPair<OKey, OValue>>)Output_pairs.Instance;
+			IIteratorInstance<IKVPair<IKey, IValue>> input_pairs = (IIteratorInstance<IKVPair<IKey, IValue>>)Input_pairs.Instance;
 
 			object pair;
 

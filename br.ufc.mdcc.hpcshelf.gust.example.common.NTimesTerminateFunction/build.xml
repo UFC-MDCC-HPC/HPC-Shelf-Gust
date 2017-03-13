@@ -12,6 +12,7 @@
         <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunction/src/1.0.0.0/BaseINTimesTerminateFunction.cs"/>
       </sources>
       <references>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction/bin/1.0.0.0/BaseITerminateFunction.dll"/>
         <include/>
       </references>
@@ -21,6 +22,7 @@
         <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunction/src/1.0.0.0/INTimesTerminateFunction.cs"/>
       </sources>
       <references>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunction/bin/1.0.0.0/BaseINTimesTerminateFunction.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.custom.TerminateFunction/bin/1.0.0.0/ITerminateFunction.dll"/>
         <include/>

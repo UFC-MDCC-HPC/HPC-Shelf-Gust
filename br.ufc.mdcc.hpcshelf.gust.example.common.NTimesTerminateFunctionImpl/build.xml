@@ -25,6 +25,7 @@
         <include name="/home/cenez/workspace/gust/HPC-Shelf-Gust/br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunctionImpl/src/1.0.0.0/INTimesTerminateFunctionImpl.cs"/>
       </sources>
       <references>
+        <include name="br.ufc.mdcc.common.Data/bin/1.0.0.0/IData.dll"/>
         <include name="/br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunctionImpl/bin/1.0.0.0/BaseINTimesTerminateFunctionImpl.dll"/>
         <include name="br.ufc.mdcc.hpcshelf.gust.example.common.NTimesTerminateFunction/bin/1.0.0.0/INTimesTerminateFunction.dll"/>
         <include/>
